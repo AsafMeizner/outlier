@@ -1,0 +1,11839 @@
+{
+ "title": "Mixed Bag A",
+ "prompts": [
+  {
+   "text": "Name something that is usually yellow",
+   "category": "Everyday",
+   "answers": [
+    {
+     "answer": "Banana",
+     "tier": 1
+    },
+    {
+     "answer": "Sun",
+     "tier": 1
+    },
+    {
+     "answer": "Lemon",
+     "tier": 1
+    },
+    {
+     "answer": "School bus",
+     "tier": 1
+    },
+    {
+     "answer": "Taxi",
+     "tier": 1,
+     "aliases": [
+      "Cab",
+      "Yellow cab",
+      "New York taxi"
+     ]
+    },
+    {
+     "answer": "Egg yolk",
+     "tier": 2,
+     "aliases": [
+      "Yolk"
+     ]
+    },
+    {
+     "answer": "Corn",
+     "tier": 2,
+     "aliases": [
+      "Sweetcorn",
+      "Maize",
+      "Corn on the cob"
+     ]
+    },
+    {
+     "answer": "Sunflower",
+     "tier": 2
+    },
+    {
+     "answer": "Rubber duck",
+     "tier": 2,
+     "aliases": [
+      "Rubber duckie"
+     ]
+    },
+    {
+     "answer": "Minion",
+     "tier": 2
+    },
+    {
+     "answer": "SpongeBob",
+     "tier": 2,
+     "aliases": [
+      "SpongeBob SquarePants"
+     ]
+    },
+    {
+     "answer": "Pikachu",
+     "tier": 2
+    },
+    {
+     "answer": "Butter",
+     "tier": 2
+    },
+    {
+     "answer": "Cheese",
+     "tier": 2
+    },
+    {
+     "answer": "Mustard",
+     "tier": 3
+    },
+    {
+     "answer": "Highlighter",
+     "tier": 3
+    },
+    {
+     "answer": "Post-it note",
+     "tier": 3,
+     "aliases": [
+      "Sticky note",
+      "Post-it"
+     ]
+    },
+    {
+     "answer": "Daffodil",
+     "tier": 3
+    },
+    {
+     "answer": "Bee",
+     "tier": 3,
+     "aliases": [
+      "Bumblebee",
+      "Honeybee"
+     ]
+    },
+    {
+     "answer": "Tweety",
+     "tier": 3,
+     "aliases": [
+      "Tweety Bird"
+     ]
+    },
+    {
+     "answer": "The Simpsons",
+     "tier": 3,
+     "aliases": [
+      "Simpsons",
+      "Homer Simpson",
+      "Bart Simpson"
+     ]
+    },
+    {
+     "answer": "Big Bird",
+     "tier": 3
+    },
+    {
+     "answer": "Chick",
+     "tier": 3
+    },
+    {
+     "answer": "Pineapple",
+     "tier": 3
+    },
+    {
+     "answer": "Honey",
+     "tier": 3
+    },
+    {
+     "answer": "Gold",
+     "tier": 3
+    },
+    {
+     "answer": "Canary",
+     "tier": 3
+    },
+    {
+     "answer": "Smiley face",
+     "tier": 3,
+     "aliases": [
+      "Smiley",
+      "Emoji"
+     ]
+    },
+    {
+     "answer": "Tennis ball",
+     "tier": 3
+    },
+    {
+     "answer": "Hard hat",
+     "tier": 4,
+     "aliases": [
+      "Safety helmet"
+     ]
+    },
+    {
+     "answer": "Caution tape",
+     "tier": 4
+    },
+    {
+     "answer": "Wet floor sign",
+     "tier": 4
+    },
+    {
+     "answer": "Pac-Man",
+     "tier": 4
+    },
+    {
+     "answer": "Winnie the Pooh",
+     "tier": 4,
+     "aliases": [
+      "Pooh",
+      "Pooh Bear"
+     ]
+    },
+    {
+     "answer": "Yellow card",
+     "tier": 4
+    },
+    {
+     "answer": "Custard",
+     "tier": 4
+    },
+    {
+     "answer": "Dandelion",
+     "tier": 4
+    },
+    {
+     "answer": "Lego minifigure",
+     "tier": 4,
+     "aliases": [
+      "Lego man",
+      "Lego figure"
+     ]
+    },
+    {
+     "answer": "Snapchat logo",
+     "tier": 4,
+     "aliases": [
+      "Snapchat"
+     ]
+    },
+    {
+     "answer": "McDonald's logo",
+     "tier": 4,
+     "aliases": [
+      "Golden arches",
+      "McDonald's arches"
+     ]
+    },
+    {
+     "answer": "Duckling",
+     "tier": 4
+    },
+    {
+     "answer": "High-visibility vest",
+     "tier": 4,
+     "aliases": [
+      "Hi-vis vest",
+      "Safety vest",
+      "Hi-vis"
+     ]
+    },
+    {
+     "answer": "Rubber gloves",
+     "tier": 4,
+     "aliases": [
+      "Washing-up gloves",
+      "Kitchen gloves"
+     ]
+    },
+    {
+     "answer": "Kitchen sponge",
+     "tier": 4,
+     "aliases": [
+      "Sponge"
+     ]
+    },
+    {
+     "answer": "Omelette",
+     "tier": 5,
+     "aliases": [
+      "Omelet"
+     ]
+    },
+    {
+     "answer": "Scrambled eggs",
+     "tier": 5
+    },
+    {
+     "answer": "Buttercup",
+     "tier": 5
+    },
+    {
+     "answer": "Wasp",
+     "tier": 5
+    },
+    {
+     "answer": "Bulldozer",
+     "tier": 5
+    },
+    {
+     "answer": "Lemon curd",
+     "tier": 5
+    },
+    {
+     "answer": "Yellow Pages",
+     "tier": 5
+    },
+    {
+     "answer": "Yellow Submarine",
+     "tier": 5
+    },
+    {
+     "answer": "Yellow jersey",
+     "tier": 5,
+     "aliases": [
+      "Maillot jaune"
+     ]
+    },
+    {
+     "answer": "Brazil football shirt",
+     "tier": 5,
+     "aliases": [
+      "Brazil shirt",
+      "Brazil jersey"
+     ]
+    },
+    {
+     "answer": "Star fruit",
+     "tier": 5,
+     "aliases": [
+      "Carambola"
+     ]
+    },
+    {
+     "answer": "Quince",
+     "tier": 5
+    },
+    {
+     "answer": "Sulfur",
+     "tier": 5,
+     "aliases": [
+      "Sulphur"
+     ]
+    },
+    {
+     "answer": "Banana pepper",
+     "tier": 5
+    },
+    {
+     "answer": "Rapeseed flowers",
+     "tier": 5,
+     "aliases": [
+      "Rapeseed",
+      "Canola"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "Name an English word that starts with QU",
+   "category": "Language",
+   "answers": [
+    {
+     "answer": "Queen",
+     "tier": 1
+    },
+    {
+     "answer": "Question",
+     "tier": 1
+    },
+    {
+     "answer": "Quiet",
+     "tier": 1
+    },
+    {
+     "answer": "Quick",
+     "tier": 1
+    },
+    {
+     "answer": "Quiz",
+     "tier": 1
+    },
+    {
+     "answer": "Queue",
+     "tier": 1
+    },
+    {
+     "answer": "Quit",
+     "tier": 2
+    },
+    {
+     "answer": "Quite",
+     "tier": 2
+    },
+    {
+     "answer": "Quote",
+     "tier": 2
+    },
+    {
+     "answer": "Quarter",
+     "tier": 2
+    },
+    {
+     "answer": "Quality",
+     "tier": 2
+    },
+    {
+     "answer": "Quantity",
+     "tier": 2
+    },
+    {
+     "answer": "Quilt",
+     "tier": 2
+    },
+    {
+     "answer": "Quack",
+     "tier": 2
+    },
+    {
+     "answer": "Quest",
+     "tier": 2
+    },
+    {
+     "answer": "Quake",
+     "tier": 2
+    },
+    {
+     "answer": "Quarrel",
+     "tier": 2
+    },
+    {
+     "answer": "Quiche",
+     "tier": 3
+    },
+    {
+     "answer": "Quinoa",
+     "tier": 3
+    },
+    {
+     "answer": "Quarantine",
+     "tier": 3
+    },
+    {
+     "answer": "Quantum",
+     "tier": 3
+    },
+    {
+     "answer": "Quicksand",
+     "tier": 3
+    },
+    {
+     "answer": "Query",
+     "tier": 3
+    },
+    {
+     "answer": "Quotation",
+     "tier": 3
+    },
+    {
+     "answer": "Quill",
+     "tier": 3
+    },
+    {
+     "answer": "Quail",
+     "tier": 3
+    },
+    {
+     "answer": "Quartz",
+     "tier": 3
+    },
+    {
+     "answer": "Quirky",
+     "tier": 3
+    },
+    {
+     "answer": "Quirk",
+     "tier": 3
+    },
+    {
+     "answer": "Quickly",
+     "tier": 3
+    },
+    {
+     "answer": "Quietly",
+     "tier": 3
+    },
+    {
+     "answer": "Quench",
+     "tier": 3
+    },
+    {
+     "answer": "Quota",
+     "tier": 3
+    },
+    {
+     "answer": "Qualify",
+     "tier": 3
+    },
+    {
+     "answer": "Qualification",
+     "tier": 3
+    },
+    {
+     "answer": "Quarterback",
+     "tier": 4
+    },
+    {
+     "answer": "Quartet",
+     "tier": 4
+    },
+    {
+     "answer": "Quarry",
+     "tier": 4
+    },
+    {
+     "answer": "Quart",
+     "tier": 4
+    },
+    {
+     "answer": "Quaint",
+     "tier": 4
+    },
+    {
+     "answer": "Quotient",
+     "tier": 4
+    },
+    {
+     "answer": "Quiver",
+     "tier": 4
+    },
+    {
+     "answer": "Quasar",
+     "tier": 4
+    },
+    {
+     "answer": "Quarterfinal",
+     "tier": 4
+    },
+    {
+     "answer": "Quarterly",
+     "tier": 4
+    },
+    {
+     "answer": "Quintet",
+     "tier": 4
+    },
+    {
+     "answer": "Quadrant",
+     "tier": 4
+    },
+    {
+     "answer": "Quadruple",
+     "tier": 4
+    },
+    {
+     "answer": "Quadruplet",
+     "tier": 4
+    },
+    {
+     "answer": "Quadrilateral",
+     "tier": 4
+    },
+    {
+     "answer": "Queasy",
+     "tier": 4
+    },
+    {
+     "answer": "Quibble",
+     "tier": 4
+    },
+    {
+     "answer": "Quip",
+     "tier": 4
+    },
+    {
+     "answer": "Quay",
+     "tier": 5
+    },
+    {
+     "answer": "Quaver",
+     "tier": 5
+    },
+    {
+     "answer": "Quell",
+     "tier": 5
+    },
+    {
+     "answer": "Quash",
+     "tier": 5
+    },
+    {
+     "answer": "Quorum",
+     "tier": 5
+    },
+    {
+     "answer": "Qualm",
+     "tier": 5
+    },
+    {
+     "answer": "Quandary",
+     "tier": 5
+    },
+    {
+     "answer": "Quagmire",
+     "tier": 5
+    },
+    {
+     "answer": "Quintuplet",
+     "tier": 5
+    },
+    {
+     "answer": "Quintessential",
+     "tier": 5
+    },
+    {
+     "answer": "Quixotic",
+     "tier": 5
+    },
+    {
+     "answer": "Quark",
+     "tier": 5
+    },
+    {
+     "answer": "Quince",
+     "tier": 5
+    },
+    {
+     "answer": "Quinine",
+     "tier": 5
+    },
+    {
+     "answer": "Quatrain",
+     "tier": 5
+    },
+    {
+     "answer": "Quetzal",
+     "tier": 5
+    },
+    {
+     "answer": "Quango",
+     "tier": 5
+    },
+    {
+     "answer": "Quidditch",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a profession whose name ends in -IST (like dentist)",
+   "category": "Work",
+   "answers": [
+    {
+     "answer": "Dentist",
+     "tier": 1
+    },
+    {
+     "answer": "Artist",
+     "tier": 1
+    },
+    {
+     "answer": "Scientist",
+     "tier": 1
+    },
+    {
+     "answer": "Pianist",
+     "tier": 1
+    },
+    {
+     "answer": "Journalist",
+     "tier": 1
+    },
+    {
+     "answer": "Florist",
+     "tier": 1
+    },
+    {
+     "answer": "Therapist",
+     "tier": 2
+    },
+    {
+     "answer": "Psychologist",
+     "tier": 2
+    },
+    {
+     "answer": "Biologist",
+     "tier": 2
+    },
+    {
+     "answer": "Chemist",
+     "tier": 2
+    },
+    {
+     "answer": "Physicist",
+     "tier": 2
+    },
+    {
+     "answer": "Pharmacist",
+     "tier": 2
+    },
+    {
+     "answer": "Guitarist",
+     "tier": 2
+    },
+    {
+     "answer": "Receptionist",
+     "tier": 2
+    },
+    {
+     "answer": "Economist",
+     "tier": 2
+    },
+    {
+     "answer": "Analyst",
+     "tier": 2
+    },
+    {
+     "answer": "Archaeologist",
+     "tier": 2,
+     "aliases": [
+      "Archeologist"
+     ]
+    },
+    {
+     "answer": "Psychiatrist",
+     "tier": 2
+    },
+    {
+     "answer": "Physiotherapist",
+     "tier": 2,
+     "aliases": [
+      "Physical therapist"
+     ]
+    },
+    {
+     "answer": "Cardiologist",
+     "tier": 2
+    },
+    {
+     "answer": "Dermatologist",
+     "tier": 2
+    },
+    {
+     "answer": "Stylist",
+     "tier": 2,
+     "aliases": [
+      "Hairstylist",
+      "Hair stylist"
+     ]
+    },
+    {
+     "answer": "Violinist",
+     "tier": 2
+    },
+    {
+     "answer": "Novelist",
+     "tier": 3
+    },
+    {
+     "answer": "Optometrist",
+     "tier": 3
+    },
+    {
+     "answer": "Orthodontist",
+     "tier": 3
+    },
+    {
+     "answer": "Cartoonist",
+     "tier": 3
+    },
+    {
+     "answer": "Data scientist",
+     "tier": 3
+    },
+    {
+     "answer": "Geologist",
+     "tier": 3
+    },
+    {
+     "answer": "Neurologist",
+     "tier": 3
+    },
+    {
+     "answer": "Nutritionist",
+     "tier": 3
+    },
+    {
+     "answer": "Dental hygienist",
+     "tier": 3,
+     "aliases": [
+      "Hygienist"
+     ]
+    },
+    {
+     "answer": "Columnist",
+     "tier": 3
+    },
+    {
+     "answer": "Typist",
+     "tier": 3
+    },
+    {
+     "answer": "Zoologist",
+     "tier": 3
+    },
+    {
+     "answer": "Botanist",
+     "tier": 3
+    },
+    {
+     "answer": "Meteorologist",
+     "tier": 3
+    },
+    {
+     "answer": "Anaesthetist",
+     "tier": 3,
+     "aliases": [
+      "Anesthetist",
+      "Anesthesiologist",
+      "Anaesthesiologist"
+     ]
+    },
+    {
+     "answer": "Gynaecologist",
+     "tier": 3,
+     "aliases": [
+      "Gynecologist"
+     ]
+    },
+    {
+     "answer": "Oncologist",
+     "tier": 3
+    },
+    {
+     "answer": "Radiologist",
+     "tier": 3
+    },
+    {
+     "answer": "Ophthalmologist",
+     "tier": 3
+    },
+    {
+     "answer": "Linguist",
+     "tier": 3
+    },
+    {
+     "answer": "Cellist",
+     "tier": 3
+    },
+    {
+     "answer": "Saxophonist",
+     "tier": 3
+    },
+    {
+     "answer": "Bassist",
+     "tier": 3
+    },
+    {
+     "answer": "Harpist",
+     "tier": 3
+    },
+    {
+     "answer": "Flautist",
+     "tier": 3,
+     "aliases": [
+      "Flutist"
+     ]
+    },
+    {
+     "answer": "Vocalist",
+     "tier": 3
+    },
+    {
+     "answer": "Organist",
+     "tier": 3
+    },
+    {
+     "answer": "Tattooist",
+     "tier": 3,
+     "aliases": [
+      "Tattoo artist"
+     ]
+    },
+    {
+     "answer": "Manicurist",
+     "tier": 3
+    },
+    {
+     "answer": "Strategist",
+     "tier": 4
+    },
+    {
+     "answer": "Hypnotist",
+     "tier": 4
+    },
+    {
+     "answer": "Illusionist",
+     "tier": 4
+    },
+    {
+     "answer": "Ventriloquist",
+     "tier": 4
+    },
+    {
+     "answer": "Lyricist",
+     "tier": 4
+    },
+    {
+     "answer": "Anthropologist",
+     "tier": 4
+    },
+    {
+     "answer": "Sociologist",
+     "tier": 4
+    },
+    {
+     "answer": "Paleontologist",
+     "tier": 4,
+     "aliases": [
+      "Palaeontologist"
+     ]
+    },
+    {
+     "answer": "Marine biologist",
+     "tier": 4
+    },
+    {
+     "answer": "Microbiologist",
+     "tier": 4
+    },
+    {
+     "answer": "Neuroscientist",
+     "tier": 4
+    },
+    {
+     "answer": "Geneticist",
+     "tier": 4
+    },
+    {
+     "answer": "Ecologist",
+     "tier": 4
+    },
+    {
+     "answer": "Psychotherapist",
+     "tier": 4
+    },
+    {
+     "answer": "Speech therapist",
+     "tier": 4
+    },
+    {
+     "answer": "Occupational therapist",
+     "tier": 4
+    },
+    {
+     "answer": "Massage therapist",
+     "tier": 4
+    },
+    {
+     "answer": "Podiatrist",
+     "tier": 4
+    },
+    {
+     "answer": "Pathologist",
+     "tier": 4
+    },
+    {
+     "answer": "Urologist",
+     "tier": 4
+    },
+    {
+     "answer": "Endocrinologist",
+     "tier": 4
+    },
+    {
+     "answer": "Gastroenterologist",
+     "tier": 4
+    },
+    {
+     "answer": "Epidemiologist",
+     "tier": 4
+    },
+    {
+     "answer": "Virologist",
+     "tier": 4
+    },
+    {
+     "answer": "Immunologist",
+     "tier": 4
+    },
+    {
+     "answer": "Pharmacologist",
+     "tier": 4
+    },
+    {
+     "answer": "Toxicologist",
+     "tier": 4
+    },
+    {
+     "answer": "Audiologist",
+     "tier": 4
+    },
+    {
+     "answer": "Allergist",
+     "tier": 4
+    },
+    {
+     "answer": "Internist",
+     "tier": 5
+    },
+    {
+     "answer": "Orthopaedist",
+     "tier": 5,
+     "aliases": [
+      "Orthopedist"
+     ]
+    },
+    {
+     "answer": "Periodontist",
+     "tier": 5
+    },
+    {
+     "answer": "Endodontist",
+     "tier": 5
+    },
+    {
+     "answer": "Chiropodist",
+     "tier": 5
+    },
+    {
+     "answer": "Acupuncturist",
+     "tier": 5
+    },
+    {
+     "answer": "Herbalist",
+     "tier": 5
+    },
+    {
+     "answer": "Horticulturist",
+     "tier": 5
+    },
+    {
+     "answer": "Arborist",
+     "tier": 5
+    },
+    {
+     "answer": "Ornithologist",
+     "tier": 5
+    },
+    {
+     "answer": "Entomologist",
+     "tier": 5
+    },
+    {
+     "answer": "Seismologist",
+     "tier": 5
+    },
+    {
+     "answer": "Volcanologist",
+     "tier": 5
+    },
+    {
+     "answer": "Biochemist",
+     "tier": 5
+    },
+    {
+     "answer": "Machinist",
+     "tier": 5
+    },
+    {
+     "answer": "Archivist",
+     "tier": 5
+    },
+    {
+     "answer": "Publicist",
+     "tier": 5
+    },
+    {
+     "answer": "Taxidermist",
+     "tier": 5
+    },
+    {
+     "answer": "Satirist",
+     "tier": 5
+    },
+    {
+     "answer": "Essayist",
+     "tier": 5
+    },
+    {
+     "answer": "Dramatist",
+     "tier": 5
+    },
+    {
+     "answer": "Humorist",
+     "tier": 5
+    },
+    {
+     "answer": "Percussionist",
+     "tier": 5
+    },
+    {
+     "answer": "Keyboardist",
+     "tier": 5
+    },
+    {
+     "answer": "Clarinettist",
+     "tier": 5,
+     "aliases": [
+      "Clarinetist"
+     ]
+    },
+    {
+     "answer": "Oboist",
+     "tier": 5
+    },
+    {
+     "answer": "Violist",
+     "tier": 5
+    },
+    {
+     "answer": "Harpsichordist",
+     "tier": 5
+    },
+    {
+     "answer": "Soloist",
+     "tier": 5
+    },
+    {
+     "answer": "Accompanist",
+     "tier": 5
+    },
+    {
+     "answer": "Copyist",
+     "tier": 5
+    },
+    {
+     "answer": "Conservationist",
+     "tier": 5
+    },
+    {
+     "answer": "Naturalist",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name an emotion or feeling",
+   "category": "People",
+   "answers": [
+    {
+     "answer": "Happiness",
+     "tier": 1,
+     "aliases": [
+      "Happy"
+     ]
+    },
+    {
+     "answer": "Sadness",
+     "tier": 1,
+     "aliases": [
+      "Sad"
+     ]
+    },
+    {
+     "answer": "Anger",
+     "tier": 1,
+     "aliases": [
+      "Angry",
+      "Mad"
+     ]
+    },
+    {
+     "answer": "Fear",
+     "tier": 1,
+     "aliases": [
+      "Scared",
+      "Afraid"
+     ]
+    },
+    {
+     "answer": "Love",
+     "tier": 1
+    },
+    {
+     "answer": "Joy",
+     "tier": 1,
+     "aliases": [
+      "Joyful"
+     ]
+    },
+    {
+     "answer": "Excitement",
+     "tier": 2,
+     "aliases": [
+      "Excited"
+     ]
+    },
+    {
+     "answer": "Surprise",
+     "tier": 2,
+     "aliases": [
+      "Surprised"
+     ]
+    },
+    {
+     "answer": "Jealousy",
+     "tier": 2,
+     "aliases": [
+      "Jealous"
+     ]
+    },
+    {
+     "answer": "Disgust",
+     "tier": 2,
+     "aliases": [
+      "Disgusted"
+     ]
+    },
+    {
+     "answer": "Anxiety",
+     "tier": 2,
+     "aliases": [
+      "Anxious"
+     ]
+    },
+    {
+     "answer": "Boredom",
+     "tier": 2,
+     "aliases": [
+      "Bored"
+     ]
+    },
+    {
+     "answer": "Loneliness",
+     "tier": 2,
+     "aliases": [
+      "Lonely"
+     ]
+    },
+    {
+     "answer": "Pride",
+     "tier": 2,
+     "aliases": [
+      "Proud"
+     ]
+    },
+    {
+     "answer": "Envy",
+     "tier": 2,
+     "aliases": [
+      "Envious"
+     ]
+    },
+    {
+     "answer": "Embarrassment",
+     "tier": 2,
+     "aliases": [
+      "Embarrassed"
+     ]
+    },
+    {
+     "answer": "Guilt",
+     "tier": 2,
+     "aliases": [
+      "Guilty"
+     ]
+    },
+    {
+     "answer": "Shame",
+     "tier": 2,
+     "aliases": [
+      "Ashamed"
+     ]
+    },
+    {
+     "answer": "Hope",
+     "tier": 2,
+     "aliases": [
+      "Hopeful"
+     ]
+    },
+    {
+     "answer": "Frustration",
+     "tier": 2,
+     "aliases": [
+      "Frustrated"
+     ]
+    },
+    {
+     "answer": "Stress",
+     "tier": 2,
+     "aliases": [
+      "Stressed"
+     ]
+    },
+    {
+     "answer": "Nervousness",
+     "tier": 3,
+     "aliases": [
+      "Nervous"
+     ]
+    },
+    {
+     "answer": "Confusion",
+     "tier": 3,
+     "aliases": [
+      "Confused"
+     ]
+    },
+    {
+     "answer": "Gratitude",
+     "tier": 3,
+     "aliases": [
+      "Grateful",
+      "Thankful"
+     ]
+    },
+    {
+     "answer": "Relief",
+     "tier": 3,
+     "aliases": [
+      "Relieved"
+     ]
+    },
+    {
+     "answer": "Calm",
+     "tier": 3,
+     "aliases": [
+      "Calmness"
+     ]
+    },
+    {
+     "answer": "Hate",
+     "tier": 3,
+     "aliases": [
+      "Hatred"
+     ]
+    },
+    {
+     "answer": "Nostalgia",
+     "tier": 3,
+     "aliases": [
+      "Nostalgic"
+     ]
+    },
+    {
+     "answer": "Curiosity",
+     "tier": 3,
+     "aliases": [
+      "Curious"
+     ]
+    },
+    {
+     "answer": "Worry",
+     "tier": 3,
+     "aliases": [
+      "Worried"
+     ]
+    },
+    {
+     "answer": "Disappointment",
+     "tier": 3,
+     "aliases": [
+      "Disappointed"
+     ]
+    },
+    {
+     "answer": "Grief",
+     "tier": 3
+    },
+    {
+     "answer": "Annoyance",
+     "tier": 3,
+     "aliases": [
+      "Annoyed"
+     ]
+    },
+    {
+     "answer": "Panic",
+     "tier": 3
+    },
+    {
+     "answer": "Contentment",
+     "tier": 3,
+     "aliases": [
+      "Content"
+     ]
+    },
+    {
+     "answer": "Regret",
+     "tier": 3
+    },
+    {
+     "answer": "Rage",
+     "tier": 3
+    },
+    {
+     "answer": "Fury",
+     "tier": 3,
+     "aliases": [
+      "Furious"
+     ]
+    },
+    {
+     "answer": "Empathy",
+     "tier": 3
+    },
+    {
+     "answer": "Sympathy",
+     "tier": 3
+    },
+    {
+     "answer": "Compassion",
+     "tier": 3
+    },
+    {
+     "answer": "Confidence",
+     "tier": 3,
+     "aliases": [
+      "Confident"
+     ]
+    },
+    {
+     "answer": "Insecurity",
+     "tier": 3,
+     "aliases": [
+      "Insecure"
+     ]
+    },
+    {
+     "answer": "Satisfaction",
+     "tier": 3,
+     "aliases": [
+      "Satisfied"
+     ]
+    },
+    {
+     "answer": "Shyness",
+     "tier": 3,
+     "aliases": [
+      "Shy"
+     ]
+    },
+    {
+     "answer": "Awe",
+     "tier": 3
+    },
+    {
+     "answer": "Amusement",
+     "tier": 4,
+     "aliases": [
+      "Amused"
+     ]
+    },
+    {
+     "answer": "Irritation",
+     "tier": 4,
+     "aliases": [
+      "Irritated"
+     ]
+    },
+    {
+     "answer": "Terror",
+     "tier": 4
+    },
+    {
+     "answer": "Horror",
+     "tier": 4
+    },
+    {
+     "answer": "Despair",
+     "tier": 4
+    },
+    {
+     "answer": "Sorrow",
+     "tier": 4
+    },
+    {
+     "answer": "Melancholy",
+     "tier": 4
+    },
+    {
+     "answer": "Euphoria",
+     "tier": 4
+    },
+    {
+     "answer": "Bliss",
+     "tier": 4
+    },
+    {
+     "answer": "Delight",
+     "tier": 4,
+     "aliases": [
+      "Delighted"
+     ]
+    },
+    {
+     "answer": "Optimism",
+     "tier": 4,
+     "aliases": [
+      "Optimistic"
+     ]
+    },
+    {
+     "answer": "Resentment",
+     "tier": 4
+    },
+    {
+     "answer": "Contempt",
+     "tier": 4
+    },
+    {
+     "answer": "Remorse",
+     "tier": 4
+    },
+    {
+     "answer": "Affection",
+     "tier": 4
+    },
+    {
+     "answer": "Admiration",
+     "tier": 4
+    },
+    {
+     "answer": "Trust",
+     "tier": 4
+    },
+    {
+     "answer": "Anticipation",
+     "tier": 4
+    },
+    {
+     "answer": "Dread",
+     "tier": 4
+    },
+    {
+     "answer": "Longing",
+     "tier": 4
+    },
+    {
+     "answer": "Homesickness",
+     "tier": 4,
+     "aliases": [
+      "Homesick"
+     ]
+    },
+    {
+     "answer": "Overwhelm",
+     "tier": 4,
+     "aliases": [
+      "Overwhelmed"
+     ]
+    },
+    {
+     "answer": "Enthusiasm",
+     "tier": 4,
+     "aliases": [
+      "Enthusiastic"
+     ]
+    },
+    {
+     "answer": "Elation",
+     "tier": 4,
+     "aliases": [
+      "Elated"
+     ]
+    },
+    {
+     "answer": "Serenity",
+     "tier": 4
+    },
+    {
+     "answer": "Peace",
+     "tier": 5,
+     "aliases": [
+      "Peaceful"
+     ]
+    },
+    {
+     "answer": "Cheerfulness",
+     "tier": 5,
+     "aliases": [
+      "Cheerful"
+     ]
+    },
+    {
+     "answer": "Gladness",
+     "tier": 5,
+     "aliases": [
+      "Glad"
+     ]
+    },
+    {
+     "answer": "Hurt",
+     "tier": 5
+    },
+    {
+     "answer": "Upset",
+     "tier": 5
+    },
+    {
+     "answer": "Misery",
+     "tier": 5,
+     "aliases": [
+      "Miserable"
+     ]
+    },
+    {
+     "answer": "Heartbreak",
+     "tier": 5,
+     "aliases": [
+      "Heartbroken"
+     ]
+    },
+    {
+     "answer": "Humiliation",
+     "tier": 5,
+     "aliases": [
+      "Humiliated"
+     ]
+    },
+    {
+     "answer": "Apathy",
+     "tier": 5
+    },
+    {
+     "answer": "Indifference",
+     "tier": 5
+    },
+    {
+     "answer": "Yearning",
+     "tier": 5
+    },
+    {
+     "answer": "Tenderness",
+     "tier": 5
+    },
+    {
+     "answer": "Wonder",
+     "tier": 5
+    },
+    {
+     "answer": "Ecstasy",
+     "tier": 5
+    },
+    {
+     "answer": "Exhilaration",
+     "tier": 5
+    },
+    {
+     "answer": "Apprehension",
+     "tier": 5
+    },
+    {
+     "answer": "Agitation",
+     "tier": 5
+    },
+    {
+     "answer": "Bitterness",
+     "tier": 5
+    },
+    {
+     "answer": "Gloom",
+     "tier": 5
+    },
+    {
+     "answer": "Vulnerability",
+     "tier": 5,
+     "aliases": [
+      "Vulnerable"
+     ]
+    },
+    {
+     "answer": "Inspiration",
+     "tier": 5,
+     "aliases": [
+      "Inspired"
+     ]
+    },
+    {
+     "answer": "Passion",
+     "tier": 5
+    },
+    {
+     "answer": "Desire",
+     "tier": 5
+    },
+    {
+     "answer": "Smugness",
+     "tier": 5,
+     "aliases": [
+      "Smug"
+     ]
+    },
+    {
+     "answer": "Schadenfreude",
+     "tier": 5
+    },
+    {
+     "answer": "Angst",
+     "tier": 5
+    },
+    {
+     "answer": "Ennui",
+     "tier": 5
+    },
+    {
+     "answer": "FOMO",
+     "tier": 5,
+     "aliases": [
+      "Fear of missing out"
+     ]
+    },
+    {
+     "answer": "Wanderlust",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a famous duo, real or fictional (give both names)",
+   "category": "Fun",
+   "answers": [
+    {
+     "answer": "Batman and Robin",
+     "tier": 1
+    },
+    {
+     "answer": "Tom and Jerry",
+     "tier": 1
+    },
+    {
+     "answer": "Mario and Luigi",
+     "tier": 1
+    },
+    {
+     "answer": "Romeo and Juliet",
+     "tier": 1
+    },
+    {
+     "answer": "Sherlock Holmes and Watson",
+     "tier": 1,
+     "aliases": [
+      "Holmes and Watson",
+      "Sherlock and Watson",
+      "Sherlock Holmes and Dr Watson"
+     ]
+    },
+    {
+     "answer": "Bonnie and Clyde",
+     "tier": 1
+    },
+    {
+     "answer": "Timon and Pumbaa",
+     "tier": 2
+    },
+    {
+     "answer": "Mickey and Minnie",
+     "tier": 2,
+     "aliases": [
+      "Mickey Mouse and Minnie Mouse"
+     ]
+    },
+    {
+     "answer": "Bert and Ernie",
+     "tier": 2
+    },
+    {
+     "answer": "Laurel and Hardy",
+     "tier": 2
+    },
+    {
+     "answer": "Simon and Garfunkel",
+     "tier": 2
+    },
+    {
+     "answer": "Rick and Morty",
+     "tier": 2
+    },
+    {
+     "answer": "Phineas and Ferb",
+     "tier": 2
+    },
+    {
+     "answer": "SpongeBob and Patrick",
+     "tier": 2
+    },
+    {
+     "answer": "Woody and Buzz",
+     "tier": 2,
+     "aliases": [
+      "Woody and Buzz Lightyear"
+     ]
+    },
+    {
+     "answer": "Shrek and Donkey",
+     "tier": 2
+    },
+    {
+     "answer": "Ben and Jerry",
+     "tier": 2,
+     "aliases": [
+      "Ben and Jerry's"
+     ]
+    },
+    {
+     "answer": "Lilo and Stitch",
+     "tier": 2
+    },
+    {
+     "answer": "Asterix and Obelix",
+     "tier": 3
+    },
+    {
+     "answer": "Tintin and Snowy",
+     "tier": 3
+    },
+    {
+     "answer": "Venus and Serena",
+     "tier": 3,
+     "aliases": [
+      "Venus and Serena Williams",
+      "The Williams sisters"
+     ]
+    },
+    {
+     "answer": "The Wright brothers",
+     "tier": 3,
+     "aliases": [
+      "Wright brothers",
+      "Orville and Wilbur Wright",
+      "Orville and Wilbur"
+     ]
+    },
+    {
+     "answer": "Anna and Elsa",
+     "tier": 3,
+     "aliases": [
+      "Elsa and Anna"
+     ]
+    },
+    {
+     "answer": "R2-D2 and C-3PO",
+     "tier": 3,
+     "aliases": [
+      "C-3PO and R2-D2"
+     ]
+    },
+    {
+     "answer": "Han Solo and Chewbacca",
+     "tier": 3,
+     "aliases": [
+      "Han and Chewie"
+     ]
+    },
+    {
+     "answer": "Frodo and Sam",
+     "tier": 3
+    },
+    {
+     "answer": "Wallace and Gromit",
+     "tier": 3
+    },
+    {
+     "answer": "Scooby-Doo and Shaggy",
+     "tier": 3,
+     "aliases": [
+      "Scooby and Shaggy"
+     ]
+    },
+    {
+     "answer": "Mike and Sulley",
+     "tier": 3,
+     "aliases": [
+      "Mike Wazowski and Sulley"
+     ]
+    },
+    {
+     "answer": "Chip and Dale",
+     "tier": 3,
+     "aliases": [
+      "Chip 'n' Dale"
+     ]
+    },
+    {
+     "answer": "Pinky and the Brain",
+     "tier": 3,
+     "aliases": [
+      "Pinky and Brain"
+     ]
+    },
+    {
+     "answer": "Calvin and Hobbes",
+     "tier": 3
+    },
+    {
+     "answer": "Thelma and Louise",
+     "tier": 3
+    },
+    {
+     "answer": "Mulder and Scully",
+     "tier": 3
+    },
+    {
+     "answer": "Starsky and Hutch",
+     "tier": 3
+    },
+    {
+     "answer": "Lady and the Tramp",
+     "tier": 3
+    },
+    {
+     "answer": "Beauty and the Beast",
+     "tier": 3
+    },
+    {
+     "answer": "Jack and Jill",
+     "tier": 3
+    },
+    {
+     "answer": "Daft Punk",
+     "tier": 4
+    },
+    {
+     "answer": "The White Stripes",
+     "tier": 4,
+     "aliases": [
+      "White Stripes"
+     ]
+    },
+    {
+     "answer": "Steve Jobs and Steve Wozniak",
+     "tier": 4,
+     "aliases": [
+      "Jobs and Wozniak"
+     ]
+    },
+    {
+     "answer": "Lennon and McCartney",
+     "tier": 4,
+     "aliases": [
+      "John Lennon and Paul McCartney"
+     ]
+    },
+    {
+     "answer": "Penn and Teller",
+     "tier": 4
+    },
+    {
+     "answer": "Siegfried and Roy",
+     "tier": 4
+    },
+    {
+     "answer": "Abbott and Costello",
+     "tier": 4
+    },
+    {
+     "answer": "Bill and Ted",
+     "tier": 4
+    },
+    {
+     "answer": "Ren and Stimpy",
+     "tier": 4
+    },
+    {
+     "answer": "Fred and Barney",
+     "tier": 4,
+     "aliases": [
+      "Fred Flintstone and Barney Rubble"
+     ]
+    },
+    {
+     "answer": "Yogi Bear and Boo-Boo",
+     "tier": 4,
+     "aliases": [
+      "Yogi and Boo Boo"
+     ]
+    },
+    {
+     "answer": "Sonic and Tails",
+     "tier": 4
+    },
+    {
+     "answer": "Ash and Pikachu",
+     "tier": 4
+    },
+    {
+     "answer": "Rocky and Bullwinkle",
+     "tier": 4
+    },
+    {
+     "answer": "Kirk and Spock",
+     "tier": 4
+    },
+    {
+     "answer": "Wayne and Garth",
+     "tier": 4
+    },
+    {
+     "answer": "Ant and Dec",
+     "tier": 4
+    },
+    {
+     "answer": "Key and Peele",
+     "tier": 4
+    },
+    {
+     "answer": "Hall and Oates",
+     "tier": 4
+    },
+    {
+     "answer": "Sonny and Cher",
+     "tier": 4
+    },
+    {
+     "answer": "Lewis and Clark",
+     "tier": 5
+    },
+    {
+     "answer": "Watson and Crick",
+     "tier": 5
+    },
+    {
+     "answer": "Pierre and Marie Curie",
+     "tier": 5,
+     "aliases": [
+      "Marie and Pierre Curie",
+      "The Curies"
+     ]
+    },
+    {
+     "answer": "Torvill and Dean",
+     "tier": 5
+    },
+    {
+     "answer": "Gilbert and Sullivan",
+     "tier": 5
+    },
+    {
+     "answer": "Rodgers and Hammerstein",
+     "tier": 5
+    },
+    {
+     "answer": "Morecambe and Wise",
+     "tier": 5
+    },
+    {
+     "answer": "French and Saunders",
+     "tier": 5
+    },
+    {
+     "answer": "Fry and Laurie",
+     "tier": 5
+    },
+    {
+     "answer": "Eurythmics",
+     "tier": 5
+    },
+    {
+     "answer": "Wham!",
+     "tier": 5
+    },
+    {
+     "answer": "Pet Shop Boys",
+     "tier": 5
+    },
+    {
+     "answer": "OutKast",
+     "tier": 5
+    },
+    {
+     "answer": "The Chainsmokers",
+     "tier": 5
+    },
+    {
+     "answer": "Roxette",
+     "tier": 5
+    },
+    {
+     "answer": "Tears for Fears",
+     "tier": 5
+    },
+    {
+     "answer": "Twenty One Pilots",
+     "tier": 5
+    },
+    {
+     "answer": "The Carpenters",
+     "tier": 5
+    },
+    {
+     "answer": "Tegan and Sara",
+     "tier": 5
+    },
+    {
+     "answer": "Ratchet and Clank",
+     "tier": 5
+    },
+    {
+     "answer": "Jak and Daxter",
+     "tier": 5
+    },
+    {
+     "answer": "Banjo-Kazooie",
+     "tier": 5,
+     "aliases": [
+      "Banjo and Kazooie"
+     ]
+    },
+    {
+     "answer": "Mork and Mindy",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a superhero (any comic, film or cartoon)",
+   "category": "Fun",
+   "answers": [
+    {
+     "answer": "Superman",
+     "tier": 1
+    },
+    {
+     "answer": "Batman",
+     "tier": 1
+    },
+    {
+     "answer": "Spider-Man",
+     "tier": 1,
+     "aliases": [
+      "Spiderman"
+     ]
+    },
+    {
+     "answer": "Wonder Woman",
+     "tier": 1
+    },
+    {
+     "answer": "Iron Man",
+     "tier": 1
+    },
+    {
+     "answer": "Captain America",
+     "tier": 1
+    },
+    {
+     "answer": "Hulk",
+     "tier": 2,
+     "aliases": [
+      "The Incredible Hulk"
+     ]
+    },
+    {
+     "answer": "Thor",
+     "tier": 2
+    },
+    {
+     "answer": "Black Panther",
+     "tier": 2
+    },
+    {
+     "answer": "Flash",
+     "tier": 2
+    },
+    {
+     "answer": "Aquaman",
+     "tier": 2
+    },
+    {
+     "answer": "Wolverine",
+     "tier": 2
+    },
+    {
+     "answer": "Black Widow",
+     "tier": 2
+    },
+    {
+     "answer": "Green Lantern",
+     "tier": 2
+    },
+    {
+     "answer": "Deadpool",
+     "tier": 2
+    },
+    {
+     "answer": "Hawkeye",
+     "tier": 2
+    },
+    {
+     "answer": "Doctor Strange",
+     "tier": 2,
+     "aliases": [
+      "Dr Strange"
+     ]
+    },
+    {
+     "answer": "Ant-Man",
+     "tier": 2
+    },
+    {
+     "answer": "Captain Marvel",
+     "tier": 2
+    },
+    {
+     "answer": "Scarlet Witch",
+     "tier": 2,
+     "aliases": [
+      "Wanda Maximoff"
+     ]
+    },
+    {
+     "answer": "Groot",
+     "tier": 2
+    },
+    {
+     "answer": "Star-Lord",
+     "tier": 3
+    },
+    {
+     "answer": "Robin",
+     "tier": 3
+    },
+    {
+     "answer": "Supergirl",
+     "tier": 3
+    },
+    {
+     "answer": "Storm",
+     "tier": 3
+    },
+    {
+     "answer": "Daredevil",
+     "tier": 3
+    },
+    {
+     "answer": "Vision",
+     "tier": 3
+    },
+    {
+     "answer": "Falcon",
+     "tier": 3
+    },
+    {
+     "answer": "Rocket",
+     "tier": 3,
+     "aliases": [
+      "Rocket Raccoon"
+     ]
+    },
+    {
+     "answer": "Cyclops",
+     "tier": 3
+    },
+    {
+     "answer": "Professor X",
+     "tier": 3,
+     "aliases": [
+      "Professor Xavier",
+      "Charles Xavier"
+     ]
+    },
+    {
+     "answer": "Jean Grey",
+     "tier": 3,
+     "aliases": [
+      "Phoenix"
+     ]
+    },
+    {
+     "answer": "Batgirl",
+     "tier": 3
+    },
+    {
+     "answer": "Mr. Incredible",
+     "tier": 3
+    },
+    {
+     "answer": "Elastigirl",
+     "tier": 3
+    },
+    {
+     "answer": "Shazam",
+     "tier": 3
+    },
+    {
+     "answer": "Cyborg",
+     "tier": 3
+    },
+    {
+     "answer": "Green Arrow",
+     "tier": 3
+    },
+    {
+     "answer": "Silver Surfer",
+     "tier": 3
+    },
+    {
+     "answer": "Ghost Rider",
+     "tier": 3
+    },
+    {
+     "answer": "Blade",
+     "tier": 3
+    },
+    {
+     "answer": "Punisher",
+     "tier": 3
+    },
+    {
+     "answer": "Gamora",
+     "tier": 3
+    },
+    {
+     "answer": "Rogue",
+     "tier": 3
+    },
+    {
+     "answer": "Gambit",
+     "tier": 3
+    },
+    {
+     "answer": "Beast",
+     "tier": 3
+    },
+    {
+     "answer": "Iceman",
+     "tier": 3
+    },
+    {
+     "answer": "Nightcrawler",
+     "tier": 4
+    },
+    {
+     "answer": "Mister Fantastic",
+     "tier": 4,
+     "aliases": [
+      "Mr Fantastic",
+      "Reed Richards"
+     ]
+    },
+    {
+     "answer": "Invisible Woman",
+     "tier": 4
+    },
+    {
+     "answer": "Human Torch",
+     "tier": 4
+    },
+    {
+     "answer": "The Thing",
+     "tier": 4
+    },
+    {
+     "answer": "Nightwing",
+     "tier": 4
+    },
+    {
+     "answer": "Martian Manhunter",
+     "tier": 4
+    },
+    {
+     "answer": "Wasp",
+     "tier": 4
+    },
+    {
+     "answer": "She-Hulk",
+     "tier": 4
+    },
+    {
+     "answer": "Ms. Marvel",
+     "tier": 4,
+     "aliases": [
+      "Kamala Khan"
+     ]
+    },
+    {
+     "answer": "Miles Morales",
+     "tier": 4
+    },
+    {
+     "answer": "Shang-Chi",
+     "tier": 4
+    },
+    {
+     "answer": "Moon Knight",
+     "tier": 4
+    },
+    {
+     "answer": "War Machine",
+     "tier": 4
+    },
+    {
+     "answer": "Winter Soldier",
+     "tier": 4,
+     "aliases": [
+      "Bucky Barnes",
+      "Bucky"
+     ]
+    },
+    {
+     "answer": "Quicksilver",
+     "tier": 4
+    },
+    {
+     "answer": "Luke Cage",
+     "tier": 4
+    },
+    {
+     "answer": "Jessica Jones",
+     "tier": 4
+    },
+    {
+     "answer": "Iron Fist",
+     "tier": 4
+    },
+    {
+     "answer": "Hellboy",
+     "tier": 4
+    },
+    {
+     "answer": "Spawn",
+     "tier": 4
+    },
+    {
+     "answer": "Frozone",
+     "tier": 4
+    },
+    {
+     "answer": "Dash",
+     "tier": 4
+    },
+    {
+     "answer": "Violet",
+     "tier": 4
+    },
+    {
+     "answer": "Hawkgirl",
+     "tier": 4
+    },
+    {
+     "answer": "Black Canary",
+     "tier": 4
+    },
+    {
+     "answer": "Raven",
+     "tier": 5
+    },
+    {
+     "answer": "Starfire",
+     "tier": 5
+    },
+    {
+     "answer": "Beast Boy",
+     "tier": 5
+    },
+    {
+     "answer": "Blue Beetle",
+     "tier": 5
+    },
+    {
+     "answer": "Static Shock",
+     "tier": 5,
+     "aliases": [
+      "Static"
+     ]
+    },
+    {
+     "answer": "Booster Gold",
+     "tier": 5
+    },
+    {
+     "answer": "Plastic Man",
+     "tier": 5
+    },
+    {
+     "answer": "Swamp Thing",
+     "tier": 5
+    },
+    {
+     "answer": "Zatanna",
+     "tier": 5
+    },
+    {
+     "answer": "Spider-Woman",
+     "tier": 5
+    },
+    {
+     "answer": "Spider-Gwen",
+     "tier": 5,
+     "aliases": [
+      "Ghost-Spider"
+     ]
+    },
+    {
+     "answer": "Kitty Pryde",
+     "tier": 5,
+     "aliases": [
+      "Shadowcat"
+     ]
+    },
+    {
+     "answer": "Colossus",
+     "tier": 5
+    },
+    {
+     "answer": "Jubilee",
+     "tier": 5
+    },
+    {
+     "answer": "Psylocke",
+     "tier": 5
+    },
+    {
+     "answer": "Cable",
+     "tier": 5
+    },
+    {
+     "answer": "Domino",
+     "tier": 5
+    },
+    {
+     "answer": "Nova",
+     "tier": 5
+    },
+    {
+     "answer": "Black Bolt",
+     "tier": 5
+    },
+    {
+     "answer": "Captain Britain",
+     "tier": 5
+    },
+    {
+     "answer": "Invincible",
+     "tier": 5
+    },
+    {
+     "answer": "Kick-Ass",
+     "tier": 5
+    },
+    {
+     "answer": "Hit-Girl",
+     "tier": 5
+    },
+    {
+     "answer": "Dr. Manhattan",
+     "tier": 5,
+     "aliases": [
+      "Doctor Manhattan"
+     ]
+    },
+    {
+     "answer": "Rorschach",
+     "tier": 5
+    },
+    {
+     "answer": "The Tick",
+     "tier": 5
+    },
+    {
+     "answer": "Mighty Mouse",
+     "tier": 5
+    },
+    {
+     "answer": "Underdog",
+     "tier": 5
+    },
+    {
+     "answer": "All Might",
+     "tier": 5
+    },
+    {
+     "answer": "Saitama",
+     "tier": 5,
+     "aliases": [
+      "One Punch Man"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "Name a supervillain from Marvel or DC (comics or films)",
+   "category": "Fun",
+   "answers": [
+    {
+     "answer": "Joker",
+     "tier": 1
+    },
+    {
+     "answer": "Lex Luthor",
+     "tier": 1
+    },
+    {
+     "answer": "Thanos",
+     "tier": 1
+    },
+    {
+     "answer": "Magneto",
+     "tier": 1
+    },
+    {
+     "answer": "Loki",
+     "tier": 1
+    },
+    {
+     "answer": "Green Goblin",
+     "tier": 1
+    },
+    {
+     "answer": "Doctor Octopus",
+     "tier": 2,
+     "aliases": [
+      "Doc Ock",
+      "Dr Octopus"
+     ]
+    },
+    {
+     "answer": "Venom",
+     "tier": 2
+    },
+    {
+     "answer": "Catwoman",
+     "tier": 2
+    },
+    {
+     "answer": "Penguin",
+     "tier": 2
+    },
+    {
+     "answer": "Riddler",
+     "tier": 2
+    },
+    {
+     "answer": "Two-Face",
+     "tier": 2
+    },
+    {
+     "answer": "Harley Quinn",
+     "tier": 2
+    },
+    {
+     "answer": "Poison Ivy",
+     "tier": 2
+    },
+    {
+     "answer": "Bane",
+     "tier": 2
+    },
+    {
+     "answer": "Doctor Doom",
+     "tier": 2,
+     "aliases": [
+      "Dr Doom"
+     ]
+    },
+    {
+     "answer": "Ultron",
+     "tier": 2
+    },
+    {
+     "answer": "Red Skull",
+     "tier": 2
+    },
+    {
+     "answer": "Scarecrow",
+     "tier": 2
+    },
+    {
+     "answer": "Mr. Freeze",
+     "tier": 3,
+     "aliases": [
+      "Mister Freeze"
+     ]
+    },
+    {
+     "answer": "Darkseid",
+     "tier": 3
+    },
+    {
+     "answer": "General Zod",
+     "tier": 3,
+     "aliases": [
+      "Zod"
+     ]
+    },
+    {
+     "answer": "Mystique",
+     "tier": 3
+    },
+    {
+     "answer": "Sandman",
+     "tier": 3
+    },
+    {
+     "answer": "Electro",
+     "tier": 3
+    },
+    {
+     "answer": "Kingpin",
+     "tier": 3
+    },
+    {
+     "answer": "Mysterio",
+     "tier": 3
+    },
+    {
+     "answer": "Killmonger",
+     "tier": 3,
+     "aliases": [
+      "Erik Killmonger"
+     ]
+    },
+    {
+     "answer": "Hela",
+     "tier": 3
+    },
+    {
+     "answer": "Galactus",
+     "tier": 3
+    },
+    {
+     "answer": "Vulture",
+     "tier": 3
+    },
+    {
+     "answer": "Lizard",
+     "tier": 3
+    },
+    {
+     "answer": "Ra's al Ghul",
+     "tier": 3
+    },
+    {
+     "answer": "Brainiac",
+     "tier": 3
+    },
+    {
+     "answer": "Doomsday",
+     "tier": 3
+    },
+    {
+     "answer": "Sinestro",
+     "tier": 3
+    },
+    {
+     "answer": "Black Adam",
+     "tier": 3
+    },
+    {
+     "answer": "Deathstroke",
+     "tier": 3
+    },
+    {
+     "answer": "Apocalypse",
+     "tier": 3
+    },
+    {
+     "answer": "Sabretooth",
+     "tier": 3
+    },
+    {
+     "answer": "Juggernaut",
+     "tier": 3
+    },
+    {
+     "answer": "Carnage",
+     "tier": 4
+    },
+    {
+     "answer": "Kraven",
+     "tier": 4,
+     "aliases": [
+      "Kraven the Hunter"
+     ]
+    },
+    {
+     "answer": "Rhino",
+     "tier": 4
+    },
+    {
+     "answer": "Mandarin",
+     "tier": 4
+    },
+    {
+     "answer": "Kang",
+     "tier": 4,
+     "aliases": [
+      "Kang the Conqueror"
+     ]
+    },
+    {
+     "answer": "Dormammu",
+     "tier": 4
+    },
+    {
+     "answer": "Abomination",
+     "tier": 4
+    },
+    {
+     "answer": "Bullseye",
+     "tier": 4
+    },
+    {
+     "answer": "Baron Zemo",
+     "tier": 4,
+     "aliases": [
+      "Zemo"
+     ]
+    },
+    {
+     "answer": "Ronan",
+     "tier": 4,
+     "aliases": [
+      "Ronan the Accuser"
+     ]
+    },
+    {
+     "answer": "Taskmaster",
+     "tier": 4
+    },
+    {
+     "answer": "Reverse-Flash",
+     "tier": 4,
+     "aliases": [
+      "Professor Zoom"
+     ]
+    },
+    {
+     "answer": "Gorilla Grodd",
+     "tier": 4,
+     "aliases": [
+      "Grodd"
+     ]
+    },
+    {
+     "answer": "Black Manta",
+     "tier": 4
+    },
+    {
+     "answer": "Cheetah",
+     "tier": 4
+    },
+    {
+     "answer": "Steppenwolf",
+     "tier": 4
+    },
+    {
+     "answer": "Hush",
+     "tier": 4
+    },
+    {
+     "answer": "Clayface",
+     "tier": 4
+    },
+    {
+     "answer": "Mad Hatter",
+     "tier": 4
+    },
+    {
+     "answer": "Killer Croc",
+     "tier": 4
+    },
+    {
+     "answer": "Captain Cold",
+     "tier": 4
+    },
+    {
+     "answer": "Bizarro",
+     "tier": 4
+    },
+    {
+     "answer": "Metallo",
+     "tier": 5
+    },
+    {
+     "answer": "Hobgoblin",
+     "tier": 5
+    },
+    {
+     "answer": "Scorpion",
+     "tier": 5
+    },
+    {
+     "answer": "Shocker",
+     "tier": 5
+    },
+    {
+     "answer": "Morbius",
+     "tier": 5
+    },
+    {
+     "answer": "Mister Sinister",
+     "tier": 5,
+     "aliases": [
+      "Mr Sinister"
+     ]
+    },
+    {
+     "answer": "Ego",
+     "tier": 5
+    },
+    {
+     "answer": "Mephisto",
+     "tier": 5
+    },
+    {
+     "answer": "Obadiah Stane",
+     "tier": 5,
+     "aliases": [
+      "Iron Monger"
+     ]
+    },
+    {
+     "answer": "Whiplash",
+     "tier": 5
+    },
+    {
+     "answer": "Malekith",
+     "tier": 5
+    },
+    {
+     "answer": "Gorr",
+     "tier": 5,
+     "aliases": [
+      "Gorr the God Butcher"
+     ]
+    },
+    {
+     "answer": "Crossbones",
+     "tier": 5
+    },
+    {
+     "answer": "MODOK",
+     "tier": 5
+    },
+    {
+     "answer": "Leader",
+     "tier": 5
+    },
+    {
+     "answer": "Absorbing Man",
+     "tier": 5
+    },
+    {
+     "answer": "Ocean Master",
+     "tier": 5
+    },
+    {
+     "answer": "Ares",
+     "tier": 5
+    },
+    {
+     "answer": "Trigon",
+     "tier": 5
+    },
+    {
+     "answer": "Parallax",
+     "tier": 5
+    },
+    {
+     "answer": "Toyman",
+     "tier": 5
+    },
+    {
+     "answer": "Mongul",
+     "tier": 5
+    },
+    {
+     "answer": "Hugo Strange",
+     "tier": 5
+    },
+    {
+     "answer": "Annihilus",
+     "tier": 5
+    },
+    {
+     "answer": "Knull",
+     "tier": 5
+    },
+    {
+     "answer": "Surtur",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a Pokémon from the original 151 (Red & Blue)",
+   "category": "Fun",
+   "answers": [
+    {
+     "answer": "Pikachu",
+     "tier": 1
+    },
+    {
+     "answer": "Charizard",
+     "tier": 1
+    },
+    {
+     "answer": "Bulbasaur",
+     "tier": 1
+    },
+    {
+     "answer": "Squirtle",
+     "tier": 1
+    },
+    {
+     "answer": "Charmander",
+     "tier": 1
+    },
+    {
+     "answer": "Mewtwo",
+     "tier": 1
+    },
+    {
+     "answer": "Eevee",
+     "tier": 2
+    },
+    {
+     "answer": "Jigglypuff",
+     "tier": 2
+    },
+    {
+     "answer": "Snorlax",
+     "tier": 2
+    },
+    {
+     "answer": "Meowth",
+     "tier": 2
+    },
+    {
+     "answer": "Psyduck",
+     "tier": 2
+    },
+    {
+     "answer": "Gengar",
+     "tier": 2
+    },
+    {
+     "answer": "Mew",
+     "tier": 2
+    },
+    {
+     "answer": "Magikarp",
+     "tier": 2
+    },
+    {
+     "answer": "Gyarados",
+     "tier": 2
+    },
+    {
+     "answer": "Dragonite",
+     "tier": 2
+    },
+    {
+     "answer": "Blastoise",
+     "tier": 2
+    },
+    {
+     "answer": "Venusaur",
+     "tier": 2
+    },
+    {
+     "answer": "Charmeleon",
+     "tier": 2
+    },
+    {
+     "answer": "Ivysaur",
+     "tier": 2
+    },
+    {
+     "answer": "Wartortle",
+     "tier": 2
+    },
+    {
+     "answer": "Raichu",
+     "tier": 2
+    },
+    {
+     "answer": "Ditto",
+     "tier": 2
+    },
+    {
+     "answer": "Lapras",
+     "tier": 2
+    },
+    {
+     "answer": "Vaporeon",
+     "tier": 2
+    },
+    {
+     "answer": "Jolteon",
+     "tier": 2
+    },
+    {
+     "answer": "Flareon",
+     "tier": 2
+    },
+    {
+     "answer": "Onix",
+     "tier": 2
+    },
+    {
+     "answer": "Geodude",
+     "tier": 2
+    },
+    {
+     "answer": "Machamp",
+     "tier": 3
+    },
+    {
+     "answer": "Alakazam",
+     "tier": 3
+    },
+    {
+     "answer": "Abra",
+     "tier": 3
+    },
+    {
+     "answer": "Pidgey",
+     "tier": 3
+    },
+    {
+     "answer": "Rattata",
+     "tier": 3
+    },
+    {
+     "answer": "Caterpie",
+     "tier": 3
+    },
+    {
+     "answer": "Butterfree",
+     "tier": 3
+    },
+    {
+     "answer": "Slowpoke",
+     "tier": 3
+    },
+    {
+     "answer": "Mr. Mime",
+     "tier": 3
+    },
+    {
+     "answer": "Clefairy",
+     "tier": 3
+    },
+    {
+     "answer": "Vulpix",
+     "tier": 3
+    },
+    {
+     "answer": "Ninetales",
+     "tier": 3
+    },
+    {
+     "answer": "Growlithe",
+     "tier": 3
+    },
+    {
+     "answer": "Arcanine",
+     "tier": 3
+    },
+    {
+     "answer": "Cubone",
+     "tier": 3
+    },
+    {
+     "answer": "Zubat",
+     "tier": 3
+    },
+    {
+     "answer": "Articuno",
+     "tier": 3
+    },
+    {
+     "answer": "Zapdos",
+     "tier": 3
+    },
+    {
+     "answer": "Moltres",
+     "tier": 3
+    },
+    {
+     "answer": "Kadabra",
+     "tier": 3
+    },
+    {
+     "answer": "Machop",
+     "tier": 3
+    },
+    {
+     "answer": "Machoke",
+     "tier": 3
+    },
+    {
+     "answer": "Golem",
+     "tier": 3
+    },
+    {
+     "answer": "Graveler",
+     "tier": 3
+    },
+    {
+     "answer": "Pidgeotto",
+     "tier": 3
+    },
+    {
+     "answer": "Pidgeot",
+     "tier": 3
+    },
+    {
+     "answer": "Raticate",
+     "tier": 3
+    },
+    {
+     "answer": "Metapod",
+     "tier": 3
+    },
+    {
+     "answer": "Weedle",
+     "tier": 3
+    },
+    {
+     "answer": "Kakuna",
+     "tier": 3
+    },
+    {
+     "answer": "Beedrill",
+     "tier": 3
+    },
+    {
+     "answer": "Spearow",
+     "tier": 3
+    },
+    {
+     "answer": "Fearow",
+     "tier": 3
+    },
+    {
+     "answer": "Ekans",
+     "tier": 3
+    },
+    {
+     "answer": "Arbok",
+     "tier": 3
+    },
+    {
+     "answer": "Sandshrew",
+     "tier": 3
+    },
+    {
+     "answer": "Sandslash",
+     "tier": 3
+    },
+    {
+     "answer": "Nidoran",
+     "tier": 3
+    },
+    {
+     "answer": "Nidorina",
+     "tier": 4
+    },
+    {
+     "answer": "Nidoqueen",
+     "tier": 4
+    },
+    {
+     "answer": "Nidorino",
+     "tier": 4
+    },
+    {
+     "answer": "Nidoking",
+     "tier": 4
+    },
+    {
+     "answer": "Clefable",
+     "tier": 4
+    },
+    {
+     "answer": "Wigglytuff",
+     "tier": 4
+    },
+    {
+     "answer": "Golbat",
+     "tier": 4
+    },
+    {
+     "answer": "Oddish",
+     "tier": 4
+    },
+    {
+     "answer": "Gloom",
+     "tier": 4
+    },
+    {
+     "answer": "Vileplume",
+     "tier": 4
+    },
+    {
+     "answer": "Paras",
+     "tier": 4
+    },
+    {
+     "answer": "Parasect",
+     "tier": 4
+    },
+    {
+     "answer": "Venonat",
+     "tier": 4
+    },
+    {
+     "answer": "Venomoth",
+     "tier": 4
+    },
+    {
+     "answer": "Diglett",
+     "tier": 4
+    },
+    {
+     "answer": "Dugtrio",
+     "tier": 4
+    },
+    {
+     "answer": "Persian",
+     "tier": 4
+    },
+    {
+     "answer": "Golduck",
+     "tier": 4
+    },
+    {
+     "answer": "Mankey",
+     "tier": 4
+    },
+    {
+     "answer": "Primeape",
+     "tier": 4
+    },
+    {
+     "answer": "Poliwag",
+     "tier": 4
+    },
+    {
+     "answer": "Poliwhirl",
+     "tier": 4
+    },
+    {
+     "answer": "Poliwrath",
+     "tier": 4
+    },
+    {
+     "answer": "Bellsprout",
+     "tier": 4
+    },
+    {
+     "answer": "Weepinbell",
+     "tier": 4
+    },
+    {
+     "answer": "Victreebel",
+     "tier": 4
+    },
+    {
+     "answer": "Tentacool",
+     "tier": 4
+    },
+    {
+     "answer": "Tentacruel",
+     "tier": 4
+    },
+    {
+     "answer": "Ponyta",
+     "tier": 4
+    },
+    {
+     "answer": "Rapidash",
+     "tier": 4
+    },
+    {
+     "answer": "Slowbro",
+     "tier": 4
+    },
+    {
+     "answer": "Magnemite",
+     "tier": 4
+    },
+    {
+     "answer": "Magneton",
+     "tier": 4
+    },
+    {
+     "answer": "Farfetch'd",
+     "tier": 4
+    },
+    {
+     "answer": "Doduo",
+     "tier": 4
+    },
+    {
+     "answer": "Dodrio",
+     "tier": 4
+    },
+    {
+     "answer": "Seel",
+     "tier": 4
+    },
+    {
+     "answer": "Dewgong",
+     "tier": 4
+    },
+    {
+     "answer": "Grimer",
+     "tier": 5
+    },
+    {
+     "answer": "Muk",
+     "tier": 5
+    },
+    {
+     "answer": "Shellder",
+     "tier": 5
+    },
+    {
+     "answer": "Cloyster",
+     "tier": 5
+    },
+    {
+     "answer": "Gastly",
+     "tier": 5
+    },
+    {
+     "answer": "Haunter",
+     "tier": 5
+    },
+    {
+     "answer": "Drowzee",
+     "tier": 5
+    },
+    {
+     "answer": "Hypno",
+     "tier": 5
+    },
+    {
+     "answer": "Krabby",
+     "tier": 5
+    },
+    {
+     "answer": "Kingler",
+     "tier": 5
+    },
+    {
+     "answer": "Voltorb",
+     "tier": 5
+    },
+    {
+     "answer": "Electrode",
+     "tier": 5
+    },
+    {
+     "answer": "Exeggcute",
+     "tier": 5
+    },
+    {
+     "answer": "Exeggutor",
+     "tier": 5
+    },
+    {
+     "answer": "Marowak",
+     "tier": 5
+    },
+    {
+     "answer": "Hitmonlee",
+     "tier": 5
+    },
+    {
+     "answer": "Hitmonchan",
+     "tier": 5
+    },
+    {
+     "answer": "Lickitung",
+     "tier": 5
+    },
+    {
+     "answer": "Koffing",
+     "tier": 5
+    },
+    {
+     "answer": "Weezing",
+     "tier": 5
+    },
+    {
+     "answer": "Rhyhorn",
+     "tier": 5
+    },
+    {
+     "answer": "Rhydon",
+     "tier": 5
+    },
+    {
+     "answer": "Chansey",
+     "tier": 5
+    },
+    {
+     "answer": "Tangela",
+     "tier": 5
+    },
+    {
+     "answer": "Kangaskhan",
+     "tier": 5
+    },
+    {
+     "answer": "Horsea",
+     "tier": 5
+    },
+    {
+     "answer": "Seadra",
+     "tier": 5
+    },
+    {
+     "answer": "Goldeen",
+     "tier": 5
+    },
+    {
+     "answer": "Seaking",
+     "tier": 5
+    },
+    {
+     "answer": "Staryu",
+     "tier": 5
+    },
+    {
+     "answer": "Starmie",
+     "tier": 5
+    },
+    {
+     "answer": "Scyther",
+     "tier": 5
+    },
+    {
+     "answer": "Jynx",
+     "tier": 5
+    },
+    {
+     "answer": "Electabuzz",
+     "tier": 5
+    },
+    {
+     "answer": "Magmar",
+     "tier": 5
+    },
+    {
+     "answer": "Pinsir",
+     "tier": 5
+    },
+    {
+     "answer": "Tauros",
+     "tier": 5
+    },
+    {
+     "answer": "Porygon",
+     "tier": 5
+    },
+    {
+     "answer": "Omanyte",
+     "tier": 5
+    },
+    {
+     "answer": "Omastar",
+     "tier": 5
+    },
+    {
+     "answer": "Kabuto",
+     "tier": 5
+    },
+    {
+     "answer": "Kabutops",
+     "tier": 5
+    },
+    {
+     "answer": "Aerodactyl",
+     "tier": 5
+    },
+    {
+     "answer": "Dratini",
+     "tier": 5
+    },
+    {
+     "answer": "Dragonair",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a toy or toy brand (board and card games don't count)",
+   "category": "Fun",
+   "answers": [
+    {
+     "answer": "Lego",
+     "tier": 1
+    },
+    {
+     "answer": "Barbie",
+     "tier": 1
+    },
+    {
+     "answer": "Teddy bear",
+     "tier": 1
+    },
+    {
+     "answer": "Rubik's Cube",
+     "tier": 1
+    },
+    {
+     "answer": "Yo-yo",
+     "tier": 1
+    },
+    {
+     "answer": "Doll",
+     "tier": 1
+    },
+    {
+     "answer": "Hot Wheels",
+     "tier": 2
+    },
+    {
+     "answer": "Nerf",
+     "tier": 2
+    },
+    {
+     "answer": "Play-Doh",
+     "tier": 2
+    },
+    {
+     "answer": "Kite",
+     "tier": 2
+    },
+    {
+     "answer": "Action figure",
+     "tier": 2
+    },
+    {
+     "answer": "Frisbee",
+     "tier": 2
+    },
+    {
+     "answer": "Slinky",
+     "tier": 2
+    },
+    {
+     "answer": "Furby",
+     "tier": 2
+    },
+    {
+     "answer": "Tamagotchi",
+     "tier": 2
+    },
+    {
+     "answer": "Jigsaw puzzle",
+     "tier": 2,
+     "aliases": [
+      "Puzzle"
+     ]
+    },
+    {
+     "answer": "Stuffed animal",
+     "tier": 2,
+     "aliases": [
+      "Plush toy",
+      "Soft toy",
+      "Plushie",
+      "Cuddly toy"
+     ]
+    },
+    {
+     "answer": "Toy car",
+     "tier": 2
+    },
+    {
+     "answer": "Toy train",
+     "tier": 3,
+     "aliases": [
+      "Train set"
+     ]
+    },
+    {
+     "answer": "Remote-control car",
+     "tier": 3,
+     "aliases": [
+      "RC car"
+     ]
+    },
+    {
+     "answer": "Spinning top",
+     "tier": 3,
+     "aliases": [
+      "Top"
+     ]
+    },
+    {
+     "answer": "Marbles",
+     "tier": 3
+    },
+    {
+     "answer": "Fidget spinner",
+     "tier": 3
+    },
+    {
+     "answer": "Hula hoop",
+     "tier": 3
+    },
+    {
+     "answer": "Jump rope",
+     "tier": 3,
+     "aliases": [
+      "Skipping rope"
+     ]
+    },
+    {
+     "answer": "Water gun",
+     "tier": 3,
+     "aliases": [
+      "Water pistol",
+      "Squirt gun",
+      "Super Soaker"
+     ]
+    },
+    {
+     "answer": "Bouncy ball",
+     "tier": 3,
+     "aliases": [
+      "Super Ball"
+     ]
+    },
+    {
+     "answer": "Transformers",
+     "tier": 3
+    },
+    {
+     "answer": "Matchbox",
+     "tier": 3
+    },
+    {
+     "answer": "Beyblade",
+     "tier": 3
+    },
+    {
+     "answer": "Mr. Potato Head",
+     "tier": 3
+    },
+    {
+     "answer": "Etch A Sketch",
+     "tier": 3
+    },
+    {
+     "answer": "Playmobil",
+     "tier": 3
+    },
+    {
+     "answer": "Duplo",
+     "tier": 3
+    },
+    {
+     "answer": "Polly Pocket",
+     "tier": 3
+    },
+    {
+     "answer": "My Little Pony",
+     "tier": 3
+    },
+    {
+     "answer": "Jack-in-the-box",
+     "tier": 3
+    },
+    {
+     "answer": "Rocking horse",
+     "tier": 3
+    },
+    {
+     "answer": "Dollhouse",
+     "tier": 3,
+     "aliases": [
+      "Doll's house"
+     ]
+    },
+    {
+     "answer": "Puppet",
+     "tier": 4
+    },
+    {
+     "answer": "Building blocks",
+     "tier": 4,
+     "aliases": [
+      "Blocks",
+      "Wooden blocks"
+     ]
+    },
+    {
+     "answer": "Rattle",
+     "tier": 4
+    },
+    {
+     "answer": "Kaleidoscope",
+     "tier": 4
+    },
+    {
+     "answer": "Magic 8 Ball",
+     "tier": 4
+    },
+    {
+     "answer": "G.I. Joe",
+     "tier": 4
+    },
+    {
+     "answer": "Toy soldiers",
+     "tier": 4,
+     "aliases": [
+      "Army men"
+     ]
+    },
+    {
+     "answer": "Care Bears",
+     "tier": 4
+    },
+    {
+     "answer": "Cabbage Patch Kids",
+     "tier": 4
+    },
+    {
+     "answer": "Beanie Babies",
+     "tier": 4
+    },
+    {
+     "answer": "Bratz",
+     "tier": 4
+    },
+    {
+     "answer": "L.O.L. Surprise",
+     "tier": 4,
+     "aliases": [
+      "LOL dolls"
+     ]
+    },
+    {
+     "answer": "Hatchimals",
+     "tier": 4
+    },
+    {
+     "answer": "Squishmallows",
+     "tier": 4
+    },
+    {
+     "answer": "Fisher-Price",
+     "tier": 4
+    },
+    {
+     "answer": "Tonka",
+     "tier": 4
+    },
+    {
+     "answer": "Meccano",
+     "tier": 4
+    },
+    {
+     "answer": "K'Nex",
+     "tier": 4
+    },
+    {
+     "answer": "Lincoln Logs",
+     "tier": 4
+    },
+    {
+     "answer": "Sylvanian Families",
+     "tier": 4,
+     "aliases": [
+      "Calico Critters"
+     ]
+    },
+    {
+     "answer": "Pogo stick",
+     "tier": 4
+    },
+    {
+     "answer": "Slime",
+     "tier": 5
+    },
+    {
+     "answer": "Silly Putty",
+     "tier": 5
+    },
+    {
+     "answer": "Pop It",
+     "tier": 5
+    },
+    {
+     "answer": "Squishy",
+     "tier": 5
+    },
+    {
+     "answer": "Bubble wand",
+     "tier": 5,
+     "aliases": [
+      "Bubbles"
+     ]
+    },
+    {
+     "answer": "Water balloon",
+     "tier": 5
+    },
+    {
+     "answer": "Marionette",
+     "tier": 5
+    },
+    {
+     "answer": "Spirograph",
+     "tier": 5
+    },
+    {
+     "answer": "View-Master",
+     "tier": 5
+    },
+    {
+     "answer": "Lite-Brite",
+     "tier": 5
+    },
+    {
+     "answer": "Stretch Armstrong",
+     "tier": 5
+    },
+    {
+     "answer": "Tickle Me Elmo",
+     "tier": 5
+    },
+    {
+     "answer": "Magna-Tiles",
+     "tier": 5
+    },
+    {
+     "answer": "Kendama",
+     "tier": 5,
+     "aliases": [
+      "Cup and ball"
+     ]
+    },
+    {
+     "answer": "Diabolo",
+     "tier": 5
+    },
+    {
+     "answer": "Paddle ball",
+     "tier": 5
+    },
+    {
+     "answer": "Boomerang",
+     "tier": 5
+    },
+    {
+     "answer": "Pinwheel",
+     "tier": 5
+    },
+    {
+     "answer": "Brio",
+     "tier": 5
+    },
+    {
+     "answer": "Thomas the Tank Engine",
+     "tier": 5
+    },
+    {
+     "answer": "Hasbro",
+     "tier": 5
+    },
+    {
+     "answer": "Mattel",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a music genre",
+   "category": "Culture",
+   "answers": [
+    {
+     "answer": "Pop",
+     "tier": 1
+    },
+    {
+     "answer": "Rock",
+     "tier": 1
+    },
+    {
+     "answer": "Jazz",
+     "tier": 1
+    },
+    {
+     "answer": "Hip hop",
+     "tier": 1
+    },
+    {
+     "answer": "Classical",
+     "tier": 1
+    },
+    {
+     "answer": "Rap",
+     "tier": 1
+    },
+    {
+     "answer": "Country",
+     "tier": 2
+    },
+    {
+     "answer": "Blues",
+     "tier": 2
+    },
+    {
+     "answer": "Reggae",
+     "tier": 2
+    },
+    {
+     "answer": "Heavy metal",
+     "tier": 2,
+     "aliases": [
+      "Metal"
+     ]
+    },
+    {
+     "answer": "R&B",
+     "tier": 2,
+     "aliases": [
+      "RnB",
+      "Rhythm and blues"
+     ]
+    },
+    {
+     "answer": "Techno",
+     "tier": 2
+    },
+    {
+     "answer": "Electronic",
+     "tier": 2,
+     "aliases": [
+      "Electronica"
+     ]
+    },
+    {
+     "answer": "EDM",
+     "tier": 2,
+     "aliases": [
+      "Electronic dance music"
+     ]
+    },
+    {
+     "answer": "Punk",
+     "tier": 2,
+     "aliases": [
+      "Punk rock"
+     ]
+    },
+    {
+     "answer": "Disco",
+     "tier": 2
+    },
+    {
+     "answer": "Soul",
+     "tier": 2
+    },
+    {
+     "answer": "Funk",
+     "tier": 2
+    },
+    {
+     "answer": "House",
+     "tier": 2
+    },
+    {
+     "answer": "Trance",
+     "tier": 2
+    },
+    {
+     "answer": "K-pop",
+     "tier": 2
+    },
+    {
+     "answer": "Folk",
+     "tier": 2
+    },
+    {
+     "answer": "Indie",
+     "tier": 2
+    },
+    {
+     "answer": "Opera",
+     "tier": 2
+    },
+    {
+     "answer": "Reggaeton",
+     "tier": 3
+    },
+    {
+     "answer": "Latin",
+     "tier": 3
+    },
+    {
+     "answer": "Dubstep",
+     "tier": 3
+    },
+    {
+     "answer": "Gospel",
+     "tier": 3
+    },
+    {
+     "answer": "Grunge",
+     "tier": 3
+    },
+    {
+     "answer": "Salsa",
+     "tier": 3
+    },
+    {
+     "answer": "Alternative rock",
+     "tier": 3,
+     "aliases": [
+      "Alternative"
+     ]
+    },
+    {
+     "answer": "Rock and roll",
+     "tier": 3,
+     "aliases": [
+      "Rock 'n' roll"
+     ]
+    },
+    {
+     "answer": "Psytrance",
+     "tier": 3,
+     "aliases": [
+      "Psychedelic trance"
+     ]
+    },
+    {
+     "answer": "Mizrahi",
+     "tier": 3,
+     "aliases": [
+      "Mizrahi music"
+     ]
+    },
+    {
+     "answer": "Drum and bass",
+     "tier": 3,
+     "aliases": [
+      "DnB"
+     ]
+    },
+    {
+     "answer": "Trap",
+     "tier": 3
+    },
+    {
+     "answer": "Lo-fi",
+     "tier": 3
+    },
+    {
+     "answer": "Ska",
+     "tier": 3
+    },
+    {
+     "answer": "Swing",
+     "tier": 3
+    },
+    {
+     "answer": "Afrobeats",
+     "tier": 3,
+     "aliases": [
+      "Afrobeat"
+     ]
+    },
+    {
+     "answer": "Flamenco",
+     "tier": 3
+    },
+    {
+     "answer": "Tango",
+     "tier": 3
+    },
+    {
+     "answer": "Bossa nova",
+     "tier": 3
+    },
+    {
+     "answer": "Samba",
+     "tier": 3
+    },
+    {
+     "answer": "J-pop",
+     "tier": 3
+    },
+    {
+     "answer": "Hard rock",
+     "tier": 3
+    },
+    {
+     "answer": "Emo",
+     "tier": 3
+    },
+    {
+     "answer": "Ambient",
+     "tier": 3
+    },
+    {
+     "answer": "Synth-pop",
+     "tier": 3
+    },
+    {
+     "answer": "New wave",
+     "tier": 3
+    },
+    {
+     "answer": "Grime",
+     "tier": 3
+    },
+    {
+     "answer": "Bluegrass",
+     "tier": 3
+    },
+    {
+     "answer": "Big band",
+     "tier": 3
+    },
+    {
+     "answer": "Motown",
+     "tier": 3
+    },
+    {
+     "answer": "Glam rock",
+     "tier": 4
+    },
+    {
+     "answer": "Soft rock",
+     "tier": 4
+    },
+    {
+     "answer": "Progressive rock",
+     "tier": 4,
+     "aliases": [
+      "Prog rock",
+      "Prog"
+     ]
+    },
+    {
+     "answer": "Psychedelic rock",
+     "tier": 4
+    },
+    {
+     "answer": "Death metal",
+     "tier": 4
+    },
+    {
+     "answer": "Thrash metal",
+     "tier": 4
+    },
+    {
+     "answer": "Black metal",
+     "tier": 4
+    },
+    {
+     "answer": "Nu metal",
+     "tier": 4
+    },
+    {
+     "answer": "Industrial",
+     "tier": 4
+    },
+    {
+     "answer": "Britpop",
+     "tier": 4
+    },
+    {
+     "answer": "Dancehall",
+     "tier": 4
+    },
+    {
+     "answer": "Garage",
+     "tier": 4,
+     "aliases": [
+      "UK garage"
+     ]
+    },
+    {
+     "answer": "Ragtime",
+     "tier": 4
+    },
+    {
+     "answer": "Bebop",
+     "tier": 4
+    },
+    {
+     "answer": "Smooth jazz",
+     "tier": 4
+    },
+    {
+     "answer": "Jazz fusion",
+     "tier": 4,
+     "aliases": [
+      "Fusion"
+     ]
+    },
+    {
+     "answer": "Acid jazz",
+     "tier": 4
+    },
+    {
+     "answer": "Trip hop",
+     "tier": 4
+    },
+    {
+     "answer": "Neo-soul",
+     "tier": 4
+    },
+    {
+     "answer": "Doo-wop",
+     "tier": 4
+    },
+    {
+     "answer": "Rockabilly",
+     "tier": 4
+    },
+    {
+     "answer": "Surf rock",
+     "tier": 4
+    },
+    {
+     "answer": "Post-punk",
+     "tier": 4
+    },
+    {
+     "answer": "Post-rock",
+     "tier": 4
+    },
+    {
+     "answer": "Shoegaze",
+     "tier": 4
+    },
+    {
+     "answer": "Hardcore",
+     "tier": 4
+    },
+    {
+     "answer": "Hardstyle",
+     "tier": 4
+    },
+    {
+     "answer": "Eurodance",
+     "tier": 4
+    },
+    {
+     "answer": "Italo disco",
+     "tier": 4
+    },
+    {
+     "answer": "Synthwave",
+     "tier": 4
+    },
+    {
+     "answer": "Vaporwave",
+     "tier": 5
+    },
+    {
+     "answer": "Chiptune",
+     "tier": 5
+    },
+    {
+     "answer": "Hyperpop",
+     "tier": 5
+    },
+    {
+     "answer": "Drill",
+     "tier": 5
+    },
+    {
+     "answer": "Dub",
+     "tier": 5
+    },
+    {
+     "answer": "Calypso",
+     "tier": 5
+    },
+    {
+     "answer": "Soca",
+     "tier": 5
+    },
+    {
+     "answer": "Bachata",
+     "tier": 5
+    },
+    {
+     "answer": "Merengue",
+     "tier": 5
+    },
+    {
+     "answer": "Cumbia",
+     "tier": 5
+    },
+    {
+     "answer": "Mariachi",
+     "tier": 5
+    },
+    {
+     "answer": "Fado",
+     "tier": 5
+    },
+    {
+     "answer": "Klezmer",
+     "tier": 5
+    },
+    {
+     "answer": "Bhangra",
+     "tier": 5
+    },
+    {
+     "answer": "Qawwali",
+     "tier": 5
+    },
+    {
+     "answer": "Rai",
+     "tier": 5
+    },
+    {
+     "answer": "Highlife",
+     "tier": 5
+    },
+    {
+     "answer": "Amapiano",
+     "tier": 5
+    },
+    {
+     "answer": "Kwaito",
+     "tier": 5
+    },
+    {
+     "answer": "Zydeco",
+     "tier": 5
+    },
+    {
+     "answer": "Celtic",
+     "tier": 5
+    },
+    {
+     "answer": "Americana",
+     "tier": 5
+    },
+    {
+     "answer": "Polka",
+     "tier": 5
+    },
+    {
+     "answer": "Barbershop",
+     "tier": 5
+    },
+    {
+     "answer": "A cappella",
+     "tier": 5
+    },
+    {
+     "answer": "Chamber music",
+     "tier": 5
+    },
+    {
+     "answer": "Musical theatre",
+     "tier": 5,
+     "aliases": [
+      "Show tunes",
+      "Musical theater"
+     ]
+    },
+    {
+     "answer": "Goa trance",
+     "tier": 5
+    },
+    {
+     "answer": "Cantopop",
+     "tier": 5
+    },
+    {
+     "answer": "Mandopop",
+     "tier": 5
+    },
+    {
+     "answer": "Enka",
+     "tier": 5
+    },
+    {
+     "answer": "Krautrock",
+     "tier": 5
+    },
+    {
+     "answer": "Math rock",
+     "tier": 5
+    },
+    {
+     "answer": "Garage rock",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a famous painting",
+   "category": "Culture",
+   "answers": [
+    {
+     "answer": "Mona Lisa",
+     "tier": 1,
+     "aliases": [
+      "La Gioconda"
+     ]
+    },
+    {
+     "answer": "The Starry Night",
+     "tier": 1
+    },
+    {
+     "answer": "The Scream",
+     "tier": 1
+    },
+    {
+     "answer": "The Last Supper",
+     "tier": 1
+    },
+    {
+     "answer": "Girl with a Pearl Earring",
+     "tier": 1
+    },
+    {
+     "answer": "The Birth of Venus",
+     "tier": 1
+    },
+    {
+     "answer": "The Persistence of Memory",
+     "tier": 2,
+     "aliases": [
+      "Melting clocks"
+     ]
+    },
+    {
+     "answer": "Guernica",
+     "tier": 2
+    },
+    {
+     "answer": "Sunflowers",
+     "tier": 2
+    },
+    {
+     "answer": "The Creation of Adam",
+     "tier": 2
+    },
+    {
+     "answer": "The Kiss",
+     "tier": 2
+    },
+    {
+     "answer": "American Gothic",
+     "tier": 2
+    },
+    {
+     "answer": "The Night Watch",
+     "tier": 2
+    },
+    {
+     "answer": "Water Lilies",
+     "tier": 2
+    },
+    {
+     "answer": "Sistine Chapel ceiling",
+     "tier": 2,
+     "aliases": [
+      "Sistine Chapel"
+     ]
+    },
+    {
+     "answer": "Les Demoiselles d'Avignon",
+     "tier": 2
+    },
+    {
+     "answer": "The School of Athens",
+     "tier": 2
+    },
+    {
+     "answer": "Nighthawks",
+     "tier": 2
+    },
+    {
+     "answer": "The Son of Man",
+     "tier": 3
+    },
+    {
+     "answer": "The Garden of Earthly Delights",
+     "tier": 3
+    },
+    {
+     "answer": "Las Meninas",
+     "tier": 3
+    },
+    {
+     "answer": "Liberty Leading the People",
+     "tier": 3
+    },
+    {
+     "answer": "Campbell's Soup Cans",
+     "tier": 3,
+     "aliases": [
+      "Campbell's Soup"
+     ]
+    },
+    {
+     "answer": "Impression, Sunrise",
+     "tier": 3
+    },
+    {
+     "answer": "Café Terrace at Night",
+     "tier": 3
+    },
+    {
+     "answer": "The Treachery of Images",
+     "tier": 3,
+     "aliases": [
+      "This Is Not a Pipe",
+      "Ceci n'est pas une pipe"
+     ]
+    },
+    {
+     "answer": "Whistler's Mother",
+     "tier": 3,
+     "aliases": [
+      "Arrangement in Grey and Black"
+     ]
+    },
+    {
+     "answer": "Marilyn Diptych",
+     "tier": 3
+    },
+    {
+     "answer": "A Sunday Afternoon on the Island of La Grande Jatte",
+     "tier": 3,
+     "aliases": [
+      "A Sunday on La Grande Jatte"
+     ]
+    },
+    {
+     "answer": "The Arnolfini Portrait",
+     "tier": 3
+    },
+    {
+     "answer": "Primavera",
+     "tier": 3
+    },
+    {
+     "answer": "Wanderer above the Sea of Fog",
+     "tier": 3
+    },
+    {
+     "answer": "The Raft of the Medusa",
+     "tier": 3
+    },
+    {
+     "answer": "The Hay Wain",
+     "tier": 3
+    },
+    {
+     "answer": "The Two Fridas",
+     "tier": 3
+    },
+    {
+     "answer": "Lady with an Ermine",
+     "tier": 3
+    },
+    {
+     "answer": "Salvator Mundi",
+     "tier": 3
+    },
+    {
+     "answer": "The Night Café",
+     "tier": 3
+    },
+    {
+     "answer": "Irises",
+     "tier": 3
+    },
+    {
+     "answer": "Wheatfield with Crows",
+     "tier": 4
+    },
+    {
+     "answer": "The Potato Eaters",
+     "tier": 4
+    },
+    {
+     "answer": "Bedroom in Arles",
+     "tier": 4
+    },
+    {
+     "answer": "Self-Portrait with Bandaged Ear",
+     "tier": 4
+    },
+    {
+     "answer": "Starry Night Over the Rhône",
+     "tier": 4
+    },
+    {
+     "answer": "Composition with Red, Blue and Yellow",
+     "tier": 4
+    },
+    {
+     "answer": "Christina's World",
+     "tier": 4
+    },
+    {
+     "answer": "No. 5, 1948",
+     "tier": 4
+    },
+    {
+     "answer": "Black Square",
+     "tier": 4
+    },
+    {
+     "answer": "Whaam!",
+     "tier": 4
+    },
+    {
+     "answer": "Drowning Girl",
+     "tier": 4
+    },
+    {
+     "answer": "Saturn Devouring His Son",
+     "tier": 4
+    },
+    {
+     "answer": "The Third of May 1808",
+     "tier": 4
+    },
+    {
+     "answer": "The Fighting Temeraire",
+     "tier": 4
+    },
+    {
+     "answer": "Luncheon of the Boating Party",
+     "tier": 4
+    },
+    {
+     "answer": "Bal du moulin de la Galette",
+     "tier": 4
+    },
+    {
+     "answer": "Le Déjeuner sur l'herbe",
+     "tier": 4,
+     "aliases": [
+      "Luncheon on the Grass"
+     ]
+    },
+    {
+     "answer": "Olympia",
+     "tier": 4
+    },
+    {
+     "answer": "A Bar at the Folies-Bergère",
+     "tier": 4
+    },
+    {
+     "answer": "The Card Players",
+     "tier": 4
+    },
+    {
+     "answer": "The Gleaners",
+     "tier": 4
+    },
+    {
+     "answer": "The Angelus",
+     "tier": 5
+    },
+    {
+     "answer": "The Swing",
+     "tier": 5
+    },
+    {
+     "answer": "The Anatomy Lesson of Dr. Nicolaes Tulp",
+     "tier": 5,
+     "aliases": [
+      "The Anatomy Lesson"
+     ]
+    },
+    {
+     "answer": "The Milkmaid",
+     "tier": 5
+    },
+    {
+     "answer": "View of Delft",
+     "tier": 5
+    },
+    {
+     "answer": "The Ambassadors",
+     "tier": 5
+    },
+    {
+     "answer": "Venus of Urbino",
+     "tier": 5
+    },
+    {
+     "answer": "Hunters in the Snow",
+     "tier": 5
+    },
+    {
+     "answer": "The Tower of Babel",
+     "tier": 5
+    },
+    {
+     "answer": "The Death of Marat",
+     "tier": 5
+    },
+    {
+     "answer": "Oath of the Horatii",
+     "tier": 5
+    },
+    {
+     "answer": "Napoleon Crossing the Alps",
+     "tier": 5
+    },
+    {
+     "answer": "Washington Crossing the Delaware",
+     "tier": 5
+    },
+    {
+     "answer": "The Blue Boy",
+     "tier": 5
+    },
+    {
+     "answer": "The Sleeping Gypsy",
+     "tier": 5
+    },
+    {
+     "answer": "The Dance",
+     "tier": 5
+    },
+    {
+     "answer": "The Elephants",
+     "tier": 5
+    },
+    {
+     "answer": "The Lovers",
+     "tier": 5
+    },
+    {
+     "answer": "Golconda",
+     "tier": 5
+    },
+    {
+     "answer": "Dogs Playing Poker",
+     "tier": 5
+    },
+    {
+     "answer": "Ophelia",
+     "tier": 5
+    },
+    {
+     "answer": "The Lady of Shalott",
+     "tier": 5
+    },
+    {
+     "answer": "The Virgin of the Rocks",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a holiday or festival celebrated somewhere in the world",
+   "category": "Culture",
+   "answers": [
+    {
+     "answer": "Christmas",
+     "tier": 1
+    },
+    {
+     "answer": "New Year",
+     "tier": 1,
+     "aliases": [
+      "New Year's Eve",
+      "New Year's Day"
+     ]
+    },
+    {
+     "answer": "Halloween",
+     "tier": 1
+    },
+    {
+     "answer": "Easter",
+     "tier": 1
+    },
+    {
+     "answer": "Hanukkah",
+     "tier": 1,
+     "aliases": [
+      "Chanukah"
+     ]
+    },
+    {
+     "answer": "Passover",
+     "tier": 1,
+     "aliases": [
+      "Pesach"
+     ]
+    },
+    {
+     "answer": "Thanksgiving",
+     "tier": 2
+    },
+    {
+     "answer": "Valentine's Day",
+     "tier": 2
+    },
+    {
+     "answer": "Rosh Hashanah",
+     "tier": 2
+    },
+    {
+     "answer": "Diwali",
+     "tier": 2
+    },
+    {
+     "answer": "Purim",
+     "tier": 2
+    },
+    {
+     "answer": "Chinese New Year",
+     "tier": 2,
+     "aliases": [
+      "Lunar New Year",
+      "Spring Festival"
+     ]
+    },
+    {
+     "answer": "Eid al-Fitr",
+     "tier": 2,
+     "aliases": [
+      "Eid"
+     ]
+    },
+    {
+     "answer": "Independence Day",
+     "tier": 2,
+     "aliases": [
+      "Yom Ha'atzmaut",
+      "Fourth of July",
+      "July 4th"
+     ]
+    },
+    {
+     "answer": "Ramadan",
+     "tier": 2
+    },
+    {
+     "answer": "Yom Kippur",
+     "tier": 2
+    },
+    {
+     "answer": "Sukkot",
+     "tier": 2
+    },
+    {
+     "answer": "Shavuot",
+     "tier": 2
+    },
+    {
+     "answer": "Mother's Day",
+     "tier": 2
+    },
+    {
+     "answer": "Father's Day",
+     "tier": 2
+    },
+    {
+     "answer": "St. Patrick's Day",
+     "tier": 2,
+     "aliases": [
+      "Saint Patrick's Day"
+     ]
+    },
+    {
+     "answer": "Holi",
+     "tier": 3
+    },
+    {
+     "answer": "Carnival",
+     "tier": 3,
+     "aliases": [
+      "Carnaval"
+     ]
+    },
+    {
+     "answer": "Day of the Dead",
+     "tier": 3,
+     "aliases": [
+      "Día de los Muertos"
+     ]
+    },
+    {
+     "answer": "Mardi Gras",
+     "tier": 3
+    },
+    {
+     "answer": "Eid al-Adha",
+     "tier": 3
+    },
+    {
+     "answer": "Lag BaOmer",
+     "tier": 3
+    },
+    {
+     "answer": "Tu BiShvat",
+     "tier": 3
+    },
+    {
+     "answer": "Simchat Torah",
+     "tier": 3
+    },
+    {
+     "answer": "Mimouna",
+     "tier": 3
+    },
+    {
+     "answer": "Christmas Eve",
+     "tier": 3
+    },
+    {
+     "answer": "Good Friday",
+     "tier": 3
+    },
+    {
+     "answer": "Boxing Day",
+     "tier": 3
+    },
+    {
+     "answer": "April Fools' Day",
+     "tier": 3
+    },
+    {
+     "answer": "Labour Day",
+     "tier": 3,
+     "aliases": [
+      "Labor Day",
+      "May Day"
+     ]
+    },
+    {
+     "answer": "Bastille Day",
+     "tier": 3
+    },
+    {
+     "answer": "Guy Fawkes Night",
+     "tier": 3,
+     "aliases": [
+      "Bonfire Night"
+     ]
+    },
+    {
+     "answer": "Cinco de Mayo",
+     "tier": 3
+    },
+    {
+     "answer": "Kwanzaa",
+     "tier": 3
+    },
+    {
+     "answer": "Hogmanay",
+     "tier": 3
+    },
+    {
+     "answer": "Nowruz",
+     "tier": 3,
+     "aliases": [
+      "Persian New Year",
+      "Norouz"
+     ]
+    },
+    {
+     "answer": "International Women's Day",
+     "tier": 3,
+     "aliases": [
+      "Women's Day"
+     ]
+    },
+    {
+     "answer": "Earth Day",
+     "tier": 3
+    },
+    {
+     "answer": "Groundhog Day",
+     "tier": 3
+    },
+    {
+     "answer": "Mid-Autumn Festival",
+     "tier": 3,
+     "aliases": [
+      "Moon Festival"
+     ]
+    },
+    {
+     "answer": "Songkran",
+     "tier": 3
+    },
+    {
+     "answer": "Canada Day",
+     "tier": 4
+    },
+    {
+     "answer": "Memorial Day",
+     "tier": 4
+    },
+    {
+     "answer": "Juneteenth",
+     "tier": 4
+    },
+    {
+     "answer": "Martin Luther King Jr. Day",
+     "tier": 4,
+     "aliases": [
+      "MLK Day"
+     ]
+    },
+    {
+     "answer": "Epiphany",
+     "tier": 4,
+     "aliases": [
+      "Three Kings' Day"
+     ]
+    },
+    {
+     "answer": "Sinterklaas",
+     "tier": 4,
+     "aliases": [
+      "St. Nicholas Day"
+     ]
+    },
+    {
+     "answer": "King's Day",
+     "tier": 4,
+     "aliases": [
+      "Koningsdag"
+     ]
+    },
+    {
+     "answer": "Midsummer",
+     "tier": 4,
+     "aliases": [
+      "Midsummer's Eve"
+     ]
+    },
+    {
+     "answer": "Hanami",
+     "tier": 4
+    },
+    {
+     "answer": "Dragon Boat Festival",
+     "tier": 4
+    },
+    {
+     "answer": "Lantern Festival",
+     "tier": 4
+    },
+    {
+     "answer": "Obon",
+     "tier": 4
+    },
+    {
+     "answer": "Tanabata",
+     "tier": 4
+    },
+    {
+     "answer": "Golden Week",
+     "tier": 4
+    },
+    {
+     "answer": "Chuseok",
+     "tier": 4
+    },
+    {
+     "answer": "Tết",
+     "tier": 4
+    },
+    {
+     "answer": "Loy Krathong",
+     "tier": 4
+    },
+    {
+     "answer": "Vesak",
+     "tier": 4
+    },
+    {
+     "answer": "Navratri",
+     "tier": 4
+    },
+    {
+     "answer": "Raksha Bandhan",
+     "tier": 4
+    },
+    {
+     "answer": "Ganesh Chaturthi",
+     "tier": 4
+    },
+    {
+     "answer": "Durga Puja",
+     "tier": 4
+    },
+    {
+     "answer": "Dussehra",
+     "tier": 4
+    },
+    {
+     "answer": "Janmashtami",
+     "tier": 4
+    },
+    {
+     "answer": "Pongal",
+     "tier": 4
+    },
+    {
+     "answer": "Onam",
+     "tier": 5
+    },
+    {
+     "answer": "Lohri",
+     "tier": 5
+    },
+    {
+     "answer": "La Tomatina",
+     "tier": 5
+    },
+    {
+     "answer": "Inti Raymi",
+     "tier": 5
+    },
+    {
+     "answer": "Up Helly Aa",
+     "tier": 5
+    },
+    {
+     "answer": "Burns Night",
+     "tier": 5
+    },
+    {
+     "answer": "St. Andrew's Day",
+     "tier": 5
+    },
+    {
+     "answer": "St. David's Day",
+     "tier": 5
+    },
+    {
+     "answer": "St. George's Day",
+     "tier": 5
+    },
+    {
+     "answer": "St. Lucia's Day",
+     "tier": 5
+    },
+    {
+     "answer": "Walpurgis Night",
+     "tier": 5
+    },
+    {
+     "answer": "All Saints' Day",
+     "tier": 5
+    },
+    {
+     "answer": "Pentecost",
+     "tier": 5
+    },
+    {
+     "answer": "Shrove Tuesday",
+     "tier": 5,
+     "aliases": [
+      "Pancake Day"
+     ]
+    },
+    {
+     "answer": "Remembrance Day",
+     "tier": 5
+    },
+    {
+     "answer": "Anzac Day",
+     "tier": 5
+    },
+    {
+     "answer": "Victoria Day",
+     "tier": 5
+    },
+    {
+     "answer": "Waitangi Day",
+     "tier": 5
+    },
+    {
+     "answer": "Matariki",
+     "tier": 5
+    },
+    {
+     "answer": "Sigd",
+     "tier": 5
+    },
+    {
+     "answer": "Tu B'Av",
+     "tier": 5
+    },
+    {
+     "answer": "Pi Day",
+     "tier": 5
+    },
+    {
+     "answer": "Star Wars Day",
+     "tier": 5,
+     "aliases": [
+      "May the Fourth"
+     ]
+    },
+    {
+     "answer": "Singles' Day",
+     "tier": 5
+    },
+    {
+     "answer": "Children's Day",
+     "tier": 5
+    },
+    {
+     "answer": "Teachers' Day",
+     "tier": 5
+    },
+    {
+     "answer": "Shichi-Go-San",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name something that has wheels but no engine or motor",
+   "category": "Everyday",
+   "answers": [
+    {
+     "answer": "Bicycle",
+     "tier": 1,
+     "aliases": [
+      "Bike",
+      "Push bike"
+     ]
+    },
+    {
+     "answer": "Skateboard",
+     "tier": 1
+    },
+    {
+     "answer": "Shopping cart",
+     "tier": 1,
+     "aliases": [
+      "Shopping trolley",
+      "Trolley"
+     ]
+    },
+    {
+     "answer": "Wheelbarrow",
+     "tier": 1
+    },
+    {
+     "answer": "Stroller",
+     "tier": 1,
+     "aliases": [
+      "Pram",
+      "Pushchair",
+      "Buggy",
+      "Baby carriage"
+     ]
+    },
+    {
+     "answer": "Wheelchair",
+     "tier": 2
+    },
+    {
+     "answer": "Suitcase",
+     "tier": 2,
+     "aliases": [
+      "Rolling suitcase",
+      "Trolley bag"
+     ]
+    },
+    {
+     "answer": "Office chair",
+     "tier": 2,
+     "aliases": [
+      "Desk chair"
+     ]
+    },
+    {
+     "answer": "Roller skates",
+     "tier": 2
+    },
+    {
+     "answer": "Rollerblades",
+     "tier": 2,
+     "aliases": [
+      "Inline skates"
+     ]
+    },
+    {
+     "answer": "Scooter",
+     "tier": 2,
+     "aliases": [
+      "Kick scooter"
+     ]
+    },
+    {
+     "answer": "Tricycle",
+     "tier": 2,
+     "aliases": [
+      "Trike"
+     ]
+    },
+    {
+     "answer": "Unicycle",
+     "tier": 2
+    },
+    {
+     "answer": "Wagon",
+     "tier": 3,
+     "aliases": [
+      "Toy wagon",
+      "Little red wagon"
+     ]
+    },
+    {
+     "answer": "Hand truck",
+     "tier": 3,
+     "aliases": [
+      "Dolly",
+      "Sack truck"
+     ]
+    },
+    {
+     "answer": "Trailer",
+     "tier": 3,
+     "aliases": [
+      "Caravan"
+     ]
+    },
+    {
+     "answer": "Horse-drawn carriage",
+     "tier": 3,
+     "aliases": [
+      "Carriage"
+     ]
+    },
+    {
+     "answer": "Hospital bed",
+     "tier": 3
+    },
+    {
+     "answer": "Gurney",
+     "tier": 3,
+     "aliases": [
+      "Stretcher"
+     ]
+    },
+    {
+     "answer": "Toy car",
+     "tier": 3
+    },
+    {
+     "answer": "Chariot",
+     "tier": 3
+    },
+    {
+     "answer": "Cart",
+     "tier": 3,
+     "aliases": [
+      "Horse cart",
+      "Handcart"
+     ]
+    },
+    {
+     "answer": "Rickshaw",
+     "tier": 3
+    },
+    {
+     "answer": "Tandem bicycle",
+     "tier": 3,
+     "aliases": [
+      "Tandem"
+     ]
+    },
+    {
+     "answer": "Penny-farthing",
+     "tier": 3
+    },
+    {
+     "answer": "Balance bike",
+     "tier": 3
+    },
+    {
+     "answer": "BMX",
+     "tier": 4
+    },
+    {
+     "answer": "Wheelie bin",
+     "tier": 4,
+     "aliases": [
+      "Wheeled bin",
+      "Garbage bin"
+     ]
+    },
+    {
+     "answer": "Luggage trolley",
+     "tier": 4,
+     "aliases": [
+      "Baggage cart"
+     ]
+    },
+    {
+     "answer": "Walker",
+     "tier": 4,
+     "aliases": [
+      "Rollator",
+      "Zimmer frame"
+     ]
+    },
+    {
+     "answer": "Serving cart",
+     "tier": 4,
+     "aliases": [
+      "Tea trolley",
+      "Drinks trolley",
+      "Food trolley"
+     ]
+    },
+    {
+     "answer": "Pedicab",
+     "tier": 4,
+     "aliases": [
+      "Cycle rickshaw"
+     ]
+    },
+    {
+     "answer": "Stagecoach",
+     "tier": 4
+    },
+    {
+     "answer": "Covered wagon",
+     "tier": 4
+    },
+    {
+     "answer": "Train carriage",
+     "tier": 4,
+     "aliases": [
+      "Railway carriage",
+      "Train car",
+      "Railway wagon"
+     ]
+    },
+    {
+     "answer": "Soapbox car",
+     "tier": 4,
+     "aliases": [
+      "Soapbox cart"
+     ]
+    },
+    {
+     "answer": "Push mower",
+     "tier": 4,
+     "aliases": [
+      "Reel mower"
+     ]
+    },
+    {
+     "answer": "Golf trolley",
+     "tier": 4,
+     "aliases": [
+      "Golf push cart"
+     ]
+    },
+    {
+     "answer": "Pizza cutter",
+     "tier": 4
+    },
+    {
+     "answer": "Longboard",
+     "tier": 5
+    },
+    {
+     "answer": "Heelys",
+     "tier": 5
+    },
+    {
+     "answer": "Baby walker",
+     "tier": 5
+    },
+    {
+     "answer": "Hot dog cart",
+     "tier": 5,
+     "aliases": [
+      "Food cart"
+     ]
+    },
+    {
+     "answer": "Mop bucket",
+     "tier": 5
+    },
+    {
+     "answer": "IV pole",
+     "tier": 5,
+     "aliases": [
+      "Drip stand"
+     ]
+    },
+    {
+     "answer": "Cannon",
+     "tier": 5
+    },
+    {
+     "answer": "Camera dolly",
+     "tier": 5
+    },
+    {
+     "answer": "Roller coaster car",
+     "tier": 5
+    },
+    {
+     "answer": "Rolling backpack",
+     "tier": 5
+    },
+    {
+     "answer": "Toy train",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a thing (not a living creature) that flies through the air",
+   "category": "Everyday",
+   "answers": [
+    {
+     "answer": "Airplane",
+     "tier": 1,
+     "aliases": [
+      "Plane",
+      "Aeroplane",
+      "Jet",
+      "Aircraft"
+     ]
+    },
+    {
+     "answer": "Helicopter",
+     "tier": 1
+    },
+    {
+     "answer": "Kite",
+     "tier": 1
+    },
+    {
+     "answer": "Drone",
+     "tier": 1,
+     "aliases": [
+      "Quadcopter"
+     ]
+    },
+    {
+     "answer": "Hot air balloon",
+     "tier": 1
+    },
+    {
+     "answer": "Rocket",
+     "tier": 2
+    },
+    {
+     "answer": "Balloon",
+     "tier": 2,
+     "aliases": [
+      "Helium balloon"
+     ]
+    },
+    {
+     "answer": "Paper airplane",
+     "tier": 2,
+     "aliases": [
+      "Paper plane",
+      "Paper aeroplane"
+     ]
+    },
+    {
+     "answer": "Frisbee",
+     "tier": 2,
+     "aliases": [
+      "Flying disc"
+     ]
+    },
+    {
+     "answer": "Glider",
+     "tier": 2,
+     "aliases": [
+      "Sailplane"
+     ]
+    },
+    {
+     "answer": "Parachute",
+     "tier": 2
+    },
+    {
+     "answer": "Blimp",
+     "tier": 2,
+     "aliases": [
+      "Airship",
+      "Zeppelin"
+     ]
+    },
+    {
+     "answer": "Space shuttle",
+     "tier": 3
+    },
+    {
+     "answer": "Hang glider",
+     "tier": 3
+    },
+    {
+     "answer": "Paraglider",
+     "tier": 3
+    },
+    {
+     "answer": "Fighter jet",
+     "tier": 3
+    },
+    {
+     "answer": "UFO",
+     "tier": 3,
+     "aliases": [
+      "Flying saucer"
+     ]
+    },
+    {
+     "answer": "Spaceship",
+     "tier": 3,
+     "aliases": [
+      "Spacecraft"
+     ]
+    },
+    {
+     "answer": "Jetpack",
+     "tier": 3
+    },
+    {
+     "answer": "Firework",
+     "tier": 3
+    },
+    {
+     "answer": "Boomerang",
+     "tier": 3
+    },
+    {
+     "answer": "Arrow",
+     "tier": 3
+    },
+    {
+     "answer": "Model airplane",
+     "tier": 3,
+     "aliases": [
+      "Toy plane",
+      "Model plane"
+     ]
+    },
+    {
+     "answer": "Sky lantern",
+     "tier": 4,
+     "aliases": [
+      "Chinese lantern",
+      "Wish lantern",
+      "Paper lantern"
+     ]
+    },
+    {
+     "answer": "Shuttlecock",
+     "tier": 4,
+     "aliases": [
+      "Birdie"
+     ]
+    },
+    {
+     "answer": "Seaplane",
+     "tier": 4
+    },
+    {
+     "answer": "Biplane",
+     "tier": 4
+    },
+    {
+     "answer": "Private jet",
+     "tier": 4
+    },
+    {
+     "answer": "Airliner",
+     "tier": 4,
+     "aliases": [
+      "Passenger jet"
+     ]
+    },
+    {
+     "answer": "Concorde",
+     "tier": 4
+    },
+    {
+     "answer": "Missile",
+     "tier": 4
+    },
+    {
+     "answer": "Weather balloon",
+     "tier": 4
+    },
+    {
+     "answer": "Magic carpet",
+     "tier": 4,
+     "aliases": [
+      "Flying carpet"
+     ]
+    },
+    {
+     "answer": "Broomstick",
+     "tier": 4,
+     "aliases": [
+      "Broom"
+     ]
+    },
+    {
+     "answer": "Wingsuit",
+     "tier": 5
+    },
+    {
+     "answer": "Gyrocopter",
+     "tier": 5,
+     "aliases": [
+      "Autogyro"
+     ]
+    },
+    {
+     "answer": "Microlight",
+     "tier": 5,
+     "aliases": [
+      "Ultralight"
+     ]
+    },
+    {
+     "answer": "Paramotor",
+     "tier": 5
+    },
+    {
+     "answer": "Bomber",
+     "tier": 5,
+     "aliases": [
+      "Stealth bomber"
+     ]
+    },
+    {
+     "answer": "Flying car",
+     "tier": 5
+    },
+    {
+     "answer": "Javelin",
+     "tier": 5
+    },
+    {
+     "answer": "Discus",
+     "tier": 5
+    },
+    {
+     "answer": "Clay pigeon",
+     "tier": 5
+    },
+    {
+     "answer": "Soap bubble",
+     "tier": 5,
+     "aliases": [
+      "Bubble"
+     ]
+    },
+    {
+     "answer": "Dart",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name something you might pack for a day at the beach",
+   "category": "Everyday",
+   "answers": [
+    {
+     "answer": "Towel",
+     "tier": 1,
+     "aliases": [
+      "Beach towel"
+     ]
+    },
+    {
+     "answer": "Sunscreen",
+     "tier": 1,
+     "aliases": [
+      "Sunblock",
+      "Sun cream",
+      "Suncream",
+      "Sun lotion"
+     ]
+    },
+    {
+     "answer": "Sunglasses",
+     "tier": 1
+    },
+    {
+     "answer": "Swimsuit",
+     "tier": 1,
+     "aliases": [
+      "Swimming costume",
+      "Bathing suit",
+      "Swimwear"
+     ]
+    },
+    {
+     "answer": "Umbrella",
+     "tier": 1,
+     "aliases": [
+      "Beach umbrella",
+      "Parasol"
+     ]
+    },
+    {
+     "answer": "Hat",
+     "tier": 1,
+     "aliases": [
+      "Sun hat"
+     ]
+    },
+    {
+     "answer": "Flip-flops",
+     "tier": 2,
+     "aliases": [
+      "Thongs"
+     ]
+    },
+    {
+     "answer": "Water bottle",
+     "tier": 2,
+     "aliases": [
+      "Water"
+     ]
+    },
+    {
+     "answer": "Bikini",
+     "tier": 2
+    },
+    {
+     "answer": "Swim trunks",
+     "tier": 2,
+     "aliases": [
+      "Swimming trunks",
+      "Board shorts"
+     ]
+    },
+    {
+     "answer": "Beach ball",
+     "tier": 2
+    },
+    {
+     "answer": "Bucket",
+     "tier": 2
+    },
+    {
+     "answer": "Spade",
+     "tier": 2,
+     "aliases": [
+      "Shovel"
+     ]
+    },
+    {
+     "answer": "Cooler",
+     "tier": 2,
+     "aliases": [
+      "Cool box",
+      "Ice box",
+      "Cooler bag"
+     ]
+    },
+    {
+     "answer": "Snacks",
+     "tier": 2
+    },
+    {
+     "answer": "Matkot",
+     "tier": 2,
+     "aliases": [
+      "Beach paddles",
+      "Paddle ball",
+      "Beach tennis"
+     ]
+    },
+    {
+     "answer": "Book",
+     "tier": 3
+    },
+    {
+     "answer": "Speaker",
+     "tier": 3,
+     "aliases": [
+      "Bluetooth speaker"
+     ]
+    },
+    {
+     "answer": "Beach chair",
+     "tier": 3,
+     "aliases": [
+      "Deckchair",
+      "Folding chair"
+     ]
+    },
+    {
+     "answer": "Frisbee",
+     "tier": 3
+    },
+    {
+     "answer": "Goggles",
+     "tier": 3,
+     "aliases": [
+      "Swimming goggles"
+     ]
+    },
+    {
+     "answer": "Snorkel",
+     "tier": 3
+    },
+    {
+     "answer": "Sandals",
+     "tier": 3
+    },
+    {
+     "answer": "Watermelon",
+     "tier": 3
+    },
+    {
+     "answer": "Sandwiches",
+     "tier": 3
+    },
+    {
+     "answer": "Drinks",
+     "tier": 3,
+     "aliases": [
+      "Cold drinks"
+     ]
+    },
+    {
+     "answer": "Fruit",
+     "tier": 3
+    },
+    {
+     "answer": "Phone",
+     "tier": 3
+    },
+    {
+     "answer": "Beach bag",
+     "tier": 3,
+     "aliases": [
+      "Tote bag"
+     ]
+    },
+    {
+     "answer": "Beach mat",
+     "tier": 3,
+     "aliases": [
+      "Mat"
+     ]
+    },
+    {
+     "answer": "Blanket",
+     "tier": 3,
+     "aliases": [
+      "Picnic blanket"
+     ]
+    },
+    {
+     "answer": "Flippers",
+     "tier": 3,
+     "aliases": [
+      "Fins"
+     ]
+    },
+    {
+     "answer": "Inflatable ring",
+     "tier": 3,
+     "aliases": [
+      "Rubber ring",
+      "Swim ring"
+     ]
+    },
+    {
+     "answer": "Lilo",
+     "tier": 4,
+     "aliases": [
+      "Air mattress",
+      "Pool float",
+      "Inflatable mattress"
+     ]
+    },
+    {
+     "answer": "Armbands",
+     "tier": 4,
+     "aliases": [
+      "Water wings",
+      "Floaties"
+     ]
+    },
+    {
+     "answer": "Cap",
+     "tier": 4,
+     "aliases": [
+      "Baseball cap"
+     ]
+    },
+    {
+     "answer": "Surfboard",
+     "tier": 4
+    },
+    {
+     "answer": "Bodyboard",
+     "tier": 4,
+     "aliases": [
+      "Boogie board"
+     ]
+    },
+    {
+     "answer": "Volleyball",
+     "tier": 4
+    },
+    {
+     "answer": "Football",
+     "tier": 4,
+     "aliases": [
+      "Soccer ball"
+     ]
+    },
+    {
+     "answer": "Kite",
+     "tier": 4
+    },
+    {
+     "answer": "Headphones",
+     "tier": 4,
+     "aliases": [
+      "Earphones"
+     ]
+    },
+    {
+     "answer": "Camera",
+     "tier": 4
+    },
+    {
+     "answer": "Magazine",
+     "tier": 4
+    },
+    {
+     "answer": "Sarong",
+     "tier": 4,
+     "aliases": [
+      "Pareo",
+      "Cover-up"
+     ]
+    },
+    {
+     "answer": "Lip balm",
+     "tier": 4
+    },
+    {
+     "answer": "After-sun",
+     "tier": 4,
+     "aliases": [
+      "Aloe vera"
+     ]
+    },
+    {
+     "answer": "Wet wipes",
+     "tier": 4
+    },
+    {
+     "answer": "Wetsuit",
+     "tier": 4
+    },
+    {
+     "answer": "Paddleboard",
+     "tier": 4,
+     "aliases": [
+      "SUP",
+      "Stand-up paddleboard"
+     ]
+    },
+    {
+     "answer": "Life jacket",
+     "tier": 5
+    },
+    {
+     "answer": "Rash guard",
+     "tier": 5,
+     "aliases": [
+      "Rash vest"
+     ]
+    },
+    {
+     "answer": "Playing cards",
+     "tier": 5,
+     "aliases": [
+      "Cards"
+     ]
+    },
+    {
+     "answer": "Backgammon",
+     "tier": 5,
+     "aliases": [
+      "Shesh besh"
+     ]
+    },
+    {
+     "answer": "Beach tent",
+     "tier": 5,
+     "aliases": [
+      "Sun shelter",
+      "Pop-up tent"
+     ]
+    },
+    {
+     "answer": "Windbreak",
+     "tier": 5
+    },
+    {
+     "answer": "Thermos",
+     "tier": 5,
+     "aliases": [
+      "Flask"
+     ]
+    },
+    {
+     "answer": "Picnic basket",
+     "tier": 5
+    },
+    {
+     "answer": "Water shoes",
+     "tier": 5,
+     "aliases": [
+      "Aqua shoes"
+     ]
+    },
+    {
+     "answer": "Diving mask",
+     "tier": 5
+    },
+    {
+     "answer": "Ice packs",
+     "tier": 5
+    },
+    {
+     "answer": "Wallet",
+     "tier": 5
+    },
+    {
+     "answer": "Visor",
+     "tier": 5
+    },
+    {
+     "answer": "Fishing rod",
+     "tier": 5
+    },
+    {
+     "answer": "Binoculars",
+     "tier": 5
+    },
+    {
+     "answer": "Metal detector",
+     "tier": 5
+    },
+    {
+     "answer": "Hammock",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a school subject",
+   "category": "Everyday",
+   "answers": [
+    {
+     "answer": "Math",
+     "tier": 1,
+     "aliases": [
+      "Maths",
+      "Mathematics"
+     ]
+    },
+    {
+     "answer": "English",
+     "tier": 1
+    },
+    {
+     "answer": "Science",
+     "tier": 1
+    },
+    {
+     "answer": "History",
+     "tier": 1
+    },
+    {
+     "answer": "Geography",
+     "tier": 1
+    },
+    {
+     "answer": "Physics",
+     "tier": 1
+    },
+    {
+     "answer": "Chemistry",
+     "tier": 2
+    },
+    {
+     "answer": "Biology",
+     "tier": 2
+    },
+    {
+     "answer": "Art",
+     "tier": 2
+    },
+    {
+     "answer": "Music",
+     "tier": 2
+    },
+    {
+     "answer": "PE",
+     "tier": 2,
+     "aliases": [
+      "Physical education",
+      "Gym",
+      "Sport"
+     ]
+    },
+    {
+     "answer": "Literature",
+     "tier": 2
+    },
+    {
+     "answer": "Computer science",
+     "tier": 2,
+     "aliases": [
+      "Computing",
+      "CS",
+      "Computers",
+      "ICT"
+     ]
+    },
+    {
+     "answer": "French",
+     "tier": 2
+    },
+    {
+     "answer": "Spanish",
+     "tier": 2
+    },
+    {
+     "answer": "Hebrew",
+     "tier": 2
+    },
+    {
+     "answer": "Arabic",
+     "tier": 2
+    },
+    {
+     "answer": "German",
+     "tier": 2
+    },
+    {
+     "answer": "Economics",
+     "tier": 3
+    },
+    {
+     "answer": "Psychology",
+     "tier": 3
+    },
+    {
+     "answer": "Drama",
+     "tier": 3,
+     "aliases": [
+      "Theatre",
+      "Theater"
+     ]
+    },
+    {
+     "answer": "Latin",
+     "tier": 3
+    },
+    {
+     "answer": "Chinese",
+     "tier": 3,
+     "aliases": [
+      "Mandarin"
+     ]
+    },
+    {
+     "answer": "Philosophy",
+     "tier": 3
+    },
+    {
+     "answer": "Sociology",
+     "tier": 3
+    },
+    {
+     "answer": "Religious studies",
+     "tier": 3,
+     "aliases": [
+      "RE",
+      "Religious education"
+     ]
+    },
+    {
+     "answer": "Bible studies",
+     "tier": 3,
+     "aliases": [
+      "Tanakh",
+      "Bible"
+     ]
+    },
+    {
+     "answer": "Civics",
+     "tier": 3,
+     "aliases": [
+      "Citizenship"
+     ]
+    },
+    {
+     "answer": "Social studies",
+     "tier": 3
+    },
+    {
+     "answer": "Programming",
+     "tier": 3,
+     "aliases": [
+      "Coding"
+     ]
+    },
+    {
+     "answer": "Home economics",
+     "tier": 3,
+     "aliases": [
+      "Home ec",
+      "Cooking",
+      "Food technology"
+     ]
+    },
+    {
+     "answer": "Design and technology",
+     "tier": 3,
+     "aliases": [
+      "D&T",
+      "Technology"
+     ]
+    },
+    {
+     "answer": "Woodwork",
+     "tier": 3,
+     "aliases": [
+      "Shop",
+      "Woodshop"
+     ]
+    },
+    {
+     "answer": "Health",
+     "tier": 3,
+     "aliases": [
+      "Health education"
+     ]
+    },
+    {
+     "answer": "Business studies",
+     "tier": 3,
+     "aliases": [
+      "Business"
+     ]
+    },
+    {
+     "answer": "Accounting",
+     "tier": 3
+    },
+    {
+     "answer": "Statistics",
+     "tier": 3
+    },
+    {
+     "answer": "Algebra",
+     "tier": 4
+    },
+    {
+     "answer": "Geometry",
+     "tier": 4
+    },
+    {
+     "answer": "Calculus",
+     "tier": 4
+    },
+    {
+     "answer": "Italian",
+     "tier": 4
+    },
+    {
+     "answer": "Russian",
+     "tier": 4
+    },
+    {
+     "answer": "Japanese",
+     "tier": 4
+    },
+    {
+     "answer": "Astronomy",
+     "tier": 4
+    },
+    {
+     "answer": "Geology",
+     "tier": 4
+    },
+    {
+     "answer": "Environmental science",
+     "tier": 4
+    },
+    {
+     "answer": "Earth science",
+     "tier": 4
+    },
+    {
+     "answer": "Media studies",
+     "tier": 4
+    },
+    {
+     "answer": "Film studies",
+     "tier": 4
+    },
+    {
+     "answer": "Law",
+     "tier": 4
+    },
+    {
+     "answer": "Classics",
+     "tier": 4
+    },
+    {
+     "answer": "Engineering",
+     "tier": 4
+    },
+    {
+     "answer": "Robotics",
+     "tier": 4
+    },
+    {
+     "answer": "Electronics",
+     "tier": 4
+    },
+    {
+     "answer": "Dance",
+     "tier": 4
+    },
+    {
+     "answer": "Photography",
+     "tier": 4
+    },
+    {
+     "answer": "Graphic design",
+     "tier": 5
+    },
+    {
+     "answer": "Creative writing",
+     "tier": 5
+    },
+    {
+     "answer": "Reading",
+     "tier": 5
+    },
+    {
+     "answer": "Spelling",
+     "tier": 5
+    },
+    {
+     "answer": "Grammar",
+     "tier": 5
+    },
+    {
+     "answer": "Handwriting",
+     "tier": 5
+    },
+    {
+     "answer": "Debate",
+     "tier": 5
+    },
+    {
+     "answer": "Ethics",
+     "tier": 5
+    },
+    {
+     "answer": "Anthropology",
+     "tier": 5
+    },
+    {
+     "answer": "Archaeology",
+     "tier": 5
+    },
+    {
+     "answer": "Agriculture",
+     "tier": 5
+    },
+    {
+     "answer": "Textiles",
+     "tier": 5
+    },
+    {
+     "answer": "Art history",
+     "tier": 5
+    },
+    {
+     "answer": "Anatomy",
+     "tier": 5
+    },
+    {
+     "answer": "Nutrition",
+     "tier": 5
+    },
+    {
+     "answer": "Trigonometry",
+     "tier": 5
+    },
+    {
+     "answer": "Personal finance",
+     "tier": 5
+    },
+    {
+     "answer": "Driver's education",
+     "tier": 5,
+     "aliases": [
+      "Driver's ed"
+     ]
+    },
+    {
+     "answer": "Typing",
+     "tier": 5
+    },
+    {
+     "answer": "Pottery",
+     "tier": 5,
+     "aliases": [
+      "Ceramics"
+     ]
+    },
+    {
+     "answer": "Marine biology",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a palindrome: a word or name that reads the same backwards",
+   "category": "Language",
+   "answers": [
+    {
+     "answer": "Racecar",
+     "tier": 1
+    },
+    {
+     "answer": "Level",
+     "tier": 1
+    },
+    {
+     "answer": "Radar",
+     "tier": 1
+    },
+    {
+     "answer": "Kayak",
+     "tier": 1
+    },
+    {
+     "answer": "Mom",
+     "tier": 1
+    },
+    {
+     "answer": "Dad",
+     "tier": 1
+    },
+    {
+     "answer": "Noon",
+     "tier": 2
+    },
+    {
+     "answer": "Wow",
+     "tier": 2
+    },
+    {
+     "answer": "Madam",
+     "tier": 2
+    },
+    {
+     "answer": "Civic",
+     "tier": 2
+    },
+    {
+     "answer": "Mum",
+     "tier": 2
+    },
+    {
+     "answer": "Anna",
+     "tier": 2
+    },
+    {
+     "answer": "Hannah",
+     "tier": 2
+    },
+    {
+     "answer": "Bob",
+     "tier": 2
+    },
+    {
+     "answer": "Eye",
+     "tier": 2
+    },
+    {
+     "answer": "Pop",
+     "tier": 3
+    },
+    {
+     "answer": "Refer",
+     "tier": 3
+    },
+    {
+     "answer": "Rotor",
+     "tier": 3
+    },
+    {
+     "answer": "Otto",
+     "tier": 3
+    },
+    {
+     "answer": "Peep",
+     "tier": 3
+    },
+    {
+     "answer": "Deed",
+     "tier": 3
+    },
+    {
+     "answer": "Did",
+     "tier": 3
+    },
+    {
+     "answer": "Eve",
+     "tier": 3
+    },
+    {
+     "answer": "Abba",
+     "tier": 3
+    },
+    {
+     "answer": "Tenet",
+     "tier": 3
+    },
+    {
+     "answer": "Stats",
+     "tier": 3
+    },
+    {
+     "answer": "Solos",
+     "tier": 3
+    },
+    {
+     "answer": "Gig",
+     "tier": 3
+    },
+    {
+     "answer": "Gag",
+     "tier": 3
+    },
+    {
+     "answer": "Pup",
+     "tier": 3
+    },
+    {
+     "answer": "Pip",
+     "tier": 4
+    },
+    {
+     "answer": "Bib",
+     "tier": 4
+    },
+    {
+     "answer": "Tot",
+     "tier": 4
+    },
+    {
+     "answer": "Toot",
+     "tier": 4
+    },
+    {
+     "answer": "Sees",
+     "tier": 4
+    },
+    {
+     "answer": "Sis",
+     "tier": 4
+    },
+    {
+     "answer": "Nan",
+     "tier": 4
+    },
+    {
+     "answer": "Ewe",
+     "tier": 4
+    },
+    {
+     "answer": "Tut",
+     "tier": 4
+    },
+    {
+     "answer": "Dud",
+     "tier": 4
+    },
+    {
+     "answer": "Huh",
+     "tier": 4
+    },
+    {
+     "answer": "Ava",
+     "tier": 4
+    },
+    {
+     "answer": "Elle",
+     "tier": 4
+    },
+    {
+     "answer": "Ada",
+     "tier": 4
+    },
+    {
+     "answer": "Redder",
+     "tier": 4
+    },
+    {
+     "answer": "Reviver",
+     "tier": 5
+    },
+    {
+     "answer": "Rotator",
+     "tier": 5
+    },
+    {
+     "answer": "Deified",
+     "tier": 5
+    },
+    {
+     "answer": "Repaper",
+     "tier": 5
+    },
+    {
+     "answer": "Sagas",
+     "tier": 5
+    },
+    {
+     "answer": "Minim",
+     "tier": 5
+    },
+    {
+     "answer": "Ma'am",
+     "tier": 5
+    },
+    {
+     "answer": "Yay",
+     "tier": 5
+    },
+    {
+     "answer": "Pep",
+     "tier": 5
+    },
+    {
+     "answer": "Sus",
+     "tier": 5
+    },
+    {
+     "answer": "Natan",
+     "tier": 5
+    },
+    {
+     "answer": "Aviva",
+     "tier": 5
+    },
+    {
+     "answer": "Pull-up",
+     "tier": 5
+    },
+    {
+     "answer": "Malayalam",
+     "tier": 5
+    },
+    {
+     "answer": "Tat",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a word that imitates a sound (like \"buzz\")",
+   "category": "Language",
+   "answers": [
+    {
+     "answer": "Boom",
+     "tier": 1
+    },
+    {
+     "answer": "Bang",
+     "tier": 1
+    },
+    {
+     "answer": "Buzz",
+     "tier": 1
+    },
+    {
+     "answer": "Pop",
+     "tier": 1
+    },
+    {
+     "answer": "Splash",
+     "tier": 1
+    },
+    {
+     "answer": "Crash",
+     "tier": 1
+    },
+    {
+     "answer": "Woof",
+     "tier": 2
+    },
+    {
+     "answer": "Meow",
+     "tier": 2,
+     "aliases": [
+      "Miaow"
+     ]
+    },
+    {
+     "answer": "Moo",
+     "tier": 2
+    },
+    {
+     "answer": "Oink",
+     "tier": 2
+    },
+    {
+     "answer": "Quack",
+     "tier": 2
+    },
+    {
+     "answer": "Tick-tock",
+     "tier": 2
+    },
+    {
+     "answer": "Ding dong",
+     "tier": 2
+    },
+    {
+     "answer": "Knock",
+     "tier": 2,
+     "aliases": [
+      "Knock knock"
+     ]
+    },
+    {
+     "answer": "Zap",
+     "tier": 2
+    },
+    {
+     "answer": "Sizzle",
+     "tier": 2
+    },
+    {
+     "answer": "Hiss",
+     "tier": 2
+    },
+    {
+     "answer": "Whoosh",
+     "tier": 2
+    },
+    {
+     "answer": "Thud",
+     "tier": 2
+    },
+    {
+     "answer": "Click",
+     "tier": 2
+    },
+    {
+     "answer": "Beep",
+     "tier": 2
+    },
+    {
+     "answer": "Vroom",
+     "tier": 2
+    },
+    {
+     "answer": "Bark",
+     "tier": 2
+    },
+    {
+     "answer": "Roar",
+     "tier": 3
+    },
+    {
+     "answer": "Purr",
+     "tier": 3
+    },
+    {
+     "answer": "Tweet",
+     "tier": 3
+    },
+    {
+     "answer": "Achoo",
+     "tier": 3,
+     "aliases": [
+      "Atishoo"
+     ]
+    },
+    {
+     "answer": "Cock-a-doodle-doo",
+     "tier": 3
+    },
+    {
+     "answer": "Baa",
+     "tier": 3
+    },
+    {
+     "answer": "Ribbit",
+     "tier": 3
+    },
+    {
+     "answer": "Hoot",
+     "tier": 3
+    },
+    {
+     "answer": "Honk",
+     "tier": 3
+    },
+    {
+     "answer": "Squeak",
+     "tier": 3
+    },
+    {
+     "answer": "Crunch",
+     "tier": 3
+    },
+    {
+     "answer": "Crackle",
+     "tier": 3
+    },
+    {
+     "answer": "Snap",
+     "tier": 3
+    },
+    {
+     "answer": "Slurp",
+     "tier": 3
+    },
+    {
+     "answer": "Burp",
+     "tier": 3
+    },
+    {
+     "answer": "Hiccup",
+     "tier": 3
+    },
+    {
+     "answer": "Splat",
+     "tier": 3
+    },
+    {
+     "answer": "Plop",
+     "tier": 3
+    },
+    {
+     "answer": "Drip",
+     "tier": 3
+    },
+    {
+     "answer": "Pow",
+     "tier": 3
+    },
+    {
+     "answer": "Bam",
+     "tier": 3
+    },
+    {
+     "answer": "Kapow",
+     "tier": 3
+    },
+    {
+     "answer": "Wham",
+     "tier": 3
+    },
+    {
+     "answer": "Zoom",
+     "tier": 3
+    },
+    {
+     "answer": "Clang",
+     "tier": 3
+    },
+    {
+     "answer": "Clink",
+     "tier": 3
+    },
+    {
+     "answer": "Ding",
+     "tier": 3
+    },
+    {
+     "answer": "Ring",
+     "tier": 3
+    },
+    {
+     "answer": "Jingle",
+     "tier": 4
+    },
+    {
+     "answer": "Thump",
+     "tier": 4
+    },
+    {
+     "answer": "Swoosh",
+     "tier": 4
+    },
+    {
+     "answer": "Fizz",
+     "tier": 4
+    },
+    {
+     "answer": "Growl",
+     "tier": 4
+    },
+    {
+     "answer": "Howl",
+     "tier": 4
+    },
+    {
+     "answer": "Chirp",
+     "tier": 4
+    },
+    {
+     "answer": "Neigh",
+     "tier": 4
+    },
+    {
+     "answer": "Cuckoo",
+     "tier": 4
+    },
+    {
+     "answer": "Choo-choo",
+     "tier": 4
+    },
+    {
+     "answer": "Boing",
+     "tier": 4
+    },
+    {
+     "answer": "Ping",
+     "tier": 4
+    },
+    {
+     "answer": "Clap",
+     "tier": 4
+    },
+    {
+     "answer": "Smack",
+     "tier": 4
+    },
+    {
+     "answer": "Whack",
+     "tier": 4
+    },
+    {
+     "answer": "Slam",
+     "tier": 4
+    },
+    {
+     "answer": "Bonk",
+     "tier": 4
+    },
+    {
+     "answer": "Clatter",
+     "tier": 4
+    },
+    {
+     "answer": "Rattle",
+     "tier": 4
+    },
+    {
+     "answer": "Clunk",
+     "tier": 4
+    },
+    {
+     "answer": "Thwack",
+     "tier": 4
+    },
+    {
+     "answer": "Twang",
+     "tier": 4
+    },
+    {
+     "answer": "Squelch",
+     "tier": 4
+    },
+    {
+     "answer": "Squish",
+     "tier": 4
+    },
+    {
+     "answer": "Gurgle",
+     "tier": 4
+    },
+    {
+     "answer": "Giggle",
+     "tier": 4
+    },
+    {
+     "answer": "Murmur",
+     "tier": 4
+    },
+    {
+     "answer": "Mumble",
+     "tier": 4
+    },
+    {
+     "answer": "Rustle",
+     "tier": 5
+    },
+    {
+     "answer": "Hum",
+     "tier": 5
+    },
+    {
+     "answer": "Whirr",
+     "tier": 5,
+     "aliases": [
+      "Whir"
+     ]
+    },
+    {
+     "answer": "Whizz",
+     "tier": 5,
+     "aliases": [
+      "Whiz"
+     ]
+    },
+    {
+     "answer": "Puff",
+     "tier": 5
+    },
+    {
+     "answer": "Poof",
+     "tier": 5
+    },
+    {
+     "answer": "Shh",
+     "tier": 5,
+     "aliases": [
+      "Shush"
+     ]
+    },
+    {
+     "answer": "Psst",
+     "tier": 5
+    },
+    {
+     "answer": "Grr",
+     "tier": 5
+    },
+    {
+     "answer": "Brr",
+     "tier": 5
+    },
+    {
+     "answer": "Zzz",
+     "tier": 5
+    },
+    {
+     "answer": "Kaboom",
+     "tier": 5
+    },
+    {
+     "answer": "Ka-ching",
+     "tier": 5,
+     "aliases": [
+      "Cha-ching"
+     ]
+    },
+    {
+     "answer": "Toot",
+     "tier": 5
+    },
+    {
+     "answer": "Hee-haw",
+     "tier": 5
+    },
+    {
+     "answer": "Gobble",
+     "tier": 5
+    },
+    {
+     "answer": "Caw",
+     "tier": 5
+    },
+    {
+     "answer": "Coo",
+     "tier": 5
+    },
+    {
+     "answer": "Cluck",
+     "tier": 5
+    },
+    {
+     "answer": "Screech",
+     "tier": 5
+    },
+    {
+     "answer": "Creak",
+     "tier": 5
+    },
+    {
+     "answer": "Squeal",
+     "tier": 5
+    },
+    {
+     "answer": "Clip-clop",
+     "tier": 5
+    },
+    {
+     "answer": "Pitter-patter",
+     "tier": 5
+    },
+    {
+     "answer": "Gulp",
+     "tier": 5
+    },
+    {
+     "answer": "Munch",
+     "tier": 5
+    },
+    {
+     "answer": "Chomp",
+     "tier": 5
+    },
+    {
+     "answer": "Mwah",
+     "tier": 5
+    },
+    {
+     "answer": "Tsk",
+     "tier": 5
+    },
+    {
+     "answer": "Ha ha",
+     "tier": 5
+    },
+    {
+     "answer": "Gong",
+     "tier": 5
+    },
+    {
+     "answer": "Tap",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a colour or shade (basic colours count too)",
+   "category": "Everyday",
+   "answers": [
+    {
+     "answer": "Red",
+     "tier": 1
+    },
+    {
+     "answer": "Blue",
+     "tier": 1
+    },
+    {
+     "answer": "Green",
+     "tier": 1
+    },
+    {
+     "answer": "Yellow",
+     "tier": 1
+    },
+    {
+     "answer": "Black",
+     "tier": 1
+    },
+    {
+     "answer": "Purple",
+     "tier": 1
+    },
+    {
+     "answer": "White",
+     "tier": 2
+    },
+    {
+     "answer": "Orange",
+     "tier": 2
+    },
+    {
+     "answer": "Pink",
+     "tier": 2
+    },
+    {
+     "answer": "Brown",
+     "tier": 2
+    },
+    {
+     "answer": "Grey",
+     "tier": 2,
+     "aliases": [
+      "Gray"
+     ]
+    },
+    {
+     "answer": "Turquoise",
+     "tier": 2
+    },
+    {
+     "answer": "Gold",
+     "tier": 2
+    },
+    {
+     "answer": "Silver",
+     "tier": 2
+    },
+    {
+     "answer": "Navy",
+     "tier": 2,
+     "aliases": [
+      "Navy blue"
+     ]
+    },
+    {
+     "answer": "Beige",
+     "tier": 2
+    },
+    {
+     "answer": "Maroon",
+     "tier": 2
+    },
+    {
+     "answer": "Magenta",
+     "tier": 2
+    },
+    {
+     "answer": "Violet",
+     "tier": 2
+    },
+    {
+     "answer": "Teal",
+     "tier": 2
+    },
+    {
+     "answer": "Lavender",
+     "tier": 2
+    },
+    {
+     "answer": "Lilac",
+     "tier": 2
+    },
+    {
+     "answer": "Indigo",
+     "tier": 2
+    },
+    {
+     "answer": "Cyan",
+     "tier": 3
+    },
+    {
+     "answer": "Burgundy",
+     "tier": 3
+    },
+    {
+     "answer": "Crimson",
+     "tier": 3
+    },
+    {
+     "answer": "Scarlet",
+     "tier": 3
+    },
+    {
+     "answer": "Coral",
+     "tier": 3
+    },
+    {
+     "answer": "Peach",
+     "tier": 3
+    },
+    {
+     "answer": "Olive",
+     "tier": 3
+    },
+    {
+     "answer": "Lime",
+     "tier": 3
+    },
+    {
+     "answer": "Mint",
+     "tier": 3
+    },
+    {
+     "answer": "Cream",
+     "tier": 3
+    },
+    {
+     "answer": "Khaki",
+     "tier": 3
+    },
+    {
+     "answer": "Sky blue",
+     "tier": 3
+    },
+    {
+     "answer": "Royal blue",
+     "tier": 3
+    },
+    {
+     "answer": "Baby blue",
+     "tier": 3
+    },
+    {
+     "answer": "Bronze",
+     "tier": 3
+    },
+    {
+     "answer": "Salmon",
+     "tier": 3
+    },
+    {
+     "answer": "Emerald",
+     "tier": 3
+    },
+    {
+     "answer": "Ivory",
+     "tier": 3
+    },
+    {
+     "answer": "Fuchsia",
+     "tier": 3
+    },
+    {
+     "answer": "Mustard",
+     "tier": 3
+    },
+    {
+     "answer": "Tan",
+     "tier": 3
+    },
+    {
+     "answer": "Aqua",
+     "tier": 3
+    },
+    {
+     "answer": "Charcoal",
+     "tier": 3
+    },
+    {
+     "answer": "Hot pink",
+     "tier": 3
+    },
+    {
+     "answer": "Jade",
+     "tier": 3
+    },
+    {
+     "answer": "Plum",
+     "tier": 3
+    },
+    {
+     "answer": "Mauve",
+     "tier": 3
+    },
+    {
+     "answer": "Amber",
+     "tier": 3
+    },
+    {
+     "answer": "Ruby",
+     "tier": 4
+    },
+    {
+     "answer": "Rose",
+     "tier": 4
+    },
+    {
+     "answer": "Copper",
+     "tier": 4
+    },
+    {
+     "answer": "Rust",
+     "tier": 4
+    },
+    {
+     "answer": "Azure",
+     "tier": 4
+    },
+    {
+     "answer": "Cobalt",
+     "tier": 4
+    },
+    {
+     "answer": "Sapphire",
+     "tier": 4
+    },
+    {
+     "answer": "Ochre",
+     "tier": 4
+    },
+    {
+     "answer": "Champagne",
+     "tier": 4
+    },
+    {
+     "answer": "Off-white",
+     "tier": 4
+    },
+    {
+     "answer": "Lemon",
+     "tier": 4
+    },
+    {
+     "answer": "Forest green",
+     "tier": 4
+    },
+    {
+     "answer": "Sage",
+     "tier": 4
+    },
+    {
+     "answer": "Cherry",
+     "tier": 4
+    },
+    {
+     "answer": "Wine",
+     "tier": 4
+    },
+    {
+     "answer": "Raspberry",
+     "tier": 4
+    },
+    {
+     "answer": "Chocolate",
+     "tier": 4
+    },
+    {
+     "answer": "Caramel",
+     "tier": 4
+    },
+    {
+     "answer": "Mahogany",
+     "tier": 4
+    },
+    {
+     "answer": "Chestnut",
+     "tier": 4
+    },
+    {
+     "answer": "Auburn",
+     "tier": 4
+    },
+    {
+     "answer": "Hazel",
+     "tier": 4
+    },
+    {
+     "answer": "Taupe",
+     "tier": 4
+    },
+    {
+     "answer": "Periwinkle",
+     "tier": 4
+    },
+    {
+     "answer": "Cerulean",
+     "tier": 4
+    },
+    {
+     "answer": "Ultramarine",
+     "tier": 4
+    },
+    {
+     "answer": "Vermilion",
+     "tier": 4
+    },
+    {
+     "answer": "Burnt sienna",
+     "tier": 4,
+     "aliases": [
+      "Sienna"
+     ]
+    },
+    {
+     "answer": "Umber",
+     "tier": 5
+    },
+    {
+     "answer": "Chartreuse",
+     "tier": 5
+    },
+    {
+     "answer": "Blush",
+     "tier": 5
+    },
+    {
+     "answer": "Sepia",
+     "tier": 5
+    },
+    {
+     "answer": "Eggshell",
+     "tier": 5
+    },
+    {
+     "answer": "Canary yellow",
+     "tier": 5
+    },
+    {
+     "answer": "Bottle green",
+     "tier": 5
+    },
+    {
+     "answer": "Hunter green",
+     "tier": 5
+    },
+    {
+     "answer": "Pistachio",
+     "tier": 5
+    },
+    {
+     "answer": "Cerise",
+     "tier": 5
+    },
+    {
+     "answer": "Puce",
+     "tier": 5
+    },
+    {
+     "answer": "Aubergine",
+     "tier": 5,
+     "aliases": [
+      "Eggplant"
+     ]
+    },
+    {
+     "answer": "Mulberry",
+     "tier": 5
+    },
+    {
+     "answer": "Electric blue",
+     "tier": 5
+    },
+    {
+     "answer": "Midnight blue",
+     "tier": 5
+    },
+    {
+     "answer": "Prussian blue",
+     "tier": 5
+    },
+    {
+     "answer": "Cornflower blue",
+     "tier": 5
+    },
+    {
+     "answer": "Powder blue",
+     "tier": 5
+    },
+    {
+     "answer": "Denim",
+     "tier": 5
+    },
+    {
+     "answer": "Slate",
+     "tier": 5
+    },
+    {
+     "answer": "Gunmetal",
+     "tier": 5
+    },
+    {
+     "answer": "Platinum",
+     "tier": 5
+    },
+    {
+     "answer": "Sand",
+     "tier": 5
+    },
+    {
+     "answer": "Ecru",
+     "tier": 5
+    },
+    {
+     "answer": "Mocha",
+     "tier": 5
+    },
+    {
+     "answer": "Saffron",
+     "tier": 5
+    },
+    {
+     "answer": "Tangerine",
+     "tier": 5
+    },
+    {
+     "answer": "Apricot",
+     "tier": 5
+    },
+    {
+     "answer": "Magnolia",
+     "tier": 5
+    },
+    {
+     "answer": "Duck egg blue",
+     "tier": 5
+    },
+    {
+     "answer": "Tiffany blue",
+     "tier": 5
+    },
+    {
+     "answer": "Viridian",
+     "tier": 5
+    },
+    {
+     "answer": "Celadon",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a shape (2D or 3D)",
+   "category": "Everyday",
+   "answers": [
+    {
+     "answer": "Circle",
+     "tier": 1
+    },
+    {
+     "answer": "Square",
+     "tier": 1
+    },
+    {
+     "answer": "Triangle",
+     "tier": 1
+    },
+    {
+     "answer": "Rectangle",
+     "tier": 1
+    },
+    {
+     "answer": "Star",
+     "tier": 1
+    },
+    {
+     "answer": "Heart",
+     "tier": 1
+    },
+    {
+     "answer": "Oval",
+     "tier": 2
+    },
+    {
+     "answer": "Pentagon",
+     "tier": 2
+    },
+    {
+     "answer": "Hexagon",
+     "tier": 2
+    },
+    {
+     "answer": "Octagon",
+     "tier": 2
+    },
+    {
+     "answer": "Diamond",
+     "tier": 2
+    },
+    {
+     "answer": "Cube",
+     "tier": 2
+    },
+    {
+     "answer": "Sphere",
+     "tier": 2
+    },
+    {
+     "answer": "Pyramid",
+     "tier": 2
+    },
+    {
+     "answer": "Rhombus",
+     "tier": 2,
+     "aliases": [
+      "Lozenge"
+     ]
+    },
+    {
+     "answer": "Trapezoid",
+     "tier": 3,
+     "aliases": [
+      "Trapezium"
+     ]
+    },
+    {
+     "answer": "Parallelogram",
+     "tier": 3
+    },
+    {
+     "answer": "Cone",
+     "tier": 3
+    },
+    {
+     "answer": "Cylinder",
+     "tier": 3
+    },
+    {
+     "answer": "Crescent",
+     "tier": 3
+    },
+    {
+     "answer": "Ellipse",
+     "tier": 3
+    },
+    {
+     "answer": "Semicircle",
+     "tier": 3
+    },
+    {
+     "answer": "Cuboid",
+     "tier": 3,
+     "aliases": [
+      "Rectangular prism"
+     ]
+    },
+    {
+     "answer": "Kite",
+     "tier": 3,
+     "aliases": [
+      "Deltoid"
+     ]
+    },
+    {
+     "answer": "Heptagon",
+     "tier": 3
+    },
+    {
+     "answer": "Nonagon",
+     "tier": 3
+    },
+    {
+     "answer": "Decagon",
+     "tier": 3
+    },
+    {
+     "answer": "Prism",
+     "tier": 3
+    },
+    {
+     "answer": "Arrow",
+     "tier": 3
+    },
+    {
+     "answer": "Cross",
+     "tier": 3
+    },
+    {
+     "answer": "Spiral",
+     "tier": 4
+    },
+    {
+     "answer": "Quadrilateral",
+     "tier": 4
+    },
+    {
+     "answer": "Polygon",
+     "tier": 4
+    },
+    {
+     "answer": "Tetrahedron",
+     "tier": 4
+    },
+    {
+     "answer": "Octahedron",
+     "tier": 4
+    },
+    {
+     "answer": "Dodecahedron",
+     "tier": 4
+    },
+    {
+     "answer": "Icosahedron",
+     "tier": 4
+    },
+    {
+     "answer": "Dodecagon",
+     "tier": 4
+    },
+    {
+     "answer": "Torus",
+     "tier": 4,
+     "aliases": [
+      "Doughnut",
+      "Donut"
+     ]
+    },
+    {
+     "answer": "Hemisphere",
+     "tier": 4
+    },
+    {
+     "answer": "Ring",
+     "tier": 4,
+     "aliases": [
+      "Annulus"
+     ]
+    },
+    {
+     "answer": "Teardrop",
+     "tier": 4
+    },
+    {
+     "answer": "Chevron",
+     "tier": 4
+    },
+    {
+     "answer": "Ovoid",
+     "tier": 4,
+     "aliases": [
+      "Egg shape"
+     ]
+    },
+    {
+     "answer": "Arc",
+     "tier": 4
+    },
+    {
+     "answer": "Sector",
+     "tier": 5
+    },
+    {
+     "answer": "Helix",
+     "tier": 5
+    },
+    {
+     "answer": "Pentagram",
+     "tier": 5
+    },
+    {
+     "answer": "Hexagram",
+     "tier": 5
+    },
+    {
+     "answer": "Equilateral triangle",
+     "tier": 5
+    },
+    {
+     "answer": "Isosceles triangle",
+     "tier": 5
+    },
+    {
+     "answer": "Scalene triangle",
+     "tier": 5
+    },
+    {
+     "answer": "Right triangle",
+     "tier": 5,
+     "aliases": [
+      "Right-angled triangle"
+     ]
+    },
+    {
+     "answer": "Hendecagon",
+     "tier": 5,
+     "aliases": [
+      "Undecagon"
+     ]
+    },
+    {
+     "answer": "Parabola",
+     "tier": 5
+    },
+    {
+     "answer": "Hyperbola",
+     "tier": 5
+    },
+    {
+     "answer": "Rhomboid",
+     "tier": 5
+    },
+    {
+     "answer": "Trefoil",
+     "tier": 5
+    },
+    {
+     "answer": "Quatrefoil",
+     "tier": 5
+    },
+    {
+     "answer": "Möbius strip",
+     "tier": 5
+    },
+    {
+     "answer": "Reuleaux triangle",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a musical instrument",
+   "category": "Culture",
+   "answers": [
+    {
+     "answer": "Piano",
+     "tier": 1
+    },
+    {
+     "answer": "Guitar",
+     "tier": 1
+    },
+    {
+     "answer": "Drums",
+     "tier": 1,
+     "aliases": [
+      "Drum kit"
+     ]
+    },
+    {
+     "answer": "Violin",
+     "tier": 1
+    },
+    {
+     "answer": "Flute",
+     "tier": 1
+    },
+    {
+     "answer": "Trumpet",
+     "tier": 1
+    },
+    {
+     "answer": "Saxophone",
+     "tier": 2,
+     "aliases": [
+      "Sax"
+     ]
+    },
+    {
+     "answer": "Cello",
+     "tier": 2
+    },
+    {
+     "answer": "Clarinet",
+     "tier": 2
+    },
+    {
+     "answer": "Harp",
+     "tier": 2
+    },
+    {
+     "answer": "Bass guitar",
+     "tier": 2,
+     "aliases": [
+      "Bass"
+     ]
+    },
+    {
+     "answer": "Ukulele",
+     "tier": 2
+    },
+    {
+     "answer": "Accordion",
+     "tier": 2
+    },
+    {
+     "answer": "Harmonica",
+     "tier": 2
+    },
+    {
+     "answer": "Keyboard",
+     "tier": 2
+    },
+    {
+     "answer": "Trombone",
+     "tier": 2
+    },
+    {
+     "answer": "Tuba",
+     "tier": 2
+    },
+    {
+     "answer": "Xylophone",
+     "tier": 2
+    },
+    {
+     "answer": "Electric guitar",
+     "tier": 2
+    },
+    {
+     "answer": "Recorder",
+     "tier": 2
+    },
+    {
+     "answer": "Triangle",
+     "tier": 3
+    },
+    {
+     "answer": "Tambourine",
+     "tier": 3
+    },
+    {
+     "answer": "Banjo",
+     "tier": 3
+    },
+    {
+     "answer": "Organ",
+     "tier": 3,
+     "aliases": [
+      "Pipe organ"
+     ]
+    },
+    {
+     "answer": "French horn",
+     "tier": 3,
+     "aliases": [
+      "Horn"
+     ]
+    },
+    {
+     "answer": "Oboe",
+     "tier": 3
+    },
+    {
+     "answer": "Double bass",
+     "tier": 3,
+     "aliases": [
+      "Contrabass",
+      "Upright bass"
+     ]
+    },
+    {
+     "answer": "Viola",
+     "tier": 3
+    },
+    {
+     "answer": "Synthesizer",
+     "tier": 3,
+     "aliases": [
+      "Synth"
+     ]
+    },
+    {
+     "answer": "Bagpipes",
+     "tier": 3
+    },
+    {
+     "answer": "Maracas",
+     "tier": 3
+    },
+    {
+     "answer": "Cymbals",
+     "tier": 3
+    },
+    {
+     "answer": "Darbuka",
+     "tier": 3,
+     "aliases": [
+      "Doumbek",
+      "Goblet drum"
+     ]
+    },
+    {
+     "answer": "Bongos",
+     "tier": 3
+    },
+    {
+     "answer": "Mandolin",
+     "tier": 3
+    },
+    {
+     "answer": "Sitar",
+     "tier": 3
+    },
+    {
+     "answer": "Bassoon",
+     "tier": 3
+    },
+    {
+     "answer": "Piccolo",
+     "tier": 3
+    },
+    {
+     "answer": "Harpsichord",
+     "tier": 3
+    },
+    {
+     "answer": "Glockenspiel",
+     "tier": 3
+    },
+    {
+     "answer": "Oud",
+     "tier": 3
+    },
+    {
+     "answer": "Marimba",
+     "tier": 3
+    },
+    {
+     "answer": "Didgeridoo",
+     "tier": 3
+    },
+    {
+     "answer": "Kazoo",
+     "tier": 4
+    },
+    {
+     "answer": "Djembe",
+     "tier": 4
+    },
+    {
+     "answer": "Castanets",
+     "tier": 4
+    },
+    {
+     "answer": "Gong",
+     "tier": 4
+    },
+    {
+     "answer": "Timpani",
+     "tier": 4,
+     "aliases": [
+      "Kettle drums"
+     ]
+    },
+    {
+     "answer": "Steel drum",
+     "tier": 4,
+     "aliases": [
+      "Steelpan"
+     ]
+    },
+    {
+     "answer": "Pan flute",
+     "tier": 4,
+     "aliases": [
+      "Panpipes"
+     ]
+    },
+    {
+     "answer": "Congas",
+     "tier": 4
+    },
+    {
+     "answer": "Lute",
+     "tier": 4
+    },
+    {
+     "answer": "Lyre",
+     "tier": 4
+    },
+    {
+     "answer": "Bouzouki",
+     "tier": 4
+    },
+    {
+     "answer": "Balalaika",
+     "tier": 4
+    },
+    {
+     "answer": "Shofar",
+     "tier": 4
+    },
+    {
+     "answer": "Bugle",
+     "tier": 4
+    },
+    {
+     "answer": "Cornet",
+     "tier": 4
+    },
+    {
+     "answer": "Ocarina",
+     "tier": 4
+    },
+    {
+     "answer": "Cowbell",
+     "tier": 4
+    },
+    {
+     "answer": "Vibraphone",
+     "tier": 4
+    },
+    {
+     "answer": "Snare drum",
+     "tier": 4
+    },
+    {
+     "answer": "Bass drum",
+     "tier": 4
+    },
+    {
+     "answer": "Cajón",
+     "tier": 4
+    },
+    {
+     "answer": "Tabla",
+     "tier": 4
+    },
+    {
+     "answer": "Theremin",
+     "tier": 4
+    },
+    {
+     "answer": "Melodica",
+     "tier": 5
+    },
+    {
+     "answer": "Keytar",
+     "tier": 5
+    },
+    {
+     "answer": "Euphonium",
+     "tier": 5
+    },
+    {
+     "answer": "Flugelhorn",
+     "tier": 5
+    },
+    {
+     "answer": "Sousaphone",
+     "tier": 5
+    },
+    {
+     "answer": "Kalimba",
+     "tier": 5,
+     "aliases": [
+      "Thumb piano",
+      "Mbira"
+     ]
+    },
+    {
+     "answer": "Zither",
+     "tier": 5
+    },
+    {
+     "answer": "Dulcimer",
+     "tier": 5
+    },
+    {
+     "answer": "Celesta",
+     "tier": 5
+    },
+    {
+     "answer": "Erhu",
+     "tier": 5
+    },
+    {
+     "answer": "Koto",
+     "tier": 5
+    },
+    {
+     "answer": "Shamisen",
+     "tier": 5
+    },
+    {
+     "answer": "Bodhrán",
+     "tier": 5
+    },
+    {
+     "answer": "Hurdy-gurdy",
+     "tier": 5
+    },
+    {
+     "answer": "Tin whistle",
+     "tier": 5,
+     "aliases": [
+      "Penny whistle"
+     ]
+    },
+    {
+     "answer": "Washboard",
+     "tier": 5
+    },
+    {
+     "answer": "Spoons",
+     "tier": 5
+    },
+    {
+     "answer": "Handpan",
+     "tier": 5,
+     "aliases": [
+      "Hang drum"
+     ]
+    },
+    {
+     "answer": "Veena",
+     "tier": 5
+    },
+    {
+     "answer": "Santoor",
+     "tier": 5
+    },
+    {
+     "answer": "Shakuhachi",
+     "tier": 5
+    },
+    {
+     "answer": "Bandoneon",
+     "tier": 5
+    },
+    {
+     "answer": "Concertina",
+     "tier": 5
+    },
+    {
+     "answer": "Clavichord",
+     "tier": 5
+    },
+    {
+     "answer": "Jaw harp",
+     "tier": 5,
+     "aliases": [
+      "Jew's harp"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "Name a Disney or Pixar animated feature film",
+   "category": "Culture",
+   "answers": [
+    {
+     "answer": "Frozen",
+     "tier": 1
+    },
+    {
+     "answer": "The Lion King",
+     "tier": 1
+    },
+    {
+     "answer": "Toy Story",
+     "tier": 1
+    },
+    {
+     "answer": "Finding Nemo",
+     "tier": 1
+    },
+    {
+     "answer": "Aladdin",
+     "tier": 1
+    },
+    {
+     "answer": "Beauty and the Beast",
+     "tier": 1
+    },
+    {
+     "answer": "The Little Mermaid",
+     "tier": 2
+    },
+    {
+     "answer": "Cinderella",
+     "tier": 2
+    },
+    {
+     "answer": "Snow White and the Seven Dwarfs",
+     "tier": 2,
+     "aliases": [
+      "Snow White"
+     ]
+    },
+    {
+     "answer": "Moana",
+     "tier": 2
+    },
+    {
+     "answer": "Up",
+     "tier": 2
+    },
+    {
+     "answer": "Cars",
+     "tier": 2
+    },
+    {
+     "answer": "Monsters, Inc.",
+     "tier": 2
+    },
+    {
+     "answer": "The Incredibles",
+     "tier": 2
+    },
+    {
+     "answer": "Tangled",
+     "tier": 2
+    },
+    {
+     "answer": "Coco",
+     "tier": 2
+    },
+    {
+     "answer": "Inside Out",
+     "tier": 2
+    },
+    {
+     "answer": "Zootopia",
+     "tier": 2,
+     "aliases": [
+      "Zootropolis"
+     ]
+    },
+    {
+     "answer": "Encanto",
+     "tier": 2
+    },
+    {
+     "answer": "Mulan",
+     "tier": 3
+    },
+    {
+     "answer": "Ratatouille",
+     "tier": 3
+    },
+    {
+     "answer": "WALL-E",
+     "tier": 3
+    },
+    {
+     "answer": "Bambi",
+     "tier": 3
+    },
+    {
+     "answer": "Dumbo",
+     "tier": 3
+    },
+    {
+     "answer": "Pinocchio",
+     "tier": 3
+    },
+    {
+     "answer": "Peter Pan",
+     "tier": 3
+    },
+    {
+     "answer": "The Jungle Book",
+     "tier": 3
+    },
+    {
+     "answer": "Sleeping Beauty",
+     "tier": 3
+    },
+    {
+     "answer": "Lilo & Stitch",
+     "tier": 3
+    },
+    {
+     "answer": "Pocahontas",
+     "tier": 3
+    },
+    {
+     "answer": "Hercules",
+     "tier": 3
+    },
+    {
+     "answer": "Tarzan",
+     "tier": 3
+    },
+    {
+     "answer": "Alice in Wonderland",
+     "tier": 3
+    },
+    {
+     "answer": "Lady and the Tramp",
+     "tier": 3
+    },
+    {
+     "answer": "101 Dalmatians",
+     "tier": 3,
+     "aliases": [
+      "One Hundred and One Dalmatians"
+     ]
+    },
+    {
+     "answer": "Big Hero 6",
+     "tier": 3
+    },
+    {
+     "answer": "Wreck-It Ralph",
+     "tier": 3
+    },
+    {
+     "answer": "Frozen II",
+     "tier": 3,
+     "aliases": [
+      "Frozen 2"
+     ]
+    },
+    {
+     "answer": "Toy Story 2",
+     "tier": 3
+    },
+    {
+     "answer": "Toy Story 3",
+     "tier": 3
+    },
+    {
+     "answer": "Toy Story 4",
+     "tier": 3
+    },
+    {
+     "answer": "Finding Dory",
+     "tier": 4
+    },
+    {
+     "answer": "Incredibles 2",
+     "tier": 4
+    },
+    {
+     "answer": "Monsters University",
+     "tier": 4
+    },
+    {
+     "answer": "Brave",
+     "tier": 4
+    },
+    {
+     "answer": "A Bug's Life",
+     "tier": 4
+    },
+    {
+     "answer": "Soul",
+     "tier": 4
+    },
+    {
+     "answer": "Luca",
+     "tier": 4
+    },
+    {
+     "answer": "Turning Red",
+     "tier": 4
+    },
+    {
+     "answer": "Inside Out 2",
+     "tier": 4
+    },
+    {
+     "answer": "Moana 2",
+     "tier": 4
+    },
+    {
+     "answer": "Cars 2",
+     "tier": 4
+    },
+    {
+     "answer": "Cars 3",
+     "tier": 4
+    },
+    {
+     "answer": "The Princess and the Frog",
+     "tier": 4
+    },
+    {
+     "answer": "Bolt",
+     "tier": 4
+    },
+    {
+     "answer": "The Emperor's New Groove",
+     "tier": 4
+    },
+    {
+     "answer": "The Hunchback of Notre Dame",
+     "tier": 4
+    },
+    {
+     "answer": "Fantasia",
+     "tier": 4
+    },
+    {
+     "answer": "Robin Hood",
+     "tier": 4
+    },
+    {
+     "answer": "The Aristocats",
+     "tier": 4
+    },
+    {
+     "answer": "The Fox and the Hound",
+     "tier": 4
+    },
+    {
+     "answer": "The Sword in the Stone",
+     "tier": 4
+    },
+    {
+     "answer": "Winnie the Pooh",
+     "tier": 4,
+     "aliases": [
+      "The Many Adventures of Winnie the Pooh"
+     ]
+    },
+    {
+     "answer": "Raya and the Last Dragon",
+     "tier": 5
+    },
+    {
+     "answer": "Wish",
+     "tier": 5
+    },
+    {
+     "answer": "Ralph Breaks the Internet",
+     "tier": 5
+    },
+    {
+     "answer": "Zootopia 2",
+     "tier": 5,
+     "aliases": [
+      "Zootropolis 2"
+     ]
+    },
+    {
+     "answer": "Onward",
+     "tier": 5
+    },
+    {
+     "answer": "Elemental",
+     "tier": 5
+    },
+    {
+     "answer": "Lightyear",
+     "tier": 5
+    },
+    {
+     "answer": "The Good Dinosaur",
+     "tier": 5
+    },
+    {
+     "answer": "Elio",
+     "tier": 5
+    },
+    {
+     "answer": "Brother Bear",
+     "tier": 5
+    },
+    {
+     "answer": "Atlantis: The Lost Empire",
+     "tier": 5,
+     "aliases": [
+      "Atlantis"
+     ]
+    },
+    {
+     "answer": "Treasure Planet",
+     "tier": 5
+    },
+    {
+     "answer": "Chicken Little",
+     "tier": 5
+    },
+    {
+     "answer": "Meet the Robinsons",
+     "tier": 5
+    },
+    {
+     "answer": "Dinosaur",
+     "tier": 5
+    },
+    {
+     "answer": "Home on the Range",
+     "tier": 5
+    },
+    {
+     "answer": "Strange World",
+     "tier": 5
+    },
+    {
+     "answer": "The Rescuers",
+     "tier": 5
+    },
+    {
+     "answer": "The Rescuers Down Under",
+     "tier": 5
+    },
+    {
+     "answer": "The Great Mouse Detective",
+     "tier": 5
+    },
+    {
+     "answer": "Oliver & Company",
+     "tier": 5
+    },
+    {
+     "answer": "The Black Cauldron",
+     "tier": 5
+    },
+    {
+     "answer": "Fantasia 2000",
+     "tier": 5
+    },
+    {
+     "answer": "The Nightmare Before Christmas",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a character from the Harry Potter books or films (pets and creatures count)",
+   "category": "Culture",
+   "answers": [
+    {
+     "answer": "Harry Potter",
+     "tier": 1,
+     "aliases": [
+      "Harry"
+     ]
+    },
+    {
+     "answer": "Hermione Granger",
+     "tier": 1,
+     "aliases": [
+      "Hermione"
+     ]
+    },
+    {
+     "answer": "Ron Weasley",
+     "tier": 1,
+     "aliases": [
+      "Ron"
+     ]
+    },
+    {
+     "answer": "Dumbledore",
+     "tier": 1,
+     "aliases": [
+      "Albus Dumbledore"
+     ]
+    },
+    {
+     "answer": "Voldemort",
+     "tier": 1,
+     "aliases": [
+      "Lord Voldemort",
+      "Tom Riddle",
+      "You-Know-Who"
+     ]
+    },
+    {
+     "answer": "Snape",
+     "tier": 1,
+     "aliases": [
+      "Severus Snape"
+     ]
+    },
+    {
+     "answer": "Hagrid",
+     "tier": 2,
+     "aliases": [
+      "Rubeus Hagrid"
+     ]
+    },
+    {
+     "answer": "Draco Malfoy",
+     "tier": 2,
+     "aliases": [
+      "Draco"
+     ]
+    },
+    {
+     "answer": "Sirius Black",
+     "tier": 2,
+     "aliases": [
+      "Sirius"
+     ]
+    },
+    {
+     "answer": "Dobby",
+     "tier": 2
+    },
+    {
+     "answer": "McGonagall",
+     "tier": 2,
+     "aliases": [
+      "Minerva McGonagall",
+      "Professor McGonagall"
+     ]
+    },
+    {
+     "answer": "Neville Longbottom",
+     "tier": 2,
+     "aliases": [
+      "Neville"
+     ]
+    },
+    {
+     "answer": "Ginny Weasley",
+     "tier": 2,
+     "aliases": [
+      "Ginny"
+     ]
+    },
+    {
+     "answer": "Luna Lovegood",
+     "tier": 2,
+     "aliases": [
+      "Luna"
+     ]
+    },
+    {
+     "answer": "Hedwig",
+     "tier": 2
+    },
+    {
+     "answer": "Fred Weasley",
+     "tier": 2,
+     "aliases": [
+      "Fred"
+     ]
+    },
+    {
+     "answer": "George Weasley",
+     "tier": 2,
+     "aliases": [
+      "George"
+     ]
+    },
+    {
+     "answer": "Bellatrix Lestrange",
+     "tier": 2,
+     "aliases": [
+      "Bellatrix"
+     ]
+    },
+    {
+     "answer": "Lucius Malfoy",
+     "tier": 2,
+     "aliases": [
+      "Lucius"
+     ]
+    },
+    {
+     "answer": "Cedric Diggory",
+     "tier": 2,
+     "aliases": [
+      "Cedric"
+     ]
+    },
+    {
+     "answer": "Remus Lupin",
+     "tier": 2,
+     "aliases": [
+      "Lupin"
+     ]
+    },
+    {
+     "answer": "Dolores Umbridge",
+     "tier": 3,
+     "aliases": [
+      "Umbridge"
+     ]
+    },
+    {
+     "answer": "Cho Chang",
+     "tier": 3,
+     "aliases": [
+      "Cho"
+     ]
+    },
+    {
+     "answer": "Peter Pettigrew",
+     "tier": 3,
+     "aliases": [
+      "Wormtail"
+     ]
+    },
+    {
+     "answer": "Mad-Eye Moody",
+     "tier": 3,
+     "aliases": [
+      "Alastor Moody",
+      "Moody"
+     ]
+    },
+    {
+     "answer": "Gilderoy Lockhart",
+     "tier": 3,
+     "aliases": [
+      "Lockhart"
+     ]
+    },
+    {
+     "answer": "Dudley Dursley",
+     "tier": 3,
+     "aliases": [
+      "Dudley"
+     ]
+    },
+    {
+     "answer": "Vernon Dursley",
+     "tier": 3,
+     "aliases": [
+      "Uncle Vernon"
+     ]
+    },
+    {
+     "answer": "Petunia Dursley",
+     "tier": 3,
+     "aliases": [
+      "Aunt Petunia"
+     ]
+    },
+    {
+     "answer": "Molly Weasley",
+     "tier": 3,
+     "aliases": [
+      "Mrs Weasley"
+     ]
+    },
+    {
+     "answer": "Arthur Weasley",
+     "tier": 3,
+     "aliases": [
+      "Mr Weasley"
+     ]
+    },
+    {
+     "answer": "Percy Weasley",
+     "tier": 3,
+     "aliases": [
+      "Percy"
+     ]
+    },
+    {
+     "answer": "Nymphadora Tonks",
+     "tier": 3,
+     "aliases": [
+      "Tonks"
+     ]
+    },
+    {
+     "answer": "Fleur Delacour",
+     "tier": 3,
+     "aliases": [
+      "Fleur"
+     ]
+    },
+    {
+     "answer": "Viktor Krum",
+     "tier": 3,
+     "aliases": [
+      "Krum"
+     ]
+    },
+    {
+     "answer": "Argus Filch",
+     "tier": 3,
+     "aliases": [
+      "Filch"
+     ]
+    },
+    {
+     "answer": "Lily Potter",
+     "tier": 3
+    },
+    {
+     "answer": "James Potter",
+     "tier": 3
+    },
+    {
+     "answer": "Moaning Myrtle",
+     "tier": 3,
+     "aliases": [
+      "Myrtle"
+     ]
+    },
+    {
+     "answer": "Nearly Headless Nick",
+     "tier": 3
+    },
+    {
+     "answer": "Peeves",
+     "tier": 3
+    },
+    {
+     "answer": "Professor Quirrell",
+     "tier": 3,
+     "aliases": [
+      "Quirrell"
+     ]
+    },
+    {
+     "answer": "Sybill Trelawney",
+     "tier": 3,
+     "aliases": [
+      "Trelawney"
+     ]
+    },
+    {
+     "answer": "Horace Slughorn",
+     "tier": 3,
+     "aliases": [
+      "Slughorn"
+     ]
+    },
+    {
+     "answer": "Gellert Grindelwald",
+     "tier": 3,
+     "aliases": [
+      "Grindelwald"
+     ]
+    },
+    {
+     "answer": "Nagini",
+     "tier": 3
+    },
+    {
+     "answer": "Buckbeak",
+     "tier": 3
+    },
+    {
+     "answer": "Crookshanks",
+     "tier": 4
+    },
+    {
+     "answer": "Scabbers",
+     "tier": 4
+    },
+    {
+     "answer": "Fawkes",
+     "tier": 4
+    },
+    {
+     "answer": "Kreacher",
+     "tier": 4
+    },
+    {
+     "answer": "Aragog",
+     "tier": 4
+    },
+    {
+     "answer": "Fluffy",
+     "tier": 4
+    },
+    {
+     "answer": "Kingsley Shacklebolt",
+     "tier": 4,
+     "aliases": [
+      "Kingsley"
+     ]
+    },
+    {
+     "answer": "Seamus Finnigan",
+     "tier": 4,
+     "aliases": [
+      "Seamus"
+     ]
+    },
+    {
+     "answer": "Dean Thomas",
+     "tier": 4
+    },
+    {
+     "answer": "Crabbe",
+     "tier": 4,
+     "aliases": [
+      "Vincent Crabbe"
+     ]
+    },
+    {
+     "answer": "Goyle",
+     "tier": 4,
+     "aliases": [
+      "Gregory Goyle"
+     ]
+    },
+    {
+     "answer": "Bill Weasley",
+     "tier": 4
+    },
+    {
+     "answer": "Charlie Weasley",
+     "tier": 4
+    },
+    {
+     "answer": "Cornelius Fudge",
+     "tier": 4,
+     "aliases": [
+      "Fudge"
+     ]
+    },
+    {
+     "answer": "Mrs Norris",
+     "tier": 4
+    },
+    {
+     "answer": "Professor Sprout",
+     "tier": 4,
+     "aliases": [
+      "Pomona Sprout"
+     ]
+    },
+    {
+     "answer": "Flitwick",
+     "tier": 4,
+     "aliases": [
+      "Filius Flitwick"
+     ]
+    },
+    {
+     "answer": "Madam Pomfrey",
+     "tier": 4
+    },
+    {
+     "answer": "Madam Hooch",
+     "tier": 4
+    },
+    {
+     "answer": "Ollivander",
+     "tier": 4
+    },
+    {
+     "answer": "Rita Skeeter",
+     "tier": 4
+    },
+    {
+     "answer": "Narcissa Malfoy",
+     "tier": 4
+    },
+    {
+     "answer": "Lavender Brown",
+     "tier": 4
+    },
+    {
+     "answer": "Parvati Patil",
+     "tier": 4
+    },
+    {
+     "answer": "Padma Patil",
+     "tier": 4
+    },
+    {
+     "answer": "Oliver Wood",
+     "tier": 4
+    },
+    {
+     "answer": "Lee Jordan",
+     "tier": 5
+    },
+    {
+     "answer": "Pansy Parkinson",
+     "tier": 5
+    },
+    {
+     "answer": "Barty Crouch",
+     "tier": 5
+    },
+    {
+     "answer": "Igor Karkaroff",
+     "tier": 5
+    },
+    {
+     "answer": "Madame Maxime",
+     "tier": 5
+    },
+    {
+     "answer": "Fenrir Greyback",
+     "tier": 5
+    },
+    {
+     "answer": "Aberforth Dumbledore",
+     "tier": 5
+    },
+    {
+     "answer": "Ariana Dumbledore",
+     "tier": 5
+    },
+    {
+     "answer": "Norbert",
+     "tier": 5
+    },
+    {
+     "answer": "Grawp",
+     "tier": 5
+    },
+    {
+     "answer": "Firenze",
+     "tier": 5
+    },
+    {
+     "answer": "Winky",
+     "tier": 5
+    },
+    {
+     "answer": "Griphook",
+     "tier": 5
+    },
+    {
+     "answer": "Colin Creevey",
+     "tier": 5
+    },
+    {
+     "answer": "Hannah Abbott",
+     "tier": 5
+    },
+    {
+     "answer": "Ernie Macmillan",
+     "tier": 5
+    },
+    {
+     "answer": "Cormac McLaggen",
+     "tier": 5
+    },
+    {
+     "answer": "Romilda Vane",
+     "tier": 5
+    },
+    {
+     "answer": "Mundungus Fletcher",
+     "tier": 5
+    },
+    {
+     "answer": "Xenophilius Lovegood",
+     "tier": 5
+    },
+    {
+     "answer": "Rufus Scrimgeour",
+     "tier": 5
+    },
+    {
+     "answer": "Teddy Lupin",
+     "tier": 5
+    },
+    {
+     "answer": "Albus Severus Potter",
+     "tier": 5
+    },
+    {
+     "answer": "Scorpius Malfoy",
+     "tier": 5
+    },
+    {
+     "answer": "Newt Scamander",
+     "tier": 5
+    },
+    {
+     "answer": "The Bloody Baron",
+     "tier": 5
+    },
+    {
+     "answer": "The Fat Lady",
+     "tier": 5
+    },
+    {
+     "answer": "Madam Pince",
+     "tier": 5
+    },
+    {
+     "answer": "Dedalus Diggle",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a phobia (the \"-phobia\" word, like claustrophobia)",
+   "category": "Language",
+   "answers": [
+    {
+     "answer": "Arachnophobia",
+     "tier": 1
+    },
+    {
+     "answer": "Claustrophobia",
+     "tier": 1
+    },
+    {
+     "answer": "Acrophobia",
+     "tier": 1
+    },
+    {
+     "answer": "Agoraphobia",
+     "tier": 1
+    },
+    {
+     "answer": "Aerophobia",
+     "tier": 1,
+     "aliases": [
+      "Aviophobia"
+     ]
+    },
+    {
+     "answer": "Hydrophobia",
+     "tier": 1
+    },
+    {
+     "answer": "Aquaphobia",
+     "tier": 2
+    },
+    {
+     "answer": "Nyctophobia",
+     "tier": 2
+    },
+    {
+     "answer": "Coulrophobia",
+     "tier": 2
+    },
+    {
+     "answer": "Trypophobia",
+     "tier": 2
+    },
+    {
+     "answer": "Glossophobia",
+     "tier": 2
+    },
+    {
+     "answer": "Mysophobia",
+     "tier": 2,
+     "aliases": [
+      "Germophobia"
+     ]
+    },
+    {
+     "answer": "Ophidiophobia",
+     "tier": 2
+    },
+    {
+     "answer": "Technophobia",
+     "tier": 2
+    },
+    {
+     "answer": "Triskaidekaphobia",
+     "tier": 2
+    },
+    {
+     "answer": "Hippopotomonstrosesquippedaliophobia",
+     "tier": 2
+    },
+    {
+     "answer": "Nomophobia",
+     "tier": 2
+    },
+    {
+     "answer": "Trypanophobia",
+     "tier": 3
+    },
+    {
+     "answer": "Emetophobia",
+     "tier": 3
+    },
+    {
+     "answer": "Hemophobia",
+     "tier": 3,
+     "aliases": [
+      "Haemophobia",
+      "Hematophobia"
+     ]
+    },
+    {
+     "answer": "Cynophobia",
+     "tier": 3
+    },
+    {
+     "answer": "Thanatophobia",
+     "tier": 3
+    },
+    {
+     "answer": "Entomophobia",
+     "tier": 3
+    },
+    {
+     "answer": "Photophobia",
+     "tier": 3
+    },
+    {
+     "answer": "Pyrophobia",
+     "tier": 3
+    },
+    {
+     "answer": "Astraphobia",
+     "tier": 3,
+     "aliases": [
+      "Astrapophobia"
+     ]
+    },
+    {
+     "answer": "Brontophobia",
+     "tier": 3
+    },
+    {
+     "answer": "Ailurophobia",
+     "tier": 3
+    },
+    {
+     "answer": "Apiphobia",
+     "tier": 3,
+     "aliases": [
+      "Melissophobia"
+     ]
+    },
+    {
+     "answer": "Ornithophobia",
+     "tier": 3
+    },
+    {
+     "answer": "Musophobia",
+     "tier": 3
+    },
+    {
+     "answer": "Dentophobia",
+     "tier": 3,
+     "aliases": [
+      "Odontophobia"
+     ]
+    },
+    {
+     "answer": "Necrophobia",
+     "tier": 3
+    },
+    {
+     "answer": "Autophobia",
+     "tier": 3,
+     "aliases": [
+      "Monophobia"
+     ]
+    },
+    {
+     "answer": "Atychiphobia",
+     "tier": 3
+    },
+    {
+     "answer": "Philophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Thalassophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Megalophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Gephyrophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Nosophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Iatrophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Chronophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Pogonophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Ergophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Somniphobia",
+     "tier": 4,
+     "aliases": [
+      "Hypnophobia"
+     ]
+    },
+    {
+     "answer": "Phobophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Pediophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Spectrophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Phasmophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Lepidopterophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Ichthyophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Anthophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Arachibutyrophobia",
+     "tier": 4
+    },
+    {
+     "answer": "Selachophobia",
+     "tier": 5,
+     "aliases": [
+      "Galeophobia"
+     ]
+    },
+    {
+     "answer": "Bathophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Cibophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Phonophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Ablutophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Chiroptophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Cyberphobia",
+     "tier": 5
+    },
+    {
+     "answer": "Batrachophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Herpetophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Equinophobia",
+     "tier": 5,
+     "aliases": [
+      "Hippophobia"
+     ]
+    },
+    {
+     "answer": "Ombrophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Chionophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Cryophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Heliophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Algophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Tokophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Gamophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Bibliophobia",
+     "tier": 5
+    },
+    {
+     "answer": "Paraskevidekatriaphobia",
+     "tier": 5
+    },
+    {
+     "answer": "Aibohphobia",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a fictional detective",
+   "category": "Culture",
+   "answers": [
+    {
+     "answer": "Sherlock Holmes",
+     "tier": 1,
+     "aliases": [
+      "Sherlock"
+     ]
+    },
+    {
+     "answer": "Hercule Poirot",
+     "tier": 1,
+     "aliases": [
+      "Poirot"
+     ]
+    },
+    {
+     "answer": "Miss Marple",
+     "tier": 1,
+     "aliases": [
+      "Jane Marple"
+     ]
+    },
+    {
+     "answer": "Columbo",
+     "tier": 1
+    },
+    {
+     "answer": "Inspector Gadget",
+     "tier": 1
+    },
+    {
+     "answer": "Inspector Clouseau",
+     "tier": 1,
+     "aliases": [
+      "Clouseau"
+     ]
+    },
+    {
+     "answer": "Nancy Drew",
+     "tier": 2
+    },
+    {
+     "answer": "Detective Conan",
+     "tier": 2,
+     "aliases": [
+      "Conan Edogawa",
+      "Case Closed"
+     ]
+    },
+    {
+     "answer": "Scooby-Doo",
+     "tier": 2
+    },
+    {
+     "answer": "Dr. Watson",
+     "tier": 2,
+     "aliases": [
+      "Watson",
+      "Doctor Watson"
+     ]
+    },
+    {
+     "answer": "Jessica Fletcher",
+     "tier": 2
+    },
+    {
+     "answer": "Inspector Morse",
+     "tier": 2,
+     "aliases": [
+      "Morse"
+     ]
+    },
+    {
+     "answer": "Dick Tracy",
+     "tier": 2
+    },
+    {
+     "answer": "The Hardy Boys",
+     "tier": 2
+    },
+    {
+     "answer": "Ace Ventura",
+     "tier": 2,
+     "aliases": [
+      "Ace Ventura Pet Detective"
+     ]
+    },
+    {
+     "answer": "Detective Pikachu",
+     "tier": 2
+    },
+    {
+     "answer": "Adrian Monk",
+     "tier": 3,
+     "aliases": [
+      "Monk"
+     ]
+    },
+    {
+     "answer": "Benoit Blanc",
+     "tier": 3
+    },
+    {
+     "answer": "Jake Peralta",
+     "tier": 3
+    },
+    {
+     "answer": "Batman",
+     "tier": 3
+    },
+    {
+     "answer": "Philip Marlowe",
+     "tier": 3,
+     "aliases": [
+      "Marlowe"
+     ]
+    },
+    {
+     "answer": "Sam Spade",
+     "tier": 3
+    },
+    {
+     "answer": "Inspector Lestrade",
+     "tier": 3,
+     "aliases": [
+      "Lestrade"
+     ]
+    },
+    {
+     "answer": "Shawn Spencer",
+     "tier": 3
+    },
+    {
+     "answer": "Veronica Mars",
+     "tier": 3
+    },
+    {
+     "answer": "Jessica Jones",
+     "tier": 3
+    },
+    {
+     "answer": "Father Brown",
+     "tier": 3
+    },
+    {
+     "answer": "Kurt Wallander",
+     "tier": 3,
+     "aliases": [
+      "Wallander"
+     ]
+    },
+    {
+     "answer": "Harry Hole",
+     "tier": 3
+    },
+    {
+     "answer": "Cormoran Strike",
+     "tier": 3
+    },
+    {
+     "answer": "Inspector Maigret",
+     "tier": 3,
+     "aliases": [
+      "Maigret"
+     ]
+    },
+    {
+     "answer": "Frank Drebin",
+     "tier": 3
+    },
+    {
+     "answer": "Lisbeth Salander",
+     "tier": 4
+    },
+    {
+     "answer": "Mikael Blomkvist",
+     "tier": 4
+    },
+    {
+     "answer": "Harry Bosch",
+     "tier": 4,
+     "aliases": [
+      "Bosch"
+     ]
+    },
+    {
+     "answer": "Alex Cross",
+     "tier": 4
+    },
+    {
+     "answer": "Lincoln Rhyme",
+     "tier": 4
+    },
+    {
+     "answer": "Dirk Gently",
+     "tier": 4
+    },
+    {
+     "answer": "Luther",
+     "tier": 4,
+     "aliases": [
+      "John Luther"
+     ]
+    },
+    {
+     "answer": "Inspector Barnaby",
+     "tier": 4,
+     "aliases": [
+      "Tom Barnaby"
+     ]
+    },
+    {
+     "answer": "Vera Stanhope",
+     "tier": 4,
+     "aliases": [
+      "Vera"
+     ]
+    },
+    {
+     "answer": "John Rebus",
+     "tier": 4,
+     "aliases": [
+      "Rebus"
+     ]
+    },
+    {
+     "answer": "Jane Tennison",
+     "tier": 4
+    },
+    {
+     "answer": "Inspector Montalbano",
+     "tier": 4,
+     "aliases": [
+      "Montalbano"
+     ]
+    },
+    {
+     "answer": "Magnum",
+     "tier": 4,
+     "aliases": [
+      "Thomas Magnum"
+     ]
+    },
+    {
+     "answer": "Jim Rockford",
+     "tier": 4,
+     "aliases": [
+      "Rockford"
+     ]
+    },
+    {
+     "answer": "Kojak",
+     "tier": 4
+    },
+    {
+     "answer": "Gil Grissom",
+     "tier": 4,
+     "aliases": [
+      "Grissom"
+     ]
+    },
+    {
+     "answer": "Rust Cohle",
+     "tier": 5
+    },
+    {
+     "answer": "Sarah Lund",
+     "tier": 5
+    },
+    {
+     "answer": "Saga Norén",
+     "tier": 5
+    },
+    {
+     "answer": "Basil of Baker Street",
+     "tier": 5,
+     "aliases": [
+      "Basil"
+     ]
+    },
+    {
+     "answer": "Eddie Valiant",
+     "tier": 5
+    },
+    {
+     "answer": "Encyclopedia Brown",
+     "tier": 5
+    },
+    {
+     "answer": "Lord Peter Wimsey",
+     "tier": 5,
+     "aliases": [
+      "Peter Wimsey"
+     ]
+    },
+    {
+     "answer": "C. Auguste Dupin",
+     "tier": 5,
+     "aliases": [
+      "Auguste Dupin",
+      "Dupin"
+     ]
+    },
+    {
+     "answer": "Nero Wolfe",
+     "tier": 5
+    },
+    {
+     "answer": "Ellery Queen",
+     "tier": 5
+    },
+    {
+     "answer": "Mike Hammer",
+     "tier": 5
+    },
+    {
+     "answer": "Precious Ramotswe",
+     "tier": 5,
+     "aliases": [
+      "Mma Ramotswe"
+     ]
+    },
+    {
+     "answer": "Kinsey Millhone",
+     "tier": 5
+    },
+    {
+     "answer": "V.I. Warshawski",
+     "tier": 5
+    },
+    {
+     "answer": "Easy Rawlins",
+     "tier": 5
+    },
+    {
+     "answer": "Cadfael",
+     "tier": 5,
+     "aliases": [
+      "Brother Cadfael"
+     ]
+    },
+    {
+     "answer": "Tommy and Tuppence",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a Star Wars character",
+   "category": "Culture",
+   "answers": [
+    {
+     "answer": "Darth Vader",
+     "tier": 1,
+     "aliases": [
+      "Vader",
+      "Anakin Skywalker",
+      "Anakin"
+     ]
+    },
+    {
+     "answer": "Luke Skywalker",
+     "tier": 1,
+     "aliases": [
+      "Luke"
+     ]
+    },
+    {
+     "answer": "Yoda",
+     "tier": 1
+    },
+    {
+     "answer": "Princess Leia",
+     "tier": 1,
+     "aliases": [
+      "Leia",
+      "Leia Organa"
+     ]
+    },
+    {
+     "answer": "Han Solo",
+     "tier": 1,
+     "aliases": [
+      "Han"
+     ]
+    },
+    {
+     "answer": "Chewbacca",
+     "tier": 1,
+     "aliases": [
+      "Chewie"
+     ]
+    },
+    {
+     "answer": "R2-D2",
+     "tier": 2
+    },
+    {
+     "answer": "C-3PO",
+     "tier": 2
+    },
+    {
+     "answer": "Obi-Wan Kenobi",
+     "tier": 2,
+     "aliases": [
+      "Obi-Wan",
+      "Ben Kenobi"
+     ]
+    },
+    {
+     "answer": "Emperor Palpatine",
+     "tier": 2,
+     "aliases": [
+      "Palpatine",
+      "Darth Sidious",
+      "The Emperor"
+     ]
+    },
+    {
+     "answer": "Boba Fett",
+     "tier": 2
+    },
+    {
+     "answer": "Jabba the Hutt",
+     "tier": 2,
+     "aliases": [
+      "Jabba"
+     ]
+    },
+    {
+     "answer": "Darth Maul",
+     "tier": 2,
+     "aliases": [
+      "Maul"
+     ]
+    },
+    {
+     "answer": "Kylo Ren",
+     "tier": 2,
+     "aliases": [
+      "Ben Solo"
+     ]
+    },
+    {
+     "answer": "Rey",
+     "tier": 2
+    },
+    {
+     "answer": "Grogu",
+     "tier": 2,
+     "aliases": [
+      "Baby Yoda"
+     ]
+    },
+    {
+     "answer": "The Mandalorian",
+     "tier": 2,
+     "aliases": [
+      "Din Djarin",
+      "Mando"
+     ]
+    },
+    {
+     "answer": "Jar Jar Binks",
+     "tier": 2,
+     "aliases": [
+      "Jar Jar"
+     ]
+    },
+    {
+     "answer": "Padmé Amidala",
+     "tier": 2,
+     "aliases": [
+      "Padme"
+     ]
+    },
+    {
+     "answer": "Lando Calrissian",
+     "tier": 3,
+     "aliases": [
+      "Lando"
+     ]
+    },
+    {
+     "answer": "Qui-Gon Jinn",
+     "tier": 3,
+     "aliases": [
+      "Qui-Gon"
+     ]
+    },
+    {
+     "answer": "Mace Windu",
+     "tier": 3
+    },
+    {
+     "answer": "Count Dooku",
+     "tier": 3,
+     "aliases": [
+      "Dooku"
+     ]
+    },
+    {
+     "answer": "General Grievous",
+     "tier": 3,
+     "aliases": [
+      "Grievous"
+     ]
+    },
+    {
+     "answer": "Finn",
+     "tier": 3
+    },
+    {
+     "answer": "Poe Dameron",
+     "tier": 3,
+     "aliases": [
+      "Poe"
+     ]
+    },
+    {
+     "answer": "BB-8",
+     "tier": 3
+    },
+    {
+     "answer": "Ahsoka Tano",
+     "tier": 3,
+     "aliases": [
+      "Ahsoka"
+     ]
+    },
+    {
+     "answer": "Jango Fett",
+     "tier": 3
+    },
+    {
+     "answer": "Grand Moff Tarkin",
+     "tier": 3,
+     "aliases": [
+      "Tarkin"
+     ]
+    },
+    {
+     "answer": "Admiral Ackbar",
+     "tier": 3,
+     "aliases": [
+      "Ackbar"
+     ]
+    },
+    {
+     "answer": "Greedo",
+     "tier": 3
+    },
+    {
+     "answer": "Wicket",
+     "tier": 3
+    },
+    {
+     "answer": "Supreme Leader Snoke",
+     "tier": 3,
+     "aliases": [
+      "Snoke"
+     ]
+    },
+    {
+     "answer": "Captain Phasma",
+     "tier": 3,
+     "aliases": [
+      "Phasma"
+     ]
+    },
+    {
+     "answer": "General Hux",
+     "tier": 3,
+     "aliases": [
+      "Hux"
+     ]
+    },
+    {
+     "answer": "Cassian Andor",
+     "tier": 3,
+     "aliases": [
+      "Andor"
+     ]
+    },
+    {
+     "answer": "Jyn Erso",
+     "tier": 3
+    },
+    {
+     "answer": "K-2SO",
+     "tier": 3
+    },
+    {
+     "answer": "Rose Tico",
+     "tier": 3
+    },
+    {
+     "answer": "Maz Kanata",
+     "tier": 3
+    },
+    {
+     "answer": "Wedge Antilles",
+     "tier": 4
+    },
+    {
+     "answer": "Thrawn",
+     "tier": 4,
+     "aliases": [
+      "Grand Admiral Thrawn"
+     ]
+    },
+    {
+     "answer": "Captain Rex",
+     "tier": 4,
+     "aliases": [
+      "Rex"
+     ]
+    },
+    {
+     "answer": "Moff Gideon",
+     "tier": 4
+    },
+    {
+     "answer": "Bo-Katan",
+     "tier": 4
+    },
+    {
+     "answer": "Cara Dune",
+     "tier": 4
+    },
+    {
+     "answer": "IG-11",
+     "tier": 4
+    },
+    {
+     "answer": "Greef Karga",
+     "tier": 4
+    },
+    {
+     "answer": "Fennec Shand",
+     "tier": 4
+    },
+    {
+     "answer": "Cad Bane",
+     "tier": 4
+    },
+    {
+     "answer": "Asajj Ventress",
+     "tier": 4
+    },
+    {
+     "answer": "Ezra Bridger",
+     "tier": 4
+    },
+    {
+     "answer": "Hera Syndulla",
+     "tier": 4
+    },
+    {
+     "answer": "Kanan Jarrus",
+     "tier": 4
+    },
+    {
+     "answer": "Sabine Wren",
+     "tier": 4
+    },
+    {
+     "answer": "Chopper",
+     "tier": 4
+    },
+    {
+     "answer": "Zeb",
+     "tier": 4
+    },
+    {
+     "answer": "Chirrut Îmwe",
+     "tier": 4
+    },
+    {
+     "answer": "Saw Gerrera",
+     "tier": 4
+    },
+    {
+     "answer": "Orson Krennic",
+     "tier": 4,
+     "aliases": [
+      "Krennic"
+     ]
+    },
+    {
+     "answer": "Bodhi Rook",
+     "tier": 4
+    },
+    {
+     "answer": "Galen Erso",
+     "tier": 4
+    },
+    {
+     "answer": "Mon Mothma",
+     "tier": 5
+    },
+    {
+     "answer": "Bail Organa",
+     "tier": 5
+    },
+    {
+     "answer": "Shmi Skywalker",
+     "tier": 5
+    },
+    {
+     "answer": "Owen Lars",
+     "tier": 5,
+     "aliases": [
+      "Uncle Owen"
+     ]
+    },
+    {
+     "answer": "Beru Lars",
+     "tier": 5,
+     "aliases": [
+      "Aunt Beru"
+     ]
+    },
+    {
+     "answer": "Watto",
+     "tier": 5
+    },
+    {
+     "answer": "Sebulba",
+     "tier": 5
+    },
+    {
+     "answer": "Nute Gunray",
+     "tier": 5
+    },
+    {
+     "answer": "Kit Fisto",
+     "tier": 5
+    },
+    {
+     "answer": "Plo Koon",
+     "tier": 5
+    },
+    {
+     "answer": "Ki-Adi-Mundi",
+     "tier": 5
+    },
+    {
+     "answer": "Aayla Secura",
+     "tier": 5
+    },
+    {
+     "answer": "Darth Plagueis",
+     "tier": 5
+    },
+    {
+     "answer": "Savage Opress",
+     "tier": 5
+    },
+    {
+     "answer": "Admiral Piett",
+     "tier": 5
+    },
+    {
+     "answer": "Nien Nunb",
+     "tier": 5
+    },
+    {
+     "answer": "Bib Fortuna",
+     "tier": 5
+    },
+    {
+     "answer": "Salacious Crumb",
+     "tier": 5
+    },
+    {
+     "answer": "Max Rebo",
+     "tier": 5
+    },
+    {
+     "answer": "Qi'ra",
+     "tier": 5
+    },
+    {
+     "answer": "Tobias Beckett",
+     "tier": 5,
+     "aliases": [
+      "Beckett"
+     ]
+    },
+    {
+     "answer": "Dryden Vos",
+     "tier": 5
+    },
+    {
+     "answer": "L3-37",
+     "tier": 5
+    },
+    {
+     "answer": "Zorii Bliss",
+     "tier": 5
+    },
+    {
+     "answer": "Babu Frik",
+     "tier": 5
+    },
+    {
+     "answer": "Amilyn Holdo",
+     "tier": 5,
+     "aliases": [
+      "Holdo"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "Name a word that rhymes with CAT",
+   "category": "Language",
+   "answers": [
+    {
+     "answer": "Hat",
+     "tier": 1
+    },
+    {
+     "answer": "Bat",
+     "tier": 1
+    },
+    {
+     "answer": "Rat",
+     "tier": 1
+    },
+    {
+     "answer": "Mat",
+     "tier": 1
+    },
+    {
+     "answer": "Sat",
+     "tier": 1
+    },
+    {
+     "answer": "Fat",
+     "tier": 2
+    },
+    {
+     "answer": "Pat",
+     "tier": 2
+    },
+    {
+     "answer": "Chat",
+     "tier": 2
+    },
+    {
+     "answer": "Flat",
+     "tier": 2
+    },
+    {
+     "answer": "That",
+     "tier": 2
+    },
+    {
+     "answer": "Brat",
+     "tier": 2
+    },
+    {
+     "answer": "Gnat",
+     "tier": 2
+    },
+    {
+     "answer": "Splat",
+     "tier": 2
+    },
+    {
+     "answer": "Vat",
+     "tier": 2
+    },
+    {
+     "answer": "Spat",
+     "tier": 3
+    },
+    {
+     "answer": "Acrobat",
+     "tier": 3
+    },
+    {
+     "answer": "Habitat",
+     "tier": 3
+    },
+    {
+     "answer": "Wombat",
+     "tier": 3
+    },
+    {
+     "answer": "Doormat",
+     "tier": 3
+    },
+    {
+     "answer": "Thermostat",
+     "tier": 3
+    },
+    {
+     "answer": "Diplomat",
+     "tier": 3
+    },
+    {
+     "answer": "Copycat",
+     "tier": 3
+    },
+    {
+     "answer": "Format",
+     "tier": 3
+    },
+    {
+     "answer": "Combat",
+     "tier": 3
+    },
+    {
+     "answer": "Meerkat",
+     "tier": 3
+    },
+    {
+     "answer": "Bobcat",
+     "tier": 3
+    },
+    {
+     "answer": "Tomcat",
+     "tier": 3
+    },
+    {
+     "answer": "Wildcat",
+     "tier": 3
+    },
+    {
+     "answer": "Pussycat",
+     "tier": 3
+    },
+    {
+     "answer": "Aristocrat",
+     "tier": 4
+    },
+    {
+     "answer": "Laundromat",
+     "tier": 4
+    },
+    {
+     "answer": "Cravat",
+     "tier": 4
+    },
+    {
+     "answer": "Chitchat",
+     "tier": 4
+    },
+    {
+     "answer": "Expat",
+     "tier": 4
+    },
+    {
+     "answer": "Slat",
+     "tier": 4
+    },
+    {
+     "answer": "Scat",
+     "tier": 4
+    },
+    {
+     "answer": "Drat",
+     "tier": 4
+    },
+    {
+     "answer": "Tat",
+     "tier": 4
+    },
+    {
+     "answer": "Frat",
+     "tier": 4
+    },
+    {
+     "answer": "Stat",
+     "tier": 4
+    },
+    {
+     "answer": "Sprat",
+     "tier": 4
+    },
+    {
+     "answer": "At",
+     "tier": 4
+    },
+    {
+     "answer": "Placemat",
+     "tier": 4
+    },
+    {
+     "answer": "Bathmat",
+     "tier": 4
+    },
+    {
+     "answer": "Polecat",
+     "tier": 5
+    },
+    {
+     "answer": "Muskrat",
+     "tier": 5
+    },
+    {
+     "answer": "Dingbat",
+     "tier": 5
+    },
+    {
+     "answer": "Bureaucrat",
+     "tier": 5
+    },
+    {
+     "answer": "Autocrat",
+     "tier": 5
+    },
+    {
+     "answer": "Technocrat",
+     "tier": 5
+    },
+    {
+     "answer": "Hazmat",
+     "tier": 5
+    },
+    {
+     "answer": "Nonfat",
+     "tier": 5
+    },
+    {
+     "answer": "Ziggurat",
+     "tier": 5
+    },
+    {
+     "answer": "Begat",
+     "tier": 5
+    },
+    {
+     "answer": "Photostat",
+     "tier": 5
+    },
+    {
+     "answer": "Rheostat",
+     "tier": 5
+    },
+    {
+     "answer": "Matte",
+     "tier": 5
+    },
+    {
+     "answer": "Plait",
+     "tier": 5
+    },
+    {
+     "answer": "Lat",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a fictional robot, android or AI",
+   "category": "Fun",
+   "answers": [
+    {
+     "answer": "R2-D2",
+     "tier": 1
+    },
+    {
+     "answer": "C-3PO",
+     "tier": 1
+    },
+    {
+     "answer": "WALL-E",
+     "tier": 1
+    },
+    {
+     "answer": "Terminator",
+     "tier": 1,
+     "aliases": [
+      "T-800"
+     ]
+    },
+    {
+     "answer": "Optimus Prime",
+     "tier": 1
+    },
+    {
+     "answer": "Baymax",
+     "tier": 2
+    },
+    {
+     "answer": "Bumblebee",
+     "tier": 2
+    },
+    {
+     "answer": "HAL 9000",
+     "tier": 2,
+     "aliases": [
+      "HAL"
+     ]
+    },
+    {
+     "answer": "Bender",
+     "tier": 2
+    },
+    {
+     "answer": "EVE",
+     "tier": 2
+    },
+    {
+     "answer": "Megatron",
+     "tier": 2
+    },
+    {
+     "answer": "Data",
+     "tier": 2
+    },
+    {
+     "answer": "RoboCop",
+     "tier": 2
+    },
+    {
+     "answer": "The Iron Giant",
+     "tier": 2
+    },
+    {
+     "answer": "Johnny 5",
+     "tier": 3,
+     "aliases": [
+      "Number 5"
+     ]
+    },
+    {
+     "answer": "BB-8",
+     "tier": 3
+    },
+    {
+     "answer": "Ultron",
+     "tier": 3
+    },
+    {
+     "answer": "JARVIS",
+     "tier": 3
+    },
+    {
+     "answer": "Marvin",
+     "tier": 3,
+     "aliases": [
+      "Marvin the Paranoid Android"
+     ]
+    },
+    {
+     "answer": "Vision",
+     "tier": 3
+    },
+    {
+     "answer": "M3GAN",
+     "tier": 3,
+     "aliases": [
+      "Megan"
+     ]
+    },
+    {
+     "answer": "Skynet",
+     "tier": 3
+    },
+    {
+     "answer": "K-2SO",
+     "tier": 3
+    },
+    {
+     "answer": "Rosie",
+     "tier": 3,
+     "aliases": [
+      "Rosie the Robot"
+     ]
+    },
+    {
+     "answer": "Doraemon",
+     "tier": 3
+    },
+    {
+     "answer": "Astro Boy",
+     "tier": 3
+    },
+    {
+     "answer": "Sonny",
+     "tier": 3
+    },
+    {
+     "answer": "Ava",
+     "tier": 3
+    },
+    {
+     "answer": "Robby the Robot",
+     "tier": 3,
+     "aliases": [
+      "Robby"
+     ]
+    },
+    {
+     "answer": "GLaDOS",
+     "tier": 4
+    },
+    {
+     "answer": "Mega Man",
+     "tier": 4
+    },
+    {
+     "answer": "Cortana",
+     "tier": 4
+    },
+    {
+     "answer": "KITT",
+     "tier": 4
+    },
+    {
+     "answer": "Samantha",
+     "tier": 4
+    },
+    {
+     "answer": "TARS",
+     "tier": 4
+    },
+    {
+     "answer": "Dolores",
+     "tier": 4
+    },
+    {
+     "answer": "K-9",
+     "tier": 4
+    },
+    {
+     "answer": "David",
+     "tier": 4
+    },
+    {
+     "answer": "Roz",
+     "tier": 4,
+     "aliases": [
+      "The Wild Robot"
+     ]
+    },
+    {
+     "answer": "Chappie",
+     "tier": 4
+    },
+    {
+     "answer": "IG-11",
+     "tier": 4
+    },
+    {
+     "answer": "Kryten",
+     "tier": 4
+    },
+    {
+     "answer": "Twiki",
+     "tier": 4
+    },
+    {
+     "answer": "Claptrap",
+     "tier": 4
+    },
+    {
+     "answer": "Wheatley",
+     "tier": 5
+    },
+    {
+     "answer": "Gort",
+     "tier": 5
+    },
+    {
+     "answer": "Maria",
+     "tier": 5
+    },
+    {
+     "answer": "Ash",
+     "tier": 5
+    },
+    {
+     "answer": "Bishop",
+     "tier": 5
+    },
+    {
+     "answer": "Starscream",
+     "tier": 5
+    },
+    {
+     "answer": "Soundwave",
+     "tier": 5
+    },
+    {
+     "answer": "Dot Matrix",
+     "tier": 5
+    },
+    {
+     "answer": "Agent Smith",
+     "tier": 5
+    },
+    {
+     "answer": "Zane",
+     "tier": 5
+    },
+    {
+     "answer": "HK-47",
+     "tier": 5
+    },
+    {
+     "answer": "EDI",
+     "tier": 5
+    },
+    {
+     "answer": "Atom",
+     "tier": 5
+    },
+    {
+     "answer": "Butter Robot",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a hairstyle or haircut",
+   "category": "Everyday",
+   "answers": [
+    {
+     "answer": "Ponytail",
+     "tier": 1
+    },
+    {
+     "answer": "Bun",
+     "tier": 1
+    },
+    {
+     "answer": "Braid",
+     "tier": 1,
+     "aliases": [
+      "Plait"
+     ]
+    },
+    {
+     "answer": "Mohawk",
+     "tier": 1,
+     "aliases": [
+      "Mohican"
+     ]
+    },
+    {
+     "answer": "Bob",
+     "tier": 1
+    },
+    {
+     "answer": "Mullet",
+     "tier": 1
+    },
+    {
+     "answer": "Dreadlocks",
+     "tier": 2,
+     "aliases": [
+      "Dreads",
+      "Locs"
+     ]
+    },
+    {
+     "answer": "Afro",
+     "tier": 2
+    },
+    {
+     "answer": "Buzz cut",
+     "tier": 2
+    },
+    {
+     "answer": "Pixie cut",
+     "tier": 2
+    },
+    {
+     "answer": "Pigtails",
+     "tier": 2
+    },
+    {
+     "answer": "Fringe",
+     "tier": 2,
+     "aliases": [
+      "Bangs"
+     ]
+    },
+    {
+     "answer": "Crew cut",
+     "tier": 2
+    },
+    {
+     "answer": "Cornrows",
+     "tier": 2
+    },
+    {
+     "answer": "Undercut",
+     "tier": 2
+    },
+    {
+     "answer": "Fade",
+     "tier": 2
+    },
+    {
+     "answer": "Man bun",
+     "tier": 3
+    },
+    {
+     "answer": "Quiff",
+     "tier": 3
+    },
+    {
+     "answer": "Pompadour",
+     "tier": 3
+    },
+    {
+     "answer": "French braid",
+     "tier": 3,
+     "aliases": [
+      "French plait"
+     ]
+    },
+    {
+     "answer": "Bald",
+     "tier": 3,
+     "aliases": [
+      "Shaved head"
+     ]
+    },
+    {
+     "answer": "Top knot",
+     "tier": 3
+    },
+    {
+     "answer": "Perm",
+     "tier": 3
+    },
+    {
+     "answer": "Comb-over",
+     "tier": 3
+    },
+    {
+     "answer": "Fishtail braid",
+     "tier": 3,
+     "aliases": [
+      "Fishtail"
+     ]
+    },
+    {
+     "answer": "Dutch braid",
+     "tier": 3
+    },
+    {
+     "answer": "Beehive",
+     "tier": 3
+    },
+    {
+     "answer": "Bowl cut",
+     "tier": 3
+    },
+    {
+     "answer": "Side part",
+     "tier": 3,
+     "aliases": [
+      "Side parting"
+     ]
+    },
+    {
+     "answer": "Flat top",
+     "tier": 3
+    },
+    {
+     "answer": "Faux hawk",
+     "tier": 3,
+     "aliases": [
+      "Fauxhawk"
+     ]
+    },
+    {
+     "answer": "Shag",
+     "tier": 3
+    },
+    {
+     "answer": "Lob",
+     "tier": 4
+    },
+    {
+     "answer": "Curtain bangs",
+     "tier": 4
+    },
+    {
+     "answer": "Slicked back",
+     "tier": 4
+    },
+    {
+     "answer": "Crop",
+     "tier": 4,
+     "aliases": [
+      "French crop"
+     ]
+    },
+    {
+     "answer": "Spikes",
+     "tier": 4,
+     "aliases": [
+      "Spiky hair"
+     ]
+    },
+    {
+     "answer": "Box braids",
+     "tier": 4
+    },
+    {
+     "answer": "Space buns",
+     "tier": 4
+    },
+    {
+     "answer": "Half-up half-down",
+     "tier": 4
+    },
+    {
+     "answer": "Updo",
+     "tier": 4
+    },
+    {
+     "answer": "Wolf cut",
+     "tier": 4
+    },
+    {
+     "answer": "Mop top",
+     "tier": 4
+    },
+    {
+     "answer": "Caesar cut",
+     "tier": 4,
+     "aliases": [
+      "Caesar"
+     ]
+    },
+    {
+     "answer": "Twists",
+     "tier": 4
+    },
+    {
+     "answer": "Bantu knots",
+     "tier": 4
+    },
+    {
+     "answer": "Beach waves",
+     "tier": 4
+    },
+    {
+     "answer": "Ringlets",
+     "tier": 4
+    },
+    {
+     "answer": "Chignon",
+     "tier": 5
+    },
+    {
+     "answer": "The Rachel",
+     "tier": 5
+    },
+    {
+     "answer": "Bouffant",
+     "tier": 5
+    },
+    {
+     "answer": "Finger waves",
+     "tier": 5
+    },
+    {
+     "answer": "Feathered hair",
+     "tier": 5
+    },
+    {
+     "answer": "Taper",
+     "tier": 5
+    },
+    {
+     "answer": "Jheri curl",
+     "tier": 5
+    },
+    {
+     "answer": "Rat tail",
+     "tier": 5
+    },
+    {
+     "answer": "Liberty spikes",
+     "tier": 5
+    },
+    {
+     "answer": "Hime cut",
+     "tier": 5
+    },
+    {
+     "answer": "Pageboy",
+     "tier": 5
+    },
+    {
+     "answer": "High and tight",
+     "tier": 5
+    },
+    {
+     "answer": "Pin curls",
+     "tier": 5
+    },
+    {
+     "answer": "Victory rolls",
+     "tier": 5
+    },
+    {
+     "answer": "Wedge",
+     "tier": 5
+    },
+    {
+     "answer": "Ducktail",
+     "tier": 5
+    }
+   ]
+  },
+  {
+   "text": "Name a famous classical composer",
+   "category": "Culture",
+   "answers": [
+    {
+     "answer": "Mozart",
+     "tier": 1,
+     "aliases": [
+      "Wolfgang Amadeus Mozart"
+     ]
+    },
+    {
+     "answer": "Beethoven",
+     "tier": 1,
+     "aliases": [
+      "Ludwig van Beethoven"
+     ]
+    },
+    {
+     "answer": "Bach",
+     "tier": 1,
+     "aliases": [
+      "Johann Sebastian Bach",
+      "J.S. Bach"
+     ]
+    },
+    {
+     "answer": "Chopin",
+     "tier": 1
+    },
+    {
+     "answer": "Vivaldi",
+     "tier": 1
+    },
+    {
+     "answer": "Tchaikovsky",
+     "tier": 1
+    },
+    {
+     "answer": "Handel",
+     "tier": 2
+    },
+    {
+     "answer": "Haydn",
+     "tier": 2
+    },
+    {
+     "answer": "Schubert",
+     "tier": 2
+    },
+    {
+     "answer": "Brahms",
+     "tier": 2
+    },
+    {
+     "answer": "Wagner",
+     "tier": 2
+    },
+    {
+     "answer": "Verdi",
+     "tier": 2
+    },
+    {
+     "answer": "Johann Strauss",
+     "tier": 2,
+     "aliases": [
+      "Strauss"
+     ]
+    },
+    {
+     "answer": "Debussy",
+     "tier": 2
+    },
+    {
+     "answer": "Puccini",
+     "tier": 2
+    },
+    {
+     "answer": "Liszt",
+     "tier": 2
+    },
+    {
+     "answer": "Mendelssohn",
+     "tier": 2
+    },
+    {
+     "answer": "Rachmaninoff",
+     "tier": 2,
+     "aliases": [
+      "Rachmaninov"
+     ]
+    },
+    {
+     "answer": "Stravinsky",
+     "tier": 2
+    },
+    {
+     "answer": "Dvořák",
+     "tier": 2
+    },
+    {
+     "answer": "Grieg",
+     "tier": 2
+    },
+    {
+     "answer": "Ravel",
+     "tier": 3
+    },
+    {
+     "answer": "Mahler",
+     "tier": 3
+    },
+    {
+     "answer": "Paganini",
+     "tier": 3
+    },
+    {
+     "answer": "Rossini",
+     "tier": 3
+    },
+    {
+     "answer": "Bizet",
+     "tier": 3
+    },
+    {
+     "answer": "Pachelbel",
+     "tier": 3
+    },
+    {
+     "answer": "Schumann",
+     "tier": 3
+    },
+    {
+     "answer": "Gershwin",
+     "tier": 3
+    },
+    {
+     "answer": "Elgar",
+     "tier": 3
+    },
+    {
+     "answer": "Holst",
+     "tier": 3
+    },
+    {
+     "answer": "Satie",
+     "tier": 3
+    },
+    {
+     "answer": "Prokofiev",
+     "tier": 3
+    },
+    {
+     "answer": "Shostakovich",
+     "tier": 3
+    },
+    {
+     "answer": "Sibelius",
+     "tier": 3
+    },
+    {
+     "answer": "Saint-Saëns",
+     "tier": 3
+    },
+    {
+     "answer": "Rimsky-Korsakov",
+     "tier": 3
+    },
+    {
+     "answer": "Mussorgsky",
+     "tier": 3
+    },
+    {
+     "answer": "Berlioz",
+     "tier": 3
+    },
+    {
+     "answer": "Richard Strauss",
+     "tier": 3
+    },
+    {
+     "answer": "Bernstein",
+     "tier": 3,
+     "aliases": [
+      "Leonard Bernstein"
+     ]
+    },
+    {
+     "answer": "Philip Glass",
+     "tier": 3
+    },
+    {
+     "answer": "Einaudi",
+     "tier": 3,
+     "aliases": [
+      "Ludovico Einaudi"
+     ]
+    },
+    {
+     "answer": "Purcell",
+     "tier": 3
+    },
+    {
+     "answer": "Monteverdi",
+     "tier": 3
+    },
+    {
+     "answer": "Telemann",
+     "tier": 4
+    },
+    {
+     "answer": "Scarlatti",
+     "tier": 4
+    },
+    {
+     "answer": "Albinoni",
+     "tier": 4
+    },
+    {
+     "answer": "Corelli",
+     "tier": 4
+    },
+    {
+     "answer": "Offenbach",
+     "tier": 4
+    },
+    {
+     "answer": "Gounod",
+     "tier": 4
+    },
+    {
+     "answer": "Fauré",
+     "tier": 4
+    },
+    {
+     "answer": "Bruckner",
+     "tier": 4
+    },
+    {
+     "answer": "Smetana",
+     "tier": 4
+    },
+    {
+     "answer": "Borodin",
+     "tier": 4
+    },
+    {
+     "answer": "Bartók",
+     "tier": 4
+    },
+    {
+     "answer": "Copland",
+     "tier": 4,
+     "aliases": [
+      "Aaron Copland"
+     ]
+    },
+    {
+     "answer": "John Cage",
+     "tier": 4
+    },
+    {
+     "answer": "Orff",
+     "tier": 4,
+     "aliases": [
+      "Carl Orff"
+     ]
+    },
+    {
+     "answer": "Vaughan Williams",
+     "tier": 4
+    },
+    {
+     "answer": "Britten",
+     "tier": 4,
+     "aliases": [
+      "Benjamin Britten"
+     ]
+    },
+    {
+     "answer": "Gluck",
+     "tier": 4
+    },
+    {
+     "answer": "Boccherini",
+     "tier": 4
+    },
+    {
+     "answer": "Clementi",
+     "tier": 4
+    },
+    {
+     "answer": "Czerny",
+     "tier": 4
+    },
+    {
+     "answer": "Weber",
+     "tier": 4,
+     "aliases": [
+      "Carl Maria von Weber"
+     ]
+    },
+    {
+     "answer": "Donizetti",
+     "tier": 4
+    },
+    {
+     "answer": "Bellini",
+     "tier": 4
+    },
+    {
+     "answer": "Delibes",
+     "tier": 4
+    },
+    {
+     "answer": "Massenet",
+     "tier": 5
+    },
+    {
+     "answer": "Respighi",
+     "tier": 5
+    },
+    {
+     "answer": "Mascagni",
+     "tier": 5
+    },
+    {
+     "answer": "Leoncavallo",
+     "tier": 5
+    },
+    {
+     "answer": "Dukas",
+     "tier": 5
+    },
+    {
+     "answer": "Khachaturian",
+     "tier": 5
+    },
+    {
+     "answer": "Scriabin",
+     "tier": 5
+    },
+    {
+     "answer": "Glinka",
+     "tier": 5
+    },
+    {
+     "answer": "Albéniz",
+     "tier": 5
+    },
+    {
+     "answer": "Granados",
+     "tier": 5
+    },
+    {
+     "answer": "Manuel de Falla",
+     "tier": 5,
+     "aliases": [
+      "De Falla",
+      "Falla"
+     ]
+    },
+    {
+     "answer": "Rodrigo",
+     "tier": 5
+    },
+    {
+     "answer": "Villa-Lobos",
+     "tier": 5
+    },
+    {
+     "answer": "Piazzolla",
+     "tier": 5
+    },
+    {
+     "answer": "Schoenberg",
+     "tier": 5
+    },
+    {
+     "answer": "Alban Berg",
+     "tier": 5,
+     "aliases": [
+      "Berg"
+     ]
+    },
+    {
+     "answer": "Webern",
+     "tier": 5
+    },
+    {
+     "answer": "Hindemith",
+     "tier": 5
+    },
+    {
+     "answer": "Messiaen",
+     "tier": 5
+    },
+    {
+     "answer": "Poulenc",
+     "tier": 5
+    },
+    {
+     "answer": "Ligeti",
+     "tier": 5
+    },
+    {
+     "answer": "Arvo Pärt",
+     "tier": 5,
+     "aliases": [
+      "Part"
+     ]
+    },
+    {
+     "answer": "Steve Reich",
+     "tier": 5
+    },
+    {
+     "answer": "Hildegard of Bingen",
+     "tier": 5
+    },
+    {
+     "answer": "Palestrina",
+     "tier": 5
+    },
+    {
+     "answer": "Kodály",
+     "tier": 5
+    },
+    {
+     "answer": "Janáček",
+     "tier": 5
+    },
+    {
+     "answer": "Sousa",
+     "tier": 5,
+     "aliases": [
+      "John Philip Sousa"
+     ]
+    }
+   ]
+  }
+ ]
+}
