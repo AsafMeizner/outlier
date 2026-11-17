@@ -1,0 +1,5 @@
+vendor-dl/
+data/
+dist/
+node_modules/
+*.log
