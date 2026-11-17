@@ -15,6 +15,9 @@ export const keys = {
   games: ['games'] as const,
   game: (slug: string) => ['game', slug] as const,
   gameMisses: (slug: string) => ['game', slug, 'misses'] as const,
+  practice: ['practice'] as const,
+  friends: ['friends'] as const,
+  parties: ['parties'] as const,
 };
 
 type Opts<T> = Omit<UseQueryOptions<T, Error, T, readonly unknown[]>, 'queryKey' | 'queryFn'>;
@@ -46,3 +49,9 @@ export const useGame = (slug: string, enabled = true) =>
 
 export const useGameMisses = (slug: string, enabled: boolean) =>
   useQuery({ queryKey: keys.gameMisses(slug), queryFn: () => api.get<Api.MissesResponse>(`/api/games/${slug}/misses`), enabled });
+
+export const usePracticeHome = () => useQuery({ queryKey: keys.practice, queryFn: () => api.get<Api.PracticeHome>('/api/practice') });
+export const useFriends = () => useQuery({ queryKey: keys.friends, queryFn: () => api.get<Api.FriendsResponse>('/api/friends') });
+export const useCompare = (id: number | null) =>
+  useQuery({ queryKey: ['friends', 'compare', id ?? 0], queryFn: () => api.get<Api.CompareResponse>(`/api/friends/${id ?? 0}/compare`), enabled: id !== null });
+export const useParties = () => useQuery({ queryKey: keys.parties, queryFn: () => api.get<Api.PartyListResponse>('/api/party'), refetchInterval: 5000 });

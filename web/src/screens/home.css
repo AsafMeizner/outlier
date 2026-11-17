@@ -33,7 +33,7 @@
 .ladder { list-style: none; margin: 0 0 calc(var(--u) * 6); padding: 0; display: grid; gap: calc(var(--u) * 2); }
 .ladder-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) 8em minmax(0, 1fr) 6.5em;
   align-items: center;
   gap: calc(var(--u) * 2);
 }
@@ -85,3 +85,13 @@
   .ladder-row { grid-template-columns: 5.5em 7em 1fr auto; font-size: 0.9rem; }
   .ladder-bar { display: none; }
 }
+
+/* other ways to play */
+.home-modes { display: grid; grid-template-columns: repeat(4, 1fr); gap: calc(var(--u) * 2); margin-top: calc(var(--u) * 5); }
+.home-mode {
+  display: grid; justify-items: center; gap: var(--u); padding: calc(var(--u) * 2) var(--u);
+  background: var(--panel-2); color: var(--caption); text-decoration: none; font-size: 0.8rem; text-align: center;
+  box-shadow: 0 calc(var(--u) * -0.5) 0 var(--ink), 0 calc(var(--u) * 0.5) 0 var(--ink), calc(var(--u) * -0.5) 0 0 var(--ink), calc(var(--u) * 0.5) 0 0 var(--ink);
+}
+.home-mode span { color: var(--text); line-height: 1.15; }
+.home-mode:hover { background: var(--panel-hi); }

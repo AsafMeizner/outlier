@@ -114,6 +114,12 @@ export function Home() {
             <dd className="num">{t('common.hoursMinutes', { h: left.h, m: left.m })}</dd>
           </div>
         </dl>
+        <nav className="home-modes" aria-label={t('nav.menu')}>
+          <Link to="/practice" className="home-mode"><PixelIcon name="bolt" size={24} /><span>{t('practice.unlimited')}</span></Link>
+          <Link to="/practice" className="home-mode"><PixelIcon name="calendar" size={24} /><span>{t('practice.packs')}</span></Link>
+          <Link to="/party" className="home-mode"><PixelIcon name="meteor" size={24} /><span>{t(scene.theme.copy.party)}</span></Link>
+          <Link to="/friends" className="home-mode"><PixelIcon name="users" size={24} /><span>{t('nav.friends')}</span></Link>
+        </nav>
         {d.status === 'done' || !d.available ? (
           <p className="home-hint">
             <Link to="/archive">{t('home.archiveHint')}</Link>

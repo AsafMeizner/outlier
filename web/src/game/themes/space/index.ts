@@ -35,7 +35,7 @@ export const space: ThemeModule = {
     { at: 470, key: 'space.lm.neptune' },
     { at: 560, key: 'space.lm.blackhole' },
   ],
-  copy: { pitch: 'space.pitch', how: 'space.how', launch: 'space.launch', wardrobeNote: 'space.wardrobeNote' },
+  copy: { pitch: 'space.pitch', how: 'space.how', launch: 'space.launch', wardrobeNote: 'space.wardrobeNote', party: 'space.party', partyTagline: 'space.partyTagline' },
   css: {
     '--bg': HEX.black,
     '--panel': HEX.navy,

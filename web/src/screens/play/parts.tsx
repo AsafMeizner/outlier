@@ -1,7 +1,8 @@
 // The pieces of the play screen that sit over the scene.
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
-import { Link } from 'react-router';
-import type { CurrentRound, RoundSummary, RunState } from '../../../../shared/api.ts';
+import { Link, useNavigate } from 'react-router';
+import type { CurrentRound, RoundSummary, RunState, SlugResponse } from '../../../../shared/api.ts';
+import { api } from '../../lib/api.ts';
 import { useDistance, useFlight, useZoneName } from '../../app/stage-context.tsx';
 import { useI18n, type AnyKey } from '../../i18n/index.tsx';
 import { sfx } from '../../game/sfx.ts';
@@ -46,7 +47,8 @@ export function PromptPanel({ run, round, children }: { run: RunState; round: Pi
   return (
     <section className="prompt px-window px-window--paper" aria-labelledby="prompt-text">
       <div className="prompt-top">
-        <span className="prompt-count">{t('play.prompt', { a: round.position + 1, b: run.total })}</span>
+        <span className="prompt-count">{run.total ? t('play.prompt', { a: round.position + 1, b: run.total }) : `#${round.position + 1}`}</span>
+        {run.practice ? <PracticeTag run={run} /> : null}
         <Pips run={run} />
         {children}
       </div>
@@ -63,7 +65,7 @@ export function PromptPanel({ run, round, children }: { run: RunState; round: Pi
 }
 
 /** Bottom bar: the answer box, the Launch button and Pass. */
-export function AnswerBar({ onGuess, onPass, busy, rejected, suggestion, lang }: { onGuess: (text: string) => void; onPass: () => void; busy: boolean; rejected: { raw: string; n: number } | null; suggestion: { raw: string; answer: string } | null; lang: string }) {
+export function AnswerBar({ onGuess, onPass, busy, rejected, suggestion, lang }: { onGuess: (text: string) => void; onPass?: () => void; busy: boolean; rejected: { raw: string; n: number; reason?: 'used'; answer?: string } | null; suggestion: { raw: string; answer: string } | null; lang: string }) {
   const { t } = useI18n();
   const [text, setText] = useState('');
   const input = useRef<HTMLInputElement>(null);
@@ -117,11 +119,13 @@ export function AnswerBar({ onGuess, onPass, busy, rejected, suggestion, lang }:
       </div>
       <div className="answerbar-under">
         <p className="answerbar-msg" role="alert">
-          {rejected ? t('play.notOnList', { a: rejected.raw }) : ' '}
+          {rejected ? (rejected.reason === 'used' ? t('party.used', { a: rejected.answer ?? rejected.raw }) : t('play.notOnList', { a: rejected.raw })) : ' '}
         </p>
-        <button type="button" className="answerbar-pass" onClick={onPass} disabled={busy}>
-          {t('play.pass')}
-        </button>
+        {onPass ? (
+          <button type="button" className="answerbar-pass" onClick={onPass} disabled={busy}>
+            {t('play.pass')}
+          </button>
+        ) : null}
       </div>
     </form>
   );
@@ -137,7 +141,8 @@ export function IntroCard({ run, onOpen, busy }: { run: RunState; onOpen: () => 
   return (
     <section className="intro px-window px-window--paper" aria-labelledby="intro-title">
       <div className="prompt-top">
-        <span className="prompt-count">{t('play.prompt', { a: next.position + 1, b: run.total })}</span>
+        <span className="prompt-count">{run.total ? t('play.prompt', { a: next.position + 1, b: run.total }) : `#${next.position + 1}`}</span>
+        {run.practice ? <PracticeTag run={run} /> : null}
         <Pips run={run} />
       </div>
       <h1 id="intro-title" className="intro-cat" lang={next.lang} dir="auto">
@@ -202,7 +207,64 @@ export function ResultCard({ round, same, finished, onNext }: { round: RoundSumm
 }
 
 /** End of the day's prompts. */
+/** Practice runs: the pack (or Unlimited) and, in Unlimited, the misses left as hearts. */
+function PracticeTag({ run }: { run: RunState }) {
+  const { t } = useI18n();
+  const p = run.practice;
+  if (!p) return null;
+  return (
+    <span className="practice-tag">
+      <span dir="auto">{p.kind === 'pack' ? p.pack : t('practice.unlimited')}</span>
+      {p.kind === 'unlimited' ? (
+        <span className="practice-hearts" aria-label={`${t('practice.misses')}: ${p.maxStrikes - p.strikes}`}>
+          {Array.from({ length: p.maxStrikes }, (_, i) => <PixelIcon key={i} name="heart" size={12} className={i < p.maxStrikes - p.strikes ? 'is-on' : 'is-off'} />)}
+        </span>
+      ) : null}
+    </span>
+  );
+}
+
+/** End of a practice run: the score, the personal best, play again. */
+function PracticeDone({ run }: { run: RunState }) {
+  const { t } = useI18n();
+  const dist = useDistance();
+  const navigate = useNavigate();
+  const p = run.practice;
+  useEffect(() => { if (p?.newBest) sfx.unlock(); else sfx.dayDone(); }, [p?.newBest]);
+  if (!p) return null;
+  const again = async (): Promise<void> => {
+    const r = await api.post<SlugResponse>('/api/practice', { kind: p.kind, pack: p.pack, lang: p.lang });
+    await navigate(`/practice/${r.slug}`);
+  };
+  return (
+    <section className="daydone px-window" aria-labelledby="daydone-title">
+      <h1 id="daydone-title" className="daydone-title">{t('practice.runDone')}</h1>
+      <p className="daydone-place" dir="auto">{p.kind === 'pack' ? p.pack : t('practice.unlimited')}</p>
+      <p className="daydone-big num">{t('play.youFlew', { d: dist(run.score) })}</p>
+      {p.newBest ? <p className="daydone-unlock">{t('practice.newBest')}</p> : p.best ? <p className="faint">{t('practice.best', { d: dist(p.best) })}</p> : null}
+      <ol className="daydone-rounds">
+        {run.rounds.map(r => (
+          <li key={r.position}>
+            <span className="px-tier" data-tier={r.tier}>{r.points ? t(`tier.${r.tier}` as AnyKey) : r.outcome === 'timeout' ? t('play.timeUp') : t('play.passed')}</span>
+            <span className="daydone-cat" dir="auto">{r.text}</span>
+            <span className="daydone-ans" dir="auto">{r.answer ?? r.example ?? '—'}</span>
+          </li>
+        ))}
+      </ol>
+      <div className="daydone-actions">
+        <button type="button" className="px-btn px-btn--big" onClick={() => void again()} autoFocus>{t('practice.again')}</button>
+        <Link to="/practice" className="px-btn px-btn--sun">{t('practice.allPacks')}</Link>
+      </div>
+    </section>
+  );
+}
+
 export function DayDone({ run, newItems }: { run: RunState; newItems: boolean }) {
+  if (run.practice) return <PracticeDone run={run} />;
+  return <DailyDone run={run} newItems={newItems} />;
+}
+
+function DailyDone({ run, newItems }: { run: RunState; newItems: boolean }) {
   const { t } = useI18n();
   useEffect(() => { sfx.dayDone(); }, []);
   useEffect(() => { if (newItems) window.setTimeout(() => sfx.unlock(), 900); }, [newItems]);

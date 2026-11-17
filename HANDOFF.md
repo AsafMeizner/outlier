@@ -117,3 +117,5 @@ Plan (original designs, no krillion assets/names):
 - Party ("Meteor Party" in the space theme): in-memory rooms, 4-letter codes, long-poll GET /api/party/:code?v=N.
   Turn-based hot potato: name a valid unused answer before your fuse ends; fuse shrinks each pass; timeout = lose a
   life + new prompt; tier points fill a meter, 100 = extra life (max 5); last player standing wins. Typos confirm.
+- Web for modes done: /practice (Practice.tsx), /practice/:key (Play kind="practice"), /friends, /party, /party/:code
+  (web/src/screens/modes/*). Verified with %TEMP%\outlier-shots\modes.mjs (two browser contexts, live party): no errors.

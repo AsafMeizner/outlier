@@ -13,12 +13,15 @@ interface Tile { to: string; icon: IconName; label: AnyKey; tone?: 'sun' | 'cta'
 
 const TILES: Tile[] = [
   { to: '/', icon: 'play', label: 'nav.daily', tone: 'cta' },
+  { to: '/practice', icon: 'bolt', label: 'nav.practice', tone: 'sun' },
+  { to: '/party', icon: 'meteor', label: 'nav.party', tone: 'sun' },
   { to: '/archive', icon: 'calendar', label: 'nav.archive' },
   { to: '/leaderboard', icon: 'trophy', label: 'nav.leaderboard' },
+  { to: '/friends', icon: 'users', label: 'nav.friends' },
   { to: '/stats', icon: 'chart', label: 'nav.stats' },
   { to: '/wardrobe', icon: 'shirt', label: 'nav.wardrobe' },
   { to: '/games', icon: 'users', label: 'nav.games' },
-  { to: '/games/new', icon: 'plus', label: 'nav.makeGame', tone: 'sun' },
+  { to: '/games/new', icon: 'plus', label: 'nav.makeGame' },
   { to: '/how', icon: 'help', label: 'nav.how' },
 ];
 

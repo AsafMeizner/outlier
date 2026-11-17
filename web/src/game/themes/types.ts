@@ -51,7 +51,7 @@ export interface ThemeModule {
   /** CSS custom properties for the UI around the scene. */
   css: Readonly<Record<string, string>>;
   /** i18n keys for theme-specific copy. */
-  copy: { pitch: AnyKey; how: AnyKey; launch: AnyKey; wardrobeNote: AnyKey };
+  copy: { pitch: AnyKey; how: AnyKey; launch: AnyKey; wardrobeNote: AnyKey; party: AnyKey; partyTagline: AnyKey };
   createWorld(look: Look): World;
   /** A 16x16 portrait for leaderboards and menus. */
   drawAvatar(b: Bmp, look: Look): void;

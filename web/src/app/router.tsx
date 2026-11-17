@@ -13,6 +13,10 @@ import { Games } from '../screens/games/Games.tsx';
 import { GamePage } from '../screens/games/GamePage.tsx';
 import { GameEditor } from '../screens/games/GameEditor.tsx';
 import { How } from '../screens/How.tsx';
+import { Friends } from '../screens/modes/Friends.tsx';
+import { PartyHome } from '../screens/modes/PartyHome.tsx';
+import { PartyRoom } from '../screens/modes/PartyRoom.tsx';
+import { Practice } from '../screens/modes/Practice.tsx';
 import { Login } from '../screens/auth/Login.tsx';
 import { Register } from '../screens/auth/Register.tsx';
 import { Setup } from '../screens/auth/Setup.tsx';
@@ -62,6 +66,11 @@ export const router = createBrowserRouter([
           { path: 'g/:slug', element: <GamePage /> },
           { path: 'g/:slug/edit', element: <GameEditor /> },
           { path: 'how', element: <How /> },
+          { path: 'practice', element: <Practice /> },
+          { path: 'practice/:key', element: <Play kind="practice" /> },
+          { path: 'friends', element: <Friends /> },
+          { path: 'party', element: <PartyHome /> },
+          { path: 'party/:code', element: <PartyRoom /> },
           { path: 'password', element: <Password /> },
         ],
       },

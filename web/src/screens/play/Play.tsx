@@ -34,15 +34,17 @@ type Phase =
 const unlockedCount = (w: WardrobeResponse | undefined): number | null =>
   w ? Object.values(w.catalog).reduce((n, items) => n + items.filter(i => i.unlocked).length, 0) : null;
 
-export function Play() {
+/** `kind` picks the API: the daily puzzle and friends' games (/api/play) or practice runs (/api/practice). */
+export function Play({ kind = 'play' }: { kind?: 'play' | 'practice' }) {
   const { key: param } = useParams();
   const { me } = useUser();
   const key = param ?? me.today;
-  if (!isDateKey(key) && !isGameKey(key)) return <Navigate to="/" replace />;
-  return <PlayRun key={key} runKey={key} />;
+  const valid = kind === 'practice' ? /^p-[a-z0-9]{10}$/.test(key) : isDateKey(key) || isGameKey(key);
+  if (!valid) return <Navigate to={kind === 'practice' ? '/practice' : '/'} replace />;
+  return <PlayRun key={key} runKey={key} base={`/api/${kind}`} />;
 }
 
-function PlayRun({ runKey }: { runKey: string }) {
+function PlayRun({ runKey, base }: { runKey: string; base: string }) {
   const { t, lang, server } = useI18n();
   const scene = useStage();
   const qc = useQueryClient();
@@ -83,7 +85,7 @@ function PlayRun({ runKey }: { runKey: string }) {
     // Remember how much of the wardrobe was open, to announce new unlocks at the end.
     if (unlocksBefore.current === null)
       void qc.fetchQuery({ queryKey: keys.wardrobe, queryFn: () => api.get<WardrobeResponse>('/api/wardrobe') }).then(w => { unlocksBefore.current ??= unlockedCount(w); }, () => undefined);
-    api.post<RunState>(`/api/play/${runKey}/start`).then(
+    api.post<RunState>(`${base}/${runKey}/start`).then(
       s => {
         if (!live) return;
         apply(s);
@@ -94,7 +96,7 @@ function PlayRun({ runKey }: { runKey: string }) {
       (error: unknown) => live && setPhase({ k: 'error', error }),
     );
     return () => { live = false; scene.get()?.setClock(null); };
-  }, [runKey, apply, scene, qc]);
+  }, [runKey, base, apply, scene, qc]);
 
   const lastRound = (s: RunState): RoundSummary | undefined => s.rounds[s.rounds.length - 1];
 
@@ -112,18 +114,18 @@ function PlayRun({ runKey }: { runKey: string }) {
     if (busy) return;
     setBusy(true);
     try {
-      const s = apply(await api.post<RunState>(`/api/play/${runKey}/next`));
+      const s = apply(await api.post<RunState>(`${base}/${runKey}/next`));
       setRejected(null);
       setPhase(s.finished ? { k: 'done' } : s.current ? { k: 'round' } : { k: 'intro' });
     } catch (e) { fail(e); }
     setBusy(false);
-  }, [busy, apply, runKey, fail]);
+  }, [busy, apply, runKey, base, fail]);
 
   const guess = useCallback(async (text: string) => {
     setBusy(true);
     try {
       const confirm = suggestion?.raw === text;
-      const r = await api.post<GuessResponse>(`/api/play/${runKey}/guess`, { text, confirm });
+      const r = await api.post<GuessResponse>(`${base}/${runKey}/guess`, { text, confirm });
       setSuggestion(null);
       if (r.result === 'confirm') {
         sfx.hmm();
@@ -145,13 +147,13 @@ function PlayRun({ runKey }: { runKey: string }) {
       }
     } catch (e) { fail(e); }
     setBusy(false);
-  }, [runKey, apply, scene, showMiss, fail, suggestion]);
+  }, [runKey, base, apply, scene, showMiss, fail, suggestion]);
 
   const pass = useCallback(async () => {
     setBusy(true);
-    try { showMiss(apply(await api.post<RunState>(`/api/play/${runKey}/skip`)), 'pass'); } catch (e) { fail(e); }
+    try { showMiss(apply(await api.post<RunState>(`${base}/${runKey}/skip`)), 'pass'); } catch (e) { fail(e); }
     setBusy(false);
-  }, [runKey, apply, showMiss, fail]);
+  }, [runKey, base, apply, showMiss, fail]);
 
   // When the clock runs out, ask the server to settle the round (it waits a short grace period).
   useEffect(() => {
@@ -160,7 +162,7 @@ function PlayRun({ runKey }: { runKey: string }) {
     let id = 0;
     const check = async (): Promise<void> => {
       try {
-        const s = await api.get<RunState>(`/api/play/${runKey}`);
+        const s = await api.get<RunState>(`${base}/${runKey}`);
         if (s.current?.position === position) { id = window.setTimeout(() => void check(), 1000); return; }
         showMiss(apply(s), 'timeout');
       } catch { id = window.setTimeout(() => void check(), 2000); }
@@ -168,7 +170,7 @@ function PlayRun({ runKey }: { runKey: string }) {
     const wait = run.current.deadline - skew - Date.now() + GRACE_MS + 250;
     id = window.setTimeout(() => void check(), Math.max(0, wait));
     return () => window.clearTimeout(id);
-  }, [phase.k, run, skew, runKey, apply, showMiss]);
+  }, [phase.k, run, skew, runKey, base, apply, showMiss]);
 
   // Reveal finished: fly.
   const launch = useCallback(() => {
@@ -202,7 +204,7 @@ function PlayRun({ runKey }: { runKey: string }) {
   const finished = phase.k === 'done';
   useEffect(() => {
     if (!finished) return;
-    for (const k of [keys.today, keys.stats, keys.archive, ['leaderboard'], keys.games, keys.reveal(runKey)]) void qc.invalidateQueries({ queryKey: k });
+    for (const k of [keys.today, keys.stats, keys.archive, ['leaderboard'], keys.games, keys.reveal(runKey), keys.practice, keys.friends]) void qc.invalidateQueries({ queryKey: k });
     void qc.fetchQuery({ queryKey: keys.wardrobe, queryFn: () => api.get<WardrobeResponse>('/api/wardrobe'), staleTime: 0 }).then(
       w => { const n = unlockedCount(w); if (n !== null && unlocksBefore.current !== null && n > unlocksBefore.current) setNewItems(true); },
       () => undefined,
