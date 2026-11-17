@@ -94,3 +94,13 @@ customisation unlocked by points; any user can create their own questions/games 
   build pack Dockerfile, port 8080, persistent volume `…-outlier-data` -> /data. URLs: http://outlier.apps.lan (LAN) and
   https://outlier.meizner.live (Cloudflare tunnel). API token on nebula `~/.config/coolify/api-token` (never print);
   deploy: POST /api/v1/deploy {"uuid": ...} from nebula (localhost:8010). Setup link = container log `/setup/<code>`.
+
+### 2026-11-18: space theme + admin UI shipped
+- de6c6cb: space theme (web/src/game/{engine.ts,pixel/,themes/}), stage-context (theme CSS vars + --u = art pixel),
+  per-theme wardrobe, i18n space.* / item.* / color.* keys. Office vector engine deleted.
+- Admin UI (web/src/admin/*): overview, schedule calendar + day editor, question bank + prompt editor, import/export/
+  backup, turned-away answers, users (bulk create, reset, roles, replay), settings incl. theme picker.
+- Verified locally with Playwright walkthroughs (%TEMP%\outlier-shots\shoot.mjs player flow, admin.mjs admin pages):
+  no console errors, no external requests.
+- NEXT ideas: more themes (deep dive from art-lab C), vitest unit tests for pixel/answers/format, Playwright e2e in repo,
+  offline zip bundle tool (tools/build-bundle.ts) for the air-gapped install.
