@@ -1,0 +1,10 @@
+.git
+node_modules
+dist
+data
+vendor-dl
+test-results
+playwright-report
+art-lab
+src
+*.log
