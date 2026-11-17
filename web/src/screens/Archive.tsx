@@ -1,5 +1,7 @@
 // Every past puzzle day: play the ones you missed (not counted) or look at the answers.
+import { useState } from 'react';
 import { Link } from 'react-router';
+import { PixelIcon } from '../ui/PixelIcon.tsx';
 import type { ArchiveDay } from '../../../shared/api.ts';
 import { useDistance } from '../app/stage-context.tsx';
 import { useI18n } from '../i18n/index.tsx';
@@ -28,8 +30,10 @@ function Day({ d, today, archivePlay }: { d: ArchiveDay; today: string; archiveP
   const { t, locale } = useI18n();
   const dist = useDistance();
   const isToday = d.date === today;
-  const canPlay = isToday || (archivePlay && !d.finished);
-  const canSee = d.finished || !isToday;
+  const canPlay = !d.finished && (isToday || archivePlay);
+  // A day's answers only become public once the day is over.
+  const canSee = !isToday;
+  const [showCats, setShowCats] = useState(false);
   return (
     <li className={`aday px-box${d.finished ? ' is-done' : ''}`}>
       <div className="aday-num">
@@ -38,7 +42,12 @@ function Day({ d, today, archivePlay }: { d: ArchiveDay; today: string; archiveP
       </div>
       <div className="aday-main">
         <span className="aday-date">{isToday ? t('archive.today') : fmtDate(locale, d.date)}</span>
-        <span className="aday-cats" dir="auto">{d.cats.join(' / ')}</span>
+        <span className="aday-cats">
+          <button type="button" className="aday-eye" onClick={() => setShowCats(v => !v)} aria-expanded={showCats} aria-label={t(showCats ? 'archive.hideCats' : 'archive.showCats')} title={t(showCats ? 'archive.hideCats' : 'archive.showCats')}>
+            <PixelIcon name={showCats ? 'eye' : 'eyeOff'} size={24} />
+          </button>
+          {showCats ? <span dir="auto">{d.cats.join(' / ')}</span> : <span className="faint">{t('archive.catsHidden', { n: d.cats.length })}</span>}
+        </span>
       </div>
       <div className="aday-stats">
         <span>{t('archive.players')}: <b className="num">{fmtNumber(locale, d.players)}</b></span>

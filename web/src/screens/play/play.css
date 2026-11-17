@@ -317,3 +317,24 @@
   .daydone-rounds li { grid-template-columns: 6.5em 1fr; }
   .daydone-cat { display: none; }
 }
+
+/* typo-corrected answer waiting for a second Enter */
+.answerbar-confirm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(var(--u) * 2) calc(var(--u) * 4);
+  margin-bottom: calc(var(--u) * 4);
+  padding: calc(var(--u) * 2) calc(var(--u) * 4);
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 calc(var(--u) * -1) 0 var(--highlight), 0 var(--u) 0 var(--highlight), calc(var(--u) * -1) 0 0 var(--highlight), var(--u) 0 0 var(--highlight);
+  animation: px-pop 220ms steps(4) both;
+}
+.answerbar-confirm small { display: block; font-size: 0.75rem; color: var(--text-3); }
+.answerbar-typed s { color: var(--text-2); text-decoration-thickness: 2px; }
+.answerbar-fixed b { color: var(--highlight); font-size: 1.3rem; }
+.answerbar-arrow { color: var(--highlight); }
+.answerbar-again { flex-basis: 100%; font-size: 0.85rem; color: var(--text-2); }
+.answerbar.is-confirm .answerbar-go { --face: var(--highlight); --hi: var(--text); --lo: var(--accent-lo); --fg: var(--highlight-text); }
+.daydone-note { flex-basis: 100%; margin: 0 0 calc(var(--u) * 2); color: var(--text-2); }

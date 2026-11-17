@@ -121,6 +121,9 @@ export const en = {
   'nav.sound': 'Sound',
   'nav.soundOn': 'Sound on',
   'nav.soundOff': 'Sound off',
+  'nav.music': 'Music',
+  'nav.musicOn': 'Music on',
+  'nav.musicOff': 'Music off',
   'nav.language': 'Language',
   'nav.languageName': 'עברית',
 
@@ -168,6 +171,10 @@ export const en = {
   'play.launch': 'Launch!',
   'play.pass': 'Pass',
   'play.notOnList': '“{a}” isn’t on the list. Try another.',
+  'play.typed': 'You typed',
+  'play.countsAs': 'Counts as',
+  'play.enterAgain': 'Press Enter again to launch it, or fix the spelling.',
+  'play.confirmLaunch': 'Yes, launch!',
   'play.next': 'Next prompt',
   'play.first': 'First prompt',
   'play.clockNote': 'The {s}-second clock starts when you open the prompt.',
@@ -203,6 +210,7 @@ export const en = {
   'results.copy': 'Copy my result',
   'results.copied': 'Result copied',
   'results.newItems': 'New wardrobe items unlocked!',
+  'results.tomorrow': 'Everyone’s answers appear tomorrow, so nobody can pass them on before the day is over.',
 
   // leaderboard
   'lb.day': 'Today',
@@ -244,6 +252,9 @@ export const en = {
   'archive.results': 'Results',
   'archive.today': 'Today',
   'archive.started': 'started',
+  'archive.showCats': 'Show categories',
+  'archive.hideCats': 'Hide categories',
+  'archive.catsHidden': '{n} categories hidden',
 
   // stats
   'stats.days': 'Days played',

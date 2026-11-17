@@ -5,6 +5,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import type { UserView } from '../../../shared/api.ts';
 import { useI18n, type AnyKey } from '../i18n/index.tsx';
 import { api } from '../lib/api.ts';
+import { sfx } from '../game/sfx.ts';
 import { Avatar } from '../ui/Avatar.tsx';
 import { PixelIcon, type IconName } from '../ui/PixelIcon.tsx';
 
@@ -26,6 +27,7 @@ export function Menu({ user, onClose }: { user: UserView; onClose: () => void })
   const qc = useQueryClient();
   const navigate = useNavigate();
 
+  useEffect(() => { sfx.open(); }, []);
   useEffect(() => {
     const onKey = (e: KeyboardEvent): void => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', onKey);

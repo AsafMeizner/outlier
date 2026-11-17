@@ -226,6 +226,7 @@ test('a full day: timing, rejection, scoring, reveal, leaderboard', async () => 
   r = await t.ok('alice', 'POST', `/api/play/${d}/guess`, { text: 'anything' });
   assert.equal(r.result, 'expired');
   assert.equal(r.state.rounds[1].outcome, 'timeout');
+  assert.equal(r.state.rounds[1].example, null, 'no example answer while the day is still running');
   // a guess just inside the grace window still counts
   s = await t.ok<Api.RunState>('alice', 'POST', `/api/play/${d}/next`);
   const p2 = must(s.current).text;
@@ -235,10 +236,7 @@ test('a full day: timing, rejection, scoring, reveal, leaderboard', async () => 
   assert.equal(r.state.finished, true);
   assert.equal(r.state.score, 200);
 
-  const rev = await t.ok<Api.RevealResponse>('alice', 'GET', `/api/reveal/${d}`);
-  assert.equal(rev.prompts.length, 3);
-  assert.equal(must(must(rev.prompts[0]).mine).points, 100);
-  assert.ok(must(rev.prompts[0]).answers.length >= 5);
+  assert.equal((await t.call('alice', 'GET', `/api/reveal/${d}`)).status, 403, 'answers stay hidden until the day is over, even after finishing');
 
   // zoe plays: same first answer, then skips
   await t.ok<Api.RunState>('zoe', 'POST', `/api/play/${d}/start`);
@@ -257,6 +255,34 @@ test('a full day: timing, rejection, scoring, reveal, leaderboard', async () => 
   // a second start does not create a second run
   const st = await t.ok<Api.RunState>('alice', 'POST', `/api/play/${d}/start`);
   assert.equal(st.finished, true);
+  // the next day the answers are public, and missed rounds show an example
+  t.tick(86400_000);
+  const rev = await t.ok<Api.RevealResponse>('alice', 'GET', `/api/reveal/${d}`);
+  assert.equal(rev.prompts.length, 3);
+  assert.equal(must(must(rev.prompts[0]).mine).points, 100);
+  assert.ok(must(rev.prompts[0]).answers.length >= 5);
+  const later = await t.ok<Api.RunState>('alice', 'GET', `/api/play/${d}`);
+  assert.ok(must(later.rounds[1]).example, 'example answer once the day is over');
+});
+
+test('a typo-corrected answer needs a second Enter (confirm) before it counts', async () => {
+  const t = await withAdmin(setup());
+  await addPlayer(t, 'alice');
+  const bank = (await t.ok<Api.AdminPromptsResponse>('admin', 'GET', '/api/admin/prompts')).prompts;
+  const d = (await t.ok<Api.AdminOverview>('admin', 'GET', '/api/admin/overview')).today;
+  await t.ok('admin', 'PUT', `/api/admin/schedule/${d}`, { promptIds: [must(bank.find(p => p.text === 'Name a Nordic country')).id] });
+  await t.ok<Api.RunState>('alice', 'POST', `/api/play/${d}/start`);
+  await t.ok<Api.RunState>('alice', 'POST', `/api/play/${d}/next`);
+  const ask = await t.ok<Api.GuessResponse>('alice', 'POST', `/api/play/${d}/guess`, { text: 'Icelamd' });
+  assert.equal(ask.result, 'confirm');
+  assert.equal(ask.result === 'confirm' && ask.answer, 'Iceland');
+  const mid = await t.ok<Api.RunState>('alice', 'GET', `/api/play/${d}`);
+  assert.equal(mid.rounds.length, 0, 'nothing is recorded before the player confirms');
+  const ok = await t.ok<Api.GuessResponse>('alice', 'POST', `/api/play/${d}/guess`, { text: 'Icelamd', confirm: true });
+  assert.equal(ok.result, 'accepted');
+  assert.equal(ok.result === 'accepted' && ok.fuzzy, true);
+  // exact matches never ask
+  assert.equal((await t.ok<Api.GuessResponse>('alice', 'POST', `/api/play/${d}/guess`, { text: 'Sweden' })).result, 'finished');
 });
 
 test('streaks, archive play and day rollover', async () => {

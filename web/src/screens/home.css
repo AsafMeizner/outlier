@@ -2,13 +2,17 @@
   position: absolute;
   inset: 0;
   display: grid;
+  grid-template-rows: minmax(0, 1fr);
   align-items: center;
   justify-items: end;
   padding: calc(var(--u) * 20) clamp(16px, 6vw, 96px) calc(var(--u) * 6);
   pointer-events: none;
 }
 .home-card {
-  width: min(100%, 470px);
+  width: min(100%, 520px);
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-wrap: break-word;
   padding: calc(var(--u) * 6);
   pointer-events: auto;
   animation: px-rise 260ms steps(5) both;
@@ -29,20 +33,21 @@
 .ladder { list-style: none; margin: 0 0 calc(var(--u) * 6); padding: 0; display: grid; gap: calc(var(--u) * 2); }
 .ladder-row {
   display: grid;
-  grid-template-columns: 6em 8em 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto;
   align-items: center;
   gap: calc(var(--u) * 2);
 }
 .ladder-word { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .ladder-row .px-tier { justify-self: start; }
-.ladder-bar { display: flex; gap: 2px; }
+.ladder-bar { display: flex; gap: 2px; overflow: hidden; }
 .ladder-bar i { width: 6px; height: 12px; background: var(--tc); box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.25); }
 .ladder-row[data-tier='1'] { --tc: var(--t1); }
 .ladder-row[data-tier='2'] { --tc: var(--t2); }
 .ladder-row[data-tier='3'] { --tc: var(--t3); }
 .ladder-row[data-tier='4'] { --tc: var(--t4); }
 .ladder-row[data-tier='5'] { --tc: var(--t5); }
-.ladder-m { font-family: var(--pixel); font-size: 0.95rem; text-align: end; min-width: 6.5em; white-space: nowrap; }
+.ladder-m { font-family: var(--pixel); font-size: 0.95rem; text-align: end; white-space: nowrap; }
+.home-note { flex-basis: 100%; margin: 0; font-size: 0.9rem; color: var(--text-2); }
 
 .home-actions { display: flex; flex-wrap: wrap; gap: calc(var(--u) * 4); align-items: center; margin-top: calc(var(--u) * 2); }
 .home-cta { flex: 1 1 auto; }

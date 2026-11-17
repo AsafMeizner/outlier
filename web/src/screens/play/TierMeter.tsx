@@ -23,7 +23,7 @@ export function TierMeter({ tier, points, answer, onDone }: Props) {
 
   useEffect(() => {
     if (step < tier) {
-      const id = window.setTimeout(() => { setStep(s => s + 1); sfx.pop(); }, step === 0 ? 120 : STEP_MS);
+      const id = window.setTimeout(() => { setStep(s => s + 1); sfx.step(step); }, step === 0 ? 120 : STEP_MS);
       return () => window.clearTimeout(id);
     }
     const id = window.setTimeout(onDone, reduce ? 300 : 650);

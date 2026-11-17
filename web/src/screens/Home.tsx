@@ -95,13 +95,11 @@ export function Home() {
           ) : null}
           {d.status === 'done' ? (
             <>
-              <Link to={`/results/${d.date}`} className="px-btn px-btn--big home-cta">
-                {t('home.results')}
-              </Link>
-              <Link to="/leaderboard" className="px-btn px-btn--sun">
+              <Link to="/leaderboard" className="px-btn px-btn--big home-cta">
                 <PixelIcon name="trophy" />
                 {t('nav.leaderboard')}
               </Link>
+              <p className="home-note">{t('results.tomorrow')}</p>
             </>
           ) : null}
         </div>

@@ -100,9 +100,10 @@ export interface RunState {
   current: CurrentRound | null;
   upNext: UpNext | null;
 }
-export interface GuessRequest { text: string }
+export interface GuessRequest { text: string; /** Accept a typo-corrected match the server suggested. */ confirm?: boolean }
 export type GuessResponse =
   | { result: 'rejected'; raw: string }
+  | { result: 'confirm'; raw: string; answer: string }
   | { result: 'accepted'; answer: string; tier: TierId; points: number; fuzzy: boolean; same: number; state: RunState }
   | { result: 'expired' | 'finished'; state: RunState };
 

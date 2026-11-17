@@ -105,7 +105,10 @@
 .aday-num .faint { font-size: 0.75rem; }
 .aday-main { display: grid; min-width: 0; }
 .aday-date { font-weight: 800; }
-.aday-cats { color: var(--text-2); font-size: 0.9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.aday-cats { display: flex; align-items: center; gap: calc(var(--u) * 2); color: var(--text-2); font-size: 0.9rem; min-width: 0; }
+.aday-cats > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.aday-eye { display: grid; place-items: center; flex: none; width: 32px; height: 28px; border: 0; padding: 0; cursor: pointer; background: var(--alt); color: var(--alt-text); box-shadow: 0 0 0 2px var(--ink); }
+.aday-eye:hover, .aday-eye[aria-expanded='true'] { background: var(--caption); color: var(--caption-text); }
 .aday-stats { display: grid; font-size: 0.85rem; color: var(--text-2); text-align: end; }
 .aday-you b { color: var(--highlight); }
 .aday-actions { display: flex; gap: calc(var(--u) * 2); }

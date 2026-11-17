@@ -205,7 +205,7 @@
 @keyframes px-pop { 0% { transform: scale(0.6); } 60% { transform: scale(1.12); } 100% { transform: scale(1); } }
 
 /* game screens use the pixel face everywhere */
-.stage { font-family: var(--pixel); font-size: 1.1rem; }
+.stage { font-family: var(--pixel); font-size: 1.1rem; overflow-wrap: break-word; }
 .stage input,
 .stage textarea,
 .stage select,

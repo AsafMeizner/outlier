@@ -1,5 +1,6 @@
 // The stage every player screen sits on: the full-screen scene, the corner HUD and the menu.
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
+import { audio, music, sfx } from '../game/sfx.ts';
 import { Link, Outlet, useLocation } from 'react-router';
 import { defaultLook } from '../../../shared/wardrobe.ts';
 import { useI18n } from '../i18n/index.tsx';
@@ -28,6 +29,19 @@ export function Shell() {
 
 function Frame({ children }: { children: ReactNode }) {
   const { attach, muted, setMuted } = useStage();
+  const [musicOn, setMusicOn] = useState(!music.muted);
+  // Audio may only start after a gesture; every button press also clicks.
+  useEffect(() => {
+    const onDown = (e: PointerEvent): void => {
+      audio.unlock();
+      const el = e.target instanceof Element ? e.target.closest('.px-btn, .px-iconbtn, .menu-tile, .tab, .aday-eye') : null;
+      if (el && !(el instanceof HTMLButtonElement && el.disabled)) sfx.click();
+    };
+    const onKey = (): void => audio.unlock();
+    window.addEventListener('pointerdown', onDown);
+    window.addEventListener('keydown', onKey);
+    return () => { window.removeEventListener('pointerdown', onDown); window.removeEventListener('keydown', onKey); };
+  }, []);
   const { t, lang, setLang } = useI18n();
   const me = useMe();
   const user = me.data?.user ?? null;
@@ -51,6 +65,9 @@ function Frame({ children }: { children: ReactNode }) {
         <nav className="hud-tools" aria-label={t('nav.menu')}>
           <button type="button" className="px-iconbtn" onClick={() => setMuted(!muted)} aria-label={muted ? t('nav.soundOff') : t('nav.soundOn')} title={t('nav.sound')}>
             <PixelIcon name={muted ? 'mute' : 'sound'} />
+          </button>
+          <button type="button" className="px-iconbtn" onClick={() => { music.setMuted(musicOn); setMusicOn(!musicOn); }} aria-pressed={musicOn} aria-label={musicOn ? t('nav.musicOn') : t('nav.musicOff')} title={t('nav.music')}>
+            <PixelIcon name={musicOn ? 'music' : 'musicOff'} />
           </button>
           <button type="button" className="px-iconbtn hud-lang" onClick={() => setLang(lang === 'he' ? 'en' : 'he')} title={t('nav.language')} lang={lang === 'he' ? 'en' : 'he'}>
             {t('nav.languageName')}

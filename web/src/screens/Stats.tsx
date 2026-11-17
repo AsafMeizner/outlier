@@ -29,6 +29,7 @@ export function Stats() {
 }
 
 function StatsBody({ s }: { s: StatsResponse }) {
+  const { me: { today } } = useUser();
   const { t, locale } = useI18n();
   const dist = useDistance();
   const rounds = TIERS.reduce((n, x) => n + (s.tiers[x.name] ?? 0), 0) + (s.tiers['missed'] ?? 0);
@@ -74,7 +75,7 @@ function StatsBody({ s }: { s: StatsResponse }) {
                   <td className="faint">{h.mode === 'live' ? '' : t(h.mode === 'archive' ? 'common.archive' : 'common.custom')}</td>
                   <td className="n">{h.finished ? (h.mode === 'live' ? t('stats.rank', { a: h.rank, b: h.players }) : '') : t('stats.unfinished')}</td>
                   <td className="n strong">{dist(h.score)}</td>
-                  <td className="n"><Link to={`/results/${h.date}`}>{t('archive.results')}</Link></td>
+                  <td className="n">{h.date.startsWith('g-') || h.date < today ? <Link to={`/results/${h.date}`}>{t('archive.results')}</Link> : null}</td>
                 </tr>
               ))}
             </tbody>

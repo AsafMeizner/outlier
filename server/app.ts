@@ -275,7 +275,8 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
       .map((r): Api.RoundSummary => {
         const p = prompts[r.position];
         let example: string | null = null;
-        if (!r.points) { const ans = promptAnswers(r.prompt_id).answers; example = (ans.find(a => a.tier === 3) ?? ans[0])?.answer ?? null; }
+        // No answers for a daily puzzle until its day is over (players could pass them on).
+        if (!r.points && (isGameKey(run.date) || run.date < today())) { const ans = promptAnswers(r.prompt_id).answers; example = (ans.find(a => a.tier === 3) ?? ans[0])?.answer ?? null; }
         return { position: r.position, answer: r.answer, tier: r.tier, points: r.points, outcome: r.outcome, fuzzy: !!r.fuzzy, text: p?.text ?? '', category: p?.category ?? '', example };
       });
     let current: Api.CurrentRound | null = null, upNext: Api.UpNext | null = null;
@@ -650,6 +651,8 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     if (count('SELECT COUNT(*) AS n FROM guesses WHERE run_id=? AND position=?', run.id, run.position) >= MAX_GUESSES_PER_ROUND) bad('That is a lot of guesses for one round.', 429);
     const { answers, index } = promptAnswers(prompt.id);
     const hit = matchAnswer(index, raw, { typos: settings().typoTolerance });
+    // A typo-corrected match is only used once the player confirms it (a second Enter); nothing is recorded until then.
+    if (hit?.fuzzy && body['confirm'] !== true) return { result: 'confirm', raw, answer: answers[hit.index]?.answer ?? raw };
     db.run('INSERT INTO guesses(run_id,position,prompt_id,raw,norm,accepted,at) VALUES(?,?,?,?,?,?,?)', run.id, run.position, prompt.id, raw, normalize(raw), hit ? 1 : 0, now());
     const a = hit ? answers[hit.index] : undefined;
     if (!hit || !a) return { result: 'rejected', raw };
@@ -667,7 +670,8 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   route('GET', `/api/reveal/${KEY}`, 'user', ({ user, m }): Api.RevealResponse => {
     const date = param(m, 1), run = getRun(user.id, date);
     const owner = isGameKey(date) && count('SELECT COUNT(*) AS n FROM games WHERE slug=? AND owner_id=?', date.slice(2), user.id) > 0;
-    if (!(owner || run?.finished_at || (isDate(date) && date < today()))) bad('Answers are revealed when you finish or when the day is over.', 403);
+    // Daily answers stay hidden until the day is over, so nobody can pass them on; a friend's game shows them once you finish it.
+    if (!(owner || (isGameKey(date) && run?.finished_at) || (isDate(date) && date < today()))) bad('Answers are revealed after the day is over.', 403);
     return reveal(date, user);
   });
   route('GET', '/api/archive', 'user', ({ user }): Api.ArchiveResponse => {

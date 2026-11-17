@@ -6,6 +6,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import type { CurrentRound, GuessResponse, RoundSummary, RunState, WardrobeResponse } from '../../../../shared/api.ts';
 import { useUser } from '../../app/guards.tsx';
 import { useStage } from '../../app/stage-context.tsx';
+import { music, sfx } from '../../game/sfx.ts';
 import { useI18n } from '../../i18n/index.tsx';
 import { api } from '../../lib/api.ts';
 import { isDateKey, isGameKey } from '../../lib/format.ts';
@@ -53,6 +54,8 @@ function PlayRun({ runKey }: { runKey: string }) {
   const [shownScore, setShownScore] = useState(0);
   const [busy, setBusy] = useState(false);
   const [rejected, setRejected] = useState<{ raw: string; n: number } | null>(null);
+  /** A typo-corrected match waiting for a second Enter. */
+  const [suggestion, setSuggestion] = useState<{ raw: string; answer: string } | null>(null);
   const [newItems, setNewItems] = useState(false);
   const unlocksBefore = useRef<number | null>(unlockedCount(qc.getQueryData<WardrobeResponse>(keys.wardrobe)));
 
@@ -119,8 +122,14 @@ function PlayRun({ runKey }: { runKey: string }) {
   const guess = useCallback(async (text: string) => {
     setBusy(true);
     try {
-      const r = await api.post<GuessResponse>(`/api/play/${runKey}/guess`, { text });
-      if (r.result === 'rejected') {
+      const confirm = suggestion?.raw === text;
+      const r = await api.post<GuessResponse>(`/api/play/${runKey}/guess`, { text, confirm });
+      setSuggestion(null);
+      if (r.result === 'confirm') {
+        sfx.hmm();
+        setRejected(null);
+        setSuggestion({ raw: r.raw, answer: r.answer });
+      } else if (r.result === 'rejected') {
         scene.get()?.reject();
         setRejected(prev => ({ raw: r.raw, n: (prev?.n ?? 0) + 1 }));
       } else if (r.result === 'accepted') {
@@ -136,7 +145,7 @@ function PlayRun({ runKey }: { runKey: string }) {
       }
     } catch (e) { fail(e); }
     setBusy(false);
-  }, [runKey, apply, scene, showMiss, fail]);
+  }, [runKey, apply, scene, showMiss, fail, suggestion]);
 
   const pass = useCallback(async () => {
     setBusy(true);
@@ -183,6 +192,12 @@ function PlayRun({ runKey }: { runKey: string }) {
     else void openNext();
   }, [run, openNext]);
 
+  // The music follows the game: drums while the clock runs, quiet during the flight.
+  useEffect(() => {
+    music.setMood(phase.k === 'round' ? 'round' : phase.k === 'reveal' || phase.k === 'flying' ? 'flight' : 'calm');
+  }, [phase.k]);
+  useEffect(() => () => music.setMood('calm'), []);
+
   // Day finished: refresh everything that depends on it and check for new wardrobe items.
   const finished = phase.k === 'done';
   useEffect(() => {
@@ -215,7 +230,7 @@ function PlayRun({ runKey }: { runKey: string }) {
         </PromptPanel>
       ) : null}
       {phase.k === 'intro' ? <IntroCard run={run} onOpen={() => void openNext()} busy={busy} /> : null}
-      {phase.k === 'round' ? <AnswerBar onGuess={text => void guess(text)} onPass={() => void pass()} busy={busy} rejected={rejected} lang={round?.lang ?? lang} /> : null}
+      {phase.k === 'round' ? <AnswerBar onGuess={text => void guess(text)} onPass={() => void pass()} busy={busy} rejected={rejected} suggestion={suggestion} lang={round?.lang ?? lang} /> : null}
       {phase.k === 'reveal' ? <TierMeter tier={phase.tier} points={phase.points} answer={phase.answer} onDone={launch} /> : null}
       {phase.k === 'result' ? <ResultCard round={phase.round} same={phase.same} finished={run.finished} onNext={afterResult} /> : null}
       {phase.k === 'done' ? <DayDone run={run} newItems={newItems} /> : null}

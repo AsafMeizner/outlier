@@ -53,6 +53,7 @@ export function StageProvider({ themeId, look, rtl, children }: { themeId: Theme
         onDistance: d => flight.set({ dist: d }),
         onLandmark: key => {
           const at = performance.now();
+          sfx.chime();
           flight.set({ landmark: key, landmarkAt: at });
           // captions stay up for a moment, unless a newer one replaced them
           window.setTimeout(() => { if (flight.get().landmarkAt === at) flight.set({ landmark: null }); }, 1800);

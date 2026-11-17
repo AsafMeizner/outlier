@@ -2,6 +2,7 @@
 import { useEffect, useId, type ReactNode } from 'react';
 import { useNavigate } from 'react-router';
 import { useI18n } from '../i18n/index.tsx';
+import { sfx } from '../game/sfx.ts';
 import { PixelIcon } from './PixelIcon.tsx';
 import './window.css';
 
@@ -21,7 +22,8 @@ export function Window({ title, children, onClose, size = 'md', tone = 'navy', a
   const { t } = useI18n();
   const navigate = useNavigate();
   const id = useId();
-  const close = onClose ?? (() => void navigate('/'));
+  const close = (): void => { sfx.close(); if (onClose) onClose(); else void navigate('/'); };
+  useEffect(() => { sfx.open(); }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent): void => {

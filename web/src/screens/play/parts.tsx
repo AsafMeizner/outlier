@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import type { CurrentRound, RoundSummary, RunState } from '../../../../shared/api.ts';
 import { useDistance, useFlight, useZoneName } from '../../app/stage-context.tsx';
 import { useI18n, type AnyKey } from '../../i18n/index.tsx';
+import { sfx } from '../../game/sfx.ts';
 import { PixelIcon } from '../../ui/PixelIcon.tsx';
 
 /** Top-centre distance readout. Follows the hero live while it flies; shows landmarks as it passes them. */
@@ -62,7 +63,7 @@ export function PromptPanel({ run, round, children }: { run: RunState; round: Pi
 }
 
 /** Bottom bar: the answer box, the Launch button and Pass. */
-export function AnswerBar({ onGuess, onPass, busy, rejected, lang }: { onGuess: (text: string) => void; onPass: () => void; busy: boolean; rejected: { raw: string; n: number } | null; lang: string }) {
+export function AnswerBar({ onGuess, onPass, busy, rejected, suggestion, lang }: { onGuess: (text: string) => void; onPass: () => void; busy: boolean; rejected: { raw: string; n: number } | null; suggestion: { raw: string; answer: string } | null; lang: string }) {
   const { t } = useI18n();
   const [text, setText] = useState('');
   const input = useRef<HTMLInputElement>(null);
@@ -70,8 +71,10 @@ export function AnswerBar({ onGuess, onPass, busy, rejected, lang }: { onGuess: 
   useEffect(() => { input.current?.focus(); }, []);
   // After a miss, keep the text but select it so typing replaces it.
   useEffect(() => {
-    if (rejected) input.current?.select();
+    if (rejected) { input.current?.focus(); input.current?.select(); }
   }, [rejected]);
+  // The suggestion only stands while the text is what the player sent.
+  const pending = suggestion && suggestion.raw === text.trim() ? suggestion : null;
 
   const submit = (e: FormEvent): void => {
     e.preventDefault();
@@ -79,8 +82,16 @@ export function AnswerBar({ onGuess, onPass, busy, rejected, lang }: { onGuess: 
     if (v && !busy) onGuess(v);
   };
   return (
-    <form className={`answerbar${rejected ? ' is-rejected' : ''}`} onSubmit={submit} key={rejected?.n ?? 0}>
-      <div className="answerbar-row">
+    <form className={`answerbar${rejected ? ' is-rejected' : ''}${pending ? ' is-confirm' : ''}`} onSubmit={submit}>
+      {pending ? (
+        <div className="answerbar-confirm" role="alert">
+          <span className="answerbar-typed"><small>{t('play.typed')}</small> <s dir="auto">{pending.raw}</s></span>
+          <span className="answerbar-arrow" aria-hidden="true">▶</span>
+          <span className="answerbar-fixed"><small>{t('play.countsAs')}</small> <b dir="auto">{pending.answer}</b></span>
+          <span className="answerbar-again">{t('play.enterAgain')}</span>
+        </div>
+      ) : null}
+      <div className="answerbar-row" key={rejected?.n ?? 0}>
         <label className="sr-only" htmlFor="answer">
           {t('play.yourAnswer')}
         </label>
@@ -89,7 +100,7 @@ export function AnswerBar({ onGuess, onPass, busy, rejected, lang }: { onGuess: 
           id="answer"
           className="answerbar-input"
           value={text}
-          onChange={e => setText(e.target.value)}
+          onChange={e => { if (e.target.value.length > text.length) sfx.type(); setText(e.target.value); }}
           placeholder={t('play.placeholder')}
           autoComplete="off"
           autoCorrect="off"
@@ -100,7 +111,7 @@ export function AnswerBar({ onGuess, onPass, busy, rejected, lang }: { onGuess: 
           enterKeyHint="go"
         />
         <button type="submit" className="px-btn answerbar-go" disabled={busy || !text.trim()}>
-          {t('play.launch')}
+          {pending ? t('play.confirmLaunch') : t('play.launch')}
           <span className="px-key">{t('common.enter')}</span>
         </button>
       </div>
@@ -193,6 +204,8 @@ export function ResultCard({ round, same, finished, onNext }: { round: RoundSumm
 /** End of the day's prompts. */
 export function DayDone({ run, newItems }: { run: RunState; newItems: boolean }) {
   const { t } = useI18n();
+  useEffect(() => { sfx.dayDone(); }, []);
+  useEffect(() => { if (newItems) window.setTimeout(() => sfx.unlock(), 900); }, [newItems]);
   const dist = useDistance();
   const place = useZoneName()(run.score);
   return (
@@ -224,9 +237,13 @@ export function DayDone({ run, newItems }: { run: RunState; newItems: boolean })
         </Link>
       ) : null}
       <div className="daydone-actions">
-        <Link to={`/results/${run.date}`} className="px-btn px-btn--big" autoFocus>
-          {t('home.results')}
-        </Link>
+        {run.mode === 'live' ? (
+          <p className="daydone-note">{t('results.tomorrow')}</p>
+        ) : (
+          <Link to={`/results/${run.date}`} className="px-btn px-btn--big" autoFocus>
+            {t('archive.results')}
+          </Link>
+        )}
         {run.mode === 'live' ? (
           <Link to="/leaderboard" className="px-btn px-btn--sun">
             <PixelIcon name="trophy" />

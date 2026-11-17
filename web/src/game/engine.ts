@@ -95,7 +95,11 @@ export class Stage {
   }
   setClock(left: number | null): void { this.clock = left; }
   /** Build-up while the tier reveal plays. */
-  charge(on = true): void { if (this.mode !== 'fly') this.setMode(on ? 'charge' : 'idle'); }
+  charge(on = true): void {
+    if (this.mode === 'fly') return;
+    this.setMode(on ? 'charge' : 'idle');
+    if (on && this.sound) sfx.ignition();
+  }
 
   launch(o: LaunchOptions): void {
     const from = this.dist, to = from + o.points;

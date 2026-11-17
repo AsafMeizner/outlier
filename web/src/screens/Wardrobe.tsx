@@ -6,6 +6,7 @@ import type { CatalogWithUnlocks, LookResponse, MeResponse, WardrobeResponse } f
 import type { Look, UnlockRule, WardrobeItem } from '../../../shared/wardrobe.ts';
 import { useDistance, useStage } from '../app/stage-context.tsx';
 import { Bmp } from '../game/pixel/bmp.ts';
+import { sfx } from '../game/sfx.ts';
 import type { ThemeModule } from '../game/themes/types.ts';
 import { useI18n, type AnyKey } from '../i18n/index.tsx';
 import { api } from '../lib/api.ts';
@@ -104,7 +105,7 @@ function ItemTile({ slot, item, isColor, look, theme, selected, onPick }: { slot
     <button
       type="button"
       className={`item${selected ? ' is-on' : ''}${item.unlocked ? '' : ' is-locked'}`}
-      onClick={onPick}
+      onClick={() => { sfx.equip(); onPick(); }}
       disabled={!item.unlocked}
       aria-pressed={selected}
       aria-label={item.unlocked ? name : `${name}: ${t('wardrobe.locked')}. ${need}`}
