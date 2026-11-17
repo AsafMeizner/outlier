@@ -1,9 +1,9 @@
 // SQLite storage via Node's built-in node:sqlite. One file: <data dir>/outlier.db
-import { DatabaseSync } from 'node:sqlite';
+import { DatabaseSync, type StatementSync } from 'node:sqlite';
 import { mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 
-const MIGRATIONS = [
+const MIGRATIONS: readonly string[] = [
   // v1
   `
   CREATE TABLE settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);
@@ -138,30 +138,51 @@ const MIGRATIONS = [
   `,
 ];
 
-export function openDb(file) {
+export type SqlParam = string | number | bigint | null | Uint8Array;
+
+export interface RunResult { changes: number | bigint; lastInsertRowid: number | bigint }
+
+/** Thin typed wrapper over node:sqlite with a prepared-statement cache and nestable transactions. */
+export interface Db {
+  readonly raw: DatabaseSync;
+  /** First row, typed by the caller (the SELECT defines the shape). */
+  get<T>(sql: string, ...params: SqlParam[]): T | undefined;
+  all<T>(sql: string, ...params: SqlParam[]): T[];
+  run(sql: string, ...params: SqlParam[]): RunResult;
+  exec(sql: string): void;
+  /** Run fn in a transaction; nested calls join the outer one. */
+  tx<T>(fn: () => T): T;
+  close(): void;
+}
+
+export function openDb(file: string): Db {
   if (file !== ':memory:') mkdirSync(dirname(file), { recursive: true });
   const db = new DatabaseSync(file);
   db.exec('PRAGMA journal_mode = WAL; PRAGMA foreign_keys = OFF; PRAGMA busy_timeout = 5000; PRAGMA synchronous = NORMAL;');
-  const version = db.prepare('PRAGMA user_version').get().user_version;
+  const version = Number(db.prepare('PRAGMA user_version').get()?.['user_version'] ?? 0);
   for (let v = version; v < MIGRATIONS.length; v++) {
     db.exec('BEGIN');
-    try { db.exec(MIGRATIONS[v]); db.exec(`PRAGMA user_version = ${v + 1}`); db.exec('COMMIT'); }
+    try { db.exec(MIGRATIONS[v] ?? ''); db.exec(`PRAGMA user_version = ${v + 1}`); db.exec('COMMIT'); }
     catch (e) { db.exec('ROLLBACK'); throw e; }
   }
   const broken = db.prepare('PRAGMA foreign_key_check').all();
   if (broken.length) throw new Error(`Database has ${broken.length} broken references after migration`);
   db.exec('PRAGMA foreign_keys = ON');
-  const cache = new Map();
-  const stmt = sql => { let s = cache.get(sql); if (!s) { s = db.prepare(sql); cache.set(sql, s); } return s; };
+  const cache = new Map<string, StatementSync>();
+  const stmt = (sql: string): StatementSync => {
+    let s = cache.get(sql);
+    if (!s) { s = db.prepare(sql); cache.set(sql, s); }
+    return s;
+  };
   let depth = 0;
   return {
     raw: db,
-    get: (sql, ...p) => stmt(sql).get(...p),
-    all: (sql, ...p) => stmt(sql).all(...p),
-    run: (sql, ...p) => stmt(sql).run(...p),
-    exec: sql => db.exec(sql),
-    /** Run fn in a transaction (nested calls join the outer one). */
-    tx(fn) {
+    // The row shape is declared by each query's SELECT list; this is the one place results are cast.
+    get: <T>(sql: string, ...p: SqlParam[]) => stmt(sql).get(...p) as T | undefined,
+    all: <T>(sql: string, ...p: SqlParam[]) => stmt(sql).all(...p) as T[],
+    run: (sql: string, ...p: SqlParam[]) => stmt(sql).run(...p),
+    exec: (sql: string) => db.exec(sql),
+    tx<T>(fn: () => T): T {
       if (depth) return fn();
       depth++;
       db.exec('BEGIN IMMEDIATE');
