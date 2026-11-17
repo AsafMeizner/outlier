@@ -2,6 +2,7 @@
 import { TIERS, buildIndex, matchAnswer, normalize, keysFor } from './match.mjs';
 import { parsePack, toCsv, toText } from './packs.mjs';
 import { hashPassword, verifyPassword, newToken, tokenHash, tempPassword, validUsername, validPassword } from './auth.mjs';
+import { CATALOG, isUnlocked, cleanLook, resolveLook } from './wardrobe.mjs';
 import { gameDate, addDays, weekday, isDate, weekStartOf, monthStartOf, dateEndsAt, serverTimeZone, validTimeZone } from './time.mjs';
 import { randomBytes } from 'node:crypto';
 import { readFileSync, rmSync, mkdtempSync } from 'node:fs';
@@ -115,7 +116,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   // ---------- users & sessions ----------
   const loginFailures = new Map();
   function userView(u) {
-    return u && { id: u.id, username: u.username, displayName: u.display_name, team: u.team, role: u.role, mustChange: !!u.must_change, disabled: !!u.disabled };
+    return u && { id: u.id, username: u.username, displayName: u.display_name, team: u.team, role: u.role, mustChange: !!u.must_change, disabled: !!u.disabled, look: resolveLook(u.look, u.username) };
   }
   function createSession(userId) {
     const token = newToken(), t = now();
@@ -157,7 +158,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     const ex = new Set(exclude);
     let pool = db.all(`SELECT p.id, p.text, p.category, p.lang, COUNT(dp.prompt_id) AS used
       FROM prompts p LEFT JOIN day_prompts dp ON dp.prompt_id=p.id
-      WHERE p.retired=0 AND EXISTS (SELECT 1 FROM answers a WHERE a.prompt_id=p.id)
+      WHERE p.retired=0 AND p.owner_id IS NULL AND EXISTS (SELECT 1 FROM answers a WHERE a.prompt_id=p.id)
       GROUP BY p.id`).filter(p => !ex.has(p.id));
     if (lang) { const same = pool.filter(p => p.lang === lang); if (same.length >= n) pool = same; }
     shuffle(pool, random).sort((a, b) => a.used - b.used);
@@ -200,6 +201,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   const dayNumber = date => db.get('SELECT COUNT(*) AS n FROM days WHERE date<=?', date).n;
 
   // ---------- runs ----------
+  const isGameKey = k => typeof k === 'string' && /^g-[a-z0-9]{8}$/.test(k);
   const getRun = (userId, date) => db.get('SELECT * FROM runs WHERE user_id=? AND date=?', userId, date);
   function finishRound(run, prompts, fields) {
     const t = now();
@@ -223,7 +225,8 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     const s = settings();
     const rounds = db.all('SELECT position, answer_text AS answer, tier, points, outcome, fuzzy FROM rounds WHERE run_id=? ORDER BY position', run.id);
     const state = {
-      date: run.date, dayNumber: dayNumber(run.date), mode: run.mode, total: prompts.length, position: run.position,
+      date: run.date, dayNumber: isGameKey(run.date) ? null : dayNumber(run.date), mode: run.mode,
+      game: isGameKey(run.date) ? db.get('SELECT slug, title FROM games WHERE slug=?', run.date.slice(2)) : null, total: prompts.length, position: run.position,
       score: run.score, finished: !!run.finished_at, roundSeconds: s.roundSeconds, serverNow: now(), rounds, current: null,
     };
     if (run.round_started_at && !run.finished_at) {
@@ -235,6 +238,18 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     return state;
   }
   function loadRun(user, date, { create = false } = {}) {
+    if (isGameKey(date)) {
+      if (!db.get('SELECT 1 AS x FROM games WHERE slug=?', date.slice(2))) bad('Game not found', 404);
+      const prompts = dayPrompts(date);
+      if (!prompts.length) bad('This game has no prompts', 404);
+      let run = getRun(user.id, date);
+      if (!run) {
+        if (!create) bad('Not started', 404);
+        db.run("INSERT OR IGNORE INTO runs(user_id,date,mode,started_at) VALUES(?,?,'custom',?)", user.id, date, now());
+        run = getRun(user.id, date);
+      }
+      return { run: settle(run, prompts), prompts };
+    }
     if (!isDate(date)) bad('Bad date');
     const t = today();
     if (date > t) bad('That day has not started yet', 403);
@@ -258,7 +273,8 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     const mine = user ? getRun(user.id, date) : null;
     const myRounds = mine ? db.all('SELECT * FROM rounds WHERE run_id=?', mine.id) : [];
     return {
-      date, dayNumber: dayNumber(date), players,
+      date, dayNumber: isGameKey(date) ? null : dayNumber(date), players,
+      game: isGameKey(date) ? db.get('SELECT slug, title FROM games WHERE slug=?', date.slice(2)) : null,
       prompts: prompts.map(p => {
         const counts = new Map(db.all(`SELECT r.answer_id AS id, COUNT(*) AS n FROM rounds r JOIN runs u ON u.id=r.run_id
           WHERE u.date=? AND r.position=? AND r.answer_id IS NOT NULL GROUP BY r.answer_id`, date, p.position).map(r => [r.id, r.n]));
@@ -337,17 +353,17 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     const t = today();
     if (!isDate(date) || date > t) date = t;
     if (period === 'streak') {
-      const users = db.all('SELECT id, display_name, team FROM users WHERE disabled=0');
+      const users = db.all('SELECT id, username, display_name, team, look FROM users WHERE disabled=0');
       const st = streaks(users.map(u => u.id));
-      return { period, date, rows: users.map(u => ({ userId: u.id, name: u.display_name, team: u.team, ...st.get(u.id) }))
+      return { period, date, rows: users.map(u => ({ userId: u.id, username: u.username, look: resolveLook(u.look, u.username), name: u.display_name, team: u.team, ...st.get(u.id) }))
         .filter(r => r.current > 0 || r.best > 0).sort((a, b) => b.current - a.current || b.best - a.best || a.name.localeCompare(b.name)) };
     }
     if (period === 'day') {
-      const rows = db.all(`SELECT u.id AS userId, u.display_name AS name, u.team, r.score, r.total_ms AS ms,
+      const rows = db.all(`SELECT u.id AS userId, u.username, u.look, u.display_name AS name, u.team, r.score, r.total_ms AS ms,
           (SELECT COUNT(*) FROM rounds x WHERE x.run_id=r.id AND x.tier=5) AS outliers
         FROM runs r JOIN users u ON u.id=r.user_id
         WHERE r.date=? AND r.mode='live' AND r.finished_at IS NOT NULL ORDER BY r.score DESC, r.total_ms ASC`, date);
-      return { period, date, rows };
+      return { period, date, rows: withLooks(rows) };
     }
     if (period === 'teams') {
       const [from, to] = periodRange('week', date);
@@ -358,13 +374,14 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
       return { period, date, from, to, rows };
     }
     const [from, to] = periodRange(period, date);
-    const rows = db.all(`SELECT u.id AS userId, u.display_name AS name, u.team, SUM(r.score) AS points, COUNT(*) AS games,
+    const rows = db.all(`SELECT u.id AS userId, u.username, u.look, u.display_name AS name, u.team, SUM(r.score) AS points, COUNT(*) AS games,
         ROUND(AVG(r.score)) AS avg, MAX(r.score) AS best, SUM(r.total_ms) AS ms
       FROM runs r JOIN users u ON u.id=r.user_id
       WHERE r.mode='live' AND r.finished_at IS NOT NULL AND r.date BETWEEN ? AND ?
       GROUP BY u.id ORDER BY points DESC, ms ASC`, from, to);
-    return { period, date, from, to, rows };
+    return { period, date, from, to, rows: withLooks(rows) };
   }
+  function withLooks(rows) { return rows.map(r => ({ ...r, look: resolveLook(r.look, r.username) })); }
 
   // ---------- stats ----------
   function myStats(user) {
@@ -409,7 +426,9 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   function savePrompt(id, input, pack = '') {
     const t = now();
     return db.tx(() => {
-      const dupe = db.get('SELECT id FROM prompts WHERE text=? COLLATE NOCASE', input.text);
+      // Prompt text is unique within the question bank; prompts inside user-made games are exempt.
+      const ownGame = id != null && db.get('SELECT owner_id FROM prompts WHERE id=?', id)?.owner_id;
+      const dupe = !ownGame && db.get('SELECT id FROM prompts WHERE text=? COLLATE NOCASE AND owner_id IS NULL', input.text);
       if (dupe && dupe.id !== id) bad('A prompt with that text already exists', 409);
       if (id == null) {
         id = Number(db.run('INSERT INTO prompts(text,category,pack,lang,created_at,updated_at) VALUES(?,?,?,?,?,?)', input.text, input.category, pack, langOf(input.text), t, t).lastInsertRowid);
@@ -447,7 +466,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
       for (const p of parsed.prompts) {
         try {
           const input = cleanPromptInput(p);
-          const ex = db.get('SELECT id FROM prompts WHERE text=? COLLATE NOCASE', input.text);
+          const ex = db.get('SELECT id FROM prompts WHERE text=? COLLATE NOCASE AND owner_id IS NULL', input.text);
           if (ex && mode !== 'update') { result.skipped++; continue; }
           if (ex) {
             const cur = promptAnswers(ex.id).answers;
@@ -541,9 +560,9 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
       score: settled?.score ?? null, streak: st,
     };
   });
-  route('POST', '/api/play/(\\d{4}-\\d{2}-\\d{2})/start', 'user', ({ user, m }) => { const { run, prompts } = loadRun(user, m[1], { create: true }); return runState(run, prompts); });
-  route('GET', '/api/play/(\\d{4}-\\d{2}-\\d{2})', 'user', ({ user, m }) => { const { run, prompts } = loadRun(user, m[1]); return runState(run, prompts); });
-  route('POST', '/api/play/(\\d{4}-\\d{2}-\\d{2})/next', 'user', ({ user, m }) => {
+  route('POST', '/api/play/(\\d{4}-\\d{2}-\\d{2}|g-[a-z0-9]{8})/start', 'user', ({ user, m }) => { const { run, prompts } = loadRun(user, m[1], { create: true }); return runState(run, prompts); });
+  route('GET', '/api/play/(\\d{4}-\\d{2}-\\d{2}|g-[a-z0-9]{8})', 'user', ({ user, m }) => { const { run, prompts } = loadRun(user, m[1]); return runState(run, prompts); });
+  route('POST', '/api/play/(\\d{4}-\\d{2}-\\d{2}|g-[a-z0-9]{8})/next', 'user', ({ user, m }) => {
     let { run, prompts } = loadRun(user, m[1]);
     if (!run.finished_at && !run.round_started_at) {
       db.run('UPDATE runs SET round_started_at=? WHERE id=? AND round_started_at IS NULL', now(), run.id);
@@ -551,7 +570,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     }
     return runState(run, prompts);
   });
-  route('POST', '/api/play/(\\d{4}-\\d{2}-\\d{2})/guess', 'user', ({ user, m, body }) => {
+  route('POST', '/api/play/(\\d{4}-\\d{2}-\\d{2}|g-[a-z0-9]{8})/guess', 'user', ({ user, m, body }) => {
     const { run, prompts } = loadRun(user, m[1]);
     if (run.finished_at) return { result: 'finished', state: runState(run, prompts) };
     if (!run.round_started_at) return { result: 'expired', state: runState(run, prompts) };
@@ -569,14 +588,15 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     const same = db.get(`SELECT COUNT(*) AS n FROM rounds r JOIN runs u ON u.id=r.run_id WHERE u.date=? AND r.position=? AND r.answer_id=? AND r.run_id<>?`, run.date, run.position, a.id, run.id).n;
     return { result: 'accepted', answer: a.answer, tier: a.tier, points, fuzzy: hit.fuzzy, same, state: runState(after, prompts) };
   });
-  route('POST', '/api/play/(\\d{4}-\\d{2}-\\d{2})/skip', 'user', ({ user, m }) => {
+  route('POST', '/api/play/(\\d{4}-\\d{2}-\\d{2}|g-[a-z0-9]{8})/skip', 'user', ({ user, m }) => {
     let { run, prompts } = loadRun(user, m[1]);
     if (run.round_started_at && !run.finished_at) run = finishRound(run, prompts, { outcome: 'skipped' });
     return runState(run, prompts);
   });
-  route('GET', '/api/reveal/(\\d{4}-\\d{2}-\\d{2})', 'user', ({ user, m }) => {
+  route('GET', '/api/reveal/(\\d{4}-\\d{2}-\\d{2}|g-[a-z0-9]{8})', 'user', ({ user, m }) => {
     const date = m[1], run = getRun(user.id, date);
-    if (!(date < today() || run?.finished_at)) bad('Answers are revealed when you finish or when the day is over.', 403);
+    const owner = isGameKey(date) && db.get('SELECT 1 AS x FROM games WHERE slug=? AND owner_id=?', date.slice(2), user.id);
+    if (!(owner || run?.finished_at || (isDate(date) && date < today()))) bad('Answers are revealed when you finish or when the day is over.', 403);
     return reveal(date, user);
   });
   route('GET', '/api/archive', 'user', ({ user }) => {
@@ -595,18 +615,160 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   route('GET', '/api/leaderboard', 'user', ({ query }) => leaderboard(query.get('period') || 'day', query.get('date') || today()));
   route('GET', '/api/stats', 'user', ({ user }) => myStats(user));
 
+  // ---------- wardrobe ----------
+  function unlockStats(userId) {
+    const meters = db.get("SELECT COALESCE(SUM(score),0)*10 AS n FROM runs WHERE user_id=? AND mode IN ('live','archive') AND finished_at IS NOT NULL", userId).n;
+    const games = db.get("SELECT COUNT(*) AS n FROM runs WHERE user_id=? AND mode='live' AND finished_at IS NOT NULL", userId).n;
+    const outliers = db.get("SELECT COUNT(*) AS n FROM rounds x JOIN runs r ON r.id=x.run_id WHERE r.user_id=? AND r.mode IN ('live','archive') AND x.tier=5", userId).n;
+    return { meters, games, outliers, streak: streaks([userId]).get(userId).best };
+  }
+  route('GET', '/api/wardrobe', 'user', ({ user }) => {
+    const stats = unlockStats(user.id);
+    const catalog = Object.fromEntries(Object.entries(CATALOG).map(([slot, items]) => [slot, items.map(i => ({ ...i, unlocked: isUnlocked(i, stats) }))]));
+    return { catalog, stats, look: resolveLook(user.look, user.username) };
+  });
+  route('POST', '/api/wardrobe', 'user', ({ user, body }) => {
+    let look;
+    try { look = cleanLook(body.look, unlockStats(user.id), resolveLook(user.look, user.username)); } catch (e) { bad(e.message); }
+    db.run('UPDATE users SET look=? WHERE id=?', JSON.stringify(look), user.id);
+    return { look };
+  });
+
+  // ---------- user-made games ----------
+  function newSlug() {
+    for (;;) {
+      const s = Array.from(randomBytes(8), b => 'abcdefghijkmnpqrstuvwxyz23456789'[b % 32]).join('');
+      if (!db.get('SELECT 1 AS x FROM games WHERE slug=?', s)) return s;
+    }
+  }
+  function gameFor(slug) {
+    const g = db.get('SELECT g.*, u.display_name AS ownerName, u.username AS ownerUsername FROM games g JOIN users u ON u.id=g.owner_id WHERE g.slug=?', slug);
+    if (!g) bad('Game not found', 404);
+    return g;
+  }
+  const canEdit = (g, user) => g.owner_id === user.id || user.role === 'admin';
+  function cleanGameInput(b) {
+    const title = str(b.title, 60, 'Title'); if (!title) bad('Give the game a title');
+    if (!Array.isArray(b.prompts) || !b.prompts.length || b.prompts.length > 10) bad('A game has 1 to 10 prompts');
+    const prompts = b.prompts.map(p => { const c = cleanPromptInput(p); if (c.answers.length < 3) bad(`"${c.text}" needs at least 3 answers`); return c; });
+    return { title, prompts };
+  }
+  function writeGame(slug, ownerId, prompts) {
+    const key = 'g-' + slug, t = now();
+    const old = db.all('SELECT prompt_id FROM day_prompts WHERE date=?', key).map(r => r.prompt_id);
+    db.run('DELETE FROM day_prompts WHERE date=?', key);
+    for (const id of old) { db.run('DELETE FROM prompts WHERE id=?', id); indexCache.delete(id); }
+    db.run('INSERT INTO days(date,auto,created_at) VALUES(?,0,?) ON CONFLICT(date) DO NOTHING', key, t);
+    prompts.forEach((p, i) => {
+      const id = Number(db.run('INSERT INTO prompts(text,category,pack,lang,owner_id,created_at,updated_at) VALUES(?,?,?,?,?,?,?)', p.text, p.category, 'game:' + slug, langOf(p.text), ownerId, t, t).lastInsertRowid);
+      for (const a of p.answers) db.run('INSERT INTO answers(prompt_id,answer,tier,aliases) VALUES(?,?,?,?)', id, a.answer, a.tier, JSON.stringify(a.aliases));
+      db.run('INSERT INTO day_prompts(date,position,prompt_id) VALUES(?,?,?)', key, i, id);
+    });
+  }
+  function createGame(user, input) {
+    if (db.get('SELECT COUNT(*) AS n FROM games WHERE owner_id=?', user.id).n >= 50) bad('You already have 50 games. Delete one to make another.');
+    const slug = newSlug(), t = now();
+    db.tx(() => {
+      db.run('INSERT INTO games(slug,owner_id,title,created_at,updated_at) VALUES(?,?,?,?,?)', slug, user.id, input.title, t, t);
+      writeGame(slug, user.id, input.prompts);
+    });
+    return { slug };
+  }
+  const gamePlays = key => db.get('SELECT COUNT(*) AS n FROM runs WHERE date=? AND finished_at IS NOT NULL', key).n;
+  function gameContent(key) {
+    return dayPrompts(key).map(p => ({ id: p.id, text: p.text, category: p.category, answers: promptAnswers(p.id).answers.map(a => ({ id: a.id, answer: a.answer, tier: a.tier, aliases: a.aliases })) }));
+  }
+  route('GET', '/api/games', 'user', ({ user }) => {
+    const row = g => ({ slug: g.slug, title: g.title, ownerName: g.ownerName, createdAt: g.created_at, prompts: dayPrompts('g-' + g.slug).length, plays: gamePlays('g-' + g.slug), myScore: g.score ?? null, finished: !!g.finished });
+    const mine = db.all(`SELECT g.*, u.display_name AS ownerName, r.score, r.finished_at IS NOT NULL AS finished FROM games g JOIN users u ON u.id=g.owner_id
+      LEFT JOIN runs r ON r.date='g-'||g.slug AND r.user_id=? WHERE g.owner_id=? ORDER BY g.created_at DESC`, user.id, user.id).map(row);
+    const played = db.all(`SELECT g.*, u.display_name AS ownerName, r.score, r.finished_at IS NOT NULL AS finished FROM runs r JOIN games g ON 'g-'||g.slug=r.date
+      JOIN users u ON u.id=g.owner_id WHERE r.user_id=? AND g.owner_id<>? ORDER BY r.started_at DESC LIMIT 50`, user.id, user.id).map(row);
+    const recent = db.all(`SELECT g.*, u.display_name AS ownerName, NULL AS score, 0 AS finished FROM games g JOIN users u ON u.id=g.owner_id
+      WHERE g.owner_id<>? AND NOT EXISTS (SELECT 1 FROM runs r WHERE r.date='g-'||g.slug AND r.user_id=?) ORDER BY g.created_at DESC LIMIT 20`, user.id, user.id).map(row);
+    return { mine, played, recent };
+  });
+  route('POST', '/api/games', 'user', ({ user, body }) => createGame(user, cleanGameInput(body)));
+  route('GET', '/api/games/([a-z0-9]{8})', 'user', ({ user, m }) => {
+    const g = gameFor(m[1]), key = 'g-' + g.slug, run = getRun(user.id, key), prompts = dayPrompts(key);
+    const players = db.all(`SELECT u.id AS userId, u.username, u.look, u.display_name AS name, r.score, r.total_ms AS ms FROM runs r JOIN users u ON u.id=r.user_id
+      WHERE r.date=? AND r.finished_at IS NOT NULL ORDER BY r.score DESC, r.total_ms ASC LIMIT 100`, key);
+    const runs = db.get('SELECT COUNT(*) AS n FROM runs WHERE date=? AND user_id<>?', key, g.owner_id).n;
+    return {
+      slug: g.slug, title: g.title, ownerName: g.ownerName, ownerUsername: g.ownerUsername, isOwner: g.owner_id === user.id, canEdit: canEdit(g, user),
+      editable: runs === 0, createdAt: g.created_at, prompts: prompts.length, categories: [...new Set(prompts.map(p => p.category))], plays: players.length,
+      myRun: run ? { finished: !!run.finished_at, score: run.score } : null, leaderboard: withLooks(players),
+      content: canEdit(g, user) ? gameContent(key) : null,
+    };
+  });
+  route('PUT', '/api/games/([a-z0-9]{8})', 'user', ({ user, m, body }) => {
+    const g = gameFor(m[1]);
+    if (!canEdit(g, user)) bad('Only the person who made this game can change it.', 403);
+    const input = cleanGameInput(body);
+    db.tx(() => {
+      if (db.get('SELECT COUNT(*) AS n FROM runs WHERE date=? AND user_id<>?', 'g-' + g.slug, g.owner_id).n) {
+        // Already played: keep prompts and order, only add answers / change tiers and spellings (re-scores players).
+        const current = dayPrompts('g-' + g.slug);
+        if (input.prompts.length !== current.length || input.prompts.some((p, i) => p.text !== current[i].text)) bad('People already played this game, so you can only add or change answers. Make a copy to change the prompts.', 409);
+        input.prompts.forEach((p, i) => savePrompt(current[i].id, p));
+      } else {
+        db.run('DELETE FROM runs WHERE date=?', 'g-' + g.slug);
+        writeGame(g.slug, g.owner_id, input.prompts);
+      }
+      db.run('UPDATE games SET title=?, updated_at=? WHERE id=?', input.title, now(), g.id);
+    });
+    return { slug: g.slug };
+  });
+  route('DELETE', '/api/games/([a-z0-9]{8})', 'user', ({ user, m }) => {
+    const g = gameFor(m[1]);
+    if (!canEdit(g, user)) bad('Only the person who made this game can delete it.', 403);
+    db.tx(() => {
+      const key = 'g-' + g.slug, ids = db.all('SELECT prompt_id FROM day_prompts WHERE date=?', key).map(r => r.prompt_id);
+      db.run('DELETE FROM days WHERE date=?', key);
+      for (const id of ids) { db.run('DELETE FROM prompts WHERE id=?', id); indexCache.delete(id); }
+      db.run('DELETE FROM games WHERE id=?', g.id);
+    });
+    return { deleted: true };
+  });
+  route('POST', '/api/games/([a-z0-9]{8})/copy', 'user', ({ user, m }) => {
+    const g = gameFor(m[1]), content = gameContent('g-' + g.slug);
+    return createGame(user, cleanGameInput({ title: str(`${g.title} (copy)`, 60, 'Title'), prompts: content }));
+  });
+  route('GET', '/api/games/([a-z0-9]{8})/misses', 'user', ({ user, m }) => {
+    const g = gameFor(m[1]);
+    if (!canEdit(g, user)) bad('Only the person who made this game can see this.', 403);
+    const rows = db.all(`SELECT g.prompt_id AS promptId, p.text AS prompt, g.norm, MIN(g.raw) AS raw, COUNT(*) AS guesses, COUNT(DISTINCT r.user_id) AS players
+      FROM guesses g JOIN runs r ON r.id=g.run_id JOIN prompts p ON p.id=g.prompt_id
+      WHERE g.accepted=0 AND r.date=? GROUP BY g.prompt_id, g.norm ORDER BY players DESC, guesses DESC LIMIT 200`, 'g-' + g.slug);
+    return { misses: rows.filter(r => !matchAnswer(promptAnswers(r.promptId).index, r.raw, { typos: false })) };
+  });
+
+  /** Fill the archive with the past n days, so a new install has history to play. Only on an empty calendar. */
+  function backfillHistory(n = 30) {
+    if (db.get("SELECT COUNT(*) AS n FROM days WHERE date NOT LIKE 'g-%'").n) return 0;
+    const s = settings(), t = today();
+    let made = 0;
+    db.tx(() => {
+      for (let i = n; i >= 1; i--) {
+        const d = addDays(t, -i);
+        if (s.activeWeekdays.includes(weekday(d)) && autoCreate(d)) made++;
+      }
+    });
+    return made;
+  }
+
   // ---------- admin ----------
   route('GET', '/api/admin/overview', 'admin', () => {
     const t = today(), s = settings();
-    const bank = db.get('SELECT COUNT(*) AS n FROM prompts WHERE retired=0').n;
-    const unused = db.get('SELECT COUNT(*) AS n FROM prompts p WHERE retired=0 AND NOT EXISTS (SELECT 1 FROM day_prompts dp WHERE dp.prompt_id=p.id)').n;
+    const bank = db.get('SELECT COUNT(*) AS n FROM prompts WHERE retired=0 AND owner_id IS NULL').n;
+    const unused = db.get('SELECT COUNT(*) AS n FROM prompts p WHERE retired=0 AND owner_id IS NULL AND NOT EXISTS (SELECT 1 FROM day_prompts dp WHERE dp.prompt_id=p.id)').n;
     return {
       today: t, users: db.get('SELECT COUNT(*) AS n FROM users').n,
       activeWeek: db.get('SELECT COUNT(*) AS n FROM users WHERE last_seen>?', now() - 7 * 86400_000).n,
       playersToday: db.get("SELECT COUNT(*) AS n FROM runs WHERE date=? AND mode='live' AND finished_at IS NOT NULL", t).n,
       startedToday: db.get("SELECT COUNT(*) AS n FROM runs WHERE date=? AND mode='live'", t).n,
       bank, unused, daysLeft: Math.floor(unused / s.promptsPerDay),
-      scheduledAhead: db.get('SELECT COUNT(*) AS n FROM days WHERE date>?', t).n,
+      scheduledAhead: db.get("SELECT COUNT(*) AS n FROM days WHERE date>? AND date NOT LIKE 'g-%'", t).n,
       misses: listMisses().length,
       todayPrompts: dayPrompts(t),
       participation: db.all(`SELECT d.date, (SELECT COUNT(*) FROM runs r WHERE r.date=d.date AND r.mode='live' AND r.finished_at IS NOT NULL) AS players
@@ -618,8 +780,8 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
         (SELECT COUNT(*) FROM answers a WHERE a.prompt_id=p.id) AS answers,
         (SELECT COUNT(*) FROM day_prompts dp WHERE dp.prompt_id=p.id) AS used,
         (SELECT MAX(date) FROM day_prompts dp WHERE dp.prompt_id=p.id) AS lastUsed
-      FROM prompts p ORDER BY p.id DESC`).map(p => ({ ...p, retired: !!p.retired })),
-    categories: db.all('SELECT category, COUNT(*) AS n FROM prompts GROUP BY category ORDER BY category'),
+      FROM prompts p WHERE p.owner_id IS NULL ORDER BY p.id DESC`).map(p => ({ ...p, retired: !!p.retired })),
+    categories: db.all('SELECT category, COUNT(*) AS n FROM prompts WHERE owner_id IS NULL GROUP BY category ORDER BY category'),
   }));
   route('GET', '/api/admin/prompts/(\\d+)', 'admin', ({ m }) => promptFull(Number(m[1])));
   route('POST', '/api/admin/prompts', 'admin', ({ body }) => savePrompt(null, cleanPromptInput(body), 'custom'));
@@ -643,7 +805,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   route('POST', '/api/admin/import', 'admin', ({ body }) =>
     importPack(body.content, String(body.name || 'upload.txt'), { mode: body.mode === 'update' ? 'update' : 'skip', dryRun: !!body.dryRun }));
   route('GET', '/api/admin/export', 'admin', ({ query }) => {
-    const ids = db.all(`SELECT id FROM prompts ${query.get('all') === '1' ? '' : 'WHERE retired=0'} ORDER BY category, id`).map(r => r.id);
+    const ids = db.all(`SELECT id FROM prompts WHERE owner_id IS NULL ${query.get('all') === '1' ? '' : 'AND retired=0'} ORDER BY category, id`).map(r => r.id);
     const prompts = ids.map(id => { const p = promptFull(id); return { text: p.text, category: p.category, answers: p.answers.map(({ answer, tier, aliases }) => ({ answer, tier, ...(aliases.length ? { aliases } : {}) })) }; });
     const fmt = query.get('format') || 'json', stamp = today();
     if (fmt === 'csv') return { $file: { name: `outlier-bank-${stamp}.csv`, type: 'text/csv; charset=utf-8', data: '\uFEFF' + toCsv(prompts) } };
@@ -704,7 +866,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   function listMisses() {
     const rows = db.all(`SELECT g.prompt_id AS promptId, p.text AS prompt, g.norm, MIN(g.raw) AS raw, COUNT(*) AS guesses, COUNT(DISTINCT r.user_id) AS players, MAX(g.at) AS lastAt
       FROM guesses g JOIN runs r ON r.id=g.run_id JOIN prompts p ON p.id=g.prompt_id
-      WHERE g.accepted=0 AND NOT EXISTS (SELECT 1 FROM dismissed d WHERE d.prompt_id=g.prompt_id AND d.norm=g.norm)
+      WHERE g.accepted=0 AND p.owner_id IS NULL AND NOT EXISTS (SELECT 1 FROM dismissed d WHERE d.prompt_id=g.prompt_id AND d.norm=g.norm)
       GROUP BY g.prompt_id, g.norm ORDER BY players DESC, guesses DESC, lastAt DESC LIMIT 500`);
     return rows.filter(r => !matchAnswer(promptAnswers(r.promptId).index, r.raw, { typos: false }));
   }
@@ -824,5 +986,5 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     }
   }
 
-  return { handle, settings, saveSettings, today, ensureSetupToken, importPack, createUser, ensureDay, retroAward, db };
+  return { handle, settings, saveSettings, today, ensureSetupToken, importPack, createUser, ensureDay, retroAward, backfillHistory, db };
 }

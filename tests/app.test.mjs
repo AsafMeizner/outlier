@@ -317,3 +317,82 @@ test('admin: schedule, questions, misses and retro-award, backup', async () => {
   const bk = await t.call('admin', 'GET', '/api/admin/backup');
   assert.equal(bk.file.data.subarray(0, 15).toString(), 'SQLite format 3');
 });
+
+test('wardrobe: free items equip, locked items refuse, unlocks follow play', async () => {
+  const t = await withAdmin(setup());
+  await addPlayer(t, 'alice');
+  let w = await t.ok('alice', 'GET', '/api/wardrobe');
+  assert.equal(w.catalog.hat.find(i => i.id === 'cap').unlocked, true);
+  assert.equal(w.catalog.hat.find(i => i.id === 'party').unlocked, false);
+  await t.ok('alice', 'POST', '/api/wardrobe', { look: { hat: 'cap', skin: 's3', hairStyle: 'bun' } });
+  assert.equal((await t.call('alice', 'POST', '/api/wardrobe', { look: { hat: 'party' } })).status, 400, 'party hat needs an Outlier answer');
+  assert.equal((await t.call('alice', 'POST', '/api/wardrobe', { look: { hat: 'nonsense' } })).status, 400);
+  const me = await t.ok('alice', 'GET', '/api/me');
+  assert.equal(me.user.look.hat, 'cap');
+  assert.equal(me.user.look.hairStyle, 'bun');
+  // an Outlier answer unlocks the party hat
+  const bank = (await t.ok('admin', 'GET', '/api/admin/prompts')).prompts;
+  const d = (await t.ok('admin', 'GET', '/api/admin/overview')).today;
+  await t.ok('admin', 'PUT', `/api/admin/schedule/${d}`, { promptIds: ['Name a red fruit', 'Name a Nordic country'].map(x => bank.find(p => p.text === x).id) });
+  await playDay(t, 'alice', d, ['lingon', 'iceland']);
+  w = await t.ok('alice', 'GET', '/api/wardrobe');
+  assert.ok(w.stats.outliers >= 1, `outliers ${w.stats.outliers}`);
+  assert.equal(w.catalog.hat.find(i => i.id === 'party').unlocked, true);
+  await t.ok('alice', 'POST', '/api/wardrobe', { look: { hat: 'party' } });
+  const lb = await t.ok('alice', 'GET', '/api/leaderboard?period=day');
+  assert.equal(lb.rows[0].look.hat, 'party', 'leaderboard rows carry looks');
+});
+
+test('user-made games: create, share, play, leaderboard, edit rules, copy, delete', async () => {
+  const t = await withAdmin(setup());
+  await addPlayer(t, 'alice'); await addPlayer(t, 'zoe');
+  const game = { title: 'Team quiz', prompts: [
+    { text: 'Name a red fruit', category: 'Food', answers: [{ answer: 'Apple', tier: 1 }, { answer: 'Cherry', tier: 3 }, { answer: 'Rambutan', tier: 5 }] },
+    { text: 'Name a planet', category: 'Space', answers: [{ answer: 'Mars', tier: 1 }, { answer: 'Neptune', tier: 4 }, { answer: 'Mercury', tier: 5 }] },
+  ] };
+  assert.equal((await t.call('alice', 'POST', '/api/games', { ...game, prompts: [{ text: 'Too few answers here', answers: [{ answer: 'x', tier: 1 }] }] })).status, 400);
+  const { slug } = await t.ok('alice', 'POST', '/api/games', game);
+  assert.match(slug, /^[a-z0-9]{8}$/);
+  // same prompt text as the bank is fine for a user game, and it never enters the bank
+  const bank = (await t.ok('admin', 'GET', '/api/admin/prompts')).prompts;
+  assert.equal(bank.filter(p => p.text === 'Name a red fruit').length, 1);
+  // zoe opens the shared link and plays
+  let info = await t.ok('zoe', 'GET', `/api/games/${slug}`);
+  assert.equal(info.title, 'Team quiz'); assert.equal(info.content, null, 'players do not see the answers');
+  assert.equal((await t.call('zoe', 'GET', `/api/reveal/g-${slug}`)).status, 403);
+  const s = await playDay(t, 'zoe', `g-${slug}`, ['rambutan', 'mars']);
+  assert.equal(s.finished, true); assert.equal(s.mode, 'custom'); assert.equal(s.score, 110); assert.equal(s.game.title, 'Team quiz');
+  await t.ok('zoe', 'GET', `/api/reveal/g-${slug}`);
+  info = await t.ok('alice', 'GET', `/api/games/${slug}`);
+  assert.equal(info.plays, 1); assert.equal(info.leaderboard[0].score, 110); assert.equal(info.editable, false);
+  // custom games stay out of the daily leaderboard, stats and archive
+  assert.equal((await t.ok('zoe', 'GET', '/api/leaderboard?period=all')).rows.length, 0);
+  assert.equal((await t.ok('zoe', 'GET', '/api/stats')).games, 0);
+  assert.ok(!(await t.ok('zoe', 'GET', '/api/archive')).days.some(d => d.date.startsWith('g-')));
+  // after someone played: prompts are locked, answers can still be added and re-score
+  const changed = structuredClone(info.content); changed[0].text = 'Name a red vegetable';
+  assert.equal((await t.call('alice', 'PUT', `/api/games/${slug}`, { title: 'x', prompts: changed })).status, 409);
+  const more = structuredClone(info.content); more[1].answers.push({ answer: 'Pluto', tier: 5 });
+  await t.ok('alice', 'PUT', `/api/games/${slug}`, { title: 'Team quiz 2', prompts: more });
+  assert.equal((await t.call('zoe', 'PUT', `/api/games/${slug}`, { title: 'hack', prompts: more })).status, 403);
+  // copies and deletion
+  const copy = await t.ok('zoe', 'POST', `/api/games/${slug}/copy`);
+  assert.equal((await t.ok('zoe', 'GET', `/api/games/${copy.slug}`)).isOwner, true);
+  const lists = await t.ok('zoe', 'GET', '/api/games');
+  assert.equal(lists.mine.length, 1); assert.equal(lists.played.length, 1);
+  await t.ok('alice', 'DELETE', `/api/games/${slug}`);
+  assert.equal((await t.call('zoe', 'GET', `/api/games/${slug}`)).status, 404);
+});
+
+test('history backfill creates past days only on an empty calendar', async () => {
+  const t = await withAdmin(setup());
+  assert.equal(t.app.backfillHistory(10), 10);
+  assert.equal(t.app.backfillHistory(10), 0, 'only once');
+  await addPlayer(t, 'alice');
+  const a = await t.ok('alice', 'GET', '/api/archive');
+  assert.equal(a.days.length, 11, '10 past days plus today');
+  assert.equal(a.days[0].dayNumber, 11);
+  const past = a.days[5].date;
+  const s = await t.ok('alice', 'POST', `/api/play/${past}/start`);
+  assert.equal(s.mode, 'archive');
+});

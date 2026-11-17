@@ -481,6 +481,10 @@ export class Scene {
     const ctx = this.ctx, t = this.t;
     // --- office interior (cutaway) ---
     if (this.inView(0, 900)) {
+      // the rest of the office building above us
+      rr(ctx, -780, -1500, 1510, 1040, 0); fillStroke(ctx, '#9aa7c7', 4);
+      for (let fy = -1440; fy < -520; fy += 150) for (let fx = -720; fx < 680; fx += 130) { rr(ctx, fx, fy, 84, 96, 6); fillStroke(ctx, (fx + fy) % 3 ? '#bfe8ff' : '#ffe28a', 3); }
+      rr(ctx, -800, -1530, 1550, 40, 6); fillStroke(ctx, '#41476b', 4);
       rr(ctx, -760, -460, 1470, 460, 0); fillStroke(ctx, '#f6ead2', 4);
       ctx.fillStyle = '#e9d9b8'; ctx.fillRect(-756, -150, 1456, 150);
       for (const lx of [-480, -80, 320]) { rr(ctx, lx, -452, 160, 14, 6); fillStroke(ctx, '#fffbe6', 2); ctx.fillStyle = 'rgba(255,251,200,.25)'; ctx.beginPath(); ctx.moveTo(lx, -438); ctx.lineTo(lx + 160, -438); ctx.lineTo(lx + 220, -150); ctx.lineTo(lx - 60, -150); ctx.closePath(); ctx.fill(); }

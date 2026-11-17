@@ -65,7 +65,8 @@ export function looseKey(text) {
   if (!isHebrew(n)) return null;
   return n.replace(HE_ARTICLE, '').split(' ').map(w => {
     // plural endings (im / ot), then a feminine final he, so "sfina" and "sfinot" share a key
-    const x = (w.length > 4 ? w.replace(/(\u05D9\u05DE|\u05D5\u05EA)$/, '') : w).replace(/(?<=..)\u05D4$/, '');
+    let x = w.length > 3 ? w.replace(/(\u05D9\u05DE|\u05D5\u05EA)$/, '') : w;
+    if (x === w) x = w.replace(/(?<=..)(\u05D9\u05EA|\u05D4)$/, ''); // feminine -it / -a singular
     return x[0] + x.slice(1).replace(/[\u05D5\u05D9]/g, '');
   }).join('');
 }

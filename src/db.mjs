@@ -104,18 +104,53 @@ const MIGRATIONS = [
   `,
   // v2: prompt language ('en' or 'he'); filled in from the prompt text by the app on start
   `ALTER TABLE prompts ADD COLUMN lang TEXT NOT NULL DEFAULT 'en';`,
+  // v3: user-made games (mode 'custom'), character looks, prompt ownership
+  `
+  CREATE TABLE runs_v3 (
+    id INTEGER PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    date TEXT NOT NULL REFERENCES days(date) ON DELETE CASCADE,
+    mode TEXT NOT NULL CHECK (mode IN ('live','archive','custom')),
+    position INTEGER NOT NULL DEFAULT 0,
+    round_started_at INTEGER,
+    score INTEGER NOT NULL DEFAULT 0,
+    total_ms INTEGER NOT NULL DEFAULT 0,
+    started_at INTEGER NOT NULL,
+    finished_at INTEGER,
+    UNIQUE (user_id, date)
+  );
+  INSERT INTO runs_v3 SELECT id, user_id, date, mode, position, round_started_at, score, total_ms, started_at, finished_at FROM runs;
+  DROP TABLE runs;
+  ALTER TABLE runs_v3 RENAME TO runs;
+  CREATE INDEX runs_date ON runs(date, mode);
+  ALTER TABLE users ADD COLUMN look TEXT NOT NULL DEFAULT '{}';
+  ALTER TABLE prompts ADD COLUMN owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE;
+  DROP INDEX prompts_text;
+  CREATE UNIQUE INDEX prompts_text ON prompts(text COLLATE NOCASE) WHERE owner_id IS NULL;
+  CREATE TABLE games (
+    id INTEGER PRIMARY KEY,
+    slug TEXT NOT NULL UNIQUE,
+    owner_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    title TEXT NOT NULL,
+    created_at INTEGER NOT NULL,
+    updated_at INTEGER NOT NULL
+  );
+  `,
 ];
 
 export function openDb(file) {
   if (file !== ':memory:') mkdirSync(dirname(file), { recursive: true });
   const db = new DatabaseSync(file);
-  db.exec('PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON; PRAGMA busy_timeout = 5000; PRAGMA synchronous = NORMAL;');
+  db.exec('PRAGMA journal_mode = WAL; PRAGMA foreign_keys = OFF; PRAGMA busy_timeout = 5000; PRAGMA synchronous = NORMAL;');
   const version = db.prepare('PRAGMA user_version').get().user_version;
   for (let v = version; v < MIGRATIONS.length; v++) {
     db.exec('BEGIN');
     try { db.exec(MIGRATIONS[v]); db.exec(`PRAGMA user_version = ${v + 1}`); db.exec('COMMIT'); }
     catch (e) { db.exec('ROLLBACK'); throw e; }
   }
+  const broken = db.prepare('PRAGMA foreign_key_check').all();
+  if (broken.length) throw new Error(`Database has ${broken.length} broken references after migration`);
+  db.exec('PRAGMA foreign_keys = ON');
   const cache = new Map();
   const stmt = sql => { let s = cache.get(sql); if (!s) { s = db.prepare(sql); cache.set(sql, s); } return s; };
   let depth = 0;

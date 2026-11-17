@@ -49,7 +49,7 @@ const secure = !!(config.tlsCert && config.tlsKey);
 const app = createApp({ db, secure, log });
 
 function importStarterBank() {
-  if (db.get('SELECT COUNT(*) AS n FROM prompts').n) return;
+  if (db.get('SELECT COUNT(*) AS n FROM prompts WHERE owner_id IS NULL').n) return;
   const dir = join(ROOT, 'bank', 'packs');
   if (!existsSync(dir)) return;
   for (const f of readdirSync(dir).filter(f => /\.(json|txt|csv)$/i.test(f)).sort()) {
@@ -167,6 +167,8 @@ async function onRequest(req, res) {
 }
 
 importStarterBank();
+const history = app.backfillHistory(Number(process.env.OUTLIER_HISTORY_DAYS ?? 30));
+if (history) log(`Created ${history} past days for the archive`);
 const handler = (req, res) => onRequest(req, res).catch(e => { log(`ERROR ${e.stack || e}`); try { send(res, 500, {}, 'Server error'); } catch { /* already sent */ } });
 const server = secure
   ? createHttps({ cert: readFileSync(resolve(ROOT, config.tlsCert)), key: readFileSync(resolve(ROOT, config.tlsKey)) }, handler)

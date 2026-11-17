@@ -32,3 +32,18 @@ add/select, users, admin panel, leaderboard, streaks, archives.
 2. Launch Hebrew pack writers (bank/packs/he-*.json).
 3. i18n + RTL UI; launch-scene engine (`public/scene.js`); new play/home/results screens.
 4. Re-run walkthrough, air-gap test (WSL `unshare -rn`), build zip (`tools/build-zip.py`).
+
+## 2026-11-17 afternoon: user feedback round 2 (UI "looks really bad")
+User asked: full-screen UI like krillion/wazari with on-screen effects and the question drawn on the screen; character
+customisation unlocked by points; any user can create their own questions/games and share a link; a month of history.
+- DECLINED: importing krillion.io's real past puzzles (their content). INSTEAD: first start backfills ~30 past days
+  from our own bank so the archive is playable immediately.
+- Studied both games by playing them (frames in %TEMP%\outlier-pw\ref\play, contact sheets sheet-*.png). Generic
+  conventions adopted (own art only): full-viewport scene, corner icon buttons + top HUD (distance box, progress
+  segments coloured by tier, day/score), prompt panel centred over the scene, bottom answer bar (countdown dial +
+  input + action button with ENTER keycap), tier REVEAL that climbs rank by rank before stopping (suspense),
+  big live distance counter during flight, result window sliding up from the bottom with NEXT, landmark captions
+  along the route, CUMULATIVE journey (each launch continues from the last landing; total decides how far you get).
+- New world by cumulative metres (1 point = 10 m): office 0-60, parking 60-400, city 400-1600, park 1600-2600,
+  beach 2600-3200, sea 3200-4800, sky/clouds 4800-5800, Moon 5800+. Pixel-art rendering (low-res canvas upscaled).
+- Fonts: Rubik (body), Rubik Pixels (HUD/titles, has Hebrew).
