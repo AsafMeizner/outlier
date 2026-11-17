@@ -1,0 +1,9957 @@
+{
+  "title": "Geography & Travel",
+  "prompts": [
+    {
+      "text": "Name a country in Africa",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Egypt",
+          "tier": 1
+        },
+        {
+          "answer": "South Africa",
+          "tier": 1
+        },
+        {
+          "answer": "Nigeria",
+          "tier": 1
+        },
+        {
+          "answer": "Kenya",
+          "tier": 1
+        },
+        {
+          "answer": "Morocco",
+          "tier": 1
+        },
+        {
+          "answer": "Ethiopia",
+          "tier": 2
+        },
+        {
+          "answer": "Ghana",
+          "tier": 2
+        },
+        {
+          "answer": "Algeria",
+          "tier": 2
+        },
+        {
+          "answer": "Tunisia",
+          "tier": 2
+        },
+        {
+          "answer": "Libya",
+          "tier": 2
+        },
+        {
+          "answer": "Sudan",
+          "tier": 2
+        },
+        {
+          "answer": "Uganda",
+          "tier": 2
+        },
+        {
+          "answer": "Tanzania",
+          "tier": 2
+        },
+        {
+          "answer": "Somalia",
+          "tier": 3
+        },
+        {
+          "answer": "Senegal",
+          "tier": 3
+        },
+        {
+          "answer": "Cameroon",
+          "tier": 3
+        },
+        {
+          "answer": "Zimbabwe",
+          "tier": 3
+        },
+        {
+          "answer": "Angola",
+          "tier": 3
+        },
+        {
+          "answer": "Mozambique",
+          "tier": 3
+        },
+        {
+          "answer": "Madagascar",
+          "tier": 3
+        },
+        {
+          "answer": "Rwanda",
+          "tier": 3
+        },
+        {
+          "answer": "Namibia",
+          "tier": 3
+        },
+        {
+          "answer": "Botswana",
+          "tier": 3
+        },
+        {
+          "answer": "Zambia",
+          "tier": 3
+        },
+        {
+          "answer": "Côte d'Ivoire",
+          "tier": 3,
+          "aliases": [
+            "Ivory Coast"
+          ]
+        },
+        {
+          "answer": "Democratic Republic of the Congo",
+          "tier": 3,
+          "aliases": [
+            "DR Congo",
+            "DRC",
+            "Congo-Kinshasa",
+            "Zaire"
+          ]
+        },
+        {
+          "answer": "Mali",
+          "tier": 3
+        },
+        {
+          "answer": "Republic of the Congo",
+          "tier": 3,
+          "aliases": [
+            "Congo",
+            "Congo-Brazzaville"
+          ]
+        },
+        {
+          "answer": "Niger",
+          "tier": 4
+        },
+        {
+          "answer": "Chad",
+          "tier": 4
+        },
+        {
+          "answer": "Mauritania",
+          "tier": 4
+        },
+        {
+          "answer": "Eritrea",
+          "tier": 4
+        },
+        {
+          "answer": "Malawi",
+          "tier": 4
+        },
+        {
+          "answer": "South Sudan",
+          "tier": 4
+        },
+        {
+          "answer": "Gabon",
+          "tier": 4
+        },
+        {
+          "answer": "Guinea",
+          "tier": 4
+        },
+        {
+          "answer": "Sierra Leone",
+          "tier": 4
+        },
+        {
+          "answer": "Liberia",
+          "tier": 4
+        },
+        {
+          "answer": "Burkina Faso",
+          "tier": 4
+        },
+        {
+          "answer": "Benin",
+          "tier": 4
+        },
+        {
+          "answer": "Togo",
+          "tier": 4
+        },
+        {
+          "answer": "Gambia",
+          "tier": 4
+        },
+        {
+          "answer": "Lesotho",
+          "tier": 4
+        },
+        {
+          "answer": "Mauritius",
+          "tier": 4
+        },
+        {
+          "answer": "Seychelles",
+          "tier": 4
+        },
+        {
+          "answer": "Eswatini",
+          "tier": 5,
+          "aliases": [
+            "Swaziland"
+          ]
+        },
+        {
+          "answer": "Djibouti",
+          "tier": 5
+        },
+        {
+          "answer": "Burundi",
+          "tier": 5
+        },
+        {
+          "answer": "Central African Republic",
+          "tier": 5,
+          "aliases": [
+            "CAR"
+          ]
+        },
+        {
+          "answer": "Equatorial Guinea",
+          "tier": 5
+        },
+        {
+          "answer": "Guinea-Bissau",
+          "tier": 5
+        },
+        {
+          "answer": "Cabo Verde",
+          "tier": 5,
+          "aliases": [
+            "Cape Verde"
+          ]
+        },
+        {
+          "answer": "Comoros",
+          "tier": 5
+        },
+        {
+          "answer": "São Tomé and Príncipe",
+          "tier": 5,
+          "aliases": [
+            "São Tomé"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Name a country in Europe (Russia and Turkey count)",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "France",
+          "tier": 1
+        },
+        {
+          "answer": "Germany",
+          "tier": 1
+        },
+        {
+          "answer": "Italy",
+          "tier": 1
+        },
+        {
+          "answer": "Spain",
+          "tier": 1
+        },
+        {
+          "answer": "United Kingdom",
+          "tier": 1,
+          "aliases": [
+            "UK",
+            "Britain",
+            "Great Britain"
+          ]
+        },
+        {
+          "answer": "Portugal",
+          "tier": 2
+        },
+        {
+          "answer": "Netherlands",
+          "tier": 2,
+          "aliases": [
+            "Holland"
+          ]
+        },
+        {
+          "answer": "Greece",
+          "tier": 2
+        },
+        {
+          "answer": "Poland",
+          "tier": 2
+        },
+        {
+          "answer": "Switzerland",
+          "tier": 2
+        },
+        {
+          "answer": "Sweden",
+          "tier": 2
+        },
+        {
+          "answer": "Belgium",
+          "tier": 2
+        },
+        {
+          "answer": "Austria",
+          "tier": 3
+        },
+        {
+          "answer": "Norway",
+          "tier": 3
+        },
+        {
+          "answer": "Denmark",
+          "tier": 3
+        },
+        {
+          "answer": "Ireland",
+          "tier": 3
+        },
+        {
+          "answer": "Russia",
+          "tier": 3,
+          "aliases": [
+            "Russian Federation"
+          ]
+        },
+        {
+          "answer": "Turkey",
+          "tier": 3,
+          "aliases": [
+            "Türkiye"
+          ]
+        },
+        {
+          "answer": "Finland",
+          "tier": 3
+        },
+        {
+          "answer": "Czechia",
+          "tier": 3,
+          "aliases": [
+            "Czech Republic"
+          ]
+        },
+        {
+          "answer": "Hungary",
+          "tier": 3
+        },
+        {
+          "answer": "Croatia",
+          "tier": 3
+        },
+        {
+          "answer": "Ukraine",
+          "tier": 3
+        },
+        {
+          "answer": "Romania",
+          "tier": 3
+        },
+        {
+          "answer": "Iceland",
+          "tier": 4
+        },
+        {
+          "answer": "Serbia",
+          "tier": 4
+        },
+        {
+          "answer": "Bulgaria",
+          "tier": 4
+        },
+        {
+          "answer": "Slovakia",
+          "tier": 4
+        },
+        {
+          "answer": "Slovenia",
+          "tier": 4
+        },
+        {
+          "answer": "Luxembourg",
+          "tier": 4
+        },
+        {
+          "answer": "Malta",
+          "tier": 4
+        },
+        {
+          "answer": "Cyprus",
+          "tier": 4
+        },
+        {
+          "answer": "Monaco",
+          "tier": 4
+        },
+        {
+          "answer": "Estonia",
+          "tier": 4
+        },
+        {
+          "answer": "Latvia",
+          "tier": 4
+        },
+        {
+          "answer": "Lithuania",
+          "tier": 4
+        },
+        {
+          "answer": "Albania",
+          "tier": 5
+        },
+        {
+          "answer": "Andorra",
+          "tier": 5
+        },
+        {
+          "answer": "Belarus",
+          "tier": 5
+        },
+        {
+          "answer": "Bosnia and Herzegovina",
+          "tier": 5,
+          "aliases": [
+            "Bosnia"
+          ]
+        },
+        {
+          "answer": "Kazakhstan",
+          "tier": 5
+        },
+        {
+          "answer": "Liechtenstein",
+          "tier": 5
+        },
+        {
+          "answer": "Moldova",
+          "tier": 5
+        },
+        {
+          "answer": "Montenegro",
+          "tier": 5
+        },
+        {
+          "answer": "North Macedonia",
+          "tier": 5,
+          "aliases": [
+            "Macedonia"
+          ]
+        },
+        {
+          "answer": "San Marino",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a country that lies at least partly in Asia",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "China",
+          "tier": 1
+        },
+        {
+          "answer": "Japan",
+          "tier": 1
+        },
+        {
+          "answer": "India",
+          "tier": 1
+        },
+        {
+          "answer": "South Korea",
+          "tier": 1,
+          "aliases": [
+            "Korea",
+            "Republic of Korea"
+          ]
+        },
+        {
+          "answer": "Thailand",
+          "tier": 1
+        },
+        {
+          "answer": "Vietnam",
+          "tier": 2
+        },
+        {
+          "answer": "Israel",
+          "tier": 2
+        },
+        {
+          "answer": "Indonesia",
+          "tier": 2
+        },
+        {
+          "answer": "Philippines",
+          "tier": 2
+        },
+        {
+          "answer": "Singapore",
+          "tier": 2
+        },
+        {
+          "answer": "Malaysia",
+          "tier": 2
+        },
+        {
+          "answer": "Pakistan",
+          "tier": 2
+        },
+        {
+          "answer": "Saudi Arabia",
+          "tier": 3
+        },
+        {
+          "answer": "United Arab Emirates",
+          "tier": 3,
+          "aliases": [
+            "UAE",
+            "Emirates"
+          ]
+        },
+        {
+          "answer": "Iran",
+          "tier": 3
+        },
+        {
+          "answer": "Iraq",
+          "tier": 3
+        },
+        {
+          "answer": "Turkey",
+          "tier": 3,
+          "aliases": [
+            "Türkiye"
+          ]
+        },
+        {
+          "answer": "Russia",
+          "tier": 3,
+          "aliases": [
+            "Russian Federation"
+          ]
+        },
+        {
+          "answer": "North Korea",
+          "tier": 3,
+          "aliases": [
+            "DPRK"
+          ]
+        },
+        {
+          "answer": "Nepal",
+          "tier": 3
+        },
+        {
+          "answer": "Sri Lanka",
+          "tier": 3
+        },
+        {
+          "answer": "Bangladesh",
+          "tier": 3
+        },
+        {
+          "answer": "Mongolia",
+          "tier": 3
+        },
+        {
+          "answer": "Afghanistan",
+          "tier": 3
+        },
+        {
+          "answer": "Jordan",
+          "tier": 4
+        },
+        {
+          "answer": "Lebanon",
+          "tier": 4
+        },
+        {
+          "answer": "Syria",
+          "tier": 4
+        },
+        {
+          "answer": "Qatar",
+          "tier": 4
+        },
+        {
+          "answer": "Kuwait",
+          "tier": 4
+        },
+        {
+          "answer": "Cambodia",
+          "tier": 4
+        },
+        {
+          "answer": "Laos",
+          "tier": 4
+        },
+        {
+          "answer": "Myanmar",
+          "tier": 4,
+          "aliases": [
+            "Burma"
+          ]
+        },
+        {
+          "answer": "Kazakhstan",
+          "tier": 4
+        },
+        {
+          "answer": "Uzbekistan",
+          "tier": 4
+        },
+        {
+          "answer": "Maldives",
+          "tier": 4
+        },
+        {
+          "answer": "Oman",
+          "tier": 4
+        },
+        {
+          "answer": "Yemen",
+          "tier": 4
+        },
+        {
+          "answer": "Bahrain",
+          "tier": 4
+        },
+        {
+          "answer": "Armenia",
+          "tier": 5
+        },
+        {
+          "answer": "Azerbaijan",
+          "tier": 5
+        },
+        {
+          "answer": "Georgia",
+          "tier": 5
+        },
+        {
+          "answer": "Bhutan",
+          "tier": 5
+        },
+        {
+          "answer": "Brunei",
+          "tier": 5
+        },
+        {
+          "answer": "Cyprus",
+          "tier": 5
+        },
+        {
+          "answer": "Egypt",
+          "tier": 5
+        },
+        {
+          "answer": "Kyrgyzstan",
+          "tier": 5
+        },
+        {
+          "answer": "Tajikistan",
+          "tier": 5
+        },
+        {
+          "answer": "Turkmenistan",
+          "tier": 5
+        },
+        {
+          "answer": "Timor-Leste",
+          "tier": 5,
+          "aliases": [
+            "East Timor"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Name a landlocked country",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Switzerland",
+          "tier": 1
+        },
+        {
+          "answer": "Austria",
+          "tier": 1
+        },
+        {
+          "answer": "Mongolia",
+          "tier": 1
+        },
+        {
+          "answer": "Bolivia",
+          "tier": 1
+        },
+        {
+          "answer": "Nepal",
+          "tier": 1
+        },
+        {
+          "answer": "Hungary",
+          "tier": 2
+        },
+        {
+          "answer": "Czechia",
+          "tier": 2,
+          "aliases": [
+            "Czech Republic"
+          ]
+        },
+        {
+          "answer": "Afghanistan",
+          "tier": 2
+        },
+        {
+          "answer": "Paraguay",
+          "tier": 2
+        },
+        {
+          "answer": "Luxembourg",
+          "tier": 2
+        },
+        {
+          "answer": "Ethiopia",
+          "tier": 2
+        },
+        {
+          "answer": "Kazakhstan",
+          "tier": 3
+        },
+        {
+          "answer": "Slovakia",
+          "tier": 3
+        },
+        {
+          "answer": "Serbia",
+          "tier": 3
+        },
+        {
+          "answer": "Belarus",
+          "tier": 3
+        },
+        {
+          "answer": "Uganda",
+          "tier": 3
+        },
+        {
+          "answer": "Zambia",
+          "tier": 3
+        },
+        {
+          "answer": "Zimbabwe",
+          "tier": 3
+        },
+        {
+          "answer": "Laos",
+          "tier": 3
+        },
+        {
+          "answer": "Liechtenstein",
+          "tier": 3
+        },
+        {
+          "answer": "Andorra",
+          "tier": 3
+        },
+        {
+          "answer": "Bhutan",
+          "tier": 3
+        },
+        {
+          "answer": "Mali",
+          "tier": 3
+        },
+        {
+          "answer": "Uzbekistan",
+          "tier": 4
+        },
+        {
+          "answer": "San Marino",
+          "tier": 4
+        },
+        {
+          "answer": "Rwanda",
+          "tier": 4
+        },
+        {
+          "answer": "Botswana",
+          "tier": 4
+        },
+        {
+          "answer": "Chad",
+          "tier": 4
+        },
+        {
+          "answer": "Niger",
+          "tier": 4
+        },
+        {
+          "answer": "Armenia",
+          "tier": 4
+        },
+        {
+          "answer": "Moldova",
+          "tier": 4
+        },
+        {
+          "answer": "North Macedonia",
+          "tier": 4,
+          "aliases": [
+            "Macedonia"
+          ]
+        },
+        {
+          "answer": "Malawi",
+          "tier": 4
+        },
+        {
+          "answer": "Lesotho",
+          "tier": 4
+        },
+        {
+          "answer": "Azerbaijan",
+          "tier": 5
+        },
+        {
+          "answer": "Turkmenistan",
+          "tier": 5
+        },
+        {
+          "answer": "Kyrgyzstan",
+          "tier": 5
+        },
+        {
+          "answer": "Tajikistan",
+          "tier": 5
+        },
+        {
+          "answer": "Burkina Faso",
+          "tier": 5
+        },
+        {
+          "answer": "Burundi",
+          "tier": 5
+        },
+        {
+          "answer": "Central African Republic",
+          "tier": 5,
+          "aliases": [
+            "CAR"
+          ]
+        },
+        {
+          "answer": "Eswatini",
+          "tier": 5,
+          "aliases": [
+            "Swaziland"
+          ]
+        },
+        {
+          "answer": "South Sudan",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a country whose national flag shows at least one star",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "United States",
+          "tier": 1,
+          "aliases": [
+            "USA",
+            "US",
+            "America"
+          ]
+        },
+        {
+          "answer": "China",
+          "tier": 1
+        },
+        {
+          "answer": "Israel",
+          "tier": 1
+        },
+        {
+          "answer": "Turkey",
+          "tier": 1,
+          "aliases": [
+            "Türkiye"
+          ]
+        },
+        {
+          "answer": "Australia",
+          "tier": 1
+        },
+        {
+          "answer": "Vietnam",
+          "tier": 2
+        },
+        {
+          "answer": "North Korea",
+          "tier": 2
+        },
+        {
+          "answer": "Brazil",
+          "tier": 2
+        },
+        {
+          "answer": "Chile",
+          "tier": 2
+        },
+        {
+          "answer": "Cuba",
+          "tier": 2
+        },
+        {
+          "answer": "New Zealand",
+          "tier": 2
+        },
+        {
+          "answer": "Pakistan",
+          "tier": 2
+        },
+        {
+          "answer": "Morocco",
+          "tier": 2
+        },
+        {
+          "answer": "Singapore",
+          "tier": 2
+        },
+        {
+          "answer": "Venezuela",
+          "tier": 2
+        },
+        {
+          "answer": "Panama",
+          "tier": 3
+        },
+        {
+          "answer": "Malaysia",
+          "tier": 3
+        },
+        {
+          "answer": "Algeria",
+          "tier": 3
+        },
+        {
+          "answer": "Tunisia",
+          "tier": 3
+        },
+        {
+          "answer": "Ghana",
+          "tier": 3
+        },
+        {
+          "answer": "Somalia",
+          "tier": 3
+        },
+        {
+          "answer": "Syria",
+          "tier": 3
+        },
+        {
+          "answer": "Jordan",
+          "tier": 3
+        },
+        {
+          "answer": "Philippines",
+          "tier": 3
+        },
+        {
+          "answer": "Myanmar",
+          "tier": 3,
+          "aliases": [
+            "Burma"
+          ]
+        },
+        {
+          "answer": "Bosnia and Herzegovina",
+          "tier": 3,
+          "aliases": [
+            "Bosnia"
+          ]
+        },
+        {
+          "answer": "Honduras",
+          "tier": 3
+        },
+        {
+          "answer": "Libya",
+          "tier": 3
+        },
+        {
+          "answer": "Senegal",
+          "tier": 3
+        },
+        {
+          "answer": "Cameroon",
+          "tier": 3
+        },
+        {
+          "answer": "Ethiopia",
+          "tier": 3
+        },
+        {
+          "answer": "Uzbekistan",
+          "tier": 3
+        },
+        {
+          "answer": "Papua New Guinea",
+          "tier": 4
+        },
+        {
+          "answer": "Samoa",
+          "tier": 4
+        },
+        {
+          "answer": "Azerbaijan",
+          "tier": 4
+        },
+        {
+          "answer": "Mauritania",
+          "tier": 4
+        },
+        {
+          "answer": "Liberia",
+          "tier": 4
+        },
+        {
+          "answer": "Togo",
+          "tier": 4
+        },
+        {
+          "answer": "Burkina Faso",
+          "tier": 4
+        },
+        {
+          "answer": "Djibouti",
+          "tier": 4
+        },
+        {
+          "answer": "Democratic Republic of the Congo",
+          "tier": 4,
+          "aliases": [
+            "DR Congo",
+            "DRC"
+          ]
+        },
+        {
+          "answer": "Mozambique",
+          "tier": 4
+        },
+        {
+          "answer": "Angola",
+          "tier": 4
+        },
+        {
+          "answer": "Zimbabwe",
+          "tier": 4
+        },
+        {
+          "answer": "Suriname",
+          "tier": 4
+        },
+        {
+          "answer": "Slovenia",
+          "tier": 4
+        },
+        {
+          "answer": "Tajikistan",
+          "tier": 4
+        },
+        {
+          "answer": "Turkmenistan",
+          "tier": 4
+        },
+        {
+          "answer": "Timor-Leste",
+          "tier": 4,
+          "aliases": [
+            "East Timor"
+          ]
+        },
+        {
+          "answer": "Paraguay",
+          "tier": 5
+        },
+        {
+          "answer": "Grenada",
+          "tier": 5
+        },
+        {
+          "answer": "Dominica",
+          "tier": 5
+        },
+        {
+          "answer": "Saint Kitts and Nevis",
+          "tier": 5,
+          "aliases": [
+            "St Kitts and Nevis",
+            "St Kitts"
+          ]
+        },
+        {
+          "answer": "Guinea-Bissau",
+          "tier": 5
+        },
+        {
+          "answer": "Cabo Verde",
+          "tier": 5,
+          "aliases": [
+            "Cape Verde"
+          ]
+        },
+        {
+          "answer": "São Tomé and Príncipe",
+          "tier": 5,
+          "aliases": [
+            "São Tomé"
+          ]
+        },
+        {
+          "answer": "Equatorial Guinea",
+          "tier": 5
+        },
+        {
+          "answer": "Central African Republic",
+          "tier": 5,
+          "aliases": [
+            "CAR"
+          ]
+        },
+        {
+          "answer": "South Sudan",
+          "tier": 5
+        },
+        {
+          "answer": "Burundi",
+          "tier": 5
+        },
+        {
+          "answer": "Comoros",
+          "tier": 5
+        },
+        {
+          "answer": "Solomon Islands",
+          "tier": 5
+        },
+        {
+          "answer": "Tuvalu",
+          "tier": 5
+        },
+        {
+          "answer": "Nauru",
+          "tier": 5
+        },
+        {
+          "answer": "Marshall Islands",
+          "tier": 5
+        },
+        {
+          "answer": "Micronesia",
+          "tier": 5,
+          "aliases": [
+            "Federated States of Micronesia"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Name a country where English is an official language (de facto counts)",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "United States",
+          "tier": 1,
+          "aliases": [
+            "USA",
+            "US",
+            "America"
+          ]
+        },
+        {
+          "answer": "United Kingdom",
+          "tier": 1,
+          "aliases": [
+            "UK",
+            "Britain",
+            "Great Britain"
+          ]
+        },
+        {
+          "answer": "Canada",
+          "tier": 1
+        },
+        {
+          "answer": "Australia",
+          "tier": 1
+        },
+        {
+          "answer": "Ireland",
+          "tier": 1
+        },
+        {
+          "answer": "New Zealand",
+          "tier": 2
+        },
+        {
+          "answer": "India",
+          "tier": 2
+        },
+        {
+          "answer": "South Africa",
+          "tier": 2
+        },
+        {
+          "answer": "Jamaica",
+          "tier": 2
+        },
+        {
+          "answer": "Singapore",
+          "tier": 2
+        },
+        {
+          "answer": "Nigeria",
+          "tier": 2
+        },
+        {
+          "answer": "Malta",
+          "tier": 2
+        },
+        {
+          "answer": "Kenya",
+          "tier": 2
+        },
+        {
+          "answer": "Philippines",
+          "tier": 2
+        },
+        {
+          "answer": "Ghana",
+          "tier": 3
+        },
+        {
+          "answer": "Pakistan",
+          "tier": 3
+        },
+        {
+          "answer": "Uganda",
+          "tier": 3
+        },
+        {
+          "answer": "Bahamas",
+          "tier": 3
+        },
+        {
+          "answer": "Barbados",
+          "tier": 3
+        },
+        {
+          "answer": "Trinidad and Tobago",
+          "tier": 3,
+          "aliases": [
+            "Trinidad"
+          ]
+        },
+        {
+          "answer": "Fiji",
+          "tier": 3
+        },
+        {
+          "answer": "Zimbabwe",
+          "tier": 3
+        },
+        {
+          "answer": "Zambia",
+          "tier": 3
+        },
+        {
+          "answer": "Tanzania",
+          "tier": 3
+        },
+        {
+          "answer": "Belize",
+          "tier": 3
+        },
+        {
+          "answer": "Guyana",
+          "tier": 3
+        },
+        {
+          "answer": "Botswana",
+          "tier": 3
+        },
+        {
+          "answer": "Namibia",
+          "tier": 3
+        },
+        {
+          "answer": "Cameroon",
+          "tier": 4
+        },
+        {
+          "answer": "Rwanda",
+          "tier": 4
+        },
+        {
+          "answer": "Sierra Leone",
+          "tier": 4
+        },
+        {
+          "answer": "Liberia",
+          "tier": 4
+        },
+        {
+          "answer": "Gambia",
+          "tier": 4
+        },
+        {
+          "answer": "Malawi",
+          "tier": 4
+        },
+        {
+          "answer": "Mauritius",
+          "tier": 4
+        },
+        {
+          "answer": "Seychelles",
+          "tier": 4
+        },
+        {
+          "answer": "Papua New Guinea",
+          "tier": 4
+        },
+        {
+          "answer": "Samoa",
+          "tier": 4
+        },
+        {
+          "answer": "Sudan",
+          "tier": 4
+        },
+        {
+          "answer": "South Sudan",
+          "tier": 4
+        },
+        {
+          "answer": "Antigua and Barbuda",
+          "tier": 4,
+          "aliases": [
+            "Antigua"
+          ]
+        },
+        {
+          "answer": "Grenada",
+          "tier": 4
+        },
+        {
+          "answer": "Burundi",
+          "tier": 5
+        },
+        {
+          "answer": "Dominica",
+          "tier": 5
+        },
+        {
+          "answer": "Eswatini",
+          "tier": 5,
+          "aliases": [
+            "Swaziland"
+          ]
+        },
+        {
+          "answer": "Kiribati",
+          "tier": 5
+        },
+        {
+          "answer": "Lesotho",
+          "tier": 5
+        },
+        {
+          "answer": "Marshall Islands",
+          "tier": 5
+        },
+        {
+          "answer": "Micronesia",
+          "tier": 5,
+          "aliases": [
+            "Federated States of Micronesia"
+          ]
+        },
+        {
+          "answer": "Nauru",
+          "tier": 5
+        },
+        {
+          "answer": "Palau",
+          "tier": 5
+        },
+        {
+          "answer": "Saint Kitts and Nevis",
+          "tier": 5,
+          "aliases": [
+            "St Kitts and Nevis",
+            "St Kitts"
+          ]
+        },
+        {
+          "answer": "Saint Lucia",
+          "tier": 5,
+          "aliases": [
+            "St Lucia"
+          ]
+        },
+        {
+          "answer": "Saint Vincent and the Grenadines",
+          "tier": 5,
+          "aliases": [
+            "St Vincent and the Grenadines",
+            "St Vincent"
+          ]
+        },
+        {
+          "answer": "Solomon Islands",
+          "tier": 5
+        },
+        {
+          "answer": "Tonga",
+          "tier": 5
+        },
+        {
+          "answer": "Tuvalu",
+          "tier": 5
+        },
+        {
+          "answer": "Vanuatu",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a country where cars drive on the left-hand side of the road",
+      "category": "Travel",
+      "answers": [
+        {
+          "answer": "United Kingdom",
+          "tier": 1,
+          "aliases": [
+            "UK",
+            "Britain",
+            "Great Britain"
+          ]
+        },
+        {
+          "answer": "Japan",
+          "tier": 1
+        },
+        {
+          "answer": "Australia",
+          "tier": 1
+        },
+        {
+          "answer": "India",
+          "tier": 1
+        },
+        {
+          "answer": "Ireland",
+          "tier": 1
+        },
+        {
+          "answer": "New Zealand",
+          "tier": 2
+        },
+        {
+          "answer": "South Africa",
+          "tier": 2
+        },
+        {
+          "answer": "Thailand",
+          "tier": 2
+        },
+        {
+          "answer": "Cyprus",
+          "tier": 2
+        },
+        {
+          "answer": "Malta",
+          "tier": 2
+        },
+        {
+          "answer": "Singapore",
+          "tier": 2
+        },
+        {
+          "answer": "Indonesia",
+          "tier": 2
+        },
+        {
+          "answer": "Malaysia",
+          "tier": 2
+        },
+        {
+          "answer": "Kenya",
+          "tier": 3
+        },
+        {
+          "answer": "Pakistan",
+          "tier": 3
+        },
+        {
+          "answer": "Sri Lanka",
+          "tier": 3
+        },
+        {
+          "answer": "Jamaica",
+          "tier": 3
+        },
+        {
+          "answer": "Bangladesh",
+          "tier": 3
+        },
+        {
+          "answer": "Nepal",
+          "tier": 3
+        },
+        {
+          "answer": "Zimbabwe",
+          "tier": 3
+        },
+        {
+          "answer": "Tanzania",
+          "tier": 3
+        },
+        {
+          "answer": "Uganda",
+          "tier": 3
+        },
+        {
+          "answer": "Bahamas",
+          "tier": 3
+        },
+        {
+          "answer": "Barbados",
+          "tier": 3
+        },
+        {
+          "answer": "Mauritius",
+          "tier": 3
+        },
+        {
+          "answer": "Fiji",
+          "tier": 3
+        },
+        {
+          "answer": "Zambia",
+          "tier": 4
+        },
+        {
+          "answer": "Mozambique",
+          "tier": 4
+        },
+        {
+          "answer": "Namibia",
+          "tier": 4
+        },
+        {
+          "answer": "Botswana",
+          "tier": 4
+        },
+        {
+          "answer": "Malawi",
+          "tier": 4
+        },
+        {
+          "answer": "Maldives",
+          "tier": 4
+        },
+        {
+          "answer": "Bhutan",
+          "tier": 4
+        },
+        {
+          "answer": "Brunei",
+          "tier": 4
+        },
+        {
+          "answer": "Trinidad and Tobago",
+          "tier": 4,
+          "aliases": [
+            "Trinidad"
+          ]
+        },
+        {
+          "answer": "Guyana",
+          "tier": 4
+        },
+        {
+          "answer": "Suriname",
+          "tier": 4
+        },
+        {
+          "answer": "Seychelles",
+          "tier": 4
+        },
+        {
+          "answer": "Papua New Guinea",
+          "tier": 4
+        },
+        {
+          "answer": "Lesotho",
+          "tier": 5
+        },
+        {
+          "answer": "Eswatini",
+          "tier": 5,
+          "aliases": [
+            "Swaziland"
+          ]
+        },
+        {
+          "answer": "Timor-Leste",
+          "tier": 5,
+          "aliases": [
+            "East Timor"
+          ]
+        },
+        {
+          "answer": "Solomon Islands",
+          "tier": 5
+        },
+        {
+          "answer": "Tonga",
+          "tier": 5
+        },
+        {
+          "answer": "Samoa",
+          "tier": 5
+        },
+        {
+          "answer": "Kiribati",
+          "tier": 5
+        },
+        {
+          "answer": "Tuvalu",
+          "tier": 5
+        },
+        {
+          "answer": "Nauru",
+          "tier": 5
+        },
+        {
+          "answer": "Antigua and Barbuda",
+          "tier": 5,
+          "aliases": [
+            "Antigua"
+          ]
+        },
+        {
+          "answer": "Dominica",
+          "tier": 5
+        },
+        {
+          "answer": "Grenada",
+          "tier": 5
+        },
+        {
+          "answer": "Saint Kitts and Nevis",
+          "tier": 5,
+          "aliases": [
+            "St Kitts and Nevis",
+            "St Kitts"
+          ]
+        },
+        {
+          "answer": "Saint Lucia",
+          "tier": 5,
+          "aliases": [
+            "St Lucia"
+          ]
+        },
+        {
+          "answer": "Saint Vincent and the Grenadines",
+          "tier": 5,
+          "aliases": [
+            "St Vincent and the Grenadines",
+            "St Vincent"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Name a country whose head of state is a monarch (Commonwealth realms count)",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "United Kingdom",
+          "tier": 1,
+          "aliases": [
+            "UK",
+            "Britain",
+            "Great Britain"
+          ]
+        },
+        {
+          "answer": "Saudi Arabia",
+          "tier": 1
+        },
+        {
+          "answer": "Spain",
+          "tier": 1
+        },
+        {
+          "answer": "Japan",
+          "tier": 1
+        },
+        {
+          "answer": "Netherlands",
+          "tier": 1,
+          "aliases": [
+            "Holland"
+          ]
+        },
+        {
+          "answer": "Sweden",
+          "tier": 2
+        },
+        {
+          "answer": "Norway",
+          "tier": 2
+        },
+        {
+          "answer": "Denmark",
+          "tier": 2
+        },
+        {
+          "answer": "Belgium",
+          "tier": 2
+        },
+        {
+          "answer": "Jordan",
+          "tier": 2
+        },
+        {
+          "answer": "Morocco",
+          "tier": 2
+        },
+        {
+          "answer": "Thailand",
+          "tier": 2
+        },
+        {
+          "answer": "Monaco",
+          "tier": 3
+        },
+        {
+          "answer": "Qatar",
+          "tier": 3
+        },
+        {
+          "answer": "United Arab Emirates",
+          "tier": 3,
+          "aliases": [
+            "UAE",
+            "Emirates"
+          ]
+        },
+        {
+          "answer": "Kuwait",
+          "tier": 3
+        },
+        {
+          "answer": "Oman",
+          "tier": 3
+        },
+        {
+          "answer": "Bahrain",
+          "tier": 3
+        },
+        {
+          "answer": "Luxembourg",
+          "tier": 3
+        },
+        {
+          "answer": "Liechtenstein",
+          "tier": 3
+        },
+        {
+          "answer": "Canada",
+          "tier": 3
+        },
+        {
+          "answer": "Australia",
+          "tier": 3
+        },
+        {
+          "answer": "New Zealand",
+          "tier": 4
+        },
+        {
+          "answer": "Brunei",
+          "tier": 4
+        },
+        {
+          "answer": "Bhutan",
+          "tier": 4
+        },
+        {
+          "answer": "Cambodia",
+          "tier": 4
+        },
+        {
+          "answer": "Malaysia",
+          "tier": 4
+        },
+        {
+          "answer": "Eswatini",
+          "tier": 4,
+          "aliases": [
+            "Swaziland"
+          ]
+        },
+        {
+          "answer": "Lesotho",
+          "tier": 4
+        },
+        {
+          "answer": "Tonga",
+          "tier": 4
+        },
+        {
+          "answer": "Jamaica",
+          "tier": 4
+        },
+        {
+          "answer": "Andorra",
+          "tier": 4
+        },
+        {
+          "answer": "Antigua and Barbuda",
+          "tier": 5,
+          "aliases": [
+            "Antigua"
+          ]
+        },
+        {
+          "answer": "Bahamas",
+          "tier": 5
+        },
+        {
+          "answer": "Belize",
+          "tier": 5
+        },
+        {
+          "answer": "Grenada",
+          "tier": 5
+        },
+        {
+          "answer": "Papua New Guinea",
+          "tier": 5
+        },
+        {
+          "answer": "Saint Kitts and Nevis",
+          "tier": 5,
+          "aliases": [
+            "St Kitts and Nevis",
+            "St Kitts"
+          ]
+        },
+        {
+          "answer": "Saint Lucia",
+          "tier": 5,
+          "aliases": [
+            "St Lucia"
+          ]
+        },
+        {
+          "answer": "Saint Vincent and the Grenadines",
+          "tier": 5,
+          "aliases": [
+            "St Vincent and the Grenadines",
+            "St Vincent"
+          ]
+        },
+        {
+          "answer": "Solomon Islands",
+          "tier": 5
+        },
+        {
+          "answer": "Tuvalu",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a country whose name begins with S or T",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Spain",
+          "tier": 1
+        },
+        {
+          "answer": "Sweden",
+          "tier": 1
+        },
+        {
+          "answer": "Switzerland",
+          "tier": 1
+        },
+        {
+          "answer": "Thailand",
+          "tier": 1
+        },
+        {
+          "answer": "Turkey",
+          "tier": 1,
+          "aliases": [
+            "Türkiye"
+          ]
+        },
+        {
+          "answer": "Singapore",
+          "tier": 2
+        },
+        {
+          "answer": "South Africa",
+          "tier": 2
+        },
+        {
+          "answer": "South Korea",
+          "tier": 2
+        },
+        {
+          "answer": "Saudi Arabia",
+          "tier": 2
+        },
+        {
+          "answer": "Syria",
+          "tier": 2
+        },
+        {
+          "answer": "Tunisia",
+          "tier": 2
+        },
+        {
+          "answer": "Serbia",
+          "tier": 3
+        },
+        {
+          "answer": "Slovakia",
+          "tier": 3
+        },
+        {
+          "answer": "Slovenia",
+          "tier": 3
+        },
+        {
+          "answer": "Sri Lanka",
+          "tier": 3
+        },
+        {
+          "answer": "Sudan",
+          "tier": 3
+        },
+        {
+          "answer": "Somalia",
+          "tier": 3
+        },
+        {
+          "answer": "Senegal",
+          "tier": 3
+        },
+        {
+          "answer": "Tanzania",
+          "tier": 3
+        },
+        {
+          "answer": "South Sudan",
+          "tier": 3
+        },
+        {
+          "answer": "Seychelles",
+          "tier": 4
+        },
+        {
+          "answer": "Sierra Leone",
+          "tier": 4
+        },
+        {
+          "answer": "San Marino",
+          "tier": 4
+        },
+        {
+          "answer": "Samoa",
+          "tier": 4
+        },
+        {
+          "answer": "Suriname",
+          "tier": 4
+        },
+        {
+          "answer": "Togo",
+          "tier": 4
+        },
+        {
+          "answer": "Tonga",
+          "tier": 4
+        },
+        {
+          "answer": "Trinidad and Tobago",
+          "tier": 4
+        },
+        {
+          "answer": "Turkmenistan",
+          "tier": 4
+        },
+        {
+          "answer": "Saint Kitts and Nevis",
+          "tier": 5,
+          "aliases": [
+            "St Kitts and Nevis",
+            "St Kitts",
+            "Saint Kitts"
+          ]
+        },
+        {
+          "answer": "Saint Lucia",
+          "tier": 5,
+          "aliases": [
+            "St Lucia"
+          ]
+        },
+        {
+          "answer": "Saint Vincent and the Grenadines",
+          "tier": 5,
+          "aliases": [
+            "St Vincent and the Grenadines",
+            "St Vincent",
+            "Saint Vincent"
+          ]
+        },
+        {
+          "answer": "São Tomé and Príncipe",
+          "tier": 5,
+          "aliases": [
+            "São Tomé"
+          ]
+        },
+        {
+          "answer": "Solomon Islands",
+          "tier": 5
+        },
+        {
+          "answer": "Tajikistan",
+          "tier": 5
+        },
+        {
+          "answer": "Timor-Leste",
+          "tier": 5
+        },
+        {
+          "answer": "Tuvalu",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a country that starts with A, E, I, O or U",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Italy",
+          "tier": 1
+        },
+        {
+          "answer": "India",
+          "tier": 1
+        },
+        {
+          "answer": "Australia",
+          "tier": 1
+        },
+        {
+          "answer": "Israel",
+          "tier": 1
+        },
+        {
+          "answer": "United States",
+          "tier": 1,
+          "aliases": [
+            "USA",
+            "US",
+            "America"
+          ]
+        },
+        {
+          "answer": "United Kingdom",
+          "tier": 2,
+          "aliases": [
+            "UK"
+          ]
+        },
+        {
+          "answer": "Argentina",
+          "tier": 2
+        },
+        {
+          "answer": "Austria",
+          "tier": 2
+        },
+        {
+          "answer": "Egypt",
+          "tier": 2
+        },
+        {
+          "answer": "Ireland",
+          "tier": 2
+        },
+        {
+          "answer": "Iceland",
+          "tier": 3
+        },
+        {
+          "answer": "Indonesia",
+          "tier": 3
+        },
+        {
+          "answer": "Iran",
+          "tier": 3
+        },
+        {
+          "answer": "Iraq",
+          "tier": 3
+        },
+        {
+          "answer": "Ukraine",
+          "tier": 3
+        },
+        {
+          "answer": "Uruguay",
+          "tier": 3
+        },
+        {
+          "answer": "Ecuador",
+          "tier": 3
+        },
+        {
+          "answer": "Afghanistan",
+          "tier": 3
+        },
+        {
+          "answer": "Ethiopia",
+          "tier": 3
+        },
+        {
+          "answer": "Albania",
+          "tier": 4
+        },
+        {
+          "answer": "Algeria",
+          "tier": 4
+        },
+        {
+          "answer": "Angola",
+          "tier": 4
+        },
+        {
+          "answer": "Armenia",
+          "tier": 4
+        },
+        {
+          "answer": "Estonia",
+          "tier": 4
+        },
+        {
+          "answer": "Oman",
+          "tier": 4
+        },
+        {
+          "answer": "Uganda",
+          "tier": 4
+        },
+        {
+          "answer": "United Arab Emirates",
+          "tier": 4,
+          "aliases": [
+            "UAE",
+            "Emirates"
+          ]
+        },
+        {
+          "answer": "Andorra",
+          "tier": 5
+        },
+        {
+          "answer": "Antigua and Barbuda",
+          "tier": 5,
+          "aliases": [
+            "Antigua"
+          ]
+        },
+        {
+          "answer": "Azerbaijan",
+          "tier": 5
+        },
+        {
+          "answer": "El Salvador",
+          "tier": 5
+        },
+        {
+          "answer": "Equatorial Guinea",
+          "tier": 5
+        },
+        {
+          "answer": "Eritrea",
+          "tier": 5
+        },
+        {
+          "answer": "Eswatini",
+          "tier": 5
+        },
+        {
+          "answer": "Uzbekistan",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a country made up entirely of islands",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Japan",
+          "tier": 1
+        },
+        {
+          "answer": "Iceland",
+          "tier": 1
+        },
+        {
+          "answer": "New Zealand",
+          "tier": 1
+        },
+        {
+          "answer": "Madagascar",
+          "tier": 1
+        },
+        {
+          "answer": "Cuba",
+          "tier": 1
+        },
+        {
+          "answer": "Philippines",
+          "tier": 2
+        },
+        {
+          "answer": "Indonesia",
+          "tier": 2
+        },
+        {
+          "answer": "Jamaica",
+          "tier": 2
+        },
+        {
+          "answer": "Sri Lanka",
+          "tier": 2
+        },
+        {
+          "answer": "Malta",
+          "tier": 2
+        },
+        {
+          "answer": "Cyprus",
+          "tier": 2
+        },
+        {
+          "answer": "Maldives",
+          "tier": 2
+        },
+        {
+          "answer": "United Kingdom",
+          "tier": 3,
+          "aliases": [
+            "UK",
+            "Britain",
+            "Great Britain"
+          ]
+        },
+        {
+          "answer": "Ireland",
+          "tier": 3
+        },
+        {
+          "answer": "Fiji",
+          "tier": 3
+        },
+        {
+          "answer": "Singapore",
+          "tier": 3
+        },
+        {
+          "answer": "Bahamas",
+          "tier": 3
+        },
+        {
+          "answer": "Barbados",
+          "tier": 3
+        },
+        {
+          "answer": "Mauritius",
+          "tier": 3
+        },
+        {
+          "answer": "Seychelles",
+          "tier": 3
+        },
+        {
+          "answer": "Haiti",
+          "tier": 3
+        },
+        {
+          "answer": "Dominican Republic",
+          "tier": 3
+        },
+        {
+          "answer": "Bahrain",
+          "tier": 3
+        },
+        {
+          "answer": "Trinidad and Tobago",
+          "tier": 4,
+          "aliases": [
+            "Trinidad"
+          ]
+        },
+        {
+          "answer": "Papua New Guinea",
+          "tier": 4
+        },
+        {
+          "answer": "Samoa",
+          "tier": 4
+        },
+        {
+          "answer": "Tonga",
+          "tier": 4
+        },
+        {
+          "answer": "Vanuatu",
+          "tier": 4
+        },
+        {
+          "answer": "Solomon Islands",
+          "tier": 4
+        },
+        {
+          "answer": "Cabo Verde",
+          "tier": 4,
+          "aliases": [
+            "Cape Verde"
+          ]
+        },
+        {
+          "answer": "Comoros",
+          "tier": 4
+        },
+        {
+          "answer": "Grenada",
+          "tier": 4
+        },
+        {
+          "answer": "Saint Lucia",
+          "tier": 4,
+          "aliases": [
+            "St Lucia"
+          ]
+        },
+        {
+          "answer": "Brunei",
+          "tier": 4
+        },
+        {
+          "answer": "Antigua and Barbuda",
+          "tier": 5,
+          "aliases": [
+            "Antigua"
+          ]
+        },
+        {
+          "answer": "Dominica",
+          "tier": 5
+        },
+        {
+          "answer": "Kiribati",
+          "tier": 5
+        },
+        {
+          "answer": "Marshall Islands",
+          "tier": 5
+        },
+        {
+          "answer": "Micronesia",
+          "tier": 5,
+          "aliases": [
+            "Federated States of Micronesia"
+          ]
+        },
+        {
+          "answer": "Nauru",
+          "tier": 5
+        },
+        {
+          "answer": "Palau",
+          "tier": 5
+        },
+        {
+          "answer": "Saint Kitts and Nevis",
+          "tier": 5,
+          "aliases": [
+            "St Kitts and Nevis",
+            "St Kitts"
+          ]
+        },
+        {
+          "answer": "Saint Vincent and the Grenadines",
+          "tier": 5,
+          "aliases": [
+            "St Vincent and the Grenadines",
+            "St Vincent"
+          ]
+        },
+        {
+          "answer": "São Tomé and Príncipe",
+          "tier": 5,
+          "aliases": [
+            "São Tomé"
+          ]
+        },
+        {
+          "answer": "Timor-Leste",
+          "tier": 5,
+          "aliases": [
+            "East Timor"
+          ]
+        },
+        {
+          "answer": "Tuvalu",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name the capital city of a European country",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "London",
+          "tier": 1
+        },
+        {
+          "answer": "Paris",
+          "tier": 1
+        },
+        {
+          "answer": "Berlin",
+          "tier": 1
+        },
+        {
+          "answer": "Rome",
+          "tier": 1
+        },
+        {
+          "answer": "Madrid",
+          "tier": 1
+        },
+        {
+          "answer": "Amsterdam",
+          "tier": 2
+        },
+        {
+          "answer": "Athens",
+          "tier": 2
+        },
+        {
+          "answer": "Lisbon",
+          "tier": 2
+        },
+        {
+          "answer": "Vienna",
+          "tier": 2
+        },
+        {
+          "answer": "Prague",
+          "tier": 2
+        },
+        {
+          "answer": "Brussels",
+          "tier": 2
+        },
+        {
+          "answer": "Budapest",
+          "tier": 3
+        },
+        {
+          "answer": "Dublin",
+          "tier": 3
+        },
+        {
+          "answer": "Stockholm",
+          "tier": 3
+        },
+        {
+          "answer": "Oslo",
+          "tier": 3
+        },
+        {
+          "answer": "Copenhagen",
+          "tier": 3
+        },
+        {
+          "answer": "Warsaw",
+          "tier": 3
+        },
+        {
+          "answer": "Moscow",
+          "tier": 3
+        },
+        {
+          "answer": "Helsinki",
+          "tier": 3
+        },
+        {
+          "answer": "Bern",
+          "tier": 3,
+          "aliases": [
+            "Berne"
+          ]
+        },
+        {
+          "answer": "Kyiv",
+          "tier": 3,
+          "aliases": [
+            "Kiev"
+          ]
+        },
+        {
+          "answer": "Reykjavík",
+          "tier": 3
+        },
+        {
+          "answer": "Bucharest",
+          "tier": 4
+        },
+        {
+          "answer": "Sofia",
+          "tier": 4
+        },
+        {
+          "answer": "Belgrade",
+          "tier": 4
+        },
+        {
+          "answer": "Zagreb",
+          "tier": 4
+        },
+        {
+          "answer": "Bratislava",
+          "tier": 4
+        },
+        {
+          "answer": "Ljubljana",
+          "tier": 4
+        },
+        {
+          "answer": "Valletta",
+          "tier": 4
+        },
+        {
+          "answer": "Luxembourg City",
+          "tier": 4,
+          "aliases": [
+            "Luxembourg"
+          ]
+        },
+        {
+          "answer": "Monaco",
+          "tier": 4
+        },
+        {
+          "answer": "Ankara",
+          "tier": 4
+        },
+        {
+          "answer": "Tallinn",
+          "tier": 4
+        },
+        {
+          "answer": "Tirana",
+          "tier": 5
+        },
+        {
+          "answer": "Andorra la Vella",
+          "tier": 5
+        },
+        {
+          "answer": "Minsk",
+          "tier": 5
+        },
+        {
+          "answer": "Sarajevo",
+          "tier": 5
+        },
+        {
+          "answer": "Nicosia",
+          "tier": 5
+        },
+        {
+          "answer": "Riga",
+          "tier": 5
+        },
+        {
+          "answer": "Vilnius",
+          "tier": 5
+        },
+        {
+          "answer": "Vaduz",
+          "tier": 5
+        },
+        {
+          "answer": "Chișinău",
+          "tier": 5,
+          "aliases": [
+            "Kishinev"
+          ]
+        },
+        {
+          "answer": "Podgorica",
+          "tier": 5
+        },
+        {
+          "answer": "Skopje",
+          "tier": 5
+        },
+        {
+          "answer": "San Marino",
+          "tier": 5,
+          "aliases": [
+            "City of San Marino"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Name a capital city located in Asia",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Tokyo",
+          "tier": 1
+        },
+        {
+          "answer": "Beijing",
+          "tier": 1,
+          "aliases": [
+            "Peking"
+          ]
+        },
+        {
+          "answer": "Bangkok",
+          "tier": 1
+        },
+        {
+          "answer": "Seoul",
+          "tier": 1
+        },
+        {
+          "answer": "New Delhi",
+          "tier": 1,
+          "aliases": [
+            "Delhi"
+          ]
+        },
+        {
+          "answer": "Jerusalem",
+          "tier": 1
+        },
+        {
+          "answer": "Singapore",
+          "tier": 2
+        },
+        {
+          "answer": "Hanoi",
+          "tier": 2
+        },
+        {
+          "answer": "Manila",
+          "tier": 2
+        },
+        {
+          "answer": "Jakarta",
+          "tier": 2
+        },
+        {
+          "answer": "Kuala Lumpur",
+          "tier": 2,
+          "aliases": [
+            "KL"
+          ]
+        },
+        {
+          "answer": "Abu Dhabi",
+          "tier": 2
+        },
+        {
+          "answer": "Tehran",
+          "tier": 2,
+          "aliases": [
+            "Teheran"
+          ]
+        },
+        {
+          "answer": "Baghdad",
+          "tier": 3
+        },
+        {
+          "answer": "Riyadh",
+          "tier": 3
+        },
+        {
+          "answer": "Damascus",
+          "tier": 3
+        },
+        {
+          "answer": "Beirut",
+          "tier": 3
+        },
+        {
+          "answer": "Amman",
+          "tier": 3
+        },
+        {
+          "answer": "Islamabad",
+          "tier": 3
+        },
+        {
+          "answer": "Kabul",
+          "tier": 3
+        },
+        {
+          "answer": "Kathmandu",
+          "tier": 3,
+          "aliases": [
+            "Katmandu"
+          ]
+        },
+        {
+          "answer": "Pyongyang",
+          "tier": 3
+        },
+        {
+          "answer": "Doha",
+          "tier": 3
+        },
+        {
+          "answer": "Ankara",
+          "tier": 3
+        },
+        {
+          "answer": "Colombo",
+          "tier": 3
+        },
+        {
+          "answer": "Dhaka",
+          "tier": 4,
+          "aliases": [
+            "Dacca"
+          ]
+        },
+        {
+          "answer": "Phnom Penh",
+          "tier": 4
+        },
+        {
+          "answer": "Kuwait City",
+          "tier": 4
+        },
+        {
+          "answer": "Muscat",
+          "tier": 4
+        },
+        {
+          "answer": "Manama",
+          "tier": 4
+        },
+        {
+          "answer": "Ulaanbaatar",
+          "tier": 4,
+          "aliases": [
+            "Ulan Bator"
+          ]
+        },
+        {
+          "answer": "Tbilisi",
+          "tier": 4
+        },
+        {
+          "answer": "Yerevan",
+          "tier": 4
+        },
+        {
+          "answer": "Baku",
+          "tier": 4
+        },
+        {
+          "answer": "Astana",
+          "tier": 4,
+          "aliases": [
+            "Nur-Sultan"
+          ]
+        },
+        {
+          "answer": "Tashkent",
+          "tier": 4
+        },
+        {
+          "answer": "Vientiane",
+          "tier": 4
+        },
+        {
+          "answer": "Thimphu",
+          "tier": 5
+        },
+        {
+          "answer": "Bandar Seri Begawan",
+          "tier": 5
+        },
+        {
+          "answer": "Nicosia",
+          "tier": 5
+        },
+        {
+          "answer": "Bishkek",
+          "tier": 5
+        },
+        {
+          "answer": "Malé",
+          "tier": 5
+        },
+        {
+          "answer": "Naypyidaw",
+          "tier": 5,
+          "aliases": [
+            "Nay Pyi Taw",
+            "Naypyitaw"
+          ]
+        },
+        {
+          "answer": "Sri Jayawardenepura Kotte",
+          "tier": 5,
+          "aliases": [
+            "Kotte"
+          ]
+        },
+        {
+          "answer": "Dushanbe",
+          "tier": 5
+        },
+        {
+          "answer": "Dili",
+          "tier": 5
+        },
+        {
+          "answer": "Ashgabat",
+          "tier": 5,
+          "aliases": [
+            "Ashkhabad"
+          ]
+        },
+        {
+          "answer": "Sanaa",
+          "tier": 5,
+          "aliases": [
+            "Sana'a"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Name a capital city in Africa",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Cairo",
+          "tier": 1
+        },
+        {
+          "answer": "Nairobi",
+          "tier": 1
+        },
+        {
+          "answer": "Cape Town",
+          "tier": 1
+        },
+        {
+          "answer": "Pretoria",
+          "tier": 1
+        },
+        {
+          "answer": "Addis Ababa",
+          "tier": 1
+        },
+        {
+          "answer": "Abuja",
+          "tier": 2
+        },
+        {
+          "answer": "Accra",
+          "tier": 2
+        },
+        {
+          "answer": "Rabat",
+          "tier": 2
+        },
+        {
+          "answer": "Tunis",
+          "tier": 2
+        },
+        {
+          "answer": "Algiers",
+          "tier": 2
+        },
+        {
+          "answer": "Tripoli",
+          "tier": 2
+        },
+        {
+          "answer": "Khartoum",
+          "tier": 2
+        },
+        {
+          "answer": "Kinshasa",
+          "tier": 2
+        },
+        {
+          "answer": "Dakar",
+          "tier": 3
+        },
+        {
+          "answer": "Kampala",
+          "tier": 3
+        },
+        {
+          "answer": "Kigali",
+          "tier": 3
+        },
+        {
+          "answer": "Mogadishu",
+          "tier": 3
+        },
+        {
+          "answer": "Harare",
+          "tier": 3
+        },
+        {
+          "answer": "Luanda",
+          "tier": 3
+        },
+        {
+          "answer": "Lusaka",
+          "tier": 3
+        },
+        {
+          "answer": "Windhoek",
+          "tier": 3
+        },
+        {
+          "answer": "Maputo",
+          "tier": 3
+        },
+        {
+          "answer": "Antananarivo",
+          "tier": 3
+        },
+        {
+          "answer": "Dodoma",
+          "tier": 3
+        },
+        {
+          "answer": "Yamoussoukro",
+          "tier": 3
+        },
+        {
+          "answer": "Bloemfontein",
+          "tier": 3
+        },
+        {
+          "answer": "Gaborone",
+          "tier": 3
+        },
+        {
+          "answer": "Bamako",
+          "tier": 4
+        },
+        {
+          "answer": "Niamey",
+          "tier": 4
+        },
+        {
+          "answer": "Ouagadougou",
+          "tier": 4
+        },
+        {
+          "answer": "N'Djamena",
+          "tier": 4
+        },
+        {
+          "answer": "Nouakchott",
+          "tier": 4
+        },
+        {
+          "answer": "Freetown",
+          "tier": 4
+        },
+        {
+          "answer": "Monrovia",
+          "tier": 4
+        },
+        {
+          "answer": "Conakry",
+          "tier": 4
+        },
+        {
+          "answer": "Lomé",
+          "tier": 4
+        },
+        {
+          "answer": "Libreville",
+          "tier": 4
+        },
+        {
+          "answer": "Brazzaville",
+          "tier": 4
+        },
+        {
+          "answer": "Asmara",
+          "tier": 4
+        },
+        {
+          "answer": "Juba",
+          "tier": 4
+        },
+        {
+          "answer": "Lilongwe",
+          "tier": 4
+        },
+        {
+          "answer": "Port Louis",
+          "tier": 4
+        },
+        {
+          "answer": "Porto-Novo",
+          "tier": 5
+        },
+        {
+          "answer": "Gitega",
+          "tier": 5
+        },
+        {
+          "answer": "Praia",
+          "tier": 5
+        },
+        {
+          "answer": "Yaoundé",
+          "tier": 5
+        },
+        {
+          "answer": "Bangui",
+          "tier": 5
+        },
+        {
+          "answer": "Moroni",
+          "tier": 5
+        },
+        {
+          "answer": "Djibouti",
+          "tier": 5,
+          "aliases": [
+            "Djibouti City"
+          ]
+        },
+        {
+          "answer": "Malabo",
+          "tier": 5
+        },
+        {
+          "answer": "Mbabane",
+          "tier": 5
+        },
+        {
+          "answer": "Lobamba",
+          "tier": 5
+        },
+        {
+          "answer": "Banjul",
+          "tier": 5
+        },
+        {
+          "answer": "Bissau",
+          "tier": 5
+        },
+        {
+          "answer": "Maseru",
+          "tier": 5
+        },
+        {
+          "answer": "São Tomé",
+          "tier": 5
+        },
+        {
+          "answer": "Victoria",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a capital city in North, Central or South America (Caribbean included)",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Washington, D.C.",
+          "tier": 1,
+          "aliases": [
+            "Washington DC",
+            "Washington",
+            "DC"
+          ]
+        },
+        {
+          "answer": "Ottawa",
+          "tier": 1
+        },
+        {
+          "answer": "Mexico City",
+          "tier": 1,
+          "aliases": [
+            "Ciudad de México",
+            "CDMX"
+          ]
+        },
+        {
+          "answer": "Buenos Aires",
+          "tier": 1
+        },
+        {
+          "answer": "Brasília",
+          "tier": 1
+        },
+        {
+          "answer": "Havana",
+          "tier": 2,
+          "aliases": [
+            "La Habana"
+          ]
+        },
+        {
+          "answer": "Lima",
+          "tier": 2
+        },
+        {
+          "answer": "Santiago",
+          "tier": 2
+        },
+        {
+          "answer": "Bogotá",
+          "tier": 2
+        },
+        {
+          "answer": "Caracas",
+          "tier": 2
+        },
+        {
+          "answer": "Montevideo",
+          "tier": 2
+        },
+        {
+          "answer": "Quito",
+          "tier": 3
+        },
+        {
+          "answer": "La Paz",
+          "tier": 3
+        },
+        {
+          "answer": "Kingston",
+          "tier": 3
+        },
+        {
+          "answer": "Panama City",
+          "tier": 3
+        },
+        {
+          "answer": "San José",
+          "tier": 3
+        },
+        {
+          "answer": "Santo Domingo",
+          "tier": 3
+        },
+        {
+          "answer": "Nassau",
+          "tier": 3
+        },
+        {
+          "answer": "Asunción",
+          "tier": 3
+        },
+        {
+          "answer": "Sucre",
+          "tier": 3
+        },
+        {
+          "answer": "Guatemala City",
+          "tier": 4,
+          "aliases": [
+            "Ciudad de Guatemala"
+          ]
+        },
+        {
+          "answer": "San Salvador",
+          "tier": 4
+        },
+        {
+          "answer": "Tegucigalpa",
+          "tier": 4
+        },
+        {
+          "answer": "Managua",
+          "tier": 4
+        },
+        {
+          "answer": "Port-au-Prince",
+          "tier": 4
+        },
+        {
+          "answer": "Port of Spain",
+          "tier": 4
+        },
+        {
+          "answer": "Georgetown",
+          "tier": 4
+        },
+        {
+          "answer": "Paramaribo",
+          "tier": 4
+        },
+        {
+          "answer": "Belmopan",
+          "tier": 5
+        },
+        {
+          "answer": "Bridgetown",
+          "tier": 5
+        },
+        {
+          "answer": "St. John's",
+          "tier": 5,
+          "aliases": [
+            "Saint John's"
+          ]
+        },
+        {
+          "answer": "Roseau",
+          "tier": 5
+        },
+        {
+          "answer": "St. George's",
+          "tier": 5,
+          "aliases": [
+            "Saint George's"
+          ]
+        },
+        {
+          "answer": "Basseterre",
+          "tier": 5
+        },
+        {
+          "answer": "Castries",
+          "tier": 5
+        },
+        {
+          "answer": "Kingstown",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name one of the 50 US states",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "California",
+          "tier": 1
+        },
+        {
+          "answer": "Texas",
+          "tier": 1
+        },
+        {
+          "answer": "Florida",
+          "tier": 1
+        },
+        {
+          "answer": "New York",
+          "tier": 1
+        },
+        {
+          "answer": "Hawaii",
+          "tier": 1
+        },
+        {
+          "answer": "Alaska",
+          "tier": 2
+        },
+        {
+          "answer": "Washington",
+          "tier": 2
+        },
+        {
+          "answer": "Nevada",
+          "tier": 2
+        },
+        {
+          "answer": "Arizona",
+          "tier": 2
+        },
+        {
+          "answer": "Illinois",
+          "tier": 2
+        },
+        {
+          "answer": "Massachusetts",
+          "tier": 2
+        },
+        {
+          "answer": "Colorado",
+          "tier": 2
+        },
+        {
+          "answer": "Georgia",
+          "tier": 3
+        },
+        {
+          "answer": "Ohio",
+          "tier": 3
+        },
+        {
+          "answer": "Michigan",
+          "tier": 3
+        },
+        {
+          "answer": "Pennsylvania",
+          "tier": 3
+        },
+        {
+          "answer": "New Jersey",
+          "tier": 3
+        },
+        {
+          "answer": "Louisiana",
+          "tier": 3
+        },
+        {
+          "answer": "Oregon",
+          "tier": 3
+        },
+        {
+          "answer": "Utah",
+          "tier": 3
+        },
+        {
+          "answer": "Virginia",
+          "tier": 3
+        },
+        {
+          "answer": "North Carolina",
+          "tier": 3
+        },
+        {
+          "answer": "Tennessee",
+          "tier": 3
+        },
+        {
+          "answer": "Kentucky",
+          "tier": 3
+        },
+        {
+          "answer": "South Carolina",
+          "tier": 4
+        },
+        {
+          "answer": "Alabama",
+          "tier": 4
+        },
+        {
+          "answer": "Mississippi",
+          "tier": 4
+        },
+        {
+          "answer": "Minnesota",
+          "tier": 4
+        },
+        {
+          "answer": "Wisconsin",
+          "tier": 4
+        },
+        {
+          "answer": "Missouri",
+          "tier": 4
+        },
+        {
+          "answer": "Kansas",
+          "tier": 4
+        },
+        {
+          "answer": "Oklahoma",
+          "tier": 4
+        },
+        {
+          "answer": "New Mexico",
+          "tier": 4
+        },
+        {
+          "answer": "Indiana",
+          "tier": 4
+        },
+        {
+          "answer": "Maryland",
+          "tier": 4
+        },
+        {
+          "answer": "Connecticut",
+          "tier": 4
+        },
+        {
+          "answer": "Maine",
+          "tier": 4
+        },
+        {
+          "answer": "Iowa",
+          "tier": 5
+        },
+        {
+          "answer": "Nebraska",
+          "tier": 5
+        },
+        {
+          "answer": "North Dakota",
+          "tier": 5
+        },
+        {
+          "answer": "South Dakota",
+          "tier": 5
+        },
+        {
+          "answer": "Montana",
+          "tier": 5
+        },
+        {
+          "answer": "Wyoming",
+          "tier": 5
+        },
+        {
+          "answer": "Idaho",
+          "tier": 5
+        },
+        {
+          "answer": "Arkansas",
+          "tier": 5
+        },
+        {
+          "answer": "West Virginia",
+          "tier": 5
+        },
+        {
+          "answer": "Vermont",
+          "tier": 5
+        },
+        {
+          "answer": "New Hampshire",
+          "tier": 5
+        },
+        {
+          "answer": "Rhode Island",
+          "tier": 5
+        },
+        {
+          "answer": "Delaware",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a city in the United States",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "New York City",
+          "tier": 1,
+          "aliases": [
+            "New York",
+            "NYC"
+          ]
+        },
+        {
+          "answer": "Los Angeles",
+          "tier": 1,
+          "aliases": [
+            "LA"
+          ]
+        },
+        {
+          "answer": "Chicago",
+          "tier": 1
+        },
+        {
+          "answer": "Miami",
+          "tier": 1
+        },
+        {
+          "answer": "San Francisco",
+          "tier": 1,
+          "aliases": [
+            "SF"
+          ]
+        },
+        {
+          "answer": "Las Vegas",
+          "tier": 2,
+          "aliases": [
+            "Vegas"
+          ]
+        },
+        {
+          "answer": "Boston",
+          "tier": 2
+        },
+        {
+          "answer": "Washington, D.C.",
+          "tier": 2,
+          "aliases": [
+            "Washington DC",
+            "Washington",
+            "DC"
+          ]
+        },
+        {
+          "answer": "Seattle",
+          "tier": 2
+        },
+        {
+          "answer": "Houston",
+          "tier": 2
+        },
+        {
+          "answer": "Dallas",
+          "tier": 2
+        },
+        {
+          "answer": "Philadelphia",
+          "tier": 2,
+          "aliases": [
+            "Philly"
+          ]
+        },
+        {
+          "answer": "Atlanta",
+          "tier": 2
+        },
+        {
+          "answer": "San Diego",
+          "tier": 2
+        },
+        {
+          "answer": "New Orleans",
+          "tier": 2,
+          "aliases": [
+            "NOLA"
+          ]
+        },
+        {
+          "answer": "Orlando",
+          "tier": 2
+        },
+        {
+          "answer": "Detroit",
+          "tier": 2
+        },
+        {
+          "answer": "Denver",
+          "tier": 2
+        },
+        {
+          "answer": "Phoenix",
+          "tier": 2
+        },
+        {
+          "answer": "Austin",
+          "tier": 2
+        },
+        {
+          "answer": "Nashville",
+          "tier": 3
+        },
+        {
+          "answer": "Portland",
+          "tier": 3
+        },
+        {
+          "answer": "Honolulu",
+          "tier": 3
+        },
+        {
+          "answer": "Salt Lake City",
+          "tier": 3
+        },
+        {
+          "answer": "Baltimore",
+          "tier": 3
+        },
+        {
+          "answer": "Pittsburgh",
+          "tier": 3
+        },
+        {
+          "answer": "Cleveland",
+          "tier": 3
+        },
+        {
+          "answer": "Minneapolis",
+          "tier": 3
+        },
+        {
+          "answer": "St. Louis",
+          "tier": 3,
+          "aliases": [
+            "Saint Louis"
+          ]
+        },
+        {
+          "answer": "Kansas City",
+          "tier": 3
+        },
+        {
+          "answer": "Memphis",
+          "tier": 3
+        },
+        {
+          "answer": "Charlotte",
+          "tier": 3
+        },
+        {
+          "answer": "San Antonio",
+          "tier": 3
+        },
+        {
+          "answer": "San Jose",
+          "tier": 3
+        },
+        {
+          "answer": "Sacramento",
+          "tier": 3
+        },
+        {
+          "answer": "Tampa",
+          "tier": 3
+        },
+        {
+          "answer": "Indianapolis",
+          "tier": 3
+        },
+        {
+          "answer": "Milwaukee",
+          "tier": 3
+        },
+        {
+          "answer": "Cincinnati",
+          "tier": 3
+        },
+        {
+          "answer": "Columbus",
+          "tier": 3
+        },
+        {
+          "answer": "Buffalo",
+          "tier": 3
+        },
+        {
+          "answer": "Albuquerque",
+          "tier": 3
+        },
+        {
+          "answer": "Anchorage",
+          "tier": 3
+        },
+        {
+          "answer": "Jacksonville",
+          "tier": 3
+        },
+        {
+          "answer": "Oakland",
+          "tier": 3
+        },
+        {
+          "answer": "Tucson",
+          "tier": 4
+        },
+        {
+          "answer": "El Paso",
+          "tier": 4
+        },
+        {
+          "answer": "Fort Worth",
+          "tier": 4
+        },
+        {
+          "answer": "Oklahoma City",
+          "tier": 4
+        },
+        {
+          "answer": "Tulsa",
+          "tier": 4
+        },
+        {
+          "answer": "Omaha",
+          "tier": 4
+        },
+        {
+          "answer": "Louisville",
+          "tier": 4
+        },
+        {
+          "answer": "Raleigh",
+          "tier": 4
+        },
+        {
+          "answer": "Richmond",
+          "tier": 4
+        },
+        {
+          "answer": "Charleston",
+          "tier": 4
+        },
+        {
+          "answer": "Savannah",
+          "tier": 4
+        },
+        {
+          "answer": "Birmingham",
+          "tier": 4
+        },
+        {
+          "answer": "Boise",
+          "tier": 4
+        },
+        {
+          "answer": "Spokane",
+          "tier": 4
+        },
+        {
+          "answer": "Reno",
+          "tier": 4
+        },
+        {
+          "answer": "Santa Fe",
+          "tier": 4
+        },
+        {
+          "answer": "Fresno",
+          "tier": 4
+        },
+        {
+          "answer": "Long Beach",
+          "tier": 4
+        },
+        {
+          "answer": "Palo Alto",
+          "tier": 4
+        },
+        {
+          "answer": "Santa Barbara",
+          "tier": 4
+        },
+        {
+          "answer": "Key West",
+          "tier": 4
+        },
+        {
+          "answer": "Fort Lauderdale",
+          "tier": 4
+        },
+        {
+          "answer": "Miami Beach",
+          "tier": 4
+        },
+        {
+          "answer": "Cambridge",
+          "tier": 4
+        },
+        {
+          "answer": "Hartford",
+          "tier": 4
+        },
+        {
+          "answer": "Albany",
+          "tier": 5
+        },
+        {
+          "answer": "Providence",
+          "tier": 5
+        },
+        {
+          "answer": "Burlington",
+          "tier": 5
+        },
+        {
+          "answer": "Des Moines",
+          "tier": 5
+        },
+        {
+          "answer": "Madison",
+          "tier": 5
+        },
+        {
+          "answer": "Little Rock",
+          "tier": 5
+        },
+        {
+          "answer": "Baton Rouge",
+          "tier": 5
+        },
+        {
+          "answer": "Jackson",
+          "tier": 5
+        },
+        {
+          "answer": "Montgomery",
+          "tier": 5
+        },
+        {
+          "answer": "Lexington",
+          "tier": 5
+        },
+        {
+          "answer": "Knoxville",
+          "tier": 5
+        },
+        {
+          "answer": "Chattanooga",
+          "tier": 5
+        },
+        {
+          "answer": "Greensboro",
+          "tier": 5
+        },
+        {
+          "answer": "Durham",
+          "tier": 5
+        },
+        {
+          "answer": "Norfolk",
+          "tier": 5
+        },
+        {
+          "answer": "Virginia Beach",
+          "tier": 5
+        },
+        {
+          "answer": "Newark",
+          "tier": 5
+        },
+        {
+          "answer": "Jersey City",
+          "tier": 5
+        },
+        {
+          "answer": "Rochester",
+          "tier": 5
+        },
+        {
+          "answer": "Syracuse",
+          "tier": 5
+        },
+        {
+          "answer": "Cheyenne",
+          "tier": 5
+        },
+        {
+          "answer": "Billings",
+          "tier": 5
+        },
+        {
+          "answer": "Fargo",
+          "tier": 5
+        },
+        {
+          "answer": "Sioux Falls",
+          "tier": 5
+        },
+        {
+          "answer": "Juneau",
+          "tier": 5
+        },
+        {
+          "answer": "Fairbanks",
+          "tier": 5
+        },
+        {
+          "answer": "Tallahassee",
+          "tier": 5
+        },
+        {
+          "answer": "Scottsdale",
+          "tier": 5
+        },
+        {
+          "answer": "Colorado Springs",
+          "tier": 5
+        },
+        {
+          "answer": "Ann Arbor",
+          "tier": 5
+        },
+        {
+          "answer": "Atlantic City",
+          "tier": 5
+        },
+        {
+          "answer": "Beverly Hills",
+          "tier": 5
+        },
+        {
+          "answer": "Pasadena",
+          "tier": 5
+        },
+        {
+          "answer": "Berkeley",
+          "tier": 5
+        },
+        {
+          "answer": "Santa Monica",
+          "tier": 5
+        },
+        {
+          "answer": "Anaheim",
+          "tier": 5
+        },
+        {
+          "answer": "Galveston",
+          "tier": 5
+        },
+        {
+          "answer": "Boulder",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a city in Italy",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Rome",
+          "tier": 1,
+          "aliases": [
+            "Roma"
+          ]
+        },
+        {
+          "answer": "Milan",
+          "tier": 1,
+          "aliases": [
+            "Milano"
+          ]
+        },
+        {
+          "answer": "Venice",
+          "tier": 1,
+          "aliases": [
+            "Venezia"
+          ]
+        },
+        {
+          "answer": "Florence",
+          "tier": 1,
+          "aliases": [
+            "Firenze"
+          ]
+        },
+        {
+          "answer": "Naples",
+          "tier": 1,
+          "aliases": [
+            "Napoli"
+          ]
+        },
+        {
+          "answer": "Turin",
+          "tier": 2,
+          "aliases": [
+            "Torino"
+          ]
+        },
+        {
+          "answer": "Pisa",
+          "tier": 2
+        },
+        {
+          "answer": "Bologna",
+          "tier": 2
+        },
+        {
+          "answer": "Verona",
+          "tier": 2
+        },
+        {
+          "answer": "Genoa",
+          "tier": 2,
+          "aliases": [
+            "Genova"
+          ]
+        },
+        {
+          "answer": "Palermo",
+          "tier": 2
+        },
+        {
+          "answer": "Siena",
+          "tier": 2
+        },
+        {
+          "answer": "Bari",
+          "tier": 2
+        },
+        {
+          "answer": "Catania",
+          "tier": 2
+        },
+        {
+          "answer": "Como",
+          "tier": 2
+        },
+        {
+          "answer": "Padua",
+          "tier": 3,
+          "aliases": [
+            "Padova"
+          ]
+        },
+        {
+          "answer": "Parma",
+          "tier": 3
+        },
+        {
+          "answer": "Modena",
+          "tier": 3
+        },
+        {
+          "answer": "Trieste",
+          "tier": 3
+        },
+        {
+          "answer": "Lucca",
+          "tier": 3
+        },
+        {
+          "answer": "Bergamo",
+          "tier": 3
+        },
+        {
+          "answer": "Brescia",
+          "tier": 3
+        },
+        {
+          "answer": "Cagliari",
+          "tier": 3
+        },
+        {
+          "answer": "Messina",
+          "tier": 3
+        },
+        {
+          "answer": "Pompei",
+          "tier": 3,
+          "aliases": [
+            "Pompeii"
+          ]
+        },
+        {
+          "answer": "Amalfi",
+          "tier": 3
+        },
+        {
+          "answer": "Sorrento",
+          "tier": 3
+        },
+        {
+          "answer": "Assisi",
+          "tier": 3
+        },
+        {
+          "answer": "Perugia",
+          "tier": 3
+        },
+        {
+          "answer": "Rimini",
+          "tier": 3
+        },
+        {
+          "answer": "Ravenna",
+          "tier": 3
+        },
+        {
+          "answer": "Sanremo",
+          "tier": 3
+        },
+        {
+          "answer": "Vicenza",
+          "tier": 4
+        },
+        {
+          "answer": "Treviso",
+          "tier": 4
+        },
+        {
+          "answer": "Trento",
+          "tier": 4
+        },
+        {
+          "answer": "Bolzano",
+          "tier": 4
+        },
+        {
+          "answer": "Udine",
+          "tier": 4
+        },
+        {
+          "answer": "Ferrara",
+          "tier": 4
+        },
+        {
+          "answer": "Mantua",
+          "tier": 4,
+          "aliases": [
+            "Mantova"
+          ]
+        },
+        {
+          "answer": "Cremona",
+          "tier": 4
+        },
+        {
+          "answer": "Pavia",
+          "tier": 4
+        },
+        {
+          "answer": "Piacenza",
+          "tier": 4
+        },
+        {
+          "answer": "Reggio Emilia",
+          "tier": 4
+        },
+        {
+          "answer": "Reggio Calabria",
+          "tier": 4
+        },
+        {
+          "answer": "Salerno",
+          "tier": 4
+        },
+        {
+          "answer": "Taranto",
+          "tier": 4
+        },
+        {
+          "answer": "Lecce",
+          "tier": 4
+        },
+        {
+          "answer": "Syracuse",
+          "tier": 4,
+          "aliases": [
+            "Siracusa"
+          ]
+        },
+        {
+          "answer": "Ancona",
+          "tier": 4
+        },
+        {
+          "answer": "Pescara",
+          "tier": 4
+        },
+        {
+          "answer": "Livorno",
+          "tier": 5,
+          "aliases": [
+            "Leghorn"
+          ]
+        },
+        {
+          "answer": "Arezzo",
+          "tier": 5
+        },
+        {
+          "answer": "Prato",
+          "tier": 5
+        },
+        {
+          "answer": "Pistoia",
+          "tier": 5
+        },
+        {
+          "answer": "Viterbo",
+          "tier": 5
+        },
+        {
+          "answer": "Foggia",
+          "tier": 5
+        },
+        {
+          "answer": "Brindisi",
+          "tier": 5
+        },
+        {
+          "answer": "Matera",
+          "tier": 5
+        },
+        {
+          "answer": "Potenza",
+          "tier": 5
+        },
+        {
+          "answer": "Catanzaro",
+          "tier": 5
+        },
+        {
+          "answer": "Cosenza",
+          "tier": 5
+        },
+        {
+          "answer": "Agrigento",
+          "tier": 5
+        },
+        {
+          "answer": "Trapani",
+          "tier": 5
+        },
+        {
+          "answer": "Sassari",
+          "tier": 5
+        },
+        {
+          "answer": "Olbia",
+          "tier": 5
+        },
+        {
+          "answer": "Aosta",
+          "tier": 5
+        },
+        {
+          "answer": "L'Aquila",
+          "tier": 5
+        },
+        {
+          "answer": "Campobasso",
+          "tier": 5
+        },
+        {
+          "answer": "Novara",
+          "tier": 5
+        },
+        {
+          "answer": "Monza",
+          "tier": 5
+        },
+        {
+          "answer": "Taormina",
+          "tier": 5
+        },
+        {
+          "answer": "Varese",
+          "tier": 5
+        },
+        {
+          "answer": "Asti",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a city in Germany",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Berlin",
+          "tier": 1
+        },
+        {
+          "answer": "Munich",
+          "tier": 1,
+          "aliases": [
+            "München"
+          ]
+        },
+        {
+          "answer": "Hamburg",
+          "tier": 1
+        },
+        {
+          "answer": "Frankfurt",
+          "tier": 1,
+          "aliases": [
+            "Frankfurt am Main"
+          ]
+        },
+        {
+          "answer": "Cologne",
+          "tier": 1,
+          "aliases": [
+            "Köln",
+            "Koeln"
+          ]
+        },
+        {
+          "answer": "Stuttgart",
+          "tier": 2
+        },
+        {
+          "answer": "Düsseldorf",
+          "tier": 2,
+          "aliases": [
+            "Duesseldorf"
+          ]
+        },
+        {
+          "answer": "Dresden",
+          "tier": 2
+        },
+        {
+          "answer": "Leipzig",
+          "tier": 2
+        },
+        {
+          "answer": "Hanover",
+          "tier": 2,
+          "aliases": [
+            "Hannover"
+          ]
+        },
+        {
+          "answer": "Nuremberg",
+          "tier": 2,
+          "aliases": [
+            "Nürnberg",
+            "Nuernberg"
+          ]
+        },
+        {
+          "answer": "Bonn",
+          "tier": 2
+        },
+        {
+          "answer": "Dortmund",
+          "tier": 2
+        },
+        {
+          "answer": "Bremen",
+          "tier": 2
+        },
+        {
+          "answer": "Heidelberg",
+          "tier": 3
+        },
+        {
+          "answer": "Essen",
+          "tier": 3
+        },
+        {
+          "answer": "Duisburg",
+          "tier": 3
+        },
+        {
+          "answer": "Bochum",
+          "tier": 3
+        },
+        {
+          "answer": "Mannheim",
+          "tier": 3
+        },
+        {
+          "answer": "Karlsruhe",
+          "tier": 3
+        },
+        {
+          "answer": "Freiburg",
+          "tier": 3
+        },
+        {
+          "answer": "Augsburg",
+          "tier": 3
+        },
+        {
+          "answer": "Wiesbaden",
+          "tier": 3
+        },
+        {
+          "answer": "Mainz",
+          "tier": 3
+        },
+        {
+          "answer": "Münster",
+          "tier": 3,
+          "aliases": [
+            "Muenster"
+          ]
+        },
+        {
+          "answer": "Aachen",
+          "tier": 3
+        },
+        {
+          "answer": "Kiel",
+          "tier": 3
+        },
+        {
+          "answer": "Rostock",
+          "tier": 3
+        },
+        {
+          "answer": "Potsdam",
+          "tier": 3
+        },
+        {
+          "answer": "Lübeck",
+          "tier": 4,
+          "aliases": [
+            "Luebeck"
+          ]
+        },
+        {
+          "answer": "Magdeburg",
+          "tier": 4
+        },
+        {
+          "answer": "Erfurt",
+          "tier": 4
+        },
+        {
+          "answer": "Weimar",
+          "tier": 4
+        },
+        {
+          "answer": "Bielefeld",
+          "tier": 4
+        },
+        {
+          "answer": "Wuppertal",
+          "tier": 4
+        },
+        {
+          "answer": "Gelsenkirchen",
+          "tier": 4
+        },
+        {
+          "answer": "Mönchengladbach",
+          "tier": 4,
+          "aliases": [
+            "Moenchengladbach"
+          ]
+        },
+        {
+          "answer": "Kassel",
+          "tier": 4
+        },
+        {
+          "answer": "Regensburg",
+          "tier": 4
+        },
+        {
+          "answer": "Würzburg",
+          "tier": 4,
+          "aliases": [
+            "Wuerzburg"
+          ]
+        },
+        {
+          "answer": "Ulm",
+          "tier": 4
+        },
+        {
+          "answer": "Saarbrücken",
+          "tier": 4,
+          "aliases": [
+            "Saarbruecken"
+          ]
+        },
+        {
+          "answer": "Brunswick",
+          "tier": 4,
+          "aliases": [
+            "Braunschweig"
+          ]
+        },
+        {
+          "answer": "Chemnitz",
+          "tier": 4
+        },
+        {
+          "answer": "Göttingen",
+          "tier": 4,
+          "aliases": [
+            "Goettingen"
+          ]
+        },
+        {
+          "answer": "Halle",
+          "tier": 5
+        },
+        {
+          "answer": "Jena",
+          "tier": 5
+        },
+        {
+          "answer": "Oldenburg",
+          "tier": 5
+        },
+        {
+          "answer": "Osnabrück",
+          "tier": 5,
+          "aliases": [
+            "Osnabrueck"
+          ]
+        },
+        {
+          "answer": "Paderborn",
+          "tier": 5
+        },
+        {
+          "answer": "Darmstadt",
+          "tier": 5
+        },
+        {
+          "answer": "Heilbronn",
+          "tier": 5
+        },
+        {
+          "answer": "Pforzheim",
+          "tier": 5
+        },
+        {
+          "answer": "Ingolstadt",
+          "tier": 5
+        },
+        {
+          "answer": "Wolfsburg",
+          "tier": 5
+        },
+        {
+          "answer": "Koblenz",
+          "tier": 5
+        },
+        {
+          "answer": "Trier",
+          "tier": 5
+        },
+        {
+          "answer": "Bamberg",
+          "tier": 5
+        },
+        {
+          "answer": "Bayreuth",
+          "tier": 5
+        },
+        {
+          "answer": "Passau",
+          "tier": 5
+        },
+        {
+          "answer": "Konstanz",
+          "tier": 5,
+          "aliases": [
+            "Constance"
+          ]
+        },
+        {
+          "answer": "Schwerin",
+          "tier": 5
+        },
+        {
+          "answer": "Leverkusen",
+          "tier": 5
+        },
+        {
+          "answer": "Krefeld",
+          "tier": 5
+        },
+        {
+          "answer": "Oberhausen",
+          "tier": 5
+        },
+        {
+          "answer": "Hildesheim",
+          "tier": 5
+        },
+        {
+          "answer": "Flensburg",
+          "tier": 5
+        },
+        {
+          "answer": "Rothenburg ob der Tauber",
+          "tier": 5,
+          "aliases": [
+            "Rothenburg"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Name a city or town in France",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Paris",
+          "tier": 1
+        },
+        {
+          "answer": "Marseille",
+          "tier": 1,
+          "aliases": [
+            "Marseilles"
+          ]
+        },
+        {
+          "answer": "Lyon",
+          "tier": 1,
+          "aliases": [
+            "Lyons"
+          ]
+        },
+        {
+          "answer": "Nice",
+          "tier": 1
+        },
+        {
+          "answer": "Bordeaux",
+          "tier": 1
+        },
+        {
+          "answer": "Toulouse",
+          "tier": 2
+        },
+        {
+          "answer": "Strasbourg",
+          "tier": 2
+        },
+        {
+          "answer": "Cannes",
+          "tier": 2
+        },
+        {
+          "answer": "Lille",
+          "tier": 2
+        },
+        {
+          "answer": "Nantes",
+          "tier": 2
+        },
+        {
+          "answer": "Montpellier",
+          "tier": 2
+        },
+        {
+          "answer": "Versailles",
+          "tier": 2
+        },
+        {
+          "answer": "Avignon",
+          "tier": 2
+        },
+        {
+          "answer": "Grenoble",
+          "tier": 2
+        },
+        {
+          "answer": "Rennes",
+          "tier": 3
+        },
+        {
+          "answer": "Reims",
+          "tier": 3
+        },
+        {
+          "answer": "Le Havre",
+          "tier": 3
+        },
+        {
+          "answer": "Calais",
+          "tier": 3
+        },
+        {
+          "answer": "Dijon",
+          "tier": 3
+        },
+        {
+          "answer": "Rouen",
+          "tier": 3
+        },
+        {
+          "answer": "Tours",
+          "tier": 3
+        },
+        {
+          "answer": "Orléans",
+          "tier": 3
+        },
+        {
+          "answer": "Biarritz",
+          "tier": 3
+        },
+        {
+          "answer": "Saint-Tropez",
+          "tier": 3,
+          "aliases": [
+            "St Tropez"
+          ]
+        },
+        {
+          "answer": "Chamonix",
+          "tier": 3
+        },
+        {
+          "answer": "Lourdes",
+          "tier": 3
+        },
+        {
+          "answer": "Toulon",
+          "tier": 3
+        },
+        {
+          "answer": "Antibes",
+          "tier": 3
+        },
+        {
+          "answer": "Annecy",
+          "tier": 3
+        },
+        {
+          "answer": "Metz",
+          "tier": 4
+        },
+        {
+          "answer": "Nancy",
+          "tier": 4
+        },
+        {
+          "answer": "Caen",
+          "tier": 4
+        },
+        {
+          "answer": "Brest",
+          "tier": 4
+        },
+        {
+          "answer": "Limoges",
+          "tier": 4
+        },
+        {
+          "answer": "Clermont-Ferrand",
+          "tier": 4
+        },
+        {
+          "answer": "Perpignan",
+          "tier": 4
+        },
+        {
+          "answer": "Nîmes",
+          "tier": 4
+        },
+        {
+          "answer": "Arles",
+          "tier": 4
+        },
+        {
+          "answer": "Aix-en-Provence",
+          "tier": 4
+        },
+        {
+          "answer": "Le Mans",
+          "tier": 4
+        },
+        {
+          "answer": "Angers",
+          "tier": 4
+        },
+        {
+          "answer": "Amiens",
+          "tier": 4
+        },
+        {
+          "answer": "Besançon",
+          "tier": 4
+        },
+        {
+          "answer": "La Rochelle",
+          "tier": 4
+        },
+        {
+          "answer": "Carcassonne",
+          "tier": 4
+        },
+        {
+          "answer": "Mulhouse",
+          "tier": 5
+        },
+        {
+          "answer": "Colmar",
+          "tier": 5
+        },
+        {
+          "answer": "Poitiers",
+          "tier": 5
+        },
+        {
+          "answer": "Pau",
+          "tier": 5
+        },
+        {
+          "answer": "Bayonne",
+          "tier": 5
+        },
+        {
+          "answer": "Saint-Étienne",
+          "tier": 5,
+          "aliases": [
+            "St Etienne"
+          ]
+        },
+        {
+          "answer": "Saint-Malo",
+          "tier": 5,
+          "aliases": [
+            "St Malo"
+          ]
+        },
+        {
+          "answer": "Cherbourg",
+          "tier": 5
+        },
+        {
+          "answer": "Dunkirk",
+          "tier": 5,
+          "aliases": [
+            "Dunkerque"
+          ]
+        },
+        {
+          "answer": "Boulogne-sur-Mer",
+          "tier": 5
+        },
+        {
+          "answer": "Troyes",
+          "tier": 5
+        },
+        {
+          "answer": "Chartres",
+          "tier": 5
+        },
+        {
+          "answer": "Vichy",
+          "tier": 5
+        },
+        {
+          "answer": "Cognac",
+          "tier": 5
+        },
+        {
+          "answer": "Béziers",
+          "tier": 5
+        },
+        {
+          "answer": "Ajaccio",
+          "tier": 5
+        },
+        {
+          "answer": "Bastia",
+          "tier": 5
+        },
+        {
+          "answer": "Menton",
+          "tier": 5
+        },
+        {
+          "answer": "Deauville",
+          "tier": 5
+        },
+        {
+          "answer": "Valence",
+          "tier": 5
+        },
+        {
+          "answer": "Grasse",
+          "tier": 5
+        },
+        {
+          "answer": "Lorient",
+          "tier": 5
+        },
+        {
+          "answer": "Quimper",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a river that flows through Europe",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Thames",
+          "tier": 1
+        },
+        {
+          "answer": "Seine",
+          "tier": 1
+        },
+        {
+          "answer": "Danube",
+          "tier": 1,
+          "aliases": [
+            "Donau"
+          ]
+        },
+        {
+          "answer": "Rhine",
+          "tier": 1,
+          "aliases": [
+            "Rhein",
+            "Rhin"
+          ]
+        },
+        {
+          "answer": "Volga",
+          "tier": 1
+        },
+        {
+          "answer": "Tiber",
+          "tier": 2,
+          "aliases": [
+            "Tevere"
+          ]
+        },
+        {
+          "answer": "Loire",
+          "tier": 2
+        },
+        {
+          "answer": "Elbe",
+          "tier": 2,
+          "aliases": [
+            "Labe"
+          ]
+        },
+        {
+          "answer": "Po",
+          "tier": 2
+        },
+        {
+          "answer": "Shannon",
+          "tier": 2
+        },
+        {
+          "answer": "Rhône",
+          "tier": 2
+        },
+        {
+          "answer": "Dnieper",
+          "tier": 2,
+          "aliases": [
+            "Dnipro"
+          ]
+        },
+        {
+          "answer": "Vltava",
+          "tier": 2,
+          "aliases": [
+            "Moldau"
+          ]
+        },
+        {
+          "answer": "Arno",
+          "tier": 2
+        },
+        {
+          "answer": "Tagus",
+          "tier": 2,
+          "aliases": [
+            "Tajo",
+            "Tejo"
+          ]
+        },
+        {
+          "answer": "Douro",
+          "tier": 3,
+          "aliases": [
+            "Duero"
+          ]
+        },
+        {
+          "answer": "Ebro",
+          "tier": 3
+        },
+        {
+          "answer": "Guadalquivir",
+          "tier": 3
+        },
+        {
+          "answer": "Oder",
+          "tier": 3,
+          "aliases": [
+            "Odra"
+          ]
+        },
+        {
+          "answer": "Vistula",
+          "tier": 3,
+          "aliases": [
+            "Wisla"
+          ]
+        },
+        {
+          "answer": "Neva",
+          "tier": 3
+        },
+        {
+          "answer": "Don",
+          "tier": 3
+        },
+        {
+          "answer": "Moselle",
+          "tier": 3,
+          "aliases": [
+            "Mosel"
+          ]
+        },
+        {
+          "answer": "Main",
+          "tier": 3
+        },
+        {
+          "answer": "Meuse",
+          "tier": 3,
+          "aliases": [
+            "Maas"
+          ]
+        },
+        {
+          "answer": "Garonne",
+          "tier": 3
+        },
+        {
+          "answer": "Severn",
+          "tier": 3
+        },
+        {
+          "answer": "Liffey",
+          "tier": 3
+        },
+        {
+          "answer": "Ural",
+          "tier": 3
+        },
+        {
+          "answer": "Dniester",
+          "tier": 3,
+          "aliases": [
+            "Dnister"
+          ]
+        },
+        {
+          "answer": "Sava",
+          "tier": 3
+        },
+        {
+          "answer": "Tyne",
+          "tier": 4
+        },
+        {
+          "answer": "Mersey",
+          "tier": 4
+        },
+        {
+          "answer": "Clyde",
+          "tier": 4
+        },
+        {
+          "answer": "Trent",
+          "tier": 4
+        },
+        {
+          "answer": "Avon",
+          "tier": 4
+        },
+        {
+          "answer": "Tay",
+          "tier": 4
+        },
+        {
+          "answer": "Spey",
+          "tier": 4
+        },
+        {
+          "answer": "Scheldt",
+          "tier": 4,
+          "aliases": [
+            "Schelde",
+            "Escaut"
+          ]
+        },
+        {
+          "answer": "Weser",
+          "tier": 4
+        },
+        {
+          "answer": "Inn",
+          "tier": 4
+        },
+        {
+          "answer": "Drava",
+          "tier": 4,
+          "aliases": [
+            "Drau"
+          ]
+        },
+        {
+          "answer": "Tisza",
+          "tier": 4,
+          "aliases": [
+            "Tisa"
+          ]
+        },
+        {
+          "answer": "Neckar",
+          "tier": 4
+        },
+        {
+          "answer": "Ruhr",
+          "tier": 4
+        },
+        {
+          "answer": "Saône",
+          "tier": 4
+        },
+        {
+          "answer": "Dordogne",
+          "tier": 4
+        },
+        {
+          "answer": "Somme",
+          "tier": 4
+        },
+        {
+          "answer": "Marne",
+          "tier": 4
+        },
+        {
+          "answer": "Guadiana",
+          "tier": 4
+        },
+        {
+          "answer": "Adige",
+          "tier": 4
+        },
+        {
+          "answer": "Spree",
+          "tier": 4
+        },
+        {
+          "answer": "Ems",
+          "tier": 5
+        },
+        {
+          "answer": "Isar",
+          "tier": 5
+        },
+        {
+          "answer": "Lech",
+          "tier": 5
+        },
+        {
+          "answer": "Havel",
+          "tier": 5
+        },
+        {
+          "answer": "Saale",
+          "tier": 5
+        },
+        {
+          "answer": "Mur",
+          "tier": 5,
+          "aliases": [
+            "Mura"
+          ]
+        },
+        {
+          "answer": "Prut",
+          "tier": 5
+        },
+        {
+          "answer": "Siret",
+          "tier": 5
+        },
+        {
+          "answer": "Bug",
+          "tier": 5,
+          "aliases": [
+            "Southern Bug",
+            "Western Bug"
+          ]
+        },
+        {
+          "answer": "Narew",
+          "tier": 5
+        },
+        {
+          "answer": "Warta",
+          "tier": 5
+        },
+        {
+          "answer": "Neman",
+          "tier": 5,
+          "aliases": [
+            "Nemunas",
+            "Memel"
+          ]
+        },
+        {
+          "answer": "Daugava",
+          "tier": 5,
+          "aliases": [
+            "Western Dvina"
+          ]
+        },
+        {
+          "answer": "Northern Dvina",
+          "tier": 5
+        },
+        {
+          "answer": "Pechora",
+          "tier": 5
+        },
+        {
+          "answer": "Kama",
+          "tier": 5
+        },
+        {
+          "answer": "Oka",
+          "tier": 5
+        },
+        {
+          "answer": "Glomma",
+          "tier": 5,
+          "aliases": [
+            "Glåma"
+          ]
+        },
+        {
+          "answer": "Göta älv",
+          "tier": 5
+        },
+        {
+          "answer": "Torne",
+          "tier": 5,
+          "aliases": [
+            "Tornio"
+          ]
+        },
+        {
+          "answer": "Kemijoki",
+          "tier": 5
+        },
+        {
+          "answer": "Júcar",
+          "tier": 5
+        },
+        {
+          "answer": "Minho",
+          "tier": 5,
+          "aliases": [
+            "Miño"
+          ]
+        },
+        {
+          "answer": "Mondego",
+          "tier": 5
+        },
+        {
+          "answer": "Piave",
+          "tier": 5
+        },
+        {
+          "answer": "Maritsa",
+          "tier": 5,
+          "aliases": [
+            "Evros",
+            "Meriç"
+          ]
+        },
+        {
+          "answer": "Struma",
+          "tier": 5
+        },
+        {
+          "answer": "Vardar",
+          "tier": 5
+        },
+        {
+          "answer": "Drina",
+          "tier": 5
+        },
+        {
+          "answer": "Mureș",
+          "tier": 5
+        },
+        {
+          "answer": "Olt",
+          "tier": 5
+        },
+        {
+          "answer": "Boyne",
+          "tier": 5
+        },
+        {
+          "answer": "Bann",
+          "tier": 5
+        },
+        {
+          "answer": "Wye",
+          "tier": 5
+        },
+        {
+          "answer": "Ouse",
+          "tier": 5
+        },
+        {
+          "answer": "Tamar",
+          "tier": 5
+        },
+        {
+          "answer": "Charente",
+          "tier": 5
+        },
+        {
+          "answer": "Lot",
+          "tier": 5
+        },
+        {
+          "answer": "Durance",
+          "tier": 5
+        },
+        {
+          "answer": "Isère",
+          "tier": 5
+        },
+        {
+          "answer": "Aare",
+          "tier": 5
+        },
+        {
+          "answer": "Ticino",
+          "tier": 5
+        },
+        {
+          "answer": "Morava",
+          "tier": 5
+        },
+        {
+          "answer": "Dee",
+          "tier": 5
+        },
+        {
+          "answer": "Forth",
+          "tier": 5
+        },
+        {
+          "answer": "Tweed",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a mountain range",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Himalayas",
+          "tier": 1,
+          "aliases": [
+            "Himalaya"
+          ]
+        },
+        {
+          "answer": "Alps",
+          "tier": 1
+        },
+        {
+          "answer": "Andes",
+          "tier": 1
+        },
+        {
+          "answer": "Rocky Mountains",
+          "tier": 1,
+          "aliases": [
+            "Rockies"
+          ]
+        },
+        {
+          "answer": "Pyrenees",
+          "tier": 1
+        },
+        {
+          "answer": "Atlas Mountains",
+          "tier": 2,
+          "aliases": [
+            "Atlas"
+          ]
+        },
+        {
+          "answer": "Appalachian Mountains",
+          "tier": 2,
+          "aliases": [
+            "Appalachians"
+          ]
+        },
+        {
+          "answer": "Ural Mountains",
+          "tier": 2,
+          "aliases": [
+            "Urals"
+          ]
+        },
+        {
+          "answer": "Carpathian Mountains",
+          "tier": 2,
+          "aliases": [
+            "Carpathians"
+          ]
+        },
+        {
+          "answer": "Apennines",
+          "tier": 2,
+          "aliases": [
+            "Apennine Mountains"
+          ]
+        },
+        {
+          "answer": "Caucasus Mountains",
+          "tier": 2,
+          "aliases": [
+            "Caucasus"
+          ]
+        },
+        {
+          "answer": "Sierra Nevada",
+          "tier": 2
+        },
+        {
+          "answer": "Dolomites",
+          "tier": 2
+        },
+        {
+          "answer": "Karakoram",
+          "tier": 2
+        },
+        {
+          "answer": "Hindu Kush",
+          "tier": 3
+        },
+        {
+          "answer": "Great Dividing Range",
+          "tier": 3
+        },
+        {
+          "answer": "Scandinavian Mountains",
+          "tier": 3
+        },
+        {
+          "answer": "Balkan Mountains",
+          "tier": 3,
+          "aliases": [
+            "Stara Planina"
+          ]
+        },
+        {
+          "answer": "Dinaric Alps",
+          "tier": 3
+        },
+        {
+          "answer": "Tian Shan",
+          "tier": 3
+        },
+        {
+          "answer": "Pamir Mountains",
+          "tier": 3,
+          "aliases": [
+            "Pamirs",
+            "Pamir"
+          ]
+        },
+        {
+          "answer": "Zagros Mountains",
+          "tier": 3,
+          "aliases": [
+            "Zagros"
+          ]
+        },
+        {
+          "answer": "Altai Mountains",
+          "tier": 3,
+          "aliases": [
+            "Altai"
+          ]
+        },
+        {
+          "answer": "Cascade Range",
+          "tier": 3,
+          "aliases": [
+            "Cascades"
+          ]
+        },
+        {
+          "answer": "Southern Alps",
+          "tier": 3
+        },
+        {
+          "answer": "Drakensberg",
+          "tier": 3
+        },
+        {
+          "answer": "Black Forest",
+          "tier": 3
+        },
+        {
+          "answer": "Tatra Mountains",
+          "tier": 3,
+          "aliases": [
+            "Tatras",
+            "Tatra"
+          ]
+        },
+        {
+          "answer": "Sierra Madre",
+          "tier": 3,
+          "aliases": [
+            "Sierra Madre Occidental",
+            "Sierra Madre Oriental"
+          ]
+        },
+        {
+          "answer": "Alaska Range",
+          "tier": 3
+        },
+        {
+          "answer": "Brooks Range",
+          "tier": 4
+        },
+        {
+          "answer": "Coast Mountains",
+          "tier": 4
+        },
+        {
+          "answer": "Adirondack Mountains",
+          "tier": 4,
+          "aliases": [
+            "Adirondacks"
+          ]
+        },
+        {
+          "answer": "Ozark Mountains",
+          "tier": 4,
+          "aliases": [
+            "Ozarks"
+          ]
+        },
+        {
+          "answer": "Blue Ridge Mountains",
+          "tier": 4,
+          "aliases": [
+            "Blue Ridge"
+          ]
+        },
+        {
+          "answer": "Great Smoky Mountains",
+          "tier": 4,
+          "aliases": [
+            "Smoky Mountains",
+            "Smokies"
+          ]
+        },
+        {
+          "answer": "Catskill Mountains",
+          "tier": 4,
+          "aliases": [
+            "Catskills"
+          ]
+        },
+        {
+          "answer": "White Mountains",
+          "tier": 4
+        },
+        {
+          "answer": "Olympic Mountains",
+          "tier": 4
+        },
+        {
+          "answer": "Kunlun Mountains",
+          "tier": 4,
+          "aliases": [
+            "Kunlun"
+          ]
+        },
+        {
+          "answer": "Taurus Mountains",
+          "tier": 4
+        },
+        {
+          "answer": "Alborz",
+          "tier": 4,
+          "aliases": [
+            "Elburz"
+          ]
+        },
+        {
+          "answer": "Rwenzori Mountains",
+          "tier": 4,
+          "aliases": [
+            "Rwenzori",
+            "Mountains of the Moon"
+          ]
+        },
+        {
+          "answer": "Grampian Mountains",
+          "tier": 4,
+          "aliases": [
+            "Grampians"
+          ]
+        },
+        {
+          "answer": "Cantabrian Mountains",
+          "tier": 4
+        },
+        {
+          "answer": "Jura Mountains",
+          "tier": 4,
+          "aliases": [
+            "Jura"
+          ]
+        },
+        {
+          "answer": "Vosges",
+          "tier": 4
+        },
+        {
+          "answer": "Sudetes",
+          "tier": 4
+        },
+        {
+          "answer": "Rhodope Mountains",
+          "tier": 4,
+          "aliases": [
+            "Rhodopes"
+          ]
+        },
+        {
+          "answer": "Pindus Mountains",
+          "tier": 4,
+          "aliases": [
+            "Pindus"
+          ]
+        },
+        {
+          "answer": "Ethiopian Highlands",
+          "tier": 4
+        },
+        {
+          "answer": "Western Ghats",
+          "tier": 4
+        },
+        {
+          "answer": "Rif Mountains",
+          "tier": 4,
+          "aliases": [
+            "Rif"
+          ]
+        },
+        {
+          "answer": "Ore Mountains",
+          "tier": 5,
+          "aliases": [
+            "Erzgebirge"
+          ]
+        },
+        {
+          "answer": "Harz",
+          "tier": 5
+        },
+        {
+          "answer": "Sierra Morena",
+          "tier": 5
+        },
+        {
+          "answer": "Picos de Europa",
+          "tier": 5
+        },
+        {
+          "answer": "Julian Alps",
+          "tier": 5
+        },
+        {
+          "answer": "Transylvanian Alps",
+          "tier": 5,
+          "aliases": [
+            "Southern Carpathians"
+          ]
+        },
+        {
+          "answer": "Pontic Mountains",
+          "tier": 5
+        },
+        {
+          "answer": "Hajar Mountains",
+          "tier": 5
+        },
+        {
+          "answer": "Aravalli Range",
+          "tier": 5,
+          "aliases": [
+            "Aravallis"
+          ]
+        },
+        {
+          "answer": "Eastern Ghats",
+          "tier": 5
+        },
+        {
+          "answer": "Vindhya Range",
+          "tier": 5
+        },
+        {
+          "answer": "Arakan Mountains",
+          "tier": 5,
+          "aliases": [
+            "Arakan Yoma"
+          ]
+        },
+        {
+          "answer": "Qinling Mountains",
+          "tier": 5,
+          "aliases": [
+            "Qinling"
+          ]
+        },
+        {
+          "answer": "Annamite Range",
+          "tier": 5
+        },
+        {
+          "answer": "Owen Stanley Range",
+          "tier": 5
+        },
+        {
+          "answer": "MacDonnell Ranges",
+          "tier": 5
+        },
+        {
+          "answer": "Flinders Ranges",
+          "tier": 5
+        },
+        {
+          "answer": "Snowy Mountains",
+          "tier": 5
+        },
+        {
+          "answer": "Transantarctic Mountains",
+          "tier": 5
+        },
+        {
+          "answer": "Laurentian Mountains",
+          "tier": 5,
+          "aliases": [
+            "Laurentians"
+          ]
+        },
+        {
+          "answer": "Wasatch Range",
+          "tier": 5
+        },
+        {
+          "answer": "Teton Range",
+          "tier": 5,
+          "aliases": [
+            "Tetons"
+          ]
+        },
+        {
+          "answer": "Saint Elias Mountains",
+          "tier": 5,
+          "aliases": [
+            "St Elias Mountains"
+          ]
+        },
+        {
+          "answer": "Chugach Mountains",
+          "tier": 5
+        },
+        {
+          "answer": "Simien Mountains",
+          "tier": 5
+        },
+        {
+          "answer": "Ahaggar Mountains",
+          "tier": 5,
+          "aliases": [
+            "Hoggar"
+          ]
+        },
+        {
+          "answer": "Tibesti Mountains",
+          "tier": 5
+        },
+        {
+          "answer": "Lebanon Mountains",
+          "tier": 5,
+          "aliases": [
+            "Mount Lebanon"
+          ]
+        },
+        {
+          "answer": "Anti-Lebanon Mountains",
+          "tier": 5
+        },
+        {
+          "answer": "Kopet Dag",
+          "tier": 5
+        },
+        {
+          "answer": "Sulaiman Mountains",
+          "tier": 5
+        },
+        {
+          "answer": "Verkhoyansk Range",
+          "tier": 5
+        },
+        {
+          "answer": "Sayan Mountains",
+          "tier": 5
+        },
+        {
+          "answer": "Sikhote-Alin",
+          "tier": 5
+        },
+        {
+          "answer": "Cordillera Blanca",
+          "tier": 5
+        },
+        {
+          "answer": "Serra do Mar",
+          "tier": 5
+        },
+        {
+          "answer": "Bighorn Mountains",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a body of water with the word 'Sea' in its name",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Mediterranean Sea",
+          "tier": 1,
+          "aliases": [
+            "Med",
+            "Mediterranean"
+          ]
+        },
+        {
+          "answer": "Red Sea",
+          "tier": 1,
+          "aliases": [
+            "Red"
+          ]
+        },
+        {
+          "answer": "Dead Sea",
+          "tier": 1,
+          "aliases": [
+            "Dead"
+          ]
+        },
+        {
+          "answer": "Black Sea",
+          "tier": 1,
+          "aliases": [
+            "Black"
+          ]
+        },
+        {
+          "answer": "Caribbean Sea",
+          "tier": 1,
+          "aliases": [
+            "Caribbean"
+          ]
+        },
+        {
+          "answer": "North Sea",
+          "tier": 2,
+          "aliases": [
+            "North"
+          ]
+        },
+        {
+          "answer": "Baltic Sea",
+          "tier": 2,
+          "aliases": [
+            "Baltic"
+          ]
+        },
+        {
+          "answer": "Caspian Sea",
+          "tier": 2,
+          "aliases": [
+            "Caspian"
+          ]
+        },
+        {
+          "answer": "Arabian Sea",
+          "tier": 2,
+          "aliases": [
+            "Arabian"
+          ]
+        },
+        {
+          "answer": "South China Sea",
+          "tier": 2,
+          "aliases": [
+            "South China"
+          ]
+        },
+        {
+          "answer": "Aegean Sea",
+          "tier": 2,
+          "aliases": [
+            "Aegean"
+          ]
+        },
+        {
+          "answer": "Adriatic Sea",
+          "tier": 2,
+          "aliases": [
+            "Adriatic"
+          ]
+        },
+        {
+          "answer": "Sea of Galilee",
+          "tier": 2,
+          "aliases": [
+            "Kinneret",
+            "Lake Kinneret",
+            "Lake Tiberias",
+            "Galilee Sea"
+          ]
+        },
+        {
+          "answer": "Sea of Japan",
+          "tier": 2,
+          "aliases": [
+            "Japan Sea"
+          ]
+        },
+        {
+          "answer": "Irish Sea",
+          "tier": 2,
+          "aliases": [
+            "Irish"
+          ]
+        },
+        {
+          "answer": "Ionian Sea",
+          "tier": 3,
+          "aliases": [
+            "Ionian"
+          ]
+        },
+        {
+          "answer": "Tyrrhenian Sea",
+          "tier": 3,
+          "aliases": [
+            "Tyrrhenian"
+          ]
+        },
+        {
+          "answer": "Bering Sea",
+          "tier": 3,
+          "aliases": [
+            "Bering"
+          ]
+        },
+        {
+          "answer": "Coral Sea",
+          "tier": 3,
+          "aliases": [
+            "Coral"
+          ]
+        },
+        {
+          "answer": "Tasman Sea",
+          "tier": 3,
+          "aliases": [
+            "Tasman"
+          ]
+        },
+        {
+          "answer": "Yellow Sea",
+          "tier": 3,
+          "aliases": [
+            "Yellow"
+          ]
+        },
+        {
+          "answer": "East China Sea",
+          "tier": 3,
+          "aliases": [
+            "East China"
+          ]
+        },
+        {
+          "answer": "Norwegian Sea",
+          "tier": 3,
+          "aliases": [
+            "Norwegian"
+          ]
+        },
+        {
+          "answer": "Barents Sea",
+          "tier": 3,
+          "aliases": [
+            "Barents"
+          ]
+        },
+        {
+          "answer": "Sargasso Sea",
+          "tier": 3,
+          "aliases": [
+            "Sargasso"
+          ]
+        },
+        {
+          "answer": "Sea of Marmara",
+          "tier": 3,
+          "aliases": [
+            "Marmara Sea"
+          ]
+        },
+        {
+          "answer": "Aral Sea",
+          "tier": 3,
+          "aliases": [
+            "Aral"
+          ]
+        },
+        {
+          "answer": "Sea of Okhotsk",
+          "tier": 3,
+          "aliases": [
+            "Okhotsk Sea"
+          ]
+        },
+        {
+          "answer": "Philippine Sea",
+          "tier": 3,
+          "aliases": [
+            "Philippine"
+          ]
+        },
+        {
+          "answer": "Andaman Sea",
+          "tier": 3,
+          "aliases": [
+            "Andaman"
+          ]
+        },
+        {
+          "answer": "Java Sea",
+          "tier": 3,
+          "aliases": [
+            "Java"
+          ]
+        },
+        {
+          "answer": "Ligurian Sea",
+          "tier": 4,
+          "aliases": [
+            "Ligurian"
+          ]
+        },
+        {
+          "answer": "Balearic Sea",
+          "tier": 4,
+          "aliases": [
+            "Balearic"
+          ]
+        },
+        {
+          "answer": "Celtic Sea",
+          "tier": 4,
+          "aliases": [
+            "Celtic"
+          ]
+        },
+        {
+          "answer": "Greenland Sea",
+          "tier": 4,
+          "aliases": [
+            "Greenland"
+          ]
+        },
+        {
+          "answer": "Labrador Sea",
+          "tier": 4,
+          "aliases": [
+            "Labrador"
+          ]
+        },
+        {
+          "answer": "Weddell Sea",
+          "tier": 4,
+          "aliases": [
+            "Weddell"
+          ]
+        },
+        {
+          "answer": "Ross Sea",
+          "tier": 4,
+          "aliases": [
+            "Ross"
+          ]
+        },
+        {
+          "answer": "Kara Sea",
+          "tier": 4,
+          "aliases": [
+            "Kara"
+          ]
+        },
+        {
+          "answer": "Laptev Sea",
+          "tier": 4,
+          "aliases": [
+            "Laptev"
+          ]
+        },
+        {
+          "answer": "East Siberian Sea",
+          "tier": 4,
+          "aliases": [
+            "East Siberian"
+          ]
+        },
+        {
+          "answer": "Chukchi Sea",
+          "tier": 4,
+          "aliases": [
+            "Chukchi"
+          ]
+        },
+        {
+          "answer": "Beaufort Sea",
+          "tier": 4,
+          "aliases": [
+            "Beaufort"
+          ]
+        },
+        {
+          "answer": "Sea of Azov",
+          "tier": 4,
+          "aliases": [
+            "Azov Sea"
+          ]
+        },
+        {
+          "answer": "White Sea",
+          "tier": 4,
+          "aliases": [
+            "White"
+          ]
+        },
+        {
+          "answer": "Wadden Sea",
+          "tier": 4,
+          "aliases": [
+            "Wadden"
+          ]
+        },
+        {
+          "answer": "Salton Sea",
+          "tier": 4,
+          "aliases": [
+            "Salton"
+          ]
+        },
+        {
+          "answer": "Arafura Sea",
+          "tier": 4,
+          "aliases": [
+            "Arafura"
+          ]
+        },
+        {
+          "answer": "Timor Sea",
+          "tier": 4,
+          "aliases": [
+            "Timor"
+          ]
+        },
+        {
+          "answer": "Banda Sea",
+          "tier": 4,
+          "aliases": [
+            "Banda"
+          ]
+        },
+        {
+          "answer": "Sulu Sea",
+          "tier": 4,
+          "aliases": [
+            "Sulu"
+          ]
+        },
+        {
+          "answer": "Celebes Sea",
+          "tier": 4,
+          "aliases": [
+            "Celebes"
+          ]
+        },
+        {
+          "answer": "Alboran Sea",
+          "tier": 5,
+          "aliases": [
+            "Alboran"
+          ]
+        },
+        {
+          "answer": "Levantine Sea",
+          "tier": 5,
+          "aliases": [
+            "Levantine"
+          ]
+        },
+        {
+          "answer": "Sea of Crete",
+          "tier": 5,
+          "aliases": [
+            "Cretan Sea",
+            "Crete Sea"
+          ]
+        },
+        {
+          "answer": "Libyan Sea",
+          "tier": 5,
+          "aliases": [
+            "Libyan"
+          ]
+        },
+        {
+          "answer": "Thracian Sea",
+          "tier": 5,
+          "aliases": [
+            "Thracian"
+          ]
+        },
+        {
+          "answer": "Myrtoan Sea",
+          "tier": 5,
+          "aliases": [
+            "Myrtoan"
+          ]
+        },
+        {
+          "answer": "Icarian Sea",
+          "tier": 5,
+          "aliases": [
+            "Icarian"
+          ]
+        },
+        {
+          "answer": "Sea of the Hebrides",
+          "tier": 5
+        },
+        {
+          "answer": "Pechora Sea",
+          "tier": 5,
+          "aliases": [
+            "Pechora"
+          ]
+        },
+        {
+          "answer": "Amundsen Sea",
+          "tier": 5,
+          "aliases": [
+            "Amundsen"
+          ]
+        },
+        {
+          "answer": "Bellingshausen Sea",
+          "tier": 5,
+          "aliases": [
+            "Bellingshausen"
+          ]
+        },
+        {
+          "answer": "Scotia Sea",
+          "tier": 5,
+          "aliases": [
+            "Scotia"
+          ]
+        },
+        {
+          "answer": "Lincoln Sea",
+          "tier": 5,
+          "aliases": [
+            "Lincoln"
+          ]
+        },
+        {
+          "answer": "Wandel Sea",
+          "tier": 5,
+          "aliases": [
+            "Wandel"
+          ]
+        },
+        {
+          "answer": "Flores Sea",
+          "tier": 5,
+          "aliases": [
+            "Flores"
+          ]
+        },
+        {
+          "answer": "Bali Sea",
+          "tier": 5,
+          "aliases": [
+            "Bali"
+          ]
+        },
+        {
+          "answer": "Savu Sea",
+          "tier": 5,
+          "aliases": [
+            "Savu"
+          ]
+        },
+        {
+          "answer": "Molucca Sea",
+          "tier": 5,
+          "aliases": [
+            "Molucca"
+          ]
+        },
+        {
+          "answer": "Halmahera Sea",
+          "tier": 5,
+          "aliases": [
+            "Halmahera"
+          ]
+        },
+        {
+          "answer": "Seram Sea",
+          "tier": 5,
+          "aliases": [
+            "Seram"
+          ]
+        },
+        {
+          "answer": "Solomon Sea",
+          "tier": 5,
+          "aliases": [
+            "Solomon"
+          ]
+        },
+        {
+          "answer": "Bismarck Sea",
+          "tier": 5,
+          "aliases": [
+            "Bismarck"
+          ]
+        },
+        {
+          "answer": "Bohai Sea",
+          "tier": 5,
+          "aliases": [
+            "Bohai"
+          ]
+        },
+        {
+          "answer": "Seto Inland Sea",
+          "tier": 5,
+          "aliases": [
+            "Inland Sea",
+            "Seto Inland"
+          ]
+        },
+        {
+          "answer": "Laccadive Sea",
+          "tier": 5,
+          "aliases": [
+            "Laccadive"
+          ]
+        },
+        {
+          "answer": "Sibuyan Sea",
+          "tier": 5,
+          "aliases": [
+            "Sibuyan"
+          ]
+        },
+        {
+          "answer": "Visayan Sea",
+          "tier": 5,
+          "aliases": [
+            "Visayan"
+          ]
+        },
+        {
+          "answer": "Camotes Sea",
+          "tier": 5,
+          "aliases": [
+            "Camotes"
+          ]
+        },
+        {
+          "answer": "Natuna Sea",
+          "tier": 5,
+          "aliases": [
+            "Natuna"
+          ]
+        },
+        {
+          "answer": "Bothnian Sea",
+          "tier": 5,
+          "aliases": [
+            "Bothnian"
+          ]
+        },
+        {
+          "answer": "Archipelago Sea",
+          "tier": 5,
+          "aliases": [
+            "Archipelago"
+          ]
+        },
+        {
+          "answer": "Salish Sea",
+          "tier": 5,
+          "aliases": [
+            "Salish"
+          ]
+        },
+        {
+          "answer": "Sea of Cortez",
+          "tier": 5,
+          "aliases": [
+            "Sea of Cortés",
+            "Cortez Sea"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Name a desert",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Sahara",
+          "tier": 1,
+          "aliases": [
+            "Sahara Desert"
+          ]
+        },
+        {
+          "answer": "Gobi",
+          "tier": 1,
+          "aliases": [
+            "Gobi Desert"
+          ]
+        },
+        {
+          "answer": "Kalahari",
+          "tier": 1,
+          "aliases": [
+            "Kalahari Desert"
+          ]
+        },
+        {
+          "answer": "Atacama",
+          "tier": 1,
+          "aliases": [
+            "Atacama Desert"
+          ]
+        },
+        {
+          "answer": "Negev",
+          "tier": 1,
+          "aliases": [
+            "Negev Desert"
+          ]
+        },
+        {
+          "answer": "Mojave",
+          "tier": 2,
+          "aliases": [
+            "Mojave Desert"
+          ]
+        },
+        {
+          "answer": "Arabian Desert",
+          "tier": 2,
+          "aliases": [
+            "Arabian"
+          ]
+        },
+        {
+          "answer": "Namib",
+          "tier": 2,
+          "aliases": [
+            "Namib Desert"
+          ]
+        },
+        {
+          "answer": "Sonoran",
+          "tier": 2,
+          "aliases": [
+            "Sonoran Desert"
+          ]
+        },
+        {
+          "answer": "Judean Desert",
+          "tier": 2,
+          "aliases": [
+            "Judaean Desert",
+            "Judean"
+          ]
+        },
+        {
+          "answer": "Sinai Desert",
+          "tier": 2,
+          "aliases": [
+            "Sinai"
+          ]
+        },
+        {
+          "answer": "Thar",
+          "tier": 2,
+          "aliases": [
+            "Great Indian Desert",
+            "Thar Desert"
+          ]
+        },
+        {
+          "answer": "Great Victoria Desert",
+          "tier": 3,
+          "aliases": [
+            "Great Victoria"
+          ]
+        },
+        {
+          "answer": "Great Sandy Desert",
+          "tier": 3,
+          "aliases": [
+            "Great Sandy"
+          ]
+        },
+        {
+          "answer": "Simpson Desert",
+          "tier": 3,
+          "aliases": [
+            "Simpson"
+          ]
+        },
+        {
+          "answer": "Taklamakan",
+          "tier": 3,
+          "aliases": [
+            "Taklimakan",
+            "Taklamakan Desert"
+          ]
+        },
+        {
+          "answer": "Chihuahuan",
+          "tier": 3,
+          "aliases": [
+            "Chihuahuan Desert"
+          ]
+        },
+        {
+          "answer": "Patagonian Desert",
+          "tier": 3,
+          "aliases": [
+            "Patagonian"
+          ]
+        },
+        {
+          "answer": "Antarctic Desert",
+          "tier": 3,
+          "aliases": [
+            "Antarctica",
+            "Antarctic"
+          ]
+        },
+        {
+          "answer": "Arctic Desert",
+          "tier": 3,
+          "aliases": [
+            "Arctic"
+          ]
+        },
+        {
+          "answer": "Syrian Desert",
+          "tier": 3,
+          "aliases": [
+            "Syrian"
+          ]
+        },
+        {
+          "answer": "Rub' al Khali",
+          "tier": 3,
+          "aliases": [
+            "Empty Quarter",
+            "Rub' al Khali Desert"
+          ]
+        },
+        {
+          "answer": "Wadi Rum",
+          "tier": 3,
+          "aliases": [
+            "Wadi Rum Desert"
+          ]
+        },
+        {
+          "answer": "Great Basin Desert",
+          "tier": 3,
+          "aliases": [
+            "Great Basin"
+          ]
+        },
+        {
+          "answer": "Gibson Desert",
+          "tier": 4,
+          "aliases": [
+            "Gibson"
+          ]
+        },
+        {
+          "answer": "Tanami",
+          "tier": 4,
+          "aliases": [
+            "Tanami Desert"
+          ]
+        },
+        {
+          "answer": "Karakum",
+          "tier": 4,
+          "aliases": [
+            "Kara Kum",
+            "Garagum",
+            "Karakum Desert"
+          ]
+        },
+        {
+          "answer": "Kyzylkum",
+          "tier": 4,
+          "aliases": [
+            "Kyzyl Kum",
+            "Kyzylkum Desert"
+          ]
+        },
+        {
+          "answer": "Danakil",
+          "tier": 4,
+          "aliases": [
+            "Danakil Desert"
+          ]
+        },
+        {
+          "answer": "Nubian Desert",
+          "tier": 4,
+          "aliases": [
+            "Nubian"
+          ]
+        },
+        {
+          "answer": "Libyan Desert",
+          "tier": 4,
+          "aliases": [
+            "Libyan"
+          ]
+        },
+        {
+          "answer": "Western Desert",
+          "tier": 4,
+          "aliases": [
+            "Western"
+          ]
+        },
+        {
+          "answer": "Dasht-e Kavir",
+          "tier": 4,
+          "aliases": [
+            "Great Salt Desert",
+            "Kavir",
+            "Dasht-e Kavir Desert"
+          ]
+        },
+        {
+          "answer": "Dasht-e Lut",
+          "tier": 4,
+          "aliases": [
+            "Lut",
+            "Dasht-e Lut Desert"
+          ]
+        },
+        {
+          "answer": "Painted Desert",
+          "tier": 4,
+          "aliases": [
+            "Painted"
+          ]
+        },
+        {
+          "answer": "Black Rock Desert",
+          "tier": 4,
+          "aliases": [
+            "Black Rock"
+          ]
+        },
+        {
+          "answer": "Colorado Desert",
+          "tier": 4,
+          "aliases": [
+            "Colorado"
+          ]
+        },
+        {
+          "answer": "Arava",
+          "tier": 4,
+          "aliases": [
+            "Arabah",
+            "Arava Desert"
+          ]
+        },
+        {
+          "answer": "Sechura",
+          "tier": 5,
+          "aliases": [
+            "Sechura Desert"
+          ]
+        },
+        {
+          "answer": "Monte Desert",
+          "tier": 5,
+          "aliases": [
+            "Monte"
+          ]
+        },
+        {
+          "answer": "La Guajira Desert",
+          "tier": 5,
+          "aliases": [
+            "Guajira",
+            "La Guajira"
+          ]
+        },
+        {
+          "answer": "Tabernas",
+          "tier": 5,
+          "aliases": [
+            "Tabernas Desert"
+          ]
+        },
+        {
+          "answer": "Bardenas Reales",
+          "tier": 5,
+          "aliases": [
+            "Bardenas Reales Desert"
+          ]
+        },
+        {
+          "answer": "Ogaden",
+          "tier": 5,
+          "aliases": [
+            "Ogaden Desert"
+          ]
+        },
+        {
+          "answer": "Chalbi",
+          "tier": 5,
+          "aliases": [
+            "Chalbi Desert"
+          ]
+        },
+        {
+          "answer": "Registan",
+          "tier": 5,
+          "aliases": [
+            "Registan Desert"
+          ]
+        },
+        {
+          "answer": "Cholistan",
+          "tier": 5,
+          "aliases": [
+            "Cholistan Desert"
+          ]
+        },
+        {
+          "answer": "Ordos",
+          "tier": 5,
+          "aliases": [
+            "Ordos Desert"
+          ]
+        },
+        {
+          "answer": "Badain Jaran",
+          "tier": 5,
+          "aliases": [
+            "Badain Jaran Desert"
+          ]
+        },
+        {
+          "answer": "Tengger",
+          "tier": 5,
+          "aliases": [
+            "Tengger Desert"
+          ]
+        },
+        {
+          "answer": "Kubuqi",
+          "tier": 5,
+          "aliases": [
+            "Kubuqi Desert"
+          ]
+        },
+        {
+          "answer": "Gurbantünggüt",
+          "tier": 5,
+          "aliases": [
+            "Dzungarian Desert",
+            "Gurbantünggüt Desert"
+          ]
+        },
+        {
+          "answer": "Little Sandy Desert",
+          "tier": 5,
+          "aliases": [
+            "Little Sandy"
+          ]
+        },
+        {
+          "answer": "Strzelecki",
+          "tier": 5,
+          "aliases": [
+            "Strzelecki Desert"
+          ]
+        },
+        {
+          "answer": "Sturt Stony Desert",
+          "tier": 5,
+          "aliases": [
+            "Sturt Stony"
+          ]
+        },
+        {
+          "answer": "Red Desert",
+          "tier": 5,
+          "aliases": [
+            "Red"
+          ]
+        },
+        {
+          "answer": "Owyhee",
+          "tier": 5,
+          "aliases": [
+            "Owyhee Desert"
+          ]
+        },
+        {
+          "answer": "Nafud",
+          "tier": 5,
+          "aliases": [
+            "An Nafud",
+            "Nefud",
+            "Nafud Desert"
+          ]
+        },
+        {
+          "answer": "Dahna",
+          "tier": 5,
+          "aliases": [
+            "Ad Dahna",
+            "Dahna Desert"
+          ]
+        },
+        {
+          "answer": "Eastern Desert",
+          "tier": 5,
+          "aliases": [
+            "Eastern"
+          ]
+        },
+        {
+          "answer": "White Desert",
+          "tier": 5,
+          "aliases": [
+            "White"
+          ]
+        },
+        {
+          "answer": "Ténéré",
+          "tier": 5,
+          "aliases": [
+            "Ténéré Desert"
+          ]
+        },
+        {
+          "answer": "Bayuda",
+          "tier": 5,
+          "aliases": [
+            "Bayuda Desert"
+          ]
+        },
+        {
+          "answer": "Yuma Desert",
+          "tier": 5,
+          "aliases": [
+            "Yuma"
+          ]
+        },
+        {
+          "answer": "Dasht-e Margo",
+          "tier": 5,
+          "aliases": [
+            "Dasht-e Margo Desert"
+          ]
+        },
+        {
+          "answer": "Kharan",
+          "tier": 5,
+          "aliases": [
+            "Kharan Desert"
+          ]
+        },
+        {
+          "answer": "Thal",
+          "tier": 5,
+          "aliases": [
+            "Thal Desert"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Name an island in the Mediterranean (Aegean, Adriatic and Ionian count)",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "Sicily",
+          "tier": 1,
+          "aliases": [
+            "Sicilia"
+          ]
+        },
+        {
+          "answer": "Sardinia",
+          "tier": 1,
+          "aliases": [
+            "Sardegna"
+          ]
+        },
+        {
+          "answer": "Crete",
+          "tier": 1
+        },
+        {
+          "answer": "Cyprus",
+          "tier": 1
+        },
+        {
+          "answer": "Malta",
+          "tier": 1
+        },
+        {
+          "answer": "Corsica",
+          "tier": 1,
+          "aliases": [
+            "Corse"
+          ]
+        },
+        {
+          "answer": "Mallorca",
+          "tier": 2,
+          "aliases": [
+            "Majorca"
+          ]
+        },
+        {
+          "answer": "Ibiza",
+          "tier": 2,
+          "aliases": [
+            "Eivissa"
+          ]
+        },
+        {
+          "answer": "Rhodes",
+          "tier": 2,
+          "aliases": [
+            "Rodos"
+          ]
+        },
+        {
+          "answer": "Santorini",
+          "tier": 2,
+          "aliases": [
+            "Thira",
+            "Thera"
+          ]
+        },
+        {
+          "answer": "Mykonos",
+          "tier": 2
+        },
+        {
+          "answer": "Corfu",
+          "tier": 2,
+          "aliases": [
+            "Kerkyra"
+          ]
+        },
+        {
+          "answer": "Capri",
+          "tier": 2
+        },
+        {
+          "answer": "Menorca",
+          "tier": 2,
+          "aliases": [
+            "Minorca"
+          ]
+        },
+        {
+          "answer": "Gozo",
+          "tier": 2
+        },
+        {
+          "answer": "Elba",
+          "tier": 3
+        },
+        {
+          "answer": "Kos",
+          "tier": 3
+        },
+        {
+          "answer": "Lesbos",
+          "tier": 3,
+          "aliases": [
+            "Lesvos"
+          ]
+        },
+        {
+          "answer": "Naxos",
+          "tier": 3
+        },
+        {
+          "answer": "Zakynthos",
+          "tier": 3,
+          "aliases": [
+            "Zante"
+          ]
+        },
+        {
+          "answer": "Kefalonia",
+          "tier": 3,
+          "aliases": [
+            "Cephalonia"
+          ]
+        },
+        {
+          "answer": "Formentera",
+          "tier": 3
+        },
+        {
+          "answer": "Paros",
+          "tier": 3
+        },
+        {
+          "answer": "Ischia",
+          "tier": 3
+        },
+        {
+          "answer": "Djerba",
+          "tier": 3
+        },
+        {
+          "answer": "Lampedusa",
+          "tier": 3
+        },
+        {
+          "answer": "Hvar",
+          "tier": 3
+        },
+        {
+          "answer": "Samos",
+          "tier": 3
+        },
+        {
+          "answer": "Aegina",
+          "tier": 3
+        },
+        {
+          "answer": "Chios",
+          "tier": 4
+        },
+        {
+          "answer": "Euboea",
+          "tier": 4,
+          "aliases": [
+            "Evia"
+          ]
+        },
+        {
+          "answer": "Ithaca",
+          "tier": 4,
+          "aliases": [
+            "Ithaki"
+          ]
+        },
+        {
+          "answer": "Lefkada",
+          "tier": 4,
+          "aliases": [
+            "Lefkas"
+          ]
+        },
+        {
+          "answer": "Hydra",
+          "tier": 4
+        },
+        {
+          "answer": "Milos",
+          "tier": 4
+        },
+        {
+          "answer": "Patmos",
+          "tier": 4
+        },
+        {
+          "answer": "Brač",
+          "tier": 4
+        },
+        {
+          "answer": "Korčula",
+          "tier": 4
+        },
+        {
+          "answer": "Krk",
+          "tier": 4
+        },
+        {
+          "answer": "Lipari",
+          "tier": 4
+        },
+        {
+          "answer": "Vulcano",
+          "tier": 4
+        },
+        {
+          "answer": "Pantelleria",
+          "tier": 4
+        },
+        {
+          "answer": "Comino",
+          "tier": 4
+        },
+        {
+          "answer": "Skiathos",
+          "tier": 4
+        },
+        {
+          "answer": "Stromboli",
+          "tier": 4
+        },
+        {
+          "answer": "Skopelos",
+          "tier": 5
+        },
+        {
+          "answer": "Thasos",
+          "tier": 5
+        },
+        {
+          "answer": "Samothrace",
+          "tier": 5
+        },
+        {
+          "answer": "Lemnos",
+          "tier": 5
+        },
+        {
+          "answer": "Ikaria",
+          "tier": 5
+        },
+        {
+          "answer": "Karpathos",
+          "tier": 5
+        },
+        {
+          "answer": "Sifnos",
+          "tier": 5
+        },
+        {
+          "answer": "Ios",
+          "tier": 5
+        },
+        {
+          "answer": "Syros",
+          "tier": 5
+        },
+        {
+          "answer": "Tinos",
+          "tier": 5
+        },
+        {
+          "answer": "Andros",
+          "tier": 5
+        },
+        {
+          "answer": "Symi",
+          "tier": 5
+        },
+        {
+          "answer": "Kythira",
+          "tier": 5,
+          "aliases": [
+            "Cythera"
+          ]
+        },
+        {
+          "answer": "Poros",
+          "tier": 5
+        },
+        {
+          "answer": "Spetses",
+          "tier": 5
+        },
+        {
+          "answer": "Salina",
+          "tier": 5
+        },
+        {
+          "answer": "Procida",
+          "tier": 5
+        },
+        {
+          "answer": "Favignana",
+          "tier": 5
+        },
+        {
+          "answer": "Ustica",
+          "tier": 5
+        },
+        {
+          "answer": "Giglio",
+          "tier": 5
+        },
+        {
+          "answer": "La Maddalena",
+          "tier": 5,
+          "aliases": [
+            "Maddalena"
+          ]
+        },
+        {
+          "answer": "Sant'Antioco",
+          "tier": 5
+        },
+        {
+          "answer": "Asinara",
+          "tier": 5
+        },
+        {
+          "answer": "Cabrera",
+          "tier": 5
+        },
+        {
+          "answer": "Kerkennah",
+          "tier": 5
+        },
+        {
+          "answer": "Cres",
+          "tier": 5
+        },
+        {
+          "answer": "Vis",
+          "tier": 5
+        },
+        {
+          "answer": "Mljet",
+          "tier": 5
+        },
+        {
+          "answer": "Rab",
+          "tier": 5
+        },
+        {
+          "answer": "Pag",
+          "tier": 5
+        },
+        {
+          "answer": "Gökçeada",
+          "tier": 5,
+          "aliases": [
+            "Imbros"
+          ]
+        },
+        {
+          "answer": "Bozcaada",
+          "tier": 5,
+          "aliases": [
+            "Tenedos"
+          ]
+        },
+        {
+          "answer": "Porquerolles",
+          "tier": 5
+        },
+        {
+          "answer": "Amorgos",
+          "tier": 5
+        },
+        {
+          "answer": "Folegandros",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a national currency in use today",
+      "category": "Travel",
+      "answers": [
+        {
+          "answer": "Euro",
+          "tier": 1
+        },
+        {
+          "answer": "Dollar",
+          "tier": 1,
+          "aliases": [
+            "US dollar",
+            "American dollar",
+            "Canadian dollar",
+            "Australian dollar"
+          ]
+        },
+        {
+          "answer": "Pound",
+          "tier": 1,
+          "aliases": [
+            "Pound sterling",
+            "Sterling",
+            "British pound"
+          ]
+        },
+        {
+          "answer": "Yen",
+          "tier": 1,
+          "aliases": [
+            "Japanese yen"
+          ]
+        },
+        {
+          "answer": "Shekel",
+          "tier": 1,
+          "aliases": [
+            "New Israeli shekel",
+            "New shekel",
+            "NIS",
+            "Sheqel"
+          ]
+        },
+        {
+          "answer": "Rupee",
+          "tier": 2,
+          "aliases": [
+            "Indian rupee"
+          ]
+        },
+        {
+          "answer": "Peso",
+          "tier": 2,
+          "aliases": [
+            "Mexican peso"
+          ]
+        },
+        {
+          "answer": "Franc",
+          "tier": 2,
+          "aliases": [
+            "Swiss franc",
+            "CFA franc"
+          ]
+        },
+        {
+          "answer": "Yuan",
+          "tier": 2,
+          "aliases": [
+            "Renminbi",
+            "RMB",
+            "Chinese yuan"
+          ]
+        },
+        {
+          "answer": "Ruble",
+          "tier": 2,
+          "aliases": [
+            "Rouble",
+            "Russian ruble"
+          ]
+        },
+        {
+          "answer": "Lira",
+          "tier": 2,
+          "aliases": [
+            "Turkish lira"
+          ]
+        },
+        {
+          "answer": "Real",
+          "tier": 2,
+          "aliases": [
+            "Brazilian real"
+          ]
+        },
+        {
+          "answer": "Won",
+          "tier": 2,
+          "aliases": [
+            "Korean won"
+          ]
+        },
+        {
+          "answer": "Krona",
+          "tier": 2,
+          "aliases": [
+            "Swedish krona",
+            "Kronor",
+            "Icelandic krona"
+          ]
+        },
+        {
+          "answer": "Krone",
+          "tier": 2,
+          "aliases": [
+            "Danish krone",
+            "Norwegian krone",
+            "Kroner"
+          ]
+        },
+        {
+          "answer": "Rand",
+          "tier": 3
+        },
+        {
+          "answer": "Dirham",
+          "tier": 3
+        },
+        {
+          "answer": "Riyal",
+          "tier": 3
+        },
+        {
+          "answer": "Dinar",
+          "tier": 3
+        },
+        {
+          "answer": "Baht",
+          "tier": 3
+        },
+        {
+          "answer": "Zloty",
+          "tier": 3
+        },
+        {
+          "answer": "Forint",
+          "tier": 3
+        },
+        {
+          "answer": "Koruna",
+          "tier": 3,
+          "aliases": [
+            "Czech koruna",
+            "Crown"
+          ]
+        },
+        {
+          "answer": "Rupiah",
+          "tier": 3
+        },
+        {
+          "answer": "Ringgit",
+          "tier": 3
+        },
+        {
+          "answer": "Dong",
+          "tier": 3
+        },
+        {
+          "answer": "Leu",
+          "tier": 3,
+          "aliases": [
+            "Lei"
+          ]
+        },
+        {
+          "answer": "Shilling",
+          "tier": 3
+        },
+        {
+          "answer": "Naira",
+          "tier": 3
+        },
+        {
+          "answer": "Hryvnia",
+          "tier": 3,
+          "aliases": [
+            "Hryvna"
+          ]
+        },
+        {
+          "answer": "Rial",
+          "tier": 3
+        },
+        {
+          "answer": "Lari",
+          "tier": 4
+        },
+        {
+          "answer": "Dram",
+          "tier": 4
+        },
+        {
+          "answer": "Manat",
+          "tier": 4
+        },
+        {
+          "answer": "Tenge",
+          "tier": 4
+        },
+        {
+          "answer": "Som",
+          "tier": 4,
+          "aliases": [
+            "Sum",
+            "So'm"
+          ]
+        },
+        {
+          "answer": "Lek",
+          "tier": 4
+        },
+        {
+          "answer": "Denar",
+          "tier": 4
+        },
+        {
+          "answer": "Cedi",
+          "tier": 4
+        },
+        {
+          "answer": "Birr",
+          "tier": 4
+        },
+        {
+          "answer": "Kwacha",
+          "tier": 4
+        },
+        {
+          "answer": "Taka",
+          "tier": 4
+        },
+        {
+          "answer": "Kyat",
+          "tier": 4
+        },
+        {
+          "answer": "Kip",
+          "tier": 4
+        },
+        {
+          "answer": "Riel",
+          "tier": 4
+        },
+        {
+          "answer": "Sol",
+          "tier": 4,
+          "aliases": [
+            "Nuevo sol"
+          ]
+        },
+        {
+          "answer": "Bolívar",
+          "tier": 4
+        },
+        {
+          "answer": "Quetzal",
+          "tier": 4
+        },
+        {
+          "answer": "Colón",
+          "tier": 4
+        },
+        {
+          "answer": "Córdoba",
+          "tier": 4
+        },
+        {
+          "answer": "Lempira",
+          "tier": 4
+        },
+        {
+          "answer": "Boliviano",
+          "tier": 4
+        },
+        {
+          "answer": "Guaraní",
+          "tier": 4
+        },
+        {
+          "answer": "Somoni",
+          "tier": 5
+        },
+        {
+          "answer": "Kwanza",
+          "tier": 5
+        },
+        {
+          "answer": "Metical",
+          "tier": 5
+        },
+        {
+          "answer": "Pula",
+          "tier": 5
+        },
+        {
+          "answer": "Loti",
+          "tier": 5,
+          "aliases": [
+            "Maloti"
+          ]
+        },
+        {
+          "answer": "Lilangeni",
+          "tier": 5,
+          "aliases": [
+            "Emalangeni"
+          ]
+        },
+        {
+          "answer": "Nakfa",
+          "tier": 5
+        },
+        {
+          "answer": "Dalasi",
+          "tier": 5
+        },
+        {
+          "answer": "Leone",
+          "tier": 5
+        },
+        {
+          "answer": "Ariary",
+          "tier": 5
+        },
+        {
+          "answer": "Ouguiya",
+          "tier": 5
+        },
+        {
+          "answer": "Gourde",
+          "tier": 5
+        },
+        {
+          "answer": "Balboa",
+          "tier": 5
+        },
+        {
+          "answer": "Tugrik",
+          "tier": 5,
+          "aliases": [
+            "Tögrög"
+          ]
+        },
+        {
+          "answer": "Afghani",
+          "tier": 5
+        },
+        {
+          "answer": "Ngultrum",
+          "tier": 5
+        },
+        {
+          "answer": "Rufiyaa",
+          "tier": 5
+        },
+        {
+          "answer": "Kina",
+          "tier": 5
+        },
+        {
+          "answer": "Vatu",
+          "tier": 5
+        },
+        {
+          "answer": "Tala",
+          "tier": 5
+        },
+        {
+          "answer": "Pa'anga",
+          "tier": 5,
+          "aliases": [
+            "Paʻanga"
+          ]
+        },
+        {
+          "answer": "Dobra",
+          "tier": 5
+        },
+        {
+          "answer": "Escudo",
+          "tier": 5
+        },
+        {
+          "answer": "Convertible mark",
+          "tier": 5,
+          "aliases": [
+            "Mark",
+            "Konvertibilna marka"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Name an airline (past or present)",
+      "category": "Travel",
+      "answers": [
+        {
+          "answer": "El Al",
+          "tier": 1,
+          "aliases": [
+            "El Al Israel Airlines"
+          ]
+        },
+        {
+          "answer": "Emirates",
+          "tier": 1
+        },
+        {
+          "answer": "Lufthansa",
+          "tier": 1
+        },
+        {
+          "answer": "British Airways",
+          "tier": 1,
+          "aliases": [
+            "BA"
+          ]
+        },
+        {
+          "answer": "Ryanair",
+          "tier": 1
+        },
+        {
+          "answer": "easyJet",
+          "tier": 1
+        },
+        {
+          "answer": "Delta Air Lines",
+          "tier": 2,
+          "aliases": [
+            "Delta"
+          ]
+        },
+        {
+          "answer": "United Airlines",
+          "tier": 2,
+          "aliases": [
+            "United"
+          ]
+        },
+        {
+          "answer": "American Airlines",
+          "tier": 2,
+          "aliases": [
+            "American"
+          ]
+        },
+        {
+          "answer": "Air France",
+          "tier": 2
+        },
+        {
+          "answer": "KLM",
+          "tier": 2,
+          "aliases": [
+            "KLM Royal Dutch Airlines"
+          ]
+        },
+        {
+          "answer": "Turkish Airlines",
+          "tier": 2,
+          "aliases": [
+            "THY",
+            "Turkish"
+          ]
+        },
+        {
+          "answer": "Qatar Airways",
+          "tier": 2,
+          "aliases": [
+            "Qatar"
+          ]
+        },
+        {
+          "answer": "Wizz Air",
+          "tier": 2,
+          "aliases": [
+            "Wizz"
+          ]
+        },
+        {
+          "answer": "Etihad Airways",
+          "tier": 2,
+          "aliases": [
+            "Etihad"
+          ]
+        },
+        {
+          "answer": "Singapore Airlines",
+          "tier": 2,
+          "aliases": [
+            "SIA"
+          ]
+        },
+        {
+          "answer": "Aegean Airlines",
+          "tier": 2,
+          "aliases": [
+            "Aegean"
+          ]
+        },
+        {
+          "answer": "Swiss International Air Lines",
+          "tier": 2,
+          "aliases": [
+            "Swiss",
+            "Swiss Air Lines"
+          ]
+        },
+        {
+          "answer": "Israir",
+          "tier": 2
+        },
+        {
+          "answer": "Arkia",
+          "tier": 2
+        },
+        {
+          "answer": "Air Canada",
+          "tier": 3
+        },
+        {
+          "answer": "Qantas",
+          "tier": 3
+        },
+        {
+          "answer": "Cathay Pacific",
+          "tier": 3,
+          "aliases": [
+            "Cathay"
+          ]
+        },
+        {
+          "answer": "Japan Airlines",
+          "tier": 3,
+          "aliases": [
+            "JAL"
+          ]
+        },
+        {
+          "answer": "ANA",
+          "tier": 3,
+          "aliases": [
+            "All Nippon Airways"
+          ]
+        },
+        {
+          "answer": "Southwest Airlines",
+          "tier": 3,
+          "aliases": [
+            "Southwest"
+          ]
+        },
+        {
+          "answer": "JetBlue",
+          "tier": 3
+        },
+        {
+          "answer": "Alitalia",
+          "tier": 3
+        },
+        {
+          "answer": "ITA Airways",
+          "tier": 3,
+          "aliases": [
+            "ITA"
+          ]
+        },
+        {
+          "answer": "Iberia",
+          "tier": 3
+        },
+        {
+          "answer": "Vueling",
+          "tier": 3
+        },
+        {
+          "answer": "Austrian Airlines",
+          "tier": 3,
+          "aliases": [
+            "Austrian"
+          ]
+        },
+        {
+          "answer": "Aer Lingus",
+          "tier": 3
+        },
+        {
+          "answer": "Virgin Atlantic",
+          "tier": 3,
+          "aliases": [
+            "Virgin"
+          ]
+        },
+        {
+          "answer": "Air India",
+          "tier": 3
+        },
+        {
+          "answer": "Korean Air",
+          "tier": 3
+        },
+        {
+          "answer": "Aeroflot",
+          "tier": 3
+        },
+        {
+          "answer": "Pan Am",
+          "tier": 3,
+          "aliases": [
+            "Pan American World Airways"
+          ]
+        },
+        {
+          "answer": "Norwegian",
+          "tier": 3,
+          "aliases": [
+            "Norwegian Air Shuttle",
+            "Norwegian Air"
+          ]
+        },
+        {
+          "answer": "Brussels Airlines",
+          "tier": 3
+        },
+        {
+          "answer": "Finnair",
+          "tier": 3
+        },
+        {
+          "answer": "SAS",
+          "tier": 3,
+          "aliases": [
+            "Scandinavian Airlines"
+          ]
+        },
+        {
+          "answer": "LOT Polish Airlines",
+          "tier": 4,
+          "aliases": [
+            "LOT"
+          ]
+        },
+        {
+          "answer": "TAP Air Portugal",
+          "tier": 4,
+          "aliases": [
+            "TAP",
+            "TAP Portugal"
+          ]
+        },
+        {
+          "answer": "Ethiopian Airlines",
+          "tier": 4,
+          "aliases": [
+            "Ethiopian"
+          ]
+        },
+        {
+          "answer": "EgyptAir",
+          "tier": 4
+        },
+        {
+          "answer": "Royal Jordanian",
+          "tier": 4
+        },
+        {
+          "answer": "Saudia",
+          "tier": 4,
+          "aliases": [
+            "Saudi Arabian Airlines",
+            "Saudi Airlines"
+          ]
+        },
+        {
+          "answer": "Gulf Air",
+          "tier": 4
+        },
+        {
+          "answer": "Oman Air",
+          "tier": 4
+        },
+        {
+          "answer": "flydubai",
+          "tier": 4
+        },
+        {
+          "answer": "Air Arabia",
+          "tier": 4
+        },
+        {
+          "answer": "Pegasus Airlines",
+          "tier": 4,
+          "aliases": [
+            "Pegasus"
+          ]
+        },
+        {
+          "answer": "SunExpress",
+          "tier": 4
+        },
+        {
+          "answer": "Eurowings",
+          "tier": 4
+        },
+        {
+          "answer": "Transavia",
+          "tier": 4
+        },
+        {
+          "answer": "Jet2",
+          "tier": 4
+        },
+        {
+          "answer": "Icelandair",
+          "tier": 4
+        },
+        {
+          "answer": "LATAM",
+          "tier": 4
+        },
+        {
+          "answer": "Avianca",
+          "tier": 4
+        },
+        {
+          "answer": "Aeroméxico",
+          "tier": 4
+        },
+        {
+          "answer": "Air New Zealand",
+          "tier": 4
+        },
+        {
+          "answer": "Virgin Australia",
+          "tier": 4
+        },
+        {
+          "answer": "Thai Airways",
+          "tier": 4,
+          "aliases": [
+            "Thai"
+          ]
+        },
+        {
+          "answer": "Malaysia Airlines",
+          "tier": 4
+        },
+        {
+          "answer": "Garuda Indonesia",
+          "tier": 4,
+          "aliases": [
+            "Garuda"
+          ]
+        },
+        {
+          "answer": "Vietnam Airlines",
+          "tier": 4
+        },
+        {
+          "answer": "Philippine Airlines",
+          "tier": 4
+        },
+        {
+          "answer": "China Airlines",
+          "tier": 4
+        },
+        {
+          "answer": "EVA Air",
+          "tier": 4
+        },
+        {
+          "answer": "Air China",
+          "tier": 4
+        },
+        {
+          "answer": "China Eastern",
+          "tier": 4
+        },
+        {
+          "answer": "China Southern",
+          "tier": 4
+        },
+        {
+          "answer": "IndiGo",
+          "tier": 4
+        },
+        {
+          "answer": "Spirit Airlines",
+          "tier": 4,
+          "aliases": [
+            "Spirit"
+          ]
+        },
+        {
+          "answer": "Frontier Airlines",
+          "tier": 4,
+          "aliases": [
+            "Frontier"
+          ]
+        },
+        {
+          "answer": "Alaska Airlines",
+          "tier": 4
+        },
+        {
+          "answer": "Hawaiian Airlines",
+          "tier": 4
+        },
+        {
+          "answer": "TWA",
+          "tier": 4,
+          "aliases": [
+            "Trans World Airlines"
+          ]
+        },
+        {
+          "answer": "Swissair",
+          "tier": 4
+        },
+        {
+          "answer": "Sabena",
+          "tier": 5
+        },
+        {
+          "answer": "Hainan Airlines",
+          "tier": 5
+        },
+        {
+          "answer": "airBaltic",
+          "tier": 5
+        },
+        {
+          "answer": "Croatia Airlines",
+          "tier": 5
+        },
+        {
+          "answer": "Air Serbia",
+          "tier": 5
+        },
+        {
+          "answer": "Tarom",
+          "tier": 5
+        },
+        {
+          "answer": "Bulgaria Air",
+          "tier": 5
+        },
+        {
+          "answer": "Air Malta",
+          "tier": 5
+        },
+        {
+          "answer": "KM Malta Airlines",
+          "tier": 5
+        },
+        {
+          "answer": "Cyprus Airways",
+          "tier": 5
+        },
+        {
+          "answer": "Luxair",
+          "tier": 5
+        },
+        {
+          "answer": "Air Europa",
+          "tier": 5
+        },
+        {
+          "answer": "Volotea",
+          "tier": 5
+        },
+        {
+          "answer": "Condor",
+          "tier": 5
+        },
+        {
+          "answer": "Smartwings",
+          "tier": 5
+        },
+        {
+          "answer": "Blue Air",
+          "tier": 5
+        },
+        {
+          "answer": "Edelweiss Air",
+          "tier": 5,
+          "aliases": [
+            "Edelweiss"
+          ]
+        },
+        {
+          "answer": "Kenya Airways",
+          "tier": 5
+        },
+        {
+          "answer": "South African Airways",
+          "tier": 5,
+          "aliases": [
+            "SAA"
+          ]
+        },
+        {
+          "answer": "Royal Air Maroc",
+          "tier": 5
+        },
+        {
+          "answer": "Tunisair",
+          "tier": 5
+        },
+        {
+          "answer": "RwandAir",
+          "tier": 5
+        },
+        {
+          "answer": "Air Mauritius",
+          "tier": 5
+        },
+        {
+          "answer": "Air Seychelles",
+          "tier": 5
+        },
+        {
+          "answer": "Biman Bangladesh Airlines",
+          "tier": 5,
+          "aliases": [
+            "Biman"
+          ]
+        },
+        {
+          "answer": "SriLankan Airlines",
+          "tier": 5
+        },
+        {
+          "answer": "Pakistan International Airlines",
+          "tier": 5,
+          "aliases": [
+            "PIA"
+          ]
+        },
+        {
+          "answer": "Air Astana",
+          "tier": 5
+        },
+        {
+          "answer": "Uzbekistan Airways",
+          "tier": 5
+        },
+        {
+          "answer": "Azerbaijan Airlines",
+          "tier": 5,
+          "aliases": [
+            "AZAL"
+          ]
+        },
+        {
+          "answer": "Georgian Airways",
+          "tier": 5
+        },
+        {
+          "answer": "Middle East Airlines",
+          "tier": 5,
+          "aliases": [
+            "MEA"
+          ]
+        },
+        {
+          "answer": "Kuwait Airways",
+          "tier": 5
+        },
+        {
+          "answer": "Riyadh Air",
+          "tier": 5
+        },
+        {
+          "answer": "flynas",
+          "tier": 5
+        },
+        {
+          "answer": "Jazeera Airways",
+          "tier": 5
+        },
+        {
+          "answer": "Asiana Airlines",
+          "tier": 5,
+          "aliases": [
+            "Asiana"
+          ]
+        },
+        {
+          "answer": "Jeju Air",
+          "tier": 5
+        },
+        {
+          "answer": "Peach",
+          "tier": 5,
+          "aliases": [
+            "Peach Aviation"
+          ]
+        },
+        {
+          "answer": "AirAsia",
+          "tier": 5
+        },
+        {
+          "answer": "Cebu Pacific",
+          "tier": 5
+        },
+        {
+          "answer": "Scoot",
+          "tier": 5
+        },
+        {
+          "answer": "Jetstar",
+          "tier": 5
+        },
+        {
+          "answer": "Fiji Airways",
+          "tier": 5
+        },
+        {
+          "answer": "Air Tahiti Nui",
+          "tier": 5
+        },
+        {
+          "answer": "WestJet",
+          "tier": 5
+        },
+        {
+          "answer": "Porter Airlines",
+          "tier": 5
+        },
+        {
+          "answer": "Allegiant Air",
+          "tier": 5,
+          "aliases": [
+            "Allegiant"
+          ]
+        },
+        {
+          "answer": "Sun Country Airlines",
+          "tier": 5
+        },
+        {
+          "answer": "Copa Airlines",
+          "tier": 5,
+          "aliases": [
+            "Copa"
+          ]
+        },
+        {
+          "answer": "Aerolíneas Argentinas",
+          "tier": 5
+        },
+        {
+          "answer": "Gol",
+          "tier": 5
+        },
+        {
+          "answer": "Azul",
+          "tier": 5
+        },
+        {
+          "answer": "Volaris",
+          "tier": 5
+        },
+        {
+          "answer": "Sky Airline",
+          "tier": 5
+        },
+        {
+          "answer": "Air Transat",
+          "tier": 5
+        },
+        {
+          "answer": "Bangkok Airways",
+          "tier": 5
+        },
+        {
+          "answer": "Ukraine International Airlines",
+          "tier": 5,
+          "aliases": [
+            "UIA"
+          ]
+        },
+        {
+          "answer": "Belavia",
+          "tier": 5
+        },
+        {
+          "answer": "Monarch Airlines",
+          "tier": 5,
+          "aliases": [
+            "Monarch"
+          ]
+        },
+        {
+          "answer": "Flybe",
+          "tier": 5
+        },
+        {
+          "answer": "Thomas Cook Airlines",
+          "tier": 5
+        },
+        {
+          "answer": "Air Moldova",
+          "tier": 5
+        },
+        {
+          "answer": "Spring Airlines",
+          "tier": 5
+        },
+        {
+          "answer": "Vistara",
+          "tier": 5
+        },
+        {
+          "answer": "Jet Airways",
+          "tier": 5
+        },
+        {
+          "answer": "SpiceJet",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a language that is official in at least one country (de facto counts)",
+      "category": "Geography",
+      "answers": [
+        {
+          "answer": "English",
+          "tier": 1
+        },
+        {
+          "answer": "Spanish",
+          "tier": 1,
+          "aliases": [
+            "Castilian"
+          ]
+        },
+        {
+          "answer": "French",
+          "tier": 1
+        },
+        {
+          "answer": "Arabic",
+          "tier": 1
+        },
+        {
+          "answer": "Hebrew",
+          "tier": 1
+        },
+        {
+          "answer": "Chinese",
+          "tier": 2,
+          "aliases": [
+            "Mandarin",
+            "Mandarin Chinese"
+          ]
+        },
+        {
+          "answer": "Russian",
+          "tier": 2
+        },
+        {
+          "answer": "German",
+          "tier": 2
+        },
+        {
+          "answer": "Portuguese",
+          "tier": 2
+        },
+        {
+          "answer": "Italian",
+          "tier": 2
+        },
+        {
+          "answer": "Japanese",
+          "tier": 2
+        },
+        {
+          "answer": "Hindi",
+          "tier": 2
+        },
+        {
+          "answer": "Korean",
+          "tier": 2
+        },
+        {
+          "answer": "Dutch",
+          "tier": 2,
+          "aliases": [
+            "Flemish"
+          ]
+        },
+        {
+          "answer": "Greek",
+          "tier": 2
+        },
+        {
+          "answer": "Turkish",
+          "tier": 2
+        },
+        {
+          "answer": "Swedish",
+          "tier": 2
+        },
+        {
+          "answer": "Polish",
+          "tier": 2
+        },
+        {
+          "answer": "Persian",
+          "tier": 2,
+          "aliases": [
+            "Farsi"
+          ]
+        },
+        {
+          "answer": "Ukrainian",
+          "tier": 2
+        },
+        {
+          "answer": "Norwegian",
+          "tier": 3
+        },
+        {
+          "answer": "Danish",
+          "tier": 3
+        },
+        {
+          "answer": "Finnish",
+          "tier": 3
+        },
+        {
+          "answer": "Icelandic",
+          "tier": 3
+        },
+        {
+          "answer": "Czech",
+          "tier": 3
+        },
+        {
+          "answer": "Slovak",
+          "tier": 3
+        },
+        {
+          "answer": "Hungarian",
+          "tier": 3
+        },
+        {
+          "answer": "Romanian",
+          "tier": 3
+        },
+        {
+          "answer": "Bulgarian",
+          "tier": 3
+        },
+        {
+          "answer": "Serbian",
+          "tier": 3
+        },
+        {
+          "answer": "Croatian",
+          "tier": 3
+        },
+        {
+          "answer": "Thai",
+          "tier": 3
+        },
+        {
+          "answer": "Vietnamese",
+          "tier": 3
+        },
+        {
+          "answer": "Indonesian",
+          "tier": 3,
+          "aliases": [
+            "Bahasa Indonesia"
+          ]
+        },
+        {
+          "answer": "Malay",
+          "tier": 3,
+          "aliases": [
+            "Bahasa Melayu"
+          ]
+        },
+        {
+          "answer": "Filipino",
+          "tier": 3,
+          "aliases": [
+            "Tagalog"
+          ]
+        },
+        {
+          "answer": "Urdu",
+          "tier": 3
+        },
+        {
+          "answer": "Bengali",
+          "tier": 3,
+          "aliases": [
+            "Bangla"
+          ]
+        },
+        {
+          "answer": "Swahili",
+          "tier": 3,
+          "aliases": [
+            "Kiswahili"
+          ]
+        },
+        {
+          "answer": "Amharic",
+          "tier": 3
+        },
+        {
+          "answer": "Afrikaans",
+          "tier": 3
+        },
+        {
+          "answer": "Zulu",
+          "tier": 3,
+          "aliases": [
+            "isiZulu"
+          ]
+        },
+        {
+          "answer": "Irish",
+          "tier": 3,
+          "aliases": [
+            "Irish Gaelic"
+          ]
+        },
+        {
+          "answer": "Armenian",
+          "tier": 3
+        },
+        {
+          "answer": "Georgian",
+          "tier": 3
+        },
+        {
+          "answer": "Albanian",
+          "tier": 3
+        },
+        {
+          "answer": "Lithuanian",
+          "tier": 4
+        },
+        {
+          "answer": "Latvian",
+          "tier": 4
+        },
+        {
+          "answer": "Estonian",
+          "tier": 4
+        },
+        {
+          "answer": "Slovene",
+          "tier": 4,
+          "aliases": [
+            "Slovenian"
+          ]
+        },
+        {
+          "answer": "Bosnian",
+          "tier": 4
+        },
+        {
+          "answer": "Macedonian",
+          "tier": 4
+        },
+        {
+          "answer": "Maltese",
+          "tier": 4
+        },
+        {
+          "answer": "Luxembourgish",
+          "tier": 4,
+          "aliases": [
+            "Letzeburgesch"
+          ]
+        },
+        {
+          "answer": "Catalan",
+          "tier": 4
+        },
+        {
+          "answer": "Belarusian",
+          "tier": 4
+        },
+        {
+          "answer": "Kazakh",
+          "tier": 4
+        },
+        {
+          "answer": "Uzbek",
+          "tier": 4
+        },
+        {
+          "answer": "Azerbaijani",
+          "tier": 4,
+          "aliases": [
+            "Azeri"
+          ]
+        },
+        {
+          "answer": "Pashto",
+          "tier": 4
+        },
+        {
+          "answer": "Nepali",
+          "tier": 4
+        },
+        {
+          "answer": "Sinhala",
+          "tier": 4,
+          "aliases": [
+            "Sinhalese"
+          ]
+        },
+        {
+          "answer": "Tamil",
+          "tier": 4
+        },
+        {
+          "answer": "Burmese",
+          "tier": 4
+        },
+        {
+          "answer": "Khmer",
+          "tier": 4
+        },
+        {
+          "answer": "Lao",
+          "tier": 4
+        },
+        {
+          "answer": "Mongolian",
+          "tier": 4
+        },
+        {
+          "answer": "Somali",
+          "tier": 4
+        },
+        {
+          "answer": "Xhosa",
+          "tier": 4,
+          "aliases": [
+            "isiXhosa"
+          ]
+        },
+        {
+          "answer": "Kurdish",
+          "tier": 4
+        },
+        {
+          "answer": "Quechua",
+          "tier": 4
+        },
+        {
+          "answer": "Haitian Creole",
+          "tier": 4,
+          "aliases": [
+            "Kreyol"
+          ]
+        },
+        {
+          "answer": "Māori",
+          "tier": 4,
+          "aliases": [
+            "Te Reo Māori"
+          ]
+        },
+        {
+          "answer": "Romansh",
+          "tier": 4
+        },
+        {
+          "answer": "Kinyarwanda",
+          "tier": 4
+        },
+        {
+          "answer": "Montenegrin",
+          "tier": 5
+        },
+        {
+          "answer": "Turkmen",
+          "tier": 5
+        },
+        {
+          "answer": "Kyrgyz",
+          "tier": 5,
+          "aliases": [
+            "Kirghiz"
+          ]
+        },
+        {
+          "answer": "Tajik",
+          "tier": 5
+        },
+        {
+          "answer": "Dari",
+          "tier": 5
+        },
+        {
+          "answer": "Dhivehi",
+          "tier": 5,
+          "aliases": [
+            "Maldivian"
+          ]
+        },
+        {
+          "answer": "Dzongkha",
+          "tier": 5
+        },
+        {
+          "answer": "Tetum",
+          "tier": 5
+        },
+        {
+          "answer": "Sesotho",
+          "tier": 5,
+          "aliases": [
+            "Sotho",
+            "Southern Sotho"
+          ]
+        },
+        {
+          "answer": "Tswana",
+          "tier": 5,
+          "aliases": [
+            "Setswana"
+          ]
+        },
+        {
+          "answer": "Swati",
+          "tier": 5,
+          "aliases": [
+            "siSwati",
+            "Swazi"
+          ]
+        },
+        {
+          "answer": "Northern Sotho",
+          "tier": 5,
+          "aliases": [
+            "Sepedi",
+            "Pedi"
+          ]
+        },
+        {
+          "answer": "Tsonga",
+          "tier": 5,
+          "aliases": [
+            "Xitsonga"
+          ]
+        },
+        {
+          "answer": "Venda",
+          "tier": 5,
+          "aliases": [
+            "Tshivenda"
+          ]
+        },
+        {
+          "answer": "Ndebele",
+          "tier": 5
+        },
+        {
+          "answer": "Shona",
+          "tier": 5
+        },
+        {
+          "answer": "Chichewa",
+          "tier": 5,
+          "aliases": [
+            "Chewa",
+            "Nyanja"
+          ]
+        },
+        {
+          "answer": "Kirundi",
+          "tier": 5,
+          "aliases": [
+            "Rundi"
+          ]
+        },
+        {
+          "answer": "Malagasy",
+          "tier": 5
+        },
+        {
+          "answer": "Sango",
+          "tier": 5
+        },
+        {
+          "answer": "Comorian",
+          "tier": 5,
+          "aliases": [
+            "Shikomori"
+          ]
+        },
+        {
+          "answer": "Seychellois Creole",
+          "tier": 5,
+          "aliases": [
+            "Seselwa"
+          ]
+        },
+        {
+          "answer": "Tamazight",
+          "tier": 5,
+          "aliases": [
+            "Berber",
+            "Amazigh"
+          ]
+        },
+        {
+          "answer": "Aymara",
+          "tier": 5
+        },
+        {
+          "answer": "Guaraní",
+          "tier": 5
+        },
+        {
+          "answer": "Samoan",
+          "tier": 5
+        },
+        {
+          "answer": "Tongan",
+          "tier": 5
+        },
+        {
+          "answer": "Fijian",
+          "tier": 5
+        },
+        {
+          "answer": "Tok Pisin",
+          "tier": 5
+        },
+        {
+          "answer": "Hiri Motu",
+          "tier": 5
+        },
+        {
+          "answer": "Bislama",
+          "tier": 5
+        },
+        {
+          "answer": "Marshallese",
+          "tier": 5
+        },
+        {
+          "answer": "Palauan",
+          "tier": 5
+        },
+        {
+          "answer": "Nauruan",
+          "tier": 5
+        },
+        {
+          "answer": "Tuvaluan",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "text": "Name a way to get from A to B (a mode of transport)",
+      "category": "Travel",
+      "answers": [
+        {
+          "answer": "Car",
+          "tier": 1
+        },
+        {
+          "answer": "Bus",
+          "tier": 1
+        },
+        {
+          "answer": "Train",
+          "tier": 1
+        },
+        {
+          "answer": "Plane",
+          "tier": 1,
+          "aliases": [
+            "Airplane",
+            "Aeroplane",
+            "Aircraft",
+            "Jet"
+          ]
+        },
+        {
+          "answer": "Bicycle",
+          "tier": 1,
+          "aliases": [
+            "Bike",
+            "Cycling"
+          ]
+        },
+        {
+          "answer": "Taxi",
+          "tier": 2,
+          "aliases": [
+            "Cab"
+          ]
+        },
+        {
+          "answer": "Motorcycle",
+          "tier": 2,
+          "aliases": [
+            "Motorbike"
+          ]
+        },
+        {
+          "answer": "Boat",
+          "tier": 2
+        },
+        {
+          "answer": "Ship",
+          "tier": 2
+        },
+        {
+          "answer": "Ferry",
+          "tier": 2
+        },
+        {
+          "answer": "Subway",
+          "tier": 2,
+          "aliases": [
+            "Metro",
+            "Underground",
+            "Tube"
+          ]
+        },
+        {
+          "answer": "Tram",
+          "tier": 2,
+          "aliases": [
+            "Streetcar",
+            "Light rail"
+          ]
+        },
+        {
+          "answer": "Helicopter",
+          "tier": 2
+        },
+        {
+          "answer": "Scooter",
+          "tier": 2,
+          "aliases": [
+            "Kick scooter"
+          ]
+        },
+        {
+          "answer": "Walking",
+          "tier": 2,
+          "aliases": [
+            "On foot",
+            "Walk"
+          ]
+        },
+        {
+          "answer": "Truck",
+          "tier": 3,
+          "aliases": [
+            "Lorry"
+          ]
+        },
+        {
+          "answer": "Van",
+          "tier": 3
+        },
+        {
+          "answer": "Yacht",
+          "tier": 3
+        },
+        {
+          "answer": "Cruise ship",
+          "tier": 3
+        },
+        {
+          "answer": "Canoe",
+          "tier": 3
+        },
+        {
+          "answer": "Kayak",
+          "tier": 3
+        },
+        {
+          "answer": "Horse",
+          "tier": 3,
+          "aliases": [
+            "Horseback",
+            "Horse riding"
+          ]
+        },
+        {
+          "answer": "Camel",
+          "tier": 3
+        },
+        {
+          "answer": "Cable car",
+          "tier": 3
+        },
+        {
+          "answer": "Monorail",
+          "tier": 3
+        },
+        {
+          "answer": "Hot air balloon",
+          "tier": 3,
+          "aliases": [
+            "Balloon"
+          ]
+        },
+        {
+          "answer": "Skateboard",
+          "tier": 3
+        },
+        {
+          "answer": "Electric scooter",
+          "tier": 3,
+          "aliases": [
+            "E-scooter"
+          ]
+        },
+        {
+          "answer": "Sailboat",
+          "tier": 3,
+          "aliases": [
+            "Sailing boat"
+          ]
+        },
+        {
+          "answer": "Rickshaw",
+          "tier": 3,
+          "aliases": [
+            "Cycle rickshaw",
+            "Pedicab"
+          ]
+        },
+        {
+          "answer": "Tuk-tuk",
+          "tier": 4,
+          "aliases": [
+            "Auto rickshaw"
+          ]
+        },
+        {
+          "answer": "Gondola",
+          "tier": 4
+        },
+        {
+          "answer": "Segway",
+          "tier": 4
+        },
+        {
+          "answer": "Hovercraft",
+          "tier": 4
+        },
+        {
+          "answer": "Airship",
+          "tier": 4,
+          "aliases": [
+            "Zeppelin",
+            "Blimp"
+          ]
+        },
+        {
+          "answer": "Glider",
+          "tier": 4
+        },
+        {
+          "answer": "Jet ski",
+          "tier": 4
+        },
+        {
+          "answer": "Snowmobile",
+          "tier": 4
+        },
+        {
+          "answer": "Sled",
+          "tier": 4,
+          "aliases": [
+            "Sledge",
+            "Sleigh"
+          ]
+        },
+        {
+          "answer": "Dog sled",
+          "tier": 4
+        },
+        {
+          "answer": "Funicular",
+          "tier": 4
+        },
+        {
+          "answer": "Chairlift",
+          "tier": 4,
+          "aliases": [
+            "Ski lift"
+          ]
+        },
+        {
+          "answer": "Rollerblades",
+          "tier": 4,
+          "aliases": [
+            "Inline skates"
+          ]
+        },
+        {
+          "answer": "Roller skates",
+          "tier": 4
+        },
+        {
+          "answer": "Unicycle",
+          "tier": 4
+        },
+        {
+          "answer": "Tricycle",
+          "tier": 4
+        },
+        {
+          "answer": "Minibus",
+          "tier": 4
+        },
+        {
+          "answer": "Coach",
+          "tier": 4
+        },
+        {
+          "answer": "High-speed train",
+          "tier": 4,
+          "aliases": [
+            "Bullet train"
+          ]
+        },
+        {
+          "answer": "Electric bike",
+          "tier": 4,
+          "aliases": [
+            "E-bike"
+          ]
+        },
+        {
+          "answer": "Moped",
+          "tier": 4
+        },
+        {
+          "answer": "Hang glider",
+          "tier": 5
+        },
+        {
+          "answer": "Paraglider",
+          "tier": 5
+        },
+        {
+          "answer": "Seaplane",
+          "tier": 5
+        },
+        {
+          "answer": "Hydrofoil",
+          "tier": 5
+        },
+        {
+          "answer": "Catamaran",
+          "tier": 5
+        },
+        {
+          "answer": "Raft",
+          "tier": 5
+        },
+        {
+          "answer": "Punt",
+          "tier": 5
+        },
+        {
+          "answer": "Dhow",
+          "tier": 5
+        },
+        {
+          "answer": "Junk",
+          "tier": 5
+        },
+        {
+          "answer": "Sampan",
+          "tier": 5
+        },
+        {
+          "answer": "Elephant",
+          "tier": 5
+        },
+        {
+          "answer": "Donkey",
+          "tier": 5
+        },
+        {
+          "answer": "Mule",
+          "tier": 5
+        },
+        {
+          "answer": "Ox cart",
+          "tier": 5
+        },
+        {
+          "answer": "Horse-drawn carriage",
+          "tier": 5,
+          "aliases": [
+            "Carriage"
+          ]
+        },
+        {
+          "answer": "Stagecoach",
+          "tier": 5
+        },
+        {
+          "answer": "Wagon",
+          "tier": 5
+        },
+        {
+          "answer": "Tractor",
+          "tier": 5
+        },
+        {
+          "answer": "Motorhome",
+          "tier": 5,
+          "aliases": [
+            "RV",
+            "Camper van"
+          ]
+        },
+        {
+          "answer": "Trolleybus",
+          "tier": 5
+        },
+        {
+          "answer": "Hoverboard",
+          "tier": 5
+        },
+        {
+          "answer": "Rocket",
+          "tier": 5
+        },
+        {
+          "answer": "Space shuttle",
+          "tier": 5
+        },
+        {
+          "answer": "Submarine",
+          "tier": 5
+        },
+        {
+          "answer": "Skis",
+          "tier": 5,
+          "aliases": [
+            "Skiing"
+          ]
+        },
+        {
+          "answer": "Snowboard",
+          "tier": 5
+        },
+        {
+          "answer": "Ice skates",
+          "tier": 5
+        },
+        {
+          "answer": "Zip line",
+          "tier": 5
+        },
+        {
+          "answer": "Quad bike",
+          "tier": 5,
+          "aliases": [
+            "ATV"
+          ]
+        },
+        {
+          "answer": "Golf cart",
+          "tier": 5
+        },
+        {
+          "answer": "Limousine",
+          "tier": 5,
+          "aliases": [
+            "Limo"
+          ]
+        },
+        {
+          "answer": "Elevator",
+          "tier": 5,
+          "aliases": [
+            "Lift"
+          ]
+        },
+        {
+          "answer": "Escalator",
+          "tier": 5
+        },
+        {
+          "answer": "Moving walkway",
+          "tier": 5,
+          "aliases": [
+            "Travelator"
+          ]
+        },
+        {
+          "answer": "Paddleboard",
+          "tier": 5,
+          "aliases": [
+            "SUP"
+          ]
+        },
+        {
+          "answer": "Maglev",
+          "tier": 5
+        },
+        {
+          "answer": "Wheelchair",
+          "tier": 5
+        },
+        {
+          "answer": "Water taxi",
+          "tier": 5
+        },
+        {
+          "answer": "Rowing boat",
+          "tier": 5,
+          "aliases": [
+            "Rowboat"
+          ]
+        },
+        {
+          "answer": "Motorboat",
+          "tier": 5,
+          "aliases": [
+            "Speedboat"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Name a famous landmark or attraction in Paris",
+      "category": "Travel",
+      "answers": [
+        {
+          "answer": "Eiffel Tower",
+          "tier": 1,
+          "aliases": [
+            "Tour Eiffel"
+          ]
+        },
+        {
+          "answer": "Louvre",
+          "tier": 1,
+          "aliases": [
+            "Louvre Museum",
+            "Musée du Louvre",
+            "Louvre Pyramid"
+          ]
+        },
+        {
+          "answer": "Notre-Dame",
+          "tier": 1,
+          "aliases": [
+            "Notre-Dame de Paris",
+            "Notre Dame Cathedral"
+          ]
+        },
+        {
+          "answer": "Arc de Triomphe",
+          "tier": 1
+        },
+        {
+          "answer": "Champs-Élysées",
+          "tier": 1,
+          "aliases": [
+            "Avenue des Champs-Élysées"
+          ]
+        },
+        {
+          "answer": "Sacré-Cœur",
+          "tier": 2,
+          "aliases": [
+            "Sacre Coeur",
+            "Sacré-Coeur",
+            "Sacred Heart",
+            "Basilica of the Sacred Heart"
+          ]
+        },
+        {
+          "answer": "Montmartre",
+          "tier": 2
+        },
+        {
+          "answer": "Moulin Rouge",
+          "tier": 2
+        },
+        {
+          "answer": "Musée d'Orsay",
+          "tier": 2,
+          "aliases": [
+            "Orsay",
+            "Orsay Museum"
+          ]
+        },
+        {
+          "answer": "Centre Pompidou",
+          "tier": 2,
+          "aliases": [
+            "Pompidou Centre",
+            "Pompidou",
+            "Beaubourg"
+          ]
+        },
+        {
+          "answer": "Les Invalides",
+          "tier": 2,
+          "aliases": [
+            "Invalides",
+            "Hôtel des Invalides",
+            "Napoleon's Tomb"
+          ]
+        },
+        {
+          "answer": "Panthéon",
+          "tier": 2
+        },
+        {
+          "answer": "Seine",
+          "tier": 2,
+          "aliases": [
+            "River Seine",
+            "Seine River"
+          ]
+        },
+        {
+          "answer": "Luxembourg Gardens",
+          "tier": 3,
+          "aliases": [
+            "Jardin du Luxembourg"
+          ]
+        },
+        {
+          "answer": "Place de la Concorde",
+          "tier": 3,
+          "aliases": [
+            "Concorde"
+          ]
+        },
+        {
+          "answer": "Tuileries Garden",
+          "tier": 3,
+          "aliases": [
+            "Tuileries",
+            "Jardin des Tuileries"
+          ]
+        },
+        {
+          "answer": "Catacombs",
+          "tier": 3,
+          "aliases": [
+            "Catacombs of Paris",
+            "Catacombes"
+          ]
+        },
+        {
+          "answer": "Père Lachaise Cemetery",
+          "tier": 3,
+          "aliases": [
+            "Père Lachaise"
+          ]
+        },
+        {
+          "answer": "Sainte-Chapelle",
+          "tier": 3
+        },
+        {
+          "answer": "Palais Garnier",
+          "tier": 3,
+          "aliases": [
+            "Opéra Garnier",
+            "Paris Opera"
+          ]
+        },
+        {
+          "answer": "Pont Neuf",
+          "tier": 3
+        },
+        {
+          "answer": "Latin Quarter",
+          "tier": 3,
+          "aliases": [
+            "Quartier Latin"
+          ]
+        },
+        {
+          "answer": "Galeries Lafayette",
+          "tier": 3
+        },
+        {
+          "answer": "Pont Alexandre III",
+          "tier": 3
+        },
+        {
+          "answer": "Trocadéro",
+          "tier": 3,
+          "aliases": [
+            "Trocadero Gardens"
+          ]
+        },
+        {
+          "answer": "Le Marais",
+          "tier": 3,
+          "aliases": [
+            "Marais"
+          ]
+        },
+        {
+          "answer": "Shakespeare and Company",
+          "tier": 3
+        },
+        {
+          "answer": "Place Vendôme",
+          "tier": 4
+        },
+        {
+          "answer": "Place des Vosges",
+          "tier": 4
+        },
+        {
+          "answer": "Musée Rodin",
+          "tier": 4,
+          "aliases": [
+            "Rodin Museum"
+          ]
+        },
+        {
+          "answer": "Musée de l'Orangerie",
+          "tier": 4,
+          "aliases": [
+            "Orangerie"
+          ]
+        },
+        {
+          "answer": "Conciergerie",
+          "tier": 4
+        },
+        {
+          "answer": "Hôtel de Ville",
+          "tier": 4,
+          "aliases": [
+            "Paris City Hall"
+          ]
+        },
+        {
+          "answer": "Grand Palais",
+          "tier": 4
+        },
+        {
+          "answer": "Petit Palais",
+          "tier": 4
+        },
+        {
+          "answer": "Place de la Bastille",
+          "tier": 4,
+          "aliases": [
+            "Bastille"
+          ]
+        },
+        {
+          "answer": "Canal Saint-Martin",
+          "tier": 4
+        },
+        {
+          "answer": "Jardin des Plantes",
+          "tier": 4
+        },
+        {
+          "answer": "Montparnasse Tower",
+          "tier": 4,
+          "aliases": [
+            "Tour Montparnasse"
+          ]
+        },
+        {
+          "answer": "Pont des Arts",
+          "tier": 4
+        },
+        {
+          "answer": "Palais-Royal",
+          "tier": 4
+        },
+        {
+          "answer": "Sorbonne",
+          "tier": 4
+        },
+        {
+          "answer": "Rue de Rivoli",
+          "tier": 4
+        },
+        {
+          "answer": "Champ de Mars",
+          "tier": 4
+        },
+        {
+          "answer": "Île de la Cité",
+          "tier": 4
+        },
+        {
+          "answer": "Île Saint-Louis",
+          "tier": 5
+        },
+        {
+          "answer": "Saint-Sulpice",
+          "tier": 5
+        },
+        {
+          "answer": "Saint-Germain-des-Prés",
+          "tier": 5
+        },
+        {
+          "answer": "Parc des Buttes-Chaumont",
+          "tier": 5,
+          "aliases": [
+            "Buttes-Chaumont"
+          ]
+        },
+        {
+          "answer": "Parc de la Villette",
+          "tier": 5,
+          "aliases": [
+            "La Villette"
+          ]
+        },
+        {
+          "answer": "Cité des Sciences",
+          "tier": 5
+        },
+        {
+          "answer": "Musée Picasso",
+          "tier": 5,
+          "aliases": [
+            "Picasso Museum"
+          ]
+        },
+        {
+          "answer": "Musée du quai Branly",
+          "tier": 5,
+          "aliases": [
+            "Quai Branly"
+          ]
+        },
+        {
+          "answer": "Fondation Louis Vuitton",
+          "tier": 5
+        },
+        {
+          "answer": "Palais de Tokyo",
+          "tier": 5
+        },
+        {
+          "answer": "Opéra Bastille",
+          "tier": 5
+        },
+        {
+          "answer": "Arc de Triomphe du Carrousel",
+          "tier": 5
+        },
+        {
+          "answer": "Pigalle",
+          "tier": 5
+        },
+        {
+          "answer": "Place du Tertre",
+          "tier": 5
+        },
+        {
+          "answer": "Les Halles",
+          "tier": 5
+        },
+        {
+          "answer": "Le Bon Marché",
+          "tier": 5,
+          "aliases": [
+            "Bon Marché"
+          ]
+        },
+        {
+          "answer": "Musée Grévin",
+          "tier": 5,
+          "aliases": [
+            "Grévin"
+          ]
+        },
+        {
+          "answer": "Arènes de Lutèce",
+          "tier": 5
+        },
+        {
+          "answer": "Parc Monceau",
+          "tier": 5
+        },
+        {
+          "answer": "La Madeleine",
+          "tier": 5,
+          "aliases": [
+            "Église de la Madeleine",
+            "Madeleine"
+          ]
+        },
+        {
+          "answer": "Saint-Eustache",
+          "tier": 5
+        },
+        {
+          "answer": "Musée de Cluny",
+          "tier": 5,
+          "aliases": [
+            "Cluny Museum"
+          ]
+        },
+        {
+          "answer": "Institut du Monde Arabe",
+          "tier": 5,
+          "aliases": [
+            "Arab World Institute"
+          ]
+        },
+        {
+          "answer": "Grand Mosque of Paris",
+          "tier": 5,
+          "aliases": [
+            "Grande Mosquée de Paris"
+          ]
+        },
+        {
+          "answer": "Bois de Boulogne",
+          "tier": 5
+        },
+        {
+          "answer": "Bois de Vincennes",
+          "tier": 5
+        },
+        {
+          "answer": "Moulin de la Galette",
+          "tier": 5
+        },
+        {
+          "answer": "Philharmonie de Paris",
+          "tier": 5
+        }
+      ]
+    }
+  ]
+}

@@ -102,6 +102,8 @@ const MIGRATIONS = [
     PRIMARY KEY (prompt_id, norm)
   );
   `,
+  // v2: prompt language ('en' or 'he'); filled in from the prompt text by the app on start
+  `ALTER TABLE prompts ADD COLUMN lang TEXT NOT NULL DEFAULT 'en';`,
 ];
 
 export function openDb(file) {

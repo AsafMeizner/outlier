@@ -80,7 +80,7 @@ function csvRows(text) {
 }
 
 export function parseCsv(text) {
-  const rows = csvRows(text.replace(/^﻿/, ''));
+  const rows = csvRows(text.replace(/^\uFEFF/, ''));
   if (!rows.length) throw new Error('CSV is empty');
   const head = rows[0].map(h => h.trim().toLowerCase());
   const col = name => head.indexOf(name);

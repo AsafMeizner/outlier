@@ -1,4 +1,4 @@
-// Answer normalisation and matching. Shared by the server, the importer and the bank validator.
+// Answer normalisation and matching (English + Hebrew). Shared by the server, the importer and the bank validator.
 
 export const TIERS = [
   null,
@@ -10,16 +10,24 @@ export const TIERS = [
 ];
 
 const LEADING = /^(the|a|an) /;
+const HE_ARTICLE = /^\u05D4(?=[\u05D0-\u05EA]{3,})/;
+const FINALS = { '\u05DA': '\u05DB', '\u05DD': '\u05DE', '\u05DF': '\u05E0', '\u05E3': '\u05E4', '\u05E5': '\u05E6' };
+const isHebrew = s => /[\u05D0-\u05EA]/.test(s);
 
-/** Lowercase, strip accents, punctuation and a leading article. */
+/** Lowercase; strip accents, niqqud, punctuation and a leading English article; unify Hebrew final letters. */
 export function normalize(input) {
   return String(input ?? '')
     .normalize('NFKD')
-    .replace(/[̀-ͯ]/g, '')
+    .replace(/\u05BE/g, ' ') // maqaf (Hebrew hyphen) separates words
+    .replace(/[\u0300-\u036F\u0591-\u05C7]/g, '') // Latin accents, Hebrew niqqud and cantillation
     .toLowerCase()
     .replace(/&/g, ' and ')
-    .replace(/['’`]/g, '')
-    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/([a-z])\+\+/g, '$1 plus plus') // C++ is not C
+    .replace(/([a-z])#/g, '$1 sharp') // C#, F#
+    .replace(/([a-z0-9])\+(?=\s|$)/g, '$1 plus') // Google+, Disney+
+    .replace(/['’`"\u05F3\u05F4“”]/g, '') // apostrophes, geresh and gershayim join letters
+    .replace(/[\u05DA\u05DD\u05DF\u05E3\u05E5]/g, c => FINALS[c])
+    .replace(/[^a-z0-9\u05D0-\u05EA]+/g, ' ')
     .trim()
     .replace(LEADING, '')
     .trim();
@@ -37,13 +45,29 @@ export function singular(key) {
   return head + s;
 }
 
-/** All lookup keys for a written answer. */
+/** Exact lookup keys for a written answer. */
 export function keysFor(text) {
   const n = normalize(text);
   if (!n) return [];
-  const s = singular(n);
   const compact = n.replace(/ /g, '');
-  return [...new Set([n, s, compact, singular(compact)])];
+  const keys = [n, singular(n), compact, singular(compact)];
+  // Hebrew definite article: "\u05D4\u05E4\u05D9\u05DC" also matches "\u05E4\u05D9\u05DC" (only before 3+ letters, so short words stay intact).
+  if (isHebrew(n)) keys.push(n.replace(HE_ARTICLE, ''), compact.replace(HE_ARTICLE, ''));
+  return [...new Set(keys)];
+}
+
+/**
+ * Loose Hebrew key: drops vav and yod after the first letter of each word (full vs defective spelling)
+ * and a plural ending. Used only as a fallback, and only when exactly one answer has the key.
+ */
+export function looseKey(text) {
+  const n = normalize(text);
+  if (!isHebrew(n)) return null;
+  return n.replace(HE_ARTICLE, '').split(' ').map(w => {
+    // plural endings (im / ot), then a feminine final he, so "sfina" and "sfinot" share a key
+    const x = (w.length > 4 ? w.replace(/(\u05D9\u05DE|\u05D5\u05EA)$/, '') : w).replace(/(?<=..)\u05D4$/, '');
+    return x[0] + x.slice(1).replace(/[\u05D5\u05D9]/g, '');
+  }).join('');
 }
 
 function editDistance(a, b, max) {
@@ -72,7 +96,7 @@ function editDistance(a, b, max) {
  * answers: [{ answer, tier, aliases? }]
  */
 export function buildIndex(answers) {
-  const exact = new Map();
+  const exact = new Map(), loose = new Map();
   const entries = [];
   answers.forEach((a, i) => {
     for (const text of [a.answer, ...(a.aliases || [])]) {
@@ -80,25 +104,29 @@ export function buildIndex(answers) {
         if (!exact.has(k)) exact.set(k, i);
         entries.push([k, i]);
       }
+      const l = looseKey(text);
+      if (l) loose.set(l, loose.has(l) && loose.get(l) !== i ? -1 : i);
     }
   });
-  return { exact, entries };
+  return { exact, loose, entries };
 }
 
 /**
  * Match a guess. Returns { index, fuzzy } or null.
- * Typo tolerance: 1 edit for 6+ letters, 2 edits for 10+, only when one answer is that close.
+ * Order: exact keys, then Hebrew loose spelling, then typo tolerance
+ * (1 edit for 6+ letters, 5+ in Hebrew; 2 edits for 10+), only when exactly one answer is that close.
  */
 export function matchAnswer(index, guess, { typos = true } = {}) {
-  const keys = keysFor(guess);
-  for (const k of keys) if (index.exact.has(k)) return { index: index.exact.get(k), fuzzy: false };
+  for (const k of keysFor(guess)) if (index.exact.has(k)) return { index: index.exact.get(k), fuzzy: false };
+  const l = looseKey(guess);
+  if (l && index.loose?.get(l) >= 0) return { index: index.loose.get(l), fuzzy: false };
   if (!typos) return null;
   const k = singular(normalize(guess));
-  if (k.length < 6) return null;
+  if (k.length < (isHebrew(k) ? 5 : 6)) return null;
   const max = k.length >= 10 ? 2 : 1;
   let best = null, bestD = max + 1, tie = false;
   for (const [key, i] of index.entries) {
-    if (key.length < 5) continue;
+    if (key.length < 4) continue;
     const d = editDistance(k, key, max);
     if (d < bestD) { bestD = d; best = i; tie = false; }
     else if (d === bestD && i !== best) tie = true;

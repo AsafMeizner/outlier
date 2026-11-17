@@ -53,9 +53,11 @@ function importStarterBank() {
   const dir = join(ROOT, 'bank', 'packs');
   if (!existsSync(dir)) return;
   for (const f of readdirSync(dir).filter(f => /\.(json|txt|csv)$/i.test(f)).sort()) {
-    const r = app.importPack(readFileSync(join(dir, f), 'utf8'), f);
-    log(`Imported starter pack ${f}: ${r.added} prompts${r.errors.length ? `, ${r.errors.length} errors` : ''}`);
-    for (const e of r.errors) log(`  ${e}`);
+    try {
+      const r = app.importPack(readFileSync(join(dir, f), 'utf8'), f);
+      log(`Imported starter pack ${f}: ${r.added} prompts${r.errors.length ? `, ${r.errors.length} errors` : ''}`);
+      for (const e of r.errors) log(`  ${e}`);
+    } catch (e) { log(`Skipped starter pack ${f}: ${e.message}`); }
   }
 }
 

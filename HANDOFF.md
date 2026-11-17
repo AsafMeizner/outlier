@@ -4,24 +4,31 @@ Started 2026-11-17. User asked for an air-gapped zip of "OpenKrillion" with a ne
 add/select, users, admin panel, leaderboard, streaks, archives.
 
 ## Decisions (already made, don't re-litigate)
-- NOT extending OpenKrillion (it is a deliberate recreation of krillion.io). Building an ORIGINAL game in the same
-  genre: "Outlier". Own name, tiers (Mainstream 10 / Familiar 25 / Uncommon 50 / Rare 75 / Outlier 100), own
-  scatter-plot "crowd" look. No krillion assets/names/prompts.
-- Zero npm dependencies: plain Node 24 + built-in `node:sqlite`. Portable Node for win-x64 and linux-x64 bundled
-  in the zip (`vendor-dl/` holds the verified downloads, v24.22.3).
-- Default 6 prompts/day, 30 s each (admin-configurable). Server-authoritative timing.
-- First-run admin: server prints a one-time /setup token URL to the console.
+- NOT extending OpenKrillion (deliberate recreation of krillion.io). ORIGINAL game in the same genre: "Outlier".
+  No krillion / Wazari assets, names, prompts or look.
+- 2026-11-17 user feedback: "I want cool UI like krillion or the Hebrew version Wazari, the UI animations/art is
+  super important". User picked (AskUserQuestion):
+  - THEME: **office-chair launch** — an office worker on a rolling chair is launched out of the office; rarer
+    answer = bigger launch (office -> parking lot -> city -> hills/sea -> sky/orbit). Distance shown in metres
+    (display = points x 10). Code-drawn canvas art, parallax, particles, WebAudio synth sounds, screen shake.
+  - LANGUAGE: **both, switchable** — UI in English + Hebrew (RTL), per-user toggle. Prompts carry a `lang`;
+    setting `puzzleLanguage` = en | he | alternate. Add a Hebrew starter pack alongside the English one.
+- Zero npm dependencies: Node 24 + built-in `node:sqlite`. Portable Node win-x64 + linux-x64 in the zip
+  (`vendor-dl/`, v24.22.3, checksums verified). Only the bare node binary is shipped.
+- Default 6 prompts/day, 30 s each. Server-authoritative timing. First-run admin via /setup token printed in console.
 
-## Layout
-- `src/match.mjs` normalise/match (plurals, accents, aliases, typo tolerance) — DONE, smoke-tested
-- `src/packs.mjs` JSON / TXT / CSV pack parse+export — DONE, smoke-tested
-- `tools/validate-bank.mjs` pack validator — DONE
-- `bank/packs/*.json` 6 packs x 30 prompts written by subagents (food-home, geo-travel, science-nature,
-  pop-culture, sports-hobbies, work-tech-history)
-- `src/server.mjs`, `src/db.mjs`, `src/game.mjs`, `src/auth.mjs` — server (TODO)
-- `public/` vanilla SPA, no external requests (TODO)
-- `tools/build-zip.mjs` bundle builder (TODO)
+## State
+- DONE + tested (8/8 node tests): server (`src/app.mjs`, `db.mjs`, `server.mjs`, `auth.mjs`, `time.mjs`), matching
+  (`match.mjs`, incl. C++/C#), pack formats (`packs.mjs`), validator (`tools/validate-bank.mjs`).
+- DONE: first UI (graph-paper/scatter-plot look) in `public/` — being REPLACED by the office-chair launch skin.
+  Admin panel UI (`public/admin.js`) stays, gets i18n.
+- English bank: 5 of 6 packs done (food-home, geo-travel, science-nature, sports-hobbies, work-tech-history;
+  pop-culture writer still running). 150+ prompts, 11k+ answers, validator clean.
+- Gotcha: when writing files, `\uXXXX` escapes got turned into literal characters. Check with grep after writing.
+- UI walkthrough script: `%TEMP%\outlier-pw\walk.js` (Playwright 1.49.1 in that folder, blocks non-local requests).
 
-## Next step
-Write the server + DB schema, then UI, then tests, then air-gap test (WSL `unshare -rn` + Playwright blocking
-non-localhost requests), then zip.
+## Next steps
+1. Hebrew support in match.mjs (letters, final forms, niqqud, matres lectionis skeleton) + prompts.lang migration.
+2. Launch Hebrew pack writers (bank/packs/he-*.json).
+3. i18n + RTL UI; launch-scene engine (`public/scene.js`); new play/home/results screens.
+4. Re-run walkthrough, air-gap test (WSL `unshare -rn`), build zip (`tools/build-zip.py`).

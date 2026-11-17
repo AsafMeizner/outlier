@@ -32,7 +32,11 @@ export const DEFAULT_SETTINGS = {
   inviteCode: '',
   typoTolerance: true,
   archivePlay: true,
+  puzzleLanguage: 'alternate',
 };
+
+/** 'he' when the text contains Hebrew letters, otherwise 'en'. */
+export const langOf = text => /[\u05D0-\u05EA]/.test(String(text)) ? 'he' : 'en';
 
 const shuffle = (a, rnd) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const str = (v, max, name) => {
@@ -67,6 +71,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
         case 'dayStartHour': num(k, 0, 23); break;
         case 'weekStart': num(k, 0, 6); break;
         case 'timeZone': if (!validTimeZone(patch[k])) bad('Unknown time zone'); out[k] = patch[k]; break;
+        case 'puzzleLanguage': if (!['en', 'he', 'alternate', 'any'].includes(patch[k])) bad('puzzleLanguage must be en, he, alternate or any'); out[k] = patch[k]; break;
         case 'registration': if (!['open', 'code', 'closed'].includes(patch[k])) bad('registration must be open, code or closed'); out[k] = patch[k]; break;
         case 'activeWeekdays': {
           const v = patch[k];
@@ -84,8 +89,10 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   const today = () => { const s = settings(); return gameDate(now(), s.timeZone, s.dayStartHour); };
   const publicSettings = () => {
     const s = settings();
-    return { siteName: s.siteName, tagline: s.tagline, roundSeconds: s.roundSeconds, promptsPerDay: s.promptsPerDay, registration: s.registration, archivePlay: s.archivePlay, weekStart: s.weekStart, tiers: TIERS.slice(1) };
+    return { puzzleLanguage: s.puzzleLanguage, siteName: s.siteName, tagline: s.tagline, roundSeconds: s.roundSeconds, promptsPerDay: s.promptsPerDay, registration: s.registration, archivePlay: s.archivePlay, weekStart: s.weekStart, tiers: TIERS.slice(1) };
   };
+
+  for (const p of db.all("SELECT id, text FROM prompts WHERE lang='en'")) if (langOf(p.text) === 'he') db.run("UPDATE prompts SET lang='he' WHERE id=?", p.id);
 
   // ---------- setup token ----------
   let setupToken = null;
@@ -143,15 +150,16 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   // ---------- schedule ----------
   function dayRow(date) { return db.get('SELECT * FROM days WHERE date=?', date); }
   function dayPrompts(date) {
-    return db.all('SELECT dp.position, p.id, p.text, p.category FROM day_prompts dp JOIN prompts p ON p.id=dp.prompt_id WHERE dp.date=? ORDER BY dp.position', date);
+    return db.all('SELECT dp.position, p.id, p.text, p.category, p.lang FROM day_prompts dp JOIN prompts p ON p.id=dp.prompt_id WHERE dp.date=? ORDER BY dp.position', date);
   }
   /** Pick n prompts: least-used first, random within ties, different categories where possible. */
-  function pickPrompts(n, exclude = []) {
+  function pickPrompts(n, exclude = [], lang = null) {
     const ex = new Set(exclude);
-    const pool = db.all(`SELECT p.id, p.text, p.category, COUNT(dp.prompt_id) AS used
+    let pool = db.all(`SELECT p.id, p.text, p.category, p.lang, COUNT(dp.prompt_id) AS used
       FROM prompts p LEFT JOIN day_prompts dp ON dp.prompt_id=p.id
       WHERE p.retired=0 AND EXISTS (SELECT 1 FROM answers a WHERE a.prompt_id=p.id)
       GROUP BY p.id`).filter(p => !ex.has(p.id));
+    if (lang) { const same = pool.filter(p => p.lang === lang); if (same.length >= n) pool = same; }
     shuffle(pool, random).sort((a, b) => a.used - b.used);
     const picked = [], cats = new Set();
     for (const p of pool) { if (picked.length >= n) break; if (!cats.has(p.category)) { picked.push(p); cats.add(p.category); } }
@@ -165,8 +173,15 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
       promptIds.forEach((id, i) => db.run('INSERT INTO day_prompts(date,position,prompt_id) VALUES(?,?,?)', date, i, id));
     });
   }
+  /** Which language a new day should use. 'alternate' flips each scheduled day, starting with English. */
+  function langForDate(date) {
+    const pl = settings().puzzleLanguage;
+    if (pl === 'en' || pl === 'he') return pl;
+    if (pl === 'any') return null;
+    return db.get('SELECT COUNT(*) AS n FROM days WHERE date<?', date).n % 2 === 0 ? 'en' : 'he';
+  }
   function autoCreate(date) {
-    const picked = pickPrompts(settings().promptsPerDay);
+    const picked = pickPrompts(settings().promptsPerDay, [], langForDate(date));
     if (!picked.length) return false;
     setDay(date, picked.map(p => p.id), true);
     log(`Scheduled ${date} automatically: ${picked.map(p => p.id).join(', ')}`);
@@ -213,9 +228,9 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     };
     if (run.round_started_at && !run.finished_at) {
       const p = prompts[run.position];
-      state.current = { position: run.position, text: p.text, category: p.category, startedAt: run.round_started_at, deadline: run.round_started_at + s.roundSeconds * 1000 };
+      state.current = { position: run.position, text: p.text, category: p.category, lang: p.lang, startedAt: run.round_started_at, deadline: run.round_started_at + s.roundSeconds * 1000 };
     } else if (!run.finished_at) {
-      state.upNext = { position: run.position, category: prompts[run.position].category };
+      state.upNext = { position: run.position, category: prompts[run.position].category, lang: prompts[run.position].lang };
     }
     return state;
   }
@@ -251,7 +266,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
         const mr = myRounds.find(r => r.position === p.position);
         const { answers } = promptAnswers(p.id);
         return {
-          position: p.position, text: p.text, category: p.category, missed,
+          position: p.position, text: p.text, category: p.category, lang: p.lang, missed,
           mine: mr ? { answer: mr.answer_text, raw: mr.raw, tier: mr.tier, points: mr.points, outcome: mr.outcome, same: mr.answer_id ? (counts.get(mr.answer_id) || 1) - 1 : 0 } : null,
           answers: answers.map(a => ({ answer: a.answer, tier: a.tier, count: counts.get(a.id) || 0 }))
             .sort((x, y) => y.count - x.count || x.tier - y.tier || x.answer.localeCompare(y.answer)),
@@ -397,10 +412,10 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
       const dupe = db.get('SELECT id FROM prompts WHERE text=? COLLATE NOCASE', input.text);
       if (dupe && dupe.id !== id) bad('A prompt with that text already exists', 409);
       if (id == null) {
-        id = Number(db.run('INSERT INTO prompts(text,category,pack,created_at,updated_at) VALUES(?,?,?,?,?)', input.text, input.category, pack, t, t).lastInsertRowid);
+        id = Number(db.run('INSERT INTO prompts(text,category,pack,lang,created_at,updated_at) VALUES(?,?,?,?,?,?)', input.text, input.category, pack, langOf(input.text), t, t).lastInsertRowid);
       } else {
         if (!db.get('SELECT 1 AS x FROM prompts WHERE id=?', id)) bad('Prompt not found', 404);
-        db.run('UPDATE prompts SET text=?, category=?, updated_at=? WHERE id=?', input.text, input.category, t, id);
+        db.run('UPDATE prompts SET text=?, category=?, lang=?, updated_at=? WHERE id=?', input.text, input.category, langOf(input.text), t, id);
       }
       const existing = new Set(db.all('SELECT id FROM answers WHERE prompt_id=?', id).map(r => r.id));
       const keep = new Set();
@@ -419,7 +434,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   function promptFull(id) {
     const p = db.get('SELECT * FROM prompts WHERE id=?', id);
     if (!p) bad('Prompt not found', 404);
-    return { id: p.id, text: p.text, category: p.category, pack: p.pack, retired: !!p.retired,
+    return { id: p.id, text: p.text, category: p.category, pack: p.pack, lang: p.lang, retired: !!p.retired,
       used: db.all('SELECT date FROM day_prompts WHERE prompt_id=? ORDER BY date', id).map(r => r.date),
       answers: promptAnswers(id).answers.map(a => ({ id: a.id, answer: a.answer, tier: a.tier, aliases: a.aliases })) };
   }
@@ -599,7 +614,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     };
   });
   route('GET', '/api/admin/prompts', 'admin', () => ({
-    prompts: db.all(`SELECT p.id, p.text, p.category, p.pack, p.retired,
+    prompts: db.all(`SELECT p.id, p.text, p.category, p.pack, p.lang, p.retired,
         (SELECT COUNT(*) FROM answers a WHERE a.prompt_id=p.id) AS answers,
         (SELECT COUNT(*) FROM day_prompts dp WHERE dp.prompt_id=p.id) AS used,
         (SELECT MAX(date) FROM day_prompts dp WHERE dp.prompt_id=p.id) AS lastUsed
@@ -631,7 +646,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     const ids = db.all(`SELECT id FROM prompts ${query.get('all') === '1' ? '' : 'WHERE retired=0'} ORDER BY category, id`).map(r => r.id);
     const prompts = ids.map(id => { const p = promptFull(id); return { text: p.text, category: p.category, answers: p.answers.map(({ answer, tier, aliases }) => ({ answer, tier, ...(aliases.length ? { aliases } : {}) })) }; });
     const fmt = query.get('format') || 'json', stamp = today();
-    if (fmt === 'csv') return { $file: { name: `outlier-bank-${stamp}.csv`, type: 'text/csv; charset=utf-8', data: '﻿' + toCsv(prompts) } };
+    if (fmt === 'csv') return { $file: { name: `outlier-bank-${stamp}.csv`, type: 'text/csv; charset=utf-8', data: '\uFEFF' + toCsv(prompts) } };
     if (fmt === 'txt') return { $file: { name: `outlier-bank-${stamp}.txt`, type: 'text/plain; charset=utf-8', data: toText(prompts, `${settings().siteName} bank ${stamp}`) } };
     return { $file: { name: `outlier-bank-${stamp}.json`, type: 'application/json', data: JSON.stringify({ title: `${settings().siteName} bank ${stamp}`, prompts }, null, 1) } };
   });
@@ -648,7 +663,8 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   });
   route('GET', '/api/admin/schedule/suggest', 'admin', ({ query }) => {
     const exclude = (query.get('exclude') || '').split(',').map(Number).filter(Boolean);
-    return { prompts: pickPrompts(Number(query.get('n')) || settings().promptsPerDay, exclude) };
+    const lang = ['en', 'he'].includes(query.get('lang')) ? query.get('lang') : isDate(query.get('date')) ? langForDate(query.get('date')) : null;
+    return { lang, prompts: pickPrompts(Number(query.get('n')) || settings().promptsPerDay, exclude, lang) };
   });
   route('PUT', '/api/admin/schedule/(\\d{4}-\\d{2}-\\d{2})', 'admin', ({ m, body }) => {
     const date = m[1];

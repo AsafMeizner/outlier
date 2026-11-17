@@ -92,6 +92,11 @@ test('matching handles plurals, accents, articles, aliases and typos', () => {
   assert.deepEqual(matchAnswer(ix, 'strawbery'), { index: 0, fuzzy: true });
   assert.equal(matchAnswer(ix, 'strawbery', { typos: false }), null);
   assert.equal(matchAnswer(ix, 'berry'), null);
+  const langs = buildIndex([{ answer: 'C', tier: 2 }, { answer: 'C plus plus', tier: 1, aliases: ['CPP'] }, { answer: 'C sharp', tier: 1 }, { answer: 'F sharp', tier: 4 }]);
+  assert.equal(matchAnswer(langs, 'C++').index, 1, 'C++ is not C');
+  assert.equal(matchAnswer(langs, 'c#').index, 2);
+  assert.equal(matchAnswer(langs, 'F#').index, 3);
+  assert.equal(matchAnswer(langs, 'c').index, 0);
 });
 
 test('pack formats round-trip', () => {
