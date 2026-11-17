@@ -1,6 +1,7 @@
 // The JSON API contract, shared by the server (what it returns) and the web client (what it expects).
 import type { Tier, TierId } from './tiers.ts';
-import type { Catalog, Look, UnlockStats, WardrobeItem } from './wardrobe.ts';
+import type { ThemeId } from './themes.ts';
+import type { Look, UnlockStats, WardrobeItem } from './wardrobe.ts';
 
 export type Role = 'player' | 'admin';
 export type Lang = 'en' | 'he';
@@ -26,8 +27,10 @@ export interface Settings {
   typoTolerance: boolean;
   archivePlay: boolean;
   puzzleLanguage: PuzzleLanguage;
+  /** Visual theme for everyone (world art, hero, wardrobe, UI colours). */
+  theme: ThemeId;
 }
-export type PublicSettings = Pick<Settings, 'puzzleLanguage' | 'siteName' | 'tagline' | 'roundSeconds' | 'promptsPerDay' | 'registration' | 'archivePlay' | 'weekStart'> & { tiers: readonly Tier[] };
+export type PublicSettings = Pick<Settings, 'theme' | 'puzzleLanguage' | 'siteName' | 'tagline' | 'roundSeconds' | 'promptsPerDay' | 'registration' | 'archivePlay' | 'weekStart'> & { tiers: readonly Tier[] };
 
 export interface ErrorResponse { error: string }
 export interface OkResponse { ok: true }
@@ -137,8 +140,8 @@ export interface StatsResponse {
 }
 
 // ---------- wardrobe ----------
-export type CatalogWithUnlocks = Record<keyof Catalog, Array<WardrobeItem & { unlocked: boolean }>>;
-export interface WardrobeResponse { catalog: CatalogWithUnlocks; stats: UnlockStats; look: Look }
+export type CatalogWithUnlocks = Record<string, Array<WardrobeItem & { unlocked: boolean }>>;
+export interface WardrobeResponse { theme: ThemeId; slots: string[]; colorSlots: string[]; catalog: CatalogWithUnlocks; stats: UnlockStats; look: Look }
 export interface WardrobeSaveRequest { look: Partial<Look> }
 export interface LookResponse { look: Look }
 

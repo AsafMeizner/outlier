@@ -2,8 +2,9 @@
 import { useState } from 'react';
 import type { LeaderboardPeriod, LeaderboardResponse, PlayerRef } from '../../../shared/api.ts';
 import { useUser } from '../app/guards.tsx';
+import { useDistance } from '../app/stage-context.tsx';
 import { useI18n, type AnyKey } from '../i18n/index.tsx';
-import { fmtDate, fmtDistance, fmtNumber, fmtSeconds } from '../lib/format.ts';
+import { fmtDate, fmtNumber, fmtSeconds } from '../lib/format.ts';
 import { useLeaderboard } from '../lib/queries.ts';
 import { Avatar } from '../ui/Avatar.tsx';
 import { ErrorNote, Loading } from '../ui/Status.tsx';
@@ -33,8 +34,8 @@ export function Leaderboard() {
 
 function Board({ data }: { data: LeaderboardResponse }) {
   const { t, locale } = useI18n();
+  const dist = useDistance();
   const { user } = useUser();
-  const unit = t('common.metres');
   const range = 'from' in data ? <p className="faint lb-range">{t('common.range', { a: fmtDate(locale, data.from), b: fmtDate(locale, data.to) })}</p> : null;
 
   if (!data.rows.length) return <><p className="empty">{data.period === 'teams' ? t('lb.noTeams') : t('lb.empty')}</p>{range}</>;
@@ -48,7 +49,7 @@ function Board({ data }: { data: LeaderboardResponse }) {
             <thead><tr><th>#</th><th>{t('lb.team')}</th><th className="n">{t('lb.players')}</th><th className="n">{t('lb.games')}</th><th className="n">{t('lb.perGame')}</th><th className="n">{t('lb.distance')}</th></tr></thead>
             <tbody>
               {data.rows.map((r, i) => (
-                <tr key={r.team}><td className="rank">{i + 1}</td><td>{r.team}</td><td className="n">{r.players}</td><td className="n">{r.games}</td><td className="n">{fmtDistance(locale, Math.round(r.avg), unit)}</td><td className="n">{fmtDistance(locale, r.points, unit)}</td></tr>
+                <tr key={r.team}><td className="rank">{i + 1}</td><td>{r.team}</td><td className="n">{r.players}</td><td className="n">{r.games}</td><td className="n">{dist(Math.round(r.avg))}</td><td className="n">{dist(r.points)}</td></tr>
               ))}
             </tbody>
           </table>
@@ -75,14 +76,14 @@ function Board({ data }: { data: LeaderboardResponse }) {
     case 'day':
       return (
         <>
-          <Podium rows={data.rows} value={r => fmtDistance(locale, r.score, unit)} />
+          <Podium rows={data.rows} value={r => dist(r.score)} />
           <table className="table">
             <thead><tr><th>#</th><th>{t('lb.player')}</th><th className="n">{t('lb.moon')}</th><th className="n">{t('lb.time')}</th><th className="n">{t('lb.distance')}</th></tr></thead>
             <tbody>
               {data.rows.map((r, i) => (
                 <tr key={r.userId} className={r.userId === user.id ? 'me' : undefined}>
                   <td className="rank">{i + 1}</td><td><Who p={r} /></td><td className="n">{r.outliers || ''}</td>
-                  <td className="n">{t('common.seconds', { n: fmtSeconds(r.ms) })}</td><td className="n strong">{fmtDistance(locale, r.score, unit)}</td>
+                  <td className="n">{t('common.seconds', { n: fmtSeconds(r.ms) })}</td><td className="n strong">{dist(r.score)}</td>
                 </tr>
               ))}
             </tbody>
@@ -93,14 +94,14 @@ function Board({ data }: { data: LeaderboardResponse }) {
       return (
         <>
           {range}
-          <Podium rows={data.rows} value={r => fmtDistance(locale, r.points, unit)} />
+          <Podium rows={data.rows} value={r => dist(r.points)} />
           <table className="table">
             <thead><tr><th>#</th><th>{t('lb.player')}</th><th className="n">{t('lb.days')}</th><th className="n">{t('lb.average')}</th><th className="n">{t('lb.best')}</th><th className="n">{t('lb.distance')}</th></tr></thead>
             <tbody>
               {data.rows.map((r, i) => (
                 <tr key={r.userId} className={r.userId === user.id ? 'me' : undefined}>
                   <td className="rank">{i + 1}</td><td><Who p={r} /></td><td className="n">{fmtNumber(locale, r.games)}</td>
-                  <td className="n">{fmtDistance(locale, Math.round(r.avg), unit)}</td><td className="n">{fmtDistance(locale, r.best, unit)}</td><td className="n strong">{fmtDistance(locale, r.points, unit)}</td>
+                  <td className="n">{dist(Math.round(r.avg))}</td><td className="n">{dist(r.best)}</td><td className="n strong">{dist(r.points)}</td>
                 </tr>
               ))}
             </tbody>

@@ -1,5 +1,5 @@
 // The stage every player screen sits on: the full-screen scene, the corner HUD and the menu.
-import { useEffect, useState, type ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { Link, Outlet, useLocation } from 'react-router';
 import { defaultLook } from '../../../shared/wardrobe.ts';
 import { useI18n } from '../i18n/index.tsx';
@@ -7,38 +7,40 @@ import { useMe } from '../lib/queries.ts';
 import { PixelIcon } from '../ui/PixelIcon.tsx';
 import { ErrorNote, Loading } from '../ui/Status.tsx';
 import { Menu } from './Menu.tsx';
-import { SceneProvider, useScene } from './scene-context.tsx';
+import { StageProvider, useStage } from './stage-context.tsx';
+import { DEFAULT_THEME } from '../../../shared/themes.ts';
 import './shell.css';
 
-const GUEST_LOOK = defaultLook('guest');
+const GUEST_LOOK = defaultLook(DEFAULT_THEME, 'guest');
 
 export function Shell() {
   const me = useMe();
   const { dir } = useI18n();
   const look = me.data?.user?.look ?? GUEST_LOOK;
   return (
-    <SceneProvider look={look} rtl={dir === 'rtl'}>
-      <Stage>
+    <StageProvider themeId={me.data?.settings.theme} look={look} rtl={dir === 'rtl'}>
+      <Frame>
         {me.isPending ? <Loading /> : me.isError ? <ErrorNote error={me.error} onRetry={() => void me.refetch()} /> : <Outlet />}
-      </Stage>
-    </SceneProvider>
+      </Frame>
+    </StageProvider>
   );
 }
 
-function Stage({ children }: { children: ReactNode }) {
-  const scene = useScene();
+function Frame({ children }: { children: ReactNode }) {
+  const { attach, muted, setMuted } = useStage();
   const { t, lang, setLang } = useI18n();
   const me = useMe();
   const user = me.data?.user ?? null;
-  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const playing = location.pathname.startsWith('/play');
-
-  useEffect(() => setMenuOpen(false), [location.pathname]);
+  // The menu belongs to the page it was opened on, so navigating anywhere closes it.
+  const [menuAt, setMenuAt] = useState<string | null>(null);
+  const menuOpen = menuAt === location.pathname;
+  const setMenuOpen = (open: boolean): void => setMenuAt(open ? location.pathname : null);
 
   return (
     <div className="stage">
-      <canvas ref={scene.attach} className="stage-scene" aria-hidden="true" />
+      <canvas ref={attach} className="stage-scene" aria-hidden="true" />
       <header className="hud">
         <Link to="/" className="hud-brand" aria-label={t('nav.home')}>
           <span className="hud-logo" aria-hidden="true">
@@ -47,8 +49,8 @@ function Stage({ children }: { children: ReactNode }) {
           <span className="hud-word">{me.data?.settings.siteName ?? 'Outlier'}</span>
         </Link>
         <nav className="hud-tools" aria-label={t('nav.menu')}>
-          <button type="button" className="px-iconbtn" onClick={() => scene.setMuted(!scene.muted)} aria-label={scene.muted ? t('nav.soundOff') : t('nav.soundOn')} title={t('nav.sound')}>
-            <PixelIcon name={scene.muted ? 'mute' : 'sound'} />
+          <button type="button" className="px-iconbtn" onClick={() => setMuted(!muted)} aria-label={muted ? t('nav.soundOff') : t('nav.soundOn')} title={t('nav.sound')}>
+            <PixelIcon name={muted ? 'mute' : 'sound'} />
           </button>
           <button type="button" className="px-iconbtn hud-lang" onClick={() => setLang(lang === 'he' ? 'en' : 'he')} title={t('nav.language')} lang={lang === 'he' ? 'en' : 'he'}>
             {t('nav.languageName')}
@@ -64,7 +66,7 @@ function Stage({ children }: { children: ReactNode }) {
             </>
           ) : null}
           {user ? (
-            <button type="button" className="px-iconbtn px-iconbtn--sun" onClick={() => setMenuOpen(o => !o)} aria-expanded={menuOpen} aria-label={t('nav.menu')}>
+            <button type="button" className="px-iconbtn px-iconbtn--sun" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-label={t('nav.menu')}>
               <PixelIcon name={menuOpen ? 'close' : 'menu'} />
             </button>
           ) : null}

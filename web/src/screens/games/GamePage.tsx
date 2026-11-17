@@ -4,10 +4,11 @@ import { Link, useNavigate, useParams } from 'react-router';
 import { useQueryClient } from '@tanstack/react-query';
 import type { GameInfo, MissRow, SavePromptResponse, SlugResponse } from '../../../../shared/api.ts';
 import { TIERS } from '../../../../shared/tiers.ts';
+import { useDistance } from '../../app/stage-context.tsx';
 import { useI18n, type AnyKey } from '../../i18n/index.tsx';
 import { api } from '../../lib/api.ts';
 import { copyText } from '../../lib/clipboard.ts';
-import { fmtDistance, fmtSeconds } from '../../lib/format.ts';
+import { fmtSeconds } from '../../lib/format.ts';
 import { keys, useGame, useGameMisses } from '../../lib/queries.ts';
 import { PixelIcon } from '../../ui/PixelIcon.tsx';
 import { ErrorNote, Loading } from '../../ui/Status.tsx';
@@ -29,12 +30,12 @@ export function GamePage() {
 }
 
 function GameBody({ g }: { g: GameInfo }) {
-  const { t, locale, server } = useI18n();
+  const { t, server } = useI18n();
+  const dist = useDistance();
   const toast = useToast();
   const qc = useQueryClient();
   const navigate = useNavigate();
   const link = `${window.location.origin}/g/${g.slug}`;
-  const unit = t('common.metres');
 
   const share = async (): Promise<void> => {
     const ok = await copyText(link);
@@ -76,7 +77,7 @@ function GameBody({ g }: { g: GameInfo }) {
       <div className="row gamepage-actions">
         {g.myRun?.finished ? (
           <>
-            <span className="px-chip px-chip--sun num">{fmtDistance(locale, g.myRun.score, unit)}</span>
+            <span className="px-chip px-chip--sun num">{dist(g.myRun.score)}</span>
             <Link to={`/results/g-${g.slug}`} className="px-btn">{t('games.again')}</Link>
           </>
         ) : (
@@ -102,7 +103,7 @@ function GameBody({ g }: { g: GameInfo }) {
                 <td className="rank">{i + 1}</td>
                 <td><Who p={r} /></td>
                 <td className="n">{t('common.seconds', { n: fmtSeconds(r.ms) })}</td>
-                <td className="n strong">{fmtDistance(locale, r.score, unit)}</td>
+                <td className="n strong">{dist(r.score)}</td>
               </tr>
             ))}
           </tbody>

@@ -1,7 +1,4 @@
-// Display helpers. Points are shown as metres flown (1 point = 10 m).
-import { METERS_PER_POINT } from '../../../shared/tiers.ts';
-
-export const metresOf = (points: number): number => points * METERS_PER_POINT;
+// Display helpers. Distances (points shown in the theme's unit) come from useDistance() in app/stage-context.tsx.
 
 const numberFormats = new Map<string, Intl.NumberFormat>();
 export function fmtNumber(locale: string, n: number): string {
@@ -9,9 +6,6 @@ export function fmtNumber(locale: string, n: number): string {
   if (!f) { f = new Intl.NumberFormat(locale, { maximumFractionDigits: 0 }); numberFormats.set(locale, f); }
   return f.format(n);
 }
-
-/** "1,250 m" for a number of points. */
-export const fmtDistance = (locale: string, points: number, unit: string): string => unit.replace('{n}', fmtNumber(locale, metresOf(points)));
 
 /** A YYYY-MM-DD date as a short weekday + date in the given locale (dates are calendar days, so format in UTC). */
 export function fmtDate(locale: string, ymd: string, opts: Intl.DateTimeFormatOptions = { weekday: 'short', day: 'numeric', month: 'short' }): string {

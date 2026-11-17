@@ -5,9 +5,10 @@ import { useQueryClient } from '@tanstack/react-query';
 import type { AuthResponse, StatsResponse } from '../../../shared/api.ts';
 import { TIERS } from '../../../shared/tiers.ts';
 import { useUser } from '../app/guards.tsx';
+import { useDistance } from '../app/stage-context.tsx';
 import { useI18n, type AnyKey } from '../i18n/index.tsx';
 import { api } from '../lib/api.ts';
-import { fmtDate, fmtDistance, fmtNumber } from '../lib/format.ts';
+import { fmtDate, fmtNumber } from '../lib/format.ts';
 import { keys, useStats } from '../lib/queries.ts';
 import { Avatar } from '../ui/Avatar.tsx';
 import { ErrorNote, Loading } from '../ui/Status.tsx';
@@ -29,16 +30,16 @@ export function Stats() {
 
 function StatsBody({ s }: { s: StatsResponse }) {
   const { t, locale } = useI18n();
-  const unit = t('common.metres');
+  const dist = useDistance();
   const rounds = TIERS.reduce((n, x) => n + (s.tiers[x.name] ?? 0), 0) + (s.tiers['missed'] ?? 0);
   const peak = Math.max(1, ...TIERS.map(x => s.tiers[x.name] ?? 0));
   return (
     <>
       <dl className="tiles">
         <Tile label={t('stats.days')} value={fmtNumber(locale, s.games)} />
-        <Tile label={t('stats.total')} value={fmtDistance(locale, s.points, unit)} />
-        <Tile label={t('stats.average')} value={fmtDistance(locale, Math.round(s.avg), unit)} />
-        <Tile label={t('stats.best')} value={fmtDistance(locale, s.bestScore, unit)} />
+        <Tile label={t('stats.total')} value={dist(s.points)} />
+        <Tile label={t('stats.average')} value={dist(Math.round(s.avg))} />
+        <Tile label={t('stats.best')} value={dist(s.bestScore)} />
         <Tile label={t('stats.streak')} value={fmtNumber(locale, s.streak.current)} hot={s.streak.playedToday} />
         <Tile label={t('stats.bestStreak')} value={fmtNumber(locale, s.streak.best)} />
       </dl>
@@ -72,7 +73,7 @@ function StatsBody({ s }: { s: StatsResponse }) {
                   <td>{fmtDate(locale, h.date)}</td>
                   <td className="faint">{h.mode === 'live' ? '' : t(h.mode === 'archive' ? 'common.archive' : 'common.custom')}</td>
                   <td className="n">{h.finished ? (h.mode === 'live' ? t('stats.rank', { a: h.rank, b: h.players }) : '') : t('stats.unfinished')}</td>
-                  <td className="n strong">{fmtDistance(locale, h.score, unit)}</td>
+                  <td className="n strong">{dist(h.score)}</td>
                   <td className="n"><Link to={`/results/${h.date}`}>{t('archive.results')}</Link></td>
                 </tr>
               ))}

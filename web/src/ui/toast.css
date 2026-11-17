@@ -12,8 +12,8 @@
 }
 .toast {
   padding: calc(var(--u) * 2) calc(var(--u) * 4);
-  background: var(--paper);
-  color: var(--paper-ink);
+  background: var(--panel);
+  color: var(--text);
   font-weight: 700;
   text-align: center;
   box-shadow: 0 calc(var(--u) * -1) 0 0 var(--ink), 0 var(--u) 0 0 var(--ink), calc(var(--u) * -1) 0 0 0 var(--ink), var(--u) 0 0 0 var(--ink),

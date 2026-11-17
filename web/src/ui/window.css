@@ -35,10 +35,10 @@
   border: 0;
   padding: 0;
   background: var(--ink);
-  color: var(--sun);
+  color: var(--highlight);
   cursor: pointer;
 }
-.win-close:hover { background: var(--cta); color: #fff; }
+.win-close:hover { background: var(--accent); color: #fff; }
 .win-close:focus-visible { outline: var(--u) solid var(--ink); outline-offset: 2px; }
 .win-body {
   overflow: auto;
@@ -52,9 +52,9 @@
   gap: calc(var(--u) * 3);
   justify-content: flex-end;
   padding: calc(var(--u) * 4) calc(var(--u) * 5) calc(var(--u) * 5);
-  border-top: var(--u) solid var(--navy-d);
+  border-top: var(--u) solid var(--panel-2);
 }
-.px-window--paper .win-footer { border-top-color: var(--paper-2); }
+.px-window--paper .win-footer { border-top-color: var(--panel-lo); }
 
 @keyframes win-fade { from { opacity: 0; } }
 

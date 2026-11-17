@@ -347,29 +347,38 @@ test('admin: schedule, questions, misses and retro-award, backup', async () => {
   assert.equal(backup.subarray(0, 15).toString(), 'SQLite format 3');
 });
 
-test('wardrobe: free items equip, locked items refuse, unlocks follow play', async () => {
+test('wardrobe: free items equip, locked items refuse, unlocks follow play; looks are per theme', async () => {
   const t = await withAdmin(setup());
   await addPlayer(t, 'alice');
   let w = await t.ok<Api.WardrobeResponse>('alice', 'GET', '/api/wardrobe');
-  assert.equal(must(w.catalog.hat.find(i => i.id === 'cap')).unlocked, true);
-  assert.equal(must(w.catalog.hat.find(i => i.id === 'party')).unlocked, false);
-  await t.ok<Api.WardrobeResponse>('alice', 'POST', '/api/wardrobe', { look: { hat: 'cap', skin: 's3', hairStyle: 'bun' } });
-  assert.equal((await t.call('alice', 'POST', '/api/wardrobe', { look: { hat: 'party' } })).status, 400, 'party hat needs an Outlier answer');
-  assert.equal((await t.call('alice', 'POST', '/api/wardrobe', { look: { hat: 'nonsense' } })).status, 400);
+  assert.equal(w.theme, 'space');
+  assert.deepEqual(w.slots, ['hull', 'stripe', 'nose', 'fins', 'window', 'pilot', 'trail']);
+  const item = (slot: string, id: string) => must(must(w.catalog[slot]).find(i => i.id === id));
+  assert.equal(item('nose', 'dome').unlocked, true);
+  assert.equal(item('trail', 'pink').unlocked, false);
+  await t.ok<Api.LookResponse>('alice', 'POST', '/api/wardrobe', { look: { nose: 'dome', hull: 'mint', pilot: 'astro2' } });
+  assert.equal((await t.call('alice', 'POST', '/api/wardrobe', { look: { trail: 'pink' } })).status, 400, 'pink trail needs an Outlier answer');
+  assert.equal((await t.call('alice', 'POST', '/api/wardrobe', { look: { nose: 'nonsense' } })).status, 400);
   const me = await t.ok<Api.MeResponse>('alice', 'GET', '/api/me');
-  assert.equal(must(me.user).look.hat, 'cap');
-  assert.equal(must(me.user).look.hairStyle, 'bun');
-  // an Outlier answer unlocks the party hat
+  assert.equal(must(me.user).look['nose'], 'dome');
+  assert.equal(must(me.user).look['hull'], 'mint');
+  assert.equal(me.settings.theme, 'space');
+  // an Outlier answer unlocks the pink trail
   const bank = (await t.ok<Api.AdminPromptsResponse>('admin', 'GET', '/api/admin/prompts')).prompts;
   const d = (await t.ok<Api.AdminOverview>('admin', 'GET', '/api/admin/overview')).today;
   await t.ok('admin', 'PUT', `/api/admin/schedule/${d}`, { promptIds: ['Name a red fruit', 'Name a Nordic country'].map(x => must(bank.find(p => p.text === x)).id) });
   await playDay(t, 'alice', d, ['lingon', 'iceland']);
   w = await t.ok<Api.WardrobeResponse>('alice', 'GET', '/api/wardrobe');
   assert.ok(w.stats.outliers >= 1, `outliers ${w.stats.outliers}`);
-  assert.equal(must(w.catalog.hat.find(i => i.id === 'party')).unlocked, true);
-  await t.ok<Api.WardrobeResponse>('alice', 'POST', '/api/wardrobe', { look: { hat: 'party' } });
+  assert.ok(w.stats.points > 0, 'points count toward unlocks');
+  assert.equal(item('trail', 'pink').unlocked, true);
+  await t.ok<Api.LookResponse>('alice', 'POST', '/api/wardrobe', { look: { trail: 'pink' } });
   const lb = await t.ok<LbDay>('alice', 'GET', '/api/leaderboard?period=day');
-  assert.equal(must(lb.rows[0]).look.hat, 'party', 'leaderboard rows carry looks');
+  assert.equal(must(lb.rows[0]).look['trail'], 'pink', 'leaderboard rows carry looks');
+  // the theme is an admin setting, limited to known themes
+  assert.equal((await t.call('admin', 'PUT', '/api/admin/settings', { theme: 'jungle' })).status, 400);
+  const st = await t.ok<Api.SettingsResponse>('admin', 'PUT', '/api/admin/settings', { theme: 'space' });
+  assert.equal(st.settings.theme, 'space');
 });
 
 test('user-made games: create, share, play, leaderboard, edit rules, copy, delete', async () => {

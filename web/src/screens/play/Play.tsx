@@ -5,10 +5,10 @@ import { Navigate, useParams } from 'react-router';
 import { useQueryClient } from '@tanstack/react-query';
 import type { CurrentRound, GuessResponse, RoundSummary, RunState, WardrobeResponse } from '../../../../shared/api.ts';
 import { useUser } from '../../app/guards.tsx';
-import { useScene } from '../../app/scene-context.tsx';
+import { useStage } from '../../app/stage-context.tsx';
 import { useI18n } from '../../i18n/index.tsx';
 import { api } from '../../lib/api.ts';
-import { isDateKey, isGameKey, metresOf } from '../../lib/format.ts';
+import { isDateKey, isGameKey } from '../../lib/format.ts';
 import { keys } from '../../lib/queries.ts';
 import { ErrorNote, Loading } from '../../ui/Status.tsx';
 import { useToast } from '../../ui/Toast.tsx';
@@ -43,7 +43,7 @@ export function Play() {
 
 function PlayRun({ runKey }: { runKey: string }) {
   const { t, lang, server } = useI18n();
-  const scene = useScene();
+  const scene = useStage();
   const qc = useQueryClient();
   const toast = useToast();
   const [run, setRun] = useState<RunState | null>(null);
@@ -76,7 +76,7 @@ function PlayRun({ runKey }: { runKey: string }) {
   useEffect(() => {
     let live = true;
     const s0 = scene.get();
-    if (s0) { s0.focusX = 0.3; s0.setClock(null); }
+    s0?.setClock(null);
     // Remember how much of the wardrobe was open, to announce new unlocks at the end.
     if (unlocksBefore.current === null)
       void qc.fetchQuery({ queryKey: keys.wardrobe, queryFn: () => api.get<WardrobeResponse>('/api/wardrobe') }).then(w => { unlocksBefore.current ??= unlockedCount(w); }, () => undefined);
@@ -85,7 +85,7 @@ function PlayRun({ runKey }: { runKey: string }) {
         if (!live) return;
         apply(s);
         setShownScore(s.score);
-        scene.get()?.setPosition(metresOf(s.score));
+        scene.get()?.setPosition(s.score);
         setPhase(s.finished ? { k: 'done' } : s.current ? { k: 'round' } : { k: 'intro' });
       },
       (error: unknown) => live && setPhase({ k: 'error', error }),
@@ -174,7 +174,7 @@ function PlayRun({ runKey }: { runKey: string }) {
     };
     if (!s) { land(); return; }
     s.charge(false);
-    s.launch({ meters: metresOf(points), tier, onLand: land });
+    s.launch({ points, tier, onLand: land });
   }, [phase, run, scene]);
 
   const afterResult = useCallback(() => {

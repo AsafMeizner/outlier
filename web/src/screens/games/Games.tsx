@@ -1,8 +1,9 @@
 // Friends' games: games you made, games you played and new ones from colleagues.
 import { Link } from 'react-router';
 import type { GameSummary } from '../../../../shared/api.ts';
+import { useDistance } from '../../app/stage-context.tsx';
 import { useI18n } from '../../i18n/index.tsx';
-import { fmtDate, fmtDistance } from '../../lib/format.ts';
+import { fmtDate } from '../../lib/format.ts';
 import { useGames } from '../../lib/queries.ts';
 import { PixelIcon } from '../../ui/PixelIcon.tsx';
 import { ErrorNote, Loading } from '../../ui/Status.tsx';
@@ -55,6 +56,7 @@ function Section({ title, games, mine }: { title: string; games: GameSummary[]; 
 
 function GameCard({ g, mine }: { g: GameSummary; mine?: boolean }) {
   const { t, locale } = useI18n();
+  const dist = useDistance();
   return (
     <li className="game-card px-box">
       <Link to={`/g/${g.slug}`} className="game-card-title" dir="auto">{g.title}</Link>
@@ -66,7 +68,7 @@ function GameCard({ g, mine }: { g: GameSummary; mine?: boolean }) {
       <div className="row">
         {g.myScore !== null && g.finished ? (
           <>
-            <span className="px-chip px-chip--sun num">{fmtDistance(locale, g.myScore, t('common.metres'))}</span>
+            <span className="px-chip px-chip--sun num">{dist(g.myScore)}</span>
             <Link to={`/results/g-${g.slug}`} className="px-btn px-btn--small px-btn--navy">{t('games.again')}</Link>
           </>
         ) : (

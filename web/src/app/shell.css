@@ -37,7 +37,7 @@
   display: inline-flex;
   align-items: center;
   gap: calc(var(--u) * 3);
-  color: var(--paper);
+  color: var(--text);
   text-decoration: none;
 }
 .hud-logo {
@@ -45,16 +45,16 @@
   place-items: center;
   width: calc(var(--u) * 10);
   height: calc(var(--u) * 10);
-  background: var(--cta);
-  color: var(--paper);
-  box-shadow: inset 0 calc(var(--u) * -1) 0 0 var(--cta-d), 0 -3px 0 0 var(--ink), 0 3px 0 0 var(--ink), -3px 0 0 0 var(--ink), 3px 0 0 0 var(--ink), 3px 6px 0 0 var(--ink);
+  background: var(--accent);
+  color: var(--text);
+  box-shadow: inset 0 calc(var(--u) * -1) 0 0 var(--accent-lo), 0 -3px 0 0 var(--ink), 0 3px 0 0 var(--ink), -3px 0 0 0 var(--ink), 3px 0 0 0 var(--ink), 3px 6px 0 0 var(--ink);
 }
 .hud-brand:hover .hud-logo { background: #ff7752; }
 .hud-word {
   font-family: var(--pixel);
   font-size: 1.7rem;
   line-height: 1;
-  color: var(--paper);
+  color: var(--text);
   /* stepped outline: four hard offsets, then a depth block */
   text-shadow: 3px 0 0 var(--ink), -3px 0 0 var(--ink), 0 3px 0 var(--ink), 0 -3px 0 var(--ink), 3px 3px 0 var(--ink), -3px 3px 0 var(--ink), 3px -3px 0 var(--ink),
     -3px -3px 0 var(--ink), 3px 6px 0 var(--ink);
@@ -89,11 +89,11 @@
   display: flex;
   align-items: center;
   gap: calc(var(--u) * 3);
-  color: var(--paper);
+  color: var(--text);
 }
 .menu-who > div { display: grid; }
 .menu-who strong { font-family: var(--pixel); font-weight: 400; font-size: 1.3rem; }
-.menu-who .avatar { box-shadow: 0 0 0 3px var(--ink); background: var(--navy); }
+.menu-who .avatar { box-shadow: 0 0 0 3px var(--ink); background: var(--panel); }
 .menu-tiles {
   list-style: none;
   margin: 0;
@@ -104,9 +104,9 @@
 }
 .menu-tiles li { animation: px-pop 220ms steps(4) both; }
 .menu-tile {
-  --face: var(--paper);
-  --lo: var(--paper-2);
-  --fg: var(--paper-ink);
+  --face: var(--panel);
+  --lo: var(--panel-lo);
+  --fg: var(--text);
   display: grid;
   justify-items: center;
   align-content: center;
@@ -126,10 +126,10 @@
 }
 .menu-tile:hover { transform: translateY(calc(var(--u) * -2)); }
 .menu-tile:active { transform: none; }
-.menu-tile:focus-visible { outline: var(--u) solid var(--sun); outline-offset: calc(var(--u) * 2); }
-.menu-tile--cta { --face: var(--cta); --lo: var(--cta-d); --fg: #fff; }
-.menu-tile--sun { --face: var(--sun); --lo: var(--sun-d); --fg: var(--ink); }
-.menu-tile--navy { --face: var(--navy-2); --lo: var(--navy-d); --fg: var(--text); }
+.menu-tile:focus-visible { outline: var(--u) solid var(--highlight); outline-offset: calc(var(--u) * 2); }
+.menu-tile--cta { --face: var(--accent); --lo: var(--accent-lo); --fg: #fff; }
+.menu-tile--sun { --face: var(--highlight); --lo: var(--accent-lo); --fg: var(--ink); }
+.menu-tile--navy { --face: var(--alt); --lo: var(--panel-2); --fg: var(--text); }
 .menu-signout { justify-self: end; }
 
 /* ---------- shared screen bits ---------- */
@@ -138,9 +138,10 @@
   align-items: center;
   gap: calc(var(--u) * 3);
   flex-wrap: wrap;
-  color: var(--paper);
+  color: var(--text);
   font-weight: 700;
 }
 .status-line p { margin: 0; }
 .status-line--error { color: var(--bad); }
-.px-window--paper .status-line { color: var(--paper-ink); }
+.px-window--paper .status-line { color: var(--text); }
+.menu-layer > .win-veil { background: rgba(11, 10, 22, 0.86); }

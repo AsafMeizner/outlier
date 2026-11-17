@@ -5,7 +5,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import type * as Api from '../shared/api.ts';
 import { TIERS, pointsFor } from '../shared/tiers.ts';
-import { CATALOG, isUnlocked, cleanLook, resolveLook, LookError, type UnlockStats } from '../shared/wardrobe.ts';
+import { WARDROBES, isUnlocked, cleanLook, resolveLook, storeLook, LookError, type UnlockStats } from '../shared/wardrobe.ts';
+import { DEFAULT_THEME, THEME_IDS } from '../shared/themes.ts';
 import type { Db, SqlParam } from './db.ts';
 import { buildIndex, matchAnswer, normalize, keysFor, type AnswerIndex } from './match.ts';
 import { parsePack, toCsv, toText, type Pack, type PackPrompt } from './packs.ts';
@@ -36,6 +37,7 @@ export const DEFAULT_SETTINGS: Api.Settings = {
   typoTolerance: true,
   archivePlay: true,
   puzzleLanguage: 'alternate',
+  theme: DEFAULT_THEME,
 };
 
 /** 'he' when the text contains Hebrew letters, otherwise 'en'. */
@@ -100,6 +102,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
         case 'weekStart': out.weekStart = int(v, k, 0, 6); break;
         case 'timeZone': if (!validTimeZone(v)) bad('Unknown time zone'); out.timeZone = v; break;
         case 'puzzleLanguage': out.puzzleLanguage = oneOf(v, ['en', 'he', 'alternate', 'any'] as const, 'puzzleLanguage must be en, he, alternate or any'); break;
+        case 'theme': out.theme = oneOf(v, THEME_IDS, `theme must be one of ${THEME_IDS.join(', ')}`); break;
         case 'registration': out.registration = oneOf(v, ['open', 'code', 'closed'] as const, 'registration must be open, code or closed'); break;
         case 'activeWeekdays': {
           if (!Array.isArray(v) || !v.length || v.some(d => !Number.isInteger(d) || d < 0 || d > 6)) bad('Pick at least one weekday');
@@ -118,7 +121,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   const today = (): string => { const s = settings(); return gameDate(now(), s.timeZone, s.dayStartHour); };
   const publicSettings = (): Api.PublicSettings => {
     const s = settings();
-    return { puzzleLanguage: s.puzzleLanguage, siteName: s.siteName, tagline: s.tagline, roundSeconds: s.roundSeconds, promptsPerDay: s.promptsPerDay, registration: s.registration, archivePlay: s.archivePlay, weekStart: s.weekStart, tiers: TIERS };
+    return { theme: s.theme, puzzleLanguage: s.puzzleLanguage, siteName: s.siteName, tagline: s.tagline, roundSeconds: s.roundSeconds, promptsPerDay: s.promptsPerDay, registration: s.registration, archivePlay: s.archivePlay, weekStart: s.weekStart, tiers: TIERS };
   };
 
   for (const p of db.all<{ id: number; text: string }>("SELECT id, text FROM prompts WHERE lang='en'")) if (langOf(p.text) === 'he') db.run("UPDATE prompts SET lang='he' WHERE id=?", p.id);
@@ -149,7 +152,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   const loginFailures = new Map<string, { count: number; first: number }>();
   const userView = (u: UserRow): Api.UserView => ({
     id: u.id, username: u.username, displayName: u.display_name, team: u.team, role: u.role,
-    mustChange: !!u.must_change, disabled: !!u.disabled, look: resolveLook(u.look, u.username),
+    mustChange: !!u.must_change, disabled: !!u.disabled, look: resolveLook(settings().theme, u.look, u.username),
   });
   const userById = (id: number | bigint): UserRow => db.get<UserRow>('SELECT * FROM users WHERE id=?', id) ?? bad('User not found', 404);
   function createSession(userId: number): string {
@@ -401,7 +404,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     return [date, date];
   }
   type WithLookText<T> = Omit<T, 'look'> & { look: string };
-  const withLooks = <T extends Api.PlayerRef>(rows: Array<WithLookText<T>>): T[] => rows.map(r => ({ ...r, look: resolveLook(r.look, r.username) }) as unknown as T);
+  const withLooks = <T extends Api.PlayerRef>(rows: Array<WithLookText<T>>): T[] => rows.map(r => ({ ...r, look: resolveLook(settings().theme, r.look, r.username) }) as unknown as T);
   function leaderboard(periodRaw: string, dateRaw: string): Api.LeaderboardResponse {
     const t = today();
     const date = isDate(dateRaw) && dateRaw <= t ? dateRaw : t;
@@ -409,7 +412,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     if (period === 'streak') {
       const users = db.all<Pick<UserRow, 'id' | 'username' | 'display_name' | 'team' | 'look'>>('SELECT id, username, display_name, team, look FROM users WHERE disabled=0');
       const st = streaks(users.map(u => u.id));
-      const rows = users.map((u): Api.StreakRow => ({ userId: u.id, username: u.username, look: resolveLook(u.look, u.username), name: u.display_name, team: u.team, ...(st.get(u.id) ?? { current: 0, best: 0, playedToday: false }) }))
+      const rows = users.map((u): Api.StreakRow => ({ userId: u.id, username: u.username, look: resolveLook(settings().theme, u.look, u.username), name: u.display_name, team: u.team, ...(st.get(u.id) ?? { current: 0, best: 0, playedToday: false }) }))
         .filter(r => r.current > 0 || r.best > 0).sort((a, b) => b.current - a.current || b.best - a.best || a.name.localeCompare(b.name));
       return { period, date, rows };
     }
@@ -687,22 +690,23 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   // ---------- wardrobe ----------
   function unlockStats(userId: number): UnlockStats {
     return {
-      meters: count("SELECT COALESCE(SUM(score),0)*10 AS n FROM runs WHERE user_id=? AND mode IN ('live','archive') AND finished_at IS NOT NULL", userId),
+      points: count("SELECT COALESCE(SUM(score),0) AS n FROM runs WHERE user_id=? AND mode IN ('live','archive') AND finished_at IS NOT NULL", userId),
       games: count("SELECT COUNT(*) AS n FROM runs WHERE user_id=? AND mode='live' AND finished_at IS NOT NULL", userId),
       outliers: count("SELECT COUNT(*) AS n FROM rounds x JOIN runs r ON r.id=x.run_id WHERE r.user_id=? AND r.mode IN ('live','archive') AND x.tier=5", userId),
       streak: streakOf(userId).best,
     };
   }
   route('GET', '/api/wardrobe', 'user', ({ user }): Api.WardrobeResponse => {
-    const stats = unlockStats(user.id);
-    const catalog = Object.fromEntries(Object.entries(CATALOG).map(([slot, items]) => [slot, items.map(i => ({ ...i, unlocked: isUnlocked(i, stats) }))])) as Api.CatalogWithUnlocks;
-    return { catalog, stats, look: resolveLook(user.look, user.username) };
+    const stats = unlockStats(user.id), theme = settings().theme, w = WARDROBES[theme];
+    const catalog: Api.CatalogWithUnlocks = Object.fromEntries(w.slots.map(slot => [slot, (w.catalog[slot] ?? []).map(i => ({ ...i, unlocked: isUnlocked(i, stats) }))]));
+    return { theme, slots: [...w.slots], colorSlots: [...w.colorSlots], catalog, stats, look: resolveLook(theme, user.look, user.username) };
   });
   route('POST', '/api/wardrobe', 'user', ({ user, body }): Api.LookResponse => {
+    const theme = settings().theme;
     let look;
-    try { look = cleanLook(body['look'], unlockStats(user.id), resolveLook(user.look, user.username)); }
+    try { look = cleanLook(theme, body['look'], unlockStats(user.id), resolveLook(theme, user.look, user.username)); }
     catch (e) { if (e instanceof LookError) bad(e.message); throw e; }
-    db.run('UPDATE users SET look=? WHERE id=?', JSON.stringify(look), user.id);
+    db.run('UPDATE users SET look=? WHERE id=?', storeLook(user.look, theme, look), user.id);
     return { look };
   });
 

@@ -2,33 +2,24 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
 import { Link } from 'react-router';
 import type { CurrentRound, RoundSummary, RunState } from '../../../../shared/api.ts';
-import { useFlight } from '../../app/scene-context.tsx';
-import { landmarkAt, zoneAt } from '../../game/world.ts';
+import { useDistance, useFlight, useZoneName } from '../../app/stage-context.tsx';
 import { useI18n, type AnyKey } from '../../i18n/index.tsx';
-import { fmtDistance, fmtNumber, metresOf } from '../../lib/format.ts';
 import { PixelIcon } from '../../ui/PixelIcon.tsx';
 
-/** Top-centre distance readout. Follows the chair live while it flies; shows the passing landmark. */
+/** Top-centre distance readout. Follows the hero live while it flies; shows landmarks as it passes them. */
 export function FlightHud({ score, flying }: { score: number; flying: boolean }) {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   const flight = useFlight();
-  const [caption, setCaption] = useState<AnyKey | null>(null);
-
-  useEffect(() => {
-    if (!flight.landmark || !flying) return;
-    setCaption(flight.landmark);
-    const id = window.setTimeout(() => setCaption(null), 1800);
-    return () => window.clearTimeout(id);
-  }, [flight.landmark, flight.landmarkAt, flying]);
-
-  const m = flying ? flight.meters : metresOf(score);
+  const dist = useDistance();
+  const zoneName = useZoneName();
+  const points = flying ? flight.dist : score;
   return (
     <div className={`flighthud${flying ? ' is-flying' : ''}`} aria-hidden={flying}>
-      <div className="flighthud-m num">{t('common.metres', { n: fmtNumber(locale, m) })}</div>
-      <div className="flighthud-zone">{t(`zone.${zoneAt(m)}` as AnyKey)}</div>
-      {caption ? (
+      <div className="flighthud-m num">{dist(Math.floor(points))}</div>
+      <div className="flighthud-zone">{zoneName(points)}</div>
+      {flying && flight.landmark ? (
         <div className="flighthud-caption" key={flight.landmarkAt}>
-          {t(caption)}
+          {t(flight.landmark)}
         </div>
       ) : null}
     </div>
@@ -127,7 +118,8 @@ export function AnswerBar({ onGuess, onPass, busy, rejected, lang }: { onGuess: 
 
 /** Before each prompt: what comes next, and the button that starts the clock. */
 export function IntroCard({ run, onOpen, busy }: { run: RunState; onOpen: () => void; busy: boolean }) {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
+  const dist = useDistance();
   const next = run.upNext;
   useEnterKey(onOpen, !busy);
   if (!next) return null;
@@ -141,7 +133,7 @@ export function IntroCard({ run, onOpen, busy }: { run: RunState; onOpen: () => 
         {next.category}
       </h1>
       <p className="intro-note">{t('play.clockNote', { s: run.roundSeconds })}</p>
-      {run.position > 0 ? <p className="intro-total num">{t('play.total', { d: fmtDistance(locale, run.score, t('common.metres')) })}</p> : null}
+      {run.position > 0 ? <p className="intro-total num">{t('play.total', { d: dist(run.score) })}</p> : null}
       <button type="button" className="px-btn px-btn--big px-btn--block" onClick={onOpen} disabled={busy} autoFocus>
         {run.position === 0 ? t('play.first') : t('play.next')}
         <span className="px-key">{t('common.enter')}</span>
@@ -152,7 +144,8 @@ export function IntroCard({ run, onOpen, busy }: { run: RunState; onOpen: () => 
 
 /** After a round: the tier and distance, or what went wrong, then on to the next prompt. */
 export function ResultCard({ round, same, finished, onNext }: { round: RoundSummary; same: number | null; finished: boolean; onNext: () => void }) {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
+  const dist = useDistance();
   useEnterKey(onNext, true);
   const scored = round.points > 0;
   return (
@@ -163,7 +156,7 @@ export function ResultCard({ round, same, finished, onNext }: { round: RoundSumm
             <span className="px-tier result-tier" data-tier={round.tier}>
               {t(`tier.${round.tier}` as AnyKey)}
             </span>
-            <span className="result-dist num">+{fmtDistance(locale, round.points, t('common.metres'))}</span>
+            <span className="result-dist num">+{dist(round.points)}</span>
           </>
         ) : (
           <span className="result-miss">{round.outcome === 'timeout' ? t('play.timeUp') : t('play.passed')}</span>
@@ -199,14 +192,15 @@ export function ResultCard({ round, same, finished, onNext }: { round: RoundSumm
 
 /** End of the day's prompts. */
 export function DayDone({ run, newItems }: { run: RunState; newItems: boolean }) {
-  const { t, locale } = useI18n();
-  const place = t(landmarkAt(metresOf(run.score)).key);
+  const { t } = useI18n();
+  const dist = useDistance();
+  const place = useZoneName()(run.score);
   return (
     <section className="daydone px-window px-window--paper" aria-labelledby="daydone-title">
       <h1 id="daydone-title" className="daydone-title">
         {t('play.dayDone')}
       </h1>
-      <p className="daydone-big num">{t('play.youFlew', { d: fmtDistance(locale, run.score, t('common.metres')) })}</p>
+      <p className="daydone-big num">{t('play.youFlew', { d: dist(run.score) })}</p>
       <p className="daydone-place">{t('play.youReached', { place })}</p>
       <ol className="daydone-rounds">
         {run.rounds.map(r => (

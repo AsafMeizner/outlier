@@ -62,3 +62,35 @@ customisation unlocked by points; any user can create their own questions/games 
   wardrobe, user games (list/editor/share page), admin (normal page layout), i18n en/he typed (he: Record<Key,string>).
   Then vitest + Playwright e2e, build-bundle tool, air-gap test, zip.
 - RR8: RouterProvider from 'react-router/dom'; createBrowserRouter from 'react-router'.
+
+## 2026-11-17 night: art direction reset -> SPACE theme, theme system
+- User verdict on the React UI: "looks bad ... nothing like the other games, they are way more pixel arty" and "looks bad
+  quality, not intentionally bad quality". Root cause: vector art drawn small and upscaled (anti-aliased smear).
+- Built `art-lab/` (index.html + art.js): TRUE pixel art = integer pixel writes into a 320x180-ish Bmp (Uint32Array),
+  fixed palette, 1px ink outlines, Bayer dithering, bitmap 5x7 font, CSS integer upscale. Three directions: office /
+  space rocket / deep-sea dive. USER PICKED SPACE ("space one is best, build that") and asked for an architecture where
+  the theme can be changed later or several themes coexist.
+- Fonts now: Pixelify Sans (Latin) + GNU Unifont Hebrew subset, both OFL, in web/public/fonts. Rubik Pixels removed.
+- Checkpoint commit d88ce14 (React player app, office vector engine, art-lab). Admin UI still a stub.
+
+### Theme architecture (in progress)
+- `shared/themes.ts`: THEME_IDS (['space'] for now), DEFAULT_THEME. Admin setting `theme` (server Settings + PublicSettings).
+- `shared/wardrobe.ts`: per-theme wardrobes `WARDROBES[theme] = { slots, catalog }`; unlock rules (meters/games/
+  outliers/streak) unchanged. User look stored as JSON map `{ [themeId]: Look }` (legacy flat looks are ignored).
+  Space slots: hull, stripe, nose, fins, window, pilot, trail.
+- `web/src/game/pixel/*`: engine-agnostic pixel toolkit (Bmp, palette, dither, sprites, rotate, outline).
+- `web/src/game/engine.ts`: generic Stage (canvas sizing at integer scale, loop, flight timing/easing, landmark events);
+  delegates all drawing to the active theme's World. Publishes its pixel scale so CSS `--u` = 1 art pixel.
+- `web/src/game/themes/<id>/`: world renderer, hero sprite builder (from look), avatar + wardrobe preview, zones +
+  landmarks (in points), distance unit per point, UI palette as CSS variables, theme-specific copy keys.
+- Space: 1 point = 1,000 km. Zones by cumulative day points: pad/atmosphere 0-20, orbit 20-60, Moon 60-120,
+  Mars 120-200, asteroid belt 200-280, Jupiter 280-360, Saturn 360-440, Neptune 440-500, deep space 500+.
+- Old office vector engine (draw.ts, props.ts, scene.ts, world.ts) gets deleted once space is wired in.
+
+### Repo + deployment (2026-11-17, user: "make a new public repo ... deploy it on coolify")
+- GitHub: https://github.com/AsafMeizner/outlier (public, branch `main`). Push = deploy (Coolify GitHub App source
+  `coolify-nebula-meizner`). Keep `main` buildable: stash WIP or use a branch.
+- Coolify (nebula): app `outlier`, uuid **1slyowvczuq2gsndzhvpsk6u**, project "Homelab apps", env production, server localhost,
+  build pack Dockerfile, port 8080, persistent volume `…-outlier-data` -> /data. URLs: http://outlier.apps.lan (LAN) and
+  https://outlier.meizner.live (Cloudflare tunnel). API token on nebula `~/.config/coolify/api-token` (never print);
+  deploy: POST /api/v1/deploy {"uuid": ...} from nebula (localhost:8010). Setup link = container log `/setup/<code>`.

@@ -213,6 +213,7 @@ export const adminEn = {
   // settings
   'admin.s.title': 'Settings',
   'admin.s.game': 'The game',
+  'admin.s.theme': 'Theme',
   'admin.s.siteName': 'Game name',
   'admin.s.tagline': 'Tagline',
   'admin.s.promptsPerDay': 'Prompts per day (new days only)',

@@ -1,12 +1,13 @@
 // Character customisation, shared by the server (validation) and the browser (drawing).
-// Unlock rule kinds: meters (total distance in daily + archive games), games (daily games finished),
-// outliers (tier-5 answers in daily + archive games), streak (best daily streak).
-
-export const SLOTS = ['skin', 'hairStyle', 'hair', 'shirt', 'hat', 'glasses', 'chair', 'trail'] as const;
-export type Slot = (typeof SLOTS)[number];
+// Every theme has its own slots and items; unlock rules are the same everywhere:
+//   points   = total points scored in daily + archive games
+//   games    = daily games finished
+//   outliers = tier-5 answers in daily + archive games
+//   streak   = best daily streak
+import { isThemeId, type ThemeId } from './themes.ts';
 
 export interface UnlockStats {
-  meters: number;
+  points: number;
   games: number;
   outliers: number;
   streak: number;
@@ -15,32 +16,49 @@ export type UnlockRule = Partial<UnlockStats> | null;
 
 export interface WardrobeItem {
   id: string;
-  /** Hex colour for colour items, 'rainbow' for the striped shirt. */
+  /** Hex colour for colour items. */
   color?: string;
   unlock: UnlockRule;
 }
-export type Catalog = Record<Slot, WardrobeItem[]>;
-export type Look = Record<Slot, string>;
+export type Catalog = Record<string, WardrobeItem[]>;
+/** Item id per slot. */
+export type Look = Record<string, string>;
+
+export interface Wardrobe {
+  /** Slot order as shown in the wardrobe. */
+  slots: readonly string[];
+  /** Slots whose items are plain colours (shown as swatches). */
+  colorSlots: readonly string[];
+  catalog: Catalog;
+}
 
 const free: UnlockRule = null;
 const colours = (list: Array<[string, string, UnlockRule?]>): WardrobeItem[] => list.map(([id, color, unlock = free]) => ({ id, color, unlock }));
-const plain = (list: Array<[string, UnlockRule]>): WardrobeItem[] => list.map(([id, unlock]) => ({ id, unlock }));
+const shapes = (list: Array<[string, UnlockRule]>): WardrobeItem[] => list.map(([id, unlock]) => ({ id, unlock }));
 
-export const CATALOG: Catalog = {
-  skin: colours([['s1', '#f9d7b5'], ['s2', '#f1c27d'], ['s3', '#e0ac69'], ['s4', '#c68642'], ['s5', '#8d5524'], ['s6', '#ffdbac']]),
-  hairStyle: plain([['short', free], ['spiky', free], ['long', free], ['bald', free], ['curly', free], ['bun', free]]),
-  hair: colours([['h1', '#2b1d14'], ['h2', '#4a2f1b'], ['h3', '#7a4b26'], ['h4', '#d6a756'], ['h5', '#a33b20'], ['h6', '#9aa0a6'],
-    ['h7', '#ff5fa2', { meters: 3000 }], ['h8', '#3fd0ff', { meters: 8000 }], ['h9', '#7cf06a', { outliers: 5 }]]),
-  shirt: colours([['red', '#ff4d5e'], ['teal', '#2ec4b6'], ['yellow', '#ffc43d'], ['blue', '#3b82f6'],
-    ['purple', '#7b5cff', { games: 2 }], ['pink', '#ff8fab', { games: 4 }], ['green', '#22c55e', { meters: 2000 }], ['orange', '#f97316', { meters: 4000 }],
-    ['hoodie', '#6b7280', { games: 3 }], ['hawaii', '#ff7a59', { meters: 6000 }], ['suit', '#1f2a44', { games: 10 }], ['tux', '#111827', { streak: 10 }],
-    ['gold', '#f5c542', { meters: 40000 }], ['rainbow', 'rainbow', { streak: 14 }]]),
-  hat: plain([['none', free], ['cap', free], ['beanie', { meters: 1000 }], ['headphones', { games: 5 }], ['party', { outliers: 1 }], ['propeller', { meters: 5000 }],
-    ['chef', { games: 8 }], ['cowboy', { meters: 12000 }], ['crown', { streak: 7 }], ['viking', { meters: 25000 }], ['wizard', { outliers: 10 }], ['astronaut', { outliers: 25 }]]),
-  glasses: plain([['none', free], ['round', free], ['square', free], ['sun', { meters: 1500 }], ['3d', { games: 6 }], ['monocle', { outliers: 3 }], ['star', { streak: 5 }], ['visor', { meters: 15000 }]]),
-  chair: plain([['office', free], ['stool', { games: 2 }], ['gaming', { meters: 3000 }], ['beanbag', { games: 12 }], ['cart', { meters: 10000 }], ['rocket', { outliers: 15 }], ['throne', { streak: 21 }]]),
-  trail: plain([['paper', free], ['sparkle', { outliers: 1 }], ['coffee', { meters: 2500 }], ['bubbles', { games: 7 }], ['fire', { streak: 3 }], ['rainbow', { meters: 20000 }], ['stars', { outliers: 8 }]]),
+const SPACE: Wardrobe = {
+  slots: ['hull', 'stripe', 'nose', 'fins', 'window', 'pilot', 'trail'],
+  colorSlots: ['hull', 'stripe'],
+  catalog: {
+    hull: colours([
+      ['white', '#f2efe6'], ['red', '#e83b3b'], ['sky', '#5cb0ff'], ['sun', '#ffcc33'], ['mint', '#7fe0b0'],
+      ['purple', '#8a4bd6', { games: 2 }], ['pink', '#ff6fa8', { games: 4 }], ['green', '#3fbf5a', { points: 200 }],
+      ['orange', '#ff8a1f', { points: 400 }], ['navy', '#3a4aa8', { games: 10 }], ['stealth', '#3a3a4e', { streak: 10 }],
+      ['chrome', '#c7cbd8', { points: 1500 }], ['gold', '#e8b830', { points: 4000 }],
+    ]),
+    stripe: colours([
+      ['red', '#e83b3b'], ['navy', '#2f3a78'], ['white', '#f2efe6'], ['cyan', '#3fe0ff', { points: 100 }],
+      ['pink', '#ff6fa8', { outliers: 1 }], ['black', '#1b1b2f', { games: 6 }], ['gold', '#ffcc33', { streak: 7 }],
+    ]),
+    nose: shapes([['cone', free], ['dome', free], ['needle', { points: 100 }], ['twin', { games: 5 }], ['drill', { outliers: 3 }], ['star', { streak: 7 }]]),
+    fins: shapes([['classic', free], ['delta', free], ['swept', { games: 3 }], ['wings', { points: 500 }], ['ring', { outliers: 5 }], ['triple', { streak: 21 }]]),
+    window: shapes([['round', free], ['double', free], ['square', { games: 6 }], ['big', { points: 1200 }], ['visor', { outliers: 10 }]]),
+    pilot: shapes([['astro', free], ['astro2', free], ['cat', { games: 8 }], ['dog', { points: 800 }], ['alien', { outliers: 15 }], ['robot', { points: 2500 }], ['monkey', { streak: 14 }]]),
+    trail: shapes([['fire', free], ['blue', { points: 250 }], ['green', { games: 7 }], ['pink', { outliers: 1 }], ['smoke', { streak: 3 }], ['sparkle', { outliers: 8 }], ['rainbow', { points: 2000 }]]),
+  },
 };
+
+export const WARDROBES: Record<ThemeId, Wardrobe> = { space: SPACE };
 
 export function isUnlocked(item: WardrobeItem, stats: UnlockStats): boolean {
   if (!item.unlock) return true;
@@ -54,26 +72,29 @@ function hash(seed: string): number {
 }
 
 /** Deterministic starting look from the username, using only free items. */
-export function defaultLook(seed: string): Look {
+export function defaultLook(theme: ThemeId, seed: string): Look {
+  const w = WARDROBES[theme];
   let h = hash(seed);
-  const pick = (slot: Slot): string => {
-    const freeItems = CATALOG[slot].filter(i => !i.unlock);
+  const look: Look = {};
+  for (const slot of w.slots) {
+    const freeItems = (w.catalog[slot] ?? []).filter(i => !i.unlock);
     h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0;
-    return freeItems[h % freeItems.length]?.id ?? '';
-  };
-  return { skin: pick('skin'), hairStyle: pick('hairStyle'), hair: pick('hair'), shirt: pick('shirt'), hat: 'none', glasses: (h & 3) === 0 ? 'round' : 'none', chair: 'office', trail: 'paper' };
+    look[slot] = freeItems[h % freeItems.length]?.id ?? '';
+  }
+  return look;
 }
 
 export class LookError extends Error {}
 
-/** Merge a requested look with the stored one, rejecting locked or unknown items. */
-export function cleanLook(requested: unknown, stats: UnlockStats, fallback: Look): Look {
+/** Merge a requested look with the current one, rejecting locked or unknown items. */
+export function cleanLook(theme: ThemeId, requested: unknown, stats: UnlockStats, fallback: Look): Look {
+  const w = WARDROBES[theme];
   const out: Look = { ...fallback };
   const req = (requested && typeof requested === 'object' ? requested : {}) as Record<string, unknown>;
-  for (const slot of SLOTS) {
+  for (const slot of w.slots) {
     const id = req[slot];
     if (id === undefined) continue;
-    const item = CATALOG[slot].find(i => i.id === id);
+    const item = w.catalog[slot]?.find(i => i.id === id);
     if (!item) throw new LookError(`Unknown ${slot} "${String(id)}"`);
     if (!isUnlocked(item, stats)) throw new LookError('That item is still locked.');
     out[slot] = item.id;
@@ -81,21 +102,36 @@ export function cleanLook(requested: unknown, stats: UnlockStats, fallback: Look
   return out;
 }
 
-/** Stored look (JSON text or object) completed with defaults for missing or unknown slots. */
-export function resolveLook(stored: unknown, seed: string): Look {
-  let parsed: Record<string, unknown> = {};
+/** Stored looks: JSON text of `{ [themeId]: Look }`. Anything else (including old single looks) reads as empty. */
+function parseStored(stored: unknown): Partial<Record<ThemeId, Record<string, unknown>>> {
   try {
     const v: unknown = typeof stored === 'string' ? JSON.parse(stored || '{}') : stored;
-    if (v && typeof v === 'object') parsed = v as Record<string, unknown>;
-  } catch { /* fall back to the default look */ }
-  const look = defaultLook(seed);
-  for (const slot of SLOTS) {
-    const id = parsed[slot];
-    if (typeof id === 'string' && CATALOG[slot].some(i => i.id === id)) look[slot] = id;
+    if (!v || typeof v !== 'object') return {};
+    const out: Partial<Record<ThemeId, Record<string, unknown>>> = {};
+    for (const [k, look] of Object.entries(v)) if (isThemeId(k) && look && typeof look === 'object') out[k] = look as Record<string, unknown>;
+    return out;
+  } catch {
+    return {};
+  }
+}
+
+/** A player's look for a theme, completed with defaults for missing or unknown slots. */
+export function resolveLook(theme: ThemeId, stored: unknown, seed: string): Look {
+  const w = WARDROBES[theme];
+  const saved = parseStored(stored)[theme] ?? {};
+  const look = defaultLook(theme, seed);
+  for (const slot of w.slots) {
+    const id = saved[slot];
+    if (typeof id === 'string' && w.catalog[slot]?.some(i => i.id === id)) look[slot] = id;
   }
   return look;
 }
 
-export function colorOf(slot: Slot, id: string, fallback: string): string {
-  return CATALOG[slot].find(i => i.id === id)?.color ?? fallback;
+/** The stored JSON with one theme's look replaced; other themes' looks are kept. */
+export function storeLook(stored: unknown, theme: ThemeId, look: Look): string {
+  return JSON.stringify({ ...parseStored(stored), [theme]: look });
+}
+
+export function colorOf(theme: ThemeId, slot: string, id: string | undefined, fallback: string): string {
+  return WARDROBES[theme].catalog[slot]?.find(i => i.id === id)?.color ?? fallback;
 }

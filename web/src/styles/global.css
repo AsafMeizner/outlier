@@ -5,46 +5,62 @@
 /* Pixel type: Pixelify Sans for Latin, GNU Unifont's bitmap glyphs for Hebrew (both OFL). */
 @font-face { font-family: 'Outlier Pixel'; src: url('/fonts/pixelify-latin.woff2') format('woff2'); font-weight: 400 700; font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+20AC, U+2122, U+2190-2193, U+2212, U+25A0-25FF; }
-@font-face { font-family: 'Outlier Pixel'; src: url('/fonts/unifont-hebrew.woff2') format('woff2'); font-display: swap;
+@font-face { font-family: 'Outlier Pixel'; src: url('/fonts/unifont-hebrew.woff2') format('woff2'); font-weight: 100 900; font-display: swap;
   unicode-range: U+0590-05FF, U+20AA, U+FB1D-FB4F; }
 
 :root {
-  /* palette */
-  --night: #0d1026;
-  --panel: rgba(16, 20, 46, 0.93);
-  --panel-solid: #10142e;
-  --panel-2: #1b2150;
-  --line: #2f3876;
-  --text: #f4f2ff;
-  --text-2: #b9bde8;
-  --text-3: #7f86c4;
-  --sun: #ffd23f;
-  --sun-d: #c99a00;
-  --cta: #ff5a36;
-  --cta-d: #a8321c;
-  --good: #2fd06a;
-  --bad: #ff4d6a;
-  --sky: #5ab8ff;
-  --t0: #94a3b8; --t1: #9aa6b8; --t2: #2fd06a; --t3: #3b8cff; --t4: #b45cff; --t5: #ff9a1f;
+  /*
+   * Theme colours. These defaults are the space theme; the active theme module sets the same names at runtime
+   * (web/src/game/themes/<id>/index.ts, applied by StageProvider). Components use only these names.
+   */
+  --bg: #0b0a16;
+  --panel: #1e2350;
+  --panel-hi: #2f3a78;
+  --panel-lo: #140c2e;
+  --panel-2: #140c2e;
+  --border: #3fe0ff;
+  --shadow: #0b0a16;
+  --ink: #1b1b2f;
+  --text: #f7f4ea;
+  --text-2: #a8dcff;
+  --text-3: #8b93a8;
+  --accent: #ff6fa8;
+  --accent-hi: #ffd0e4;
+  --accent-lo: #8a4bd6;
+  --accent-text: #ffffff;
+  --alt: #2f3a78;
+  --alt-hi: #4a5ab8;
+  --alt-lo: #140c2e;
+  --alt-text: #f7f4ea;
+  --input: #0b0a16;
+  --input-text: #3fe0ff;
+  --caption: #3fe0ff;
+  --caption-text: #0b0a16;
+  --highlight: #ffcc33;
+  --highlight-text: #1b1b2f;
+  --good: #3fbf5a;
+  --bad: #e83b3b;
+  --line: var(--panel-hi);
+  /* rarity tiers (same in every theme) */
+  --t0: #8b93a8; --t1: #c7cbd8; --t2: #3fbf5a; --t3: #3e8cff; --t4: #b45cff; --t5: #ff9a1f;
+  /* one art pixel of the scene, in CSS pixels (set by the stage) */
+  --u: 4px;
   /* type */
   --font: 'Rubik', 'Segoe UI', system-ui, sans-serif;
   --pixel: 'Outlier Pixel', 'Rubik', system-ui, sans-serif;
-  /* shape */
-  --border: 3px solid var(--sun);
-  --shadow: 6px 6px 0 rgba(0, 0, 0, 0.45);
-  --radius: 4px;
+  --radius: 0;
   color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; }
-html { font-family: var(--font); color: var(--text); background: var(--night); -webkit-text-size-adjust: 100%; }
+html { font-family: var(--font); color: var(--text); background: var(--bg); -webkit-text-size-adjust: 100%; }
 body { margin: 0; line-height: 1.45; overflow: hidden; }
 h1, h2, h3 { margin: 0 0 0.5em; line-height: 1.1; }
 p { margin: 0 0 0.8em; }
 a { color: var(--sun); text-underline-offset: 3px; }
 button, input, select, textarea { font: inherit; color: inherit; }
-:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+:focus-visible { outline: var(--u) solid var(--highlight); outline-offset: var(--u); }
 [hidden] { display: none !important; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .pixel { font-family: var(--pixel); font-weight: 400; letter-spacing: 0.02em; }
@@ -56,10 +72,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .field { display: block; margin-bottom: 0.9rem; }
 .field > span { display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-2); margin-bottom: 0.3rem; }
 .input, .select, .textarea {
-  width: 100%; background: var(--night); border: 2px solid var(--line); border-radius: var(--radius);
+  width: 100%; background: var(--input); border: var(--u) solid var(--panel-hi); border-radius: 0;
   padding: 0.6rem 0.75rem; color: var(--text); outline: none;
 }
-.input:focus, .select:focus, .textarea:focus { border-color: var(--sun); }
+.input:focus, .select:focus, .textarea:focus { border-color: var(--border); }
 .textarea { min-height: 8rem; resize: vertical; }
 .error { color: var(--bad); font-weight: 700; min-height: 1.4em; margin: 0.3rem 0; }
 
@@ -68,6 +84,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .table th, .table td { text-align: start; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--line); vertical-align: middle; }
 .table th { color: var(--text-3); font-weight: 700; font-size: 0.8rem; text-transform: none; white-space: nowrap; }
 .table td.n, .table th.n { text-align: end; font-variant-numeric: tabular-nums; }
-.table tr.me td { background: rgba(255, 210, 63, 0.1); }
+.table tr.me td { background: var(--panel-hi); }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }

@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 import { TIERS } from '../../../../shared/tiers.ts';
 import { sfx } from '../../game/sfx.ts';
+import { useDistance } from '../../app/stage-context.tsx';
 import { useI18n, type AnyKey } from '../../i18n/index.tsx';
-import { fmtDistance } from '../../lib/format.ts';
 
 const STEP_MS = 280;
 
@@ -16,7 +16,8 @@ interface Props {
 }
 
 export function TierMeter({ tier, points, answer, onDone }: Props) {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
+  const dist = useDistance();
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const [step, setStep] = useState(reduce ? tier : 0);
 
@@ -44,7 +45,7 @@ export function TierMeter({ tier, points, answer, onDone }: Props) {
       </ol>
       <p className={`meter-result${reached ? ' is-shown' : ''}`} data-tier={tier} aria-hidden={!reached}>
         <span className="meter-tier">{t(`tier.${tier}` as AnyKey)}!</span>
-        <span className="meter-dist num">+{fmtDistance(locale, points, t('common.metres'))}</span>
+        <span className="meter-dist num">+{dist(points)}</span>
       </p>
     </div>
   );

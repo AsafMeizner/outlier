@@ -1,9 +1,10 @@
 // What everyone answered, prompt by prompt, from most to least given, with your own answer marked.
 import { useParams } from 'react-router';
 import type { RevealPrompt, RevealResponse } from '../../../shared/api.ts';
+import { useDistance } from '../app/stage-context.tsx';
 import { useI18n, type AnyKey } from '../i18n/index.tsx';
 import { copyText } from '../lib/clipboard.ts';
-import { fmtDistance, fmtNumber } from '../lib/format.ts';
+import { fmtNumber } from '../lib/format.ts';
 import { useReveal } from '../lib/queries.ts';
 import { ErrorNote, Loading } from '../ui/Status.tsx';
 import { useToast } from '../ui/Toast.tsx';
@@ -25,16 +26,16 @@ export function Results() {
 }
 
 function ResultsBody({ data }: { data: RevealResponse }) {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
+  const dist = useDistance();
   const toast = useToast();
-  const unit = t('common.metres');
   const total = data.prompts.reduce((n, p) => n + (p.mine?.points ?? 0), 0);
   const played = data.prompts.some(p => p.mine);
 
   const copy = async (): Promise<void> => {
     const head = data.dayNumber ? `Outlier #${data.dayNumber}` : `Outlier: ${data.game?.title ?? ''}`;
     const line = data.prompts.map(p => SQUARES[p.mine?.points ? p.mine.tier : 0]).join('');
-    const ok = await copyText(`${head}\n${line}\n${fmtDistance(locale, total, unit)}`);
+    const ok = await copyText(`${head}\n${line}\n${dist(total)}`);
     toast(ok ? t('results.copied') : t('common.error'), ok ? 'good' : 'bad');
   };
 
@@ -44,7 +45,7 @@ function ResultsBody({ data }: { data: RevealResponse }) {
         {played ? (
           <div className="results-total">
             <span className="faint">{t('results.total')}</span>
-            <strong className="num">{fmtDistance(locale, total, unit)}</strong>
+            <strong className="num">{dist(total)}</strong>
           </div>
         ) : null}
         <p className="muted">{t('results.players', { n: data.players })}</p>
@@ -65,6 +66,7 @@ function ResultsBody({ data }: { data: RevealResponse }) {
 
 function PromptResult({ p, players }: { p: RevealPrompt; players: number }) {
   const { t, locale } = useI18n();
+  const dist = useDistance();
   const given = p.answers.filter(a => a.count > 0);
   const top = Math.max(1, ...given.map(a => a.count));
   const mine = p.mine;
@@ -84,7 +86,7 @@ function PromptResult({ p, players }: { p: RevealPrompt; players: number }) {
             {mine.points ? t(`tier.${mine.tier}` as AnyKey) : t('results.noAnswer')}
           </span>
           <span dir="auto">{mine.answer ? t('results.youSaid', { a: mine.answer }) : mine.raw ? `“${mine.raw}”` : t('results.noAnswer')}</span>
-          {mine.points ? <span className="num rp-points">+{fmtDistance(locale, mine.points, t('common.metres'))}</span> : null}
+          {mine.points ? <span className="num rp-points">+{dist(mine.points)}</span> : null}
           {mine.outcome === 'awarded' ? <span className="faint">{t('results.awarded')}</span> : null}
           {mine.answer ? <span className="faint">{mine.same > 0 ? t('results.same', { n: mine.same }) : t('results.alone')}</span> : null}
         </div>

@@ -2,31 +2,31 @@
 import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { TIERS } from '../../../shared/tiers.ts';
-import { useScene } from '../app/scene-context.tsx';
+import { useDistance, useStage, useZoneName } from '../app/stage-context.tsx';
 import { useI18n, type AnyKey } from '../i18n/index.tsx';
 import { useNow } from '../lib/clock.ts';
-import { fmtDistance, fmtNumber, metresOf, untilParts } from '../lib/format.ts';
+import { fmtNumber, untilParts } from '../lib/format.ts';
 import { useToday } from '../lib/queries.ts';
-import { landmarkAt } from '../game/world.ts';
 import { PixelIcon } from '../ui/PixelIcon.tsx';
 import { ErrorNote, Loading } from '../ui/Status.tsx';
 import './home.css';
 
 export function Home() {
   const { t, locale } = useI18n();
+  const dist = useDistance();
   const today = useToday();
-  const scene = useScene();
+  const scene = useStage();
+  const zoneName = useZoneName();
   const navigate = useNavigate();
   const now = useNow(15_000);
   const data = today.data;
 
-  // Put the character where today's flights left it.
+  // Put the hero where today's flights left it.
   useEffect(() => {
     const s = scene.get();
     if (!s || !data) return;
-    s.focusX = 0.3;
     s.setClock(null);
-    if (s.state === 'idle') s.setPosition(metresOf(data.score ?? 0));
+    if (!s.busy) s.setPosition(data.score ?? 0);
   }, [scene, data]);
 
   const go = (): void => void navigate('/play');
@@ -43,8 +43,7 @@ export function Home() {
   const d = today.data;
   const skew = d.serverNow - today.dataUpdatedAt;
   const left = untilParts(d.endsAt - (now + skew));
-  const unit = t('common.metres');
-  const place = t(landmarkAt(metresOf(d.score ?? 0)).key);
+  const place = zoneName(d.score ?? 0);
 
   return (
     <div className="home">
@@ -60,12 +59,13 @@ export function Home() {
           <p className="home-lead">{t('home.noPuzzle')}</p>
         ) : d.status === 'done' ? (
           <div className="home-done">
-            <p className="home-big">{t('play.youFlew', { d: fmtDistance(locale, d.score ?? 0, unit) })}</p>
+            <p className="home-big">{t('play.youFlew', { d: dist(d.score ?? 0) })}</p>
             <p className="home-lead">{t('home.reached', { place })}</p>
           </div>
         ) : (
           <>
             <p className="home-lead">{t('home.howTitle')}</p>
+            <p className="home-pitch">{t(scene.theme.copy.pitch)}</p>
             <p className="home-example">{t('home.howExample')}</p>
             <ol className="ladder">
               {TIERS.map(tier => (
@@ -79,7 +79,7 @@ export function Home() {
                       <i key={i} />
                     ))}
                   </span>
-                  <span className="ladder-m num">{fmtDistance(locale, tier.points, unit)}</span>
+                  <span className="ladder-m num">{dist(tier.points)}</span>
                 </li>
               ))}
             </ol>

@@ -208,6 +208,7 @@ export const adminHe: Record<AdminKey, string> = {
 
   'admin.s.title': 'הגדרות',
   'admin.s.game': 'המשחק',
+  'admin.s.theme': 'ערכת עיצוב',
   'admin.s.siteName': 'שם המשחק',
   'admin.s.tagline': 'סלוגן',
   'admin.s.promptsPerDay': 'שאלות ביום (לימים חדשים בלבד)',
