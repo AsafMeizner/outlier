@@ -104,3 +104,16 @@ customisation unlocked by points; any user can create their own questions/games 
   no console errors, no external requests.
 - NEXT ideas: more themes (deep dive from art-lab C), vitest unit tests for pixel/answers/format, Playwright e2e in repo,
   offline zip bundle tool (tools/build-bundle.ts) for the air-gapped install.
+
+## 2026-11-18: phase "modes" (user: "unlimited mode, themed packs, friends, puffer party")
+Shipped first (aaabf0b): answers hidden until the day is over (reveal + example), typo confirm (2nd Enter), music + sfx,
+window scrolling, archive category eye toggle.
+Plan (original designs, no krillion assets/names):
+- Practice: `practice_sessions` + `practice_rounds` (migration v4). Kinds: unlimited (until 3 misses, personal best) and
+  pack (10 prompts of one category, best per pack). Pool = bank prompts NOT scheduled today/future; scheduler prefers
+  prompts never practised. API mirrors /api/play: /api/practice/:key/{start,next,guess,skip} returning RunState
+  (mode 'practice' + `practice` info), so the Play screen is reused with a different API base.
+- Friends: `friends` table (follow). /api/friends list+stats, add by username, remove, compare head-to-head; user search.
+- Party ("Meteor Party" in the space theme): in-memory rooms, 4-letter codes, long-poll GET /api/party/:code?v=N.
+  Turn-based hot potato: name a valid unused answer before your fuse ends; fuse shrinks each pass; timeout = lose a
+  life + new prompt; tier points fill a meter, 100 = extra life (max 5); last player standing wins. Typos confirm.

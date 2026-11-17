@@ -136,6 +136,45 @@ const MIGRATIONS: readonly string[] = [
     updated_at INTEGER NOT NULL
   );
   `,
+  // v4: friends (one-way follows) and practice modes (unlimited, themed packs)
+  `
+  CREATE TABLE friends (
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    friend_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    created_at INTEGER NOT NULL,
+    PRIMARY KEY (user_id, friend_id)
+  );
+  CREATE TABLE practice_sessions (
+    key TEXT PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    kind TEXT NOT NULL CHECK (kind IN ('unlimited','pack')),
+    pack TEXT NOT NULL DEFAULT '',
+    lang TEXT NOT NULL DEFAULT 'en',
+    size INTEGER NOT NULL DEFAULT 0,
+    position INTEGER NOT NULL DEFAULT 0,
+    score INTEGER NOT NULL DEFAULT 0,
+    strikes INTEGER NOT NULL DEFAULT 0,
+    next_prompt_id INTEGER REFERENCES prompts(id) ON DELETE SET NULL,
+    round_prompt_id INTEGER REFERENCES prompts(id) ON DELETE SET NULL,
+    round_started_at INTEGER,
+    created_at INTEGER NOT NULL,
+    finished_at INTEGER
+  );
+  CREATE INDEX practice_sessions_user ON practice_sessions(user_id, kind, pack);
+  CREATE TABLE practice_rounds (
+    session TEXT NOT NULL REFERENCES practice_sessions(key) ON DELETE CASCADE,
+    position INTEGER NOT NULL,
+    prompt_id INTEGER NOT NULL REFERENCES prompts(id) ON DELETE CASCADE,
+    answer_text TEXT,
+    tier INTEGER NOT NULL DEFAULT 0,
+    points INTEGER NOT NULL DEFAULT 0,
+    outcome TEXT NOT NULL,
+    fuzzy INTEGER NOT NULL DEFAULT 0,
+    at INTEGER NOT NULL,
+    PRIMARY KEY (session, position)
+  );
+  CREATE INDEX practice_rounds_prompt ON practice_rounds(prompt_id);
+  `,
 ];
 
 export type SqlParam = string | number | bigint | null | Uint8Array;

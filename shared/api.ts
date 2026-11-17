@@ -5,7 +5,7 @@ import type { Look, UnlockStats, WardrobeItem } from './wardrobe.ts';
 
 export type Role = 'player' | 'admin';
 export type Lang = 'en' | 'he';
-export type RunMode = 'live' | 'archive' | 'custom';
+export type RunMode = 'live' | 'archive' | 'custom' | 'practice';
 export type RoundOutcome = 'answered' | 'timeout' | 'skipped' | 'awarded';
 export type Registration = 'open' | 'code' | 'closed';
 export type PuzzleLanguage = 'en' | 'he' | 'alternate' | 'any';
@@ -99,6 +99,21 @@ export interface RunState {
   rounds: RoundSummary[];
   current: CurrentRound | null;
   upNext: UpNext | null;
+  /** Set for practice runs (unlimited mode and themed packs). */
+  practice?: PracticeInfo | null;
+}
+export type PracticeKind = 'unlimited' | 'pack';
+export interface PracticeInfo {
+  kind: PracticeKind;
+  /** The pack's category ('' for unlimited). */
+  pack: string;
+  lang: Lang;
+  /** Unlimited mode ends after maxStrikes rounds without distance. */
+  strikes: number;
+  maxStrikes: number;
+  /** Your best finished score for this mode/pack before this run. */
+  best: number;
+  newBest: boolean;
 }
 export interface GuessRequest { text: string; /** Accept a typo-corrected match the server suggested. */ confirm?: boolean }
 export type GuessResponse =
@@ -211,3 +226,53 @@ export interface CreatedUser { username: string; displayName: string; password: 
 export interface CreateUsersResponse { created: CreatedUser[]; errors: string[] }
 export interface UserRunRow { date: string; mode: RunMode; score: number; position: number; finished: boolean }
 export interface SettingsResponse { settings: Settings }
+
+// ---------- practice: unlimited mode and themed packs ----------
+export interface PackInfo { category: string; lang: Lang; prompts: number; best: number | null; played: number }
+export interface PracticeHome { packs: PackInfo[]; unlimited: Record<Lang, number | null> }
+export interface PracticeStartRequest { kind: PracticeKind; pack?: string; lang?: Lang }
+
+// ---------- friends ----------
+export interface FriendRow extends PlayerRef {
+  /** Today's finished daily score, or null. */
+  today: number | null;
+  streak: Streak;
+  week: number;
+  best: number;
+  followsYou: boolean;
+}
+export interface FriendsResponse { friends: FriendRow[] }
+export interface UserSearchRow extends PlayerRef { isFriend: boolean }
+export interface CompareSide extends PlayerRef { total: number; games: number; best: number; outliers: number; streak: Streak }
+export interface CompareDay { date: string; mine: number | null; theirs: number | null }
+export interface CompareResponse { me: CompareSide; them: CompareSide; days: CompareDay[]; wins: number; losses: number; ties: number }
+
+// ---------- party (real-time, turn-based) ----------
+export type PartyStatus = 'lobby' | 'playing' | 'over';
+export interface PartyPlayer extends PlayerRef { lives: number; meter: number; out: boolean; correct: number }
+export interface PartyUsed { answer: string; tier: number; by: number }
+export interface PartyLog { kind: 'answer' | 'pop' | 'life' | 'join' | 'leave' | 'start' | 'win'; userId: number; text?: string; tier?: number; at: number }
+export interface PartyState {
+  code: string;
+  hostId: number;
+  lang: Lang;
+  status: PartyStatus;
+  players: PartyPlayer[];
+  maxPlayers: number;
+  turnUserId: number | null;
+  deadline: number | null;
+  fuseMs: number;
+  serverNow: number;
+  prompt: { text: string; category: string; lang: Lang } | null;
+  used: PartyUsed[];
+  log: PartyLog[];
+  winner: number | null;
+  version: number;
+  you: number;
+}
+export interface PartyRoomRow { code: string; host: string; players: number; maxPlayers: number; status: PartyStatus; lang: Lang }
+export interface PartyListResponse { rooms: PartyRoomRow[] }
+export type PartyAnswerResponse =
+  | { result: 'rejected' | 'used'; raw: string; answer?: string }
+  | { result: 'confirm'; raw: string; answer: string }
+  | { result: 'accepted'; answer: string; tier: number; points: number; state: PartyState };

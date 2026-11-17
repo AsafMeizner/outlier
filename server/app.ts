@@ -7,6 +7,10 @@ import type * as Api from '../shared/api.ts';
 import { TIERS, pointsFor } from '../shared/tiers.ts';
 import { WARDROBES, isUnlocked, cleanLook, resolveLook, storeLook, LookError, type UnlockStats } from '../shared/wardrobe.ts';
 import { DEFAULT_THEME, THEME_IDS } from '../shared/themes.ts';
+import { installFriends } from './friends.ts';
+import type { Kit, PoolPrompt as KitPoolPrompt } from './kit.ts';
+import { installParty } from './party.ts';
+import { installPractice } from './practice.ts';
 import type { Db, SqlParam } from './db.ts';
 import { buildIndex, matchAnswer, normalize, keysFor, type AnswerIndex } from './match.ts';
 import { parsePack, toCsv, toText, type Pack, type PackPrompt } from './packs.ts';
@@ -196,16 +200,18 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   const dayRow = (date: string): DayRow | undefined => db.get<DayRow>('SELECT * FROM days WHERE date=?', date);
   const dayPrompts = (date: string): DayPrompt[] =>
     db.all<DayPrompt>('SELECT dp.position, p.id, p.text, p.category, p.lang FROM day_prompts dp JOIN prompts p ON p.id=dp.prompt_id WHERE dp.date=? ORDER BY dp.position', date);
-  interface PoolPrompt { id: number; text: string; category: string; lang: Api.Lang; used: number }
+  interface PoolPrompt { id: number; text: string; category: string; lang: Api.Lang; used: number; practised: number }
   /** Pick n prompts: least-used first, random within ties, different categories where possible. */
   function pickPrompts(n: number, exclude: readonly number[] = [], lang: Api.Lang | null = null): PoolPrompt[] {
     const ex = new Set(exclude);
-    let pool = db.all<PoolPrompt>(`SELECT p.id, p.text, p.category, p.lang, COUNT(dp.prompt_id) AS used
+    let pool = db.all<PoolPrompt>(`SELECT p.id, p.text, p.category, p.lang, COUNT(dp.prompt_id) AS used,
+        (SELECT COUNT(*) FROM practice_rounds pr WHERE pr.prompt_id=p.id) AS practised
       FROM prompts p LEFT JOIN day_prompts dp ON dp.prompt_id=p.id
       WHERE p.retired=0 AND p.owner_id IS NULL AND EXISTS (SELECT 1 FROM answers a WHERE a.prompt_id=p.id)
       GROUP BY p.id`).filter(p => !ex.has(p.id));
     if (lang) { const same = pool.filter(p => p.lang === lang); if (same.length >= n) pool = same; }
-    shuffle(pool, random).sort((a, b) => a.used - b.used);
+    // least-used first; among equals, prompts nobody has seen in practice or party play
+    shuffle(pool, random).sort((a, b) => a.used - b.used || a.practised - b.practised);
     const picked: PoolPrompt[] = [], cats = new Set<string>();
     for (const p of pool) { if (picked.length >= n) break; if (!cats.has(p.category)) { picked.push(p); cats.add(p.category); } }
     for (const p of pool) { if (picked.length >= n) break; if (!picked.includes(p)) picked.push(p); }
@@ -1048,6 +1054,20 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
       return new FileResult({ name: `outlier-backup-${today()}.db`, type: 'application/octet-stream', data: readFileSync(file) });
     } finally { rmSync(dir, { recursive: true, force: true }); }
   });
+
+  // ---------- feature modules: practice (unlimited, packs), friends, party ----------
+  const kit: Kit = {
+    db, now, random, settings, today, count, promptAnswers, streakOf,
+    route: (method, pattern, auth, fn) => route(method, pattern, auth, fn),
+    playerRef: u => ({ userId: u.id, username: u.username, name: u.display_name, team: u.team, look: resolveLook(settings().theme, u.look, u.username) }),
+    practicePool: (lang, category) => db.all<KitPoolPrompt>(`SELECT p.id, p.text, p.category, p.lang FROM prompts p
+        WHERE p.retired=0 AND p.owner_id IS NULL AND EXISTS (SELECT 1 FROM answers a WHERE a.prompt_id=p.id)
+        AND NOT EXISTS (SELECT 1 FROM day_prompts dp WHERE dp.prompt_id=p.id AND dp.date>=? AND dp.date NOT LIKE 'g-%')
+        AND (? IS NULL OR p.lang=?) AND (? IS NULL OR p.category=?)`, today(), lang, lang, category ?? null, category ?? null),
+  };
+  installPractice(kit);
+  installFriends(kit);
+  installParty(kit);
 
   async function handle(req: ApiRequest): Promise<ApiResponse> {
     const method = req.method.toUpperCase();

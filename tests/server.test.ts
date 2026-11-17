@@ -460,3 +460,183 @@ test('history backfill creates past days only on an empty calendar', async () =>
   const s = await t.ok<Api.RunState>('alice', 'POST', `/api/play/${past}/start`);
   assert.equal(s.mode, 'archive');
 });
+
+const ANIMALS = `C: Animals
+Q: Name a big cat
+1 Lion
+2 Tiger
+3 Leopard
+4 Jaguar
+5 Ocelot
+Q: Name a farm animal
+1 Cow
+2 Pig
+3 Sheep
+4 Goat
+5 Llama
+Q: Name a bird of prey
+1 Eagle
+2 Hawk
+3 Falcon
+4 Osprey
+5 Kestrel`;
+const answerOf: Record<string, string> = {
+  'Name a red fruit': 'cherry', 'Name a Nordic country': 'norway', 'Name a colour of the rainbow': 'blue', 'Name a planet': 'saturn', 'Name a hand tool': 'chisel',
+  'Name a big cat': 'ocelot', 'Name a farm animal': 'llama', 'Name a bird of prey': 'kestrel',
+};
+
+test('practice: unlimited and packs never use scheduled prompts, never count, and track bests', async () => {
+  const t = await withAdmin(setup());
+  await addPlayer(t, 'alice');
+  t.app.importPack(ANIMALS, 'animals.txt');
+  const bank = (await t.ok<Api.AdminPromptsResponse>('admin', 'GET', '/api/admin/prompts')).prompts;
+  const d = (await t.ok<Api.AdminOverview>('admin', 'GET', '/api/admin/overview')).today;
+  const scheduled = ['Name a red fruit', 'Name a Nordic country'];
+  await t.ok('admin', 'PUT', `/api/admin/schedule/${d}`, { promptIds: scheduled.map(x => must(bank.find(p => p.text === x)).id) });
+
+  const home = await t.ok<Api.PracticeHome>('alice', 'GET', '/api/practice');
+  assert.deepEqual(home.packs.map(p => [p.category, p.prompts]), [['Animals', 3]], 'only categories with 3+ unscheduled prompts are packs');
+
+  // unlimited: runs until three rounds without distance (or the pool runs out)
+  const { slug } = await t.ok<Api.SlugResponse>('alice', 'POST', '/api/practice', { kind: 'unlimited', lang: 'en' });
+  let s = await t.ok<Api.RunState>('alice', 'POST', `/api/practice/${slug}/start`);
+  assert.equal(s.mode, 'practice');
+  assert.ok(s.upNext);
+  const seen: string[] = [];
+  s = await t.ok<Api.RunState>('alice', 'POST', `/api/practice/${slug}/next`);
+  seen.push(must(s.current).text);
+  const r = await t.ok<Api.GuessResponse>('alice', 'POST', `/api/practice/${slug}/guess`, { text: answerOf[must(s.current).text] });
+  assert.equal(r.result, 'accepted');
+  for (let i = 0; i < 3; i++) {
+    s = await t.ok<Api.RunState>('alice', 'POST', `/api/practice/${slug}/next`);
+    seen.push(must(s.current).text);
+    s = await t.ok<Api.RunState>('alice', 'POST', `/api/practice/${slug}/skip`);
+  }
+  assert.equal(s.finished, true, 'three misses end unlimited mode');
+  assert.equal(must(s.practice).strikes, 3);
+  assert.ok(must(s.rounds[1]).example, 'practice rounds may show an example answer right away');
+  for (const x of scheduled) assert.ok(!seen.includes(x), `scheduled prompt "${x}" must not appear in practice`);
+  assert.equal(new Set(seen).size, seen.length, 'no repeats within a run');
+  const lb = await t.ok<LbDay>('alice', 'GET', '/api/leaderboard?period=day');
+  assert.equal(lb.rows.length, 0, 'practice is not on the leaderboard');
+
+  // a pack: its size is the number of prompts, the best is remembered
+  const p1 = await t.ok<Api.SlugResponse>('alice', 'POST', '/api/practice', { kind: 'pack', pack: 'Animals', lang: 'en' });
+  s = await t.ok<Api.RunState>('alice', 'POST', `/api/practice/${p1.slug}/start`);
+  assert.equal(s.total, 3);
+  for (let i = 0; i < 3; i++) {
+    s = await t.ok<Api.RunState>('alice', 'POST', `/api/practice/${p1.slug}/next`);
+    assert.equal(must(s.current).category, 'Animals');
+    const g = await t.ok<Api.GuessResponse>('alice', 'POST', `/api/practice/${p1.slug}/guess`, { text: answerOf[must(s.current).text] });
+    if (g.result !== 'accepted') assert.fail(`expected accepted, got ${g.result}`);
+    s = g.state;
+  }
+  assert.equal(s.finished, true);
+  assert.equal(s.score, 300);
+  assert.equal(must(s.practice).newBest, true);
+  const after = await t.ok<Api.PracticeHome>('alice', 'GET', '/api/practice');
+  assert.equal(must(after.packs[0]).best, 300);
+  assert.equal((await t.call('alice', 'POST', '/api/practice', { kind: 'pack', pack: 'Nope', lang: 'en' })).status, 404);
+  assert.equal((await t.call('zoe', 'GET', `/api/practice/${slug}`)).status, 401);
+});
+
+test('friends: follow by username, today and week scores, head-to-head, search', async () => {
+  const t = await withAdmin(setup());
+  await addPlayer(t, 'alice'); await addPlayer(t, 'zoe');
+  assert.equal((await t.call('alice', 'POST', '/api/friends', { username: 'alice' })).status, 400, 'you cannot follow yourself');
+  assert.equal((await t.call('alice', 'POST', '/api/friends', { username: 'nobody' })).status, 404);
+  let f = await t.ok<Api.FriendsResponse>('alice', 'POST', '/api/friends', { username: 'ZOE' });
+  assert.deepEqual(f.friends.map(x => [x.username, x.today]), [['zoe', null]]);
+  const bank = (await t.ok<Api.AdminPromptsResponse>('admin', 'GET', '/api/admin/prompts')).prompts;
+  const d = (await t.ok<Api.AdminOverview>('admin', 'GET', '/api/admin/overview')).today;
+  await t.ok('admin', 'PUT', `/api/admin/schedule/${d}`, { promptIds: ['Name a red fruit', 'Name a Nordic country', 'Name a colour of the rainbow'].map(x => must(bank.find(p => p.text === x)).id) });
+  await playDay(t, 'zoe', d, ['strawberry', 'sweden', 'red']);
+  await playDay(t, 'alice', d, ['lingon', 'iceland', 'indigo']);
+  f = await t.ok<Api.FriendsResponse>('alice', 'GET', '/api/friends');
+  assert.equal(must(f.friends[0]).today, 30);
+  assert.equal(must(f.friends[0]).followsYou, false);
+  const c = await t.ok<Api.CompareResponse>('alice', 'GET', `/api/friends/${must(f.friends[0]).userId}/compare`);
+  assert.deepEqual([c.wins, c.losses, c.ties], [1, 0, 0]);
+  assert.equal(c.me.total, 300);
+  assert.equal(c.them.total, 30);
+  const found = await t.ok<Api.UserSearchRow[]>('alice', 'GET', '/api/users/search?q=zo');
+  assert.deepEqual(found.map(x => [x.username, x.isFriend]), [['zoe', true]]);
+  f = await t.ok<Api.FriendsResponse>('alice', 'DELETE', `/api/friends/${must(f.friends[0]).userId}`);
+  assert.equal(f.friends.length, 0);
+});
+
+const PARTY_PACK = `C: Party
+Q: Name a country in Europe
+1 France
+1 Germany
+1 Italy
+1 Spain
+2 Portugal
+2 Greece
+2 Poland
+3 Austria
+3 Belgium
+3 Hungary
+4 Slovenia
+4 Estonia
+5 Liechtenstein
+5 Andorra
+Q: Name a fruit
+1 Apple
+1 Banana
+1 Orange
+2 Mango
+2 Pear
+2 Grape
+3 Kiwi
+3 Plum
+4 Lychee
+4 Guava
+5 Rambutan
+5 Durian`;
+
+test('party: rooms, turns, used answers, popping fuses, extra lives, a winner', async () => {
+  const t = await withAdmin(setup());
+  await addPlayer(t, 'alice'); await addPlayer(t, 'zoe');
+  t.app.importPack(PARTY_PACK, 'party.txt');
+  let s = await t.ok<Api.PartyState>('alice', 'POST', '/api/party', { lang: 'en' });
+  const code = s.code;
+  assert.match(code, /^[A-Z]{4}$/);
+  assert.equal((await t.call('alice', 'POST', `/api/party/${code}/start`)).status, 409, 'needs two players');
+  s = await t.ok<Api.PartyState>('zoe', 'POST', `/api/party/${code}/join`);
+  assert.equal(s.players.length, 2);
+  assert.ok((await t.ok<Api.PartyListResponse>('zoe', 'GET', '/api/party')).rooms.some(r => r.code === code));
+  assert.equal((await t.call('zoe', 'POST', `/api/party/${code}/start`)).status, 403, 'only the host starts');
+  s = await t.ok<Api.PartyState>('alice', 'POST', `/api/party/${code}/start`);
+  assert.equal(s.status, 'playing');
+  const ids = Object.fromEntries(s.players.map(p => [p.username, p.userId]));
+  const whose = (st: Api.PartyState): string => must(st.players.find(p => p.userId === st.turnUserId)).username;
+  const first = whose(s), second = first === 'alice' ? 'zoe' : 'alice';
+  const answers = must(s.prompt).text === 'Name a fruit' ? ['durian', 'apple', 'rambutan'] : ['liechtenstein', 'france', 'andorra'];
+  assert.equal((await t.call(second, 'POST', `/api/party/${code}/answer`, { text: answers[1] })).status, 409, 'not your turn');
+  // a tier-5 answer fills the meter: an extra life
+  let a = await t.ok<Api.PartyAnswerResponse>(first, 'POST', `/api/party/${code}/answer`, { text: answers[0] });
+  if (a.result !== 'accepted') assert.fail(`expected accepted, got ${a.result}`);
+  assert.equal(must(a.state.players.find(p => p.username === first)).lives, 4);
+  assert.equal(whose(a.state), second);
+  assert.equal(a.state.fuseMs, 14_000, 'the fuse gets shorter each pass');
+  // the same answer can't be used twice; a wrong one is rejected
+  assert.equal((await t.ok<Api.PartyAnswerResponse>(second, 'POST', `/api/party/${code}/answer`, { text: answers[0] })).result, 'used');
+  assert.equal((await t.ok<Api.PartyAnswerResponse>(second, 'POST', `/api/party/${code}/answer`, { text: 'qwerty' })).result, 'rejected');
+  a = await t.ok<Api.PartyAnswerResponse>(second, 'POST', `/api/party/${code}/answer`, { text: answers[1] });
+  assert.equal(a.result, 'accepted');
+  // the fuse runs out on the first player: a life lost, a new prompt
+  t.tick(14_000);
+  s = await t.ok<Api.PartyState>('zoe', 'GET', `/api/party/${code}`);
+  assert.equal(must(s.players.find(p => p.username === first)).lives, 3);
+  assert.equal(s.used.length, 0, 'a new prompt starts after a pop');
+  assert.ok(s.log.some(l => l.kind === 'pop' && l.userId === ids[first]));
+  // keep letting the fuse run out until someone wins
+  for (let i = 0; i < 12 && s.status === 'playing'; i++) { t.tick(15_000); s = await t.ok<Api.PartyState>('zoe', 'GET', `/api/party/${code}`); }
+  assert.equal(s.status, 'over');
+  assert.ok(s.winner === ids['alice'] || s.winner === ids['zoe']);
+  assert.equal(s.players.filter(p => !p.out).length, 1);
+  await t.ok('zoe', 'POST', `/api/party/${code}/leave`);
+  await t.ok('alice', 'POST', `/api/party/${code}/leave`);
+  assert.equal((await t.call('alice', 'GET', `/api/party/${code}`)).status, 404, 'an empty room is gone');
+});
