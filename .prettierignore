@@ -1,0 +1,6 @@
+dist
+node_modules
+vendor-dl
+data
+bank/packs
+package-lock.json

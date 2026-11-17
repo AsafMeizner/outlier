@@ -102,7 +102,7 @@ async function addPlayer(t: Harness, name: string): Promise<void> {
 async function playDay(t: Harness, who: string, date: string, answers: ReadonlyArray<string | null>): Promise<Json> {
   let s: Json = await t.ok(who, 'POST', `/api/play/${date}/start`);
   for (const a of answers) {
-    s = await t.ok(who, 'POST', `/api/play/${date}/next`);
+    await t.ok(who, 'POST', `/api/play/${date}/next`);
     if (a === null) { t.tick(32_000); s = await t.ok(who, 'GET', `/api/play/${date}`); continue; }
     const r: Json = await t.ok(who, 'POST', `/api/play/${date}/guess`, { text: a });
     s = r.result === 'rejected' ? await t.ok(who, 'POST', `/api/play/${date}/skip`) : r.state;
@@ -221,7 +221,7 @@ test('a full day: timing, rejection, scoring, reveal, leaderboard', async () => 
   assert.equal(r.tier, 5);
   assert.equal(r.points, 100);
   // round 2: time out (past deadline + grace)
-  s = await t.ok<Api.RunState>('alice', 'POST', `/api/play/${d}/next`);
+  await t.ok<Api.RunState>('alice', 'POST', `/api/play/${d}/next`);
   t.tick(31_600);
   r = await t.ok('alice', 'POST', `/api/play/${d}/guess`, { text: 'anything' });
   assert.equal(r.result, 'expired');

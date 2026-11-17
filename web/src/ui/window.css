@@ -1,0 +1,64 @@
+.win-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: calc(var(--u) * 20) calc(var(--u) * 4) calc(var(--u) * 6);
+  pointer-events: none;
+}
+.win-veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 16, 38, 0.55);
+  pointer-events: auto;
+  animation: win-fade 160ms steps(4) both;
+}
+.win {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 100%;
+  pointer-events: auto;
+  animation: px-rise 220ms steps(5) both;
+}
+.win--sm { max-width: 460px; }
+.win--md { max-width: 720px; }
+.win--lg { max-width: 980px; }
+.win-close {
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 9);
+  height: calc(var(--u) * 9);
+  margin: calc(var(--u) * -1) 0;
+  border: 0;
+  padding: 0;
+  background: var(--ink);
+  color: var(--sun);
+  cursor: pointer;
+}
+.win-close:hover { background: var(--cta); color: #fff; }
+.win-close:focus-visible { outline: var(--u) solid var(--ink); outline-offset: 2px; }
+.win-body {
+  overflow: auto;
+  padding: calc(var(--u) * 5);
+  overscroll-behavior: contain;
+  scrollbar-color: var(--line) transparent;
+}
+.win-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--u) * 3);
+  justify-content: flex-end;
+  padding: calc(var(--u) * 4) calc(var(--u) * 5) calc(var(--u) * 5);
+  border-top: var(--u) solid var(--navy-d);
+}
+.px-window--paper .win-footer { border-top-color: var(--paper-2); }
+
+@keyframes win-fade { from { opacity: 0; } }
+
+@media (max-width: 640px) {
+  .win-layer { padding: calc(var(--u) * 17) calc(var(--u) * 2) calc(var(--u) * 2); align-items: stretch; }
+  .win-body { padding: calc(var(--u) * 3); }
+}

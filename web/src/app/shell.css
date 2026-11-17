@@ -1,0 +1,146 @@
+.stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+.stage-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+}
+.stage-content {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+/* screens opt back in to pointer events on their own panels */
+.stage-content > * { pointer-events: auto; }
+.stage-content > .status-line { position: absolute; inset: auto 0 40% 0; justify-content: center; }
+
+/* ---------- HUD ---------- */
+.hud {
+  position: absolute;
+  z-index: 40;
+  inset: 0 0 auto 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: calc(var(--u) * 3);
+  padding: calc(var(--u) * 4) calc(var(--u) * 5);
+  pointer-events: none;
+}
+.hud > * { pointer-events: auto; }
+.hud-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--u) * 3);
+  color: var(--paper);
+  text-decoration: none;
+}
+.hud-logo {
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 10);
+  height: calc(var(--u) * 10);
+  background: var(--cta);
+  color: var(--paper);
+  box-shadow: inset 0 calc(var(--u) * -1) 0 0 var(--cta-d), 0 -3px 0 0 var(--ink), 0 3px 0 0 var(--ink), -3px 0 0 0 var(--ink), 3px 0 0 0 var(--ink), 3px 6px 0 0 var(--ink);
+}
+.hud-brand:hover .hud-logo { background: #ff7752; }
+.hud-word {
+  font-family: var(--pixel);
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--paper);
+  /* stepped outline: four hard offsets, then a depth block */
+  text-shadow: 3px 0 0 var(--ink), -3px 0 0 var(--ink), 0 3px 0 var(--ink), 0 -3px 0 var(--ink), 3px 3px 0 var(--ink), -3px 3px 0 var(--ink), 3px -3px 0 var(--ink),
+    -3px -3px 0 var(--ink), 3px 6px 0 var(--ink);
+}
+.hud-tools { display: flex; gap: calc(var(--u) * 4); align-items: center; }
+.hud-lang { width: auto; padding-inline: calc(var(--u) * 3); font-size: 0.95rem; }
+
+@media (max-width: 640px) {
+  .hud { padding: calc(var(--u) * 3); }
+  .hud-word { font-size: 1.25rem; }
+  .hud-tools { gap: calc(var(--u) * 3); }
+  .hide-narrow { display: none !important; }
+}
+
+/* ---------- menu ---------- */
+.menu-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 35;
+  display: grid;
+  place-items: center;
+  padding: calc(var(--u) * 20) calc(var(--u) * 4) calc(var(--u) * 6);
+}
+.menu {
+  position: relative;
+  width: min(100%, 760px);
+  display: grid;
+  gap: calc(var(--u) * 5);
+  animation: px-rise 200ms steps(4) both;
+}
+.menu-who {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 3);
+  color: var(--paper);
+}
+.menu-who > div { display: grid; }
+.menu-who strong { font-family: var(--pixel); font-weight: 400; font-size: 1.3rem; }
+.menu-who .avatar { box-shadow: 0 0 0 3px var(--ink); background: var(--navy); }
+.menu-tiles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: calc(var(--u) * 5);
+}
+.menu-tiles li { animation: px-pop 220ms steps(4) both; }
+.menu-tile {
+  --face: var(--paper);
+  --lo: var(--paper-2);
+  --fg: var(--paper-ink);
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: calc(var(--u) * 3);
+  min-height: 132px;
+  padding: calc(var(--u) * 4) calc(var(--u) * 2);
+  background: var(--face);
+  color: var(--fg);
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--pixel);
+  font-size: 1.05rem;
+  line-height: 1.1;
+  box-shadow: inset 0 calc(var(--u) * -1) 0 0 var(--lo), 0 calc(var(--u) * -1) 0 0 var(--ink), 0 var(--u) 0 0 var(--ink), calc(var(--u) * -1) 0 0 0 var(--ink),
+    var(--u) 0 0 0 var(--ink), 0 calc(var(--u) * 2) 0 0 var(--ink);
+  transform: translateY(calc(var(--u) * -1));
+}
+.menu-tile:hover { transform: translateY(calc(var(--u) * -2)); }
+.menu-tile:active { transform: none; }
+.menu-tile:focus-visible { outline: var(--u) solid var(--sun); outline-offset: calc(var(--u) * 2); }
+.menu-tile--cta { --face: var(--cta); --lo: var(--cta-d); --fg: #fff; }
+.menu-tile--sun { --face: var(--sun); --lo: var(--sun-d); --fg: var(--ink); }
+.menu-tile--navy { --face: var(--navy-2); --lo: var(--navy-d); --fg: var(--text); }
+.menu-signout { justify-self: end; }
+
+/* ---------- shared screen bits ---------- */
+.status-line {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 3);
+  flex-wrap: wrap;
+  color: var(--paper);
+  font-weight: 700;
+}
+.status-line p { margin: 0; }
+.status-line--error { color: var(--bad); }
+.px-window--paper .status-line { color: var(--paper-ink); }

@@ -1,0 +1,267 @@
+// The pieces of the play screen that sit over the scene.
+import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
+import { Link } from 'react-router';
+import type { CurrentRound, RoundSummary, RunState } from '../../../../shared/api.ts';
+import { useFlight } from '../../app/scene-context.tsx';
+import { landmarkAt, zoneAt } from '../../game/world.ts';
+import { useI18n, type AnyKey } from '../../i18n/index.tsx';
+import { fmtDistance, fmtNumber, metresOf } from '../../lib/format.ts';
+import { PixelIcon } from '../../ui/PixelIcon.tsx';
+
+/** Top-centre distance readout. Follows the chair live while it flies; shows the passing landmark. */
+export function FlightHud({ score, flying }: { score: number; flying: boolean }) {
+  const { t, locale } = useI18n();
+  const flight = useFlight();
+  const [caption, setCaption] = useState<AnyKey | null>(null);
+
+  useEffect(() => {
+    if (!flight.landmark || !flying) return;
+    setCaption(flight.landmark);
+    const id = window.setTimeout(() => setCaption(null), 1800);
+    return () => window.clearTimeout(id);
+  }, [flight.landmark, flight.landmarkAt, flying]);
+
+  const m = flying ? flight.meters : metresOf(score);
+  return (
+    <div className={`flighthud${flying ? ' is-flying' : ''}`} aria-hidden={flying}>
+      <div className="flighthud-m num">{t('common.metres', { n: fmtNumber(locale, m) })}</div>
+      <div className="flighthud-zone">{t(`zone.${zoneAt(m)}` as AnyKey)}</div>
+      {caption ? (
+        <div className="flighthud-caption" key={flight.landmarkAt}>
+          {t(caption)}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+/** Progress pips: one block per prompt, coloured by the tier it scored. */
+export function Pips({ run }: { run: RunState }) {
+  const { t } = useI18n();
+  return (
+    <ol className="pips" aria-label={t('play.prompt', { a: Math.min(run.position + 1, run.total), b: run.total })}>
+      {Array.from({ length: run.total }, (_, i) => {
+        const r = run.rounds.find(x => x.position === i);
+        return <li key={i} className={`pip${i === run.position && !run.finished ? ' is-now' : ''}`} data-tier={r ? r.tier : undefined} />;
+      })}
+    </ol>
+  );
+}
+
+/** The prompt, centred over the scene like a sign hanging in the sky. */
+export function PromptPanel({ run, round, children }: { run: RunState; round: Pick<CurrentRound, 'text' | 'category' | 'lang' | 'position'>; children?: ReactNode }) {
+  const { t } = useI18n();
+  return (
+    <section className="prompt px-window px-window--paper" aria-labelledby="prompt-text">
+      <div className="prompt-top">
+        <span className="prompt-count">{t('play.prompt', { a: round.position + 1, b: run.total })}</span>
+        <Pips run={run} />
+        {children}
+      </div>
+      <p className="prompt-cat" lang={round.lang} dir="auto">
+        {round.category}
+      </p>
+      <h1 id="prompt-text" className="prompt-text" lang={round.lang} dir="auto">
+        {round.text}
+      </h1>
+      {run.mode === 'archive' ? <p className="prompt-note">{t('play.archiveNote')}</p> : null}
+      {run.mode === 'custom' && run.game ? <p className="prompt-note">{run.game.title}</p> : null}
+    </section>
+  );
+}
+
+/** Bottom bar: the answer box, the Launch button and Pass. */
+export function AnswerBar({ onGuess, onPass, busy, rejected, lang }: { onGuess: (text: string) => void; onPass: () => void; busy: boolean; rejected: { raw: string; n: number } | null; lang: string }) {
+  const { t } = useI18n();
+  const [text, setText] = useState('');
+  const input = useRef<HTMLInputElement>(null);
+
+  useEffect(() => { input.current?.focus(); }, []);
+  // After a miss, keep the text but select it so typing replaces it.
+  useEffect(() => {
+    if (rejected) input.current?.select();
+  }, [rejected]);
+
+  const submit = (e: FormEvent): void => {
+    e.preventDefault();
+    const v = text.trim();
+    if (v && !busy) onGuess(v);
+  };
+  return (
+    <form className={`answerbar${rejected ? ' is-rejected' : ''}`} onSubmit={submit} key={rejected?.n ?? 0}>
+      <div className="answerbar-row">
+        <label className="sr-only" htmlFor="answer">
+          {t('play.yourAnswer')}
+        </label>
+        <input
+          ref={input}
+          id="answer"
+          className="answerbar-input"
+          value={text}
+          onChange={e => setText(e.target.value)}
+          placeholder={t('play.placeholder')}
+          autoComplete="off"
+          autoCorrect="off"
+          spellCheck={false}
+          maxLength={100}
+          dir="auto"
+          lang={lang}
+          enterKeyHint="go"
+        />
+        <button type="submit" className="px-btn answerbar-go" disabled={busy || !text.trim()}>
+          {t('play.launch')}
+          <span className="px-key">{t('common.enter')}</span>
+        </button>
+      </div>
+      <div className="answerbar-under">
+        <p className="answerbar-msg" role="alert">
+          {rejected ? t('play.notOnList', { a: rejected.raw }) : ' '}
+        </p>
+        <button type="button" className="answerbar-pass" onClick={onPass} disabled={busy}>
+          {t('play.pass')}
+        </button>
+      </div>
+    </form>
+  );
+}
+
+/** Before each prompt: what comes next, and the button that starts the clock. */
+export function IntroCard({ run, onOpen, busy }: { run: RunState; onOpen: () => void; busy: boolean }) {
+  const { t, locale } = useI18n();
+  const next = run.upNext;
+  useEnterKey(onOpen, !busy);
+  if (!next) return null;
+  return (
+    <section className="intro px-window px-window--paper" aria-labelledby="intro-title">
+      <div className="prompt-top">
+        <span className="prompt-count">{t('play.prompt', { a: next.position + 1, b: run.total })}</span>
+        <Pips run={run} />
+      </div>
+      <h1 id="intro-title" className="intro-cat" lang={next.lang} dir="auto">
+        {next.category}
+      </h1>
+      <p className="intro-note">{t('play.clockNote', { s: run.roundSeconds })}</p>
+      {run.position > 0 ? <p className="intro-total num">{t('play.total', { d: fmtDistance(locale, run.score, t('common.metres')) })}</p> : null}
+      <button type="button" className="px-btn px-btn--big px-btn--block" onClick={onOpen} disabled={busy} autoFocus>
+        {run.position === 0 ? t('play.first') : t('play.next')}
+        <span className="px-key">{t('common.enter')}</span>
+      </button>
+    </section>
+  );
+}
+
+/** After a round: the tier and distance, or what went wrong, then on to the next prompt. */
+export function ResultCard({ round, same, finished, onNext }: { round: RoundSummary; same: number | null; finished: boolean; onNext: () => void }) {
+  const { t, locale } = useI18n();
+  useEnterKey(onNext, true);
+  const scored = round.points > 0;
+  return (
+    <section className={`result px-window${scored ? '' : ' is-miss'}`} data-tier={round.tier} aria-live="polite">
+      <div className="result-main">
+        {scored ? (
+          <>
+            <span className="px-tier result-tier" data-tier={round.tier}>
+              {t(`tier.${round.tier}` as AnyKey)}
+            </span>
+            <span className="result-dist num">+{fmtDistance(locale, round.points, t('common.metres'))}</span>
+          </>
+        ) : (
+          <span className="result-miss">{round.outcome === 'timeout' ? t('play.timeUp') : t('play.passed')}</span>
+        )}
+      </div>
+      <div className="result-detail">
+        {scored ? (
+          <>
+            <p className="result-answer" dir="auto">
+              {round.answer}
+            </p>
+            {round.fuzzy && round.answer ? <p className="faint">{t('play.closeEnough', { a: round.answer })}</p> : null}
+            <p className="muted">{same === null ? null : same > 0 ? t('play.colleagues', { n: same }) : t('play.nobodyElse')}</p>
+          </>
+        ) : (
+          <>
+            <p className="muted">{t('play.noDistance')}</p>
+            {round.example ? (
+              <p className="result-example" dir="auto">
+                {t('play.example', { a: round.example })}
+              </p>
+            ) : null}
+          </>
+        )}
+      </div>
+      <button type="button" className="px-btn px-btn--sun result-next" onClick={onNext} autoFocus>
+        {finished ? t('play.finish') : t('play.next')}
+        <span className="px-key">{t('common.enter')}</span>
+      </button>
+    </section>
+  );
+}
+
+/** End of the day's prompts. */
+export function DayDone({ run, newItems }: { run: RunState; newItems: boolean }) {
+  const { t, locale } = useI18n();
+  const place = t(landmarkAt(metresOf(run.score)).key);
+  return (
+    <section className="daydone px-window px-window--paper" aria-labelledby="daydone-title">
+      <h1 id="daydone-title" className="daydone-title">
+        {t('play.dayDone')}
+      </h1>
+      <p className="daydone-big num">{t('play.youFlew', { d: fmtDistance(locale, run.score, t('common.metres')) })}</p>
+      <p className="daydone-place">{t('play.youReached', { place })}</p>
+      <ol className="daydone-rounds">
+        {run.rounds.map(r => (
+          <li key={r.position}>
+            <span className="px-tier" data-tier={r.tier}>
+              {r.points ? t(`tier.${r.tier}` as AnyKey) : r.outcome === 'timeout' ? t('play.timeUp') : t('play.passed')}
+            </span>
+            <span className="daydone-cat" dir="auto">
+              {r.category}
+            </span>
+            <span className="daydone-ans" dir="auto">
+              {r.answer ?? '—'}
+            </span>
+          </li>
+        ))}
+      </ol>
+      {newItems ? (
+        <Link to="/wardrobe" className="daydone-unlock">
+          <PixelIcon name="shirt" />
+          {t('results.newItems')}
+        </Link>
+      ) : null}
+      <div className="daydone-actions">
+        <Link to={`/results/${run.date}`} className="px-btn px-btn--big" autoFocus>
+          {t('home.results')}
+        </Link>
+        {run.mode === 'live' ? (
+          <Link to="/leaderboard" className="px-btn px-btn--sun">
+            <PixelIcon name="trophy" />
+            {t('nav.leaderboard')}
+          </Link>
+        ) : null}
+        {run.mode === 'custom' && run.game ? (
+          <Link to={`/g/${run.game.slug}`} className="px-btn px-btn--sun">
+            {t('games.board')}
+          </Link>
+        ) : null}
+      </div>
+    </section>
+  );
+}
+
+/** Enter anywhere (outside text boxes) runs `fn`. */
+function useEnterKey(fn: () => void, enabled: boolean): void {
+  const ref = useRef(fn);
+  useEffect(() => { ref.current = fn; }, [fn]);
+  useEffect(() => {
+    if (!enabled) return;
+    const onKey = (e: KeyboardEvent): void => {
+      if (e.key !== 'Enter' || e.repeat || e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.target instanceof HTMLButtonElement || e.target instanceof HTMLAnchorElement) return; // the focused control handles it
+      e.preventDefault();
+      ref.current();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [enabled]);
+}

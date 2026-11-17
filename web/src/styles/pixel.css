@@ -1,0 +1,226 @@
+/*
+ * Pixel-art UI kit. Everything is built on a 4px grid unit (--u):
+ *  - notched corners come from four offset box-shadows instead of a border, so the corner pixel stays empty;
+ *  - depth is a solid offset block, never a blur;
+ *  - type for titles, numbers and buttons is the pixel face (--pixel).
+ */
+:root {
+  --u: 4px;
+  --ink: #141833;
+  --paper: #fff7e0;
+  --paper-2: #f3e6bf;
+  --paper-ink: #2a2440;
+  --navy: #1b2150;
+  --navy-2: #252c66;
+  --navy-d: #0f1336;
+}
+
+/* notched outline in --pc, optional depth block below-right */
+.px-box {
+  --pc: var(--ink);
+  --depth: var(--u);
+  position: relative;
+  box-shadow:
+    0 calc(var(--u) * -1) 0 0 var(--pc),
+    0 var(--u) 0 0 var(--pc),
+    calc(var(--u) * -1) 0 0 0 var(--pc),
+    var(--u) 0 0 0 var(--pc),
+    var(--depth) calc(var(--u) + var(--depth)) 0 0 rgba(9, 10, 30, 0.55),
+    calc(var(--u) + var(--depth)) var(--depth) 0 0 rgba(9, 10, 30, 0.55);
+}
+
+/* ---------- windows ---------- */
+.px-window {
+  background: var(--navy);
+  color: var(--text);
+  box-shadow:
+    inset 0 var(--u) 0 0 var(--navy-2),
+    inset 0 calc(var(--u) * -1) 0 0 var(--navy-d),
+    0 calc(var(--u) * -1) 0 0 var(--ink),
+    0 var(--u) 0 0 var(--ink),
+    calc(var(--u) * -1) 0 0 0 var(--ink),
+    var(--u) 0 0 0 var(--ink),
+    calc(var(--u) * 2) calc(var(--u) * 3) 0 0 rgba(9, 10, 30, 0.5);
+}
+.px-window--paper {
+  background: var(--paper);
+  color: var(--paper-ink);
+  box-shadow:
+    inset 0 var(--u) 0 0 #fffdf4,
+    inset 0 calc(var(--u) * -1) 0 0 var(--paper-2),
+    0 calc(var(--u) * -1) 0 0 var(--ink),
+    0 var(--u) 0 0 var(--ink),
+    calc(var(--u) * -1) 0 0 0 var(--ink),
+    var(--u) 0 0 0 var(--ink),
+    calc(var(--u) * 2) calc(var(--u) * 3) 0 0 rgba(9, 10, 30, 0.45);
+}
+.px-titlebar {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 3);
+  background: var(--sun);
+  color: var(--ink);
+  padding: calc(var(--u) * 2) calc(var(--u) * 3);
+  box-shadow: inset 0 calc(var(--u) * -1) 0 0 var(--sun-d);
+}
+.px-titlebar h1,
+.px-titlebar h2 {
+  font-family: var(--pixel);
+  font-weight: 400;
+  font-size: 1.35rem;
+  line-height: 1;
+  margin: 0;
+  flex: 1;
+}
+
+/* ---------- buttons ---------- */
+.px-btn {
+  --face: var(--cta);
+  --hi: #ff8a6b;
+  --lo: var(--cta-d);
+  --fg: #fff;
+  --lift: var(--u);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--u) * 2);
+  min-height: calc(var(--u) * 12);
+  padding: calc(var(--u) * 2) calc(var(--u) * 5);
+  border: 0;
+  background: var(--face);
+  color: var(--fg);
+  font-family: var(--pixel);
+  font-size: 1.15rem;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(calc(var(--lift) * -1));
+  box-shadow:
+    inset 0 var(--u) 0 0 var(--hi),
+    inset 0 calc(var(--u) * -1) 0 0 var(--lo),
+    0 calc(var(--u) * -1) 0 0 var(--ink),
+    0 var(--u) 0 0 var(--ink),
+    calc(var(--u) * -1) 0 0 0 var(--ink),
+    var(--u) 0 0 0 var(--ink),
+    0 calc(var(--u) + var(--lift)) 0 0 var(--ink);
+  transition: transform 60ms steps(1), box-shadow 60ms steps(1);
+}
+.px-btn:hover { --hi: #ffb199; }
+.px-btn:active:not(:disabled),
+.px-btn[data-pressed='true'] { --lift: 0px; }
+.px-btn:disabled { filter: grayscale(0.7) brightness(0.8); cursor: not-allowed; }
+.px-btn:focus-visible { outline: var(--u) solid var(--paper); outline-offset: calc(var(--u) * 2); }
+.px-btn--sun { --face: var(--sun); --hi: #ffe680; --lo: var(--sun-d); --fg: var(--ink); }
+.px-btn--sun:hover { --hi: #fff1b3; }
+.px-btn--navy { --face: var(--navy-2); --hi: #39429a; --lo: var(--navy-d); --fg: var(--text); }
+.px-btn--navy:hover { --hi: #4b55b5; }
+.px-btn--paper { --face: var(--paper); --hi: #fff; --lo: var(--paper-2); --fg: var(--paper-ink); }
+.px-btn--danger { --face: var(--bad); --hi: #ff8095; --lo: #a3263b; }
+.px-btn--big { font-size: 1.6rem; min-height: calc(var(--u) * 16); padding-inline: calc(var(--u) * 8); }
+.px-btn--small { font-size: 0.95rem; min-height: calc(var(--u) * 9); padding: var(--u) calc(var(--u) * 3); }
+.px-btn--block { display: flex; width: 100%; }
+
+/* square icon buttons used in the HUD corners */
+.px-iconbtn {
+  --face: var(--navy-2);
+  --hi: #39429a;
+  --lo: var(--navy-d);
+  --fg: var(--text);
+  --lift: var(--u);
+  display: inline-grid;
+  place-items: center;
+  width: calc(var(--u) * 12);
+  height: calc(var(--u) * 12);
+  border: 0;
+  padding: 0;
+  background: var(--face);
+  color: var(--fg);
+  font-family: var(--pixel);
+  font-size: 1rem;
+  cursor: pointer;
+  transform: translateY(calc(var(--lift) * -1));
+  box-shadow:
+    inset 0 var(--u) 0 0 var(--hi),
+    inset 0 calc(var(--u) * -1) 0 0 var(--lo),
+    0 calc(var(--u) * -1) 0 0 var(--ink),
+    0 var(--u) 0 0 var(--ink),
+    calc(var(--u) * -1) 0 0 0 var(--ink),
+    var(--u) 0 0 0 var(--ink),
+    0 calc(var(--u) + var(--lift)) 0 0 var(--ink);
+}
+.px-iconbtn:hover { --hi: #4b55b5; }
+.px-iconbtn:active { --lift: 0px; }
+.px-iconbtn:focus-visible { outline: var(--u) solid var(--sun); outline-offset: calc(var(--u) * 2); }
+.px-iconbtn[aria-pressed='true'],
+.px-iconbtn--sun { --face: var(--sun); --hi: #ffe680; --lo: var(--sun-d); --fg: var(--ink); }
+
+/* keyboard keycap shown inside buttons ("ENTER") */
+.px-key {
+  display: inline-block;
+  padding: 2px calc(var(--u) * 1.5) 3px;
+  font-family: var(--pixel);
+  font-size: 0.7rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: inset 0 -2px 0 0 var(--paper-2), 0 0 0 2px var(--ink);
+  transform: translateY(1px);
+}
+
+/* ---------- small parts ---------- */
+.px-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--u) * 1.5);
+  padding: var(--u) calc(var(--u) * 2.5);
+  background: var(--navy-d);
+  color: var(--text);
+  font-family: var(--pixel);
+  font-size: 0.95rem;
+  line-height: 1.1;
+  box-shadow: 0 -2px 0 0 var(--ink), 0 2px 0 0 var(--ink), -2px 0 0 0 var(--ink), 2px 0 0 0 var(--ink);
+}
+.px-chip--sun { background: var(--sun); color: var(--ink); }
+
+.px-tier {
+  display: inline-block;
+  padding: 2px calc(var(--u) * 2);
+  font-family: var(--pixel);
+  font-size: 0.85rem;
+  line-height: 1.2;
+  color: var(--ink);
+  background: var(--tc, var(--t0));
+  box-shadow: 0 -2px 0 0 var(--ink), 0 2px 0 0 var(--ink), -2px 0 0 0 var(--ink), 2px 0 0 0 var(--ink);
+}
+.px-tier[data-tier='0'] { --tc: var(--t0); }
+.px-tier[data-tier='1'] { --tc: var(--t1); }
+.px-tier[data-tier='2'] { --tc: var(--t2); }
+.px-tier[data-tier='3'] { --tc: var(--t3); color: #fff; }
+.px-tier[data-tier='4'] { --tc: var(--t4); color: #fff; }
+.px-tier[data-tier='5'] { --tc: var(--t5); }
+
+.px-icon { display: block; flex: none; }
+[dir='rtl'] .flip-rtl { transform: scaleX(-1); }
+
+.px-rule {
+  height: var(--u);
+  border: 0;
+  margin: calc(var(--u) * 4) 0;
+  background: repeating-linear-gradient(90deg, var(--line) 0 calc(var(--u) * 2), transparent calc(var(--u) * 2) calc(var(--u) * 3));
+}
+
+/* loading: three blocks blinking in turn */
+.px-loading { display: inline-flex; gap: var(--u); padding: calc(var(--u) * 2); }
+.px-loading i { width: calc(var(--u) * 2); height: calc(var(--u) * 2); background: currentColor; animation: px-blink 900ms steps(1) infinite; }
+.px-loading i:nth-child(2) { animation-delay: 300ms; }
+.px-loading i:nth-child(3) { animation-delay: 600ms; }
+@keyframes px-blink { 0%, 100% { opacity: 0.2; } 33% { opacity: 1; } }
+
+/* pixel-art canvases are scaled up without smoothing */
+.pixelated { image-rendering: pixelated; image-rendering: crisp-edges; }
+
+/* stepped entrance used by windows and the result card */
+@keyframes px-rise { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes px-pop { 0% { transform: scale(0.6); } 60% { transform: scale(1.12); } 100% { transform: scale(1); } }

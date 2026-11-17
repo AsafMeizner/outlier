@@ -47,3 +47,18 @@ customisation unlocked by points; any user can create their own questions/games 
 - New world by cumulative metres (1 point = 10 m): office 0-60, parking 60-400, city 400-1600, park 1600-2600,
   beach 2600-3200, sea 3200-4800, sky/clouds 4800-5800, Moon 5800+. Pixel-art rendering (low-res canvas upscaled).
 - Fonts: Rubik (body), Rubik Pixels (HUD/titles, has Hebrew).
+
+## 2026-11-17 evening: user asked "use react, typescript etc, build it proper"
+- Repo is now strict TypeScript. Layout: `server/` (Node 24 runs .ts natively, zero runtime deps), `shared/` (api.ts =
+  API contract, tiers.ts, wardrobe.ts), `web/` (Vite 8 + React 19 + React Router 8 + TanStack Query, CSS modules),
+  `tests/` (node:test, typed with shared API types), `tools/validate-bank.ts`, `e2e/` (Playwright 1.49.1, pinned to the
+  cached chromium-1148).
+- TypeScript pinned to ~6.0 (typescript-eslint does not support TS 7 yet). Use `vendor-dl/win/node-v24.22.3-win-x64`
+  npm/node (system npm 11.0 hit an arborist bug).
+- DONE: server port (tsc clean, 11/11 tests), 10 packs / 300 prompts valid. Committed 68c2dab.
+- Writers: pop-culture + he-culture were stopped by the user (don't relaunch). he-mix-b may still be running.
+- NEXT: web app (React): full-screen game shell with persistent Scene (web/src/game/*), HUD, menu overlay, play flow
+  (tier reveal meter -> launch -> live distance counter -> result window -> NEXT), results, leaderboard, archive, stats,
+  wardrobe, user games (list/editor/share page), admin (normal page layout), i18n en/he typed (he: Record<Key,string>).
+  Then vitest + Playwright e2e, build-bundle tool, air-gap test, zip.
+- RR8: RouterProvider from 'react-router/dom'; createBrowserRouter from 'react-router'.

@@ -1,0 +1,73 @@
+@font-face { font-family: 'Rubik'; src: url('/fonts/rubik-latin.woff2') format('woff2'); font-weight: 300 900; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Rubik'; src: url('/fonts/rubik-hebrew.woff2') format('woff2'); font-weight: 300 900; font-display: swap;
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+/* Pixel type: Pixelify Sans for Latin, GNU Unifont's bitmap glyphs for Hebrew (both OFL). */
+@font-face { font-family: 'Outlier Pixel'; src: url('/fonts/pixelify-latin.woff2') format('woff2'); font-weight: 400 700; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+20AC, U+2122, U+2190-2193, U+2212, U+25A0-25FF; }
+@font-face { font-family: 'Outlier Pixel'; src: url('/fonts/unifont-hebrew.woff2') format('woff2'); font-display: swap;
+  unicode-range: U+0590-05FF, U+20AA, U+FB1D-FB4F; }
+
+:root {
+  /* palette */
+  --night: #0d1026;
+  --panel: rgba(16, 20, 46, 0.93);
+  --panel-solid: #10142e;
+  --panel-2: #1b2150;
+  --line: #2f3876;
+  --text: #f4f2ff;
+  --text-2: #b9bde8;
+  --text-3: #7f86c4;
+  --sun: #ffd23f;
+  --sun-d: #c99a00;
+  --cta: #ff5a36;
+  --cta-d: #a8321c;
+  --good: #2fd06a;
+  --bad: #ff4d6a;
+  --sky: #5ab8ff;
+  --t0: #94a3b8; --t1: #9aa6b8; --t2: #2fd06a; --t3: #3b8cff; --t4: #b45cff; --t5: #ff9a1f;
+  /* type */
+  --font: 'Rubik', 'Segoe UI', system-ui, sans-serif;
+  --pixel: 'Outlier Pixel', 'Rubik', system-ui, sans-serif;
+  /* shape */
+  --border: 3px solid var(--sun);
+  --shadow: 6px 6px 0 rgba(0, 0, 0, 0.45);
+  --radius: 4px;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+html { font-family: var(--font); color: var(--text); background: var(--night); -webkit-text-size-adjust: 100%; }
+body { margin: 0; line-height: 1.45; overflow: hidden; }
+h1, h2, h3 { margin: 0 0 0.5em; line-height: 1.1; }
+p { margin: 0 0 0.8em; }
+a { color: var(--sun); text-underline-offset: 3px; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.pixel { font-family: var(--pixel); font-weight: 400; letter-spacing: 0.02em; }
+.num { font-variant-numeric: tabular-nums; }
+.muted { color: var(--text-2); }
+.faint { color: var(--text-3); }
+
+/* shared form controls inside game windows */
+.field { display: block; margin-bottom: 0.9rem; }
+.field > span { display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-2); margin-bottom: 0.3rem; }
+.input, .select, .textarea {
+  width: 100%; background: var(--night); border: 2px solid var(--line); border-radius: var(--radius);
+  padding: 0.6rem 0.75rem; color: var(--text); outline: none;
+}
+.input:focus, .select:focus, .textarea:focus { border-color: var(--sun); }
+.textarea { min-height: 8rem; resize: vertical; }
+.error { color: var(--bad); font-weight: 700; min-height: 1.4em; margin: 0.3rem 0; }
+
+/* tables in panels */
+.table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.table th, .table td { text-align: start; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.table th { color: var(--text-3); font-weight: 700; font-size: 0.8rem; text-transform: none; white-space: nowrap; }
+.table td.n, .table th.n { text-align: end; font-variant-numeric: tabular-nums; }
+.table tr.me td { background: rgba(255, 210, 63, 0.1); }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }

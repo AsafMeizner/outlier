@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Outlier art lab: three pixel-art directions</title>
+    <style>
+      body { margin: 0; padding: 32px 40px 48px; background: #101019; color: #e9e6f5; font: 16px/1.5 'Segoe UI', system-ui, sans-serif; }
+      h1 { font-size: 28px; margin: 0 0 4px; }
+      .lede { color: #a8a6c4; margin: 0 0 32px; max-width: 980px; }
+      section { margin: 0 0 48px; }
+      h2 { margin: 0 0 4px; font-size: 22px; }
+      h2 b { color: #ffcc33; margin-inline-end: 8px; }
+      section > p { margin: 0 0 16px; color: #b9b6d6; max-width: 980px; }
+      .frames { display: flex; gap: 28px; flex-wrap: wrap; }
+      figure { margin: 0; }
+      canvas { width: 640px; height: 360px; display: block; image-rendering: pixelated; box-shadow: 0 0 0 4px #000; }
+      figcaption { font-size: 13px; color: #8d8aab; margin-top: 10px; }
+      .pal { display: flex; gap: 3px; margin-top: 14px; }
+      .pal i { width: 18px; height: 18px; display: block; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4); }
+    </style>
+  </head>
+  <body>
+    <h1>Outlier: three pixel-art directions</h1>
+    <p class="lede">
+      Every frame is a 320×180 canvas drawn one pixel at a time and scaled up by a whole number. Fixed palette, hard outlines, dithered shading, no anti-aliasing, and a bitmap font
+      for the UI, so the world and the interface share the same pixel grid. Left: the question screen. Right: mid-flight after a rare answer.
+    </p>
+
+    <section data-theme="office">
+      <h2><b>A</b>Office chair launch</h2>
+      <p>The current idea, redrawn as real pixel art. A rare answer sends your chair through the window, over the city, across the sea and up to the Moon.</p>
+      <div class="frames">
+        <figure><canvas width="320" height="180" data-scene="office-desk"></canvas><figcaption>Question: prompt sign, countdown dial, answer bar</figcaption></figure>
+        <figure><canvas width="320" height="180" data-scene="office-fly"></canvas><figcaption>Flight: live distance, landmark caption, tier banner</figcaption></figure>
+      </div>
+      <div class="pal" data-pal="office"></div>
+    </section>
+
+    <section data-theme="space">
+      <h2><b>B</b>Rocket launch</h2>
+      <p>Every answer is fuel. Common answers barely clear the tower; rare ones fly past the Moon, Mars, the asteroid belt and Saturn. Distance in kilometres.</p>
+      <div class="frames">
+        <figure><canvas width="320" height="180" data-scene="space-pad"></canvas><figcaption>Question: on the launch pad at night</figcaption></figure>
+        <figure><canvas width="320" height="180" data-scene="space-fly"></canvas><figcaption>Flight: passing a ringed planet through an asteroid field</figcaption></figure>
+      </div>
+      <div class="pal" data-pal="space"></div>
+    </section>
+
+    <section data-theme="sea">
+      <h2><b>C</b>Deep dive</h2>
+      <p>A submarine dives instead of flying. The rarer the answer, the deeper you go: reef, shipwreck, twilight zone, anglerfish, the trench. Weird answers find weird creatures.</p>
+      <div class="frames">
+        <figure><canvas width="320" height="180" data-scene="sea-surface"></canvas><figcaption>Question: the sub hangs from the support ship</figcaption></figure>
+        <figure><canvas width="320" height="180" data-scene="sea-deep"></canvas><figcaption>Dive: headlight finds an anglerfish at 3,200 m</figcaption></figure>
+      </div>
+      <div class="pal" data-pal="sea"></div>
+    </section>
+
+    <script src="art.js"></script>
+  </body>
+</html>
