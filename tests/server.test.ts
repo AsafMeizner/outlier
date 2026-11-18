@@ -146,6 +146,10 @@ test('client address behind a reverse proxy: X-Forwarded-For only from trusted p
   assert.equal(clientIp('192.168.6.20', '203.0.113.9', trustProxy('192.168.5.0/24')), '192.168.6.20');
   assert.equal(clientIp('127.0.0.1', '203.0.113.9', trustProxy('127.0.0.1')), '203.0.113.9');
   assert.equal(clientIp('fd00::1', '2001:db8::5', priv), '2001:db8::5');
+  // every hop trusted: the nearest hop, never the client-written leftmost entry
+  assert.equal(clientIp('10.42.0.5', '10.9.9.9, 10.42.0.7', priv), '10.42.0.7');
+  // garbage stops the walk at the nearest trusted hop
+  assert.equal(clientIp('10.42.0.5', '203.0.113.9, not-an-ip', priv), '10.42.0.5');
 });
 
 test('pack formats round-trip', () => {

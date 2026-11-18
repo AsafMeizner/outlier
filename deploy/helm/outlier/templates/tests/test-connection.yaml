@@ -2,8 +2,11 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: {{ include "outlier.fullname" . }}-test
+  # Not the app's selector labels, so the Service never routes to this pod.
   labels:
-    {{- include "outlier.labels" . | nindent 4 }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: helm-test
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
   annotations:
     helm.sh/hook: test
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded

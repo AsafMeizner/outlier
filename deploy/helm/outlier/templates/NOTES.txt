@@ -18,3 +18,9 @@ Outlier is starting (one pod, data on {{ if .Values.persistence.enabled }}the cl
      kubectl -n {{ .Release.Namespace }} exec deploy/{{ include "outlier.fullname" . }} -- node server/server.ts reset-password <username>
 
 4. Check it: helm test {{ .Release.Name }} -n {{ .Release.Namespace }}
+{{- if and .Values.ingress.enabled (not .Values.trustProxy) }}
+
+NOTE: the Ingress is on but trustProxy is empty, so every request counts as coming from the ingress controller and the
+rate limits (sign-in attempts, new guests) are shared by all players. Set trustProxy to your controller pods' CIDR
+(and turn on networkPolicy), e.g. --set trustProxy=10.42.0.0/16 --set networkPolicy.enabled=true
+{{- end }}

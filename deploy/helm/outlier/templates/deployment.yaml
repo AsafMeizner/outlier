@@ -47,10 +47,9 @@ spec:
               value: 0.0.0.0
             - name: OUTLIER_PORT
               value: "8080"
-            {{- $trust := .Values.trustProxy | default (ternary "private" "" .Values.ingress.enabled) }}
-            {{- if $trust }}
+            {{- with .Values.trustProxy }}
             - name: OUTLIER_TRUST_PROXY
-              value: {{ $trust | quote }}
+              value: {{ . | quote }}
             {{- end }}
             {{- if or .Values.secureCookies (and .Values.ingress.enabled .Values.ingress.tls.enabled) }}
             - name: OUTLIER_SECURE_COOKIES

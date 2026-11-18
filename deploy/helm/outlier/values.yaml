@@ -16,8 +16,9 @@ timeZone: Asia/Jerusalem
 # Past days created on the very first start, for the archive. Each uses brand-new prompts; 0 keeps them all for daily play.
 historyDays: 30
 # Which reverse proxies may set X-Forwarded-For (the client address used by rate limits and the login lockout):
-# "private" (loopback and private networks), or comma-separated addresses / IPv4 CIDRs. Empty = "private" when the
-# Ingress is enabled, otherwise no proxy is trusted.
+# comma-separated addresses / IPv4 CIDRs of your ingress controller pods, e.g. "10.42.0.0/24", or "private" for all
+# private networks (only safe when nothing else can reach the pod: see networkPolicy). Empty = trust nobody, and
+# behind an Ingress every request then counts as coming from the controller (limits are shared by all players).
 trustProxy: ""
 # Mark login cookies Secure. Turned on automatically when ingress.tls.enabled; set it yourself if HTTPS ends at some
 # other proxy in front of the service.
@@ -72,6 +73,15 @@ securityContext:
   readOnlyRootFilesystem: true
   capabilities:
     drop: [ALL]
+
+# Only let the listed sources reach the pod (needs a CNI that enforces NetworkPolicy). This release's helm test pod
+# is always allowed. Recommended with trustProxy, so nothing but the ingress controller can set X-Forwarded-For.
+networkPolicy:
+  enabled: false
+  from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ingress-nginx
 
 podAnnotations: {}
 podLabels: {}

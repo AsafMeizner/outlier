@@ -46,18 +46,24 @@ export function trustProxy(spec: string | undefined): TrustCheck | null {
   };
 }
 
+const isIp = (s: string): boolean => ipv4(s) !== null || (/^[0-9a-f:]+$/i.test(s) && s.includes(':'));
+
 /**
  * The client address: the socket peer, unless the peer is a trusted proxy. Then X-Forwarded-For is read from the
- * right, skipping trusted proxies, and the first address that is not one is the client. (Entries further left were
- * written by the client itself and can be forged, so they are never used while an untrusted hop exists.)
+ * right, skipping trusted proxies, and the first address that is not one is the client. Entries further left were
+ * written by the client itself and can be forged, so they are never used. If every hop is trusted, or an entry is
+ * not an address, the nearest trusted hop we reached is used instead.
  */
 export function clientIp(remote: string, forwardedFor: string | string[] | undefined, trusted: TrustCheck | null): string {
   const peer = bare(remote);
   if (!trusted || !forwardedFor || !trusted(peer)) return peer;
   const hops = (Array.isArray(forwardedFor) ? forwardedFor.join(',') : forwardedFor).split(',').map(bare).filter(Boolean);
+  let nearest = peer;
   for (let i = hops.length - 1; i >= 0; i--) {
     const hop = hops[i] ?? '';
+    if (!isIp(hop)) return nearest;
     if (!trusted(hop)) return hop;
+    if (nearest === peer) nearest = hop; // the hop our own proxy saw; anything further left is client-written
   }
-  return hops[0] ?? peer;
+  return nearest;
 }

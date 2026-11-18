@@ -184,3 +184,6 @@ other daily score) -> "New personal best!" + sfx.record + Stage.celebrate().
   address, so login lockout/guest limits collapsed onto one key. server/proxy.ts: OUTLIER_TRUST_PROXY (private | IPs |
   IPv4 CIDRs) -> client from X-Forwarded-For only via trusted peers, read right-to-left; OUTLIER_SECURE_COOKIES=1.
   Chart sets both from ingress.enabled / ingress.tls.enabled (values trustProxy, secureCookies). Verified live.
+- Review round 2: clientIp never falls back to a client-written XFF entry (all-trusted -> nearest hop; non-IP stops);
+  chart no longer auto-trusts "private" (trustProxy empty by default; NOTES warns), optional networkPolicy (verified
+  enforced in kind: helm test allowed, another namespace blocked), helm test pod no longer matches the Service selector.
