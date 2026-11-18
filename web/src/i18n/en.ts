@@ -269,6 +269,8 @@ export const en = {
   'play.confirmLaunch': 'Yes, launch!',
   'play.next': 'Next prompt',
   'play.first': 'First prompt',
+  'play.readyFirst': 'Ready for liftoff?',
+  'play.readyNext': 'Ready for the next one?',
   'play.clockNote': 'The {s}-second clock starts when you open the prompt.',
   'play.finish': 'See the results',
   'play.timeUp': 'Time’s up',

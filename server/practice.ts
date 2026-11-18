@@ -75,7 +75,7 @@ export function installPractice(k: Kit): void {
       date: s.key, dayNumber: null, mode: 'practice', game: null, total: s.kind === 'pack' ? s.size : 0, position: s.position, score: s.score,
       finished: !!s.finished_at, roundSeconds: secs, serverNow: k.now(), rounds,
       current: cur && s.round_started_at ? { position: s.position, text: cur.text, category: cur.category, lang: cur.lang, startedAt: s.round_started_at, deadline: s.round_started_at + secs * 1000 } : null,
-      upNext: !s.finished_at && !s.round_started_at && nxt ? { position: s.position, category: nxt.category, lang: nxt.lang } : null,
+      upNext: !s.finished_at && !s.round_started_at && nxt ? { position: s.position, lang: nxt.lang } : null,
       practice: { kind: s.kind, pack: s.pack, lang: s.lang, strikes: s.strikes, maxStrikes: MAX_STRIKES, best: prev, newBest: !!s.finished_at && s.score > prev && s.score > 0 },
     };
   }

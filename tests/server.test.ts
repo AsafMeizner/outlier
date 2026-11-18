@@ -516,6 +516,7 @@ test('practice uses only past days; daily prompts are always brand new', async (
   let s = await t.ok<Api.RunState>('alice', 'POST', `/api/practice/${slug}/start`);
   assert.equal(s.mode, 'practice');
   assert.ok(s.upNext);
+  assert.deepEqual(Object.keys(s.upNext).sort(), ['lang', 'position'], 'nothing about the next prompt before it opens');
   const seen: string[] = [];
   s = await t.ok<Api.RunState>('alice', 'POST', `/api/practice/${slug}/next`);
   seen.push(must(s.current).text);

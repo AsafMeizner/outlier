@@ -138,3 +138,6 @@ Plan (original designs, no krillion assets/names):
   19 files. Answers were written from model knowledge, not checked against sources; admins can fix any via Questions.
   server.ts now imports each bank/packs file ONCE (list in settings key `starterPacks`), so new pack files reach
   existing servers on the next start; old servers without the list count a file as imported if any prompt matches.
+- 2026-11-18 noon: day rollover at midnight Israel time: Coolify env TZ=Asia/Jerusalem added (container was UTC, so days
+  flipped at 02:00 local). Client: app/DayRollover.tsx sets a timer for /api/today endsAt and refetches every query.
+  The intro card no longer shows the category (UpNext = {position, lang}). Mars got ragged polar caps.

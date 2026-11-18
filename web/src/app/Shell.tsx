@@ -5,6 +5,7 @@ import { Link, Outlet, useLocation } from 'react-router';
 import { defaultLook } from '../../../shared/wardrobe.ts';
 import { useI18n } from '../i18n/index.tsx';
 import { useMe } from '../lib/queries.ts';
+import { DayRollover } from './DayRollover.tsx';
 import { PixelIcon } from '../ui/PixelIcon.tsx';
 import { ErrorNote, Loading } from '../ui/Status.tsx';
 import { Menu } from './Menu.tsx';
@@ -55,6 +56,7 @@ function Frame({ children }: { children: ReactNode }) {
   return (
     <div className="stage">
       <canvas ref={attach} className="stage-scene" aria-hidden="true" />
+      {user && !user.mustChange ? <DayRollover /> : null}
       <header className="hud">
         <Link to="/" className="hud-brand" aria-label={t('nav.home')}>
           <span className="hud-logo" aria-hidden="true">

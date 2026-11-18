@@ -264,6 +264,8 @@ export const he: Record<Key, string> = {
   'play.confirmLaunch': 'כן, שגרו!',
   'play.next': 'לשאלה הבאה',
   'play.first': 'לשאלה הראשונה',
+  'play.readyFirst': 'מוכנים להמראה?',
+  'play.readyNext': 'מוכנים לשאלה הבאה?',
   'play.clockNote': 'השעון ({s} שניות) מתחיל כשפותחים את השאלה.',
   'play.finish': 'לתוצאות',
   'play.timeUp': 'נגמר הזמן',

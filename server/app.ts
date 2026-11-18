@@ -296,7 +296,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
       current = { position: run.position, text: p.text, category: p.category, lang: p.lang, startedAt: run.round_started_at, deadline: run.round_started_at + s.roundSeconds * 1000 };
     } else if (!run.finished_at) {
       const p = promptAt(prompts, run.position);
-      upNext = { position: run.position, category: p.category, lang: p.lang };
+      upNext = { position: run.position, lang: p.lang };
     }
     return {
       date: run.date, dayNumber: isGameKey(run.date) ? null : dayNumber(run.date), mode: run.mode, game: gameRef(run.date),

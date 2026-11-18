@@ -26,10 +26,11 @@ Settings: `config.json`, or the environment variables `OUTLIER_PORT`, `OUTLIER_H
 
 ```sh
 docker build -t outlier .
-docker run -p 8080:8080 -v outlier-data:/data outlier
+docker run -p 8080:8080 -v outlier-data:/data -e TZ=Asia/Jerusalem outlier
 ```
 
-The setup link is printed in the container log.
+The setup link is printed in the container log. A new daily puzzle starts at midnight in the server's time zone;
+containers run on UTC unless you set `TZ`. Admins can also pick the time zone and the hour the day starts in Admin → Settings.
 
 ## Develop
 

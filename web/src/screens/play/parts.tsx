@@ -145,8 +145,8 @@ export function IntroCard({ run, onOpen, busy }: { run: RunState; onOpen: () => 
         {run.practice ? <PracticeTag run={run} /> : null}
         <Pips run={run} />
       </div>
-      <h1 id="intro-title" className="intro-cat" lang={next.lang} dir="auto">
-        {next.category}
+      <h1 id="intro-title" className="intro-cat">
+        {run.position === 0 ? t('play.readyFirst') : t('play.readyNext')}
       </h1>
       <p className="intro-note">{t('play.clockNote', { s: run.roundSeconds })}</p>
       {run.position > 0 ? <p className="intro-total num">{t('play.total', { d: dist(run.score) })}</p> : null}

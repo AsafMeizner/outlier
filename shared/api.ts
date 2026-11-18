@@ -89,7 +89,8 @@ export interface RoundSummary {
   example: string | null;
 }
 export interface CurrentRound { position: number; text: string; category: string; lang: Lang; startedAt: number; deadline: number }
-export interface UpNext { position: number; category: string; lang: Lang }
+/** The prompt waiting to be opened. No category or text: nothing about it is shown before the clock starts. */
+export interface UpNext { position: number; lang: Lang }
 export interface RunState {
   date: DayKey;
   dayNumber: number | null;

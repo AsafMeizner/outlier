@@ -70,7 +70,12 @@ const PLANETS: Planet[] = [
   {
     at: 160, r: 0.2, dy: 0.05,
     draw: (b, cx, cy, r) => ball(b, cx, cy, r, P.rust, P.brown, (x, y) => {
-      if (y < -0.78) return P.white;
+      // Polar caps with ragged edges and a frosty fringe, so the top of the planet doesn't look sliced off.
+      const north = -0.66 + Math.sin(x * 7 + 0.6) * 0.07 + Math.sin(x * 17) * 0.035;
+      if (y < north) return P.white;
+      if (y < north + 0.09 && Math.sin(x * 23 + y * 31) > -0.2) return P.grayL;
+      const south = 0.8 + Math.sin(x * 6 + 2) * 0.06 + Math.sin(x * 15) * 0.03;
+      if (y > south) return Math.sin(x * 19) > 0.35 ? P.grayL : P.white;
       const n = Math.sin(x * 9 + y * 4) + Math.sin(x * 4 - y * 7);
       return n > 1.1 ? P.brown : n < -1.3 ? P.orange : 0;
     }),
