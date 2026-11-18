@@ -2,7 +2,7 @@
   "name": "outlier",
   "version": "1.0.0",
   "private": true,
-  "description": "Air-gapped office trivia game: rarer answers launch your office chair further.",
+  "description": "Daily trivia where the rarer your answer, the further your rocket flies. English and Hebrew; runs fully offline.",
   "type": "module",
   "engines": {
     "node": ">=24"
@@ -19,7 +19,9 @@
     "test:server": "node --test tests/*.test.ts",
     "test:web": "vitest run",
     "e2e": "playwright test --trace off",
+    "check": "npm run typecheck && npm run lint && npm test && npm run validate-bank && npm run build",
     "validate-bank": "node tools/validate-bank.ts",
+    "list-prompts": "node tools/list-prompts.ts",
     "bundle": "node tools/build-bundle.ts"
   },
   "devDependencies": {

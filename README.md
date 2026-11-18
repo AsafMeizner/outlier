@@ -37,11 +37,20 @@ containers run on UTC unless you set `TZ`. Admins can also pick the time zone an
 ```sh
 npm run dev:server   # API on :8080, restarts on change
 npm run dev          # Vite dev server with the API proxied
-npm run typecheck && npm run lint && npm run test:server
+npm run check        # typecheck, lint, server + web tests, question-bank validation, build
+npm run e2e          # browser smoke tests (after a build; first run: npx playwright install chromium)
 ```
 
 Layout: `server/` (Node HTTP server, SQLite via `node:sqlite`), `shared/` (API contract and game rules used by both
-sides), `web/` (React + Vite app), `bank/packs/` (question packs), `tests/` (server tests), `tools/` (pack validator).
+sides), `web/` (React + Vite app with a pixel-art canvas engine), `bank/packs/` (question packs), `tests/` (server
+tests), `e2e/` (browser tests), `tools/` (pack validator, prompt list, offline bundle). How it all fits together:
+[docs/architecture.md](docs/architecture.md). CI runs `npm run check` and the browser tests on every push.
+
+### Working with AI coding agents
+
+[CLAUDE.md](CLAUDE.md) (also linked from [AGENTS.md](AGENTS.md)) is the guide for agents: commands, architecture, and the
+rules that are easy to break. `.claude/rules/` holds conventions that load when an agent touches the server, the web
+app, the question bank or TypeScript files, and `.claude/skills/write-question-pack` walks through writing a new pack.
 
 ### Questions
 
@@ -60,5 +69,14 @@ Q: Name a fruit that is red
 4 Lingonberry | lingon
 ```
 
-`C:` sets the category, `Q:` starts a prompt, and each answer line is a tier from 1 (most common) to 5 (rarest), the
-answer, then other accepted spellings after `|`. `npm run validate-bank` checks the packs in `bank/packs/`.
+`C:` sets the category, `Q:` starts a prompt, and each answer line is a tier from 1 (most common) to 6 (One of a Kind,
+at most one per prompt), the answer, then other accepted spellings after `|`. `npm run validate-bank` checks the packs
+in `bank/packs/`. Each file in `bank/packs/` is added to the database once, on the next start, so new packs shipped in
+an update reach existing servers.
+
+### Offline package
+
+`npm run bundle` builds `release/outlier-offline-<date>.zip` for networks with no internet: the source with git history,
+the built app, `node_modules` (with the Linux builds of the native packages), Node.js for Windows and Linux, start
+scripts and instructions. Pass `--docker <image.tar.gz>` to include a saved Docker image. It needs the files listed at
+the top of `tools/build-bundle.ts` in `vendor-dl/`.

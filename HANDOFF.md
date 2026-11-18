@@ -157,3 +157,19 @@ Play counts tier-6 rounds; joins only when idle, sfx.alien + toast. Tap the rock
 pointerdown (ignores panels/controls), world.hero() hit-test, hop + sparkles + sfx.boop. Pad sky follows the
 player's clock (night/dawn/day/dusk, sun or moon, no stars by day). Shooting stars. RunState.record (beat every
 other daily score) -> "New personal best!" + sfx.record + Stage.celebrate().
+
+## 2026-11-18 evening: offline zip (user: "zip with full source + all dependencies, air gapped, more questions")
+- tools/build-bundle.ts (npm run bundle [-- --docker img.tar.gz]) -> release/outlier-offline-<date>.zip: outlier/ (git
+  tracked files + .git + dist/web + node_modules + Linux builds of rolldown/lightningcss from vendor-dl/npm/*.tgz),
+  runtime/win-x64 (unpacked Node), runtime/node-...-linux-x64.tar.xz (start-linux.sh unpacks it), docker/ (image +
+  compose), README.txt from tools/offline-readme.txt, SHA256SUMS.txt. Tested: extracted on Windows and in WSL Ubuntu,
+  both start and serve; WSL `npm rebuild --offline && npm run build && npm run test:server` pass.
+- Docker image = the Coolify-built image for the commit (nebula: docker tag <uuid>:<sha> outlier:offline; docker save).
+- 8 more packs being written (en-words-culture, en-business-brands, en-travel-places, en-everyday-fun,
+  he-words-culture, he-business-brands, he-world-travel, he-everyday-fun).
+- Repo/AI readiness (user: "make it more ai ready with claude.md etc and improve the repo"): CLAUDE.md (70 lines),
+  AGENTS.md, docs/architecture.md, .claude/{settings.json, rules/{server,web,bank,typescript}.md,
+  skills/write-question-pack}, tools/list-prompts.ts, CI (.github/workflows/ci.yml: check + Playwright e2e),
+  web tests (vitest: answers, format, i18n incl. server-message coverage, space world smoke), e2e/smoke.spec.ts with a
+  throwaway server (e2e/server.ts), `npm run check`, .editorconfig. Found and fixed: 35 server errors had no Hebrew;
+  `npm test` failed (no web tests); stale start scripts; README tier range; eslint/docker ignores for release/.

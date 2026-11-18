@@ -1,9 +1,6 @@
 #!/bin/sh
-# Starts the Outlier server with the bundled Node.js. Press Ctrl+C to stop it.
-# Admin commands work too, for example:  ./start-linux.sh reset-password dana
+# Starts the Outlier server from a source checkout (Node.js 24 or newer on the PATH). Press Ctrl+C to stop it.
+# Run "npm run build" first. Admin commands work too, for example:  ./start-linux.sh reset-password dana
+# The offline package (npm run bundle) has its own start scripts with Node.js included.
 cd "$(dirname "$0")" || exit 1
-NODE=./runtime/linux-x64/bin/node
-if [ ! -x "$NODE" ]; then
-  if [ -f "$NODE" ]; then chmod +x "$NODE"; else NODE=node; fi
-fi
-exec "$NODE" src/server.mjs "$@"
+exec node server/server.ts "$@"

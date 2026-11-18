@@ -8,3 +8,9 @@ playwright-report
 art-lab
 src
 *.log
+release
+.tmp
+.claude
+.github
+e2e
+docs

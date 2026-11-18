@@ -4,3 +4,6 @@ vendor-dl
 data
 bank/packs
 package-lock.json
+release
+test-results
+playwright-report

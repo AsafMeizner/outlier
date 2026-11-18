@@ -5,3 +5,8 @@ node_modules/
 *.log
 test-results/
 playwright-report/
+release/
+.tmp/
+# Claude Code personal overrides
+.claude/settings.local.json
+CLAUDE.local.md
