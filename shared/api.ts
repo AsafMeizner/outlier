@@ -66,7 +66,6 @@ export interface TodayResponse {
   dayNumber: number | null;
   available: boolean;
   promptCount: number;
-  categories: string[];
   roundSeconds: number;
   endsAt: number;
   serverNow: number;

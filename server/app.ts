@@ -664,7 +664,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     const settled = run && prompts ? settle(run, prompts) : null;
     return {
       date: t, dayNumber: prompts ? dayNumber(t) : null, available: !!prompts, promptCount: prompts?.length ?? 0,
-      categories: prompts ? prompts.map(p => p.category) : [], roundSeconds: s.roundSeconds,
+      roundSeconds: s.roundSeconds,
       endsAt: dateEndsAt(t, s.timeZone, s.dayStartHour), serverNow: now(),
       players: count("SELECT COUNT(*) AS n FROM runs WHERE date=? AND mode='live' AND finished_at IS NOT NULL", t),
       status: !settled ? 'new' : settled.finished_at ? 'done' : 'playing',

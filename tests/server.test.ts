@@ -201,7 +201,9 @@ test('a full day: timing, rejection, scoring, reveal, leaderboard', async () => 
   const today = await t.ok<Api.TodayResponse>('alice', 'GET', '/api/today');
   assert.equal(today.available, true);
   assert.equal(today.promptCount, 3);
-  assert.equal(new Set(today.categories).size, 3, 'auto-schedule spreads categories');
+  assert.equal('categories' in today, false, 'no category spoilers before playing');
+  const sched = await t.ok<Api.ScheduleResponse>('admin', 'GET', `/api/admin/schedule?from=${today.date}&to=${today.date}`);
+  assert.equal(new Set(sched.days[0]?.prompts.map(p => p.category)).size, 3, 'auto-schedule spreads categories');
   const d = today.date;
 
   let s = await t.ok<Api.RunState>('alice', 'POST', `/api/play/${d}/start`);
