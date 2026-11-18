@@ -1,0 +1,11553 @@
+{
+ "title": "מילים ותרבות",
+ "prompts": [
+  {
+   "text": "מילה עברית שמתחילה ונגמרת באותה אות (כמו 'תות' או 'שמש'), לא בצורת רבים",
+   "category": "שפה",
+   "answers": [
+    {
+     "answer": "תות",
+     "tier": 1
+    },
+    {
+     "answer": "שמש",
+     "tier": 1
+    },
+    {
+     "answer": "אבא",
+     "tier": 1
+    },
+    {
+     "answer": "אמא",
+     "tier": 1
+    },
+    {
+     "answer": "תרנגולת",
+     "tier": 1
+    },
+    {
+     "answer": "תכלת",
+     "tier": 1
+    },
+    {
+     "answer": "שורש",
+     "tier": 2,
+     "aliases": [
+      "שרש"
+     ]
+    },
+    {
+     "answer": "דוד",
+     "tier": 2
+    },
+    {
+     "answer": "סוס",
+     "tier": 2
+    },
+    {
+     "answer": "לול",
+     "tier": 2
+    },
+    {
+     "answer": "תחפושת",
+     "tier": 2
+    },
+    {
+     "answer": "תלבושת",
+     "tier": 2
+    },
+    {
+     "answer": "תחרות",
+     "tier": 2
+    },
+    {
+     "answer": "תוכנית",
+     "tier": 2,
+     "aliases": [
+      "תכנית"
+     ]
+    },
+    {
+     "answer": "מקום",
+     "tier": 2
+    },
+    {
+     "answer": "ישראלי",
+     "tier": 2
+    },
+    {
+     "answer": "גג",
+     "tier": 3
+    },
+    {
+     "answer": "שש",
+     "tier": 3
+    },
+    {
+     "answer": "שלוש",
+     "tier": 3,
+     "aliases": [
+      "שלש"
+     ]
+    },
+    {
+     "answer": "תפארת",
+     "tier": 3
+    },
+    {
+     "answer": "תספורת",
+     "tier": 3
+    },
+    {
+     "answer": "תזמורת",
+     "tier": 3
+    },
+    {
+     "answer": "תרבות",
+     "tier": 3
+    },
+    {
+     "answer": "תולעת",
+     "tier": 3
+    },
+    {
+     "answer": "תבנית",
+     "tier": 3
+    },
+    {
+     "answer": "תגלית",
+     "tier": 3
+    },
+    {
+     "answer": "מדהים",
+     "tier": 3
+    },
+    {
+     "answer": "מקסים",
+     "tier": 3
+    },
+    {
+     "answer": "משעמם",
+     "tier": 3
+    },
+    {
+     "answer": "מושלם",
+     "tier": 3
+    },
+    {
+     "answer": "נכון",
+     "tier": 3
+    },
+    {
+     "answer": "הגה",
+     "tier": 3
+    },
+    {
+     "answer": "הנה",
+     "tier": 3
+    },
+    {
+     "answer": "שיש",
+     "tier": 4
+    },
+    {
+     "answer": "שליש",
+     "tier": 4
+    },
+    {
+     "answer": "שימוש",
+     "tier": 4
+    },
+    {
+     "answer": "נתון",
+     "tier": 4
+    },
+    {
+     "answer": "ניצחון",
+     "tier": 4,
+     "aliases": [
+      "נצחון"
+     ]
+    },
+    {
+     "answer": "ניסיון",
+     "tier": 4,
+     "aliases": [
+      "נסיון"
+     ]
+    },
+    {
+     "answer": "ניקיון",
+     "tier": 4,
+     "aliases": [
+      "נקיון"
+     ]
+    },
+    {
+     "answer": "מחסום",
+     "tier": 4
+    },
+    {
+     "answer": "מעולם",
+     "tier": 4
+    },
+    {
+     "answer": "מסוים",
+     "tier": 4,
+     "aliases": [
+      "מסויים"
+     ]
+    },
+    {
+     "answer": "תערובת",
+     "tier": 4
+    },
+    {
+     "answer": "תחזית",
+     "tier": 4
+    },
+    {
+     "answer": "תקשורת",
+     "tier": 4
+    },
+    {
+     "answer": "תדמית",
+     "tier": 4
+    },
+    {
+     "answer": "יהודי",
+     "tier": 4
+    },
+    {
+     "answer": "יווני",
+     "tier": 4,
+     "aliases": [
+      "יוני"
+     ]
+    },
+    {
+     "answer": "ימי",
+     "tier": 4
+    },
+    {
+     "answer": "יומי",
+     "tier": 4
+    },
+    {
+     "answer": "הגדה",
+     "tier": 4
+    },
+    {
+     "answer": "הצגה",
+     "tier": 4
+    },
+    {
+     "answer": "הפתעה",
+     "tier": 4
+    },
+    {
+     "answer": "ביב",
+     "tier": 5
+    },
+    {
+     "answer": "חוח",
+     "tier": 5
+    },
+    {
+     "answer": "זוז",
+     "tier": 5
+    },
+    {
+     "answer": "ריר",
+     "tier": 5
+    },
+    {
+     "answer": "ציץ",
+     "tier": 5
+    },
+    {
+     "answer": "ליל",
+     "tier": 5
+    },
+    {
+     "answer": "נאמן",
+     "tier": 5
+    },
+    {
+     "answer": "נדבן",
+     "tier": 5
+    },
+    {
+     "answer": "נמען",
+     "tier": 5
+    },
+    {
+     "answer": "כרך",
+     "tier": 5
+    },
+    {
+     "answer": "כורך",
+     "tier": 5
+    },
+    {
+     "answer": "פרצוף",
+     "tier": 5
+    },
+    {
+     "answer": "תסמונת",
+     "tier": 5
+    },
+    {
+     "answer": "תרכובת",
+     "tier": 5
+    },
+    {
+     "answer": "תשלובת",
+     "tier": 5
+    },
+    {
+     "answer": "יקי",
+     "tier": 5,
+     "aliases": [
+      "ייקי"
+     ]
+    },
+    {
+     "answer": "אסמכתא",
+     "tier": 5
+    },
+    {
+     "answer": "דד",
+     "tier": 5
+    },
+    {
+     "answer": "וו",
+     "tier": 5
+    },
+    {
+     "answer": "נין",
+     "tier": 5
+    },
+    {
+     "answer": "אמתלא",
+     "tier": 6,
+     "aliases": [
+      "אמתלה"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "כינוי חיבה שאומרים לבן או בת זוג, לילד או לחבר קרוב (כמו 'מותק' או 'נשמה')",
+   "category": "שפה",
+   "answers": [
+    {
+     "answer": "מותק",
+     "tier": 1,
+     "aliases": [
+      "מותקי",
+      "מותקה",
+      "מותקל'ה"
+     ]
+    },
+    {
+     "answer": "נשמה",
+     "tier": 1,
+     "aliases": [
+      "נשמה שלי",
+      "נשמתי",
+      "נשמונת"
+     ]
+    },
+    {
+     "answer": "חמוד",
+     "tier": 1,
+     "aliases": [
+      "חמודה",
+      "חמודי",
+      "חמודון"
+     ]
+    },
+    {
+     "answer": "מאמי",
+     "tier": 1,
+     "aliases": [
+      "מאמי שלי"
+     ]
+    },
+    {
+     "answer": "אהוב",
+     "tier": 1,
+     "aliases": [
+      "אהובה",
+      "אהובי",
+      "אהובתי",
+      "אהוב שלי"
+     ]
+    },
+    {
+     "answer": "יקירי",
+     "tier": 1,
+     "aliases": [
+      "יקירתי",
+      "יקיר",
+      "יקירה"
+     ]
+    },
+    {
+     "answer": "מתוק",
+     "tier": 2,
+     "aliases": [
+      "מתוקה",
+      "מתוקי",
+      "מתוק שלי",
+      "מתוקון"
+     ]
+    },
+    {
+     "answer": "בובה",
+     "tier": 2,
+     "aliases": [
+      "בובה שלי",
+      "בובון"
+     ]
+    },
+    {
+     "answer": "חיים שלי",
+     "tier": 2,
+     "aliases": [
+      "חיימשלי",
+      "החיים שלי"
+     ]
+    },
+    {
+     "answer": "אוצר",
+     "tier": 2,
+     "aliases": [
+      "אוצר שלי"
+     ]
+    },
+    {
+     "answer": "בייבי",
+     "tier": 2,
+     "aliases": [
+      "baby",
+      "בייב"
+     ]
+    },
+    {
+     "answer": "כפרה",
+     "tier": 2,
+     "aliases": [
+      "כפרה עליך",
+      "כפרה עלייך"
+     ]
+    },
+    {
+     "answer": "נסיך",
+     "tier": 2,
+     "aliases": [
+      "נסיכה"
+     ]
+    },
+    {
+     "answer": "אהבה",
+     "tier": 2,
+     "aliases": [
+      "אהבה שלי",
+      "אהבתי"
+     ]
+    },
+    {
+     "answer": "לבי",
+     "tier": 3,
+     "aliases": [
+      "ליבי",
+      "לב שלי",
+      "הלב שלי"
+     ]
+    },
+    {
+     "answer": "דבש",
+     "tier": 3,
+     "aliases": [
+      "honey",
+      "האני"
+     ]
+    },
+    {
+     "answer": "פוצי",
+     "tier": 3,
+     "aliases": [
+      "פוצ'י",
+      "פוצ'קי",
+      "פוצקי"
+     ]
+    },
+    {
+     "answer": "מאמוש",
+     "tier": 3
+    },
+    {
+     "answer": "בובל'ה",
+     "tier": 3,
+     "aliases": [
+      "בובלה",
+      "בובעלה"
+     ]
+    },
+    {
+     "answer": "ממי",
+     "tier": 3,
+     "aliases": [
+      "ממי שלי"
+     ]
+    },
+    {
+     "answer": "יפה שלי",
+     "tier": 3,
+     "aliases": [
+      "יפה",
+      "יפתי שלי"
+     ]
+    },
+    {
+     "answer": "גוזל",
+     "tier": 3,
+     "aliases": [
+      "גוזלי",
+      "גוזלון"
+     ]
+    },
+    {
+     "answer": "מלאך",
+     "tier": 3,
+     "aliases": [
+      "מלאכי",
+      "מלאך שלי"
+     ]
+    },
+    {
+     "answer": "מלכה",
+     "tier": 3,
+     "aliases": [
+      "מלכה שלי"
+     ]
+    },
+    {
+     "answer": "בובי",
+     "tier": 3
+    },
+    {
+     "answer": "סוכריה",
+     "tier": 3,
+     "aliases": [
+      "סוכרייה",
+      "סוכר"
+     ]
+    },
+    {
+     "answer": "דובי",
+     "tier": 3,
+     "aliases": [
+      "דובון",
+      "דובונת"
+     ]
+    },
+    {
+     "answer": "פיצי",
+     "tier": 3,
+     "aliases": [
+      "פיצית"
+     ]
+    },
+    {
+     "answer": "קטנה",
+     "tier": 3,
+     "aliases": [
+      "קטן",
+      "קטנה שלי",
+      "קטן שלי"
+     ]
+    },
+    {
+     "answer": "קטנטן",
+     "tier": 3,
+     "aliases": [
+      "קטנטנה"
+     ]
+    },
+    {
+     "answer": "חביבי",
+     "tier": 3,
+     "aliases": [
+      "יא חביבי",
+      "חביבתי"
+     ]
+    },
+    {
+     "answer": "יפיופה",
+     "tier": 3,
+     "aliases": [
+      "יפיופי"
+     ]
+    },
+    {
+     "answer": "אלוף",
+     "tier": 3,
+     "aliases": [
+      "אלופה",
+      "אלוף שלי"
+     ]
+    },
+    {
+     "answer": "גיבור",
+     "tier": 3,
+     "aliases": [
+      "גיבורה"
+     ]
+    },
+    {
+     "answer": "כוכב",
+     "tier": 3,
+     "aliases": [
+      "כוכבה",
+      "כוכב שלי"
+     ]
+    },
+    {
+     "answer": "פרח",
+     "tier": 3,
+     "aliases": [
+      "פרח שלי"
+     ]
+    },
+    {
+     "answer": "חמדה",
+     "tier": 3,
+     "aliases": [
+      "חמדתי"
+     ]
+    },
+    {
+     "answer": "חתול",
+     "tier": 4,
+     "aliases": [
+      "חתולה",
+      "חתלתול",
+      "חתלתולה"
+     ]
+    },
+    {
+     "answer": "גור",
+     "tier": 4,
+     "aliases": [
+      "גורון"
+     ]
+    },
+    {
+     "answer": "סוויטי",
+     "tier": 4,
+     "aliases": [
+      "sweetie"
+     ]
+    },
+    {
+     "answer": "צוציק",
+     "tier": 4,
+     "aliases": [
+      "צוציקית"
+     ]
+    },
+    {
+     "answer": "תותי",
+     "tier": 4,
+     "aliases": [
+      "תותית"
+     ]
+    },
+    {
+     "answer": "פשוש",
+     "tier": 4,
+     "aliases": [
+      "פשושית"
+     ]
+    },
+    {
+     "answer": "אפרוח",
+     "tier": 4,
+     "aliases": [
+      "אפרוחית",
+      "אפרוחון"
+     ]
+    },
+    {
+     "answer": "שמשי",
+     "tier": 4,
+     "aliases": [
+      "שמש שלי"
+     ]
+    },
+    {
+     "answer": "מאמל'ה",
+     "tier": 4,
+     "aliases": [
+      "מאמלה"
+     ]
+    },
+    {
+     "answer": "בבת עיני",
+     "tier": 5,
+     "aliases": [
+      "בבת העין"
+     ]
+    },
+    {
+     "answer": "אור עיני",
+     "tier": 5
+    },
+    {
+     "answer": "מיידל'ה",
+     "tier": 5,
+     "aliases": [
+      "מיידלה"
+     ]
+    },
+    {
+     "answer": "לבבי",
+     "tier": 5
+    },
+    {
+     "answer": "דארלינג",
+     "tier": 5,
+     "aliases": [
+      "darling"
+     ]
+    },
+    {
+     "answer": "לאב",
+     "tier": 5,
+     "aliases": [
+      "love"
+     ]
+    },
+    {
+     "answer": "יהלום",
+     "tier": 5,
+     "aliases": [
+      "יהלום שלי"
+     ]
+    },
+    {
+     "answer": "יונתי",
+     "tier": 6,
+     "aliases": [
+      "יונתי תמתי"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "מילה שמחקה צליל או קול (כמו 'בום', 'הב הב' או 'זמזום')",
+   "category": "שפה",
+   "answers": [
+    {
+     "answer": "בום",
+     "tier": 1
+    },
+    {
+     "answer": "הב הב",
+     "tier": 1,
+     "aliases": [
+      "האב האב"
+     ]
+    },
+    {
+     "answer": "מיאו",
+     "tier": 1,
+     "aliases": [
+      "מיאוו",
+      "מיאאו"
+     ]
+    },
+    {
+     "answer": "קוקוריקו",
+     "tier": 1
+    },
+    {
+     "answer": "טיק טק",
+     "tier": 1,
+     "aliases": [
+      "תיק תק"
+     ]
+    },
+    {
+     "answer": "זמזום",
+     "tier": 1,
+     "aliases": [
+      "זמזם",
+      "זיזום",
+      "בזזז"
+     ]
+    },
+    {
+     "answer": "מו",
+     "tier": 2,
+     "aliases": [
+      "מוו",
+      "מווו"
+     ]
+    },
+    {
+     "answer": "מההה",
+     "tier": 2,
+     "aliases": [
+      "מהה",
+      "מאאא",
+      "מעע"
+     ]
+    },
+    {
+     "answer": "גע גע",
+     "tier": 2,
+     "aliases": [
+      "קוואק",
+      "קווק"
+     ]
+    },
+    {
+     "answer": "צפצוף",
+     "tier": 2,
+     "aliases": [
+      "ציפצוף"
+     ]
+    },
+    {
+     "answer": "ציוץ",
+     "tier": 2,
+     "aliases": [
+      "ציף ציף",
+      "צייץ"
+     ]
+    },
+    {
+     "answer": "טפטוף",
+     "tier": 2,
+     "aliases": [
+      "טיפטוף"
+     ]
+    },
+    {
+     "answer": "תקתוק",
+     "tier": 2,
+     "aliases": [
+      "תיקתוק"
+     ]
+    },
+    {
+     "answer": "טראח",
+     "tier": 2,
+     "aliases": [
+      "טרח",
+      "טראך"
+     ]
+    },
+    {
+     "answer": "דינג דונג",
+     "tier": 2,
+     "aliases": [
+      "דינג"
+     ]
+    },
+    {
+     "answer": "הפצ'י",
+     "tier": 2,
+     "aliases": [
+      "אפצ'י",
+      "אפצ'ו",
+      "הפצ'ו"
+     ]
+    },
+    {
+     "answer": "ששש",
+     "tier": 2,
+     "aliases": [
+      "שששש"
+     ]
+    },
+    {
+     "answer": "הא הא",
+     "tier": 2,
+     "aliases": [
+      "חה חה",
+      "חחח",
+      "הההה"
+     ]
+    },
+    {
+     "answer": "רשרוש",
+     "tier": 3,
+     "aliases": [
+      "רישרוש"
+     ]
+    },
+    {
+     "answer": "שקשוק",
+     "tier": 3,
+     "aliases": [
+      "שיקשוק"
+     ]
+    },
+    {
+     "answer": "גרגור",
+     "tier": 3,
+     "aliases": [
+      "גירגור"
+     ]
+    },
+    {
+     "answer": "קרקור",
+     "tier": 3,
+     "aliases": [
+      "קירקור"
+     ]
+    },
+    {
+     "answer": "פכפוך",
+     "tier": 3,
+     "aliases": [
+      "פיכפוך"
+     ]
+    },
+    {
+     "answer": "צקצוק",
+     "tier": 3,
+     "aliases": [
+      "ציקצוק"
+     ]
+    },
+    {
+     "answer": "טרטור",
+     "tier": 3,
+     "aliases": [
+      "טירטור",
+      "טרררר"
+     ]
+    },
+    {
+     "answer": "צלצול",
+     "tier": 3,
+     "aliases": [
+      "צילצול"
+     ]
+    },
+    {
+     "answer": "קליק",
+     "tier": 3,
+     "aliases": [
+      "click"
+     ]
+    },
+    {
+     "answer": "ביפ",
+     "tier": 3,
+     "aliases": [
+      "ביפ ביפ",
+      "beep"
+     ]
+    },
+    {
+     "answer": "טוק טוק",
+     "tier": 3
+    },
+    {
+     "answer": "טיפ טיפ",
+     "tier": 3
+    },
+    {
+     "answer": "גררר",
+     "tier": 3,
+     "aliases": [
+      "גרר"
+     ]
+    },
+    {
+     "answer": "המהום",
+     "tier": 3,
+     "aliases": [
+      "הימהום"
+     ]
+    },
+    {
+     "answer": "גמגום",
+     "tier": 4,
+     "aliases": [
+      "גימגום"
+     ]
+    },
+    {
+     "answer": "מלמול",
+     "tier": 4,
+     "aliases": [
+      "מילמול"
+     ]
+    },
+    {
+     "answer": "פטפוט",
+     "tier": 4,
+     "aliases": [
+      "פיטפוט"
+     ]
+    },
+    {
+     "answer": "קרקוש",
+     "tier": 4,
+     "aliases": [
+      "קירקוש"
+     ]
+    },
+    {
+     "answer": "בעבוע",
+     "tier": 5,
+     "aliases": [
+      "ביעבוע"
+     ]
+    },
+    {
+     "answer": "צחקוק",
+     "tier": 4,
+     "aliases": [
+      "ציחקוק"
+     ]
+    },
+    {
+     "answer": "בררר",
+     "tier": 4,
+     "aliases": [
+      "ברר"
+     ]
+    },
+    {
+     "answer": "פססט",
+     "tier": 4,
+     "aliases": [
+      "פסט",
+      "פססס"
+     ]
+    },
+    {
+     "answer": "ווש",
+     "tier": 4,
+     "aliases": [
+      "ווווש",
+      "whoosh"
+     ]
+    },
+    {
+     "answer": "באנג",
+     "tier": 4,
+     "aliases": [
+      "bang",
+      "בנג"
+     ]
+    },
+    {
+     "answer": "הממ",
+     "tier": 5,
+     "aliases": [
+      "המממ",
+      "הממממ"
+     ]
+    },
+    {
+     "answer": "וואף",
+     "tier": 5,
+     "aliases": [
+      "woof",
+      "ווף"
+     ]
+    },
+    {
+     "answer": "צרצר",
+     "tier": 5
+    },
+    {
+     "answer": "קוקייה",
+     "tier": 5,
+     "aliases": [
+      "קוקיה"
+     ]
+    },
+    {
+     "answer": "פלופ",
+     "tier": 5,
+     "aliases": [
+      "plop"
+     ]
+    },
+    {
+     "answer": "בקבוק",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "שם פרטי שנפוץ בישראל גם לבנים וגם לבנות (כמו 'נועם' או 'שי')",
+   "category": "שפה",
+   "answers": [
+    {
+     "answer": "נועם",
+     "tier": 1,
+     "aliases": [
+      "נעם"
+     ]
+    },
+    {
+     "answer": "שי",
+     "tier": 1
+    },
+    {
+     "answer": "עדי",
+     "tier": 1
+    },
+    {
+     "answer": "טל",
+     "tier": 1
+    },
+    {
+     "answer": "חן",
+     "tier": 1
+    },
+    {
+     "answer": "יובל",
+     "tier": 1
+    },
+    {
+     "answer": "אור",
+     "tier": 2
+    },
+    {
+     "answer": "ליאור",
+     "tier": 2
+    },
+    {
+     "answer": "שחר",
+     "tier": 2
+    },
+    {
+     "answer": "עומר",
+     "tier": 2
+    },
+    {
+     "answer": "גל",
+     "tier": 2
+    },
+    {
+     "answer": "נוי",
+     "tier": 2
+    },
+    {
+     "answer": "רוני",
+     "tier": 2
+    },
+    {
+     "answer": "עמית",
+     "tier": 2
+    },
+    {
+     "answer": "דניאל",
+     "tier": 2
+    },
+    {
+     "answer": "ים",
+     "tier": 2
+    },
+    {
+     "answer": "אביב",
+     "tier": 2
+    },
+    {
+     "answer": "סתיו",
+     "tier": 3
+    },
+    {
+     "answer": "הדר",
+     "tier": 3
+    },
+    {
+     "answer": "מעיין",
+     "tier": 3,
+     "aliases": [
+      "מעין"
+     ]
+    },
+    {
+     "answer": "רז",
+     "tier": 3
+    },
+    {
+     "answer": "עדן",
+     "tier": 3
+    },
+    {
+     "answer": "אריאל",
+     "tier": 3
+    },
+    {
+     "answer": "שקד",
+     "tier": 3
+    },
+    {
+     "answer": "ניצן",
+     "tier": 3
+    },
+    {
+     "answer": "דקל",
+     "tier": 3
+    },
+    {
+     "answer": "תום",
+     "tier": 3
+    },
+    {
+     "answer": "אגם",
+     "tier": 3
+    },
+    {
+     "answer": "רותם",
+     "tier": 3,
+     "aliases": [
+      "רתם"
+     ]
+    },
+    {
+     "answer": "ספיר",
+     "tier": 3
+    },
+    {
+     "answer": "לירון",
+     "tier": 3
+    },
+    {
+     "answer": "אלמוג",
+     "tier": 3
+    },
+    {
+     "answer": "ירדן",
+     "tier": 3
+    },
+    {
+     "answer": "בר",
+     "tier": 3
+    },
+    {
+     "answer": "זוהר",
+     "tier": 3,
+     "aliases": [
+      "זהר"
+     ]
+    },
+    {
+     "answer": "זיו",
+     "tier": 4
+    },
+    {
+     "answer": "אופק",
+     "tier": 4
+    },
+    {
+     "answer": "אושר",
+     "tier": 4
+    },
+    {
+     "answer": "שוהם",
+     "tier": 4,
+     "aliases": [
+      "שהם"
+     ]
+    },
+    {
+     "answer": "גיל",
+     "tier": 4
+    },
+    {
+     "answer": "כרמל",
+     "tier": 4
+    },
+    {
+     "answer": "אוריה",
+     "tier": 4
+    },
+    {
+     "answer": "סהר",
+     "tier": 4
+    },
+    {
+     "answer": "לוטם",
+     "tier": 4
+    },
+    {
+     "answer": "יהל",
+     "tier": 4
+    },
+    {
+     "answer": "אופיר",
+     "tier": 4
+    },
+    {
+     "answer": "מורן",
+     "tier": 4
+    },
+    {
+     "answer": "יהלי",
+     "tier": 4
+    },
+    {
+     "answer": "אדר",
+     "tier": 4
+    },
+    {
+     "answer": "ליאל",
+     "tier": 4
+    },
+    {
+     "answer": "שלו",
+     "tier": 4
+    },
+    {
+     "answer": "לירן",
+     "tier": 4
+    },
+    {
+     "answer": "מור",
+     "tier": 4
+    },
+    {
+     "answer": "גפן",
+     "tier": 4
+    },
+    {
+     "answer": "שחף",
+     "tier": 5
+    },
+    {
+     "answer": "קשת",
+     "tier": 5
+    },
+    {
+     "answer": "אוראל",
+     "tier": 5
+    },
+    {
+     "answer": "יונה",
+     "tier": 5
+    },
+    {
+     "answer": "שמחה",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "כינוי מקובל לשם פרטי (כמו 'יוסי' ליוסף או 'שמוליק' לשמואל)",
+   "category": "שפה",
+   "answers": [
+    {
+     "answer": "יוסי",
+     "tier": 1
+    },
+    {
+     "answer": "שמוליק",
+     "tier": 1
+    },
+    {
+     "answer": "מושיקו",
+     "tier": 1,
+     "aliases": [
+      "מושיק"
+     ]
+    },
+    {
+     "answer": "אבי",
+     "tier": 1
+    },
+    {
+     "answer": "דודי",
+     "tier": 1
+    },
+    {
+     "answer": "איציק",
+     "tier": 1
+    },
+    {
+     "answer": "קובי",
+     "tier": 2
+    },
+    {
+     "answer": "צביקה",
+     "tier": 2
+    },
+    {
+     "answer": "בני",
+     "tier": 2
+    },
+    {
+     "answer": "שלומי",
+     "tier": 2
+    },
+    {
+     "answer": "מוטי",
+     "tier": 2
+    },
+    {
+     "answer": "רפי",
+     "tier": 2
+    },
+    {
+     "answer": "דני",
+     "tier": 2
+    },
+    {
+     "answer": "יוני",
+     "tier": 2
+    },
+    {
+     "answer": "מיקי",
+     "tier": 2
+    },
+    {
+     "answer": "אלי",
+     "tier": 2
+    },
+    {
+     "answer": "רחלי",
+     "tier": 2
+    },
+    {
+     "answer": "מירי",
+     "tier": 2
+    },
+    {
+     "answer": "אריק",
+     "tier": 2
+    },
+    {
+     "answer": "ביבי",
+     "tier": 2
+    },
+    {
+     "answer": "גבי",
+     "tier": 3
+    },
+    {
+     "answer": "צחי",
+     "tier": 3
+    },
+    {
+     "answer": "שוקי",
+     "tier": 3
+    },
+    {
+     "answer": "ציפי",
+     "tier": 3
+    },
+    {
+     "answer": "שושי",
+     "tier": 3
+    },
+    {
+     "answer": "חני",
+     "tier": 3
+    },
+    {
+     "answer": "אסתי",
+     "tier": 3
+    },
+    {
+     "answer": "אתי",
+     "tier": 3
+    },
+    {
+     "answer": "דודו",
+     "tier": 3
+    },
+    {
+     "answer": "מוישה",
+     "tier": 3,
+     "aliases": [
+      "מויש'ה",
+      "מוישל'ה"
+     ]
+    },
+    {
+     "answer": "יענקל'ה",
+     "tier": 3,
+     "aliases": [
+      "יענקלה",
+      "יענקל"
+     ]
+    },
+    {
+     "answer": "שייקה",
+     "tier": 3
+    },
+    {
+     "answer": "נתי",
+     "tier": 3
+    },
+    {
+     "answer": "רובי",
+     "tier": 3
+    },
+    {
+     "answer": "גידי",
+     "tier": 3
+    },
+    {
+     "answer": "שימי",
+     "tier": 3
+    },
+    {
+     "answer": "חזי",
+     "tier": 3
+    },
+    {
+     "answer": "שולה",
+     "tier": 3
+    },
+    {
+     "answer": "סשה",
+     "tier": 3,
+     "aliases": [
+      "סאשה"
+     ]
+    },
+    {
+     "answer": "אלכס",
+     "tier": 3
+    },
+    {
+     "answer": "מנדי",
+     "tier": 4
+    },
+    {
+     "answer": "זכי",
+     "tier": 4
+    },
+    {
+     "answer": "אברמי",
+     "tier": 4
+    },
+    {
+     "answer": "שולי",
+     "tier": 4
+    },
+    {
+     "answer": "ג'קי",
+     "tier": 4,
+     "aliases": [
+      "זקי",
+      "ז'קי"
+     ]
+    },
+    {
+     "answer": "שרוליק",
+     "tier": 4,
+     "aliases": [
+      "סרוליק"
+     ]
+    },
+    {
+     "answer": "רפול",
+     "tier": 4
+    },
+    {
+     "answer": "יוסל'ה",
+     "tier": 4,
+     "aliases": [
+      "יוסלה"
+     ]
+    },
+    {
+     "answer": "מיכי",
+     "tier": 4
+    },
+    {
+     "answer": "רבקי",
+     "tier": 4
+    },
+    {
+     "answer": "מימי",
+     "tier": 4
+    },
+    {
+     "answer": "פני",
+     "tier": 4
+    },
+    {
+     "answer": "דבי",
+     "tier": 4
+    },
+    {
+     "answer": "ביל",
+     "tier": 4
+    },
+    {
+     "answer": "בוב",
+     "tier": 4
+    },
+    {
+     "answer": "טומי",
+     "tier": 4
+    },
+    {
+     "answer": "ג'ימי",
+     "tier": 4
+    },
+    {
+     "answer": "ג'וני",
+     "tier": 4
+    },
+    {
+     "answer": "קייט",
+     "tier": 4
+    },
+    {
+     "answer": "ליז",
+     "tier": 4
+    },
+    {
+     "answer": "מישה",
+     "tier": 4
+    },
+    {
+     "answer": "דימה",
+     "tier": 4
+    },
+    {
+     "answer": "טניה",
+     "tier": 4,
+     "aliases": [
+      "טאניה"
+     ]
+    },
+    {
+     "answer": "נטשה",
+     "tier": 4,
+     "aliases": [
+      "נטאשה"
+     ]
+    },
+    {
+     "answer": "קטיה",
+     "tier": 4,
+     "aliases": [
+      "קאטיה"
+     ]
+    },
+    {
+     "answer": "שייע",
+     "tier": 5
+    },
+    {
+     "answer": "מוטקה",
+     "tier": 5
+    },
+    {
+     "answer": "חיימק'ה",
+     "tier": 5,
+     "aliases": [
+      "חיימקה",
+      "חיימון"
+     ]
+    },
+    {
+     "answer": "וולוולה",
+     "tier": 5,
+     "aliases": [
+      "וולוול"
+     ]
+    },
+    {
+     "answer": "לייזר",
+     "tier": 5
+    },
+    {
+     "answer": "יענקי",
+     "tier": 5
+    },
+    {
+     "answer": "וולודיה",
+     "tier": 5
+    },
+    {
+     "answer": "קוסטיה",
+     "tier": 5
+    },
+    {
+     "answer": "ג'ק",
+     "tier": 5
+    },
+    {
+     "answer": "בטי",
+     "tier": 5
+    },
+    {
+     "answer": "פגי",
+     "tier": 5
+    },
+    {
+     "answer": "פאקו",
+     "tier": 5
+    },
+    {
+     "answer": "פפה",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "מילה שפירושה שמחה, אושר או עליזות (כמו 'ששון' או 'מאושר')",
+   "category": "שפה",
+   "answers": [
+    {
+     "answer": "שמחה",
+     "tier": 1
+    },
+    {
+     "answer": "אושר",
+     "tier": 1
+    },
+    {
+     "answer": "ששון",
+     "tier": 1
+    },
+    {
+     "answer": "מאושר",
+     "tier": 1,
+     "aliases": [
+      "מאושרת"
+     ]
+    },
+    {
+     "answer": "שמח",
+     "tier": 1
+    },
+    {
+     "answer": "עליז",
+     "tier": 1,
+     "aliases": [
+      "עליזה"
+     ]
+    },
+    {
+     "answer": "גיל",
+     "tier": 2
+    },
+    {
+     "answer": "רינה",
+     "tier": 2
+    },
+    {
+     "answer": "דיצה",
+     "tier": 2
+    },
+    {
+     "answer": "חדווה",
+     "tier": 2,
+     "aliases": [
+      "חדוה"
+     ]
+    },
+    {
+     "answer": "צהלה",
+     "tier": 2
+    },
+    {
+     "answer": "עליזות",
+     "tier": 2
+    },
+    {
+     "answer": "התלהבות",
+     "tier": 2
+    },
+    {
+     "answer": "מבסוט",
+     "tier": 2,
+     "aliases": [
+      "מבסוטה"
+     ]
+    },
+    {
+     "answer": "הנאה",
+     "tier": 2
+    },
+    {
+     "answer": "שמחת חיים",
+     "tier": 2
+    },
+    {
+     "answer": "אופוריה",
+     "tier": 2
+    },
+    {
+     "answer": "כיף",
+     "tier": 2,
+     "aliases": [
+      "בכיף"
+     ]
+    },
+    {
+     "answer": "עליצות",
+     "tier": 3
+    },
+    {
+     "answer": "צוהל",
+     "tier": 3,
+     "aliases": [
+      "צוהלת"
+     ]
+    },
+    {
+     "answer": "עולץ",
+     "tier": 3,
+     "aliases": [
+      "עולז",
+      "עולצת"
+     ]
+    },
+    {
+     "answer": "מרוצה",
+     "tier": 3
+    },
+    {
+     "answer": "נחת",
+     "tier": 3
+    },
+    {
+     "answer": "עונג",
+     "tier": 3
+    },
+    {
+     "answer": "תענוג",
+     "tier": 3
+    },
+    {
+     "answer": "קורן",
+     "tier": 3,
+     "aliases": [
+      "קורנת"
+     ]
+    },
+    {
+     "answer": "בעננים",
+     "tier": 3
+    },
+    {
+     "answer": "ברקיע השביעי",
+     "tier": 3,
+     "aliases": [
+      "רקיע שביעי",
+      "ברקיע ה-7"
+     ]
+    },
+    {
+     "answer": "אקסטזה",
+     "tier": 3,
+     "aliases": [
+      "אקסטטי"
+     ]
+    },
+    {
+     "answer": "שביעות רצון",
+     "tier": 3
+    },
+    {
+     "answer": "משמח",
+     "tier": 3
+    },
+    {
+     "answer": "מצב רוח טוב",
+     "tier": 3,
+     "aliases": [
+      "במצב רוח טוב"
+     ]
+    },
+    {
+     "answer": "שש",
+     "tier": 4,
+     "aliases": [
+      "שש ושמח"
+     ]
+    },
+    {
+     "answer": "גילה",
+     "tier": 4
+    },
+    {
+     "answer": "התרוממות רוח",
+     "tier": 4
+    },
+    {
+     "answer": "נהנה",
+     "tier": 4,
+     "aliases": [
+      "נהנית"
+     ]
+    },
+    {
+     "answer": "על גג העולם",
+     "tier": 4
+    },
+    {
+     "answer": "זורח",
+     "tier": 4,
+     "aliases": [
+      "זורחת"
+     ]
+    },
+    {
+     "answer": "מתמוגג",
+     "tier": 4,
+     "aliases": [
+      "התמוגגות"
+     ]
+    },
+    {
+     "answer": "חגיגי",
+     "tier": 4
+    },
+    {
+     "answer": "מחויך",
+     "tier": 4
+    },
+    {
+     "answer": "התעלות",
+     "tier": 4
+    },
+    {
+     "answer": "ראש טוב",
+     "tier": 4
+    },
+    {
+     "answer": "שבע רצון",
+     "tier": 4
+    },
+    {
+     "answer": "בדיחות הדעת",
+     "tier": 5
+    },
+    {
+     "answer": "טוב לב",
+     "tier": 5
+    },
+    {
+     "answer": "מרנין",
+     "tier": 5,
+     "aliases": [
+      "מרנין לב"
+     ]
+    },
+    {
+     "answer": "עדנה",
+     "tier": 5
+    },
+    {
+     "answer": "שמח בחלקו",
+     "tier": 5
+    },
+    {
+     "answer": "צהלולים",
+     "tier": 5
+    },
+    {
+     "answer": "רננה",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "שם של יישוב בישראל שהוא גם מילה עברית רגילה (כמו 'שוהם' או 'רעננה')",
+   "category": "שפה",
+   "answers": [
+    {
+     "answer": "שוהם",
+     "tier": 1,
+     "aliases": [
+      "שהם"
+     ]
+    },
+    {
+     "answer": "רעננה",
+     "tier": 1
+    },
+    {
+     "answer": "שדרות",
+     "tier": 1
+    },
+    {
+     "answer": "אופקים",
+     "tier": 1
+    },
+    {
+     "answer": "נתיבות",
+     "tier": 1
+    },
+    {
+     "answer": "מודיעין",
+     "tier": 1,
+     "aliases": [
+      "מודיעין מכבים רעות"
+     ]
+    },
+    {
+     "answer": "עומר",
+     "tier": 2
+    },
+    {
+     "answer": "יבנה",
+     "tier": 2
+    },
+    {
+     "answer": "ירוחם",
+     "tier": 2
+    },
+    {
+     "answer": "להבים",
+     "tier": 2
+    },
+    {
+     "answer": "קדימה",
+     "tier": 2,
+     "aliases": [
+      "קדימה צורן"
+     ]
+    },
+    {
+     "answer": "גדרה",
+     "tier": 2
+    },
+    {
+     "answer": "מיתר",
+     "tier": 2,
+     "aliases": [
+      "מתר"
+     ]
+    },
+    {
+     "answer": "חריש",
+     "tier": 2
+    },
+    {
+     "answer": "ראש פינה",
+     "tier": 2
+    },
+    {
+     "answer": "מבשרת ציון",
+     "tier": 2,
+     "aliases": [
+      "מבשרת"
+     ]
+    },
+    {
+     "answer": "טירה",
+     "tier": 3
+    },
+    {
+     "answer": "מעלות",
+     "tier": 3,
+     "aliases": [
+      "מעלות תרשיחא"
+     ]
+    },
+    {
+     "answer": "קציר",
+     "tier": 3
+    },
+    {
+     "answer": "ספיר",
+     "tier": 3
+    },
+    {
+     "answer": "גשר",
+     "tier": 3
+    },
+    {
+     "answer": "שובל",
+     "tier": 3
+    },
+    {
+     "answer": "זיקים",
+     "tier": 3
+    },
+    {
+     "answer": "רביבים",
+     "tier": 3
+    },
+    {
+     "answer": "אורים",
+     "tier": 3
+    },
+    {
+     "answer": "מעגן",
+     "tier": 3
+    },
+    {
+     "answer": "מזרע",
+     "tier": 3
+    },
+    {
+     "answer": "נחשון",
+     "tier": 3
+    },
+    {
+     "answer": "שורש",
+     "tier": 3
+    },
+    {
+     "answer": "מגן",
+     "tier": 3
+    },
+    {
+     "answer": "ארז",
+     "tier": 3
+    },
+    {
+     "answer": "געש",
+     "tier": 3
+    },
+    {
+     "answer": "גבולות",
+     "tier": 3
+    },
+    {
+     "answer": "חצרים",
+     "tier": 3
+    },
+    {
+     "answer": "רעים",
+     "tier": 3
+    },
+    {
+     "answer": "אפיקים",
+     "tier": 3
+    },
+    {
+     "answer": "ניצנים",
+     "tier": 3
+    },
+    {
+     "answer": "שרשרת",
+     "tier": 3
+    },
+    {
+     "answer": "להב",
+     "tier": 4
+    },
+    {
+     "answer": "סעד",
+     "tier": 4
+    },
+    {
+     "answer": "נירים",
+     "tier": 4
+    },
+    {
+     "answer": "משמרות",
+     "tier": 4
+    },
+    {
+     "answer": "יפעת",
+     "tier": 4
+    },
+    {
+     "answer": "הזורע",
+     "tier": 4
+    },
+    {
+     "answer": "דליה",
+     "tier": 4
+    },
+    {
+     "answer": "עלמה",
+     "tier": 4
+    },
+    {
+     "answer": "רקפת",
+     "tier": 4
+    },
+    {
+     "answer": "הרדוף",
+     "tier": 4
+    },
+    {
+     "answer": "יובלים",
+     "tier": 4
+    },
+    {
+     "answer": "מגל",
+     "tier": 4
+    },
+    {
+     "answer": "גורן",
+     "tier": 4
+    },
+    {
+     "answer": "אורה",
+     "tier": 4
+    },
+    {
+     "answer": "ברקן",
+     "tier": 4
+    },
+    {
+     "answer": "רמות",
+     "tier": 4
+    },
+    {
+     "answer": "ניצן",
+     "tier": 4
+    },
+    {
+     "answer": "אשלים",
+     "tier": 4
+    },
+    {
+     "answer": "טללים",
+     "tier": 4
+    },
+    {
+     "answer": "צופר",
+     "tier": 4
+    },
+    {
+     "answer": "עידן",
+     "tier": 4
+    },
+    {
+     "answer": "צוקים",
+     "tier": 4
+    },
+    {
+     "answer": "אמירים",
+     "tier": 4
+    },
+    {
+     "answer": "מורשת",
+     "tier": 4
+    },
+    {
+     "answer": "מסלול",
+     "tier": 4
+    },
+    {
+     "answer": "פטיש",
+     "tier": 4
+    },
+    {
+     "answer": "תקומה",
+     "tier": 4
+    },
+    {
+     "answer": "רימונים",
+     "tier": 4
+    },
+    {
+     "answer": "אבירים",
+     "tier": 5
+    },
+    {
+     "answer": "כמון",
+     "tier": 5
+    },
+    {
+     "answer": "מורן",
+     "tier": 5
+    },
+    {
+     "answer": "לוטם",
+     "tier": 5
+    },
+    {
+     "answer": "הררית",
+     "tier": 5
+    },
+    {
+     "answer": "כליל",
+     "tier": 5
+    },
+    {
+     "answer": "צבעון",
+     "tier": 5
+    },
+    {
+     "answer": "אדרת",
+     "tier": 5
+    },
+    {
+     "answer": "צפרירים",
+     "tier": 5
+    },
+    {
+     "answer": "נחושה",
+     "tier": 5
+    },
+    {
+     "answer": "מתת",
+     "tier": 5
+    },
+    {
+     "answer": "שתולה",
+     "tier": 5
+    },
+    {
+     "answer": "רתמים",
+     "tier": 5
+    },
+    {
+     "answer": "חולית",
+     "tier": 5
+    },
+    {
+     "answer": "מעונה",
+     "tier": 5
+    },
+    {
+     "answer": "תאשור",
+     "tier": 5
+    },
+    {
+     "answer": "מבועים",
+     "tier": 5
+    },
+    {
+     "answer": "זמרת",
+     "tier": 5
+    },
+    {
+     "answer": "שובה",
+     "tier": 5
+    },
+    {
+     "answer": "מלילות",
+     "tier": 5
+    },
+    {
+     "answer": "רנן",
+     "tier": 5
+    },
+    {
+     "answer": "תלמים",
+     "tier": 5
+    },
+    {
+     "answer": "עוצם",
+     "tier": 5
+    },
+    {
+     "answer": "גבעולים",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "פועל שמתאר דרך שבה אדם מדבר או משמיע קול (כמו 'לחש' או 'צעק')",
+   "category": "שפה",
+   "answers": [
+    {
+     "answer": "צעק",
+     "tier": 1,
+     "aliases": [
+      "לצעוק",
+      "צועק"
+     ]
+    },
+    {
+     "answer": "לחש",
+     "tier": 1,
+     "aliases": [
+      "ללחוש",
+      "לוחש"
+     ]
+    },
+    {
+     "answer": "צרח",
+     "tier": 1,
+     "aliases": [
+      "לצרוח",
+      "צורח"
+     ]
+    },
+    {
+     "answer": "שר",
+     "tier": 1,
+     "aliases": [
+      "לשיר",
+      "שירה"
+     ]
+    },
+    {
+     "answer": "בכה",
+     "tier": 1,
+     "aliases": [
+      "לבכות",
+      "בוכה"
+     ]
+    },
+    {
+     "answer": "צחק",
+     "tier": 1,
+     "aliases": [
+      "לצחוק",
+      "צוחק"
+     ]
+    },
+    {
+     "answer": "גמגם",
+     "tier": 2,
+     "aliases": [
+      "לגמגם",
+      "מגמגם"
+     ]
+    },
+    {
+     "answer": "מלמל",
+     "tier": 2,
+     "aliases": [
+      "למלמל",
+      "ממלמל"
+     ]
+    },
+    {
+     "answer": "זעק",
+     "tier": 2,
+     "aliases": [
+      "לזעוק",
+      "זועק"
+     ]
+    },
+    {
+     "answer": "פטפט",
+     "tier": 2,
+     "aliases": [
+      "לפטפט",
+      "מפטפט"
+     ]
+    },
+    {
+     "answer": "קרא",
+     "tier": 2,
+     "aliases": [
+      "לקרוא",
+      "קורא"
+     ]
+    },
+    {
+     "answer": "דיבר",
+     "tier": 2,
+     "aliases": [
+      "לדבר",
+      "מדבר",
+      "דבר"
+     ]
+    },
+    {
+     "answer": "זמזם",
+     "tier": 2,
+     "aliases": [
+      "לזמזם",
+      "מזמזם"
+     ]
+    },
+    {
+     "answer": "שאג",
+     "tier": 2,
+     "aliases": [
+      "לשאוג",
+      "שואג"
+     ]
+    },
+    {
+     "answer": "נאנח",
+     "tier": 2,
+     "aliases": [
+      "להיאנח",
+      "להאנח",
+      "נאנחה"
+     ]
+    },
+    {
+     "answer": "צווח",
+     "tier": 2,
+     "aliases": [
+      "לצווח",
+      "צווחה"
+     ]
+    },
+    {
+     "answer": "יילל",
+     "tier": 3,
+     "aliases": [
+      "ליילל",
+      "ילל"
+     ]
+    },
+    {
+     "answer": "ייבב",
+     "tier": 3,
+     "aliases": [
+      "לייבב",
+      "יבב"
+     ]
+    },
+    {
+     "answer": "גנח",
+     "tier": 3,
+     "aliases": [
+      "לגנוח",
+      "גונח"
+     ]
+    },
+    {
+     "answer": "נאנק",
+     "tier": 3,
+     "aliases": [
+      "להיאנק",
+      "להאנק"
+     ]
+    },
+    {
+     "answer": "רטן",
+     "tier": 3,
+     "aliases": [
+      "לרטון",
+      "רוטן"
+     ]
+    },
+    {
+     "answer": "נהם",
+     "tier": 3,
+     "aliases": [
+      "לנהום",
+      "נוהם"
+     ]
+    },
+    {
+     "answer": "צחקק",
+     "tier": 3,
+     "aliases": [
+      "לצחקק",
+      "ציחקק"
+     ]
+    },
+    {
+     "answer": "גיחך",
+     "tier": 3,
+     "aliases": [
+      "לגחך",
+      "גחך"
+     ]
+    },
+    {
+     "answer": "קשקש",
+     "tier": 3,
+     "aliases": [
+      "לקשקש",
+      "מקשקש"
+     ]
+    },
+    {
+     "answer": "ריכל",
+     "tier": 3,
+     "aliases": [
+      "לרכל",
+      "רכל"
+     ]
+    },
+    {
+     "answer": "התלונן",
+     "tier": 3,
+     "aliases": [
+      "להתלונן"
+     ]
+    },
+    {
+     "answer": "הכריז",
+     "tier": 3,
+     "aliases": [
+      "להכריז"
+     ]
+    },
+    {
+     "answer": "שרק",
+     "tier": 3,
+     "aliases": [
+      "לשרוק",
+      "שורק"
+     ]
+    },
+    {
+     "answer": "נחר",
+     "tier": 3,
+     "aliases": [
+      "לנחור",
+      "נוחר"
+     ]
+    },
+    {
+     "answer": "השתעל",
+     "tier": 3,
+     "aliases": [
+      "להשתעל",
+      "שיעל"
+     ]
+    },
+    {
+     "answer": "נזף",
+     "tier": 3,
+     "aliases": [
+      "לנזוף"
+     ]
+    },
+    {
+     "answer": "דקלם",
+     "tier": 3,
+     "aliases": [
+      "לדקלם"
+     ]
+    },
+    {
+     "answer": "נאם",
+     "tier": 3,
+     "aliases": [
+      "לנאום"
+     ]
+    },
+    {
+     "answer": "קילל",
+     "tier": 3,
+     "aliases": [
+      "לקלל",
+      "קלל"
+     ]
+    },
+    {
+     "answer": "התבכיין",
+     "tier": 3,
+     "aliases": [
+      "להתבכיין"
+     ]
+    },
+    {
+     "answer": "שוחח",
+     "tier": 3,
+     "aliases": [
+      "לשוחח",
+      "שיחח"
+     ]
+    },
+    {
+     "answer": "גיהק",
+     "tier": 4,
+     "aliases": [
+      "לגהק",
+      "גהק"
+     ]
+    },
+    {
+     "answer": "התעטש",
+     "tier": 4,
+     "aliases": [
+      "להתעטש"
+     ]
+    },
+    {
+     "answer": "זימר",
+     "tier": 4,
+     "aliases": [
+      "לזמר"
+     ]
+    },
+    {
+     "answer": "המהם",
+     "tier": 4,
+     "aliases": [
+      "להמהם",
+      "הימהם"
+     ]
+    },
+    {
+     "answer": "לגלג",
+     "tier": 4,
+     "aliases": [
+      "ללגלג"
+     ]
+    },
+    {
+     "answer": "צקצק",
+     "tier": 4,
+     "aliases": [
+      "לצקצק"
+     ]
+    },
+    {
+     "answer": "התייפח",
+     "tier": 4,
+     "aliases": [
+      "להתייפח"
+     ]
+    },
+    {
+     "answer": "קונן",
+     "tier": 4,
+     "aliases": [
+      "לקונן"
+     ]
+    },
+    {
+     "answer": "גער",
+     "tier": 4,
+     "aliases": [
+      "לגעור"
+     ]
+    },
+    {
+     "answer": "הסתודד",
+     "tier": 4,
+     "aliases": [
+      "להסתודד"
+     ]
+    },
+    {
+     "answer": "התלחש",
+     "tier": 4,
+     "aliases": [
+      "להתלחש"
+     ]
+    },
+    {
+     "answer": "פיזם",
+     "tier": 4,
+     "aliases": [
+      "לפזם"
+     ]
+    },
+    {
+     "answer": "הטיף",
+     "tier": 4,
+     "aliases": [
+      "להטיף"
+     ]
+    },
+    {
+     "answer": "גידף",
+     "tier": 4,
+     "aliases": [
+      "לגדף"
+     ]
+    },
+    {
+     "answer": "ביטא",
+     "tier": 4,
+     "aliases": [
+      "לבטא"
+     ]
+    },
+    {
+     "answer": "הריע",
+     "tier": 4,
+     "aliases": [
+      "להריע"
+     ]
+    },
+    {
+     "answer": "התנשף",
+     "tier": 4,
+     "aliases": [
+      "להתנשף"
+     ]
+    },
+    {
+     "answer": "התבדח",
+     "tier": 4,
+     "aliases": [
+      "להתבדח"
+     ]
+    },
+    {
+     "answer": "רינן",
+     "tier": 5,
+     "aliases": [
+      "לרנן"
+     ]
+    },
+    {
+     "answer": "חרחר",
+     "tier": 5,
+     "aliases": [
+      "לחרחר",
+      "חירחר"
+     ]
+    },
+    {
+     "answer": "גרגר",
+     "tier": 5,
+     "aliases": [
+      "לגרגר"
+     ]
+    },
+    {
+     "answer": "רעם",
+     "tier": 5,
+     "aliases": [
+      "לרעום"
+     ]
+    },
+    {
+     "answer": "הגה",
+     "tier": 5,
+     "aliases": [
+      "להגות"
+     ]
+    },
+    {
+     "answer": "צהל",
+     "tier": 5,
+     "aliases": [
+      "לצהול"
+     ]
+    },
+    {
+     "answer": "געה",
+     "tier": 6,
+     "aliases": [
+      "לגעות",
+      "געה בבכי"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "מילה שמציינת קבוצה של אנשים או של בעלי חיים (כמו 'עדר' או 'להקה')",
+   "category": "שפה",
+   "answers": [
+    {
+     "answer": "עדר",
+     "tier": 1
+    },
+    {
+     "answer": "להקה",
+     "tier": 1
+    },
+    {
+     "answer": "קבוצה",
+     "tier": 1
+    },
+    {
+     "answer": "צוות",
+     "tier": 1
+    },
+    {
+     "answer": "חבורה",
+     "tier": 1
+    },
+    {
+     "answer": "משפחה",
+     "tier": 1
+    },
+    {
+     "answer": "נחיל",
+     "tier": 2
+    },
+    {
+     "answer": "כנופיה",
+     "tier": 2,
+     "aliases": [
+      "כנופייה"
+     ]
+    },
+    {
+     "answer": "קהל",
+     "tier": 2
+    },
+    {
+     "answer": "שבט",
+     "tier": 2
+    },
+    {
+     "answer": "מקהלה",
+     "tier": 2
+    },
+    {
+     "answer": "תזמורת",
+     "tier": 2
+    },
+    {
+     "answer": "נבחרת",
+     "tier": 2
+    },
+    {
+     "answer": "גדוד",
+     "tier": 2
+    },
+    {
+     "answer": "ועדה",
+     "tier": 2
+    },
+    {
+     "answer": "להק",
+     "tier": 2
+    },
+    {
+     "answer": "כיתה",
+     "tier": 2
+    },
+    {
+     "answer": "פלוגה",
+     "tier": 3
+    },
+    {
+     "answer": "מחלקה",
+     "tier": 3
+    },
+    {
+     "answer": "חטיבה",
+     "tier": 3
+    },
+    {
+     "answer": "אוגדה",
+     "tier": 3
+    },
+    {
+     "answer": "צבא",
+     "tier": 3
+    },
+    {
+     "answer": "חוליה",
+     "tier": 3
+    },
+    {
+     "answer": "קהילה",
+     "tier": 3
+    },
+    {
+     "answer": "עדה",
+     "tier": 3
+    },
+    {
+     "answer": "מניין",
+     "tier": 3,
+     "aliases": [
+      "מנין"
+     ]
+    },
+    {
+     "answer": "ועד",
+     "tier": 3
+    },
+    {
+     "answer": "מועצה",
+     "tier": 3
+    },
+    {
+     "answer": "מפלגה",
+     "tier": 3
+    },
+    {
+     "answer": "כת",
+     "tier": 3
+    },
+    {
+     "answer": "הרכב",
+     "tier": 3
+    },
+    {
+     "answer": "צמד",
+     "tier": 3
+    },
+    {
+     "answer": "זוג",
+     "tier": 3
+    },
+    {
+     "answer": "שלישייה",
+     "tier": 3,
+     "aliases": [
+      "שלישיה"
+     ]
+    },
+    {
+     "answer": "רביעייה",
+     "tier": 3,
+     "aliases": [
+      "רביעיה"
+     ]
+    },
+    {
+     "answer": "חמולה",
+     "tier": 3
+    },
+    {
+     "answer": "המון",
+     "tier": 3
+    },
+    {
+     "answer": "אספסוף",
+     "tier": 3
+    },
+    {
+     "answer": "עם",
+     "tier": 3
+    },
+    {
+     "answer": "שושלת",
+     "tier": 3
+    },
+    {
+     "answer": "מועדון",
+     "tier": 3
+    },
+    {
+     "answer": "ארגון",
+     "tier": 3
+    },
+    {
+     "answer": "ציבור",
+     "tier": 3
+    },
+    {
+     "answer": "אומה",
+     "tier": 3
+    },
+    {
+     "answer": "חוג",
+     "tier": 4
+    },
+    {
+     "answer": "סיעה",
+     "tier": 4
+    },
+    {
+     "answer": "קואליציה",
+     "tier": 4
+    },
+    {
+     "answer": "אופוזיציה",
+     "tier": 4
+    },
+    {
+     "answer": "איגוד",
+     "tier": 4
+    },
+    {
+     "answer": "ברית",
+     "tier": 4
+    },
+    {
+     "answer": "משלחת",
+     "tier": 4
+    },
+    {
+     "answer": "שיירה",
+     "tier": 4
+    },
+    {
+     "answer": "משמרת",
+     "tier": 4
+    },
+    {
+     "answer": "יחידה",
+     "tier": 4
+    },
+    {
+     "answer": "סיירת",
+     "tier": 4
+    },
+    {
+     "answer": "טייסת",
+     "tier": 4
+    },
+    {
+     "answer": "שייטת",
+     "tier": 4
+    },
+    {
+     "answer": "חבר מושבעים",
+     "tier": 4
+    },
+    {
+     "answer": "דירקטוריון",
+     "tier": 4
+    },
+    {
+     "answer": "הנהלה",
+     "tier": 4
+    },
+    {
+     "answer": "קומונה",
+     "tier": 4
+    },
+    {
+     "answer": "סגל",
+     "tier": 4
+    },
+    {
+     "answer": "מחנה",
+     "tier": 4
+    },
+    {
+     "answer": "קיבוץ",
+     "tier": 4
+    },
+    {
+     "answer": "תנועה",
+     "tier": 4,
+     "aliases": [
+      "תנועת נוער"
+     ]
+    },
+    {
+     "answer": "לגיון",
+     "tier": 4
+    },
+    {
+     "answer": "מושבה",
+     "tier": 4
+    },
+    {
+     "answer": "כוורת",
+     "tier": 4
+    },
+    {
+     "answer": "אגודה",
+     "tier": 4
+    },
+    {
+     "answer": "עמותה",
+     "tier": 4
+    },
+    {
+     "answer": "דואט",
+     "tier": 4
+    },
+    {
+     "answer": "טריו",
+     "tier": 4
+    },
+    {
+     "answer": "חמישייה",
+     "tier": 4,
+     "aliases": [
+      "חמישיה"
+     ]
+    },
+    {
+     "answer": "אנסמבל",
+     "tier": 4
+    },
+    {
+     "answer": "אוכלוסייה",
+     "tier": 4,
+     "aliases": [
+      "אוכלוסיה"
+     ]
+    },
+    {
+     "answer": "לאום",
+     "tier": 4
+    },
+    {
+     "answer": "דור",
+     "tier": 4
+    },
+    {
+     "answer": "מחזור",
+     "tier": 4
+    },
+    {
+     "answer": "גרעין",
+     "tier": 4
+    },
+    {
+     "answer": "מסדר",
+     "tier": 5
+    },
+    {
+     "answer": "גילדה",
+     "tier": 5
+    },
+    {
+     "answer": "אחווה",
+     "tier": 5,
+     "aliases": [
+      "אחוה"
+     ]
+    },
+    {
+     "answer": "קרטל",
+     "tier": 5
+    },
+    {
+     "answer": "פמליה",
+     "tier": 5,
+     "aliases": [
+      "פמלייה"
+     ]
+    },
+    {
+     "answer": "גייס",
+     "tier": 5,
+     "aliases": [
+      "גיס"
+     ]
+    },
+    {
+     "answer": "שנתון",
+     "tier": 5
+    },
+    {
+     "answer": "קוורטט",
+     "tier": 5
+    },
+    {
+     "answer": "סנהדרין",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "שם של מקצוע או תחום עיסוק שמסתיים ב-'ות' (כמו 'נגרות' או 'אדריכלות')",
+   "category": "שפה",
+   "answers": [
+    {
+     "answer": "נגרות",
+     "tier": 1
+    },
+    {
+     "answer": "אדריכלות",
+     "tier": 1
+    },
+    {
+     "answer": "חקלאות",
+     "tier": 1
+    },
+    {
+     "answer": "עיתונאות",
+     "tier": 1
+    },
+    {
+     "answer": "ספרות",
+     "tier": 1
+    },
+    {
+     "answer": "אמנות",
+     "tier": 1,
+     "aliases": [
+      "אומנות"
+     ]
+    },
+    {
+     "answer": "חשבונאות",
+     "tier": 2
+    },
+    {
+     "answer": "רוקחות",
+     "tier": 2
+    },
+    {
+     "answer": "בנקאות",
+     "tier": 2
+    },
+    {
+     "answer": "מסגרות",
+     "tier": 2
+    },
+    {
+     "answer": "סנדלרות",
+     "tier": 2
+    },
+    {
+     "answer": "יזמות",
+     "tier": 2
+    },
+    {
+     "answer": "צורפות",
+     "tier": 2
+    },
+    {
+     "answer": "פרשנות",
+     "tier": 2
+    },
+    {
+     "answer": "בלשנות",
+     "tier": 2
+    },
+    {
+     "answer": "ספרנות",
+     "tier": 2
+    },
+    {
+     "answer": "חייטות",
+     "tier": 3
+    },
+    {
+     "answer": "קדרות",
+     "tier": 3
+    },
+    {
+     "answer": "זגגות",
+     "tier": 3
+    },
+    {
+     "answer": "חשמלאות",
+     "tier": 3
+    },
+    {
+     "answer": "שענות",
+     "tier": 3
+    },
+    {
+     "answer": "תסריטאות",
+     "tier": 3
+    },
+    {
+     "answer": "מחזאות",
+     "tier": 3
+    },
+    {
+     "answer": "בימאות",
+     "tier": 3,
+     "aliases": [
+      "במאות"
+     ]
+    },
+    {
+     "answer": "מיילדות",
+     "tier": 3
+    },
+    {
+     "answer": "גננות",
+     "tier": 3
+    },
+    {
+     "answer": "רבנות",
+     "tier": 3
+    },
+    {
+     "answer": "חזנות",
+     "tier": 3
+    },
+    {
+     "answer": "בלשות",
+     "tier": 3
+    },
+    {
+     "answer": "מלצרות",
+     "tier": 3
+    },
+    {
+     "answer": "שדכנות",
+     "tier": 3
+    },
+    {
+     "answer": "מזכירות",
+     "tier": 3
+    },
+    {
+     "answer": "דוגמנות",
+     "tier": 3
+    },
+    {
+     "answer": "מכונאות",
+     "tier": 3
+    },
+    {
+     "answer": "מלונאות",
+     "tier": 3
+    },
+    {
+     "answer": "תיירות",
+     "tier": 3
+    },
+    {
+     "answer": "ליצנות",
+     "tier": 3
+    },
+    {
+     "answer": "מתורגמנות",
+     "tier": 3
+    },
+    {
+     "answer": "שחקנות",
+     "tier": 4
+    },
+    {
+     "answer": "סוכנות",
+     "tier": 4
+    },
+    {
+     "answer": "נהגות",
+     "tier": 4
+    },
+    {
+     "answer": "קצבות",
+     "tier": 4
+    },
+    {
+     "answer": "נפחות",
+     "tier": 4
+    },
+    {
+     "answer": "שרברבות",
+     "tier": 4
+    },
+    {
+     "answer": "פחחות",
+     "tier": 4
+    },
+    {
+     "answer": "ספנות",
+     "tier": 4
+    },
+    {
+     "answer": "ימאות",
+     "tier": 4
+    },
+    {
+     "answer": "פקידות",
+     "tier": 4
+    },
+    {
+     "answer": "שמרטפות",
+     "tier": 4
+    },
+    {
+     "answer": "פרסומאות",
+     "tier": 4
+    },
+    {
+     "answer": "נגנות",
+     "tier": 4
+    },
+    {
+     "answer": "דבוראות",
+     "tier": 4,
+     "aliases": [
+      "כוורנות"
+     ]
+    },
+    {
+     "answer": "קבלנות",
+     "tier": 4
+    },
+    {
+     "answer": "סיטונאות",
+     "tier": 4
+    },
+    {
+     "answer": "קמעונאות",
+     "tier": 4
+    },
+    {
+     "answer": "בנאות",
+     "tier": 4
+    },
+    {
+     "answer": "שדרנות",
+     "tier": 4
+    },
+    {
+     "answer": "קריינות",
+     "tier": 4
+    },
+    {
+     "answer": "דוברות",
+     "tier": 4
+    },
+    {
+     "answer": "שמאות",
+     "tier": 4
+    },
+    {
+     "answer": "ברמנות",
+     "tier": 4
+    },
+    {
+     "answer": "רוכלות",
+     "tier": 4
+    },
+    {
+     "answer": "סבלות",
+     "tier": 4
+    },
+    {
+     "answer": "קוסמות",
+     "tier": 4
+    },
+    {
+     "answer": "צבעות",
+     "tier": 5
+    },
+    {
+     "answer": "טייחות",
+     "tier": 5
+    },
+    {
+     "answer": "רצפות",
+     "tier": 5
+    },
+    {
+     "answer": "חרטות",
+     "tier": 5
+    },
+    {
+     "answer": "עגלונות",
+     "tier": 5
+    },
+    {
+     "answer": "פייטנות",
+     "tier": 5
+    },
+    {
+     "answer": "רפתנות",
+     "tier": 5
+    },
+    {
+     "answer": "לולנות",
+     "tier": 5
+    },
+    {
+     "answer": "חנוונות",
+     "tier": 5
+    },
+    {
+     "answer": "טפסנות",
+     "tier": 5
+    },
+    {
+     "answer": "טכנאות",
+     "tier": 5
+    },
+    {
+     "answer": "הנדסאות",
+     "tier": 5
+    },
+    {
+     "answer": "שרטטות",
+     "tier": 5
+    },
+    {
+     "answer": "ארכיונאות",
+     "tier": 5
+    },
+    {
+     "answer": "גזברות",
+     "tier": 5
+    },
+    {
+     "answer": "יהלומנות",
+     "tier": 5
+    },
+    {
+     "answer": "כובענות",
+     "tier": 5
+    },
+    {
+     "answer": "פרוונות",
+     "tier": 5
+    },
+    {
+     "answer": "בורסקאות",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "אישה שמופיעה בתנ\"ך (בשמה או בתיאור מוכר, כמו 'שרה' או 'אשת לוט')",
+   "category": "תרבות",
+   "answers": [
+    {
+     "answer": "שרה",
+     "tier": 1,
+     "aliases": [
+      "שרי"
+     ]
+    },
+    {
+     "answer": "רבקה",
+     "tier": 1
+    },
+    {
+     "answer": "רחל",
+     "tier": 1
+    },
+    {
+     "answer": "לאה",
+     "tier": 1
+    },
+    {
+     "answer": "מרים",
+     "tier": 1,
+     "aliases": [
+      "מרים הנביאה"
+     ]
+    },
+    {
+     "answer": "אסתר",
+     "tier": 1,
+     "aliases": [
+      "אסתר המלכה"
+     ]
+    },
+    {
+     "answer": "חוה",
+     "tier": 2,
+     "aliases": [
+      "חווה"
+     ]
+    },
+    {
+     "answer": "רות",
+     "tier": 2
+    },
+    {
+     "answer": "נעמי",
+     "tier": 2
+    },
+    {
+     "answer": "דבורה",
+     "tier": 2,
+     "aliases": [
+      "דבורה הנביאה"
+     ]
+    },
+    {
+     "answer": "יעל",
+     "tier": 2
+    },
+    {
+     "answer": "דלילה",
+     "tier": 2
+    },
+    {
+     "answer": "בת שבע",
+     "tier": 2
+    },
+    {
+     "answer": "מיכל",
+     "tier": 2
+    },
+    {
+     "answer": "חנה",
+     "tier": 2
+    },
+    {
+     "answer": "הגר",
+     "tier": 2
+    },
+    {
+     "answer": "דינה",
+     "tier": 2
+    },
+    {
+     "answer": "יוכבד",
+     "tier": 2
+    },
+    {
+     "answer": "אביגיל",
+     "tier": 3
+    },
+    {
+     "answer": "איזבל",
+     "tier": 3
+    },
+    {
+     "answer": "ושתי",
+     "tier": 3
+    },
+    {
+     "answer": "תמר",
+     "tier": 3
+    },
+    {
+     "answer": "צפורה",
+     "tier": 3,
+     "aliases": [
+      "ציפורה"
+     ]
+    },
+    {
+     "answer": "רחב",
+     "tier": 3
+    },
+    {
+     "answer": "ערפה",
+     "tier": 3
+    },
+    {
+     "answer": "פנינה",
+     "tier": 3
+    },
+    {
+     "answer": "אבישג",
+     "tier": 3,
+     "aliases": [
+      "אבישג השונמית"
+     ]
+    },
+    {
+     "answer": "עתליה",
+     "tier": 3
+    },
+    {
+     "answer": "חולדה",
+     "tier": 3,
+     "aliases": [
+      "חולדה הנביאה"
+     ]
+    },
+    {
+     "answer": "מלכת שבא",
+     "tier": 3
+    },
+    {
+     "answer": "בלהה",
+     "tier": 3
+    },
+    {
+     "answer": "זלפה",
+     "tier": 3
+    },
+    {
+     "answer": "אשת לוט",
+     "tier": 3
+    },
+    {
+     "answer": "אשת פוטיפר",
+     "tier": 3
+    },
+    {
+     "answer": "בעלת האוב",
+     "tier": 3,
+     "aliases": [
+      "בעלת האוב בעין דור",
+      "בעלת אוב"
+     ]
+    },
+    {
+     "answer": "שפרה",
+     "tier": 3
+    },
+    {
+     "answer": "פועה",
+     "tier": 3
+    },
+    {
+     "answer": "בת פרעה",
+     "tier": 3,
+     "aliases": [
+      "בתיה"
+     ]
+    },
+    {
+     "answer": "נעמה",
+     "tier": 4
+    },
+    {
+     "answer": "עדה",
+     "tier": 4
+    },
+    {
+     "answer": "צלה",
+     "tier": 4
+    },
+    {
+     "answer": "עכסה",
+     "tier": 4,
+     "aliases": [
+      "אכסה"
+     ]
+    },
+    {
+     "answer": "אסנת",
+     "tier": 4
+    },
+    {
+     "answer": "קטורה",
+     "tier": 4
+    },
+    {
+     "answer": "בשמת",
+     "tier": 4
+    },
+    {
+     "answer": "יהודית",
+     "tier": 4
+    },
+    {
+     "answer": "מחלה",
+     "tier": 4
+    },
+    {
+     "answer": "נעה",
+     "tier": 4
+    },
+    {
+     "answer": "חגלה",
+     "tier": 4
+    },
+    {
+     "answer": "מלכה",
+     "tier": 4
+    },
+    {
+     "answer": "תרצה",
+     "tier": 4
+    },
+    {
+     "answer": "רצפה",
+     "tier": 4,
+     "aliases": [
+      "רצפה בת איה"
+     ]
+    },
+    {
+     "answer": "מרב",
+     "tier": 4,
+     "aliases": [
+      "מירב"
+     ]
+    },
+    {
+     "answer": "אחינועם",
+     "tier": 4
+    },
+    {
+     "answer": "מעכה",
+     "tier": 4
+    },
+    {
+     "answer": "זרש",
+     "tier": 4
+    },
+    {
+     "answer": "אלישבע",
+     "tier": 4
+    },
+    {
+     "answer": "צרויה",
+     "tier": 4
+    },
+    {
+     "answer": "אשת איוב",
+     "tier": 4
+    },
+    {
+     "answer": "חגית",
+     "tier": 5
+    },
+    {
+     "answer": "אביטל",
+     "tier": 5
+    },
+    {
+     "answer": "עגלה",
+     "tier": 5
+    },
+    {
+     "answer": "יהושבע",
+     "tier": 5,
+     "aliases": [
+      "יהושבעת"
+     ]
+    },
+    {
+     "answer": "חמוטל",
+     "tier": 5
+    },
+    {
+     "answer": "יסכה",
+     "tier": 5
+    },
+    {
+     "answer": "קציעה",
+     "tier": 5
+    },
+    {
+     "answer": "ימימה",
+     "tier": 5
+    },
+    {
+     "answer": "קרן הפוך",
+     "tier": 5
+    },
+    {
+     "answer": "עזובה",
+     "tier": 5
+    },
+    {
+     "answer": "שלומית",
+     "tier": 5
+    },
+    {
+     "answer": "רעומה",
+     "tier": 5
+    },
+    {
+     "answer": "תמנע",
+     "tier": 5
+    },
+    {
+     "answer": "מהיטבאל",
+     "tier": 5
+    },
+    {
+     "answer": "אהליבמה",
+     "tier": 5
+    },
+    {
+     "answer": "מחלת",
+     "tier": 5
+    },
+    {
+     "answer": "נחושתא",
+     "tier": 5
+    },
+    {
+     "answer": "חפצי בה",
+     "tier": 5
+    },
+    {
+     "answer": "ירושא",
+     "tier": 5,
+     "aliases": [
+      "ירושה"
+     ]
+    },
+    {
+     "answer": "נועדיה",
+     "tier": 6,
+     "aliases": [
+      "נועדיה הנביאה"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "נביא או נביאה (לפי התנ\"ך או לפי המסורת היהודית)",
+   "category": "תרבות",
+   "answers": [
+    {
+     "answer": "משה",
+     "tier": 1,
+     "aliases": [
+      "משה רבנו"
+     ]
+    },
+    {
+     "answer": "אליהו",
+     "tier": 1,
+     "aliases": [
+      "אליהו הנביא"
+     ]
+    },
+    {
+     "answer": "ישעיהו",
+     "tier": 1,
+     "aliases": [
+      "ישעיה"
+     ]
+    },
+    {
+     "answer": "ירמיהו",
+     "tier": 1,
+     "aliases": [
+      "ירמיה"
+     ]
+    },
+    {
+     "answer": "יונה",
+     "tier": 1,
+     "aliases": [
+      "יונה הנביא"
+     ]
+    },
+    {
+     "answer": "שמואל",
+     "tier": 1,
+     "aliases": [
+      "שמואל הנביא"
+     ]
+    },
+    {
+     "answer": "אלישע",
+     "tier": 2
+    },
+    {
+     "answer": "יחזקאל",
+     "tier": 2
+    },
+    {
+     "answer": "דבורה",
+     "tier": 2
+    },
+    {
+     "answer": "מרים",
+     "tier": 2
+    },
+    {
+     "answer": "נתן",
+     "tier": 2,
+     "aliases": [
+      "נתן הנביא"
+     ]
+    },
+    {
+     "answer": "עמוס",
+     "tier": 2
+    },
+    {
+     "answer": "הושע",
+     "tier": 2
+    },
+    {
+     "answer": "יואל",
+     "tier": 2
+    },
+    {
+     "answer": "מיכה",
+     "tier": 2
+    },
+    {
+     "answer": "זכריה",
+     "tier": 2
+    },
+    {
+     "answer": "אהרון",
+     "tier": 2,
+     "aliases": [
+      "אהרן"
+     ]
+    },
+    {
+     "answer": "עובדיה",
+     "tier": 3,
+     "aliases": [
+      "עובדיהו"
+     ]
+    },
+    {
+     "answer": "נחום",
+     "tier": 3
+    },
+    {
+     "answer": "חבקוק",
+     "tier": 3
+    },
+    {
+     "answer": "צפניה",
+     "tier": 3
+    },
+    {
+     "answer": "חגי",
+     "tier": 3
+    },
+    {
+     "answer": "מלאכי",
+     "tier": 3
+    },
+    {
+     "answer": "חולדה",
+     "tier": 3
+    },
+    {
+     "answer": "בלעם",
+     "tier": 3
+    },
+    {
+     "answer": "אברהם",
+     "tier": 3
+    },
+    {
+     "answer": "חנה",
+     "tier": 3
+    },
+    {
+     "answer": "גד",
+     "tier": 3,
+     "aliases": [
+      "גד החוזה"
+     ]
+    },
+    {
+     "answer": "אחיה השילוני",
+     "tier": 3,
+     "aliases": [
+      "אחיה"
+     ]
+    },
+    {
+     "answer": "יהושע",
+     "tier": 3,
+     "aliases": [
+      "יהושע בן נון"
+     ]
+    },
+    {
+     "answer": "אסתר",
+     "tier": 3
+    },
+    {
+     "answer": "שרה",
+     "tier": 3
+    },
+    {
+     "answer": "אביגיל",
+     "tier": 3
+    },
+    {
+     "answer": "דוד",
+     "tier": 3,
+     "aliases": [
+      "דוד המלך"
+     ]
+    },
+    {
+     "answer": "מיכיהו",
+     "tier": 4,
+     "aliases": [
+      "מיכיהו בן ימלה"
+     ]
+    },
+    {
+     "answer": "עידו",
+     "tier": 4,
+     "aliases": [
+      "עידו החוזה"
+     ]
+    },
+    {
+     "answer": "שמעיה",
+     "tier": 4,
+     "aliases": [
+      "שמעיה איש האלוהים"
+     ]
+    },
+    {
+     "answer": "יהוא בן חנני",
+     "tier": 4
+    },
+    {
+     "answer": "אוריהו",
+     "tier": 4,
+     "aliases": [
+      "אוריה בן שמעיהו",
+      "אוריהו בן שמעיהו"
+     ]
+    },
+    {
+     "answer": "חנניה בן עזור",
+     "tier": 4,
+     "aliases": [
+      "חנניה"
+     ]
+    },
+    {
+     "answer": "אלדד",
+     "tier": 4
+    },
+    {
+     "answer": "מידד",
+     "tier": 4
+    },
+    {
+     "answer": "עזריה בן עודד",
+     "tier": 4
+    },
+    {
+     "answer": "יחזיאל",
+     "tier": 4
+    },
+    {
+     "answer": "מרדכי",
+     "tier": 4
+    },
+    {
+     "answer": "ברוך בן נריה",
+     "tier": 4,
+     "aliases": [
+      "ברוך"
+     ]
+    },
+    {
+     "answer": "יעקב",
+     "tier": 4
+    },
+    {
+     "answer": "יצחק",
+     "tier": 4
+    },
+    {
+     "answer": "שלמה",
+     "tier": 4,
+     "aliases": [
+      "שלמה המלך"
+     ]
+    },
+    {
+     "answer": "נועדיה",
+     "tier": 4
+    },
+    {
+     "answer": "עודד",
+     "tier": 5
+    },
+    {
+     "answer": "חנני",
+     "tier": 5,
+     "aliases": [
+      "חנני הרואה"
+     ]
+    },
+    {
+     "answer": "פנחס",
+     "tier": 5
+    },
+    {
+     "answer": "אלקנה",
+     "tier": 5
+    },
+    {
+     "answer": "עלי",
+     "tier": 5,
+     "aliases": [
+      "עלי הכהן"
+     ]
+    },
+    {
+     "answer": "אמוץ",
+     "tier": 5
+    },
+    {
+     "answer": "נריה",
+     "tier": 5
+    },
+    {
+     "answer": "שריה",
+     "tier": 5
+    },
+    {
+     "answer": "אליעזר בן דודוהו",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "מלך או מלכה מהתנ\"ך (של ישראל, של יהודה או של עמים אחרים)",
+   "category": "תרבות",
+   "answers": [
+    {
+     "answer": "שאול",
+     "tier": 1,
+     "aliases": [
+      "שאול המלך"
+     ]
+    },
+    {
+     "answer": "דוד",
+     "tier": 1,
+     "aliases": [
+      "דוד המלך"
+     ]
+    },
+    {
+     "answer": "שלמה",
+     "tier": 1,
+     "aliases": [
+      "שלמה המלך"
+     ]
+    },
+    {
+     "answer": "אחאב",
+     "tier": 1
+    },
+    {
+     "answer": "נבוכדנצר",
+     "tier": 1,
+     "aliases": [
+      "נבוכדנאצר"
+     ]
+    },
+    {
+     "answer": "אחשוורוש",
+     "tier": 1,
+     "aliases": [
+      "אחשורוש"
+     ]
+    },
+    {
+     "answer": "חזקיהו",
+     "tier": 2,
+     "aliases": [
+      "חזקיה"
+     ]
+    },
+    {
+     "answer": "יאשיהו",
+     "tier": 2,
+     "aliases": [
+      "יאשיה"
+     ]
+    },
+    {
+     "answer": "ירבעם",
+     "tier": 2,
+     "aliases": [
+      "ירבעם בן נבט"
+     ]
+    },
+    {
+     "answer": "רחבעם",
+     "tier": 2
+    },
+    {
+     "answer": "איזבל",
+     "tier": 2
+    },
+    {
+     "answer": "צדקיהו",
+     "tier": 2,
+     "aliases": [
+      "צדקיה"
+     ]
+    },
+    {
+     "answer": "כורש",
+     "tier": 2
+    },
+    {
+     "answer": "מנשה",
+     "tier": 2
+    },
+    {
+     "answer": "אסתר",
+     "tier": 2,
+     "aliases": [
+      "אסתר המלכה"
+     ]
+    },
+    {
+     "answer": "פרעה",
+     "tier": 2
+    },
+    {
+     "answer": "מלכת שבא",
+     "tier": 2
+    },
+    {
+     "answer": "ושתי",
+     "tier": 2
+    },
+    {
+     "answer": "יהושפט",
+     "tier": 3
+    },
+    {
+     "answer": "עוזיהו",
+     "tier": 3,
+     "aliases": [
+      "עזיהו",
+      "עזריה"
+     ]
+    },
+    {
+     "answer": "אחז",
+     "tier": 3
+    },
+    {
+     "answer": "עתליה",
+     "tier": 3
+    },
+    {
+     "answer": "יהוא",
+     "tier": 3
+    },
+    {
+     "answer": "עמרי",
+     "tier": 3
+    },
+    {
+     "answer": "אסא",
+     "tier": 3
+    },
+    {
+     "answer": "יהויקים",
+     "tier": 3
+    },
+    {
+     "answer": "יהויכין",
+     "tier": 3
+    },
+    {
+     "answer": "אמציה",
+     "tier": 3
+    },
+    {
+     "answer": "יואש",
+     "tier": 3
+    },
+    {
+     "answer": "איש בשת",
+     "tier": 3,
+     "aliases": [
+      "אשבעל"
+     ]
+    },
+    {
+     "answer": "סנחריב",
+     "tier": 3
+    },
+    {
+     "answer": "דריווש",
+     "tier": 3,
+     "aliases": [
+      "דריוש"
+     ]
+    },
+    {
+     "answer": "בלשאצר",
+     "tier": 3
+    },
+    {
+     "answer": "אגג",
+     "tier": 3
+    },
+    {
+     "answer": "עוג",
+     "tier": 3,
+     "aliases": [
+      "עוג מלך הבשן"
+     ]
+    },
+    {
+     "answer": "סיחון",
+     "tier": 3
+    },
+    {
+     "answer": "בלק",
+     "tier": 3
+    },
+    {
+     "answer": "חירם",
+     "tier": 3,
+     "aliases": [
+      "חירם מלך צור"
+     ]
+    },
+    {
+     "answer": "אחזיה",
+     "tier": 4
+    },
+    {
+     "answer": "יהורם",
+     "tier": 4,
+     "aliases": [
+      "יורם"
+     ]
+    },
+    {
+     "answer": "אבים",
+     "tier": 4,
+     "aliases": [
+      "אביה"
+     ]
+    },
+    {
+     "answer": "נדב",
+     "tier": 4
+    },
+    {
+     "answer": "בעשא",
+     "tier": 4
+    },
+    {
+     "answer": "אלה",
+     "tier": 4
+    },
+    {
+     "answer": "זמרי",
+     "tier": 4
+    },
+    {
+     "answer": "יהואחז",
+     "tier": 4
+    },
+    {
+     "answer": "ירבעם השני",
+     "tier": 4,
+     "aliases": [
+      "ירבעם בן יואש"
+     ]
+    },
+    {
+     "answer": "זכריה",
+     "tier": 4
+    },
+    {
+     "answer": "מנחם",
+     "tier": 4,
+     "aliases": [
+      "מנחם בן גדי"
+     ]
+    },
+    {
+     "answer": "פקח",
+     "tier": 4
+    },
+    {
+     "answer": "פקחיה",
+     "tier": 4
+    },
+    {
+     "answer": "הושע",
+     "tier": 4,
+     "aliases": [
+      "הושע בן אלה"
+     ]
+    },
+    {
+     "answer": "אמון",
+     "tier": 4
+    },
+    {
+     "answer": "יותם",
+     "tier": 4
+    },
+    {
+     "answer": "ארתחשסתא",
+     "tier": 4
+    },
+    {
+     "answer": "שישק",
+     "tier": 4
+    },
+    {
+     "answer": "נכה",
+     "tier": 4,
+     "aliases": [
+      "פרעה נכה",
+      "פרעה נכו"
+     ]
+    },
+    {
+     "answer": "אבימלך",
+     "tier": 4
+    },
+    {
+     "answer": "מישע",
+     "tier": 4
+    },
+    {
+     "answer": "בן הדד",
+     "tier": 4
+    },
+    {
+     "answer": "חזאל",
+     "tier": 4
+    },
+    {
+     "answer": "תגלת פלאסר",
+     "tier": 4
+    },
+    {
+     "answer": "שלמנאסר",
+     "tier": 4
+    },
+    {
+     "answer": "אסרחדון",
+     "tier": 4
+    },
+    {
+     "answer": "אדוני בזק",
+     "tier": 4
+    },
+    {
+     "answer": "יבין",
+     "tier": 4,
+     "aliases": [
+      "יבין מלך חצור"
+     ]
+    },
+    {
+     "answer": "עגלון",
+     "tier": 4,
+     "aliases": [
+      "עגלון מלך מואב"
+     ]
+    },
+    {
+     "answer": "כדרלעומר",
+     "tier": 4
+    },
+    {
+     "answer": "אמרפל",
+     "tier": 4
+    },
+    {
+     "answer": "מלכי צדק",
+     "tier": 4
+    },
+    {
+     "answer": "אכיש",
+     "tier": 4,
+     "aliases": [
+      "אכיש מלך גת"
+     ]
+    },
+    {
+     "answer": "נחש העמוני",
+     "tier": 4,
+     "aliases": [
+      "נחש"
+     ]
+    },
+    {
+     "answer": "אויל מרודך",
+     "tier": 5,
+     "aliases": [
+      "אווילי מרודך"
+     ]
+    },
+    {
+     "answer": "מרודך בלאדן",
+     "tier": 5
+    },
+    {
+     "answer": "חפרע",
+     "tier": 5,
+     "aliases": [
+      "פרעה חפרע"
+     ]
+    },
+    {
+     "answer": "תלמי",
+     "tier": 5,
+     "aliases": [
+      "תלמי מלך גשור"
+     ]
+    },
+    {
+     "answer": "חנון",
+     "tier": 5
+    },
+    {
+     "answer": "בלע",
+     "tier": 5
+    },
+    {
+     "answer": "כושן רשעתיים",
+     "tier": 5
+    },
+    {
+     "answer": "אדוני צדק",
+     "tier": 5
+    },
+    {
+     "answer": "רצין",
+     "tier": 5
+    },
+    {
+     "answer": "ברע",
+     "tier": 5
+    },
+    {
+     "answer": "ברשע",
+     "tier": 5
+    },
+    {
+     "answer": "תרהקה",
+     "tier": 5
+    },
+    {
+     "answer": "סרגון",
+     "tier": 5
+    },
+    {
+     "answer": "שלום בן יבש",
+     "tier": 6,
+     "aliases": [
+      "שלום"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "מקום, עיר או אתר שמוזכרים בתנ\"ך (כמו 'סדום' או 'יריחו')",
+   "category": "תרבות",
+   "answers": [
+    {
+     "answer": "ירושלים",
+     "tier": 1,
+     "aliases": [
+      "ירושלם"
+     ]
+    },
+    {
+     "answer": "סדום",
+     "tier": 1
+    },
+    {
+     "answer": "יריחו",
+     "tier": 1
+    },
+    {
+     "answer": "בית לחם",
+     "tier": 1
+    },
+    {
+     "answer": "חברון",
+     "tier": 1
+    },
+    {
+     "answer": "גן עדן",
+     "tier": 1,
+     "aliases": [
+      "עדן"
+     ]
+    },
+    {
+     "answer": "מצרים",
+     "tier": 2
+    },
+    {
+     "answer": "הר סיני",
+     "tier": 2,
+     "aliases": [
+      "סיני"
+     ]
+    },
+    {
+     "answer": "ים סוף",
+     "tier": 2
+    },
+    {
+     "answer": "באר שבע",
+     "tier": 2
+    },
+    {
+     "answer": "שכם",
+     "tier": 2
+    },
+    {
+     "answer": "עמורה",
+     "tier": 2
+    },
+    {
+     "answer": "בבל",
+     "tier": 2
+    },
+    {
+     "answer": "נינוה",
+     "tier": 2
+    },
+    {
+     "answer": "הר נבו",
+     "tier": 2,
+     "aliases": [
+      "נבו"
+     ]
+    },
+    {
+     "answer": "הר הכרמל",
+     "tier": 2,
+     "aliases": [
+      "כרמל"
+     ]
+    },
+    {
+     "answer": "נהר הירדן",
+     "tier": 2,
+     "aliases": [
+      "ירדן"
+     ]
+    },
+    {
+     "answer": "כנען",
+     "tier": 2,
+     "aliases": [
+      "ארץ כנען"
+     ]
+    },
+    {
+     "answer": "מגדל בבל",
+     "tier": 2
+    },
+    {
+     "answer": "אור כשדים",
+     "tier": 3
+    },
+    {
+     "answer": "חרן",
+     "tier": 3
+    },
+    {
+     "answer": "שילה",
+     "tier": 3
+    },
+    {
+     "answer": "בית אל",
+     "tier": 3
+    },
+    {
+     "answer": "ענתות",
+     "tier": 3
+    },
+    {
+     "answer": "עין גדי",
+     "tier": 3
+    },
+    {
+     "answer": "הר הגלבוע",
+     "tier": 3,
+     "aliases": [
+      "גלבוע"
+     ]
+    },
+    {
+     "answer": "הר תבור",
+     "tier": 3,
+     "aliases": [
+      "תבור"
+     ]
+    },
+    {
+     "answer": "עמק האלה",
+     "tier": 3
+    },
+    {
+     "answer": "ארץ גושן",
+     "tier": 3,
+     "aliases": [
+      "גושן"
+     ]
+    },
+    {
+     "answer": "מערת המכפלה",
+     "tier": 3
+    },
+    {
+     "answer": "פרת",
+     "tier": 3,
+     "aliases": [
+      "נהר פרת"
+     ]
+    },
+    {
+     "answer": "חידקל",
+     "tier": 3
+    },
+    {
+     "answer": "עזה",
+     "tier": 3
+    },
+    {
+     "answer": "אשקלון",
+     "tier": 3
+    },
+    {
+     "answer": "גת",
+     "tier": 3
+    },
+    {
+     "answer": "עקרון",
+     "tier": 3
+    },
+    {
+     "answer": "אשדוד",
+     "tier": 3
+    },
+    {
+     "answer": "מגידו",
+     "tier": 3,
+     "aliases": [
+      "מגדו"
+     ]
+    },
+    {
+     "answer": "חצור",
+     "tier": 3
+    },
+    {
+     "answer": "יזרעאל",
+     "tier": 3
+    },
+    {
+     "answer": "שומרון",
+     "tier": 3
+    },
+    {
+     "answer": "תרשיש",
+     "tier": 3
+    },
+    {
+     "answer": "דן",
+     "tier": 3
+    },
+    {
+     "answer": "גלגל",
+     "tier": 3
+    },
+    {
+     "answer": "מדבר סיני",
+     "tier": 3
+    },
+    {
+     "answer": "קדש ברנע",
+     "tier": 3,
+     "aliases": [
+      "קדש"
+     ]
+    },
+    {
+     "answer": "מרה",
+     "tier": 3
+    },
+    {
+     "answer": "הר חורב",
+     "tier": 3,
+     "aliases": [
+      "חורב"
+     ]
+    },
+    {
+     "answer": "הר עיבל",
+     "tier": 3,
+     "aliases": [
+      "עיבל"
+     ]
+    },
+    {
+     "answer": "הר גריזים",
+     "tier": 3,
+     "aliases": [
+      "גריזים"
+     ]
+    },
+    {
+     "answer": "שושן",
+     "tier": 3,
+     "aliases": [
+      "שושן הבירה"
+     ]
+    },
+    {
+     "answer": "אררט",
+     "tier": 3,
+     "aliases": [
+      "הרי אררט"
+     ]
+    },
+    {
+     "answer": "ציקלג",
+     "tier": 3
+    },
+    {
+     "answer": "גבעון",
+     "tier": 3
+    },
+    {
+     "answer": "עי",
+     "tier": 3,
+     "aliases": [
+      "העי"
+     ]
+    },
+    {
+     "answer": "צוער",
+     "tier": 3
+    },
+    {
+     "answer": "רמה",
+     "tier": 4
+    },
+    {
+     "answer": "מצפה",
+     "tier": 4
+    },
+    {
+     "answer": "קרית יערים",
+     "tier": 4
+    },
+    {
+     "answer": "אבל מחולה",
+     "tier": 4
+    },
+    {
+     "answer": "רפידים",
+     "tier": 4
+    },
+    {
+     "answer": "אילים",
+     "tier": 4
+    },
+    {
+     "answer": "צרעה",
+     "tier": 4
+    },
+    {
+     "answer": "אשתאול",
+     "tier": 4
+    },
+    {
+     "answer": "תמנה",
+     "tier": 4,
+     "aliases": [
+      "תמנתה"
+     ]
+    },
+    {
+     "answer": "גבע",
+     "tier": 4
+    },
+    {
+     "answer": "מכמש",
+     "tier": 4
+    },
+    {
+     "answer": "בית שמש",
+     "tier": 4
+    },
+    {
+     "answer": "עדולם",
+     "tier": 4,
+     "aliases": [
+      "מערת עדולם"
+     ]
+    },
+    {
+     "answer": "נחל כרית",
+     "tier": 4
+    },
+    {
+     "answer": "צרפת",
+     "tier": 4,
+     "aliases": [
+      "צרפתה"
+     ]
+    },
+    {
+     "answer": "תקוע",
+     "tier": 4
+    },
+    {
+     "answer": "אפרת",
+     "tier": 4,
+     "aliases": [
+      "אפרתה"
+     ]
+    },
+    {
+     "answer": "רחובות",
+     "tier": 4
+    },
+    {
+     "answer": "מחניים",
+     "tier": 4
+    },
+    {
+     "answer": "סוכות",
+     "tier": 4
+    },
+    {
+     "answer": "פדן ארם",
+     "tier": 4
+    },
+    {
+     "answer": "עין דור",
+     "tier": 4
+    },
+    {
+     "answer": "גלעד",
+     "tier": 4
+    },
+    {
+     "answer": "בשן",
+     "tier": 4
+    },
+    {
+     "answer": "מואב",
+     "tier": 4
+    },
+    {
+     "answer": "אדום",
+     "tier": 4
+    },
+    {
+     "answer": "עמון",
+     "tier": 4
+    },
+    {
+     "answer": "ארם נהריים",
+     "tier": 4
+    },
+    {
+     "answer": "נחל קישון",
+     "tier": 4,
+     "aliases": [
+      "קישון"
+     ]
+    },
+    {
+     "answer": "נחל שורק",
+     "tier": 4
+    },
+    {
+     "answer": "ים כנרת",
+     "tier": 4,
+     "aliases": [
+      "כנרת"
+     ]
+    },
+    {
+     "answer": "ים המלח",
+     "tier": 4
+    },
+    {
+     "answer": "הר המוריה",
+     "tier": 4,
+     "aliases": [
+      "מוריה"
+     ]
+    },
+    {
+     "answer": "הר ציון",
+     "tier": 4,
+     "aliases": [
+      "ציון"
+     ]
+    },
+    {
+     "answer": "גיחון",
+     "tier": 4
+    },
+    {
+     "answer": "פישון",
+     "tier": 4
+    },
+    {
+     "answer": "ארץ נוד",
+     "tier": 4,
+     "aliases": [
+      "נוד"
+     ]
+    },
+    {
+     "answer": "אחמתא",
+     "tier": 4
+    },
+    {
+     "answer": "פנואל",
+     "tier": 4,
+     "aliases": [
+      "פניאל"
+     ]
+    },
+    {
+     "answer": "יבוק",
+     "tier": 4,
+     "aliases": [
+      "נחל יבוק"
+     ]
+    },
+    {
+     "answer": "עמק רפאים",
+     "tier": 4
+    },
+    {
+     "answer": "גיא בן הינום",
+     "tier": 4,
+     "aliases": [
+      "גיא הינום",
+      "גיהנום"
+     ]
+    },
+    {
+     "answer": "בית שאן",
+     "tier": 4
+    },
+    {
+     "answer": "לכיש",
+     "tier": 4
+    },
+    {
+     "answer": "עזקה",
+     "tier": 4
+    },
+    {
+     "answer": "ממרא",
+     "tier": 4,
+     "aliases": [
+      "אלוני ממרא"
+     ]
+    },
+    {
+     "answer": "גרר",
+     "tier": 4
+    },
+    {
+     "answer": "פיתום",
+     "tier": 4
+    },
+    {
+     "answer": "רעמסס",
+     "tier": 4
+    },
+    {
+     "answer": "אופיר",
+     "tier": 4
+    },
+    {
+     "answer": "שבא",
+     "tier": 4
+    },
+    {
+     "answer": "כוש",
+     "tier": 4
+    },
+    {
+     "answer": "שטים",
+     "tier": 5
+    },
+    {
+     "answer": "תבערה",
+     "tier": 5
+    },
+    {
+     "answer": "קברות התאווה",
+     "tier": 5,
+     "aliases": [
+      "קברות התאוה"
+     ]
+    },
+    {
+     "answer": "חצרות",
+     "tier": 5
+    },
+    {
+     "answer": "ערד",
+     "tier": 5
+    },
+    {
+     "answer": "חרמה",
+     "tier": 5
+    },
+    {
+     "answer": "חשבון",
+     "tier": 5
+    },
+    {
+     "answer": "דיבון",
+     "tier": 5
+    },
+    {
+     "answer": "עשתרות",
+     "tier": 5
+    },
+    {
+     "answer": "אדרעי",
+     "tier": 5
+    },
+    {
+     "answer": "רמות גלעד",
+     "tier": 5
+    },
+    {
+     "answer": "עין רוגל",
+     "tier": 5
+    },
+    {
+     "answer": "שילוח",
+     "tier": 5,
+     "aliases": [
+      "בריכת השילוח"
+     ]
+    },
+    {
+     "answer": "נחל בשור",
+     "tier": 5
+    },
+    {
+     "answer": "אלון מורה",
+     "tier": 5
+    },
+    {
+     "answer": "באר לחי רואי",
+     "tier": 5
+    },
+    {
+     "answer": "תמנת סרח",
+     "tier": 5
+    },
+    {
+     "answer": "תענך",
+     "tier": 5
+    },
+    {
+     "answer": "אבן העזר",
+     "tier": 5
+    },
+    {
+     "answer": "און",
+     "tier": 5
+    },
+    {
+     "answer": "נוף",
+     "tier": 5
+    },
+    {
+     "answer": "תחפנחס",
+     "tier": 5
+    },
+    {
+     "answer": "כפתור",
+     "tier": 5
+    },
+    {
+     "answer": "חוילה",
+     "tier": 5
+    },
+    {
+     "answer": "תל אביב",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "חכם מהמשנה או מהתלמוד (תנא או אמורא, כמו 'הלל' או 'רבי עקיבא')",
+   "category": "תרבות",
+   "answers": [
+    {
+     "answer": "הלל",
+     "tier": 1,
+     "aliases": [
+      "הלל הזקן"
+     ]
+    },
+    {
+     "answer": "שמאי",
+     "tier": 1,
+     "aliases": [
+      "שמאי הזקן"
+     ]
+    },
+    {
+     "answer": "רבי עקיבא",
+     "tier": 1,
+     "aliases": [
+      "עקיבא",
+      "ר' עקיבא"
+     ]
+    },
+    {
+     "answer": "רבי שמעון בר יוחאי",
+     "tier": 1,
+     "aliases": [
+      "רשב\"י",
+      "רבי שמעון",
+      "ר' שמעון בר יוחאי"
+     ]
+    },
+    {
+     "answer": "רבי יהודה הנשיא",
+     "tier": 1,
+     "aliases": [
+      "רבי",
+      "רבנו הקדוש",
+      "ר' יהודה הנשיא"
+     ]
+    },
+    {
+     "answer": "רבן יוחנן בן זכאי",
+     "tier": 1,
+     "aliases": [
+      "ריב\"ז",
+      "יוחנן בן זכאי"
+     ]
+    },
+    {
+     "answer": "חוני המעגל",
+     "tier": 2
+    },
+    {
+     "answer": "רבי מאיר",
+     "tier": 2,
+     "aliases": [
+      "רבי מאיר בעל הנס",
+      "ר' מאיר"
+     ]
+    },
+    {
+     "answer": "ברוריה",
+     "tier": 2
+    },
+    {
+     "answer": "רבן גמליאל",
+     "tier": 2
+    },
+    {
+     "answer": "רבי אליעזר",
+     "tier": 2,
+     "aliases": [
+      "רבי אליעזר בן הורקנוס",
+      "רבי אליעזר הגדול",
+      "ר' אליעזר"
+     ]
+    },
+    {
+     "answer": "רבי יהושע",
+     "tier": 2,
+     "aliases": [
+      "רבי יהושע בן חנניה",
+      "ר' יהושע"
+     ]
+    },
+    {
+     "answer": "אלישע בן אבויה",
+     "tier": 2,
+     "aliases": [
+      "אחר"
+     ]
+    },
+    {
+     "answer": "רבי טרפון",
+     "tier": 2,
+     "aliases": [
+      "ר' טרפון"
+     ]
+    },
+    {
+     "answer": "רבי ישמעאל",
+     "tier": 2,
+     "aliases": [
+      "ר' ישמעאל"
+     ]
+    },
+    {
+     "answer": "אביי",
+     "tier": 2
+    },
+    {
+     "answer": "רבא",
+     "tier": 2
+    },
+    {
+     "answer": "ריש לקיש",
+     "tier": 2,
+     "aliases": [
+      "רבי שמעון בן לקיש"
+     ]
+    },
+    {
+     "answer": "רבי יוחנן",
+     "tier": 3,
+     "aliases": [
+      "רבי יוחנן בר נפחא",
+      "ר' יוחנן"
+     ]
+    },
+    {
+     "answer": "רב",
+     "tier": 3,
+     "aliases": [
+      "אבא אריכא"
+     ]
+    },
+    {
+     "answer": "שמואל",
+     "tier": 3,
+     "aliases": [
+      "מר שמואל"
+     ]
+    },
+    {
+     "answer": "רב אשי",
+     "tier": 3
+    },
+    {
+     "answer": "רבינא",
+     "tier": 3
+    },
+    {
+     "answer": "רבי אלעזר בן עזריה",
+     "tier": 3,
+     "aliases": [
+      "ר' אלעזר בן עזריה"
+     ]
+    },
+    {
+     "answer": "בן עזאי",
+     "tier": 3
+    },
+    {
+     "answer": "בן זומא",
+     "tier": 3
+    },
+    {
+     "answer": "רבי חנינא בן דוסא",
+     "tier": 3,
+     "aliases": [
+      "ר' חנינא בן דוסא"
+     ]
+    },
+    {
+     "answer": "נחום איש גם זו",
+     "tier": 3
+    },
+    {
+     "answer": "שמעון הצדיק",
+     "tier": 3
+    },
+    {
+     "answer": "שמעון בן שטח",
+     "tier": 3
+    },
+    {
+     "answer": "רבי יוסי",
+     "tier": 3,
+     "aliases": [
+      "ר' יוסי"
+     ]
+    },
+    {
+     "answer": "רבי יהודה",
+     "tier": 3,
+     "aliases": [
+      "רבי יהודה בר אילעאי",
+      "ר' יהודה"
+     ]
+    },
+    {
+     "answer": "רבי חייא",
+     "tier": 3,
+     "aliases": [
+      "ר' חייא"
+     ]
+    },
+    {
+     "answer": "רב פפא",
+     "tier": 3
+    },
+    {
+     "answer": "רב נחמן",
+     "tier": 3
+    },
+    {
+     "answer": "רב חסדא",
+     "tier": 3
+    },
+    {
+     "answer": "רב הונא",
+     "tier": 3
+    },
+    {
+     "answer": "רבי זירא",
+     "tier": 3,
+     "aliases": [
+      "רב זירא",
+      "ר' זירא"
+     ]
+    },
+    {
+     "answer": "רבן שמעון בן גמליאל",
+     "tier": 3,
+     "aliases": [
+      "רשב\"ג"
+     ]
+    },
+    {
+     "answer": "רבי חנניה בן תרדיון",
+     "tier": 3,
+     "aliases": [
+      "ר' חנניה בן תרדיון"
+     ]
+    },
+    {
+     "answer": "אונקלוס",
+     "tier": 3,
+     "aliases": [
+      "אונקלוס הגר"
+     ]
+    },
+    {
+     "answer": "רבי יוסי הגלילי",
+     "tier": 3,
+     "aliases": [
+      "ר' יוסי הגלילי"
+     ]
+    },
+    {
+     "answer": "יהושע בן פרחיה",
+     "tier": 4
+    },
+    {
+     "answer": "נתאי הארבלי",
+     "tier": 4
+    },
+    {
+     "answer": "יהודה בן טבאי",
+     "tier": 4
+    },
+    {
+     "answer": "שמעיה",
+     "tier": 4
+    },
+    {
+     "answer": "אבטליון",
+     "tier": 4
+    },
+    {
+     "answer": "אנטיגנוס איש סוכו",
+     "tier": 4
+    },
+    {
+     "answer": "יוסי בן יועזר",
+     "tier": 4
+    },
+    {
+     "answer": "יוסי בן יוחנן",
+     "tier": 4
+    },
+    {
+     "answer": "רבי נחמיה",
+     "tier": 4,
+     "aliases": [
+      "ר' נחמיה"
+     ]
+    },
+    {
+     "answer": "בר קפרא",
+     "tier": 4
+    },
+    {
+     "answer": "רבי אלעזר בן ערך",
+     "tier": 4,
+     "aliases": [
+      "ר' אלעזר בן ערך"
+     ]
+    },
+    {
+     "answer": "רבי יוסי הכהן",
+     "tier": 4,
+     "aliases": [
+      "ר' יוסי הכהן"
+     ]
+    },
+    {
+     "answer": "רבי שמעון בן נתנאל",
+     "tier": 4,
+     "aliases": [
+      "ר' שמעון בן נתנאל"
+     ]
+    },
+    {
+     "answer": "רבי צדוק",
+     "tier": 4,
+     "aliases": [
+      "ר' צדוק"
+     ]
+    },
+    {
+     "answer": "רבי יוחנן הסנדלר",
+     "tier": 4,
+     "aliases": [
+      "ר' יוחנן הסנדלר"
+     ]
+    },
+    {
+     "answer": "רב יהודה",
+     "tier": 4
+    },
+    {
+     "answer": "רב ששת",
+     "tier": 4
+    },
+    {
+     "answer": "רב יוסף",
+     "tier": 4
+    },
+    {
+     "answer": "רבה",
+     "tier": 4,
+     "aliases": [
+      "רבה בר נחמני"
+     ]
+    },
+    {
+     "answer": "רבי אבהו",
+     "tier": 4,
+     "aliases": [
+      "ר' אבהו"
+     ]
+    },
+    {
+     "answer": "רבי אמי",
+     "tier": 4,
+     "aliases": [
+      "ר' אמי"
+     ]
+    },
+    {
+     "answer": "רבי אסי",
+     "tier": 4,
+     "aliases": [
+      "ר' אסי"
+     ]
+    },
+    {
+     "answer": "רבי יהושע בן לוי",
+     "tier": 4,
+     "aliases": [
+      "ריב\"ל",
+      "ר' יהושע בן לוי"
+     ]
+    },
+    {
+     "answer": "רבי נתן",
+     "tier": 4,
+     "aliases": [
+      "רבי נתן הבבלי",
+      "ר' נתן"
+     ]
+    },
+    {
+     "answer": "רב כהנא",
+     "tier": 4
+    },
+    {
+     "answer": "עולא",
+     "tier": 4
+    },
+    {
+     "answer": "מר זוטרא",
+     "tier": 4
+    },
+    {
+     "answer": "רבה בר בר חנה",
+     "tier": 4
+    },
+    {
+     "answer": "רבי ירמיה",
+     "tier": 4,
+     "aliases": [
+      "ר' ירמיה"
+     ]
+    },
+    {
+     "answer": "רבי פנחס בן יאיר",
+     "tier": 4,
+     "aliases": [
+      "ר' פנחס בן יאיר"
+     ]
+    },
+    {
+     "answer": "עקביא בן מהללאל",
+     "tier": 4
+    },
+    {
+     "answer": "שמואל הקטן",
+     "tier": 4
+    },
+    {
+     "answer": "רבי ינאי",
+     "tier": 4,
+     "aliases": [
+      "ר' ינאי"
+     ]
+    },
+    {
+     "answer": "רבי אלעזר בן רבי שמעון",
+     "tier": 5,
+     "aliases": [
+      "ר' אלעזר בן רבי שמעון"
+     ]
+    },
+    {
+     "answer": "רבי יהודה בן בתירא",
+     "tier": 5,
+     "aliases": [
+      "ר' יהודה בן בתירא"
+     ]
+    },
+    {
+     "answer": "בן בג בג",
+     "tier": 5
+    },
+    {
+     "answer": "בן הא הא",
+     "tier": 5
+    },
+    {
+     "answer": "רבי דוסא בן הרכינס",
+     "tier": 5,
+     "aliases": [
+      "ר' דוסא בן הרכינס"
+     ]
+    },
+    {
+     "answer": "רבי חלפתא",
+     "tier": 5,
+     "aliases": [
+      "ר' חלפתא"
+     ]
+    },
+    {
+     "answer": "רבי יוחנן בן ברוקה",
+     "tier": 5,
+     "aliases": [
+      "ר' יוחנן בן ברוקה"
+     ]
+    },
+    {
+     "answer": "רבי מתיא בן חרש",
+     "tier": 5,
+     "aliases": [
+      "ר' מתיא בן חרש"
+     ]
+    },
+    {
+     "answer": "רב המנונא",
+     "tier": 5
+    },
+    {
+     "answer": "רבי אושעיא",
+     "tier": 5,
+     "aliases": [
+      "ר' אושעיא"
+     ]
+    },
+    {
+     "answer": "רבי נחוניא בן הקנה",
+     "tier": 5,
+     "aliases": [
+      "נחוניא בן הקנה",
+      "ר' נחוניא בן הקנה"
+     ]
+    },
+    {
+     "answer": "רבי ישבב הסופר",
+     "tier": 5,
+     "aliases": [
+      "ר' ישבב הסופר"
+     ]
+    },
+    {
+     "answer": "רבי יהודה בן בבא",
+     "tier": 5,
+     "aliases": [
+      "ר' יהודה בן בבא"
+     ]
+    },
+    {
+     "answer": "רבי חוצפית המתורגמן",
+     "tier": 6,
+     "aliases": [
+      "חוצפית המתורגמן",
+      "ר' חוצפית המתורגמן"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "אמן או אמנית ישראלים: צייר, פסל, צלם, מאייר או קריקטוריסט (מכל התקופות)",
+   "category": "תרבות",
+   "answers": [
+    {
+     "answer": "ראובן רובין",
+     "tier": 1,
+     "aliases": [
+      "רובין"
+     ]
+    },
+    {
+     "answer": "נחום גוטמן",
+     "tier": 1,
+     "aliases": [
+      "גוטמן"
+     ]
+    },
+    {
+     "answer": "יעקב אגם",
+     "tier": 1,
+     "aliases": [
+      "אגם"
+     ]
+    },
+    {
+     "answer": "מנשה קדישמן",
+     "tier": 1,
+     "aliases": [
+      "קדישמן"
+     ]
+    },
+    {
+     "answer": "דני קרוון",
+     "tier": 1,
+     "aliases": [
+      "קרוון"
+     ]
+    },
+    {
+     "answer": "דודו גבע",
+     "tier": 1
+    },
+    {
+     "answer": "יגאל תומרקין",
+     "tier": 2,
+     "aliases": [
+      "תומרקין"
+     ]
+    },
+    {
+     "answer": "מרדכי ארדון",
+     "tier": 2,
+     "aliases": [
+      "ארדון"
+     ]
+    },
+    {
+     "answer": "יוסל ברגנר",
+     "tier": 2,
+     "aliases": [
+      "ברגנר"
+     ]
+    },
+    {
+     "answer": "אורי ליפשיץ",
+     "tier": 2,
+     "aliases": [
+      "ליפשיץ"
+     ]
+    },
+    {
+     "answer": "מרסל ינקו",
+     "tier": 2,
+     "aliases": [
+      "ינקו"
+     ]
+    },
+    {
+     "answer": "אנה טיכו",
+     "tier": 2,
+     "aliases": [
+      "טיכו"
+     ]
+    },
+    {
+     "answer": "בוריס שץ",
+     "tier": 2
+    },
+    {
+     "answer": "אורי פינק",
+     "tier": 2
+    },
+    {
+     "answer": "זאב",
+     "tier": 2,
+     "aliases": [
+      "יעקב פרקש"
+     ]
+    },
+    {
+     "answer": "דוש",
+     "tier": 2,
+     "aliases": [
+      "קריאל גרדוש"
+     ]
+    },
+    {
+     "answer": "שמואל כץ",
+     "tier": 3
+    },
+    {
+     "answer": "רותו מודן",
+     "tier": 3
+    },
+    {
+     "answer": "אביגדור אריכא",
+     "tier": 3,
+     "aliases": [
+      "אריכא"
+     ]
+    },
+    {
+     "answer": "יחזקאל שטרייכמן",
+     "tier": 3,
+     "aliases": [
+      "שטרייכמן"
+     ]
+    },
+    {
+     "answer": "יוסף זריצקי",
+     "tier": 3,
+     "aliases": [
+      "זריצקי"
+     ]
+    },
+    {
+     "answer": "משה קסטל",
+     "tier": 3,
+     "aliases": [
+      "קסטל"
+     ]
+    },
+    {
+     "answer": "נפתלי בזם",
+     "tier": 3,
+     "aliases": [
+      "בזם"
+     ]
+    },
+    {
+     "answer": "אביגדור סטמצקי",
+     "tier": 3,
+     "aliases": [
+      "סטמצקי"
+     ]
+    },
+    {
+     "answer": "אריה ארוך",
+     "tier": 3
+    },
+    {
+     "answer": "ציונה תג'ר",
+     "tier": 3
+    },
+    {
+     "answer": "משה גרשוני",
+     "tier": 3,
+     "aliases": [
+      "גרשוני"
+     ]
+    },
+    {
+     "answer": "רפי לביא",
+     "tier": 3
+    },
+    {
+     "answer": "יאיר גרבוז",
+     "tier": 3,
+     "aliases": [
+      "גרבוז"
+     ]
+    },
+    {
+     "answer": "מיכה אולמן",
+     "tier": 3,
+     "aliases": [
+      "אולמן"
+     ]
+    },
+    {
+     "answer": "סיגלית לנדאו",
+     "tier": 3
+    },
+    {
+     "answer": "מישל קישקה",
+     "tier": 3
+    },
+    {
+     "answer": "רענן לוריא",
+     "tier": 3
+    },
+    {
+     "answer": "מיכל נאמן",
+     "tier": 4
+    },
+    {
+     "answer": "לאה ניקל",
+     "tier": 4
+    },
+    {
+     "answer": "פנחס כהן גן",
+     "tier": 4
+    },
+    {
+     "answer": "שמואל בק",
+     "tier": 4
+    },
+    {
+     "answer": "משה מוקדי",
+     "tier": 4
+    },
+    {
+     "answer": "אהרון כהנא",
+     "tier": 4
+    },
+    {
+     "answer": "יעקב שטיינהרדט",
+     "tier": 4,
+     "aliases": [
+      "שטיינהרדט"
+     ]
+    },
+    {
+     "answer": "מרדכי לבנון",
+     "tier": 4
+    },
+    {
+     "answer": "אורי רייזמן",
+     "tier": 4
+    },
+    {
+     "answer": "אברהם אופק",
+     "tier": 4
+    },
+    {
+     "answer": "יצחק דנציגר",
+     "tier": 4,
+     "aliases": [
+      "דנציגר"
+     ]
+    },
+    {
+     "answer": "דב פייגין",
+     "tier": 4
+    },
+    {
+     "answer": "אילנה גור",
+     "tier": 4
+    },
+    {
+     "answer": "יעקב דורצ'ין",
+     "tier": 4
+    },
+    {
+     "answer": "ציבי גבע",
+     "tier": 4
+    },
+    {
+     "answer": "דוד רובינגר",
+     "tier": 4
+    },
+    {
+     "answer": "מיכה ברעם",
+     "tier": 4
+    },
+    {
+     "answer": "עדי נס",
+     "tier": 4
+    },
+    {
+     "answer": "זולטן קלוגר",
+     "tier": 4
+    },
+    {
+     "answer": "אפרים משה ליליין",
+     "tier": 4,
+     "aliases": [
+      "ליליין"
+     ]
+    },
+    {
+     "answer": "אביבה אורי",
+     "tier": 4
+    },
+    {
+     "answer": "יוסי שטרן",
+     "tier": 4
+    },
+    {
+     "answer": "אריה נבון",
+     "tier": 4
+    },
+    {
+     "answer": "דוד טרטקובר",
+     "tier": 4
+    },
+    {
+     "answer": "יעל ברתנא",
+     "tier": 4
+    },
+    {
+     "answer": "רודי ויסנשטיין",
+     "tier": 5
+    },
+    {
+     "answer": "הרמן שטרוק",
+     "tier": 5
+    },
+    {
+     "answer": "לודוויג בלום",
+     "tier": 5
+    },
+    {
+     "answer": "יוחנן סימון",
+     "tier": 5
+    },
+    {
+     "answer": "חיים אתר",
+     "tier": 5
+    },
+    {
+     "answer": "אריה אלואיל",
+     "tier": 5
+    },
+    {
+     "answer": "חיים מאור",
+     "tier": 5
+    },
+    {
+     "answer": "פרנץ קראוס",
+     "tier": 5
+    },
+    {
+     "answer": "שמעון צבר",
+     "tier": 5
+    },
+    {
+     "answer": "קוסו אלול",
+     "tier": 5
+    },
+    {
+     "answer": "בצלאל שץ",
+     "tier": 5
+    },
+    {
+     "answer": "עזרא אוריון",
+     "tier": 5
+    },
+    {
+     "answer": "מיכאל גרוס",
+     "tier": 5
+    },
+    {
+     "answer": "גדעון גכטמן",
+     "tier": 5
+    },
+    {
+     "answer": "תמר גטר",
+     "tier": 5
+    },
+    {
+     "answer": "פמלה לוי",
+     "tier": 5
+    },
+    {
+     "answer": "דגנית ברסט",
+     "tier": 5
+    },
+    {
+     "answer": "יהודית סספורטס",
+     "tier": 5
+    },
+    {
+     "answer": "צבי גולדשטיין",
+     "tier": 5
+    },
+    {
+     "answer": "שלום סבא",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "דמות או יצור מהאגדה, מהמיסטיקה או מהפולקלור היהודי (כמו 'הגולם' או 'לילית')",
+   "category": "תרבות",
+   "answers": [
+    {
+     "answer": "גולם",
+     "tier": 1,
+     "aliases": [
+      "הגולם מפראג"
+     ]
+    },
+    {
+     "answer": "לילית",
+     "tier": 1
+    },
+    {
+     "answer": "דיבוק",
+     "tier": 1
+    },
+    {
+     "answer": "אשמדאי",
+     "tier": 1,
+     "aliases": [
+      "אשמדאי מלך השדים"
+     ]
+    },
+    {
+     "answer": "מלאך המוות",
+     "tier": 1
+    },
+    {
+     "answer": "לווייתן",
+     "tier": 1,
+     "aliases": [
+      "לויתן"
+     ]
+    },
+    {
+     "answer": "שד",
+     "tier": 2,
+     "aliases": [
+      "שדים"
+     ]
+    },
+    {
+     "answer": "שור הבר",
+     "tier": 2
+    },
+    {
+     "answer": "זיז שדי",
+     "tier": 2,
+     "aliases": [
+      "זיז"
+     ]
+    },
+    {
+     "answer": "בהמות",
+     "tier": 2
+    },
+    {
+     "answer": "כרובים",
+     "tier": 2,
+     "aliases": [
+      "כרוב"
+     ]
+    },
+    {
+     "answer": "שרפים",
+     "tier": 2,
+     "aliases": [
+      "שרף"
+     ]
+    },
+    {
+     "answer": "סמאל",
+     "tier": 2
+    },
+    {
+     "answer": "נפילים",
+     "tier": 2
+    },
+    {
+     "answer": "אליהו הנביא",
+     "tier": 2,
+     "aliases": [
+      "אליהו"
+     ]
+    },
+    {
+     "answer": "ל\"ו צדיקים",
+     "tier": 2,
+     "aliases": [
+      "למד וו צדיקים",
+      "צדיק נסתר",
+      "ל\"ו צדיקים נסתרים"
+     ]
+    },
+    {
+     "answer": "משיח",
+     "tier": 2,
+     "aliases": [
+      "מלך המשיח"
+     ]
+    },
+    {
+     "answer": "חכמי חלם",
+     "tier": 2,
+     "aliases": [
+      "אנשי חלם"
+     ]
+    },
+    {
+     "answer": "מטטרון",
+     "tier": 3
+    },
+    {
+     "answer": "גבריאל",
+     "tier": 3,
+     "aliases": [
+      "המלאך גבריאל"
+     ]
+    },
+    {
+     "answer": "מיכאל",
+     "tier": 3,
+     "aliases": [
+      "המלאך מיכאל"
+     ]
+    },
+    {
+     "answer": "רפאל",
+     "tier": 3,
+     "aliases": [
+      "המלאך רפאל"
+     ]
+    },
+    {
+     "answer": "אוריאל",
+     "tier": 3
+    },
+    {
+     "answer": "עזאזל",
+     "tier": 3
+    },
+    {
+     "answer": "רפאים",
+     "tier": 3
+    },
+    {
+     "answer": "עוג מלך הבשן",
+     "tier": 3,
+     "aliases": [
+      "עוג"
+     ]
+    },
+    {
+     "answer": "שמיר",
+     "tier": 3,
+     "aliases": [
+      "תולעת השמיר"
+     ]
+    },
+    {
+     "answer": "חוני המעגל",
+     "tier": 3
+    },
+    {
+     "answer": "הרשל'ה מאוסטרופולי",
+     "tier": 3,
+     "aliases": [
+      "הרשלה",
+      "הרשל'ה"
+     ]
+    },
+    {
+     "answer": "מזיקים",
+     "tier": 3
+    },
+    {
+     "answer": "עשרת השבטים",
+     "tier": 3,
+     "aliases": [
+      "עשרת השבטים האבודים"
+     ]
+    },
+    {
+     "answer": "הנחש הקדמוני",
+     "tier": 3,
+     "aliases": [
+      "נחש"
+     ]
+    },
+    {
+     "answer": "עוף החול",
+     "tier": 3,
+     "aliases": [
+      "חול"
+     ]
+    },
+    {
+     "answer": "לילין",
+     "tier": 4
+    },
+    {
+     "answer": "אגרת בת מחלת",
+     "tier": 4,
+     "aliases": [
+      "אגרת"
+     ]
+    },
+    {
+     "answer": "בר יוכני",
+     "tier": 4
+    },
+    {
+     "answer": "סנדלפון",
+     "tier": 4
+    },
+    {
+     "answer": "רזיאל",
+     "tier": 4,
+     "aliases": [
+      "המלאך רזיאל"
+     ]
+    },
+    {
+     "answer": "דומה",
+     "tier": 4
+    },
+    {
+     "answer": "אופנים",
+     "tier": 4
+    },
+    {
+     "answer": "חיות הקודש",
+     "tier": 4
+    },
+    {
+     "answer": "שכינה",
+     "tier": 4
+    },
+    {
+     "answer": "בני האלוהים",
+     "tier": 4,
+     "aliases": [
+      "בני אלוהים"
+     ]
+    },
+    {
+     "answer": "שידה",
+     "tier": 4
+    },
+    {
+     "answer": "קטב מרירי",
+     "tier": 4
+    },
+    {
+     "answer": "מלאכי חבלה",
+     "tier": 4
+    },
+    {
+     "answer": "אף וחמה",
+     "tier": 5
+    },
+    {
+     "answer": "אדם קדמון",
+     "tier": 5
+    },
+    {
+     "answer": "שברירי",
+     "tier": 5
+    },
+    {
+     "answer": "יוסף דלה ריינה",
+     "tier": 5
+    },
+    {
+     "answer": "נעמה",
+     "tier": 5
+    },
+    {
+     "answer": "בן תמליון",
+     "tier": 5
+    },
+    {
+     "answer": "שמחזאי",
+     "tier": 5
+    },
+    {
+     "answer": "רהב",
+     "tier": 5
+    },
+    {
+     "answer": "תחש",
+     "tier": 5
+    },
+    {
+     "answer": "אדני השדה",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "שם של ספר שנכתב במקור בעברית (רומן, ספר ילדים או ספר שירים, מכל התקופות)",
+   "category": "תרבות",
+   "answers": [
+    {
+     "answer": "איה פלוטו",
+     "tier": 1
+    },
+    {
+     "answer": "דירה להשכיר",
+     "tier": 1
+    },
+    {
+     "answer": "הכבש השישה עשר",
+     "tier": 1,
+     "aliases": [
+      "הכבש ה-16",
+      "הכבש ה16"
+     ]
+    },
+    {
+     "answer": "מיכאל שלי",
+     "tier": 1
+    },
+    {
+     "answer": "סיפור על אהבה וחושך",
+     "tier": 1
+    },
+    {
+     "answer": "חסמבה",
+     "tier": 1,
+     "aliases": [
+      "חבורת סמבטיון"
+     ]
+    },
+    {
+     "answer": "מעשה בחמישה בלונים",
+     "tier": 2
+    },
+    {
+     "answer": "הבית של יעל",
+     "tier": 2
+    },
+    {
+     "answer": "אבא עושה בושות",
+     "tier": 2
+    },
+    {
+     "answer": "שמונה ברגל אחת",
+     "tier": 2
+    },
+    {
+     "answer": "קופיקו",
+     "tier": 2
+    },
+    {
+     "answer": "דנידין",
+     "tier": 2,
+     "aliases": [
+      "דנידין הרואה ואינו נראה"
+     ]
+    },
+    {
+     "answer": "איתמר מטייל על קירות",
+     "tier": 2
+    },
+    {
+     "answer": "מישהו לרוץ איתו",
+     "tier": 2
+    },
+    {
+     "answer": "תמול שלשום",
+     "tier": 2
+    },
+    {
+     "answer": "סיפור פשוט",
+     "tier": 2
+    },
+    {
+     "answer": "אליעזר והגזר",
+     "tier": 2
+    },
+    {
+     "answer": "אהבת ציון",
+     "tier": 2
+    },
+    {
+     "answer": "סוס אחד נכנס לבר",
+     "tier": 2
+    },
+    {
+     "answer": "הקיץ של אביה",
+     "tier": 2
+    },
+    {
+     "answer": "הכנסת כלה",
+     "tier": 3
+    },
+    {
+     "answer": "אורח נטה ללון",
+     "tier": 3
+    },
+    {
+     "answer": "שירה",
+     "tier": 3
+    },
+    {
+     "answer": "עידו ועינם",
+     "tier": 3
+    },
+    {
+     "answer": "קופסה שחורה",
+     "tier": 3
+    },
+    {
+     "answer": "לדעת אישה",
+     "tier": 3
+    },
+    {
+     "answer": "המצב השלישי",
+     "tier": 3
+    },
+    {
+     "answer": "מנוחה נכונה",
+     "tier": 3
+    },
+    {
+     "answer": "הוא הלך בשדות",
+     "tier": 3
+    },
+    {
+     "answer": "ימי צקלג",
+     "tier": 3,
+     "aliases": [
+      "ימי ציקלג"
+     ]
+    },
+    {
+     "answer": "חירבת חזעה",
+     "tier": 3,
+     "aliases": [
+      "חרבת חזעה"
+     ]
+    },
+    {
+     "answer": "השבוי",
+     "tier": 3
+    },
+    {
+     "answer": "זיכרון דברים",
+     "tier": 3,
+     "aliases": [
+      "זכרון דברים"
+     ]
+    },
+    {
+     "answer": "רומן רוסי",
+     "tier": 3
+    },
+    {
+     "answer": "כימים אחדים",
+     "tier": 3
+    },
+    {
+     "answer": "עשיו",
+     "tier": 3
+    },
+    {
+     "answer": "יונה ונער",
+     "tier": 3
+    },
+    {
+     "answer": "פונטנלה",
+     "tier": 3
+    },
+    {
+     "answer": "המאהב",
+     "tier": 3
+    },
+    {
+     "answer": "מר מאני",
+     "tier": 3
+    },
+    {
+     "answer": "עיין ערך: אהבה",
+     "tier": 3,
+     "aliases": [
+      "עיין ערך אהבה"
+     ]
+    },
+    {
+     "answer": "אישה בורחת מבשורה",
+     "tier": 3
+    },
+    {
+     "answer": "שמוליקיפוד",
+     "tier": 3
+    },
+    {
+     "answer": "סבתא סורגת",
+     "tier": 3
+    },
+    {
+     "answer": "האי ברחוב הציפורים",
+     "tier": 3
+    },
+    {
+     "answer": "שמונה בעקבות אחד",
+     "tier": 3
+    },
+    {
+     "answer": "תרנגול כפרות",
+     "tier": 3
+    },
+    {
+     "answer": "בדמי ימיה",
+     "tier": 4
+    },
+    {
+     "answer": "גירושים מאוחרים",
+     "tier": 4
+    },
+    {
+     "answer": "שליחותו של הממונה על משאבי אנוש",
+     "tier": 4
+    },
+    {
+     "answer": "חסד ספרדי",
+     "tier": 5
+    },
+    {
+     "answer": "התגנבות יחידים",
+     "tier": 4
+    },
+    {
+     "answer": "אחרי החגים",
+     "tier": 4
+    },
+    {
+     "answer": "חצוצרה בוואדי",
+     "tier": 4,
+     "aliases": [
+      "חצוצרה בואדי"
+     ]
+    },
+    {
+     "answer": "ויקטוריה",
+     "tier": 4
+    },
+    {
+     "answer": "נוצות",
+     "tier": 4
+    },
+    {
+     "answer": "חבלים",
+     "tier": 4
+    },
+    {
+     "answer": "תהילה",
+     "tier": 4
+    },
+    {
+     "answer": "ספר הדקדוק הפנימי",
+     "tier": 4
+    },
+    {
+     "answer": "ארבעה בתים וגעגוע",
+     "tier": 4
+    },
+    {
+     "answer": "שלוש קומות",
+     "tier": 4
+    },
+    {
+     "answer": "גוף שני יחיד",
+     "tier": 4
+    },
+    {
+     "answer": "ערבים רוקדים",
+     "tier": 4
+    },
+    {
+     "answer": "דולי סיטי",
+     "tier": 5
+    },
+    {
+     "answer": "פנתר במרתף",
+     "tier": 4
+    },
+    {
+     "answer": "דני גיבור",
+     "tier": 4
+    },
+    {
+     "answer": "אורה הכפולה",
+     "tier": 4
+    },
+    {
+     "answer": "מה עושות האיילות",
+     "tier": 4
+    },
+    {
+     "answer": "אשמת שומרון",
+     "tier": 5
+    },
+    {
+     "answer": "העיט הצבוע",
+     "tier": 5
+    },
+    {
+     "answer": "יסמין",
+     "tier": 5
+    },
+    {
+     "answer": "נוילנד",
+     "tier": 5
+    },
+    {
+     "answer": "הר העצה הרעה",
+     "tier": 5
+    },
+    {
+     "answer": "התועה בדרכי החיים",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "דמות מרומן, מאפוס או ממחזה קלאסי של ספרות העולם (לא מאגדה ולא מספר ילדים)",
+   "category": "תרבות",
+   "answers": [
+    {
+     "answer": "דון קיחוטה",
+     "tier": 1,
+     "aliases": [
+      "דון קישוט"
+     ]
+    },
+    {
+     "answer": "שרלוק הולמס",
+     "tier": 1,
+     "aliases": [
+      "שרלוק"
+     ]
+    },
+    {
+     "answer": "רומיאו",
+     "tier": 1
+    },
+    {
+     "answer": "יוליה",
+     "tier": 1,
+     "aliases": [
+      "ג'ולייט",
+      "יוליה קפולט"
+     ]
+    },
+    {
+     "answer": "המלט",
+     "tier": 1
+    },
+    {
+     "answer": "רובינזון קרוזו",
+     "tier": 1,
+     "aliases": [
+      "רובינזון"
+     ]
+    },
+    {
+     "answer": "דרקולה",
+     "tier": 2
+    },
+    {
+     "answer": "פרנקנשטיין",
+     "tier": 2,
+     "aliases": [
+      "ויקטור פרנקנשטיין"
+     ]
+    },
+    {
+     "answer": "אוליבר טוויסט",
+     "tier": 2
+    },
+    {
+     "answer": "ז'אן ולז'אן",
+     "tier": 2,
+     "aliases": [
+      "ולז'אן"
+     ]
+    },
+    {
+     "answer": "קוואזימודו",
+     "tier": 2,
+     "aliases": [
+      "הגיבן מנוטרדם"
+     ]
+    },
+    {
+     "answer": "אסמרלדה",
+     "tier": 2
+    },
+    {
+     "answer": "גטסבי",
+     "tier": 2,
+     "aliases": [
+      "ג'יי גטסבי",
+      "גטסבי הגדול"
+     ]
+    },
+    {
+     "answer": "אנה קרנינה",
+     "tier": 2
+    },
+    {
+     "answer": "מקבת",
+     "tier": 2
+    },
+    {
+     "answer": "אותלו",
+     "tier": 2
+    },
+    {
+     "answer": "ד\"ר ווטסון",
+     "tier": 2,
+     "aliases": [
+      "ווטסון",
+      "דוקטור ווטסון"
+     ]
+    },
+    {
+     "answer": "סנשו פנסה",
+     "tier": 2
+    },
+    {
+     "answer": "ד'ארטניאן",
+     "tier": 2,
+     "aliases": [
+      "דרטניאן"
+     ]
+    },
+    {
+     "answer": "ג'יין אייר",
+     "tier": 3
+    },
+    {
+     "answer": "מר דארסי",
+     "tier": 3,
+     "aliases": [
+      "דארסי"
+     ]
+    },
+    {
+     "answer": "אליזבת בנט",
+     "tier": 3
+    },
+    {
+     "answer": "מאדאם בובארי",
+     "tier": 3,
+     "aliases": [
+      "אמה בובארי"
+     ]
+    },
+    {
+     "answer": "הולדן קולפילד",
+     "tier": 3,
+     "aliases": [
+      "הולדן"
+     ]
+    },
+    {
+     "answer": "קפטן אחאב",
+     "tier": 3,
+     "aliases": [
+      "אחאב"
+     ]
+    },
+    {
+     "answer": "גוליבר",
+     "tier": 3
+    },
+    {
+     "answer": "הרוזן ממונטה כריסטו",
+     "tier": 3,
+     "aliases": [
+      "אדמון דנטס",
+      "מונטה כריסטו"
+     ]
+    },
+    {
+     "answer": "ליידי מקבת",
+     "tier": 3
+    },
+    {
+     "answer": "המלך ליר",
+     "tier": 3,
+     "aliases": [
+      "ליר"
+     ]
+    },
+    {
+     "answer": "שיילוק",
+     "tier": 3
+    },
+    {
+     "answer": "פאוסט",
+     "tier": 3
+    },
+    {
+     "answer": "מפיסטופלס",
+     "tier": 3,
+     "aliases": [
+      "מפיסטו"
+     ]
+    },
+    {
+     "answer": "דוריאן גריי",
+     "tier": 3
+    },
+    {
+     "answer": "ד\"ר ג'קיל",
+     "tier": 3,
+     "aliases": [
+      "ג'קיל",
+      "דוקטור ג'קיל"
+     ]
+    },
+    {
+     "answer": "מר הייד",
+     "tier": 3,
+     "aliases": [
+      "הייד"
+     ]
+    },
+    {
+     "answer": "הית'קליף",
+     "tier": 3
+    },
+    {
+     "answer": "רסקולניקוב",
+     "tier": 3
+    },
+    {
+     "answer": "גרגור סמסא",
+     "tier": 3
+    },
+    {
+     "answer": "אטיקוס פינץ'",
+     "tier": 3
+    },
+    {
+     "answer": "סקרלט אוהרה",
+     "tier": 3
+    },
+    {
+     "answer": "ג'יימס בונד",
+     "tier": 3
+    },
+    {
+     "answer": "טרזן",
+     "tier": 3
+    },
+    {
+     "answer": "ארסן לופן",
+     "tier": 3
+    },
+    {
+     "answer": "הרקול פוארו",
+     "tier": 3,
+     "aliases": [
+      "פוארו"
+     ]
+    },
+    {
+     "answer": "מיס מרפל",
+     "tier": 3
+    },
+    {
+     "answer": "האח הגדול",
+     "tier": 3
+    },
+    {
+     "answer": "אבנעזר סקרוג'",
+     "tier": 3,
+     "aliases": [
+      "סקרוג'"
+     ]
+    },
+    {
+     "answer": "מובי דיק",
+     "tier": 3
+    },
+    {
+     "answer": "אודיסאוס",
+     "tier": 3
+    },
+    {
+     "answer": "אדיפוס",
+     "tier": 3
+    },
+    {
+     "answer": "וינסטון סמית'",
+     "tier": 4
+    },
+    {
+     "answer": "יאגו",
+     "tier": 4
+    },
+    {
+     "answer": "פאק",
+     "tier": 4
+    },
+    {
+     "answer": "פולסטאף",
+     "tier": 4
+    },
+    {
+     "answer": "אתוס",
+     "tier": 4
+    },
+    {
+     "answer": "פורתוס",
+     "tier": 4
+    },
+    {
+     "answer": "ארמיס",
+     "tier": 4
+    },
+    {
+     "answer": "קוזט",
+     "tier": 4
+    },
+    {
+     "answer": "ז'אבר",
+     "tier": 4,
+     "aliases": [
+      "ז'בר"
+     ]
+    },
+    {
+     "answer": "רט באטלר",
+     "tier": 4
+    },
+    {
+     "answer": "פיליאס פוג",
+     "tier": 4
+    },
+    {
+     "answer": "קפטן נמו",
+     "tier": 4
+    },
+    {
+     "answer": "סירנו דה ברז'רק",
+     "tier": 4,
+     "aliases": [
+      "סירנו",
+      "סיראנו"
+     ]
+    },
+    {
+     "answer": "דון חואן",
+     "tier": 4
+    },
+    {
+     "answer": "לוליטה",
+     "tier": 4
+    },
+    {
+     "answer": "אכילס",
+     "tier": 4
+    },
+    {
+     "answer": "אנטיגונה",
+     "tier": 4
+    },
+    {
+     "answer": "מדיאה",
+     "tier": 4
+    },
+    {
+     "answer": "דוקטור ז'יוואגו",
+     "tier": 4,
+     "aliases": [
+      "ז'יוואגו"
+     ]
+    },
+    {
+     "answer": "קתרין ארנשו",
+     "tier": 5
+    },
+    {
+     "answer": "מורסו",
+     "tier": 5
+    },
+    {
+     "answer": "יוזף ק.",
+     "tier": 5,
+     "aliases": [
+      "יוזף ק"
+     ]
+    },
+    {
+     "answer": "יבגני אונייגין",
+     "tier": 5,
+     "aliases": [
+      "אונייגין"
+     ]
+    },
+    {
+     "answer": "הנסיך מישקין",
+     "tier": 5,
+     "aliases": [
+      "מישקין"
+     ]
+    },
+    {
+     "answer": "אליושה קרמזוב",
+     "tier": 5,
+     "aliases": [
+      "אליושה"
+     ]
+    },
+    {
+     "answer": "אורליאנו בואנדיה",
+     "tier": 5,
+     "aliases": [
+      "אורליאנו"
+     ]
+    },
+    {
+     "answer": "ישמעאל",
+     "tier": 5
+    },
+    {
+     "answer": "פיפ",
+     "tier": 5
+    },
+    {
+     "answer": "מיס האווישם",
+     "tier": 5
+    },
+    {
+     "answer": "גרגנטואה",
+     "tier": 5
+    },
+    {
+     "answer": "קנדיד",
+     "tier": 5
+    },
+    {
+     "answer": "טרטיף",
+     "tier": 5
+    },
+    {
+     "answer": "פר גינט",
+     "tier": 5
+    },
+    {
+     "answer": "נורה הלמר",
+     "tier": 5,
+     "aliases": [
+      "נורה"
+     ]
+    },
+    {
+     "answer": "הדה גאבלר",
+     "tier": 5
+    },
+    {
+     "answer": "וילי לומן",
+     "tier": 5
+    },
+    {
+     "answer": "בלאנש דובואה",
+     "tier": 5
+    },
+    {
+     "answer": "הומברט הומברט",
+     "tier": 5
+    },
+    {
+     "answer": "דייזי ביוקנן",
+     "tier": 5
+    },
+    {
+     "answer": "קורץ",
+     "tier": 5
+    },
+    {
+     "answer": "הרפגון",
+     "tier": 6,
+     "aliases": [
+      "הארפגון"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "זרם, סגנון או תקופה באמנות (כמו 'אימפרסיוניזם' או 'קוביזם')",
+   "category": "תרבות",
+   "answers": [
+    {
+     "answer": "אימפרסיוניזם",
+     "tier": 1
+    },
+    {
+     "answer": "קוביזם",
+     "tier": 1
+    },
+    {
+     "answer": "סוריאליזם",
+     "tier": 1
+    },
+    {
+     "answer": "רנסנס",
+     "tier": 1,
+     "aliases": [
+      "רנסאנס"
+     ]
+    },
+    {
+     "answer": "פופ ארט",
+     "tier": 1,
+     "aliases": [
+      "pop art"
+     ]
+    },
+    {
+     "answer": "אקספרסיוניזם",
+     "tier": 1
+    },
+    {
+     "answer": "בארוק",
+     "tier": 2,
+     "aliases": [
+      "בארוקו"
+     ]
+    },
+    {
+     "answer": "ריאליזם",
+     "tier": 2
+    },
+    {
+     "answer": "רומנטיקה",
+     "tier": 2,
+     "aliases": [
+      "רומנטיזם"
+     ]
+    },
+    {
+     "answer": "אבסטרקט",
+     "tier": 2,
+     "aliases": [
+      "מופשט",
+      "אמנות מופשטת"
+     ]
+    },
+    {
+     "answer": "מינימליזם",
+     "tier": 2
+    },
+    {
+     "answer": "דאדא",
+     "tier": 2,
+     "aliases": [
+      "דאדאיזם"
+     ]
+    },
+    {
+     "answer": "פוסט-אימפרסיוניזם",
+     "tier": 2
+    },
+    {
+     "answer": "פוינטיליזם",
+     "tier": 2,
+     "aliases": [
+      "פואנטיליזם"
+     ]
+    },
+    {
+     "answer": "גותי",
+     "tier": 2,
+     "aliases": [
+      "אמנות גותית",
+      "גותיקה"
+     ]
+    },
+    {
+     "answer": "פוביזם",
+     "tier": 2
+    },
+    {
+     "answer": "ארט נובו",
+     "tier": 2,
+     "aliases": [
+      "אר נובו"
+     ]
+    },
+    {
+     "answer": "רוקוקו",
+     "tier": 3
+    },
+    {
+     "answer": "ניאו-קלאסיציזם",
+     "tier": 3,
+     "aliases": [
+      "ניאוקלאסיציזם"
+     ]
+    },
+    {
+     "answer": "קלאסיציזם",
+     "tier": 3
+    },
+    {
+     "answer": "נטורליזם",
+     "tier": 3
+    },
+    {
+     "answer": "פוטוריזם",
+     "tier": 3
+    },
+    {
+     "answer": "קונסטרוקטיביזם",
+     "tier": 3
+    },
+    {
+     "answer": "סופרמטיזם",
+     "tier": 3
+    },
+    {
+     "answer": "ארט דקו",
+     "tier": 3,
+     "aliases": [
+      "אר דקו"
+     ]
+    },
+    {
+     "answer": "באוהאוס",
+     "tier": 3
+    },
+    {
+     "answer": "אמנות ביזנטית",
+     "tier": 3,
+     "aliases": [
+      "ביזנטי"
+     ]
+    },
+    {
+     "answer": "מנייריזם",
+     "tier": 3,
+     "aliases": [
+      "מניריזם"
+     ]
+    },
+    {
+     "answer": "סימבוליזם",
+     "tier": 3
+    },
+    {
+     "answer": "היפר-ריאליזם",
+     "tier": 3
+    },
+    {
+     "answer": "אופ ארט",
+     "tier": 3,
+     "aliases": [
+      "op art"
+     ]
+    },
+    {
+     "answer": "אמנות מושגית",
+     "tier": 3,
+     "aliases": [
+      "אמנות קונספטואלית",
+      "קונספטואליזם"
+     ]
+    },
+    {
+     "answer": "אמנות רחוב",
+     "tier": 3,
+     "aliases": [
+      "גרפיטי",
+      "street art",
+      "סטריט ארט"
+     ]
+    },
+    {
+     "answer": "אמנות נאיבית",
+     "tier": 3,
+     "aliases": [
+      "נאיביזם",
+      "נאיבי"
+     ]
+    },
+    {
+     "answer": "אקספרסיוניזם מופשט",
+     "tier": 3
+    },
+    {
+     "answer": "פרה-רפאליטים",
+     "tier": 3,
+     "aliases": [
+      "האחווה הפרה-רפאליטית"
+     ]
+    },
+    {
+     "answer": "מודרניזם",
+     "tier": 3
+    },
+    {
+     "answer": "פוסט-מודרניזם",
+     "tier": 3
+    },
+    {
+     "answer": "דה סטייל",
+     "tier": 4
+    },
+    {
+     "answer": "אורפיזם",
+     "tier": 4
+    },
+    {
+     "answer": "טשיזם",
+     "tier": 4
+    },
+    {
+     "answer": "לנד ארט",
+     "tier": 4
+    },
+    {
+     "answer": "אמנות קינטית",
+     "tier": 4
+    },
+    {
+     "answer": "מיצג",
+     "tier": 4,
+     "aliases": [
+      "אמנות מיצג"
+     ]
+    },
+    {
+     "answer": "מיצב",
+     "tier": 4,
+     "aliases": [
+      "אינסטלציה"
+     ]
+    },
+    {
+     "answer": "אסכולת בצלאל",
+     "tier": 4
+    },
+    {
+     "answer": "אופקים חדשים",
+     "tier": 4
+    },
+    {
+     "answer": "הכנענים",
+     "tier": 4,
+     "aliases": [
+      "כנעניות"
+     ]
+    },
+    {
+     "answer": "דלות החומר",
+     "tier": 4
+    },
+    {
+     "answer": "אקדמיזם",
+     "tier": 4
+    },
+    {
+     "answer": "פוטוריאליזם",
+     "tier": 4
+    },
+    {
+     "answer": "אסכולת ברביזון",
+     "tier": 4,
+     "aliases": [
+      "ברביזון"
+     ]
+    },
+    {
+     "answer": "אסכולת פריז",
+     "tier": 4
+    },
+    {
+     "answer": "אוקיו-אה",
+     "tier": 4,
+     "aliases": [
+      "ukiyo-e"
+     ]
+    },
+    {
+     "answer": "אמנות רומנסקית",
+     "tier": 4,
+     "aliases": [
+      "רומנסקי"
+     ]
+    },
+    {
+     "answer": "הציור הפלמי",
+     "tier": 4,
+     "aliases": [
+      "ציור פלמי"
+     ]
+    },
+    {
+     "answer": "פרימיטיביזם",
+     "tier": 4
+    },
+    {
+     "answer": "וידאו ארט",
+     "tier": 4
+    },
+    {
+     "answer": "ריאליזם סוציאליסטי",
+     "tier": 4
+    },
+    {
+     "answer": "ארט ברוט",
+     "tier": 5,
+     "aliases": [
+      "art brut"
+     ]
+    },
+    {
+     "answer": "ניאו-אקספרסיוניזם",
+     "tier": 5
+    },
+    {
+     "answer": "הנאבים",
+     "tier": 5,
+     "aliases": [
+      "נאבי"
+     ]
+    },
+    {
+     "answer": "אסכולת נהר ההדסון",
+     "tier": 5
+    },
+    {
+     "answer": "קוואטרוצ'נטו",
+     "tier": 5
+    },
+    {
+     "answer": "עשר פלוס",
+     "tier": 5
+    },
+    {
+     "answer": "אסכולת ניו יורק",
+     "tier": 5
+    },
+    {
+     "answer": "אקשן פיינטינג",
+     "tier": 5,
+     "aliases": [
+      "ציור פעולה"
+     ]
+    },
+    {
+     "answer": "קולור פילד",
+     "tier": 5,
+     "aliases": [
+      "ציור שדה צבע"
+     ]
+    },
+    {
+     "answer": "ורטיציזם",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "משחק קופסה או משחק לוח (לא משחק קלפים, כמו 'מונופול' או 'רמי')",
+   "category": "כיף",
+   "answers": [
+    {
+     "answer": "מונופול",
+     "tier": 1,
+     "aliases": [
+      "מונופולי",
+      "monopoly"
+     ]
+    },
+    {
+     "answer": "רמי",
+     "tier": 1,
+     "aliases": [
+      "רמיקוב",
+      "רמי קוב",
+      "rummikub"
+     ]
+    },
+    {
+     "answer": "שחמט",
+     "tier": 1,
+     "aliases": [
+      "שח",
+      "שח מט"
+     ]
+    },
+    {
+     "answer": "דמקה",
+     "tier": 1
+    },
+    {
+     "answer": "שש בש",
+     "tier": 1,
+     "aliases": [
+      "טאבלה",
+      "באקגמון",
+      "backgammon"
+     ]
+    },
+    {
+     "answer": "סקרבל",
+     "tier": 1,
+     "aliases": [
+      "סקראבל",
+      "scrabble"
+     ]
+    },
+    {
+     "answer": "קטאן",
+     "tier": 2,
+     "aliases": [
+      "מתיישבי קטאן",
+      "catan"
+     ]
+    },
+    {
+     "answer": "טריוויאל פרסוט",
+     "tier": 2,
+     "aliases": [
+      "טריוויאל",
+      "trivial pursuit"
+     ]
+    },
+    {
+     "answer": "סולמות וחבלים",
+     "tier": 2,
+     "aliases": [
+      "נחשים וסולמות",
+      "סולמות ונחשים"
+     ]
+    },
+    {
+     "answer": "ריסק",
+     "tier": 2,
+     "aliases": [
+      "risk"
+     ]
+    },
+    {
+     "answer": "קלואדו",
+     "tier": 2,
+     "aliases": [
+      "קלו",
+      "cluedo",
+      "clue"
+     ]
+    },
+    {
+     "answer": "בול פגיעה",
+     "tier": 2,
+     "aliases": [
+      "מאסטרמיינד",
+      "mastermind"
+     ]
+    },
+    {
+     "answer": "ארבע בשורה",
+     "tier": 2,
+     "aliases": [
+      "4 בשורה",
+      "קונקט פור",
+      "connect four"
+     ]
+    },
+    {
+     "answer": "טאבו",
+     "tier": 2,
+     "aliases": [
+      "taboo"
+     ]
+    },
+    {
+     "answer": "מי זה",
+     "tier": 2,
+     "aliases": [
+      "guess who"
+     ]
+    },
+    {
+     "answer": "ג'נגה",
+     "tier": 2,
+     "aliases": [
+      "jenga"
+     ]
+    },
+    {
+     "answer": "טוויסטר",
+     "tier": 2,
+     "aliases": [
+      "twister"
+     ]
+    },
+    {
+     "answer": "דומינו",
+     "tier": 2
+    },
+    {
+     "answer": "צוללות",
+     "tier": 2,
+     "aliases": [
+      "battleship",
+      "בטלשיפ"
+     ]
+    },
+    {
+     "answer": "סטרטגו",
+     "tier": 3,
+     "aliases": [
+      "stratego"
+     ]
+    },
+    {
+     "answer": "קודנים",
+     "tier": 3,
+     "aliases": [
+      "codenames"
+     ]
+    },
+    {
+     "answer": "דיקסיט",
+     "tier": 3,
+     "aliases": [
+      "dixit"
+     ]
+    },
+    {
+     "answer": "כרטיס לרכבת",
+     "tier": 3,
+     "aliases": [
+      "טיקט טו רייד",
+      "ticket to ride"
+     ]
+    },
+    {
+     "answer": "קרקסון",
+     "tier": 3,
+     "aliases": [
+      "carcassonne"
+     ]
+    },
+    {
+     "answer": "פנדמיק",
+     "tier": 3,
+     "aliases": [
+      "pandemic"
+     ]
+    },
+    {
+     "answer": "אזול",
+     "tier": 3,
+     "aliases": [
+      "azul"
+     ]
+    },
+    {
+     "answer": "ספלנדור",
+     "tier": 3,
+     "aliases": [
+      "splendor"
+     ]
+    },
+    {
+     "answer": "גו",
+     "tier": 3,
+     "aliases": [
+      "go"
+     ]
+    },
+    {
+     "answer": "רברסי",
+     "tier": 3,
+     "aliases": [
+      "אותלו",
+      "othello"
+     ]
+    },
+    {
+     "answer": "יאצי",
+     "tier": 3,
+     "aliases": [
+      "yahtzee"
+     ]
+    },
+    {
+     "answer": "פיקשנרי",
+     "tier": 3,
+     "aliases": [
+      "pictionary"
+     ]
+    },
+    {
+     "answer": "לודו",
+     "tier": 3,
+     "aliases": [
+      "ludo"
+     ]
+    },
+    {
+     "answer": "אליאס",
+     "tier": 3,
+     "aliases": [
+      "alias"
+     ]
+    },
+    {
+     "answer": "מנקלה",
+     "tier": 4,
+     "aliases": [
+      "mancala"
+     ]
+    },
+    {
+     "answer": "בוגל",
+     "tier": 4,
+     "aliases": [
+      "boggle"
+     ]
+    },
+    {
+     "answer": "מלכודת עכברים",
+     "tier": 4,
+     "aliases": [
+      "mouse trap"
+     ]
+    },
+    {
+     "answer": "7 וונדרס",
+     "tier": 4,
+     "aliases": [
+      "שבעה פלאות",
+      "7 wonders"
+     ]
+    },
+    {
+     "answer": "מהג'ונג",
+     "tier": 4,
+     "aliases": [
+      "מה ג'ונג",
+      "mahjong"
+     ]
+    },
+    {
+     "answer": "דומיניון",
+     "tier": 4,
+     "aliases": [
+      "dominion"
+     ]
+    },
+    {
+     "answer": "בלוקוס",
+     "tier": 4,
+     "aliases": [
+      "blokus"
+     ]
+    },
+    {
+     "answer": "לבירינת",
+     "tier": 4,
+     "aliases": [
+      "המבוך המשתנה",
+      "labyrinth"
+     ]
+    },
+    {
+     "answer": "סקוטלנד יארד",
+     "tier": 4,
+     "aliases": [
+      "scotland yard"
+     ]
+    },
+    {
+     "answer": "שחמט סיני",
+     "tier": 5,
+     "aliases": [
+      "שיאנגצ'י",
+      "xiangqi"
+     ]
+    },
+    {
+     "answer": "שוגי",
+     "tier": 5,
+     "aliases": [
+      "shogi"
+     ]
+    },
+    {
+     "answer": "האי האסור",
+     "tier": 5,
+     "aliases": [
+      "forbidden island"
+     ]
+    },
+    {
+     "answer": "אגריקולה",
+     "tier": 5,
+     "aliases": [
+      "agricola"
+     ]
+    },
+    {
+     "answer": "פוארטו ריקו",
+     "tier": 5,
+     "aliases": [
+      "puerto rico"
+     ]
+    },
+    {
+     "answer": "קינגדומינו",
+     "tier": 5,
+     "aliases": [
+      "kingdomino"
+     ]
+    },
+    {
+     "answer": "קוויריד",
+     "tier": 5,
+     "aliases": [
+      "quoridor"
+     ]
+    },
+    {
+     "answer": "גומוקו",
+     "tier": 5,
+     "aliases": [
+      "חמש בשורה",
+      "gomoku"
+     ]
+    },
+    {
+     "answer": "סנט",
+     "tier": 6,
+     "aliases": [
+      "senet"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "משחק קלפים (כמו 'טאקי' או 'יניב')",
+   "category": "כיף",
+   "answers": [
+    {
+     "answer": "טאקי",
+     "tier": 1,
+     "aliases": [
+      "תאקי"
+     ]
+    },
+    {
+     "answer": "יניב",
+     "tier": 1
+    },
+    {
+     "answer": "פוקר",
+     "tier": 1,
+     "aliases": [
+      "poker"
+     ]
+    },
+    {
+     "answer": "סוליטר",
+     "tier": 1,
+     "aliases": [
+      "סוליטייר",
+      "solitaire",
+      "פסיאנס"
+     ]
+    },
+    {
+     "answer": "אונו",
+     "tier": 1,
+     "aliases": [
+      "uno"
+     ]
+    },
+    {
+     "answer": "מלחמה",
+     "tier": 1,
+     "aliases": [
+      "war"
+     ]
+    },
+    {
+     "answer": "בלאק ג'ק",
+     "tier": 2,
+     "aliases": [
+      "21",
+      "עשרים ואחת",
+      "בלקג'ק",
+      "blackjack"
+     ]
+    },
+    {
+     "answer": "ברידג'",
+     "tier": 2,
+     "aliases": [
+      "bridge"
+     ]
+    },
+    {
+     "answer": "רמי",
+     "tier": 2,
+     "aliases": [
+      "rummy"
+     ]
+    },
+    {
+     "answer": "שקר",
+     "tier": 2,
+     "aliases": [
+      "בלוף"
+     ]
+    },
+    {
+     "answer": "רביעיות",
+     "tier": 2
+    },
+    {
+     "answer": "זיכרון",
+     "tier": 2,
+     "aliases": [
+      "זכרון",
+      "memory"
+     ]
+    },
+    {
+     "answer": "קנסטה",
+     "tier": 3,
+     "aliases": [
+      "קנאסטה",
+      "canasta"
+     ]
+    },
+    {
+     "answer": "בלוט",
+     "tier": 3,
+     "aliases": [
+      "בלוטה"
+     ]
+    },
+    {
+     "answer": "וויסט",
+     "tier": 3,
+     "aliases": [
+      "ויסט",
+      "whist"
+     ]
+    },
+    {
+     "answer": "טקסס הולדם",
+     "tier": 3,
+     "aliases": [
+      "טקסס הולדאם",
+      "texas holdem"
+     ]
+    },
+    {
+     "answer": "ג'ין רמי",
+     "tier": 3,
+     "aliases": [
+      "gin rummy"
+     ]
+    },
+    {
+     "answer": "ספיידר",
+     "tier": 3,
+     "aliases": [
+      "ספיידר סוליטר"
+     ]
+    },
+    {
+     "answer": "פריסל",
+     "tier": 3,
+     "aliases": [
+      "freecell"
+     ]
+    },
+    {
+     "answer": "הארטס",
+     "tier": 3,
+     "aliases": [
+      "hearts",
+      "לבבות"
+     ]
+    },
+    {
+     "answer": "דובל",
+     "tier": 3,
+     "aliases": [
+      "dobble",
+      "ספוט איט"
+     ]
+    },
+    {
+     "answer": "סט",
+     "tier": 3,
+     "aliases": [
+      "set"
+     ]
+    },
+    {
+     "answer": "דוראק",
+     "tier": 4,
+     "aliases": [
+      "durak"
+     ]
+    },
+    {
+     "answer": "בקרה",
+     "tier": 4,
+     "aliases": [
+      "באקרה",
+      "baccarat"
+     ]
+    },
+    {
+     "answer": "קונקן",
+     "tier": 4
+    },
+    {
+     "answer": "אומהה",
+     "tier": 4,
+     "aliases": [
+      "omaha"
+     ]
+    },
+    {
+     "answer": "סקיפ בו",
+     "tier": 4,
+     "aliases": [
+      "skip-bo",
+      "סקיפבו"
+     ]
+    },
+    {
+     "answer": "ספיידס",
+     "tier": 4,
+     "aliases": [
+      "spades"
+     ]
+    },
+    {
+     "answer": "סנאפ",
+     "tier": 4,
+     "aliases": [
+      "snap"
+     ]
+    },
+    {
+     "answer": "ספיד",
+     "tier": 4,
+     "aliases": [
+      "speed"
+     ]
+    },
+    {
+     "answer": "גו פיש",
+     "tier": 4,
+     "aliases": [
+      "go fish"
+     ]
+    },
+    {
+     "answer": "קלונדייק",
+     "tier": 4,
+     "aliases": [
+      "klondike"
+     ]
+    },
+    {
+     "answer": "שמונה מטורפת",
+     "tier": 4,
+     "aliases": [
+      "crazy eights"
+     ]
+    },
+    {
+     "answer": "מונופול דיל",
+     "tier": 4,
+     "aliases": [
+      "monopoly deal"
+     ]
+    },
+    {
+     "answer": "חתולים מתפוצצים",
+     "tier": 4,
+     "aliases": [
+      "exploding kittens",
+      "אקספלודינג קיטנס"
+     ]
+    },
+    {
+     "answer": "פירמידה",
+     "tier": 5,
+     "aliases": [
+      "pyramid"
+     ]
+    },
+    {
+     "answer": "פרפרנס",
+     "tier": 5,
+     "aliases": [
+      "preference"
+     ]
+    },
+    {
+     "answer": "קריבג'",
+     "tier": 5,
+     "aliases": [
+      "cribbage"
+     ]
+    },
+    {
+     "answer": "יוקר",
+     "tier": 5,
+     "aliases": [
+      "euchre"
+     ]
+    },
+    {
+     "answer": "מאו",
+     "tier": 5,
+     "aliases": [
+      "mau",
+      "מאו מאו"
+     ]
+    },
+    {
+     "answer": "סקאט",
+     "tier": 5,
+     "aliases": [
+      "skat"
+     ]
+    },
+    {
+     "answer": "טארוק",
+     "tier": 5,
+     "aliases": [
+      "tarock"
+     ]
+    },
+    {
+     "answer": "ספיט",
+     "tier": 5,
+     "aliases": [
+      "spit"
+     ]
+    },
+    {
+     "answer": "סקופה",
+     "tier": 5,
+     "aliases": [
+      "scopa"
+     ]
+    },
+    {
+     "answer": "בריסקולה",
+     "tier": 6,
+     "aliases": [
+      "briscola"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "משחק ילדות שמשחקים בחצר, ברחוב או בהפסקה (כמו 'מחבואים' או 'תופסת')",
+   "category": "כיף",
+   "answers": [
+    {
+     "answer": "מחבואים",
+     "tier": 1
+    },
+    {
+     "answer": "תופסת",
+     "tier": 1
+    },
+    {
+     "answer": "קלאס",
+     "tier": 1
+    },
+    {
+     "answer": "קפיצה בחבל",
+     "tier": 1,
+     "aliases": [
+      "חבל"
+     ]
+    },
+    {
+     "answer": "גומי",
+     "tier": 1,
+     "aliases": [
+      "גומי בגומי",
+      "גומיות"
+     ]
+    },
+    {
+     "answer": "מחניים",
+     "tier": 1,
+     "aliases": [
+      "כדור מחניים"
+     ]
+    },
+    {
+     "answer": "דג מלוח",
+     "tier": 2,
+     "aliases": [
+      "אחת שתיים שלוש דג מלוח"
+     ]
+    },
+    {
+     "answer": "שוטרים וגנבים",
+     "tier": 2
+    },
+    {
+     "answer": "חמש אבנים",
+     "tier": 2,
+     "aliases": [
+      "חמישה אבנים",
+      "5 אבנים",
+      "קוגלאך"
+     ]
+    },
+    {
+     "answer": "גוגואים",
+     "tier": 2,
+     "aliases": [
+      "גוגו",
+      "משחק גוגואים"
+     ]
+    },
+    {
+     "answer": "גולות",
+     "tier": 2
+    },
+    {
+     "answer": "אבן נייר ומספריים",
+     "tier": 2,
+     "aliases": [
+      "אבן נייר מספריים",
+      "אבנייר"
+     ]
+    },
+    {
+     "answer": "סבתא בישלה דייסה",
+     "tier": 2
+    },
+    {
+     "answer": "משיכת חבל",
+     "tier": 2
+    },
+    {
+     "answer": "ריצת שקים",
+     "tier": 2
+    },
+    {
+     "answer": "מטקות",
+     "tier": 2,
+     "aliases": [
+      "מטקה"
+     ]
+    },
+    {
+     "answer": "כיסאות מוזיקליים",
+     "tier": 2,
+     "aliases": [
+      "כסאות מוזיקליים"
+     ]
+    },
+    {
+     "answer": "טלפון שבור",
+     "tier": 2
+    },
+    {
+     "answer": "שבע בום",
+     "tier": 2,
+     "aliases": [
+      "7 בום"
+     ]
+    },
+    {
+     "answer": "אמת או חובה",
+     "tier": 3
+    },
+    {
+     "answer": "סובב את הבקבוק",
+     "tier": 3,
+     "aliases": [
+      "בקבוק"
+     ]
+    },
+    {
+     "answer": "הורדת ידיים",
+     "tier": 3
+    },
+    {
+     "answer": "איקס עיגול",
+     "tier": 3,
+     "aliases": [
+      "איקס מיקס דריקס"
+     ]
+    },
+    {
+     "answer": "תופסת גובה",
+     "tier": 3
+    },
+    {
+     "answer": "תופסת רדיו",
+     "tier": 3
+    },
+    {
+     "answer": "המלך אמר",
+     "tier": 3,
+     "aliases": [
+      "שמעון אומר",
+      "simon says"
+     ]
+    },
+    {
+     "answer": "חם קר",
+     "tier": 3,
+     "aliases": [
+      "חם וקר"
+     ]
+    },
+    {
+     "answer": "כדור ראש",
+     "tier": 3
+    },
+    {
+     "answer": "מסירות",
+     "tier": 4,
+     "aliases": [
+      "משחק מסירות"
+     ]
+    },
+    {
+     "answer": "מלך הגבעה",
+     "tier": 4
+    },
+    {
+     "answer": "ציור על הגב",
+     "tier": 4
+    },
+    {
+     "answer": "מרוץ שליחים",
+     "tier": 4
+    },
+    {
+     "answer": "פנדלים",
+     "tier": 5,
+     "aliases": [
+      "בעיטות עונשין"
+     ]
+    },
+    {
+     "answer": "ארבע ריבועים",
+     "tier": 5,
+     "aliases": [
+      "4 ריבועים"
+     ]
+    },
+    {
+     "answer": "מלחמת מים",
+     "tier": 3,
+     "aliases": [
+      "מלחמת בלוני מים"
+     ]
+    },
+    {
+     "answer": "פוגים",
+     "tier": 3,
+     "aliases": [
+      "פוג",
+      "טאזו"
+     ]
+    },
+    {
+     "answer": "ציד אוצרות",
+     "tier": 3,
+     "aliases": [
+      "חיפוש אוצרות"
+     ]
+    },
+    {
+     "answer": "פסלים",
+     "tier": 4,
+     "aliases": [
+      "משחק הפסלים"
+     ]
+    },
+    {
+     "answer": "מסלול מכשולים",
+     "tier": 4
+    },
+    {
+     "answer": "מלחמת כריות",
+     "tier": 5,
+     "aliases": [
+      "מכות כריות"
+     ]
+    },
+    {
+     "answer": "תופסת שרשרת",
+     "tier": 5
+    },
+    {
+     "answer": "פלונטר",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "צירוף מוכר שמתחיל במילה 'בית' (כמו 'בית ספר' או 'בית קפה')",
+   "category": "כיף",
+   "answers": [
+    {
+     "answer": "בית ספר",
+     "tier": 1,
+     "aliases": [
+      "ספר"
+     ]
+    },
+    {
+     "answer": "בית קפה",
+     "tier": 1,
+     "aliases": [
+      "קפה"
+     ]
+    },
+    {
+     "answer": "בית חולים",
+     "tier": 1,
+     "aliases": [
+      "חולים"
+     ]
+    },
+    {
+     "answer": "בית כנסת",
+     "tier": 1,
+     "aliases": [
+      "כנסת"
+     ]
+    },
+    {
+     "answer": "בית משפט",
+     "tier": 1,
+     "aliases": [
+      "משפט"
+     ]
+    },
+    {
+     "answer": "בית מרקחת",
+     "tier": 1,
+     "aliases": [
+      "מרקחת"
+     ]
+    },
+    {
+     "answer": "בית קברות",
+     "tier": 2,
+     "aliases": [
+      "קברות"
+     ]
+    },
+    {
+     "answer": "בית סוהר",
+     "tier": 2,
+     "aliases": [
+      "סוהר"
+     ]
+    },
+    {
+     "answer": "בית מלון",
+     "tier": 2,
+     "aliases": [
+      "מלון"
+     ]
+    },
+    {
+     "answer": "בית אבות",
+     "tier": 2,
+     "aliases": [
+      "אבות"
+     ]
+    },
+    {
+     "answer": "בית שימוש",
+     "tier": 2,
+     "aliases": [
+      "שימוש"
+     ]
+    },
+    {
+     "answer": "בית כלא",
+     "tier": 2,
+     "aliases": [
+      "כלא"
+     ]
+    },
+    {
+     "answer": "בית מדרש",
+     "tier": 2,
+     "aliases": [
+      "מדרש"
+     ]
+    },
+    {
+     "answer": "בית דין",
+     "tier": 2,
+     "aliases": [
+      "דין"
+     ]
+    },
+    {
+     "answer": "בית חרושת",
+     "tier": 2,
+     "aliases": [
+      "חרושת"
+     ]
+    },
+    {
+     "answer": "בית יתומים",
+     "tier": 2,
+     "aliases": [
+      "יתומים"
+     ]
+    },
+    {
+     "answer": "בית שחי",
+     "tier": 2,
+     "aliases": [
+      "שחי"
+     ]
+    },
+    {
+     "answer": "בית המקדש",
+     "tier": 2,
+     "aliases": [
+      "בית מקדש",
+      "המקדש"
+     ]
+    },
+    {
+     "answer": "בית לחם",
+     "tier": 2,
+     "aliases": [
+      "לחם"
+     ]
+    },
+    {
+     "answer": "בית שמש",
+     "tier": 2,
+     "aliases": [
+      "שמש"
+     ]
+    },
+    {
+     "answer": "בית עלמין",
+     "tier": 3,
+     "aliases": [
+      "עלמין"
+     ]
+    },
+    {
+     "answer": "בית מטבחיים",
+     "tier": 3,
+     "aliases": [
+      "מטבחיים"
+     ]
+    },
+    {
+     "answer": "בית תמחוי",
+     "tier": 3,
+     "aliases": [
+      "תמחוי"
+     ]
+    },
+    {
+     "answer": "בית הארחה",
+     "tier": 3,
+     "aliases": [
+      "הארחה"
+     ]
+    },
+    {
+     "answer": "בית הבראה",
+     "tier": 3,
+     "aliases": [
+      "הבראה"
+     ]
+    },
+    {
+     "answer": "בית דפוס",
+     "tier": 3,
+     "aliases": [
+      "דפוס"
+     ]
+    },
+    {
+     "answer": "בית מלאכה",
+     "tier": 3,
+     "aliases": [
+      "מלאכה"
+     ]
+    },
+    {
+     "answer": "בית הבד",
+     "tier": 3,
+     "aliases": [
+      "בית בד",
+      "הבד"
+     ]
+    },
+    {
+     "answer": "בית חזה",
+     "tier": 3,
+     "aliases": [
+      "חזה"
+     ]
+    },
+    {
+     "answer": "בית כיסא",
+     "tier": 3,
+     "aliases": [
+      "בית כסא",
+      "כיסא"
+     ]
+    },
+    {
+     "answer": "בית עסק",
+     "tier": 3,
+     "aliases": [
+      "עסק"
+     ]
+    },
+    {
+     "answer": "בית אוכל",
+     "tier": 3,
+     "aliases": [
+      "אוכל"
+     ]
+    },
+    {
+     "answer": "בית תפילה",
+     "tier": 3,
+     "aliases": [
+      "תפילה"
+     ]
+    },
+    {
+     "answer": "בית שאן",
+     "tier": 3,
+     "aliases": [
+      "שאן"
+     ]
+    },
+    {
+     "answer": "בית קולנוע",
+     "tier": 3,
+     "aliases": [
+      "קולנוע"
+     ]
+    },
+    {
+     "answer": "בית העם",
+     "tier": 3,
+     "aliases": [
+      "העם"
+     ]
+    },
+    {
+     "answer": "בית מעצר",
+     "tier": 3,
+     "aliases": [
+      "מעצר"
+     ]
+    },
+    {
+     "answer": "בית חב\"ד",
+     "tier": 3,
+     "aliases": [
+      "חב\"ד"
+     ]
+    },
+    {
+     "answer": "בית מגורים",
+     "tier": 3,
+     "aliases": [
+      "מגורים"
+     ]
+    },
+    {
+     "answer": "בית חם",
+     "tier": 3,
+     "aliases": [
+      "חם"
+     ]
+    },
+    {
+     "answer": "בית אופרה",
+     "tier": 4,
+     "aliases": [
+      "אופרה"
+     ]
+    },
+    {
+     "answer": "בית זיקוק",
+     "tier": 4,
+     "aliases": [
+      "בתי זיקוק",
+      "זיקוק"
+     ]
+    },
+    {
+     "answer": "בית הנבחרים",
+     "tier": 4,
+     "aliases": [
+      "הנבחרים"
+     ]
+    },
+    {
+     "answer": "בית הלורדים",
+     "tier": 4,
+     "aliases": [
+      "הלורדים"
+     ]
+    },
+    {
+     "answer": "בית גידול",
+     "tier": 4,
+     "aliases": [
+      "גידול"
+     ]
+    },
+    {
+     "answer": "בית ראשון",
+     "tier": 4,
+     "aliases": [
+      "ראשון"
+     ]
+    },
+    {
+     "answer": "בית שני",
+     "tier": 4,
+     "aliases": [
+      "שני"
+     ]
+    },
+    {
+     "answer": "בית מחסה",
+     "tier": 4,
+     "aliases": [
+      "מחסה"
+     ]
+    },
+    {
+     "answer": "בית מרזח",
+     "tier": 4,
+     "aliases": [
+      "מרזח"
+     ]
+    },
+    {
+     "answer": "בית הימורים",
+     "tier": 4,
+     "aliases": [
+      "הימורים"
+     ]
+    },
+    {
+     "answer": "בית יוצר",
+     "tier": 4,
+     "aliases": [
+      "יוצר"
+     ]
+    },
+    {
+     "answer": "בית בליעה",
+     "tier": 4,
+     "aliases": [
+      "בליעה"
+     ]
+    },
+    {
+     "answer": "בית אריזה",
+     "tier": 4,
+     "aliases": [
+      "אריזה"
+     ]
+    },
+    {
+     "answer": "בית הלל",
+     "tier": 4,
+     "aliases": [
+      "הלל"
+     ]
+    },
+    {
+     "answer": "בית שמאי",
+     "tier": 4,
+     "aliases": [
+      "שמאי"
+     ]
+    },
+    {
+     "answer": "בית אל",
+     "tier": 4,
+     "aliases": [
+      "אל"
+     ]
+    },
+    {
+     "answer": "בית שערים",
+     "tier": 4,
+     "aliases": [
+      "שערים"
+     ]
+    },
+    {
+     "answer": "בית ג'ן",
+     "tier": 4,
+     "aliases": [
+      "ג'ן"
+     ]
+    },
+    {
+     "answer": "בית ילדים",
+     "tier": 4,
+     "aliases": [
+      "ילדים"
+     ]
+    },
+    {
+     "answer": "בית אב",
+     "tier": 4,
+     "aliases": [
+      "אב"
+     ]
+    },
+    {
+     "answer": "בית אמנים",
+     "tier": 4,
+     "aliases": [
+      "אמנים"
+     ]
+    },
+    {
+     "answer": "בית תה",
+     "tier": 4,
+     "aliases": [
+      "תה"
+     ]
+    },
+    {
+     "answer": "בית החלמה",
+     "tier": 4,
+     "aliases": [
+      "החלמה"
+     ]
+    },
+    {
+     "answer": "בית קיץ",
+     "tier": 4,
+     "aliases": [
+      "קיץ"
+     ]
+    },
+    {
+     "answer": "בית אחוזה",
+     "tier": 4,
+     "aliases": [
+      "אחוזה"
+     ]
+    },
+    {
+     "answer": "בית חינוך",
+     "tier": 4,
+     "aliases": [
+      "חינוך"
+     ]
+    },
+    {
+     "answer": "בית דואר",
+     "tier": 4,
+     "aliases": [
+      "דואר"
+     ]
+    },
+    {
+     "answer": "בית תרבות",
+     "tier": 4,
+     "aliases": [
+      "תרבות"
+     ]
+    },
+    {
+     "answer": "בית גוברין",
+     "tier": 5,
+     "aliases": [
+      "גוברין"
+     ]
+    },
+    {
+     "answer": "בית הכרם",
+     "tier": 5,
+     "aliases": [
+      "הכרם"
+     ]
+    },
+    {
+     "answer": "בית צפפה",
+     "tier": 5,
+     "aliases": [
+      "צפפה"
+     ]
+    },
+    {
+     "answer": "בית רפואה",
+     "tier": 5,
+     "aliases": [
+      "רפואה"
+     ]
+    },
+    {
+     "answer": "בית גנזים",
+     "tier": 5,
+     "aliases": [
+      "גנזים"
+     ]
+    },
+    {
+     "answer": "בית עולם",
+     "tier": 5,
+     "aliases": [
+      "עולם"
+     ]
+    },
+    {
+     "answer": "בית קשת",
+     "tier": 5,
+     "aliases": [
+      "קשת"
+     ]
+    },
+    {
+     "answer": "בית השיטה",
+     "tier": 5,
+     "aliases": [
+      "השיטה"
+     ]
+    },
+    {
+     "answer": "בית אורן",
+     "tier": 5,
+     "aliases": [
+      "אורן"
+     ]
+    },
+    {
+     "answer": "בית דגן",
+     "tier": 5,
+     "aliases": [
+      "דגן"
+     ]
+    },
+    {
+     "answer": "בית קמה",
+     "tier": 5,
+     "aliases": [
+      "קמה"
+     ]
+    },
+    {
+     "answer": "בית אלפא",
+     "tier": 5,
+     "aliases": [
+      "אלפא"
+     ]
+    },
+    {
+     "answer": "בית מכס",
+     "tier": 5,
+     "aliases": [
+      "מכס"
+     ]
+    },
+    {
+     "answer": "בית מורשת",
+     "tier": 5,
+     "aliases": [
+      "מורשת"
+     ]
+    },
+    {
+     "answer": "בית תינוקות",
+     "tier": 5,
+     "aliases": [
+      "תינוקות"
+     ]
+    },
+    {
+     "answer": "בית ועד",
+     "tier": 6,
+     "aliases": [
+      "בית ועד לחכמים",
+      "ועד"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "מילה שמתחרזת עם 'חלום' (נגמרת בצליל 'וֹם', כמו 'מקום' או 'אדום')",
+   "category": "כיף",
+   "answers": [
+    {
+     "answer": "שלום",
+     "tier": 1
+    },
+    {
+     "answer": "מקום",
+     "tier": 1
+    },
+    {
+     "answer": "יום",
+     "tier": 1
+    },
+    {
+     "answer": "אדום",
+     "tier": 1
+    },
+    {
+     "answer": "פתאום",
+     "tier": 1,
+     "aliases": [
+      "פתאם"
+     ]
+    },
+    {
+     "answer": "מחסום",
+     "tier": 2
+    },
+    {
+     "answer": "דרום",
+     "tier": 1
+    },
+    {
+     "answer": "כתום",
+     "tier": 2
+    },
+    {
+     "answer": "חום",
+     "tier": 2
+    },
+    {
+     "answer": "תום",
+     "tier": 2
+    },
+    {
+     "answer": "צום",
+     "tier": 2
+    },
+    {
+     "answer": "מרום",
+     "tier": 2
+    },
+    {
+     "answer": "סדום",
+     "tier": 2
+    },
+    {
+     "answer": "שלשום",
+     "tier": 2
+    },
+    {
+     "answer": "יתום",
+     "tier": 2
+    },
+    {
+     "answer": "תהום",
+     "tier": 3
+    },
+    {
+     "answer": "חרטום",
+     "tier": 3
+    },
+    {
+     "answer": "דום",
+     "tier": 3,
+     "aliases": [
+      "עמוד דום"
+     ]
+    },
+    {
+     "answer": "אטום",
+     "tier": 3
+    },
+    {
+     "answer": "ערום",
+     "tier": 3,
+     "aliases": [
+      "עירום"
+     ]
+    },
+    {
+     "answer": "אום",
+     "tier": 3
+    },
+    {
+     "answer": "רום",
+     "tier": 3
+    },
+    {
+     "answer": "סינדרום",
+     "tier": 3
+    },
+    {
+     "answer": "גנום",
+     "tier": 3
+    },
+    {
+     "answer": "אסטרונום",
+     "tier": 3
+    },
+    {
+     "answer": "אבשלום",
+     "tier": 3
+    },
+    {
+     "answer": "טרום",
+     "tier": 3
+    },
+    {
+     "answer": "גרשום",
+     "tier": 4
+    },
+    {
+     "answer": "סימפטום",
+     "tier": 4
+    },
+    {
+     "answer": "אולטימטום",
+     "tier": 4
+    },
+    {
+     "answer": "פנטום",
+     "tier": 4
+    },
+    {
+     "answer": "כרום",
+     "tier": 4
+    },
+    {
+     "answer": "סלאלום",
+     "tier": 4
+    },
+    {
+     "answer": "פוגרום",
+     "tier": 4
+    },
+    {
+     "answer": "כרומוזום",
+     "tier": 4
+    },
+    {
+     "answer": "מטרונום",
+     "tier": 4
+    },
+    {
+     "answer": "ברום",
+     "tier": 5
+    },
+    {
+     "answer": "פלינדרום",
+     "tier": 5
+    },
+    {
+     "answer": "היפודרום",
+     "tier": 5
+    },
+    {
+     "answer": "קוסמודרום",
+     "tier": 5
+    },
+    {
+     "answer": "ריבוזום",
+     "tier": 5
+    },
+    {
+     "answer": "אגרונום",
+     "tier": 5
+    },
+    {
+     "answer": "גסטרונום",
+     "tier": 5
+    },
+    {
+     "answer": "פיתום",
+     "tier": 5
+    },
+    {
+     "answer": "אקונום",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "חיה מפורסמת מסרט, מסדרה, מספר או מקומיקס (כמו 'גארפילד' או 'סימבה')",
+   "category": "כיף",
+   "answers": [
+    {
+     "answer": "גארפילד",
+     "tier": 1,
+     "aliases": [
+      "garfield"
+     ]
+    },
+    {
+     "answer": "סימבה",
+     "tier": 1
+    },
+    {
+     "answer": "מיקי מאוס",
+     "tier": 1,
+     "aliases": [
+      "מיקי"
+     ]
+    },
+    {
+     "answer": "באגס באני",
+     "tier": 1,
+     "aliases": [
+      "באגס"
+     ]
+    },
+    {
+     "answer": "פו הדב",
+     "tier": 1,
+     "aliases": [
+      "פו",
+      "ויני הפו"
+     ]
+    },
+    {
+     "answer": "נמו",
+     "tier": 1
+    },
+    {
+     "answer": "דורי",
+     "tier": 2
+    },
+    {
+     "answer": "דונלד דאק",
+     "tier": 2,
+     "aliases": [
+      "דונלד"
+     ]
+    },
+    {
+     "answer": "סנופי",
+     "tier": 2
+    },
+    {
+     "answer": "פלוטו",
+     "tier": 2
+    },
+    {
+     "answer": "טום",
+     "tier": 2,
+     "aliases": [
+      "טום החתול"
+     ]
+    },
+    {
+     "answer": "ג'רי",
+     "tier": 2,
+     "aliases": [
+      "ג'רי העכבר"
+     ]
+    },
+    {
+     "answer": "טיגר",
+     "tier": 2
+    },
+    {
+     "answer": "פיגלט",
+     "tier": 2,
+     "aliases": [
+      "חזרזיר"
+     ]
+    },
+    {
+     "answer": "באלו",
+     "tier": 2
+    },
+    {
+     "answer": "בגירה",
+     "tier": 2
+    },
+    {
+     "answer": "שירחאן",
+     "tier": 2,
+     "aliases": [
+      "שיר חאן"
+     ]
+    },
+    {
+     "answer": "קיפי בן קיפוד",
+     "tier": 2,
+     "aliases": [
+      "קיפי"
+     ]
+    },
+    {
+     "answer": "מוישה אופניק",
+     "tier": 2
+    },
+    {
+     "answer": "קרמיט",
+     "tier": 2,
+     "aliases": [
+      "קרמיט הצפרדע"
+     ]
+    },
+    {
+     "answer": "מיס פיגי",
+     "tier": 2
+    },
+    {
+     "answer": "לאסי",
+     "tier": 2,
+     "aliases": [
+      "לסי"
+     ]
+    },
+    {
+     "answer": "דמבו",
+     "tier": 2
+    },
+    {
+     "answer": "באמבי",
+     "tier": 2
+    },
+    {
+     "answer": "קינג קונג",
+     "tier": 2
+    },
+    {
+     "answer": "סקובי דו",
+     "tier": 2,
+     "aliases": [
+      "סקובידו"
+     ]
+    },
+    {
+     "answer": "פיקאצ'ו",
+     "tier": 2
+    },
+    {
+     "answer": "עוגיפלצת",
+     "tier": 3,
+     "aliases": [
+      "cookie monster"
+     ]
+    },
+    {
+     "answer": "טוויטי",
+     "tier": 3
+    },
+    {
+     "answer": "סילבסטר",
+     "tier": 3
+    },
+    {
+     "answer": "ספידי גונזלס",
+     "tier": 3
+    },
+    {
+     "answer": "רואד ראנר",
+     "tier": 3,
+     "aliases": [
+      "רוד ראנר"
+     ]
+    },
+    {
+     "answer": "וויילי קויוטי",
+     "tier": 3,
+     "aliases": [
+      "קויוטי"
+     ]
+    },
+    {
+     "answer": "דאפי דאק",
+     "tier": 3
+    },
+    {
+     "answer": "פורקי פיג",
+     "tier": 3
+    },
+    {
+     "answer": "יוגי הדוב",
+     "tier": 3,
+     "aliases": [
+      "יוגי"
+     ]
+    },
+    {
+     "answer": "הפנתר הוורוד",
+     "tier": 3,
+     "aliases": [
+      "פינק פנתר"
+     ]
+    },
+    {
+     "answer": "פדינגטון",
+     "tier": 3,
+     "aliases": [
+      "הדוב פדינגטון"
+     ]
+    },
+    {
+     "answer": "בייב",
+     "tier": 3
+    },
+    {
+     "answer": "אודי",
+     "tier": 3
+    },
+    {
+     "answer": "גופי",
+     "tier": 3
+    },
+    {
+     "answer": "פומבה",
+     "tier": 3
+    },
+    {
+     "answer": "טימון",
+     "tier": 3
+    },
+    {
+     "answer": "רפיקי",
+     "tier": 3
+    },
+    {
+     "answer": "נאלה",
+     "tier": 3
+    },
+    {
+     "answer": "הדוויג",
+     "tier": 3
+    },
+    {
+     "answer": "החמור משרק",
+     "tier": 3,
+     "aliases": [
+      "חמור"
+     ]
+    },
+    {
+     "answer": "החתול במגפיים",
+     "tier": 3
+    },
+    {
+     "answer": "רמי",
+     "tier": 3
+    },
+    {
+     "answer": "פפה פיג",
+     "tier": 3,
+     "aliases": [
+      "פפה החזירה"
+     ]
+    },
+    {
+     "answer": "קופיקו",
+     "tier": 3
+    },
+    {
+     "answer": "הלו קיטי",
+     "tier": 3
+    },
+    {
+     "answer": "סוניק",
+     "tier": 3
+    },
+    {
+     "answer": "אסלן",
+     "tier": 3
+    },
+    {
+     "answer": "הארנב הלבן",
+     "tier": 3
+    },
+    {
+     "answer": "החתול מצ'שייר",
+     "tier": 3,
+     "aliases": [
+      "חתול צ'שייר"
+     ]
+    },
+    {
+     "answer": "מושו",
+     "tier": 4
+    },
+    {
+     "answer": "אבו",
+     "tier": 4
+    },
+    {
+     "answer": "סבסטיאן",
+     "tier": 4
+    },
+    {
+     "answer": "פלאונדר",
+     "tier": 4
+    },
+    {
+     "answer": "סוון",
+     "tier": 4
+    },
+    {
+     "answer": "סקאברס",
+     "tier": 4,
+     "aliases": [
+      "סקאבר"
+     ]
+    },
+    {
+     "answer": "פוקס",
+     "tier": 4,
+     "aliases": [
+      "פאוקס"
+     ]
+    },
+    {
+     "answer": "באקביק",
+     "tier": 4
+    },
+    {
+     "answer": "קינג ג'וליאן",
+     "tier": 4
+    },
+    {
+     "answer": "סטיוארט ליטל",
+     "tier": 4
+    },
+    {
+     "answer": "טוטו",
+     "tier": 4
+    },
+    {
+     "answer": "שרלוט",
+     "tier": 4
+    },
+    {
+     "answer": "ביג בירד",
+     "tier": 4
+    },
+    {
+     "answer": "פוזי",
+     "tier": 4
+    },
+    {
+     "answer": "אזרבל",
+     "tier": 4
+    },
+    {
+     "answer": "בטהובן",
+     "tier": 4
+    },
+    {
+     "answer": "מרלי",
+     "tier": 4
+    },
+    {
+     "answer": "האצ'יקו",
+     "tier": 4,
+     "aliases": [
+      "האצ'י"
+     ]
+    },
+    {
+     "answer": "בולט",
+     "tier": 4
+    },
+    {
+     "answer": "גרומיט",
+     "tier": 4
+    },
+    {
+     "answer": "שון הכבשה",
+     "tier": 4,
+     "aliases": [
+      "שון"
+     ]
+    },
+    {
+     "answer": "וודסטוק",
+     "tier": 4
+    },
+    {
+     "answer": "מובי דיק",
+     "tier": 4
+    },
+    {
+     "answer": "קא",
+     "tier": 4
+    },
+    {
+     "answer": "פליקס החתול",
+     "tier": 4,
+     "aliases": [
+      "פליקס"
+     ]
+    },
+    {
+     "answer": "וודי וודפקר",
+     "tier": 4
+    },
+    {
+     "answer": "טאז",
+     "tier": 4
+    },
+    {
+     "answer": "בובו",
+     "tier": 4
+    },
+    {
+     "answer": "צ'יפ",
+     "tier": 4
+    },
+    {
+     "answer": "דייל",
+     "tier": 4
+    },
+    {
+     "answer": "יאגו",
+     "tier": 5
+    },
+    {
+     "answer": "ראג'ה",
+     "tier": 5
+    },
+    {
+     "answer": "פסקל",
+     "tier": 5
+    },
+    {
+     "answer": "מקסימוס",
+     "tier": 5
+    },
+    {
+     "answer": "קרוקשנקס",
+     "tier": 5
+    },
+    {
+     "answer": "מרטי",
+     "tier": 5
+    },
+    {
+     "answer": "גלוריה",
+     "tier": 5
+    },
+    {
+     "answer": "מלמן",
+     "tier": 5
+    },
+    {
+     "answer": "וילבור",
+     "tier": 5
+    },
+    {
+     "answer": "אנימל",
+     "tier": 5
+    },
+    {
+     "answer": "רין טין טין",
+     "tier": 5
+    },
+    {
+     "answer": "פפה לה פיו",
+     "tier": 5,
+     "aliases": [
+      "פפה לה פו"
+     ]
+    },
+    {
+     "answer": "פוגהורן לגהורן",
+     "tier": 5
+    },
+    {
+     "answer": "בק",
+     "tier": 5
+    },
+    {
+     "answer": "מר אד",
+     "tier": 6,
+     "aliases": [
+      "מיסטר אד"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "נבל או דמות רשעה מפורסמת מסרט, מסדרה, מספר, מאגדה או מהתנ\"ך (לא מקומיקס)",
+   "category": "כיף",
+   "answers": [
+    {
+     "answer": "וולדמורט",
+     "tier": 1,
+     "aliases": [
+      "לורד וולדמורט"
+     ]
+    },
+    {
+     "answer": "דארת' ויידר",
+     "tier": 1,
+     "aliases": [
+      "ויידר"
+     ]
+    },
+    {
+     "answer": "סקאר",
+     "tier": 1
+    },
+    {
+     "answer": "המכשפה הרעה",
+     "tier": 1,
+     "aliases": [
+      "המכשפה הרעה מהמערב"
+     ]
+    },
+    {
+     "answer": "קפטן הוק",
+     "tier": 1,
+     "aliases": [
+      "הוק"
+     ]
+    },
+    {
+     "answer": "המן",
+     "tier": 1,
+     "aliases": [
+      "המן הרשע"
+     ]
+    },
+    {
+     "answer": "ג'עפר",
+     "tier": 2,
+     "aliases": [
+      "ג'פאר"
+     ]
+    },
+    {
+     "answer": "אורסולה",
+     "tier": 2
+    },
+    {
+     "answer": "מלפיסנט",
+     "tier": 2
+    },
+    {
+     "answer": "קרואלה דה ויל",
+     "tier": 2,
+     "aliases": [
+      "קרואלה"
+     ]
+    },
+    {
+     "answer": "סאורון",
+     "tier": 2
+    },
+    {
+     "answer": "גרגמל",
+     "tier": 2
+    },
+    {
+     "answer": "האם החורגת",
+     "tier": 2,
+     "aliases": [
+      "אמא חורגת"
+     ]
+    },
+    {
+     "answer": "המלכה הרעה",
+     "tier": 2
+    },
+    {
+     "answer": "הזאב הרע",
+     "tier": 2,
+     "aliases": [
+      "הזאב",
+      "הזאב הגדול והרע"
+     ]
+    },
+    {
+     "answer": "גרינץ'",
+     "tier": 2,
+     "aliases": [
+      "הגרינץ'"
+     ]
+    },
+    {
+     "answer": "חניבעל לקטר",
+     "tier": 2,
+     "aliases": [
+      "לקטר"
+     ]
+    },
+    {
+     "answer": "דרקולה",
+     "tier": 2
+    },
+    {
+     "answer": "פרעה",
+     "tier": 2
+    },
+    {
+     "answer": "גוליית",
+     "tier": 2,
+     "aliases": [
+      "גלית"
+     ]
+    },
+    {
+     "answer": "מוריארטי",
+     "tier": 3,
+     "aliases": [
+      "פרופסור מוריארטי"
+     ]
+    },
+    {
+     "answer": "גסטון",
+     "tier": 3
+    },
+    {
+     "answer": "האדס",
+     "tier": 3
+    },
+    {
+     "answer": "מלכת הלבבות",
+     "tier": 3
+    },
+    {
+     "answer": "פרדי קרוגר",
+     "tier": 3
+    },
+    {
+     "answer": "צ'אקי",
+     "tier": 3
+    },
+    {
+     "answer": "פניווייז",
+     "tier": 3,
+     "aliases": [
+      "פניוויז"
+     ]
+    },
+    {
+     "answer": "ד\"ר איבל",
+     "tier": 3,
+     "aliases": [
+      "דוקטור איבל"
+     ]
+    },
+    {
+     "answer": "פלפטין",
+     "tier": 3,
+     "aliases": [
+      "הקיסר פלפטין"
+     ]
+    },
+    {
+     "answer": "ג'אבה",
+     "tier": 3,
+     "aliases": [
+      "ג'אבה ההאט"
+     ]
+    },
+    {
+     "answer": "סרומן",
+     "tier": 3
+    },
+    {
+     "answer": "דולורס אמברידג'",
+     "tier": 3,
+     "aliases": [
+      "אמברידג'"
+     ]
+    },
+    {
+     "answer": "בלטריקס",
+     "tier": 3,
+     "aliases": [
+      "בלטריקס לסטריינג'"
+     ]
+    },
+    {
+     "answer": "דראקו מאלפוי",
+     "tier": 3,
+     "aliases": [
+      "דראקו"
+     ]
+    },
+    {
+     "answer": "איזבל",
+     "tier": 3
+    },
+    {
+     "answer": "דלילה",
+     "tier": 3
+    },
+    {
+     "answer": "קין",
+     "tier": 3
+    },
+    {
+     "answer": "אנטיוכוס",
+     "tier": 3
+    },
+    {
+     "answer": "לורד פרקוואד",
+     "tier": 4,
+     "aliases": [
+      "פרקוואד"
+     ]
+    },
+    {
+     "answer": "ג'ייסון",
+     "tier": 4
+    },
+    {
+     "answer": "נורמן בייטס",
+     "tier": 4
+    },
+    {
+     "answer": "בלופלד",
+     "tier": 4
+    },
+    {
+     "answer": "גולדפינגר",
+     "tier": 4
+    },
+    {
+     "answer": "דארת' מול",
+     "tier": 4
+    },
+    {
+     "answer": "אייג'נט סמית'",
+     "tier": 4,
+     "aliases": [
+      "הסוכן סמית'"
+     ]
+    },
+    {
+     "answer": "האל 9000",
+     "tier": 4
+    },
+    {
+     "answer": "ביף טאנן",
+     "tier": 4,
+     "aliases": [
+      "ביף"
+     ]
+    },
+    {
+     "answer": "האנס לנדה",
+     "tier": 4
+    },
+    {
+     "answer": "יאגו",
+     "tier": 4
+    },
+    {
+     "answer": "לוציוס מאלפוי",
+     "tier": 4
+    },
+    {
+     "answer": "רמפלסטילטסקין",
+     "tier": 4
+    },
+    {
+     "answer": "אמא גותל",
+     "tier": 4,
+     "aliases": [
+      "גותל"
+     ]
+    },
+    {
+     "answer": "הנס גרובר",
+     "tier": 4
+    },
+    {
+     "answer": "טרמינייטור",
+     "tier": 4
+    },
+    {
+     "answer": "קיילו רן",
+     "tier": 4
+    },
+    {
+     "answer": "סיד",
+     "tier": 4
+    },
+    {
+     "answer": "לוטסו",
+     "tier": 4
+    },
+    {
+     "answer": "סינדרום",
+     "tier": 4
+    },
+    {
+     "answer": "סקלטור",
+     "tier": 4
+    },
+    {
+     "answer": "באוזר",
+     "tier": 4
+    },
+    {
+     "answer": "מר בורנס",
+     "tier": 4
+    },
+    {
+     "answer": "סרסיי לאניסטר",
+     "tier": 4,
+     "aliases": [
+      "סרסיי"
+     ]
+    },
+    {
+     "answer": "ג'ופרי ברתאון",
+     "tier": 4,
+     "aliases": [
+      "ג'ופרי"
+     ]
+    },
+    {
+     "answer": "ריצ'רד השלישי",
+     "tier": 5
+    },
+    {
+     "answer": "אנטון שיגור",
+     "tier": 5
+    },
+    {
+     "answer": "פרופסור ראטיגן",
+     "tier": 5
+    },
+    {
+     "answer": "רנדל",
+     "tier": 5
+    },
+    {
+     "answer": "הופר",
+     "tier": 5
+    },
+    {
+     "answer": "חאן",
+     "tier": 5,
+     "aliases": [
+      "קאן"
+     ]
+    },
+    {
+     "answer": "מפיסטו",
+     "tier": 5
+    },
+    {
+     "answer": "ד\"ר רובוטניק",
+     "tier": 5,
+     "aliases": [
+      "רובוטניק"
+     ]
+    },
+    {
+     "answer": "מלך הלילה",
+     "tier": 5
+    },
+    {
+     "answer": "רמזי בולטון",
+     "tier": 5
+    },
+    {
+     "answer": "ג'יי אר יואינג",
+     "tier": 5,
+     "aliases": [
+      "ג'יי אר"
+     ]
+    },
+    {
+     "answer": "צ'רנבוג",
+     "tier": 6
+    }
+   ]
+  },
+  {
+   "text": "מונח מעולם השחמט, השש-בש או משחקי הקלפים (כמו 'שח מט', 'מרס' או 'ג'וקר')",
+   "category": "כיף",
+   "answers": [
+    {
+     "answer": "שח מט",
+     "tier": 1,
+     "aliases": [
+      "מט"
+     ]
+    },
+    {
+     "answer": "מלכה",
+     "tier": 1
+    },
+    {
+     "answer": "מלך",
+     "tier": 1
+    },
+    {
+     "answer": "ג'וקר",
+     "tier": 1
+    },
+    {
+     "answer": "פרש",
+     "tier": 1
+    },
+    {
+     "answer": "צריח",
+     "tier": 1
+    },
+    {
+     "answer": "רץ",
+     "tier": 2
+    },
+    {
+     "answer": "רגלי",
+     "tier": 2,
+     "aliases": [
+      "פיון",
+      "חייל"
+     ]
+    },
+    {
+     "answer": "שח",
+     "tier": 2
+    },
+    {
+     "answer": "פט",
+     "tier": 2,
+     "aliases": [
+      "תיקו"
+     ]
+    },
+    {
+     "answer": "הצרחה",
+     "tier": 2
+    },
+    {
+     "answer": "מרס",
+     "tier": 2,
+     "aliases": [
+      "מארס"
+     ]
+    },
+    {
+     "answer": "אס",
+     "tier": 2,
+     "aliases": [
+      "אסים"
+     ]
+    },
+    {
+     "answer": "קובייה",
+     "tier": 2,
+     "aliases": [
+      "קוביה",
+      "קוביות"
+     ]
+    },
+    {
+     "answer": "לב",
+     "tier": 2,
+     "aliases": [
+      "לבבות"
+     ]
+    },
+    {
+     "answer": "תלתן",
+     "tier": 2
+    },
+    {
+     "answer": "יהלום",
+     "tier": 2
+    },
+    {
+     "answer": "עלה",
+     "tier": 2
+    },
+    {
+     "answer": "חפיסה",
+     "tier": 2,
+     "aliases": [
+      "חפיסת קלפים"
+     ]
+    },
+    {
+     "answer": "קלף",
+     "tier": 2
+    },
+    {
+     "answer": "נסיך",
+     "tier": 2
+    },
+    {
+     "answer": "דאבל",
+     "tier": 3,
+     "aliases": [
+      "דאבלים"
+     ]
+    },
+    {
+     "answer": "הכתרה",
+     "tier": 3
+    },
+    {
+     "answer": "גמביט",
+     "tier": 3
+    },
+    {
+     "answer": "פתיחה",
+     "tier": 3
+    },
+    {
+     "answer": "שעון שחמט",
+     "tier": 3
+    },
+    {
+     "answer": "רב אמן",
+     "tier": 3,
+     "aliases": [
+      "גרנדמאסטר",
+      "grandmaster"
+     ]
+    },
+    {
+     "answer": "בלוף",
+     "tier": 3
+    },
+    {
+     "answer": "פול האוס",
+     "tier": 3,
+     "aliases": [
+      "full house"
+     ]
+    },
+    {
+     "answer": "רויאל פלאש",
+     "tier": 3,
+     "aliases": [
+      "royal flush"
+     ]
+    },
+    {
+     "answer": "סטרייט",
+     "tier": 3,
+     "aliases": [
+      "straight"
+     ]
+    },
+    {
+     "answer": "פלאש",
+     "tier": 3,
+     "aliases": [
+      "flush"
+     ]
+    },
+    {
+     "answer": "זוג",
+     "tier": 3
+    },
+    {
+     "answer": "קופה",
+     "tier": 3,
+     "aliases": [
+      "פוט",
+      "pot"
+     ]
+    },
+    {
+     "answer": "אול אין",
+     "tier": 3,
+     "aliases": [
+      "all in"
+     ]
+    },
+    {
+     "answer": "דילר",
+     "tier": 3,
+     "aliases": [
+      "מחלק"
+     ]
+    },
+    {
+     "answer": "ערבוב",
+     "tier": 3,
+     "aliases": [
+      "שאפל"
+     ]
+    },
+    {
+     "answer": "אן פסאן",
+     "tier": 4,
+     "aliases": [
+      "en passant",
+      "הכאה דרך הילוכו"
+     ]
+    },
+    {
+     "answer": "שלישייה",
+     "tier": 4
+    },
+    {
+     "answer": "צ'יפים",
+     "tier": 4,
+     "aliases": [
+      "ג'יטונים"
+     ]
+    },
+    {
+     "answer": "סופר טאקי",
+     "tier": 4
+    },
+    {
+     "answer": "מחליף צבע",
+     "tier": 4,
+     "aliases": [
+      "שנה צבע"
+     ]
+    },
+    {
+     "answer": "שנה כיוון",
+     "tier": 4,
+     "aliases": [
+      "משנה כיוון"
+     ]
+    },
+    {
+     "answer": "סטופ",
+     "tier": 4
+    },
+    {
+     "answer": "פלוס 2",
+     "tier": 4,
+     "aliases": [
+      "+2"
+     ]
+    },
+    {
+     "answer": "בית",
+     "tier": 4
+    },
+    {
+     "answer": "אכילה",
+     "tier": 4,
+     "aliases": [
+      "לאכול"
+     ]
+    },
+    {
+     "answer": "דו שש",
+     "tier": 4,
+     "aliases": [
+      "דושש"
+     ]
+    },
+    {
+     "answer": "מסע",
+     "tier": 4
+    },
+    {
+     "answer": "הגנה סיציליאנית",
+     "tier": 4,
+     "aliases": [
+      "סיציליאנית"
+     ]
+    },
+    {
+     "answer": "גמביט המלכה",
+     "tier": 4
+    },
+    {
+     "answer": "מזלג",
+     "tier": 4
+    },
+    {
+     "answer": "סימולטנה",
+     "tier": 4
+    },
+    {
+     "answer": "בליץ",
+     "tier": 4
+    },
+    {
+     "answer": "יד",
+     "tier": 4
+    },
+    {
+     "answer": "פוקר פייס",
+     "tier": 4,
+     "aliases": [
+      "poker face"
+     ]
+    },
+    {
+     "answer": "צ'ק",
+     "tier": 4,
+     "aliases": [
+      "check"
+     ]
+    },
+    {
+     "answer": "רייז",
+     "tier": 4,
+     "aliases": [
+      "raise"
+     ]
+    },
+    {
+     "answer": "פולד",
+     "tier": 4,
+     "aliases": [
+      "fold"
+     ]
+    },
+    {
+     "answer": "הגנה צרפתית",
+     "tier": 5
+    },
+    {
+     "answer": "שח כפול",
+     "tier": 5
+    },
+    {
+     "answer": "ריתוק",
+     "tier": 5
+    },
+    {
+     "answer": "זוגצוונג",
+     "tier": 5,
+     "aliases": [
+      "צוגצוואנג",
+      "zugzwang"
+     ]
+    },
+    {
+     "answer": "לקיחה",
+     "tier": 5
+    },
+    {
+     "answer": "סלאם",
+     "tier": 5,
+     "aliases": [
+      "גרנד סלאם"
+     ]
+    },
+    {
+     "answer": "קוביית הכפלה",
+     "tier": 5
+    },
+    {
+     "answer": "ריבר",
+     "tier": 5,
+     "aliases": [
+      "river"
+     ]
+    },
+    {
+     "answer": "פלופ",
+     "tier": 5,
+     "aliases": [
+      "flop"
+     ]
+    },
+    {
+     "answer": "טרן",
+     "tier": 5,
+     "aliases": [
+      "turn"
+     ]
+    },
+    {
+     "answer": "בליינד",
+     "tier": 5,
+     "aliases": [
+      "blinds",
+      "בליינדים"
+     ]
+    },
+    {
+     "answer": "קול",
+     "tier": 5,
+     "aliases": [
+      "call"
+     ]
+    },
+    {
+     "answer": "פיאנקטו",
+     "tier": 6,
+     "aliases": [
+      "fianchetto"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "צירוף מוכר שמתחיל במילה 'יום' (כמו 'יום הולדת' או 'יום כיפור')",
+   "category": "כיף",
+   "answers": [
+    {
+     "answer": "יום הולדת",
+     "tier": 1,
+     "aliases": [
+      "יום ההולדת",
+      "הולדת"
+     ]
+    },
+    {
+     "answer": "יום כיפור",
+     "tier": 1,
+     "aliases": [
+      "יום הכיפורים",
+      "יום כפור",
+      "כיפור"
+     ]
+    },
+    {
+     "answer": "יום העצמאות",
+     "tier": 1,
+     "aliases": [
+      "העצמאות"
+     ]
+    },
+    {
+     "answer": "יום שישי",
+     "tier": 1,
+     "aliases": [
+      "שישי"
+     ]
+    },
+    {
+     "answer": "יום הזיכרון",
+     "tier": 1,
+     "aliases": [
+      "יום זיכרון",
+      "הזיכרון"
+     ]
+    },
+    {
+     "answer": "יום ראשון",
+     "tier": 1,
+     "aliases": [
+      "ראשון"
+     ]
+    },
+    {
+     "answer": "יום שני",
+     "tier": 2,
+     "aliases": [
+      "שני"
+     ]
+    },
+    {
+     "answer": "יום שלישי",
+     "tier": 2,
+     "aliases": [
+      "שלישי"
+     ]
+    },
+    {
+     "answer": "יום רביעי",
+     "tier": 2,
+     "aliases": [
+      "רביעי"
+     ]
+    },
+    {
+     "answer": "יום חמישי",
+     "tier": 2,
+     "aliases": [
+      "חמישי"
+     ]
+    },
+    {
+     "answer": "יום שבת",
+     "tier": 2,
+     "aliases": [
+      "שבת"
+     ]
+    },
+    {
+     "answer": "יום השואה",
+     "tier": 2,
+     "aliases": [
+      "יום הזיכרון לשואה ולגבורה",
+      "השואה"
+     ]
+    },
+    {
+     "answer": "יום ירושלים",
+     "tier": 2,
+     "aliases": [
+      "ירושלים"
+     ]
+    },
+    {
+     "answer": "יום כיף",
+     "tier": 2,
+     "aliases": [
+      "כיף"
+     ]
+    },
+    {
+     "answer": "יום עבודה",
+     "tier": 2,
+     "aliases": [
+      "עבודה"
+     ]
+    },
+    {
+     "answer": "יום חופש",
+     "tier": 2,
+     "aliases": [
+      "חופש"
+     ]
+    },
+    {
+     "answer": "יום טוב",
+     "tier": 2,
+     "aliases": [
+      "טוב"
+     ]
+    },
+    {
+     "answer": "יום האהבה",
+     "tier": 2,
+     "aliases": [
+      "האהבה"
+     ]
+    },
+    {
+     "answer": "יום האם",
+     "tier": 2,
+     "aliases": [
+      "האם"
+     ]
+    },
+    {
+     "answer": "יום נישואין",
+     "tier": 2,
+     "aliases": [
+      "יום נישואים",
+      "יום הנישואין",
+      "נישואין"
+     ]
+    },
+    {
+     "answer": "יום חול",
+     "tier": 2,
+     "aliases": [
+      "חול"
+     ]
+    },
+    {
+     "answer": "יום הדין",
+     "tier": 3,
+     "aliases": [
+      "הדין"
+     ]
+    },
+    {
+     "answer": "יום המשפחה",
+     "tier": 3,
+     "aliases": [
+      "המשפחה"
+     ]
+    },
+    {
+     "answer": "יום פתוח",
+     "tier": 3,
+     "aliases": [
+      "פתוח"
+     ]
+    },
+    {
+     "answer": "יום ספורט",
+     "tier": 3,
+     "aliases": [
+      "ספורט"
+     ]
+    },
+    {
+     "answer": "יום גיבוש",
+     "tier": 3,
+     "aliases": [
+      "גיבוש"
+     ]
+    },
+    {
+     "answer": "יום מחלה",
+     "tier": 3,
+     "aliases": [
+      "מחלה"
+     ]
+    },
+    {
+     "answer": "יום מנוחה",
+     "tier": 3,
+     "aliases": [
+      "מנוחה"
+     ]
+    },
+    {
+     "answer": "יום הניצחון",
+     "tier": 3,
+     "aliases": [
+      "הניצחון"
+     ]
+    },
+    {
+     "answer": "יום הסטודנט",
+     "tier": 3,
+     "aliases": [
+      "הסטודנט"
+     ]
+    },
+    {
+     "answer": "יום המעשים הטובים",
+     "tier": 3,
+     "aliases": [
+      "המעשים הטובים"
+     ]
+    },
+    {
+     "answer": "יום השנה",
+     "tier": 3,
+     "aliases": [
+      "השנה"
+     ]
+    },
+    {
+     "answer": "יום אבל",
+     "tier": 3,
+     "aliases": [
+      "אבל"
+     ]
+    },
+    {
+     "answer": "יום תענית",
+     "tier": 3,
+     "aliases": [
+      "תענית"
+     ]
+    },
+    {
+     "answer": "יום חג",
+     "tier": 3,
+     "aliases": [
+      "חג"
+     ]
+    },
+    {
+     "answer": "יום הבחירות",
+     "tier": 3,
+     "aliases": [
+      "הבחירות"
+     ]
+    },
+    {
+     "answer": "יום עיון",
+     "tier": 3,
+     "aliases": [
+      "עיון"
+     ]
+    },
+    {
+     "answer": "יום הורים",
+     "tier": 3,
+     "aliases": [
+      "הורים"
+     ]
+    },
+    {
+     "answer": "יום האישה",
+     "tier": 3,
+     "aliases": [
+      "יום האשה",
+      "האישה"
+     ]
+    },
+    {
+     "answer": "יום כדור הארץ",
+     "tier": 3,
+     "aliases": [
+      "כדור הארץ"
+     ]
+    },
+    {
+     "answer": "יום אחד",
+     "tier": 3,
+     "aliases": [
+      "אחד"
+     ]
+    },
+    {
+     "answer": "יום יום",
+     "tier": 3,
+     "aliases": [
+      "יומיום",
+      "יום"
+     ]
+    },
+    {
+     "answer": "יום החתונה",
+     "tier": 3,
+     "aliases": [
+      "החתונה"
+     ]
+    },
+    {
+     "answer": "יום הרצל",
+     "tier": 4,
+     "aliases": [
+      "הרצל"
+     ]
+    },
+    {
+     "answer": "יום רבין",
+     "tier": 4,
+     "aliases": [
+      "רבין"
+     ]
+    },
+    {
+     "answer": "יום המורה",
+     "tier": 4,
+     "aliases": [
+      "המורה"
+     ]
+    },
+    {
+     "answer": "יום הילד",
+     "tier": 4,
+     "aliases": [
+      "הילד"
+     ]
+    },
+    {
+     "answer": "יום המחרת",
+     "tier": 4,
+     "aliases": [
+      "המחרת"
+     ]
+    },
+    {
+     "answer": "יום השחרור",
+     "tier": 4,
+     "aliases": [
+      "השחרור"
+     ]
+    },
+    {
+     "answer": "יום הגיוס",
+     "tier": 4,
+     "aliases": [
+      "הגיוס"
+     ]
+    },
+    {
+     "answer": "יום סיום",
+     "tier": 4,
+     "aliases": [
+      "סיום"
+     ]
+    },
+    {
+     "answer": "יום משכורת",
+     "tier": 4,
+     "aliases": [
+      "יום המשכורת",
+      "משכורת"
+     ]
+    },
+    {
+     "answer": "יום פטירה",
+     "tier": 4,
+     "aliases": [
+      "יום הפטירה",
+      "פטירה"
+     ]
+    },
+    {
+     "answer": "יום קיץ",
+     "tier": 5,
+     "aliases": [
+      "קיץ"
+     ]
+    },
+    {
+     "answer": "יום חורף",
+     "tier": 5,
+     "aliases": [
+      "חורף"
+     ]
+    },
+    {
+     "answer": "יום קרב",
+     "tier": 5,
+     "aliases": [
+      "קרב"
+     ]
+    },
+    {
+     "answer": "יום האדמה",
+     "tier": 5,
+     "aliases": [
+      "האדמה"
+     ]
+    },
+    {
+     "answer": "יום פקודה",
+     "tier": 5,
+     "aliases": [
+      "פקודה"
+     ]
+    },
+    {
+     "answer": "יום סגריר",
+     "tier": 5,
+     "aliases": [
+      "סגריר"
+     ]
+    },
+    {
+     "answer": "יום שוק",
+     "tier": 6,
+     "aliases": [
+      "שוק"
+     ]
+    }
+   ]
+  },
+  {
+   "text": "יצור דמיוני או מפלצת מאגדות ומיתולוגיות העולם (לא מהמיתולוגיה היוונית ולא מהפולקלור היהודי)",
+   "category": "כיף",
+   "answers": [
+    {
+     "answer": "דרקון",
+     "tier": 1
+    },
+    {
+     "answer": "חד קרן",
+     "tier": 1,
+     "aliases": [
+      "יוניקורן",
+      "חדקרן"
+     ]
+    },
+    {
+     "answer": "ערפד",
+     "tier": 1,
+     "aliases": [
+      "ערפדים",
+      "ומפיר"
+     ]
+    },
+    {
+     "answer": "איש זאב",
+     "tier": 1,
+     "aliases": [
+      "אנשי זאב",
+      "זאב אדם"
+     ]
+    },
+    {
+     "answer": "בת ים",
+     "tier": 1,
+     "aliases": [
+      "בתולת ים"
+     ]
+    },
+    {
+     "answer": "גמד",
+     "tier": 1,
+     "aliases": [
+      "גמדים"
+     ]
+    },
+    {
+     "answer": "פיה",
+     "tier": 2,
+     "aliases": [
+      "פיות"
+     ]
+    },
+    {
+     "answer": "טרול",
+     "tier": 2
+    },
+    {
+     "answer": "ענק",
+     "tier": 2,
+     "aliases": [
+      "ענקים"
+     ]
+    },
+    {
+     "answer": "זומבי",
+     "tier": 2
+    },
+    {
+     "answer": "מומיה",
+     "tier": 2
+    },
+    {
+     "answer": "אלף",
+     "tier": 2,
+     "aliases": [
+      "אלפים",
+      "elf"
+     ]
+    },
+    {
+     "answer": "גובלין",
+     "tier": 2
+    },
+    {
+     "answer": "יטי",
+     "tier": 2,
+     "aliases": [
+      "איש השלג"
+     ]
+    },
+    {
+     "answer": "ביגפוט",
+     "tier": 2
+    },
+    {
+     "answer": "מפלצת לוך נס",
+     "tier": 2,
+     "aliases": [
+      "נסי",
+      "לוך נס"
+     ]
+    },
+    {
+     "answer": "ג'יני",
+     "tier": 2,
+     "aliases": [
+      "ג'ין",
+      "שד מהמנורה"
+     ]
+    },
+    {
+     "answer": "קראקן",
+     "tier": 3,
+     "aliases": [
+      "קרקן"
+     ]
+    },
+    {
+     "answer": "גריפון",
+     "tier": 3
+    },
+    {
+     "answer": "גרגויל",
+     "tier": 3
+    },
+    {
+     "answer": "בנשי",
+     "tier": 3
+    },
+    {
+     "answer": "צ'ופקברה",
+     "tier": 3,
+     "aliases": [
+      "צ'ופקברס"
+     ]
+    },
+    {
+     "answer": "קיצונה",
+     "tier": 3
+    },
+    {
+     "answer": "טנגו",
+     "tier": 3
+    },
+    {
+     "answer": "קאפה",
+     "tier": 3
+    },
+    {
+     "answer": "וונדיגו",
+     "tier": 3
+    },
+    {
+     "answer": "לפרקון",
+     "tier": 3,
+     "aliases": [
+      "לפרכון",
+      "leprechaun"
+     ]
+    },
+    {
+     "answer": "ולקיריה",
+     "tier": 3,
+     "aliases": [
+      "ולקיריות"
+     ]
+    },
+    {
+     "answer": "בוגימן",
+     "tier": 3
+    },
+    {
+     "answer": "באבא יאגה",
+     "tier": 3
+    },
+    {
+     "answer": "ספינקס",
+     "tier": 3
+    },
+    {
+     "answer": "שדון",
+     "tier": 3,
+     "aliases": [
+      "שדונים"
+     ]
+    },
+    {
+     "answer": "פיית השיניים",
+     "tier": 3
+    },
+    {
+     "answer": "יורמונגנד",
+     "tier": 4
+    },
+    {
+     "answer": "פנריר",
+     "tier": 4
+    },
+    {
+     "answer": "סליפניר",
+     "tier": 4
+    },
+    {
+     "answer": "הובגובלין",
+     "tier": 4
+    },
+    {
+     "answer": "אוני",
+     "tier": 4
+    },
+    {
+     "answer": "נאגה",
+     "tier": 4
+    },
+    {
+     "answer": "גארודה",
+     "tier": 4
+    },
+    {
+     "answer": "ציפור הרוק",
+     "tier": 4,
+     "aliases": [
+      "רוק"
+     ]
+    },
+    {
+     "answer": "סלקי",
+     "tier": 4
+    },
+    {
+     "answer": "וייברן",
+     "tier": 4
+    },
+    {
+     "answer": "מנטיקור",
+     "tier": 4
+    },
+    {
+     "answer": "קירין",
+     "tier": 4,
+     "aliases": [
+      "קילין"
+     ]
+    },
+    {
+     "answer": "קרמפוס",
+     "tier": 4
+    },
+    {
+     "answer": "ארנב הפסחא",
+     "tier": 4,
+     "aliases": [
+      "הארנב של פסחא"
+     ]
+    },
+    {
+     "answer": "זמיי גוריניץ'",
+     "tier": 5
+    },
+    {
+     "answer": "רוסלקה",
+     "tier": 5
+    },
+    {
+     "answer": "דומובוי",
+     "tier": 5
+    },
+    {
+     "answer": "לשי",
+     "tier": 5
+    },
+    {
+     "answer": "יוקאי",
+     "tier": 5
+    },
+    {
+     "answer": "טאנוקי",
+     "tier": 5
+    },
+    {
+     "answer": "אמוט",
+     "tier": 5
+    },
+    {
+     "answer": "איש העש",
+     "tier": 5,
+     "aliases": [
+      "mothman"
+     ]
+    },
+    {
+     "answer": "השטן מג'רזי",
+     "tier": 5,
+     "aliases": [
+      "ג'רזי דביל"
+     ]
+    },
+    {
+     "answer": "פוקה",
+     "tier": 5
+    },
+    {
+     "answer": "דולהן",
+     "tier": 5
+    },
+    {
+     "answer": "קלפי",
+     "tier": 5,
+     "aliases": [
+      "kelpie"
+     ]
+    },
+    {
+     "answer": "וולפרטינגר",
+     "tier": 5
+    },
+    {
+     "answer": "ג'קאלופ",
+     "tier": 5
+    },
+    {
+     "answer": "ציפור הרעם",
+     "tier": 5,
+     "aliases": [
+      "ת'נדרבירד"
+     ]
+    },
+    {
+     "answer": "בונייפ",
+     "tier": 6
+    }
+   ]
+  }
+ ]
+}

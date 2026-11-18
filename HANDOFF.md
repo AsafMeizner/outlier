@@ -173,3 +173,6 @@ other daily score) -> "New personal best!" + sfx.record + Stage.celebrate().
   web tests (vitest: answers, format, i18n incl. server-message coverage, space world smoke), e2e/smoke.spec.ts with a
   throwaway server (e2e/server.ts), `npm run check`, .editorconfig. Found and fixed: 35 server errors had no Hebrew;
   `npm test` failed (no web tests); stale start scripts; README tier range; eslint/docker ignores for release/.
+- 8 more packs committed (235 prompts after removing 5 near-duplicates found by a same-language answer-overlap scan):
+  en-words-culture (28), en-business-brands (29), en-travel-places, en-everyday-fun, he-words-culture,
+  he-business-brands, he-world-travel, he-everyday-fun (28). Bank: 803 prompts (447 EN, 356 HE), 0 errors/warnings.
