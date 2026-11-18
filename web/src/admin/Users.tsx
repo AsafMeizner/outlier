@@ -103,6 +103,7 @@ function UserRow({ u, open, onToggle, dist, ago }: { u: AdminUserRow; open: bool
         <td>
           {t(u.role === 'admin' ? 'admin.u.role.admin' : 'admin.u.role.player')}
           {u.disabled ? <span className="faint"> ({t('admin.u.disabled')})</span> : null}
+          {u.guest ? <span className="faint"> ({t('admin.u.guest')})</span> : null}
           {u.mustChange ? <span className="faint"> ({t('admin.u.temp')})</span> : null}
         </td>
         <td className="n">{u.games}</td>

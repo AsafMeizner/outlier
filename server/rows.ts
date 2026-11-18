@@ -15,6 +15,7 @@ export interface UserRow {
   created_at: number;
   last_seen: number | null;
   look: string;
+  guest: number;
 }
 export interface SessionUserRow extends UserRow { expires_at: number; token_hash: string }
 

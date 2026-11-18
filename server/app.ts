@@ -40,6 +40,7 @@ export const DEFAULT_SETTINGS: Api.Settings = {
   inviteCode: '',
   typoTolerance: true,
   archivePlay: true,
+  guestPlay: true,
   puzzleLanguage: 'alternate',
   theme: DEFAULT_THEME,
 };
@@ -113,7 +114,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
           out.activeWeekdays = [...new Set(v as number[])].sort();
           break;
         }
-        case 'autoSchedule': case 'typoTolerance': case 'archivePlay': out[k] = Boolean(v); break;
+        case 'autoSchedule': case 'typoTolerance': case 'archivePlay': case 'guestPlay': out[k] = Boolean(v); break;
         default: bad(`Unknown setting ${k}`);
       }
     }
@@ -125,7 +126,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   const today = (): string => { const s = settings(); return gameDate(now(), s.timeZone, s.dayStartHour); };
   const publicSettings = (): Api.PublicSettings => {
     const s = settings();
-    return { theme: s.theme, puzzleLanguage: s.puzzleLanguage, siteName: s.siteName, tagline: s.tagline, roundSeconds: s.roundSeconds, promptsPerDay: s.promptsPerDay, registration: s.registration, archivePlay: s.archivePlay, weekStart: s.weekStart, tiers: TIERS };
+    return { theme: s.theme, puzzleLanguage: s.puzzleLanguage, siteName: s.siteName, tagline: s.tagline, roundSeconds: s.roundSeconds, promptsPerDay: s.promptsPerDay, registration: s.registration, archivePlay: s.archivePlay, guestPlay: s.guestPlay, weekStart: s.weekStart, tiers: TIERS };
   };
 
   for (const p of db.all<{ id: number; text: string }>("SELECT id, text FROM prompts WHERE lang='en'")) if (langOf(p.text) === 'he') db.run("UPDATE prompts SET lang='he' WHERE id=?", p.id);
@@ -156,7 +157,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   const loginFailures = new Map<string, { count: number; first: number }>();
   const userView = (u: UserRow): Api.UserView => ({
     id: u.id, username: u.username, displayName: u.display_name, team: u.team, role: u.role,
-    mustChange: !!u.must_change, disabled: !!u.disabled, look: resolveLook(settings().theme, u.look, u.username),
+    mustChange: !!u.must_change, disabled: !!u.disabled, guest: !!u.guest, look: resolveLook(settings().theme, u.look, u.username),
   });
   const userById = (id: number | bigint): UserRow => db.get<UserRow>('SELECT * FROM users WHERE id=?', id) ?? bad('User not found', 404);
   function createSession(userId: number): string {
@@ -598,6 +599,32 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     if (token) db.run('DELETE FROM sessions WHERE token_hash=?', tokenHash(token));
     return new CookieResult<Api.OkResponse>(cookie('', 0), { ok: true });
   });
+  // Guests: one click on "Play now" creates a player with no username or password chosen yet.
+  const guestStarts = new Map<string, number[]>();
+  pub('POST', '/api/guest', ({ ip }) => {
+    if (!settings().guestPlay) bad('Guest play is turned off. Sign in or create an account.', 403);
+    if (!hasAdmin()) bad('Finish the first-time setup first.', 403);
+    const t = now(), recent = (guestStarts.get(ip) ?? []).filter(x => t - x < 3600_000);
+    if (recent.length >= 20) bad('Too many new guests from this computer. Try again later.', 429);
+    recent.push(t); guestStarts.set(ip, recent);
+    let username: string;
+    do username = `guest-${newToken().replace(/[^a-z0-9]/gi, '').slice(0, 8).toLowerCase()}`; while (count('SELECT COUNT(*) AS n FROM users WHERE username=?', username));
+    const name = `Guest ${1000 + Math.floor(random() * 9000)}`;
+    const r = db.run('INSERT INTO users(username,display_name,team,pass_hash,role,must_change,created_at,guest) VALUES(?,?,?,?,?,?,?,1)', username, name, '', hashPassword(newToken()), 'player', 0, t);
+    return signedIn<Api.AuthResponse>(Number(r.lastInsertRowid), { user: userView(userById(r.lastInsertRowid)) });
+  });
+  // Save a guest's progress as a real account: choose a username and password, keep everything played so far.
+  route('POST', '/api/claim', 'user', ({ user, body }) => {
+    if (!user.guest) bad('This is already a full account.');
+    const username = String(body['username'] ?? '').trim();
+    if (!validUsername(username)) bad('Username: 2-32 letters, numbers, dot, dash or underscore');
+    if (!validPassword(body['password'])) bad('Password must be at least 8 characters');
+    if (count('SELECT COUNT(*) AS n FROM users WHERE username=? AND id<>?', username, user.id)) bad('That username is taken', 409);
+    const dn = optStr(body['displayName'], 40, 'Display name') || user.display_name;
+    db.run('UPDATE users SET username=?, display_name=?, pass_hash=?, guest=0 WHERE id=?', username, dn, hashPassword(String(body['password'])), user.id);
+    db.run('DELETE FROM sessions WHERE user_id=?', user.id);
+    return signedIn<Api.AuthResponse>(user.id, { user: userView(userById(user.id)) });
+  });
   pub('POST', '/api/register', ({ body }) => {
     const s = settings();
     if (s.registration === 'closed') bad('Sign-up is closed. Ask an admin for an account.', 403);
@@ -614,6 +641,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     return signedIn<Api.AuthResponse>(u.id, { user: userView(u) });
   });
   route('POST', '/api/password', 'user', ({ user, body }) => {
+    if (user.guest) bad('Save your progress first: choose a username and password.');
     if (!verifyPassword(String(body['current'] ?? ''), user.pass_hash)) bad('Current password is wrong.', 403);
     const next = body['next'];
     if (!validPassword(next)) bad('New password must be at least 8 characters');

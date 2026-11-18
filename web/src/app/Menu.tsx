@@ -38,6 +38,8 @@ export function Menu({ user, onClose }: { user: UserView; onClose: () => void })
   }, [onClose]);
 
   const signOut = async (): Promise<void> => {
+    // A guest has no password: signing out loses the player for good.
+    if (user.guest && !window.confirm(t('guest.signOutWarn'))) return;
     await api.post('/api/logout');
     qc.clear();
     await navigate('/login');
@@ -51,9 +53,14 @@ export function Menu({ user, onClose }: { user: UserView; onClose: () => void })
           <Avatar look={user.look} size={48} />
           <div>
             <strong>{user.displayName}</strong>
-            <span className="faint">{t('stats.signedInAs', { u: user.username })}</span>
+            <span className="faint">{user.guest ? t('guest.playingAs') : t('stats.signedInAs', { u: user.username })}</span>
           </div>
         </div>
+        {user.guest ? (
+          <Link to="/save" className="px-btn px-btn--small menu-save">
+            <PixelIcon name="lock" size={20} /> {t('guest.save')}
+          </Link>
+        ) : null}
         <ul className="menu-tiles">
           {TILES.map((tile, i) => (
             <li key={tile.to} style={{ animationDelay: `${i * 30}ms` }}>

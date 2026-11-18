@@ -195,6 +195,10 @@ const MIGRATIONS: readonly string[] = [
     WHERE a.tier=5 AND p.owner_id IS NULL AND NOT EXISTS (SELECT 1 FROM answers b WHERE b.prompt_id=a.prompt_id AND b.tier=6)
     GROUP BY a.prompt_id);
   `,
+  // v6: guest players (no username/password chosen yet)
+  `
+  ALTER TABLE users ADD COLUMN guest INTEGER NOT NULL DEFAULT 0;
+  `,
 ];
 
 export type SqlParam = string | number | bigint | null | Uint8Array;

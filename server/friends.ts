@@ -50,7 +50,7 @@ export function installFriends(k: Kit): void {
     if (!q) return [];
     const like = `%${q.replace(/[%_\\]/g, c => `\\${c}`)}%`;
     return db.all<U & { fr: number }>(`SELECT ${COLS}, EXISTS(SELECT 1 FROM friends f WHERE f.user_id=? AND f.friend_id=u.id) AS fr FROM users u
-        WHERE u.disabled=0 AND u.id<>? AND (u.username LIKE ? ESCAPE '\\' OR u.display_name LIKE ? ESCAPE '\\') ORDER BY u.display_name COLLATE NOCASE LIMIT 10`, user.id, user.id, like, like)
+        WHERE u.disabled=0 AND u.guest=0 AND u.id<>? AND (u.username LIKE ? ESCAPE '\\' OR u.display_name LIKE ? ESCAPE '\\') ORDER BY u.display_name COLLATE NOCASE LIMIT 10`, user.id, user.id, like, like)
       .map(u => ({ ...k.playerRef(u), isFriend: !!u.fr }));
   });
 

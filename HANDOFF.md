@@ -128,3 +128,8 @@ Plan (original designs, no krillion assets/names):
   `answers` (CHECK 1-6, ids kept) and promotes one tier-5 answer per bank prompt; bank JSON updated the same way.
 - Music rewritten (sfx.ts Music): 32-bar chiptune in A minor, sections A/D (menus) and B/C (rounds, full drums), pulse
   waves, echo, compressor. Verified non-silent in Chromium via an analyser tap (%TEMP%\outlier-shots\music.mjs).
+- Guest play (user: "you dont have to login or create an account"): migration v6 `users.guest`. Sign-in screen shows
+  "Play now" (POST /api/guest, 20 new guests per IP per hour) when Settings.guestPlay (default on, admin checkbox).
+  Guests get `guest-xxxxxxxx` / "Guest NNNN" and a random password nobody knows. /save (Claim.tsx, POST /api/claim)
+  turns the guest into a full account and keeps everything; menu + My stats link to it; sign-out asks first; password
+  change is blocked for guests; friend search skips guests; admin Users tags them. Verified with %TEMP%\og-shot.mjs.

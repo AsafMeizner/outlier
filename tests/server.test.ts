@@ -687,3 +687,31 @@ test('one of a kind: at most one tier-6 answer per prompt, worth the most', asyn
   const w = await t.ok<Api.WardrobeResponse>('alice', 'GET', '/api/wardrobe');
   assert.equal(w.stats.outliers, 1, 'One of a Kind counts as an Outlier answer for unlocks');
 });
+
+test('guests: play without an account, then save it; admins can turn guest play off', async () => {
+  const t = await withAdmin(setup());
+  const g = await t.ok<Api.AuthResponse>('guest', 'POST', '/api/guest');
+  assert.equal(g.user.guest, true);
+  assert.match(g.user.username, /^guest-[a-z0-9]{8}$/);
+  assert.match(g.user.displayName, /^Guest \d{4}$/);
+  // a guest plays the daily puzzle like anyone else
+  const d = (await t.ok<Api.TodayResponse>('guest', 'GET', '/api/today')).date;
+  await playDay(t, 'guest', d, ['strawberry', null, null]);
+  assert.equal((await t.call('guest', 'POST', '/api/password', { current: 'x', next: 'whatever123' })).status, 400, 'guests have no password to change');
+  // guests don't show up in user search
+  await addPlayer(t, 'alice');
+  assert.equal((await t.ok<Api.UserSearchRow[]>('alice', 'GET', '/api/users/search?q=guest')).length, 0);
+  // saving the account keeps the progress
+  assert.equal((await t.call('guest', 'POST', '/api/claim', { username: 'alice', password: 'password1' })).status, 409, 'username taken');
+  const c = await t.ok<Api.AuthResponse>('guest', 'POST', '/api/claim', { username: 'gina', displayName: 'Gina', password: 'ginapassword' });
+  assert.equal(c.user.guest, false);
+  assert.equal(c.user.username, 'gina');
+  const stats = await t.ok<Api.StatsResponse>('guest', 'GET', '/api/stats');
+  assert.equal(stats.games, 1, 'the guest game is still there');
+  await t.ok('gina', 'POST', '/api/login', { username: 'gina', password: 'ginapassword' });
+  assert.equal((await t.call('gina', 'POST', '/api/claim', { username: 'gina2', password: 'ginapassword' })).status, 400, 'only guests claim');
+  // the admin switch
+  await t.ok('admin', 'PUT', '/api/admin/settings', { guestPlay: false });
+  assert.equal((await t.call('guest2', 'POST', '/api/guest')).status, 403);
+  assert.equal((await t.ok<Api.MeResponse>('guest2', 'GET', '/api/me')).settings.guestPlay, false);
+});

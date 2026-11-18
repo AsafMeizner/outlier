@@ -22,6 +22,16 @@ export const en = {
   'common.custom': 'friends',
   'common.notFound': 'Nothing here.',
   'common.serverError': 'Server error ({n})',
+  'auth.playNow': 'Play now',
+  'auth.playNowNote': 'No account needed. You can save your progress any time.',
+  'auth.orSignIn': 'Already have an account?',
+  'guest.badge': 'Guest',
+  'guest.playingAs': 'Playing as a guest',
+  'guest.save': 'Save my progress',
+  'guest.saveTitle': 'Save your progress',
+  'guest.saveNote': 'Choose a username and password to keep your scores, streak and wardrobe, and to play from other computers.',
+  'guest.saved': 'Saved! You now have an account.',
+  'guest.signOutWarn': 'You’re playing as a guest. If you sign out, your progress is lost unless you save it first. Sign out anyway?',
 
   // modes: practice, friends, party
   'nav.practice': 'Unlimited & packs',

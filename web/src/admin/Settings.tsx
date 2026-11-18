@@ -61,6 +61,7 @@ function Form({ initial }: { initial: Settings }) {
           </label>
           <label className="adm-check"><input type="checkbox" checked={s.typoTolerance} onChange={e => set('typoTolerance', e.target.checked)} /> {t('admin.s.typo')}</label>
           <label className="adm-check"><input type="checkbox" checked={s.archivePlay} onChange={e => set('archivePlay', e.target.checked)} /> {t('admin.s.archive')}</label>
+          <label className="adm-check"><input type="checkbox" checked={s.guestPlay} onChange={e => set('guestPlay', e.target.checked)} /> {t('admin.s.guest')}</label>
         </Card>
         <div>
           <Card title={t('admin.s.calendar')}>

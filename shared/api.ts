@@ -26,11 +26,13 @@ export interface Settings {
   inviteCode: string;
   typoTolerance: boolean;
   archivePlay: boolean;
+  /** Let visitors play without an account (a guest player is created on "Play now"). */
+  guestPlay: boolean;
   puzzleLanguage: PuzzleLanguage;
   /** Visual theme for everyone (world art, hero, wardrobe, UI colours). */
   theme: ThemeId;
 }
-export type PublicSettings = Pick<Settings, 'theme' | 'puzzleLanguage' | 'siteName' | 'tagline' | 'roundSeconds' | 'promptsPerDay' | 'registration' | 'archivePlay' | 'weekStart'> & { tiers: readonly Tier[] };
+export type PublicSettings = Pick<Settings, 'theme' | 'puzzleLanguage' | 'siteName' | 'tagline' | 'roundSeconds' | 'promptsPerDay' | 'registration' | 'archivePlay' | 'guestPlay' | 'weekStart'> & { tiers: readonly Tier[] };
 
 export interface ErrorResponse { error: string }
 export interface OkResponse { ok: true }
@@ -44,6 +46,8 @@ export interface UserView {
   role: Role;
   mustChange: boolean;
   disabled: boolean;
+  /** Playing without an account; can be saved as a real account with /api/claim. */
+  guest: boolean;
   look: Look;
 }
 export interface MeResponse { user: UserView | null; settings: PublicSettings; needsSetup: boolean; today: string }
@@ -52,6 +56,7 @@ export interface LoginRequest { username: string; password: string }
 export interface RegisterRequest { username: string; displayName: string; team?: string; password: string; inviteCode?: string }
 export interface SetupRequest { token: string; username: string; displayName: string; password: string }
 export interface PasswordRequest { current: string; next: string }
+export interface ClaimRequest { username: string; displayName?: string; password: string }
 export interface ProfileRequest { displayName: string; team: string }
 
 // ---------- daily game ----------

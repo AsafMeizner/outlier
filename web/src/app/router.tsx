@@ -21,6 +21,7 @@ import { Login } from '../screens/auth/Login.tsx';
 import { Register } from '../screens/auth/Register.tsx';
 import { Setup } from '../screens/auth/Setup.tsx';
 import { Password } from '../screens/auth/Password.tsx';
+import { Claim } from '../screens/auth/Claim.tsx';
 
 function RouteError() {
   const error = useRouteError();
@@ -61,6 +62,7 @@ export const router = createBrowserRouter([
           { path: 'archive', element: <Archive /> },
           { path: 'stats', element: <Stats /> },
           { path: 'wardrobe', element: <Wardrobe /> },
+          { path: 'save', element: <Claim /> },
           { path: 'games', element: <Games /> },
           { path: 'games/new', element: <GameEditor /> },
           { path: 'g/:slug', element: <GamePage /> },

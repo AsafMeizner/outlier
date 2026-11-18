@@ -128,7 +128,12 @@ function Profile() {
           <Avatar look={user.look} size={80} />
         </Link>
         <form className="profile-form" onSubmit={e => void save(e)}>
-          <p className="faint">{t('stats.signedInAs', { u: user.username })}</p>
+          {user.guest ? (
+            <div className="guest-note">
+              <p>{t('guest.saveNote')}</p>
+              <Link to="/save" className="px-btn px-btn--small">{t('guest.save')}</Link>
+            </div>
+          ) : <p className="faint">{t('stats.signedInAs', { u: user.username })}</p>}
           <label className="field">
             <span>{t('stats.name')}</span>
             <input className="input" value={displayName} onChange={e => setName(e.target.value)} maxLength={40} required />
@@ -140,7 +145,7 @@ function Profile() {
           <p className="error" role="alert">{error}</p>
           <div className="row">
             <button type="submit" className="px-btn px-btn--small" disabled={busy}>{t('stats.saveProfile')}</button>
-            <Link to="/password" className="px-btn px-btn--small px-btn--navy">{t('stats.password')}</Link>
+            {user.guest ? null : <Link to="/password" className="px-btn px-btn--small px-btn--navy">{t('stats.password')}</Link>}
           </div>
         </form>
       </div>

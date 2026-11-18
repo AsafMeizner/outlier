@@ -131,6 +131,7 @@
 .menu-tile--sun { --face: var(--highlight); --lo: var(--accent-lo); --fg: var(--ink); }
 .menu-tile--navy { --face: var(--alt); --lo: var(--panel-2); --fg: var(--text); }
 .menu-signout { justify-self: end; }
+.menu-save { justify-self: start; display: inline-flex; align-items: center; gap: calc(var(--u) * 2); }
 
 /* ---------- shared screen bits ---------- */
 .status-line {

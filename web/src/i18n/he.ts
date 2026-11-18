@@ -22,6 +22,16 @@ export const he: Record<Key, string> = {
   'common.custom': 'חברים',
   'common.notFound': 'אין כאן כלום.',
   'common.serverError': 'שגיאת שרת ({n})',
+  'auth.playNow': 'לשחק עכשיו',
+  'auth.playNowNote': 'לא צריך חשבון. אפשר לשמור את ההתקדמות מתי שרוצים.',
+  'auth.orSignIn': 'יש לכם כבר חשבון?',
+  'guest.badge': 'אורח',
+  'guest.playingAs': 'משחקים כאורחים',
+  'guest.save': 'שמירת ההתקדמות',
+  'guest.saveTitle': 'שמירת ההתקדמות',
+  'guest.saveNote': 'בחרו שם משתמש וסיסמה כדי לשמור את התוצאות, הרצף והארון, ולשחק גם ממחשבים אחרים.',
+  'guest.saved': 'נשמר! עכשיו יש לכם חשבון.',
+  'guest.signOutWarn': 'אתם משחקים כאורחים. אם תצאו, ההתקדמות תאבד אלא אם תשמרו אותה קודם. לצאת בכל זאת?',
 
   // modes: practice, friends, party
   'nav.practice': 'ללא הגבלה וחבילות',
@@ -481,5 +491,9 @@ export const heServerMessages: Record<string, string> = {
   'There are no prompts for a party in this language right now.': 'אין כרגע שאלות למסיבה בשפה הזאת.',
   'The party isn’t running.': 'המסיבה לא רצה.',
   'It’s not your turn.': 'זה לא התור שלכם.',
+  'Guest play is turned off. Sign in or create an account.': 'משחק כאורחים כבוי. התחברו או צרו חשבון.',
+  'Too many new guests from this computer. Try again later.': 'יותר מדי אורחים חדשים מהמחשב הזה. נסו שוב מאוחר יותר.',
+  'This is already a full account.': 'זה כבר חשבון מלא.',
+  'Save your progress first: choose a username and password.': 'קודם שמרו את ההתקדמות: בחרו שם משתמש וסיסמה.',
   'Add at least one answer': 'הוסיפו לפחות תשובה אחת',
 };

@@ -227,3 +227,10 @@
   .miss { grid-template-columns: 1fr auto; }
   .miss-prompt { grid-column: 1 / -1; }
 }
+
+/* ---------- guests ---------- */
+.auth-guest { display: grid; gap: calc(var(--u) * 2); text-align: center; }
+.auth-guest .faint, .auth-guest .error { margin: 0; }
+.auth-or { margin: calc(var(--u) * 2) 0 0; padding-top: calc(var(--u) * 4); border-top: 2px dashed var(--border); color: var(--text-3); font-weight: 700; }
+.guest-note { display: grid; gap: calc(var(--u) * 2); justify-items: start; padding: calc(var(--u) * 3); background: var(--panel-2); border: 2px solid var(--accent); }
+.guest-note p { margin: 0; }
