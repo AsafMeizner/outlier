@@ -23,8 +23,8 @@ export interface Kit {
   playerRef(u: Pick<UserRow, 'id' | 'username' | 'display_name' | 'team' | 'look'>): Api.PlayerRef;
   streakOf(userId: number): Api.Streak;
   /**
-   * Prompts that may be shown outside the daily puzzle: active bank prompts that are not scheduled for today or later,
-   * so practice and party play never spoil a daily puzzle.
+   * Prompts that may be shown outside the daily puzzle: only prompts from past days (already public in the archive).
+   * Fresh prompts are kept for future daily puzzles, which are always brand new.
    */
   practicePool(lang: Api.Lang | null, category?: string): PoolPrompt[];
 }

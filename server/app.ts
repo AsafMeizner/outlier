@@ -201,7 +201,10 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   const dayPrompts = (date: string): DayPrompt[] =>
     db.all<DayPrompt>('SELECT dp.position, p.id, p.text, p.category, p.lang FROM day_prompts dp JOIN prompts p ON p.id=dp.prompt_id WHERE dp.date=? ORDER BY dp.position', date);
   interface PoolPrompt { id: number; text: string; category: string; lang: Api.Lang; used: number; practised: number }
-  /** Pick n prompts: least-used first, random within ties, different categories where possible. */
+  /**
+   * Pick up to n prompts for a daily puzzle. Daily prompts are always brand new: never used on another day and never
+   * seen in practice or party play. Random order, different categories where possible.
+   */
   function pickPrompts(n: number, exclude: readonly number[] = [], lang: Api.Lang | null = null): PoolPrompt[] {
     const ex = new Set(exclude);
     let pool = db.all<PoolPrompt>(`SELECT p.id, p.text, p.category, p.lang, COUNT(dp.prompt_id) AS used,
@@ -209,6 +212,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
       FROM prompts p LEFT JOIN day_prompts dp ON dp.prompt_id=p.id
       WHERE p.retired=0 AND p.owner_id IS NULL AND EXISTS (SELECT 1 FROM answers a WHERE a.prompt_id=p.id)
       GROUP BY p.id`).filter(p => !ex.has(p.id));
+    pool = pool.filter(p => p.used === 0 && p.practised === 0);
     if (lang) { const same = pool.filter(p => p.lang === lang); if (same.length >= n) pool = same; }
     // least-used first; among equals, prompts nobody has seen in practice or party play
     shuffle(pool, random).sort((a, b) => a.used - b.used || a.practised - b.practised);
@@ -854,7 +858,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   route('GET', '/api/admin/overview', 'admin', (): Api.AdminOverview => {
     const t = today(), s = settings();
     const bank = count('SELECT COUNT(*) AS n FROM prompts WHERE retired=0 AND owner_id IS NULL');
-    const unused = count('SELECT COUNT(*) AS n FROM prompts p WHERE retired=0 AND owner_id IS NULL AND NOT EXISTS (SELECT 1 FROM day_prompts dp WHERE dp.prompt_id=p.id)');
+    const unused = count('SELECT COUNT(*) AS n FROM prompts p WHERE retired=0 AND owner_id IS NULL AND NOT EXISTS (SELECT 1 FROM day_prompts dp WHERE dp.prompt_id=p.id) AND NOT EXISTS (SELECT 1 FROM practice_rounds pr WHERE pr.prompt_id=p.id) AND EXISTS (SELECT 1 FROM answers a WHERE a.prompt_id=p.id)');
     return {
       today: t, users: count('SELECT COUNT(*) AS n FROM users'),
       activeWeek: count('SELECT COUNT(*) AS n FROM users WHERE last_seen>?', now() - 7 * 86400_000),
@@ -932,7 +936,12 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     if (!Array.isArray(ids) || !ids.length || ids.length > 10 || ids.some(x => !Number.isInteger(x))) bad('Pick 1 to 10 prompts');
     const promptIds = ids as number[];
     if (new Set(promptIds).size !== promptIds.length) bad('The same prompt is picked twice');
-    for (const id of promptIds) if (!count('SELECT COUNT(*) AS n FROM prompts WHERE id=? AND owner_id IS NULL AND EXISTS (SELECT 1 FROM answers a WHERE a.prompt_id=prompts.id)', id)) bad(`Prompt ${id} not found or has no answers`);
+    for (const id of promptIds) {
+      if (!count('SELECT COUNT(*) AS n FROM prompts WHERE id=? AND owner_id IS NULL AND EXISTS (SELECT 1 FROM answers a WHERE a.prompt_id=prompts.id)', id)) bad(`Prompt ${id} not found or has no answers`);
+      // daily prompts are always new: not used on another day, not seen in practice
+      if (count("SELECT COUNT(*) AS n FROM day_prompts WHERE prompt_id=? AND date<>? AND date NOT LIKE 'g-%'", id, date) || count('SELECT COUNT(*) AS n FROM practice_rounds WHERE prompt_id=?', id))
+        bad('That prompt was already used. Every daily puzzle gets brand-new prompts.', 409);
+    };
     setDay(date, promptIds, false);
     return { date, prompts: dayPrompts(date) };
   });
@@ -1062,7 +1071,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     playerRef: u => ({ userId: u.id, username: u.username, name: u.display_name, team: u.team, look: resolveLook(settings().theme, u.look, u.username) }),
     practicePool: (lang, category) => db.all<KitPoolPrompt>(`SELECT p.id, p.text, p.category, p.lang FROM prompts p
         WHERE p.retired=0 AND p.owner_id IS NULL AND EXISTS (SELECT 1 FROM answers a WHERE a.prompt_id=p.id)
-        AND NOT EXISTS (SELECT 1 FROM day_prompts dp WHERE dp.prompt_id=p.id AND dp.date>=? AND dp.date NOT LIKE 'g-%')
+        AND EXISTS (SELECT 1 FROM day_prompts dp WHERE dp.prompt_id=p.id AND dp.date<? AND dp.date NOT LIKE 'g-%')
         AND (? IS NULL OR p.lang=?) AND (? IS NULL OR p.category=?)`, today(), lang, lang, category ?? null, category ?? null),
   };
   installPractice(kit);

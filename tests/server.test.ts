@@ -58,6 +58,9 @@ Q: Name a hand tool
 4 Chisel
 5 Awl`;
 
+/** n extra prompts, so tests that create many days have enough brand-new prompts. */
+const FILLER = (n: number): string => 'C: Filler\n' + Array.from({ length: n }, (_, i) => `Q: Filler prompt ${i}\n1 alpha${i}\n5 omega${i}`).join('\n');
+
 interface Harness {
   app: App;
   call: (who: string, method: string, path: string, body?: unknown) => Promise<ApiResponse>;
@@ -287,6 +290,7 @@ test('a typo-corrected answer needs a second Enter (confirm) before it counts', 
 
 test('streaks, archive play and day rollover', async () => {
   const t = await withAdmin(setup());
+  t.app.importPack(FILLER(20), 'filler.txt');
   await addPlayer(t, 'alice');
   const day1 = (await t.ok<Api.TodayResponse>('alice', 'GET', '/api/today')).date;
   await playDay(t, 'alice', day1, ['strawberry', 'sweden', 'red']);
@@ -332,6 +336,7 @@ test('admin: schedule, questions, misses and retro-award, backup', async () => {
   await addPlayer(t, 'alice');
   const { prompts } = await t.ok<Api.AdminPromptsResponse>('admin', 'GET', '/api/admin/prompts');
   assert.equal(prompts.length, 5);
+  t.app.importPack(FILLER(30), 'filler.txt');
   const fruit = must(prompts.find(p => p.text === 'Name a red fruit'), 'fruit');
   const nordic = must(prompts.find(p => p.text === 'Name a Nordic country'), 'nordic');
   const today = (await t.ok<Api.AdminOverview>('admin', 'GET', '/api/admin/overview')).today;
@@ -450,6 +455,7 @@ test('user-made games: create, share, play, leaderboard, edit rules, copy, delet
 
 test('history backfill creates past days only on an empty calendar', async () => {
   const t = await withAdmin(setup());
+  t.app.importPack(FILLER(40), 'filler.txt');
   assert.equal(t.app.backfillHistory(10), 10);
   assert.equal(t.app.backfillHistory(10), 0, 'only once');
   await addPlayer(t, 'alice');
@@ -485,17 +491,25 @@ const answerOf: Record<string, string> = {
   'Name a big cat': 'ocelot', 'Name a farm animal': 'llama', 'Name a bird of prey': 'kestrel',
 };
 
-test('practice: unlimited and packs never use scheduled prompts, never count, and track bests', async () => {
+test('practice uses only past days; daily prompts are always brand new', async () => {
   const t = await withAdmin(setup());
   await addPlayer(t, 'alice');
   t.app.importPack(ANIMALS, 'animals.txt');
   const bank = (await t.ok<Api.AdminPromptsResponse>('admin', 'GET', '/api/admin/prompts')).prompts;
+  const id = (text: string): number => must(bank.find(p => p.text === text)).id;
+  const day1 = (await t.ok<Api.AdminOverview>('admin', 'GET', '/api/admin/overview')).today;
+  const animals = ['Name a big cat', 'Name a farm animal', 'Name a bird of prey'];
+  await t.ok('admin', 'PUT', `/api/admin/schedule/${day1}`, { promptIds: animals.map(id) });
+  assert.equal((await t.ok<Api.PracticeHome>('alice', 'GET', '/api/practice')).packs.length, 0, "today's prompts are never practice prompts");
+  t.tick(86400_000); // day 1 is now in the archive: its prompts may be practised
   const d = (await t.ok<Api.AdminOverview>('admin', 'GET', '/api/admin/overview')).today;
   const scheduled = ['Name a red fruit', 'Name a Nordic country'];
-  await t.ok('admin', 'PUT', `/api/admin/schedule/${d}`, { promptIds: scheduled.map(x => must(bank.find(p => p.text === x)).id) });
+  await t.ok('admin', 'PUT', `/api/admin/schedule/${d}`, { promptIds: scheduled.map(id) });
+  // a prompt from another day can never be a daily prompt again
+  assert.equal((await t.call('admin', 'PUT', `/api/admin/schedule/${addDays(d, 1)}`, { promptIds: [id('Name a big cat')] })).status, 409);
 
   const home = await t.ok<Api.PracticeHome>('alice', 'GET', '/api/practice');
-  assert.deepEqual(home.packs.map(p => [p.category, p.prompts]), [['Animals', 3]], 'only categories with 3+ unscheduled prompts are packs');
+  assert.deepEqual(home.packs.map(p => [p.category, p.prompts]), [['Animals', 3]], 'packs come from past days');
 
   // unlimited: runs until three rounds without distance (or the pool runs out)
   const { slug } = await t.ok<Api.SlugResponse>('alice', 'POST', '/api/practice', { kind: 'unlimited', lang: 'en' });
@@ -507,13 +521,14 @@ test('practice: unlimited and packs never use scheduled prompts, never count, an
   seen.push(must(s.current).text);
   const r = await t.ok<Api.GuessResponse>('alice', 'POST', `/api/practice/${slug}/guess`, { text: answerOf[must(s.current).text] });
   assert.equal(r.result, 'accepted');
-  for (let i = 0; i < 3; i++) {
+  while (!s.finished) {
     s = await t.ok<Api.RunState>('alice', 'POST', `/api/practice/${slug}/next`);
     seen.push(must(s.current).text);
     s = await t.ok<Api.RunState>('alice', 'POST', `/api/practice/${slug}/skip`);
   }
-  assert.equal(s.finished, true, 'three misses end unlimited mode');
-  assert.equal(must(s.practice).strikes, 3);
+  assert.equal(seen.length, 3, 'the run ends when the past-day prompts run out');
+  assert.equal(must(s.practice).strikes, 2);
+  for (const x of seen) assert.ok(animals.includes(x), `"${x}" is a past-day prompt`);
   assert.ok(must(s.rounds[1]).example, 'practice rounds may show an example answer right away');
   for (const x of scheduled) assert.ok(!seen.includes(x), `scheduled prompt "${x}" must not appear in practice`);
   assert.equal(new Set(seen).size, seen.length, 'no repeats within a run');
@@ -538,6 +553,13 @@ test('practice: unlimited and packs never use scheduled prompts, never count, an
   assert.equal(must(after.packs[0]).best, 300);
   assert.equal((await t.call('alice', 'POST', '/api/practice', { kind: 'pack', pack: 'Nope', lang: 'en' })).status, 404);
   assert.equal((await t.call('zoe', 'GET', `/api/practice/${slug}`)).status, 401);
+  // the next day is automatic and all new: no prompt from day 1, day 2 or practice
+  t.tick(86400_000);
+  const day3 = (await t.ok<Api.TodayResponse>('alice', 'GET', '/api/today')).date;
+  const sch = await t.ok<Api.ScheduleResponse>('admin', 'GET', `/api/admin/schedule?from=${day3}&to=${day3}`);
+  const fresh = must(sch.days[0]).prompts.map(p => p.text);
+  assert.ok(fresh.length > 0);
+  for (const x of fresh) assert.ok(![...animals, ...scheduled].includes(x), `"${x}" was used before`);
 });
 
 test('friends: follow by username, today and week scores, head-to-head, search', async () => {
@@ -599,6 +621,10 @@ test('party: rooms, turns, used answers, popping fuses, extra lives, a winner', 
   const t = await withAdmin(setup());
   await addPlayer(t, 'alice'); await addPlayer(t, 'zoe');
   t.app.importPack(PARTY_PACK, 'party.txt');
+  const bank = (await t.ok<Api.AdminPromptsResponse>('admin', 'GET', '/api/admin/prompts')).prompts;
+  const d = (await t.ok<Api.AdminOverview>('admin', 'GET', '/api/admin/overview')).today;
+  await t.ok('admin', 'PUT', `/api/admin/schedule/${d}`, { promptIds: ['Name a country in Europe', 'Name a fruit'].map(x => must(bank.find(p => p.text === x)).id) });
+  t.tick(86400_000); // party prompts come from past days
   let s = await t.ok<Api.PartyState>('alice', 'POST', '/api/party', { lang: 'en' });
   const code = s.code;
   assert.match(code, /^[A-Z]{4}$/);

@@ -112,7 +112,7 @@ function DayEditor({ date, today, day, perDay, offDay }: { date: string; today: 
   const results = useMemo(() => {
     const ids = new Set(picked.map(p => p.id)), s = search.trim().toLowerCase();
     return (bank.data?.prompts ?? [])
-      .filter(p => !p.retired && p.answers > 0 && !ids.has(p.id) && (!lang || p.lang === lang) && (!s || p.text.toLowerCase().includes(s) || p.category.toLowerCase().includes(s)))
+      .filter(p => !p.retired && p.answers > 0 && p.used === 0 && !ids.has(p.id) && (!lang || p.lang === lang) && (!s || p.text.toLowerCase().includes(s) || p.category.toLowerCase().includes(s)))
       .sort((a, b) => a.used - b.used)
       .slice(0, 40);
   }, [bank.data, picked, search, lang]);

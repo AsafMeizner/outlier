@@ -31,7 +31,7 @@ export const adminEn = {
   'admin.ov.unused': 'Never used',
   'admin.ov.ahead': 'Days scheduled ahead',
   'admin.ov.daysLeft': 'The bank has unused prompts for about {n} days.',
-  'admin.ov.repeat': 'After that, the least-used prompts repeat.',
+  'admin.ov.repeat': 'Daily prompts never repeat, so import more questions before they run out.',
   'admin.ov.importMore': 'Import more',
   'admin.ov.writeOne': 'Write one',
   'admin.ov.misses': '{n} turned-away answers are waiting for review.',
@@ -45,7 +45,7 @@ export const adminEn = {
 
   // schedule
   'admin.sch.title': 'Schedule',
-  'admin.sch.note': 'Days you leave empty get picked automatically from the least-used prompts when the first player opens the game. Puzzle days and language are set in Settings.',
+  'admin.sch.note': 'Every daily puzzle gets brand-new prompts: a prompt used on one day, or seen in practice, is never a daily prompt again (it moves to practice, packs and party play). Days you leave empty are filled automatically when the first player opens the game. Puzzle days and language are set in Settings.',
   'admin.sch.prefill': 'Pre-fill the next',
   'admin.sch.days': 'days',
   'admin.sch.autofill': 'Auto-fill',
