@@ -119,3 +119,12 @@ Plan (original designs, no krillion assets/names):
   life + new prompt; tier points fill a meter, 100 = extra life (max 5); last player standing wins. Typos confirm.
 - Web for modes done: /practice (Practice.tsx), /practice/:key (Play kind="practice"), /friends, /party, /party/:code
   (web/src/screens/modes/*). Verified with %TEMP%\outlier-shots\modes.mjs (two browser contexts, live party): no errors.
+
+### 2026-11-18 later
+- a976c38: DAILY PROMPTS ARE ALWAYS BRAND NEW (user rule): pickPrompts only takes prompts never used on a day and never
+  practised; admin PUT schedule rejects used prompts (409); practice/packs/party pool = past-day prompts only (and not
+  re-scheduled today/later). Tests use FILLER(n) prompts for multi-day scenarios.
+- 713dcd0: tier 6 "One of a Kind" (150 pts, at most one per prompt; validator/packs/admin enforce). Migration v5 rebuilds
+  `answers` (CHECK 1-6, ids kept) and promotes one tier-5 answer per bank prompt; bank JSON updated the same way.
+- Music rewritten (sfx.ts Music): 32-bar chiptune in A minor, sections A/D (menus) and B/C (rounds, full drums), pulse
+  waves, echo, compressor. Verified non-silent in Chromium via an analyser tap (%TEMP%\outlier-shots\music.mjs).
