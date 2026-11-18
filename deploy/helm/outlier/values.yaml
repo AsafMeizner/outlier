@@ -15,6 +15,13 @@ imagePullSecrets: []
 timeZone: Asia/Jerusalem
 # Past days created on the very first start, for the archive. Each uses brand-new prompts; 0 keeps them all for daily play.
 historyDays: 30
+# Which reverse proxies may set X-Forwarded-For (the client address used by rate limits and the login lockout):
+# "private" (loopback and private networks), or comma-separated addresses / IPv4 CIDRs. Empty = "private" when the
+# Ingress is enabled, otherwise no proxy is trusted.
+trustProxy: ""
+# Mark login cookies Secure. Turned on automatically when ingress.tls.enabled; set it yourself if HTTPS ends at some
+# other proxy in front of the service.
+secureCookies: false
 # Extra environment variables for the container, e.g. [{ name: OUTLIER_DEBUG, value: "1" }].
 extraEnv: []
 

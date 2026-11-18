@@ -42,6 +42,8 @@ Common settings (see `values.yaml` for all):
 | `persistence.keep` | `true` | keep the volume (and data) on `helm uninstall` |
 | `ingress.enabled`, `ingress.host`, `ingress.className`, `ingress.tls.*` | off | expose it through an Ingress |
 | `service.type` / `service.nodePort` | `ClusterIP` | or `NodePort` without an Ingress |
+| `trustProxy` | `private` with an Ingress | proxies allowed to set `X-Forwarded-For` (rate limits, login lockout) |
+| `secureCookies` | on with Ingress TLS | mark login cookies `Secure` when HTTPS ends at a proxy |
 
 ## 3. First-time setup
 
@@ -57,3 +59,5 @@ Open `<address>/setup/<code>` and create the admin account. Then `helm test outl
 - Back up the database: `kubectl -n outlier exec deploy/outlier -- node server/server.ts backup /data/backup.db`,
   then `kubectl cp`. Admins can also download a backup in the browser (Admin -> Import/Export).
 - The container runs as user 1000 with a read-only root filesystem; it writes only to `/data` and `/tmp`.
+- With TLS at the Ingress, also turn on your controller's HTTPS redirect and HSTS (for ingress-nginx:
+  `nginx.ingress.kubernetes.io/ssl-redirect: "true"`; HSTS is on by default there).

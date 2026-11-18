@@ -20,7 +20,8 @@ On first start the server imports the question bank from `bank/packs/`, fills ab
 a one-time setup link (`/setup/<code>`) for creating the admin account.
 
 Settings: `config.json`, or the environment variables `OUTLIER_PORT`, `OUTLIER_HOST`, `OUTLIER_DATA` (data folder),
-`OUTLIER_TLS_CERT`, `OUTLIER_TLS_KEY`.
+`OUTLIER_TLS_CERT`, `OUTLIER_TLS_KEY`. Behind a reverse proxy: `OUTLIER_TRUST_PROXY` (`private`, or addresses/CIDRs of the
+proxies allowed to set `X-Forwarded-For`) and `OUTLIER_SECURE_COOKIES=1` when the proxy terminates HTTPS.
 
 ### Docker
 

@@ -180,3 +180,7 @@ other daily score) -> "New personal best!" + sfx.record + Stage.celebrate().
   Ingress, read-only root as uid 1000 with /tmp emptyDir, startup/readiness/liveness on /api/me, helm test using the
   app image). Tested for real in a throwaway kind cluster in WSL (lint, install from the offline image tarball, helm
   test, setup code, page 200, data survives restart, PVC kept on uninstall). CI runs helm lint. Bundle has kubernetes/.
+- Security follow-up on the chart (automated review): behind an Ingress every request came from the controller's
+  address, so login lockout/guest limits collapsed onto one key. server/proxy.ts: OUTLIER_TRUST_PROXY (private | IPs |
+  IPv4 CIDRs) -> client from X-Forwarded-For only via trusted peers, read right-to-left; OUTLIER_SECURE_COOKIES=1.
+  Chart sets both from ingress.enabled / ingress.tls.enabled (values trustProxy, secureCookies). Verified live.

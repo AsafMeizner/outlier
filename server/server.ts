@@ -13,6 +13,7 @@ import { join, resolve, extname, normalize as normPath, sep } from 'node:path';
 import { networkInterfaces } from 'node:os';
 import { openDb } from './db.ts';
 import { createApp } from './app.ts';
+import { clientIp, trustProxy } from './proxy.ts';
 import { hashPassword, tempPassword } from './auth.ts';
 import type { UserRow, Count } from './rows.ts';
 
@@ -50,7 +51,11 @@ const log = (msg: string): void => {
 
 const db = openDb(join(config.dataDir, 'outlier.db'));
 const secure = !!(config.tlsCert && config.tlsKey);
-const app = createApp({ db, secure, log });
+// Behind a reverse proxy that terminates HTTPS (a Kubernetes Ingress, ...): mark cookies Secure, and read the client
+// address from X-Forwarded-For when the request comes from a trusted proxy (see server/proxy.ts).
+const secureCookies = secure || process.env['OUTLIER_SECURE_COOKIES'] === '1';
+const trusted = trustProxy(process.env['OUTLIER_TRUST_PROXY']);
+const app = createApp({ db, secure: secureCookies, log });
 
 // Starter packs (bank/packs) are imported once per file, so packs shipped in an update reach existing servers on the
 // next start. The list of imported files lives in the settings table under "starterPacks". Prompts already in the
@@ -189,7 +194,7 @@ async function onRequest(req: IncomingMessage, res: ServerResponse): Promise<voi
       return json(res, e instanceof TooLarge ? 413 : 400, { error: e instanceof TooLarge ? e.message : 'Invalid JSON' });
     }
   }
-  const out = await app.handle({ method, path: url.pathname, query: url.searchParams, headers: req.headers, body, ip: req.socket.remoteAddress ?? '' });
+  const out = await app.handle({ method, path: url.pathname, query: url.searchParams, headers: req.headers, body, ip: clientIp(req.socket.remoteAddress ?? '', req.headers['x-forwarded-for'], trusted) });
   if (out.file) {
     send(res, 200, { 'Content-Type': out.file.type, 'Content-Disposition': `attachment; filename="${out.file.name}"`, 'Cache-Control': 'no-store' }, out.file.data);
   } else {

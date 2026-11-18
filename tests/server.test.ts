@@ -5,6 +5,7 @@ import { createApp, type App } from '../server/app.ts';
 import { buildIndex, matchAnswer } from '../server/match.ts';
 import { parseText, parseCsv, toCsv, toText, type PackPrompt } from '../server/packs.ts';
 import { gameDate, weekStartOf, addDays } from '../server/time.ts';
+import { clientIp, trustProxy } from '../server/proxy.ts';
 import type { ApiResponse } from '../server/http.ts';
 import type * as Api from '../shared/api.ts';
 
@@ -127,6 +128,24 @@ test('matching handles plurals, accents, articles, aliases and typos', () => {
   assert.equal(matchAnswer(langs, 'c#')?.index, 2);
   assert.equal(matchAnswer(langs, 'F#')?.index, 3);
   assert.equal(matchAnswer(langs, 'c')?.index, 0);
+});
+
+test('client address behind a reverse proxy: X-Forwarded-For only from trusted proxies', () => {
+  const xff = '203.0.113.9, 10.42.0.7';
+  // no proxy trusted (the default): the socket address, whatever the header says
+  assert.equal(clientIp('10.42.0.5', xff, trustProxy('')), '10.42.0.5');
+  // "private": the ingress controller (10.42.0.5) and the inner hop (10.42.0.7) are skipped; the client is the first public one
+  const priv = trustProxy('private');
+  assert.equal(clientIp('::ffff:10.42.0.5', xff, priv), '203.0.113.9');
+  // a client cannot spoof its address: entries left of an untrusted hop are ignored
+  assert.equal(clientIp('10.42.0.5', '1.2.3.4, 198.51.100.20', priv), '198.51.100.20');
+  // a request straight from the internet keeps its socket address even with a header
+  assert.equal(clientIp('198.51.100.7', '10.0.0.1', priv), '198.51.100.7');
+  // CIDR and exact lists
+  assert.equal(clientIp('192.168.5.20', '203.0.113.9', trustProxy('192.168.5.0/24')), '203.0.113.9');
+  assert.equal(clientIp('192.168.6.20', '203.0.113.9', trustProxy('192.168.5.0/24')), '192.168.6.20');
+  assert.equal(clientIp('127.0.0.1', '203.0.113.9', trustProxy('127.0.0.1')), '203.0.113.9');
+  assert.equal(clientIp('fd00::1', '2001:db8::5', priv), '2001:db8::5');
 });
 
 test('pack formats round-trip', () => {
