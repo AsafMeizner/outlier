@@ -41,6 +41,7 @@ Details: `docs/architecture.md`.
 | Pixel engine + space theme | `web/src/game/engine.ts`, `web/src/game/themes/space/` |
 | Strings (EN/HE) | `web/src/i18n/{en,he,admin-en,admin-he}.ts` |
 | Question packs | `bank/packs/*.json` |
+| Docker / Kubernetes | `Dockerfile`, `deploy/helm/outlier/` (single replica: SQLite + in-memory party rooms) |
 
 ## Rules that are easy to break
 

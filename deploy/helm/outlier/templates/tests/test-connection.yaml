@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ include "outlier.fullname" . }}-test
+  labels:
+    {{- include "outlier.labels" . | nindent 4 }}
+  annotations:
+    helm.sh/hook: test
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+spec:
+  restartPolicy: Never
+  securityContext:
+    {{- toYaml .Values.podSecurityContext | nindent 4 }}
+  containers:
+    # Uses the Outlier image itself, so the test needs no extra image in an offline cluster.
+    - name: http
+      image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
+      securityContext:
+        {{- toYaml .Values.securityContext | nindent 8 }}
+      command:
+        - node
+        - -e
+        - >-
+          fetch('http://{{ include "outlier.fullname" . }}:{{ .Values.service.port }}/api/me')
+          .then(r => r.json()).then(j => { if (!j.settings) throw new Error('no settings'); console.log('ok', j.settings.siteName); })
+          .catch(e => { console.error(e); process.exit(1); })

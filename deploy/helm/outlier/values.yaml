@@ -1,0 +1,73 @@
+# Outlier runs as ONE pod: the database is SQLite on a persistent volume and party rooms live in memory,
+# so it cannot be scaled out. The Deployment uses the Recreate strategy for the same reason.
+
+nameOverride: ""
+fullnameOverride: ""
+
+image:
+  # Offline: load the image from the offline zip into your registry (or the nodes) first, see README.md.
+  repository: outlier
+  tag: offline
+  pullPolicy: IfNotPresent
+imagePullSecrets: []
+
+# The new daily puzzle starts at midnight in this time zone (admins can change it later in Admin -> Settings).
+timeZone: Asia/Jerusalem
+# Past days created on the very first start, for the archive. Each uses brand-new prompts; 0 keeps them all for daily play.
+historyDays: 30
+# Extra environment variables for the container, e.g. [{ name: OUTLIER_DEBUG, value: "1" }].
+extraEnv: []
+
+service:
+  type: ClusterIP
+  port: 80
+  # nodePort: 30080   # only for type NodePort
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  host: outlier.example.internal
+  path: /
+  # TLS terminated at the ingress: name an existing Secret of type kubernetes.io/tls.
+  tls:
+    enabled: false
+    secretName: outlier-tls
+
+persistence:
+  enabled: true
+  # Use an existing PersistentVolumeClaim instead of creating one.
+  existingClaim: ""
+  # Empty = the cluster's default StorageClass.
+  storageClass: ""
+  accessMode: ReadWriteOnce
+  size: 1Gi
+  # Keep the claim (and the database) when the release is uninstalled.
+  keep: true
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 96Mi
+  limits:
+    memory: 512Mi
+
+podSecurityContext:
+  runAsNonRoot: true
+  runAsUser: 1000   # the image's "node" user
+  runAsGroup: 1000
+  fsGroup: 1000
+  seccompProfile:
+    type: RuntimeDefault
+
+securityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  capabilities:
+    drop: [ALL]
+
+podAnnotations: {}
+podLabels: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}

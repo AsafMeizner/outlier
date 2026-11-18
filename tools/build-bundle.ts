@@ -67,6 +67,8 @@ console.log('3/5  Adding Node.js for Windows and Linux');
 cpSync(WIN_NODE, join(STAGE, 'runtime', 'win-x64'), { recursive: true });
 cpSync(LINUX_NODE, join(STAGE, 'runtime', basename(LINUX_NODE)));
 if (dockerArg) { mkdirSync(join(STAGE, 'docker'), { recursive: true }); cpSync(dockerArg, join(STAGE, 'docker', 'outlier-image.tar.gz')); }
+// The Helm chart, next to the image it deploys (it is also in outlier/deploy/helm)
+cpSync(join(ROOT, 'deploy', 'helm', 'outlier'), join(STAGE, 'kubernetes', 'outlier'), { recursive: true });
 
 console.log('4/5  Writing start scripts and instructions');
 writeFileSync(join(STAGE, 'start-windows.bat'), [

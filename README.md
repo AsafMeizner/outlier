@@ -32,6 +32,16 @@ docker run -p 8080:8080 -v outlier-data:/data -e TZ=Asia/Jerusalem outlier
 The setup link is printed in the container log. A new daily puzzle starts at midnight in the server's time zone;
 containers run on UTC unless you set `TZ`. Admins can also pick the time zone and the hour the day starts in Admin → Settings.
 
+### Kubernetes
+
+A Helm chart is in `deploy/helm/outlier` (one pod, SQLite on a persistent volume, optional Ingress, works offline):
+
+```sh
+helm install outlier deploy/helm/outlier -n outlier --create-namespace --set image.repository=<registry>/outlier
+```
+
+See [its README](deploy/helm/outlier/README.md) for loading the image into an offline cluster and all settings.
+
 ## Develop
 
 ```sh

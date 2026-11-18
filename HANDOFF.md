@@ -176,3 +176,7 @@ other daily score) -> "New personal best!" + sfx.record + Stage.celebrate().
 - 8 more packs committed (235 prompts after removing 5 near-duplicates found by a same-language answer-overlap scan):
   en-words-culture (28), en-business-brands (29), en-travel-places, en-everyday-fun, he-words-culture,
   he-business-brands, he-world-travel, he-everyday-fun (28). Bank: 803 prompts (447 EN, 356 HE), 0 errors/warnings.
+- Kubernetes: Helm chart deploy/helm/outlier (Deployment replicas 1 + Recreate, PVC with helm keep, Service, optional
+  Ingress, read-only root as uid 1000 with /tmp emptyDir, startup/readiness/liveness on /api/me, helm test using the
+  app image). Tested for real in a throwaway kind cluster in WSL (lint, install from the offline image tarball, helm
+  test, setup code, page 200, data survives restart, PVC kept on uninstall). CI runs helm lint. Bundle has kubernetes/.

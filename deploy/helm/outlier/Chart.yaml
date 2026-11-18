@@ -1,0 +1,9 @@
+apiVersion: v2
+name: outlier
+description: Outlier, a daily trivia game where rarer answers fly further. One pod, SQLite on a persistent volume, no internet needed.
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+keywords: [trivia, game, offline, air-gapped]
+sources:
+  - https://github.com/AsafMeizner/outlier

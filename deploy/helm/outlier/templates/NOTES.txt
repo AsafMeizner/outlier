@@ -1,0 +1,20 @@
+Outlier is starting (one pod, data on {{ if .Values.persistence.enabled }}the claim {{ include "outlier.claimName" . }}{{ else }}an emptyDir: DATA IS LOST WHEN THE POD GOES{{ end }}).
+
+1. First-time setup: the pod prints a one-time setup code. Read it with
+     kubectl -n {{ .Release.Namespace }} logs deploy/{{ include "outlier.fullname" . }} | grep "setup code"
+   then open <the game's address>/setup/<code> to create the admin account.
+
+2. Open the game:
+{{- if .Values.ingress.enabled }}
+     http{{ if .Values.ingress.tls.enabled }}s{{ end }}://{{ .Values.ingress.host }}{{ .Values.ingress.path }}
+{{- else if eq .Values.service.type "NodePort" }}
+     http://<any node address>:{{ .Values.service.nodePort | default "<the node port: kubectl get svc>" }}/
+{{- else }}
+     kubectl -n {{ .Release.Namespace }} port-forward svc/{{ include "outlier.fullname" . }} 8080:{{ .Values.service.port }}
+     then http://localhost:8080/
+{{- end }}
+
+3. Admin commands run inside the pod, for example:
+     kubectl -n {{ .Release.Namespace }} exec deploy/{{ include "outlier.fullname" . }} -- node server/server.ts reset-password <username>
+
+4. Check it: helm test {{ .Release.Name }} -n {{ .Release.Namespace }}

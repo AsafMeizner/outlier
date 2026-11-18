@@ -82,5 +82,7 @@ Sound (`game/sfx.ts`) is synthesised with Web Audio: effects plus a chiptune sou
 ## Deployment
 
 - Docker: `Dockerfile` (Node 24 slim, data in `/data`). Set `TZ` so the day starts at your midnight.
+- Kubernetes: the Helm chart in `deploy/helm/outlier` (one pod with `Recreate`, a PVC for `/data`, read-only root,
+  optional Ingress; `helm test` uses the app image, so it works offline).
 - Offline: `npm run bundle` builds a zip with Node for Windows and Linux, the source, `node_modules` and start scripts
   (`tools/build-bundle.ts`).

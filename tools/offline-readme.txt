@@ -24,6 +24,11 @@ Docker (Linux x64), if the docker folder is here:
     docker compose up -d
     Set TZ in docker-compose.yml to your time zone. The data lives in the "outlier-data" volume.
 
+Kubernetes (Helm 3), if the docker folder is here:
+    Load docker/outlier-image.tar.gz into your registry or nodes, then
+    helm install outlier kubernetes/outlier -n outlier --create-namespace
+    Full steps (registry, k3s, kind, containerd, Ingress, storage): kubernetes/outlier/README.md
+
 Then open http://<this-computer>:8080 in a browser.
 The first time, the console (or "docker compose logs") prints a setup link with a setup code:
 open it to create the admin account. Players can then sign up, or press "Play now" to play as a guest.
@@ -37,6 +42,8 @@ open it to create the admin account. Players can then sign up, or press "Play no
   outlier/config.json port (default 8080), host, data folder, optional TLS certificate and key
   outlier/bank/packs/ the question packs; they are added to the database on start, each file once
   runtime/            Node.js for Windows (win-x64) and Linux (the .tar.xz)
+  docker/             the Docker image and a docker-compose.yml
+  kubernetes/outlier/ the Helm chart
   SHA256SUMS.txt      checksums of the large files
 
 The new daily puzzle starts at midnight in the server's time zone. You can change the time zone and the hour
