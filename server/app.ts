@@ -126,7 +126,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   const today = (): string => { const s = settings(); return gameDate(now(), s.timeZone, s.dayStartHour); };
   const publicSettings = (): Api.PublicSettings => {
     const s = settings();
-    return { theme: s.theme, puzzleLanguage: s.puzzleLanguage, siteName: s.siteName, tagline: s.tagline, roundSeconds: s.roundSeconds, promptsPerDay: s.promptsPerDay, registration: s.registration, archivePlay: s.archivePlay, guestPlay: s.guestPlay, weekStart: s.weekStart, tiers: TIERS };
+    return { theme: s.theme, puzzleLanguage: s.puzzleLanguage, siteName: s.siteName, tagline: s.tagline, roundSeconds: s.roundSeconds, promptsPerDay: s.promptsPerDay, registration: s.registration, archivePlay: s.archivePlay, guestPlay: s.guestPlay && s.registration === 'open', weekStart: s.weekStart, tiers: TIERS };
   };
 
   for (const p of db.all<{ id: number; text: string }>("SELECT id, text FROM prompts WHERE lang='en'")) if (langOf(p.text) === 'he') db.run("UPDATE prompts SET lang='he' WHERE id=?", p.id);
@@ -602,7 +602,8 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   // Guests: one click on "Play now" creates a player with no username or password chosen yet.
   const guestStarts = new Map<string, number[]>();
   pub('POST', '/api/guest', ({ ip }) => {
-    if (!settings().guestPlay) bad('Guest play is turned off. Sign in or create an account.', 403);
+    // Guest play is a sign-up without a form, so it follows the sign-up rule: only while registration is open.
+    if (!settings().guestPlay || settings().registration !== 'open') bad('Guest play is turned off. Sign in or create an account.', 403);
     if (!hasAdmin()) bad('Finish the first-time setup first.', 403);
     const t = now(), recent = (guestStarts.get(ip) ?? []).filter(x => t - x < 3600_000);
     if (recent.length >= 20) bad('Too many new guests from this computer. Try again later.', 429);
@@ -616,6 +617,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
   // Save a guest's progress as a real account: choose a username and password, keep everything played so far.
   route('POST', '/api/claim', 'user', ({ user, body }) => {
     if (!user.guest) bad('This is already a full account.');
+    if (settings().registration !== 'open') bad('Sign-up is closed. Ask an admin for an account.', 403);
     const username = String(body['username'] ?? '').trim();
     if (!validUsername(username)) bad('Username: 2-32 letters, numbers, dot, dash or underscore');
     if (!validPassword(body['password'])) bad('Password must be at least 8 characters');

@@ -222,6 +222,7 @@ export const adminHe: Record<AdminKey, string> = {
   'admin.s.typo': 'לסלוח על שגיאות כתיב קטנות',
   'admin.s.archive': 'לאפשר לשחק ימים קודמים מהארכיון (לא נספר)',
   'admin.s.guest': 'לאפשר לשחק כאורחים, בלי חשבון',
+  'admin.s.guestNeedsOpen': 'עובד רק כשההרשמה פתוחה',
   'admin.s.calendar': 'לוח שנה',
   'admin.s.timeZone': 'אזור זמן',
   'admin.s.dayStart': 'החידה החדשה מתחילה בשעה (0 = חצות)',

@@ -711,6 +711,11 @@ test('guests: play without an account, then save it; admins can turn guest play 
   await t.ok('gina', 'POST', '/api/login', { username: 'gina', password: 'ginapassword' });
   assert.equal((await t.call('gina', 'POST', '/api/claim', { username: 'gina2', password: 'ginapassword' })).status, 400, 'only guests claim');
   // the admin switch
+  // guest play follows the sign-up rule: closed or invite-only registration turns it off
+  await t.ok('admin', 'PUT', '/api/admin/settings', { registration: 'code', inviteCode: 'secret' });
+  assert.equal((await t.call('guest3', 'POST', '/api/guest')).status, 403, 'no guests while sign-ups need a code');
+  assert.equal((await t.ok<Api.MeResponse>('guest3', 'GET', '/api/me')).settings.guestPlay, false);
+  await t.ok('admin', 'PUT', '/api/admin/settings', { registration: 'open' });
   await t.ok('admin', 'PUT', '/api/admin/settings', { guestPlay: false });
   assert.equal((await t.call('guest2', 'POST', '/api/guest')).status, 403);
   assert.equal((await t.ok<Api.MeResponse>('guest2', 'GET', '/api/me')).settings.guestPlay, false);

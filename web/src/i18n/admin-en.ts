@@ -227,6 +227,7 @@ export const adminEn = {
   'admin.s.typo': 'Forgive small spelling mistakes',
   'admin.s.archive': 'Let players play past days from the archive (not counted)',
   'admin.s.guest': 'Let people play as guests, without an account',
+  'admin.s.guestNeedsOpen': 'only works while sign-ups are open',
   'admin.s.calendar': 'Calendar',
   'admin.s.timeZone': 'Time zone',
   'admin.s.dayStart': 'New puzzle starts at hour (0 = midnight)',
