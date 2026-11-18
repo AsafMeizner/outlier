@@ -23,6 +23,12 @@ export interface FrameState {
   /** ms since the last rejected answer. */
   sinceReject: number;
   missKind: 'timeout' | 'pass' | null;
+  /** Companions travelling with the hero (one per One of a Kind answer); they join one at a time. */
+  companions: number;
+  /** ms since the newest companion joined. */
+  sinceJoin: number;
+  /** ms since the player last tapped the hero. */
+  sincePoke: number;
 }
 
 export interface World {
@@ -33,6 +39,9 @@ export interface World {
   launched?(s: FrameState): void;
   landed?(s: FrameState): void;
   missed?(s: FrameState): void;
+  celebrate?(s: FrameState): void;
+  /** Where the hero was drawn last frame, in art pixels (for taps). */
+  hero?(): { x: number; y: number; r: number } | null;
 }
 
 export interface Zone { id: string; from: number; key: AnyKey }

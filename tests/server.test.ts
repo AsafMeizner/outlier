@@ -296,6 +296,7 @@ test('streaks, archive play and day rollover', async () => {
   await addPlayer(t, 'alice');
   const day1 = (await t.ok<Api.TodayResponse>('alice', 'GET', '/api/today')).date;
   await playDay(t, 'alice', day1, ['strawberry', 'sweden', 'red']);
+  assert.equal((await t.ok<Api.RunState>('alice', 'GET', `/api/play/${day1}`)).record, false, 'a first game is not a record');
   t.tick(86400_000);
   const day2 = (await t.ok<Api.TodayResponse>('alice', 'GET', '/api/today')).date;
   assert.notEqual(day1, day2);
@@ -331,6 +332,7 @@ test('streaks, archive play and day rollover', async () => {
   assert.equal(stats.streak.best, 2);
   assert.equal(stats.bestScore, Math.max(...stats.history.filter(h => h.mode === 'live').map(h => h.score)));
   assert.equal(stats.history.length, 3);
+  assert.equal((await t.ok<Api.RunState>('alice', 'GET', `/api/play/${day3}`)).record, false, 'archive play is never a record');
 });
 
 test('admin: schedule, questions, misses and retro-award, backup', async () => {
@@ -689,6 +691,18 @@ test('one of a kind: at most one tier-6 answer per prompt, worth the most', asyn
   assert.equal(r.points, 150);
   const w = await t.ok<Api.WardrobeResponse>('alice', 'GET', '/api/wardrobe');
   assert.equal(w.stats.outliers, 1, 'One of a Kind counts as an Outlier answer for unlocks');
+  assert.equal((await t.ok<Api.TodayResponse>('alice', 'GET', '/api/today')).uniques, 1, 'one saucer for one One of a Kind');
+  assert.equal((await t.ok<Api.RunState>('alice', 'GET', `/api/play/${d}`)).record, false, 'a first game is not a record');
+  // next day: no points, so no record; the 150-point day is now the record
+  t.tick(86400_000);
+  t.app.importPack('C: Nature\nQ: Name a bush\n1 Rose\n5 Gorse', 'bush.txt');
+  const bush = must((await t.ok<Api.AdminPromptsResponse>('admin', 'GET', '/api/admin/prompts')).prompts.find(p => p.text === 'Name a bush')).id;
+  const d2 = (await t.ok<Api.AdminOverview>('admin', 'GET', '/api/admin/overview')).today;
+  await t.ok('admin', 'PUT', `/api/admin/schedule/${d2}`, { promptIds: [bush] });
+  await playDay(t, 'alice', d2, [null]);
+  assert.equal((await t.ok<Api.RunState>('alice', 'GET', `/api/play/${d2}`)).record, false);
+  assert.equal((await t.ok<Api.RunState>('alice', 'GET', `/api/play/${d}`)).record, true, 'beat every other daily score');
+  assert.equal((await t.ok<Api.TodayResponse>('alice', 'GET', '/api/today')).uniques, 0, 'a new day starts without saucers');
 });
 
 test('guests: play without an account, then save it; admins can turn guest play off', async () => {

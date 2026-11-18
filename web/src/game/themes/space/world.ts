@@ -3,7 +3,7 @@
 //   ASCENT..    sideways through the solar system: orbit, Moon, Mars, asteroid belt, Jupiter, Saturn, Neptune, black hole
 // Every pixel is written by integer drawing calls; colours come from the palette or the wardrobe.
 import type { Look } from '../../../../../shared/wardrobe.ts';
-import { bayer, rng, rotate, rotateCW, type Bmp, type Color } from '../../pixel/bmp.ts';
+import { bayer, rng, rotate, rotateCW, sprite as spriteOf, type Bmp, type Color } from '../../pixel/bmp.ts';
 import type { FrameState, World } from '../types.ts';
 import { P } from './palette.ts';
 import { buildRocket, flame, trailColors, ROCKET_H, ROCKET_W } from './rocket.ts';
@@ -119,6 +119,11 @@ export function createSpaceWorld(initial: Look): World {
   let lastT = 0;
 
   const emit = (p: Omit<Particle, 'age'>): void => { if (parts.length < 400) parts.push({ ...p, age: 0 }); };
+  const ufos: Array<{ x: number; y: number }> = [];
+  let hero: { x: number; y: number; r: number } | null = null;
+  let shooting: { at: number; x0: number; y0: number; vx: number; vy: number } | null = null;
+  let nextShooting = 3000;
+  let lastPoke = -1;
 
   const world: World = {
     get shake() { return shake; },
@@ -131,6 +136,15 @@ export function createSpaceWorld(initial: Look): World {
       ringBurst = { at: s.t, tier };
     },
     missed() { shake = 3; },
+    celebrate() {
+      shake = 6;
+      const h = hero; if (!h) return;
+      for (let i = 0; i < 140; i++) {
+        const th = Math.random() * Math.PI * 2, sp = 0.03 + Math.random() * 0.09;
+        emit({ x: h.x, y: h.y, vx: Math.cos(th) * sp, vy: Math.sin(th) * sp - 0.02, life: 1200 + Math.random() * 900, c: [P.sun, P.pink, P.cyan, P.lime, P.white, P.orange][i % 6] ?? P.white, size: 1 + (i % 2), kind: 'spark' });
+      }
+    },
+    hero: () => hero,
     render(f, s) {
       const dt = s.t - lastT; lastT = s.t;
       f.clip = [0, 0, f.w, f.h];
@@ -141,8 +155,11 @@ export function createSpaceWorld(initial: Look): World {
       const ground0 = H - Math.max(24, Math.round(H * 0.17));
 
       // --- sky: night atmosphere fading into black space
-      sky(f, a);
-      stars(f, s, d, a);
+      const tod = timeOfDay();
+      sky(f, a, tod);
+      stars(f, s, d, a, tod);
+      if (a < 0.7) sunAndMoon(f, d, tod);
+      shootingStar(f, s, a, tod);
 
       // --- far objects: nebulae and planets (only out in space)
       if (d > ASCENT * 0.6) {
@@ -156,18 +173,21 @@ export function createSpaceWorld(initial: Look): World {
           pl.draw(f, x, H * (0.45 + pl.dy), r, s.t);
         }
         blackHole(f, d, heroX, s.t);
+        deepSights(f, d, heroX, s.t);
         asteroids(f, d, heroX, s.t, false);
       }
 
       // --- the launch pad, sliding down as we climb
       const climb = d * H * 0.22; // art px the ground has dropped
-      if (climb < H) pad(f, s, heroX, ground0 + climb, look);
-      clouds(f, d, s.t);
+      if (climb < H) pad(f, s, heroX, ground0 + climb, tod);
+      clouds(f, d, s.t, tod);
 
       // --- the rocket
       const lift = smooth(clamp(d / 3, 0, 1));
       let cy = lerp(ground0 - ROCKET_H / 2 - 1, H * 0.52, lift);
       if (s.mode !== 'fly' && d > 0.5) cy += Math.round(Math.sin(s.t / 600) * 1.5);
+      // tapped: a little hop and a burst of sparkles
+      if (s.sincePoke < 450) cy -= Math.round(Math.sin((s.sincePoke / 450) * Math.PI) * 7);
       const sprite = d < 12 ? up : d < 17 ? diag : side;
       const dir = sprite === up ? { x: 0, y: 1 } : sprite === diag ? { x: -0.7071, y: 0.7071 } : { x: -1, y: 0 };
       // nozzle position relative to the sprite centre
@@ -187,7 +207,15 @@ export function createSpaceWorld(initial: Look): World {
       if (len > 0) flame(f, nx, ny, Math.round(dir.x * 10) / 10 === 0 ? 0 : Math.sign(dir.x), Math.sign(dir.y), len, s.mode === 'fly' ? 4 : 3, look['trail'], s.t);
       trailParticles(s, nx, ny, dir, len);
 
+      // companions fly behind the rocket
+      saucers(f, s, rx, cy, sprite === up, dt);
+
       f.blit(sprite, Math.round(rx - sprite.w / 2), Math.round(cy - sprite.h / 2));
+      hero = { x: rx, y: cy, r: 16 };
+      if (s.sincePoke <= s.dt && lastPoke !== s.t) {
+        lastPoke = s.t;
+        for (let i = 0; i < 14; i++) { const th = (i / 14) * Math.PI * 2; emit({ x: rx, y: cy, vx: Math.cos(th) * 0.05, vy: Math.sin(th) * 0.05 - 0.02, life: 600, c: [P.pink, P.sun, P.cyan, P.lime][i % 4] ?? P.white, size: 1, kind: 'spark' }); }
+      }
       // warning light when the clock runs low
       if (s.clock !== null && s.clock < 0.3 && Math.floor(s.t / 250) % 2 === 0) {
         const lx = sprite === up ? rx : sprite === side ? rx + 6 : rx + 4, ly = sprite === up ? cy - 6 : sprite === side ? cy - 1 : cy - 4;
@@ -196,6 +224,8 @@ export function createSpaceWorld(initial: Look): World {
 
       // foreground asteroids pass in front of the rocket
       if (d > ASCENT) asteroids(f, d, heroX, s.t, true);
+
+      drawShooting(f, s);
 
       // particles
       stepParticles(f, dt);
@@ -234,6 +264,58 @@ export function createSpaceWorld(initial: Look): World {
     if (s.mode === 'miss' && s.modeT < 1200 && Math.random() < 0.3) emit({ x: nx, y: ny, vx: dir.x * 0.02 + (Math.random() - 0.5) * 0.02, vy: dir.y * 0.02 - 0.01, life: 1100, c: Math.random() < 0.5 ? P.gray : P.grayD, size: 3, kind: 'puff' });
   }
 
+  /** One saucer per companion: they trail the rocket, bob, blink, and now and then switch on a tractor beam. */
+  function saucers(f: Bmp, s: FrameState, rx: number, cy: number, upright: boolean, dt: number): void {
+    const n = Math.min(6, s.companions);
+    ufos.length = Math.min(ufos.length, n);
+    for (let i = 0; i < n; i++) {
+      const row = Math.floor(i / 2), side = i % 2 === 0 ? -1 : 1;
+      let tx: number, ty: number;
+      if (upright) { tx = rx + side * (26 + row * 18); ty = cy - 16 - row * 10; }
+      else { tx = rx - 30 - row * 22 - (i % 2) * 8; ty = cy + (side < 0 ? -15 : 13) + row * side * 4; }
+      if (s.mode === 'fly') tx -= 10;
+      ty += Math.sin(s.t / 480 + i * 1.7) * 2;
+      let u = ufos[i];
+      if (!u) { u = s.sinceJoin < 1500 && i === n - 1 ? { x: f.w + 24, y: f.h * 0.12 } : { x: tx, y: ty }; ufos[i] = u; }
+      const k = Math.min(1, dt * (s.mode === 'fly' ? 0.006 : 0.0035));
+      u.x += (tx - u.x) * k; u.y += (ty - u.y) * k;
+      const x = Math.round(u.x), y = Math.round(u.y);
+      // arrival: a sparkly trail while it zooms in
+      if (i === n - 1 && s.sinceJoin < 1300 && Math.random() < 0.6) emit({ x: x + 8, y, vx: 0.03, vy: (Math.random() - 0.5) * 0.02, life: 500, c: Math.random() < 0.5 ? P.lime : P.cyan, size: 1, kind: 'spark' });
+      // tractor beam for a moment every few seconds
+      const beam = (s.t / 1000 + i * 2.3) % 7;
+      if (beam < 1.1 && s.mode !== 'fly') {
+        const h = 22;
+        for (let j = 0; j < h; j++) {
+          const half = 3 + Math.round(j * 0.35);
+          for (let q = -half; q <= half; q++) if (bayer(x + q, y + 5 + j) < 0.28 * (1 - j / h) + 0.04) f.set(x + q, y + 5 + j, P.lime);
+        }
+      }
+      f.blit(SAUCER, x - 10, y - 5);
+      [4, 8, 12, 16].forEach((lx, j) => f.set(x - 10 + lx, y + 1, [P.sun, P.pink, P.lime, P.cyan][(Math.floor(s.t / 160) + j + i) % 4] ?? P.sun));
+    }
+  }
+
+  /** Now and then a shooting star crosses the sky (night on the pad, or anywhere in space). */
+  function shootingStar(f: Bmp, s: FrameState, a: number, tod: TimeOfDay): void {
+    if (s.t < nextShooting || shooting) return;
+    nextShooting = s.t + 5000 + Math.random() * 9000;
+    if (tod === 'day' && a < 0.5) return;
+    const fromLeft = Math.random() < 0.5, speed = 0.16 + Math.random() * 0.1;
+    shooting = { at: s.t, x0: fromLeft ? -10 : f.w + 10, y0: f.h * (0.05 + Math.random() * 0.3), vx: fromLeft ? speed : -speed, vy: 0.05 + Math.random() * 0.04 };
+  }
+  function drawShooting(f: Bmp, s: FrameState): void {
+    if (!shooting) return;
+    const age = s.t - shooting.at;
+    if (age > 1300) { shooting = null; return; }
+    const hx = shooting.x0 + shooting.vx * age, hy = shooting.y0 + shooting.vy * age;
+    for (let i = 0; i < 16; i++) {
+      const px = Math.round(hx - shooting.vx * i * 7), py = Math.round(hy - shooting.vy * i * 7);
+      if (i === 0) f.set(px, py, P.white);
+      else if (bayer(px, py) < 1 - i / 16) f.set(px, py, i < 5 ? P.ice : P.gray);
+    }
+  }
+
   function stepParticles(f: Bmp, dt: number): void {
     for (let i = parts.length - 1; i >= 0; i--) {
       const p = parts[i];
@@ -254,10 +336,22 @@ export function createSpaceWorld(initial: Look): World {
 }
 
 // ---------------------------------------------------------------- scenery
-function sky(f: Bmp, a: number): void {
+type TimeOfDay = 'night' | 'dawn' | 'day' | 'dusk';
+/** The launch pad shows the player's real time of day. */
+function timeOfDay(): TimeOfDay {
+  const d = new Date(), h = d.getHours() + d.getMinutes() / 60;
+  return h < 5.5 || h >= 19.5 ? 'night' : h < 7 ? 'dawn' : h < 17.5 ? 'day' : 'dusk';
+}
+const SKY_LOW: Record<TimeOfDay, [Color[], Color[]]> = {
+  night: [[P.night, P.violet, P.purpleD, P.purple], [P.black, P.night, P.violet, P.purpleD]],
+  dawn: [[P.navyM, P.purpleD, P.pink, P.sand], [P.night, P.violet, P.purpleD, P.pink]],
+  day: [[P.blue, P.blue, P.sky, P.ice], [P.night, P.navyM, P.blue, P.sky]],
+  dusk: [[P.navyM, P.purple, P.pink, P.orange], [P.night, P.violet, P.purple, P.pink]],
+};
+
+function sky(f: Bmp, a: number, tod: TimeOfDay): void {
   const stages: Color[][] = [
-    [P.night, P.violet, P.purpleD, P.purple],
-    [P.black, P.night, P.violet, P.purpleD],
+    ...SKY_LOW[tod],
     [P.black, P.black, P.night, P.violet],
     [P.black, P.black, P.black, P.night],
   ];
@@ -276,7 +370,8 @@ function sky(f: Bmp, a: number): void {
   }
 }
 
-function stars(f: Bmp, s: FrameState, d: number, a: number): void {
+function stars(f: Bmp, s: FrameState, d: number, a: number, tod: TimeOfDay): void {
+  const base = tod === 'night' ? 0.25 : tod === 'day' ? 0 : 0.08;
   const layers = [
     { n: 70, speed: 0.15, seed: 11, c: P.gray },
     { n: 40, speed: 0.45, seed: 23, c: P.grayL },
@@ -288,7 +383,7 @@ function stars(f: Bmp, s: FrameState, d: number, a: number): void {
     const r = rng(L.seed);
     for (let i = 0; i < L.n; i++) {
       const x0 = r() * 4000, y0 = r() * 4000, tw = r() * 6, show = r();
-      if (show > 0.25 + a * 0.75) continue; // a few stars even at the pad (it's night), all of them in space
+      if (show > base + a * (1 - base)) continue; // a few stars at the pad at night, none by day, all of them in space
       const x = space ? mod(x0 - d * SCROLL * L.speed, f.w) : mod(x0, f.w);
       const y = space ? mod(y0, f.h) : mod(y0 + climb * L.speed * 0.3, f.h);
       const on = Math.sin(s.t / 400 + tw) > -0.4;
@@ -304,18 +399,18 @@ function stars(f: Bmp, s: FrameState, d: number, a: number): void {
   }
 }
 
-function pad(f: Bmp, s: FrameState, heroX: number, gy: number, look: Look): void {
-  void look;
+function pad(f: Bmp, s: FrameState, heroX: number, gy: number, tod: TimeOfDay): void {
   const W = f.w, H = f.h;
   gy = Math.round(gy);
-  // horizon glow and mountains
-  f.dither(0, gy - 22, W, 14, P.pink, 0.12);
+  // horizon glow and mountains, coloured by the time of day
+  const [glow, fill, ridge] = tod === 'day' ? [P.white, P.blueD, P.navyM] : tod === 'night' ? [P.pink, P.violet, P.purpleD] : [P.orange, P.purpleD, P.purple];
+  f.dither(0, gy - 22, W, 14, glow, 0.12);
   const r = rng(12);
   let h = 0;
   for (let x = 0; x < W; x++) {
     h += (r() - 0.5) * 1.6; h = clamp(h, -8, 6);
     const top = Math.round(gy - 16 + h);
-    f.rect(x, top, 1, gy - top + 1, P.violet); f.set(x, top, P.purpleD);
+    f.rect(x, top, 1, gy - top + 1, fill); f.set(x, top, ridge);
   }
   // ground with a dithered edge
   f.rect(0, gy, W, H - gy + 200, P.grayD);
@@ -340,7 +435,7 @@ function pad(f: Bmp, s: FrameState, heroX: number, gy: number, look: Look): void
   }
 }
 
-function clouds(f: Bmp, d: number, t: number): void {
+function clouds(f: Bmp, d: number, t: number, tod: TimeOfDay): void {
   if (d < 1 || d > ASCENT * 0.9) return;
   const k = d / (ASCENT * 0.9);
   const r = rng(5);
@@ -349,7 +444,9 @@ function clouds(f: Bmp, d: number, t: number): void {
     const y = Math.round(mod(y0 + d * f.h * 0.5, f.h * 6) - f.h * 2.5);
     if (y < -20 || y > f.h + 20) continue;
     const x = Math.round(x0 + Math.sin(t / 3000 + i) * 4), s = 0.8 + r() * 0.8;
-    const top = k < 0.5 ? P.purple : P.purpleD, sh = k < 0.5 ? P.purpleD : P.violet;
+    const day = tod === 'day';
+    const top = day ? (k < 0.5 ? P.white : P.grayL) : k < 0.5 ? P.purple : P.purpleD;
+    const sh = day ? (k < 0.5 ? P.grayL : P.gray) : k < 0.5 ? P.purpleD : P.violet;
     for (const [dx, dy, rr] of [[0, 4, 5], [7, 0, 7], [15, 3, 6], [21, 5, 4]] as const) f.circle(x + dx * s, y + dy * s, Math.round(rr * s), sh);
     for (const [dx, dy, rr] of [[0, 4, 5], [7, 0, 7], [15, 3, 6], [21, 5, 4]] as const) f.circle(x + dx * s, y + dy * s - 1, Math.round(rr * s), top);
   }
@@ -359,6 +456,9 @@ function nebula(f: Bmp, d: number, vis: number): void {
   const zones = [
     { at: 60, c: P.purpleD }, { at: 150, c: P.redD }, { at: 240, c: P.navyM }, { at: 330, c: P.violet }, { at: 420, c: P.blueD }, { at: 520, c: P.purple },
   ];
+  // past the black hole the colours keep coming, forever
+  const cycle = [P.navyM, P.purpleD, P.redD, P.blueD, P.violet, P.greenD];
+  for (let k = Math.max(0, Math.floor((d - 610) / 90) - 1), end = k + 3; k < end; k++) zones.push({ at: 610 + k * 90, c: cycle[k % cycle.length] ?? P.navyM });
   for (const z of zones) {
     const cx = f.w * 0.5 + (z.at - d) * BODY * 0.6, cy = f.h * 0.35;
     const rx = f.w * 0.7, ry = f.h * 0.3;
@@ -451,5 +551,146 @@ function blackHole(f: Bmp, d: number, heroX: number, t: number): void {
   f.circle(x, y, r, P.black);
   for (let i = 0; i < 80; i++) { const th = (i / 80) * Math.PI * 2; f.set(Math.round(x + Math.cos(th) * (r + 2)), Math.round(y + Math.sin(th) * (r + 2)), P.sun); }
 }
+
+/** The Sun by day (low and orange at dawn and dusk) or a crescent Moon at night, over the launch pad. */
+function sunAndMoon(f: Bmp, d: number, tod: TimeOfDay): void {
+  const drop = d * f.h * 0.12;
+  const x = Math.round(f.w * 0.8);
+  if (tod === 'night') {
+    const y = Math.round(f.h * 0.18 + drop), r = 6;
+    f.circle(x, y, r, P.sand);
+    f.circle(x + 3, y - 2, r, P.night);
+    return;
+  }
+  const y = Math.round((tod === 'day' ? f.h * 0.16 : f.h * 0.62) + drop), r = tod === 'day' ? 7 : 10;
+  for (let j = -r - 4; j <= r + 4; j++) for (let i = -r - 4; i <= r + 4; i++) {
+    const q = Math.hypot(i, j);
+    if (q > r && q < r + 4 && bayer(x + i, y + j) < (r + 4 - q) / 8) f.set(x + i, y + j, tod === 'day' ? P.white : P.sun);
+  }
+  f.circle(x, y, r, tod === 'day' ? P.sun : P.orange);
+  f.circle(x - 1, y - 1, r - 2, tod === 'day' ? P.white : P.sun);
+}
+
+// ---------------------------------------------------------------- endless deep space
+// Past the black hole there is always something new: one sight every 80 points, forever.
+// The first five are fixed (and have landmarks); after that the type is picked from the index.
+type SightKind = 'galaxy' | 'twins' | 'ringworld' | 'pulsar' | 'comet' | 'jungle';
+const FIRST_SIGHTS: SightKind[] = ['galaxy', 'twins', 'ringworld', 'pulsar', 'comet'];
+const ALL_SIGHTS: SightKind[] = ['galaxy', 'twins', 'ringworld', 'pulsar', 'comet', 'jungle'];
+const SIGHT_AT = 640, SIGHT_GAP = 80;
+const hash = (k: number): number => { let n = Math.imul(k + 1, 2654435761) >>> 0; n = Math.imul(n ^ (n >>> 15), 2246822519) >>> 0; return (n ^ (n >>> 13)) >>> 0; };
+
+function deepSights(f: Bmp, d: number, heroX: number, t: number): void {
+  if (d < SIGHT_AT - 90) return;
+  const k0 = Math.max(0, Math.floor((d - SIGHT_AT) / SIGHT_GAP) - 1);
+  for (let k = k0; k <= k0 + 3; k++) {
+    const at = SIGHT_AT + k * SIGHT_GAP, x = Math.round(heroX + (at - d) * BODY + f.w * 0.32);
+    if (x < -f.w * 0.6 || x > f.w * 1.6) continue;
+    const h = hash(k), kind = k < FIRST_SIGHTS.length ? FIRST_SIGHTS[k] : ALL_SIGHTS[h % ALL_SIGHTS.length];
+    const y = Math.round(f.h * (0.26 + ((h >> 8) % 14) / 100)), R = Math.round(f.h * 0.15);
+    const tint = (h >> 4) % 4;
+    switch (kind) {
+      case 'galaxy': galaxy(f, x, y, R * 1.3, t, k, tint); break;
+      case 'twins': twinSuns(f, x, y, R, t); break;
+      case 'ringworld': ringWorld(f, x, y, R, t, tint); break;
+      case 'pulsar': pulsar(f, x, y, R, t); break;
+      case 'comet': comet(f, x, y, t); break;
+      default: jungleWorld(f, x, y, R, tint); break;
+    }
+  }
+}
+
+function galaxy(f: Bmp, x: number, y: number, R: number, t: number, seed: number, tint: number): void {
+  const [inner, outer] = ([[P.sun, P.pink], [P.ice, P.purple], [P.pinkL, P.cyan], [P.sand, P.orange]] as const)[tint] ?? [P.sun, P.pink];
+  const r = rng(seed * 31 + 7), spin = t / 12000, tilt = 0.62;
+  for (let i = 0; i < 900; i++) {
+    const arm = i % 2, k = r();
+    const rad = 3 + k * R, th = Math.log(rad) * 2.6 + arm * Math.PI + spin + (r() - 0.5) * (0.35 + k * 0.3);
+    const px = Math.round(x + Math.cos(th) * rad * 1.25), py = Math.round(y + Math.sin(th) * rad * tilt);
+    f.set(px, py, k < 0.3 ? inner : r() < 0.75 ? outer : P.white);
+  }
+  for (let i = 0; i < 160; i++) { const th = r() * Math.PI * 2, rad = r() * R; if (bayer(i, i * 3) < 0.6) f.set(Math.round(x + Math.cos(th) * rad * 1.25), Math.round(y + Math.sin(th) * rad * tilt), P.grayD); }
+  for (let j = -4; j <= 4; j++) for (let i = -7; i <= 7; i++) if ((i / 7) ** 2 + (j / 4) ** 2 < 1 && bayer(x + i, y + j) < 0.8) f.set(x + i, y + j, i * i + j * j < 6 ? P.white : inner);
+}
+
+function twinSuns(f: Bmp, x: number, y: number, R: number, t: number): void {
+  const a = t / 2600;
+  const glow = (cx: number, cy: number, r: number, c: Color, core: Color): void => {
+    for (let j = -r * 2; j <= r * 2; j++) for (let i = -r * 2; i <= r * 2; i++) {
+      const q = Math.hypot(i, j) / r;
+      if (q > 1 && q < 2 && bayer(cx + i, cy + j) < (2 - q) * 0.45) f.set(cx + i, cy + j, c);
+    }
+    f.circle(cx, cy, r, c); f.circle(cx - 1, cy - 1, Math.max(1, r - 2), core);
+  };
+  const ox = Math.round(Math.cos(a) * R * 0.9), oy = Math.round(Math.sin(a) * R * 0.3);
+  const first = (): void => glow(x + ox, y + oy, Math.round(R * 0.38), P.orange, P.sun);
+  const second = (): void => glow(x - ox, y - oy, Math.round(R * 0.26), P.blue, P.ice);
+  if (Math.sin(a) < 0) { first(); second(); } else { second(); first(); }
+}
+
+function ringWorld(f: Bmp, x: number, y: number, R: number, t: number, tint: number): void {
+  const [base, dark, band] = ([[P.green, P.greenD, P.lime], [P.pink, P.purple, P.pinkL], [P.cyan, P.blueD, P.ice], [P.orange, P.redD, P.sand]] as const)[tint] ?? [P.green, P.greenD, P.lime];
+  const ring = (front: boolean): void => {
+    for (let a = 0; a < 700; a++) {
+      const th = (a / 700) * Math.PI * 2, s2 = Math.sin(th);
+      if (front ? s2 < 0 : s2 >= 0) continue;
+      for (const [k, c] of [[1.5, band], [1.62, P.white], [1.74, band]] as const) {
+        const rx = Math.cos(th) * R * k, ry = s2 * R * k * 0.35;
+        f.set(Math.round(x + rx * 0.94 - ry * 0.34), Math.round(y + ry * 0.94 + rx * 0.34), c);
+      }
+    }
+  };
+  ring(false);
+  ball(f, x, y, R * 0.75, base, dark, (_i, j) => (Math.floor((j + 1) * 4) % 2 === 0 ? band : 0));
+  ring(true);
+  const m = t / 3000;
+  f.circle(Math.round(x + Math.cos(m) * R * 2.1), Math.round(y + Math.sin(m) * R * 0.5), 2, P.grayL);
+}
+
+function pulsar(f: Bmp, x: number, y: number, R: number, t: number): void {
+  const a = t / 260;
+  for (const s of [0, Math.PI]) {
+    for (let i = 4; i < R * 2.4; i++) {
+      for (const w of [-2, -1, 0, 1, 2]) {
+        const th = a + s + w * 0.035, px = Math.round(x + Math.cos(th) * i), py = Math.round(y + Math.sin(th) * i * 0.6);
+        if (bayer(px, py) < (1 - i / (R * 2.4)) * (w === 0 ? 1.2 : 0.8)) f.set(px, py, w === 0 ? P.white : Math.abs(w) === 1 ? P.ice : P.cyan);
+      }
+    }
+  }
+  for (let j = -9; j <= 9; j++) for (let i = -9; i <= 9; i++) { const q = Math.hypot(i, j); if (q < 9 && bayer(x + i, y + j) < (9 - q) / 9) f.set(x + i, y + j, P.cyan); }
+  f.circle(x, y, 3, P.ice); f.circle(x, y, 2, P.white);
+}
+
+function comet(f: Bmp, x: number, y: number, t: number): void {
+  const wob = Math.round(Math.sin(t / 700));
+  for (let i = 0; i < 90; i++) for (let j = -9; j <= 9; j++) {
+    const spread = 2 + i * 0.09;
+    if (Math.abs(j) > spread) continue;
+    const px = x + 3 + i, py = y + j + Math.round(i * 0.12) + (i > 40 ? wob : 0);
+    if (bayer(px, py) < (1 - i / 90) * (1 - Math.abs(j) / (spread + 1)) * 0.9) f.set(px, py, i < 18 ? P.white : j % 3 === 0 ? P.cyan : P.ice);
+  }
+  f.circle(x, y, 5, P.ink); f.circle(x, y, 4, P.ice); f.circle(x - 1, y - 1, 2, P.white);
+}
+
+function jungleWorld(f: Bmp, x: number, y: number, R: number, tint: number): void {
+  const [sea, land] = ([[P.purple, P.lime], [P.blueD, P.green], [P.redD, P.sun], [P.navyM, P.pink]] as const)[tint] ?? [P.purple, P.lime];
+  ball(f, x, y, R * 0.9, sea, P.night, (i, j) => {
+    const n = noise(i * 3 + tint * 10, j * 3, 9);
+    return n > 0.62 ? land : n > 0.57 ? P.white : 0;
+  });
+  for (let a = 0; a < 3; a++) f.circle(Math.round(x + Math.cos(a * 2.1) * R * 1.35), Math.round(y + Math.sin(a * 2.1) * R * 0.9), 1 + (a % 2), P.grayL);
+}
+
+const SAUCER = spriteOf([
+  '.......kkkkkkk.......',
+  '......kcclllcck......',
+  '......kclelelck......',
+  '......kcclllcck......',
+  '...kkkkkkkkkkkkkkk...',
+  '..kwGGGGGGGGGGGGGgk..',
+  '.kGGyGGGyGGGyGGGyGgk.',
+  '..kgggggggggggggggk..',
+  '....kkkkkkkkkkkkk....',
+], { k: P.ink, c: P.cyan, l: P.lime, e: P.ink, w: P.white, G: P.grayL, g: P.gray, y: P.sun });
 
 export { ROCKET_W };

@@ -107,6 +107,19 @@ class Sfx {
   }
   /** New wardrobe items. */
   unlock(): void { this.notes([79, 83, 86, 91, 95], 0.06, 0.12, 'triangle', 0.12); }
+  /** A saucer arrives: a wobbly theremin swoop and three beeps. */
+  alien(): void {
+    const ac = this.ac(); if (!ac) return;
+    const t = ac.currentTime, o = ac.createOscillator(), lfo = ac.createOscillator(), depth = ac.createGain();
+    o.type = 'sine'; o.frequency.setValueAtTime(380, t); o.frequency.exponentialRampToValueAtTime(1150, t + 0.7); o.frequency.exponentialRampToValueAtTime(700, t + 1);
+    lfo.frequency.value = 11; depth.gain.value = 60; lfo.connect(depth); depth.connect(o.frequency);
+    this.env(ac, o, t, 0.05, 0.12, 1); o.start(t); lfo.start(t); o.stop(t + 1.1); lfo.stop(t + 1.1);
+    [1320, 990, 1480].forEach((f, i) => this.tone('square', f, f, 0.05, 0.05, 1.05 + i * 0.09));
+  }
+  /** Tapping the rocket. */
+  boop(): void { this.tone('sine', 260, 620, 0.12, 0.18); this.tone('square', 900, 1300, 0.04, 0.03, 0.08); }
+  /** A new personal best. */
+  record(): void { this.notes([72, 76, 79, 84, 79, 84, 88], 0.09, 0.16, 'square', 0.07); }
 }
 export const sfx = new Sfx();
 

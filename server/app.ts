@@ -302,7 +302,13 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
       date: run.date, dayNumber: isGameKey(run.date) ? null : dayNumber(run.date), mode: run.mode, game: gameRef(run.date),
       total: prompts.length, position: run.position, score: run.score, finished: !!run.finished_at, roundSeconds: s.roundSeconds,
       serverNow: now(), rounds, current, upNext,
+      record: !!run.finished_at && run.mode === 'live' && !isGameKey(run.date) && isRecord(run),
     };
+  }
+  /** Beat every earlier finished daily score (and there was at least one earlier game). */
+  function isRecord(run: RunRow): boolean {
+    const prev = db.get<{ n: number; best: number | null }>("SELECT COUNT(*) AS n, MAX(score) AS best FROM runs WHERE user_id=? AND mode='live' AND finished_at IS NOT NULL AND date<>? AND date NOT LIKE 'g-%'", run.user_id, run.date);
+    return !!prev?.n && run.score > (prev.best ?? 0);
   }
   function loadRun(user: UserRow, date: string, { create = false } = {}): { run: RunRow; prompts: DayPrompt[] } {
     if (isGameKey(date)) {
@@ -669,6 +675,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
       players: count("SELECT COUNT(*) AS n FROM runs WHERE date=? AND mode='live' AND finished_at IS NOT NULL", t),
       status: !settled ? 'new' : settled.finished_at ? 'done' : 'playing',
       score: settled?.score ?? null, streak: streakOf(user.id),
+      uniques: settled ? count('SELECT COUNT(*) AS n FROM rounds WHERE run_id=? AND tier=6 AND points>0', settled.id) : 0,
     };
   });
   route('POST', `/api/play/${KEY}/start`, 'user', ({ user, m }): Api.RunState => { const { run, prompts } = loadRun(user, param(m, 1), { create: true }); return runState(run, prompts); });

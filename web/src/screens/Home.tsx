@@ -27,6 +27,7 @@ export function Home() {
     if (!s || !data) return;
     s.setClock(null);
     if (!s.busy) s.setPosition(data.score ?? 0);
+    s.setCompanions(data.uniques);
   }, [scene, data]);
 
   const go = (): void => void navigate('/play');

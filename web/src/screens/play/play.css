@@ -342,3 +342,8 @@
 .answerbar-again { flex-basis: 100%; font-size: 0.85rem; color: var(--text-2); }
 .answerbar.is-confirm .answerbar-go { --face: var(--highlight); --hi: var(--text); --lo: var(--accent-lo); --fg: var(--highlight-text); }
 .daydone-note { flex-basis: 100%; margin: 0 0 calc(var(--u) * 2); color: var(--text-2); }
+
+/* a new personal best */
+.daydone-record { margin: 0; font-family: var(--pixel); font-size: 1.4rem; color: var(--t6, #ffcc33); text-shadow: 0 2px 0 var(--ink); animation: record-pulse 0.9s steps(2) infinite; }
+@keyframes record-pulse { 50% { color: var(--accent); } }
+@media (prefers-reduced-motion: reduce) { .daydone-record { animation: none; } }

@@ -59,6 +59,14 @@ function PlayRun({ runKey, base }: { runKey: string; base: string }) {
   /** A typo-corrected match waiting for a second Enter. */
   const [suggestion, setSuggestion] = useState<{ raw: string; answer: string } | null>(null);
   const [newItems, setNewItems] = useState(false);
+  /** One of a Kind answers in this run: each brings a saucer along. */
+  const uniques = run ? run.rounds.filter(r => r.tier >= 6 && r.points > 0).length : null;
+  const uniquesSeen = useRef<number | null>(null);
+  useEffect(() => {
+    if (uniques === null) return;
+    scene.get()?.setCompanions(uniques, uniquesSeen.current !== null && uniques > uniquesSeen.current);
+    uniquesSeen.current = uniques;
+  }, [uniques, scene]);
   const unlocksBefore = useRef<number | null>(unlockedCount(qc.getQueryData<WardrobeResponse>(keys.wardrobe)));
 
   const apply = useCallback(
@@ -181,12 +189,13 @@ function PlayRun({ runKey, base }: { runKey: string; base: string }) {
     const s = scene.get();
     const land = (): void => {
       setShownScore(run.score);
+      if (tier >= 6) window.setTimeout(() => toast(t('play.friendJoined'), 'good'), 1500);
       if (r) setPhase({ k: 'result', round: r, same });
     };
     if (!s) { land(); return; }
     s.charge(false);
     s.launch({ points, tier, onLand: land });
-  }, [phase, run, scene]);
+  }, [phase, run, scene, toast, t]);
 
   const afterResult = useCallback(() => {
     if (!run) return;

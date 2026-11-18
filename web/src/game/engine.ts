@@ -53,6 +53,12 @@ export class Stage {
   private missKind: 'timeout' | 'pass' | null = null;
   private dist = 0;
   private clock: number | null = null;
+  private companionsWanted = 0;
+  private companionsShown = 0;
+  private announce = false;
+  private joinAt = -1e9;
+  private pokeAt = -1e9;
+  private readonly onPointer = (e: PointerEvent): void => this.poke(e);
 
   rtl: boolean;
   sound: boolean;
@@ -78,9 +84,10 @@ export class Stage {
       this.raf = requestAnimationFrame(loop);
     };
     this.raf = requestAnimationFrame(loop);
+    window.addEventListener('pointerdown', this.onPointer);
   }
 
-  destroy(): void { this.alive = false; cancelAnimationFrame(this.raf); this.ro.disconnect(); }
+  destroy(): void { this.alive = false; cancelAnimationFrame(this.raf); this.ro.disconnect(); window.removeEventListener('pointerdown', this.onPointer); }
 
   setTheme(theme: ThemeModule, look: Look): void { this.theme = theme; this.world = theme.createWorld(look); }
   setLook(look: Look): void { this.world.setLook(look); }
@@ -94,6 +101,15 @@ export class Stage {
     this.dist = points; this.flight = null; this.setMode('idle');
   }
   setClock(left: number | null): void { this.clock = left; }
+  /**
+   * How many companions fly along. With announce, new ones arrive one by one (after any flight) with a sound;
+   * without it (loading a page) they are simply there.
+   */
+  setCompanions(n: number, announce = false): void {
+    this.companionsWanted = Number.isFinite(n) ? Math.max(0, Math.floor(n)) : 0;
+    if (!announce || n < this.companionsShown) { this.companionsShown = this.companionsWanted; return; }
+    this.announce = true;
+  }
   /** Build-up while the tier reveal plays. */
   charge(on = true): void {
     if (this.mode === 'fly') return;
@@ -121,9 +137,25 @@ export class Stage {
     window.setTimeout(() => sfx.sad(), kind === 'timeout' ? 550 : 0);
   }
 
+  /** Confetti and a shake, for a new personal best. */
+  celebrate(): void { this.world.celebrate?.(this.state(0)); }
+
   reject(): void { this.rejectAt = this.t; if (this.sound) sfx.buzz(); }
 
   // ---------- internals ----------
+  /** A tap on the hero (not on a panel or control) makes it hop and boop. */
+  private poke(e: PointerEvent): void {
+    const el = e.target instanceof Element ? e.target : null;
+    if (el?.closest('button, a, input, textarea, select, label, .px-window, .menu-layer, .hud, .toast')) return;
+    const h = this.world.hero?.(); if (!h) return;
+    const r = this.canvas.getBoundingClientRect();
+    let x = (e.clientX - r.left) / this.scale; const y = (e.clientY - r.top) / this.scale;
+    if (this.rtl) x = this.frame.w - x;
+    if (Math.hypot(x - h.x, y - h.y) > h.r) return;
+    this.pokeAt = this.t;
+    if (this.sound) sfx.boop();
+  }
+
   private setMode(m: Mode): void { this.mode = m; this.modeAt = this.t; }
 
   private resize(): void {
@@ -145,11 +177,17 @@ export class Stage {
       t: this.t, dt, dist: this.dist, mode: this.mode, modeT: this.t - this.modeAt,
       flight: f ? { from: f.from, to: f.to, k: f.landed ? 1 : easeOut(Math.min(1, (this.t - f.start) / f.dur)), tier: f.tier } : null,
       clock: this.clock, sinceReject: this.t - this.rejectAt, missKind: this.missKind,
+      companions: this.companionsShown, sinceJoin: this.t - this.joinAt, sincePoke: this.t - this.pokeAt,
     };
   }
 
   private step(dt: number): void {
     const f = this.flight;
+    // companions earned this run join one at a time, never mid-flight
+    if (this.companionsShown < this.companionsWanted && (this.mode === 'idle' || this.mode === 'miss') && this.t - this.joinAt > 900) {
+      this.companionsShown++; this.joinAt = this.t;
+      if (this.announce && this.sound) sfx.alien();
+    }
     if (this.mode === 'fly' && f) {
       const k = Math.min(1, (this.t - f.start) / f.dur);
       this.dist = f.from + (f.to - f.from) * easeOut(k);

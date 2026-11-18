@@ -141,3 +141,19 @@ Plan (original designs, no krillion assets/names):
 - 2026-11-18 noon: day rollover at midnight Israel time: Coolify env TZ=Asia/Jerusalem added (container was UTC, so days
   flipped at 02:00 local). Client: app/DayRollover.tsx sets a timer for /api/today endsAt and refetches every query.
   The intro card no longer shows the category (UpNext = {position, lang}). Mars got ragged polar caps.
+
+## 2026-11-18 afternoon: phase "fun" (user: far space is empty; alien ship companion like a reward; "find all these fun small things")
+Plan (original designs; DONE, see below):
+1. Endless deep space past the black hole (560): procedural sights every ~70 pts forever (galaxies, ringed alien worlds,
+   twin suns, pulsars, comets), nebula colours keep cycling, more zones/landmarks after 560.
+2. Alien saucer companion: each One of a Kind (tier 6) in a run adds a saucer that follows the rocket (rest of that run,
+   and on Home for the day). Stage.setCompanions(n) -> FrameState.companions -> world draws them.
+3. Small fun: shooting stars/comets, pilot blinks, tap-the-rocket boop, real time-of-day sky on the pad,
+   "new personal best" celebration.
+Shipped: world.ts deepSights() (galaxy, twin suns, ring world, pulsar, comet, jungle world every 80 pts from 640,
+forever; drawn ahead of the rocket), nebula colours cycle, zones intergalactic (600) / unknown (1000), landmarks
+640-1000. Saucers: Stage.setCompanions(n, announce) -> FrameState.companions; TodayResponse.uniques feeds Home,
+Play counts tier-6 rounds; joins only when idle, sfx.alien + toast. Tap the rocket: Stage listens to window
+pointerdown (ignores panels/controls), world.hero() hit-test, hop + sparkles + sfx.boop. Pad sky follows the
+player's clock (night/dawn/day/dusk, sun or moon, no stars by day). Shooting stars. RunState.record (beat every
+other daily score) -> "New personal best!" + sfx.record + Stage.celebrate().

@@ -22,6 +22,8 @@ export const space: ThemeModule = {
     { id: 'saturn', from: 360, key: 'space.zone.saturn' },
     { id: 'neptune', from: 440, key: 'space.zone.neptune' },
     { id: 'deep', from: 520, key: 'space.zone.deep' },
+    { id: 'intergalactic', from: 600, key: 'space.zone.intergalactic' },
+    { id: 'unknown', from: 1000, key: 'space.zone.unknown' },
   ],
   landmarks: [
     { at: 5, key: 'space.lm.clouds' },
@@ -34,6 +36,12 @@ export const space: ThemeModule = {
     { at: 400, key: 'space.lm.saturn' },
     { at: 470, key: 'space.lm.neptune' },
     { at: 560, key: 'space.lm.blackhole' },
+    { at: 640, key: 'space.lm.galaxy' },
+    { at: 720, key: 'space.lm.twins' },
+    { at: 800, key: 'space.lm.ringworld' },
+    { at: 880, key: 'space.lm.pulsar' },
+    { at: 960, key: 'space.lm.comet' },
+    { at: 1000, key: 'space.lm.uncharted' },
   ],
   copy: { pitch: 'space.pitch', how: 'space.how', launch: 'space.launch', wardrobeNote: 'space.wardrobeNote', party: 'space.party', partyTagline: 'space.partyTagline' },
   css: {

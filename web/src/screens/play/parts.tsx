@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'rea
 import { Link, useNavigate } from 'react-router';
 import type { CurrentRound, RoundSummary, RunState, SlugResponse } from '../../../../shared/api.ts';
 import { api } from '../../lib/api.ts';
-import { useDistance, useFlight, useZoneName } from '../../app/stage-context.tsx';
+import { useDistance, useFlight, useZoneName, useStage } from '../../app/stage-context.tsx';
 import { useI18n, type AnyKey } from '../../i18n/index.tsx';
 import { sfx } from '../../game/sfx.ts';
 import { PixelIcon } from '../../ui/PixelIcon.tsx';
@@ -270,6 +270,12 @@ function DailyDone({ run, newItems }: { run: RunState; newItems: boolean }) {
   useEffect(() => { if (newItems) window.setTimeout(() => sfx.unlock(), 900); }, [newItems]);
   const dist = useDistance();
   const place = useZoneName()(run.score);
+  const scene = useStage();
+  useEffect(() => {
+    if (!run.record) return;
+    const id = window.setTimeout(() => { sfx.record(); scene.get()?.celebrate(); }, 700);
+    return () => window.clearTimeout(id);
+  }, [run.record, scene]);
   return (
     <section className="daydone px-window px-window--paper" aria-labelledby="daydone-title">
       <h1 id="daydone-title" className="daydone-title">
@@ -277,6 +283,7 @@ function DailyDone({ run, newItems }: { run: RunState; newItems: boolean }) {
       </h1>
       <p className="daydone-big num">{t('play.youFlew', { d: dist(run.score) })}</p>
       <p className="daydone-place">{t('play.youReached', { place })}</p>
+      {run.record ? <p className="daydone-record">{t('play.record')}</p> : null}
       <ol className="daydone-rounds">
         {run.rounds.map(r => (
           <li key={r.position}>

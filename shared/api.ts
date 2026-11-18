@@ -72,6 +72,8 @@ export interface TodayResponse {
   players: number;
   status: 'new' | 'playing' | 'done';
   score: number | null;
+  /** One of a Kind answers in today's run (each one brings a companion along). */
+  uniques: number;
   streak: Streak;
 }
 export interface GameRef { slug: string; title: string }
@@ -106,6 +108,8 @@ export interface RunState {
   upNext: UpNext | null;
   /** Set for practice runs (unlimited mode and themed packs). */
   practice?: PracticeInfo | null;
+  /** A finished daily run that beat every earlier daily score of this player. */
+  record?: boolean;
 }
 export type PracticeKind = 'unlimited' | 'pack';
 export interface PracticeInfo {
