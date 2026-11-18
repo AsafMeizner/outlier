@@ -133,3 +133,8 @@ Plan (original designs, no krillion assets/names):
   Guests get `guest-xxxxxxxx` / "Guest NNNN" and a random password nobody knows. /save (Claim.tsx, POST /api/claim)
   turns the guest into a full account and keeps everything; menu + My stats link to it; sign-out asks first; password
   change is blocked for guests; friend search skips guests; admin Users tags them. Verified with %TEMP%\og-shot.mjs.
+- 2026-11-18 morning: 8 new packs (en-screen-music, en-world-past, en-kitchen-daily, en-lab-field, he-kitchen-home-b (28),
+  he-israel-culture, he-science-world, he-sport-fun): 238 prompts, ~20k answers, validator 0 errors / 0 warnings on all
+  19 files. Answers were written from model knowledge, not checked against sources; admins can fix any via Questions.
+  server.ts now imports each bank/packs file ONCE (list in settings key `starterPacks`), so new pack files reach
+  existing servers on the next start; old servers without the list count a file as imported if any prompt matches.

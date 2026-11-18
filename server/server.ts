@@ -52,17 +52,29 @@ const db = openDb(join(config.dataDir, 'outlier.db'));
 const secure = !!(config.tlsCert && config.tlsKey);
 const app = createApp({ db, secure, log });
 
+// Starter packs (bank/packs) are imported once per file, so packs shipped in an update reach existing servers on the
+// next start. The list of imported files lives in the settings table under "starterPacks". Prompts already in the
+// bank (same text) are skipped, and a file is never imported twice, so admins' edits and deletions stay.
 function importStarterBank(): void {
-  if (db.get<Count>('SELECT COUNT(*) AS n FROM prompts WHERE owner_id IS NULL')?.n) return;
   const dir = join(ROOT, 'bank', 'packs');
   if (!existsSync(dir)) return;
-  for (const f of readdirSync(dir).filter(n => /\.(json|txt|csv)$/i.test(n)).sort()) {
+  const files = readdirSync(dir).filter(n => /.(json|txt|csv)$/i.test(n)).sort();
+  const row = db.get<{ value: string }>("SELECT value FROM settings WHERE key='starterPacks'");
+  const done = new Set<string>(row ? (JSON.parse(row.value) as string[]) : []);
+  // A server from before this list existed: a file counts as imported if any of its prompts is already in the bank.
+  const untracked = !row && !!db.get<Count>('SELECT COUNT(*) AS n FROM prompts WHERE owner_id IS NULL')?.n;
+  for (const f of files) {
+    if (done.has(f)) continue;
     try {
-      const r = app.importPack(readFileSync(join(dir, f), 'utf8'), f);
-      log(`Imported starter pack ${f}: ${r.added} prompts${r.errors.length ? `, ${r.errors.length} errors` : ''}`);
+      const text = readFileSync(join(dir, f), 'utf8');
+      if (untracked && app.importPack(text, f, { dryRun: true }).skipped > 0) { done.add(f); continue; }
+      const r = app.importPack(text, f);
+      log(`Imported starter pack ${f}: ${r.added} prompts${r.skipped ? `, ${r.skipped} already in the bank` : ''}${r.errors.length ? `, ${r.errors.length} errors` : ''}`);
       for (const e of r.errors) log(`  ${e}`);
+      done.add(f);
     } catch (e) { log(`Skipped starter pack ${f}: ${(e as Error).message}`); }
   }
+  db.run("INSERT INTO settings(key,value) VALUES('starterPacks',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value", JSON.stringify([...done].sort()));
 }
 
 // ---------- CLI ----------
