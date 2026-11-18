@@ -46,6 +46,7 @@
 .ladder-row[data-tier='3'] { --tc: var(--t3); }
 .ladder-row[data-tier='4'] { --tc: var(--t4); }
 .ladder-row[data-tier='5'] { --tc: var(--t5); }
+.ladder-row[data-tier='6'] { --tc: var(--t6); }
 .ladder-m { font-family: var(--pixel); font-size: 0.95rem; text-align: end; white-space: nowrap; }
 .home-note { flex-basis: 100%; margin: 0; font-size: 0.9rem; color: var(--text-2); }
 

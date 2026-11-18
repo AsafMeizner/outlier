@@ -42,7 +42,7 @@
   --bad: #e83b3b;
   --line: var(--panel-hi);
   /* rarity tiers (same in every theme) */
-  --t0: #8b93a8; --t1: #c7cbd8; --t2: #3fbf5a; --t3: #3e8cff; --t4: #b45cff; --t5: #ff9a1f;
+  --t0: #8b93a8; --t1: #c7cbd8; --t2: #3fbf5a; --t3: #3e8cff; --t4: #b45cff; --t5: #ff9a1f; --t6: #ffd23f;
   /* one art pixel of the scene, in CSS pixels (set by the stage) */
   --u: 4px;
   /* type */

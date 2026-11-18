@@ -175,6 +175,26 @@ const MIGRATIONS: readonly string[] = [
   );
   CREATE INDEX practice_rounds_prompt ON practice_rounds(prompt_id);
   `,
+  // v5: tier 6 "One of a Kind" (one answer per prompt). Promote one Outlier answer of every bank prompt that has none.
+  // Rounds already played keep the tier and points they scored. The tier CHECK widens to 1-6 (SQLite needs a rebuild;
+  // answer ids are kept because rounds refer to them).
+  `
+  CREATE TABLE answers_v5 (
+    id INTEGER PRIMARY KEY,
+    prompt_id INTEGER NOT NULL REFERENCES prompts(id) ON DELETE CASCADE,
+    answer TEXT NOT NULL,
+    tier INTEGER NOT NULL CHECK (tier BETWEEN 1 AND 6),
+    aliases TEXT NOT NULL DEFAULT '[]'
+  );
+  INSERT INTO answers_v5(id, prompt_id, answer, tier, aliases) SELECT id, prompt_id, answer, tier, aliases FROM answers;
+  DROP TABLE answers;
+  ALTER TABLE answers_v5 RENAME TO answers;
+  CREATE INDEX answers_prompt ON answers(prompt_id);
+  UPDATE answers SET tier=6 WHERE id IN (
+    SELECT MIN(a.id) FROM answers a JOIN prompts p ON p.id=a.prompt_id
+    WHERE a.tier=5 AND p.owner_id IS NULL AND NOT EXISTS (SELECT 1 FROM answers b WHERE b.prompt_id=a.prompt_id AND b.tier=6)
+    GROUP BY a.prompt_id);
+  `,
 ];
 
 export type SqlParam = string | number | bigint | null | Uint8Array;

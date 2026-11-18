@@ -179,6 +179,9 @@
 .px-tier[data-tier='3'] { --tc: var(--t3); color: #fff; }
 .px-tier[data-tier='4'] { --tc: var(--t4); color: #fff; }
 .px-tier[data-tier='5'] { --tc: var(--t5); }
+/* One of a Kind: gold with a moving shine */
+.px-tier[data-tier='6'] { --tc: var(--t6); background: linear-gradient(100deg, var(--t6) 35%, #fff6c8 50%, var(--t6) 65%) 0 0 / 300% 100%; animation: shine 1.6s steps(8) infinite; }
+@keyframes shine { from { background-position: 100% 0; } to { background-position: 0 0; } }
 
 .px-icon { display: block; flex: none; }
 [dir='rtl'] .flip-rtl { transform: scaleX(-1); }

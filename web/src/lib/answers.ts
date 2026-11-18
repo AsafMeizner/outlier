@@ -1,5 +1,5 @@
 // The one-line-per-answer text format used by the game editor and the admin's paste box:
-//   "<tier 1-5> <answer> | <other spelling> | <other spelling>"
+//   "<tier 1-6> <answer> | <other spelling> | <other spelling>"
 import type { AnswerFull, AnswerInput } from '../../../shared/api.ts';
 
 export interface ParsedAnswers {
@@ -8,7 +8,7 @@ export interface ParsedAnswers {
   bad: number[];
 }
 
-const LINE = /^\s*([1-5])[\s.):-]+(.+)$/u;
+const LINE = /^\s*([1-6])[\s.):-]+(.+)$/u;
 
 /**
  * Read answer lines. Answers that match an existing one by name keep its id,

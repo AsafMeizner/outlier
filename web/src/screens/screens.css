@@ -83,6 +83,7 @@
 .rp-a[data-tier='3'] { --tc: var(--t3); }
 .rp-a[data-tier='4'] { --tc: var(--t4); }
 .rp-a[data-tier='5'] { --tc: var(--t5); }
+.rp-a[data-tier='6'] { --tc: var(--t6); }
 .rp-a-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .rp-a.is-mine .rp-a-name { font-weight: 800; color: var(--highlight); }
 .rp-a.is-mine .rp-a-name::before { content: '▶ '; font-size: 0.7em; }
@@ -119,12 +120,13 @@
 .tile dt { font-size: 0.8rem; color: var(--text-2); font-weight: 700; }
 .tile dd { margin: var(--u) 0 0; font-family: var(--pixel); font-size: 1.5rem; color: var(--text); }
 .tile.is-hot dd { color: var(--highlight); }
-.rarity { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: calc(var(--u) * 3); padding: 0; margin: 0 0 calc(var(--u) * 2); }
+.rarity { list-style: none; display: grid; grid-template-columns: repeat(6, 1fr); gap: calc(var(--u) * 3); padding: 0; margin: 0 0 calc(var(--u) * 2); }
 .rarity li { --tc: var(--t1); display: grid; justify-items: center; gap: var(--u); }
 .rarity li[data-tier='2'] { --tc: var(--t2); }
 .rarity li[data-tier='3'] { --tc: var(--t3); }
 .rarity li[data-tier='4'] { --tc: var(--t4); }
 .rarity li[data-tier='5'] { --tc: var(--t5); }
+.rarity li[data-tier='6'] { --tc: var(--t6); }
 .rarity-col { display: flex; align-items: flex-end; width: 100%; height: 120px; background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 12px); }
 .rarity-col i { display: block; width: 100%; min-height: 4px; background: var(--tc); box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0.25), inset 0 -4px 0 rgba(0, 0, 0, 0.25); }
 .rarity-n { font-family: var(--pixel); }

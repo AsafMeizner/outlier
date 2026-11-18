@@ -429,7 +429,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     }
     if (period === 'day') {
       const rows = db.all<WithLookText<Api.DayRow>>(`SELECT u.id AS userId, u.username, u.look, u.display_name AS name, u.team, r.score, r.total_ms AS ms,
-          (SELECT COUNT(*) FROM rounds x WHERE x.run_id=r.id AND x.tier=5) AS outliers
+          (SELECT COUNT(*) FROM rounds x WHERE x.run_id=r.id AND x.tier>=5) AS outliers
         FROM runs r JOIN users u ON u.id=r.user_id
         WHERE r.date=? AND r.mode='live' AND r.finished_at IS NOT NULL ORDER BY r.score DESC, r.total_ms ASC`, date);
       return { period, date, rows: withLooks<Api.DayRow>(rows) };
@@ -491,12 +491,13 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
       const answer = str(a['answer'], 100, 'Answer');
       if (!answer) bad('Empty answer');
       const tier = Number(a['tier']);
-      if (!(Number.isInteger(tier) && tier >= 1 && tier <= 5)) bad(`"${answer}" needs a tier 1-5`);
+      if (!(Number.isInteger(tier) && tier >= 1 && tier <= 6)) bad(`"${answer}" needs a tier 1-6`);
       const al = a['aliases'];
       const aliases = (Array.isArray(al) ? al : String(al ?? '').split('|')).map(x => String(x).trim()).filter(Boolean).slice(0, 20);
       const id = a['id'];
       return { id: typeof id === 'number' && Number.isInteger(id) ? id : null, answer, tier, aliases };
     });
+    if (answers.filter(a => a.tier === 6).length > 1) bad('Only one answer per prompt can be One of a Kind (tier 6).');
     checkAnswers(answers);
     return { text, category, answers };
   }
@@ -706,7 +707,7 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     return {
       points: count("SELECT COALESCE(SUM(score),0) AS n FROM runs WHERE user_id=? AND mode IN ('live','archive') AND finished_at IS NOT NULL", userId),
       games: count("SELECT COUNT(*) AS n FROM runs WHERE user_id=? AND mode='live' AND finished_at IS NOT NULL", userId),
-      outliers: count("SELECT COUNT(*) AS n FROM rounds x JOIN runs r ON r.id=x.run_id WHERE r.user_id=? AND r.mode IN ('live','archive') AND x.tier=5", userId),
+      outliers: count("SELECT COUNT(*) AS n FROM rounds x JOIN runs r ON r.id=x.run_id WHERE r.user_id=? AND r.mode IN ('live','archive') AND x.tier>=5", userId),
       streak: streakOf(userId).best,
     };
   }
@@ -1072,7 +1073,8 @@ export function createApp({ db, now = () => Date.now(), random = Math.random, se
     practicePool: (lang, category) => db.all<KitPoolPrompt>(`SELECT p.id, p.text, p.category, p.lang FROM prompts p
         WHERE p.retired=0 AND p.owner_id IS NULL AND EXISTS (SELECT 1 FROM answers a WHERE a.prompt_id=p.id)
         AND EXISTS (SELECT 1 FROM day_prompts dp WHERE dp.prompt_id=p.id AND dp.date<? AND dp.date NOT LIKE 'g-%')
-        AND (? IS NULL OR p.lang=?) AND (? IS NULL OR p.category=?)`, today(), lang, lang, category ?? null, category ?? null),
+        AND NOT EXISTS (SELECT 1 FROM day_prompts dp WHERE dp.prompt_id=p.id AND dp.date>=? AND dp.date NOT LIKE 'g-%')
+        AND (? IS NULL OR p.lang=?) AND (? IS NULL OR p.category=?)`, today(), today(), lang, lang, category ?? null, category ?? null),
   };
   installPractice(kit);
   installFriends(kit);

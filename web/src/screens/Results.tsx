@@ -11,7 +11,7 @@ import { useToast } from '../ui/Toast.tsx';
 import { Window } from '../ui/Window.tsx';
 import './screens.css';
 
-const SQUARES = ['⬛', '⬜', '🟩', '🟦', '🟪', '🟧'];
+const SQUARES = ['⬛', '⬜', '🟩', '🟦', '🟪', '🟧', '🌟'];
 
 export function Results() {
   const { key = '' } = useParams();

@@ -213,11 +213,13 @@ export const en = {
   'tier.3': 'Uncommon',
   'tier.4': 'Rare',
   'tier.5': 'Outlier',
+  'tier.6': 'One of a Kind',
   'tierBlurb.1': 'Half the office said it.',
   'tierBlurb.2': 'A solid, popular pick.',
   'tierBlurb.3': 'Off the beaten path.',
   'tierBlurb.4': 'Few people go there.',
   'tierBlurb.5': 'Nobody saw that coming.',
+  'tierBlurb.6': 'The single rarest answer. Only one per prompt.',
 
   // the world
 
@@ -242,6 +244,7 @@ export const en = {
   'home.ex.3': 'Fig',
   'home.ex.4': 'Lychee',
   'home.ex.5': 'Rambutan',
+  'home.ex.6': 'Durian',
   'home.archiveHint': 'Missed a day? Play it from the archive.',
 
   // play
@@ -401,13 +404,13 @@ export const en = {
   'games.promptPlaceholder': 'Name a…',
   'games.categoryField': 'Category',
   'games.answersField': 'Answers',
-  'games.answersHelp': 'One per line: tier 1-5, a space, then the answer. Add other spellings after |. Example: “1 Apple” or “5 Rambutan | rambutans”.',
+  'games.answersHelp': 'One per line: tier 1-6 (6 = One of a Kind, only one per prompt), a space, then the answer. Add other spellings after |. Example: “1 Apple” or “5 Rambutan | rambutans”.',
   'games.addPrompt': 'Add prompt',
   'games.removePrompt': 'Remove prompt',
   'games.save': 'Save game',
   'games.saved': 'Game saved',
   'games.lockedPrompts': 'People already played this game, so only answers can change.',
-  'games.badLine': 'Line {n} of prompt {p}: start with a tier 1-5, then the answer.',
+  'games.badLine': 'Line {n} of prompt {p}: start with a tier 1-6, then the answer.',
 
   // how to play
   'how.title': 'How to play',

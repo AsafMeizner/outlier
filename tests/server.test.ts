@@ -666,3 +666,24 @@ test('party: rooms, turns, used answers, popping fuses, extra lives, a winner', 
   await t.ok('alice', 'POST', `/api/party/${code}/leave`);
   assert.equal((await t.call('alice', 'GET', `/api/party/${code}`)).status, 404, 'an empty room is gone');
 });
+
+test('one of a kind: at most one tier-6 answer per prompt, worth the most', async () => {
+  assert.throws(() => parseText('Q: Name a tree\n6 Baobab\n6 Ginkgo'), /only one answer can be tier 6/);
+  const t = await withAdmin(setup());
+  await addPlayer(t, 'alice');
+  t.app.importPack('C: Nature\nQ: Name a tree\n1 Oak\n5 Larch\n6 Baobab', 'trees.txt');
+  const bank = (await t.ok<Api.AdminPromptsResponse>('admin', 'GET', '/api/admin/prompts')).prompts;
+  const tree = must(bank.find(p => p.text === 'Name a tree')).id;
+  const bad2 = { text: 'Name a tree', category: 'Nature', answers: [{ answer: 'Oak', tier: 1 }, { answer: 'Baobab', tier: 6 }, { answer: 'Ginkgo', tier: 6 }] };
+  assert.equal((await t.call('admin', 'PUT', `/api/admin/prompts/${tree}`, bad2)).status, 400);
+  const d = (await t.ok<Api.AdminOverview>('admin', 'GET', '/api/admin/overview')).today;
+  await t.ok('admin', 'PUT', `/api/admin/schedule/${d}`, { promptIds: [tree] });
+  await t.ok('alice', 'POST', `/api/play/${d}/start`);
+  await t.ok('alice', 'POST', `/api/play/${d}/next`);
+  const r = await t.ok<Api.GuessResponse>('alice', 'POST', `/api/play/${d}/guess`, { text: 'baobab' });
+  if (r.result !== 'accepted') assert.fail(`expected accepted, got ${r.result}`);
+  assert.equal(r.tier, 6);
+  assert.equal(r.points, 150);
+  const w = await t.ok<Api.WardrobeResponse>('alice', 'GET', '/api/wardrobe');
+  assert.equal(w.stats.outliers, 1, 'One of a Kind counts as an Outlier answer for unlocks');
+});

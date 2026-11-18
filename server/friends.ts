@@ -62,7 +62,7 @@ export function installFriends(k: Kit): void {
       total: k.count(`SELECT COALESCE(SUM(score),0) AS n FROM runs WHERE user_id=? AND ${live}`, u.id),
       games: k.count(`SELECT COUNT(*) AS n FROM runs WHERE user_id=? AND ${live}`, u.id),
       best: k.count(`SELECT COALESCE(MAX(score),0) AS n FROM runs WHERE user_id=? AND ${live}`, u.id),
-      outliers: k.count("SELECT COUNT(*) AS n FROM rounds x JOIN runs r ON r.id=x.run_id WHERE r.user_id=? AND r.mode='live' AND x.tier=5", u.id),
+      outliers: k.count("SELECT COUNT(*) AS n FROM rounds x JOIN runs r ON r.id=x.run_id WHERE r.user_id=? AND r.mode='live' AND x.tier>=5", u.id),
       streak: k.streakOf(u.id),
     });
     const from = addDays(k.today(), -30);

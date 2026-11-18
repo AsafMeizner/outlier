@@ -100,4 +100,4 @@ export function PageTitle({ k, children }: { k: AnyKey; children?: ReactNode }) 
   );
 }
 
-export const TIER_IDS = [1, 2, 3, 4, 5] as const;
+export const TIER_IDS = [1, 2, 3, 4, 5, 6] as const;

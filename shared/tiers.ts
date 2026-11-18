@@ -1,6 +1,6 @@
 // Rarity tiers. Points are what the server stores; the game shows them as launch distance (1 point = 10 m).
 
-export type TierId = 1 | 2 | 3 | 4 | 5;
+export type TierId = 1 | 2 | 3 | 4 | 5 | 6;
 
 export interface Tier {
   id: TierId;
@@ -14,7 +14,13 @@ export const TIERS: readonly Tier[] = [
   { id: 3, name: 'Uncommon', points: 50 },
   { id: 4, name: 'Rare', points: 75 },
   { id: 5, name: 'Outlier', points: 100 },
+  /** Exactly one answer per prompt: the single rarest answer, worth the most. */
+  { id: 6, name: 'One of a Kind', points: 150 },
 ];
+
+/** The one-answer-per-prompt tier. */
+export const UNIQUE_TIER = 6;
+export const MAX_TIER = 6;
 
 export const METERS_PER_POINT = 10;
 
@@ -27,5 +33,5 @@ export function pointsFor(id: number): number {
 }
 
 export function isTierId(n: unknown): n is TierId {
-  return typeof n === 'number' && Number.isInteger(n) && n >= 1 && n <= 5;
+  return typeof n === 'number' && Number.isInteger(n) && n >= 1 && n <= MAX_TIER;
 }

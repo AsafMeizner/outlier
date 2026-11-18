@@ -5,7 +5,8 @@
 //   C: Food & Drink             (category for the prompts that follow)
 //   Q: Name a fruit that is red
 //   1 Strawberry
-//   4 Lingonberry | lingon      (tier 1-5, then the answer, then optional aliases after |)
+//   4 Lingonberry | lingon      (tier 1-6, then the answer, then optional aliases after |)
+//   6 Cloudberry                (tier 6 = One of a Kind: at most one per prompt)
 //   # lines starting with # are comments
 //
 // CSV format: header row  prompt,category,answer,tier,aliases   (aliases separated by |)
@@ -25,7 +26,7 @@ function cleanAnswer(raw: unknown, where: string): PackAnswer {
   const aliases = (Array.isArray(aliasesRaw) ? aliasesRaw : String(aliasesRaw).split('|'))
     .map(s => String(s).trim()).filter(Boolean);
   if (!answer) throw new Error(`${where}: empty answer`);
-  if (!(Number.isInteger(tier) && tier >= 1 && tier <= 5)) throw new Error(`${where}: "${answer}" needs a tier from 1 to 5`);
+  if (!(Number.isInteger(tier) && tier >= 1 && tier <= 6)) throw new Error(`${where}: "${answer}" needs a tier from 1 to 6`);
   return { answer, tier, aliases };
 }
 
@@ -36,6 +37,7 @@ function cleanPrompt(raw: unknown, where: string): PackPrompt {
   const list = Array.isArray(p['answers']) ? p['answers'] : [];
   const answers = list.map((a, i) => cleanAnswer(a, `${where} answer ${i + 1}`));
   if (!answers.length) throw new Error(`${where} "${text}": no answers`);
+  if (answers.filter(a => a.tier === 6).length > 1) throw new Error(`${where} "${text}": only one answer can be tier 6 (One of a Kind)`);
   return { text, category: String(p['category'] ?? '').trim() || 'General', answers };
 }
 
@@ -58,13 +60,13 @@ export function parseText(text: string): Pack {
     if ((m = line.match(/^T\s*:\s*(.*)$/i))) { title = (m[1] ?? '').trim(); return; }
     if ((m = line.match(/^C\s*:\s*(.*)$/i))) { category = (m[1] ?? '').trim() || 'General'; if (current && !current.answers.length) current.category = category; return; }
     if ((m = line.match(/^Q\s*:\s*(.*)$/i))) { current = { text: (m[1] ?? '').trim(), category, answers: [] }; prompts.push(current); return; }
-    if ((m = line.match(/^([1-5])\s+(.+)$/))) {
+    if ((m = line.match(/^([1-6])\s+(.+)$/))) {
       if (!current) throw new Error(`${where}: answer before any "Q:" line`);
       const [answer = '', ...aliases] = (m[2] ?? '').split('|').map(s => s.trim());
       current.answers.push({ answer, tier: Number(m[1]), aliases: aliases.filter(Boolean) });
       return;
     }
-    throw new Error(`${where}: not understood: "${line}". Use "Q: prompt", "C: category" or "<tier 1-5> answer | alias"`);
+    throw new Error(`${where}: not understood: "${line}". Use "Q: prompt", "C: category" or "<tier 1-6> answer | alias"`);
   });
   return { title, prompts: prompts.map((p, i) => cleanPrompt(p, `prompt ${i + 1}`)) };
 }

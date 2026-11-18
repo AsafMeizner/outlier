@@ -29,12 +29,15 @@ for (const file of files) {
     const seen = seenPrompts.get(nk);
     if (seen) errors.push(`${where}: duplicate prompt (also in ${seen})`);
     seenPrompts.set(nk, file);
+    const unique = p.answers.filter(a => a.tier === 6).length;
+    if (unique > 1) errors.push(`${where}: ${unique} answers are tier 6 (One of a Kind); only one is allowed`);
+    if (unique === 0) warnings.push(`${where}: no tier-6 (One of a Kind) answer`);
     if (p.answers.length < 25) warnings.push(`${where}: only ${p.answers.length} answers (aim for 30+)`);
     const owner = new Map<string, number>();
-    const tiers = [0, 0, 0, 0, 0, 0];
+    const tiers = [0, 0, 0, 0, 0, 0, 0];
     p.answers.forEach((a, ai) => {
       if (!a.answer.trim()) { errors.push(`${where}: answer ${ai + 1} is empty`); return; }
-      if (!(Number.isInteger(a.tier) && a.tier >= 1 && a.tier <= 5)) errors.push(`${where}: "${a.answer}" has tier ${a.tier} (must be 1-5)`);
+      if (!(Number.isInteger(a.tier) && a.tier >= 1 && a.tier <= 6)) errors.push(`${where}: "${a.answer}" has tier ${a.tier} (must be 1-6)`);
       tiers[a.tier] = (tiers[a.tier] ?? 0) + 1;
       for (const text of [a.answer, ...a.aliases]) {
         for (const k of keysFor(text)) {

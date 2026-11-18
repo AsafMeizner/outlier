@@ -95,6 +95,7 @@ class Sfx {
     const notes = [523, 659, 784, 1047, 1319, 1568].slice(0, tier + 1);
     notes.forEach((f, i) => this.tone('square', f, f, 0.13, 0.07, i * 0.075));
     if (tier >= 5) [1047, 1319, 1568, 2093].forEach(f => this.tone('triangle', f, f, 0.9, 0.06, notes.length * 0.075 + 0.05));
+    if (tier >= 6) window.setTimeout(() => this.unlock(), 700);
   }
   buzz(): void { this.tone('square', 160, 120, 0.22, 0.11); this.tone('square', 107, 90, 0.22, 0.07); }
   sad(): void { [392, 370, 349].forEach((f, i) => this.tone('sawtooth', f, f * 0.98, 0.28, 0.06, i * 0.3)); this.tone('sawtooth', 330, 300, 0.6, 0.06, 0.9); }

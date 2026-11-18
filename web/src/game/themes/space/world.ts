@@ -122,7 +122,7 @@ export function createSpaceWorld(initial: Look): World {
     launched() { shake = 6; },
     landed(s) {
       const tier = s.flight?.tier ?? 1;
-      shake = [0, 2, 3, 4, 6, 8][tier] ?? 3;
+      shake = [0, 2, 3, 4, 6, 8, 11][tier] ?? 3;
       ringBurst = { at: s.t, tier };
     },
     missed() { shake = 3; },
@@ -198,9 +198,9 @@ export function createSpaceWorld(initial: Look): World {
       // landing ring and confetti
       if (ringBurst && s.t - ringBurst.at < 700) {
         const k = (s.t - ringBurst.at) / 700, r = Math.round(6 + k * 34);
-        const c = [P.gray, P.grayL, P.green, P.sky, P.purple, P.orange][ringBurst.tier] ?? P.white;
+        const c = [P.gray, P.grayL, P.green, P.sky, P.purple, P.orange, P.sun][ringBurst.tier] ?? P.white;
         for (let i = 0; i < 64; i++) { const th = (i / 64) * Math.PI * 2; f.set(Math.round(rx + Math.cos(th) * r), Math.round(cy + Math.sin(th) * r * 0.8), c); }
-        if (k < 0.05 && ringBurst.tier >= 4) for (let i = 0; i < (ringBurst.tier === 5 ? 70 : 40); i++) {
+        if (k < 0.05 && ringBurst.tier >= 4) for (let i = 0; i < (ringBurst.tier >= 6 ? 120 : ringBurst.tier === 5 ? 70 : 40); i++) {
           const th = Math.random() * Math.PI * 2, sp = 0.04 + Math.random() * 0.08;
           emit({ x: rx, y: cy, vx: Math.cos(th) * sp, vy: Math.sin(th) * sp, life: 900 + Math.random() * 700, c: [P.sun, P.pink, P.cyan, P.lime, P.white, P.orange][i % 6] ?? P.white, size: 1 + (i % 2), kind: 'spark' });
         }
